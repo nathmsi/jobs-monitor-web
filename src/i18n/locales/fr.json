@@ -9,6 +9,12 @@
     "fr": "FR",
     "he": "עב"
   },
+  "filters": {
+    "searchPlaceholder": "Recherche : React, Node, .NET…",
+    "regionLabel": "Zone",
+    "roleLabel": "Rôle :",
+    "clear": "Effacer"
+  },
   "source": {
     "refresh": "Rafraîchir",
     "loading": "Chargement…",

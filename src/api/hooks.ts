@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { getSources, refreshSource } from "./client";
+import type { Filters } from "../types";
+import { getRegions, getSources, refreshSource } from "./client";
 
 /** All available sources (fetched once). */
 export function useSources() {
@@ -11,15 +12,24 @@ export function useSources() {
   });
 }
 
-/**
- * Jobs for a single source. Auto-fetch sources run on mount (`enabled`);
- * on-demand ones (Malam) fetch only when the user hits refresh, which calls
- * `refetch()` — that works even while `enabled` is false.
- */
-export function useSourceJobs(key: string, enabled: boolean) {
+/** Canonical regions for the filter dropdown (fetched once). */
+export function useRegions() {
   return useQuery({
-    queryKey: ["jobs", key],
-    queryFn: () => refreshSource(key),
+    queryKey: ["regions"],
+    queryFn: getRegions,
+    staleTime: Infinity,
+  });
+}
+
+/**
+ * Jobs for a single source under the current filters. The filters are part
+ * of the query key, so changing them refetches enabled (auto) sources
+ * automatically. On-demand sources (Malam) fetch when the user hits refresh.
+ */
+export function useSourceJobs(key: string, enabled: boolean, filters: Filters) {
+  return useQuery({
+    queryKey: ["jobs", key, filters],
+    queryFn: () => refreshSource(key, filters),
     enabled,
     staleTime: 60_000,
     refetchOnWindowFocus: false,

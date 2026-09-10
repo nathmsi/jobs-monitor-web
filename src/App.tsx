@@ -1,18 +1,27 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useSources } from "./api/hooks";
+import { FilterBar } from "./components/FilterBar/FilterBar";
 import { Header } from "./components/Header/Header";
 import { JobCardSkeleton } from "./components/JobCardSkeleton/JobCardSkeleton";
 import { SourceSection } from "./components/SourceSection/SourceSection";
+import type { Filters } from "./types";
 import styles from "./App.module.css";
 
 function App() {
   const { t } = useTranslation();
   const { data: sources, isLoading, isError, error } = useSources();
+  const [filters, setFilters] = useState<Filters>({
+    region: "jerusalem",
+    q: "",
+  });
 
   return (
     <div className={styles.app}>
       <Header />
+
+      <FilterBar filters={filters} onChange={setFilters} />
 
       <main className={styles.sources}>
         {isError && (
@@ -39,7 +48,7 @@ function App() {
           ))}
 
         {sources?.map((source) => (
-          <SourceSection key={source.key} source={source} />
+          <SourceSection key={source.key} source={source} filters={filters} />
         ))}
       </main>
 

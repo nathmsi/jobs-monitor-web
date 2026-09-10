@@ -1,20 +1,21 @@
 import { useTranslation } from "react-i18next";
 
 import { useSourceJobs } from "../../api/hooks";
-import type { SourceInfo } from "../../types";
+import type { Filters, SourceInfo } from "../../types";
 import { JobCard } from "../JobCard/JobCard";
 import { JobCardSkeleton } from "../JobCardSkeleton/JobCardSkeleton";
 import styles from "./SourceSection.module.css";
 
 interface Props {
   source: SourceInfo;
+  filters: Filters;
 }
 
 const SKELETON_COUNT = 6;
 
-export function SourceSection({ source }: Props) {
+export function SourceSection({ source, filters }: Props) {
   const { t, i18n } = useTranslation();
-  const query = useSourceJobs(source.key, source.auto_fetch);
+  const query = useSourceJobs(source.key, source.auto_fetch, filters);
   const { data, isFetching, isError, error, refetch, dataUpdatedAt } = query;
 
   const showSkeleton = isFetching && !data;

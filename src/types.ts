@@ -25,3 +25,14 @@ export interface RefreshResult {
   new_count: number;
   jobs: Job[];
 }
+
+export interface RegionInfo {
+  key: string;
+  label_fr: string;
+  label_he: string;
+}
+
+export interface Filters {
+  region: string;
+  q: string;
+}

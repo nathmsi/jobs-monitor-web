@@ -9,6 +9,12 @@
     "fr": "FR",
     "he": "עב"
   },
+  "filters": {
+    "searchPlaceholder": "חיפוש: React, Node, .NET…",
+    "regionLabel": "אזור",
+    "roleLabel": "תפקיד:",
+    "clear": "ניקוי"
+  },
   "source": {
     "refresh": "רענון",
     "loading": "טוען…",

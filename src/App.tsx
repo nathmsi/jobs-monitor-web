@@ -97,13 +97,25 @@ function App() {
                     </span>
                   )}
                 </div>
-                <button
-                  className="btn"
-                  onClick={() => handleRefresh(s.key)}
-                  disabled={st.loading}
-                >
-                  {st.loading ? "Chargement…" : "Rafraîchir"}
-                </button>
+                <div className="source__actions">
+                  {s.site_url && (
+                    <a
+                      className="btn btn--ghost"
+                      href={s.site_url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Ouvrir le site ↗
+                    </a>
+                  )}
+                  <button
+                    className="btn"
+                    onClick={() => handleRefresh(s.key)}
+                    disabled={st.loading}
+                  >
+                    {st.loading ? "Chargement…" : "Rafraîchir"}
+                  </button>
+                </div>
               </div>
 
               {st.error && <div className="alert">Erreur : {st.error}</div>}
@@ -118,7 +130,17 @@ function App() {
                 !st.error &&
                 st.lastRefreshed &&
                 st.jobs.length === 0 && (
-                  <p className="source__empty">Aucune offre trouvée.</p>
+                  <p className="source__empty">
+                    Aucune offre récupérée automatiquement.
+                    {s.site_url && (
+                      <>
+                        {" "}
+                        <a href={s.site_url} target="_blank" rel="noreferrer">
+                          Voir directement sur le site ↗
+                        </a>
+                      </>
+                    )}
+                  </p>
                 )}
             </div>
           );

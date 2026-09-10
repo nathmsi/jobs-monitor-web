@@ -74,6 +74,18 @@
   cursor: default;
 }
 
+.source__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--accent);
+  text-decoration: none;
+}
+
 .jobs {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));

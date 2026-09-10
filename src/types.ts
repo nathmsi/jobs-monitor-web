@@ -15,6 +15,7 @@ export interface Job {
 export interface SourceInfo {
   key: string;
   label: string;
+  site_url: string | null;
 }
 
 export interface RefreshResult {

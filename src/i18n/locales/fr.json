@@ -1,0 +1,37 @@
+{
+  "header": {
+    "eyebrow": "Israël",
+    "title": "Veille d'offres",
+    "subtitle": "Full Stack · React / TypeScript · Jérusalem"
+  },
+  "lang": {
+    "label": "Langue",
+    "fr": "FR",
+    "he": "עב"
+  },
+  "source": {
+    "refresh": "Rafraîchir",
+    "loading": "Chargement…",
+    "openSite": "Ouvrir le site ↗",
+    "offers_one": "{{count}} offre",
+    "offers_other": "{{count}} offres",
+    "new_one": "{{count}} nouvelle",
+    "new_other": "{{count}} nouvelles",
+    "updated": "maj {{time}}",
+    "empty": "Aucune offre récupérée automatiquement.",
+    "emptyLink": "Voir directement sur le site ↗",
+    "onDemand": "Source à la demande — cliquez sur « Rafraîchir » pour charger les offres.",
+    "ready": "Prêt."
+  },
+  "job": {
+    "new": "Nouveau",
+    "hot": "Hot",
+    "view": "Voir l'offre →"
+  },
+  "error": {
+    "apiTitle": "Impossible de contacter l'API.",
+    "apiHint": "Vérifie que le backend répond sur",
+    "generic": "Erreur : {{message}}"
+  },
+  "footer": "Veille d'offres · sources : Ness · Matrix · Malam Team"
+}

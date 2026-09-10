@@ -16,6 +16,7 @@ export interface SourceInfo {
   key: string;
   label: string;
   site_url: string | null;
+  auto_fetch: boolean;
 }
 
 export interface RefreshResult {

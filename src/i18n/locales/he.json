@@ -1,0 +1,37 @@
+{
+  "header": {
+    "eyebrow": "ישראל",
+    "title": "מעקב משרות",
+    "subtitle": "פול סטאק · React / TypeScript · ירושלים"
+  },
+  "lang": {
+    "label": "שפה",
+    "fr": "FR",
+    "he": "עב"
+  },
+  "source": {
+    "refresh": "רענון",
+    "loading": "טוען…",
+    "openSite": "פתיחת האתר ↗",
+    "offers_one": "משרה אחת",
+    "offers_other": "{{count}} משרות",
+    "new_one": "חדשה אחת",
+    "new_other": "{{count}} חדשות",
+    "updated": "עודכן {{time}}",
+    "empty": "לא נמצאו משרות באופן אוטומטי.",
+    "emptyLink": "צפייה ישירה באתר ↗",
+    "onDemand": "מקור לפי דרישה — לחצו על «רענון» לטעינת המשרות.",
+    "ready": "מוכן."
+  },
+  "job": {
+    "new": "חדש",
+    "hot": "חם",
+    "view": "צפייה במשרה →"
+  },
+  "error": {
+    "apiTitle": "לא ניתן להתחבר ל-API.",
+    "apiHint": "ודאו שהשרת מגיב בכתובת",
+    "generic": "שגיאה: {{message}}"
+  },
+  "footer": "מעקב משרות · מקורות: Ness · Matrix · Malam Team"
+}

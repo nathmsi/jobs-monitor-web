@@ -1,11 +1,11 @@
-import type { RefreshResult, SourceInfo } from "./types";
+import type { RefreshResult, SourceInfo } from "../types";
 
 const BASE = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const resp = await fetch(`${BASE}${path}`, init);
   if (!resp.ok) {
-    throw new Error(`${resp.status} ${resp.statusText}`);
+    throw new Error(`HTTP ${resp.status} — ${resp.statusText}`);
   }
   return resp.json() as Promise<T>;
 }

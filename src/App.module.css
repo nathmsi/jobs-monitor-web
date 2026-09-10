@@ -53,6 +53,21 @@
   border-radius: 4px;
 }
 
+.empties {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.emptiesTitle {
+  margin: 0 0 0.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 .footer {
   margin-top: 3.5rem;
   text-align: center;

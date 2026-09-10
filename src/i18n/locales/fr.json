@@ -2,7 +2,7 @@
   "header": {
     "eyebrow": "Israël",
     "title": "Veille d'offres",
-    "subtitle": "Full Stack · React / TypeScript · Jérusalem"
+    "subtitle": "Offres de développement en Israël · plusieurs sources"
   },
   "lang": {
     "label": "Langue",
@@ -27,6 +27,8 @@
     "empty": "Aucune offre récupérée automatiquement.",
     "emptyLink": "Voir directement sur le site ↗",
     "onDemand": "Source à la demande — cliquez sur « Rafraîchir » pour charger les offres.",
+    "onDemandShort": "À la demande",
+    "otherSources": "Autres sources",
     "ready": "Prêt."
   },
   "job": {

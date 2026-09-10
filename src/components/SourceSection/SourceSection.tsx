@@ -1,21 +1,20 @@
+import type { UseQueryResult } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 
-import { useSourceJobs } from "../../api/hooks";
-import type { Filters, SourceInfo } from "../../types";
+import type { RefreshResult, SourceInfo } from "../../types";
 import { JobCard } from "../JobCard/JobCard";
 import { JobCardSkeleton } from "../JobCardSkeleton/JobCardSkeleton";
 import styles from "./SourceSection.module.css";
 
 interface Props {
   source: SourceInfo;
-  filters: Filters;
+  query: UseQueryResult<RefreshResult, Error>;
 }
 
 const SKELETON_COUNT = 6;
 
-export function SourceSection({ source, filters }: Props) {
+export function SourceSection({ source, query }: Props) {
   const { t, i18n } = useTranslation();
-  const query = useSourceJobs(source.key, source.auto_fetch, filters);
   const { data, isFetching, isError, error, refetch, dataUpdatedAt } = query;
 
   const showSkeleton = isFetching && !data;
@@ -75,48 +74,18 @@ export function SourceSection({ source, filters }: Props) {
         </div>
       )}
 
-      {showSkeleton && (
+      {showSkeleton ? (
         <div className={styles.grid}>
           {Array.from({ length: SKELETON_COUNT }).map((_, i) => (
             <JobCardSkeleton key={i} />
           ))}
         </div>
-      )}
-
-      {!showSkeleton && data && data.jobs.length > 0 && (
+      ) : (
         <div className={styles.grid}>
-          {data.jobs.map((job) => (
+          {data?.jobs.map((job) => (
             <JobCard key={`${job.source}-${job.external_id}`} job={job} />
           ))}
         </div>
-      )}
-
-      {!showSkeleton && data && data.jobs.length === 0 && (
-        <p className={styles.empty}>
-          {t("source.empty")}
-          {source.site_url && (
-            <>
-              {" "}
-              <a href={source.site_url} target="_blank" rel="noreferrer">
-                {t("source.emptyLink")}
-              </a>
-            </>
-          )}
-        </p>
-      )}
-
-      {!showSkeleton && !data && !isError && (
-        <p className={styles.idle}>
-          {source.auto_fetch ? t("source.ready") : t("source.onDemand")}
-          {source.site_url && (
-            <>
-              {" "}
-              <a href={source.site_url} target="_blank" rel="noreferrer">
-                {t("source.openSite")}
-              </a>
-            </>
-          )}
-        </p>
       )}
     </section>
   );

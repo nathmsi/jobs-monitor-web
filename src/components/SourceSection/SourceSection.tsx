@@ -1,4 +1,5 @@
 import type { UseQueryResult } from "@tanstack/react-query";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { markForceRefresh } from "../../api/hooks";
@@ -17,8 +18,10 @@ const SKELETON_COUNT = 6;
 export function SourceSection({ source, query }: Props) {
   const { t, i18n } = useTranslation();
   const { data, isFetching, isError, error, refetch, dataUpdatedAt } = query;
+  const [open, setOpen] = useState(true);
 
   const showSkeleton = isFetching && !data;
+  const bodyId = `source-body-${source.key}`;
 
   const formatTime = (ts: number) =>
     new Date(ts).toLocaleTimeString(i18n.language, {
@@ -29,24 +32,34 @@ export function SourceSection({ source, query }: Props) {
   return (
     <section className={styles.section}>
       <div className={styles.bar}>
-        <div className={styles.titleGroup}>
-          <h2 className={styles.title}>{source.label}</h2>
-          {data && (
-            <span className={styles.meta}>
-              {t("source.offers", { count: data.count })}
-              {data.new_count > 0 && (
-                <>
-                  {" · "}
-                  <strong className={styles.metaNew}>
-                    {t("source.new", { count: data.new_count })}
-                  </strong>
-                </>
-              )}
-              {dataUpdatedAt > 0 &&
-                ` · ${t("source.updated", { time: formatTime(dataUpdatedAt) })}`}
-            </span>
-          )}
-        </div>
+        <button
+          className={styles.toggle}
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          aria-controls={bodyId}
+        >
+          <span className={`${styles.chevron} ${open ? styles.chevronOpen : ""}`}>
+            ▸
+          </span>
+          <span className={styles.titleGroup}>
+            <span className={styles.title}>{source.label}</span>
+            {data && (
+              <span className={styles.meta}>
+                {t("source.offers", { count: data.count })}
+                {data.new_count > 0 && (
+                  <>
+                    {" · "}
+                    <strong className={styles.metaNew}>
+                      {t("source.new", { count: data.new_count })}
+                    </strong>
+                  </>
+                )}
+                {dataUpdatedAt > 0 &&
+                  ` · ${t("source.updated", { time: formatTime(dataUpdatedAt) })}`}
+              </span>
+            )}
+          </span>
+        </button>
 
         <div className={styles.actions}>
           {source.site_url && (
@@ -63,6 +76,7 @@ export function SourceSection({ source, query }: Props) {
             className={styles.btn}
             onClick={() => {
               markForceRefresh(source.key);
+              setOpen(true);
               refetch();
             }}
             disabled={isFetching}
@@ -72,23 +86,27 @@ export function SourceSection({ source, query }: Props) {
         </div>
       </div>
 
-      {isError && (
-        <div className={styles.alert} role="alert">
-          {t("error.generic", { message: (error as Error).message })}
-        </div>
-      )}
+      {open && (
+        <div id={bodyId}>
+          {isError && (
+            <div className={styles.alert} role="alert">
+              {t("error.generic", { message: (error as Error).message })}
+            </div>
+          )}
 
-      {showSkeleton ? (
-        <div className={styles.grid}>
-          {Array.from({ length: SKELETON_COUNT }).map((_, i) => (
-            <JobCardSkeleton key={i} />
-          ))}
-        </div>
-      ) : (
-        <div className={styles.grid}>
-          {data?.jobs.map((job) => (
-            <JobCard key={`${job.source}-${job.external_id}`} job={job} />
-          ))}
+          {showSkeleton ? (
+            <div className={styles.grid}>
+              {Array.from({ length: SKELETON_COUNT }).map((_, i) => (
+                <JobCardSkeleton key={i} />
+              ))}
+            </div>
+          ) : (
+            <div className={styles.grid}>
+              {data?.jobs.map((job) => (
+                <JobCard key={`${job.source}-${job.external_id}`} job={job} />
+              ))}
+            </div>
+          )}
         </div>
       )}
     </section>

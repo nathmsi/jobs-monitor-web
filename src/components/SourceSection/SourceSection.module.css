@@ -14,10 +14,36 @@
   border-bottom: 1px solid var(--border);
 }
 
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  text-align: start;
+  color: inherit;
+}
+
+.chevron {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+}
+
+.chevronOpen {
+  transform: rotate(90deg);
+}
+
 .titleGroup {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  min-width: 0;
 }
 
 .title {

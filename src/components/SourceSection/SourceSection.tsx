@@ -1,6 +1,7 @@
 import type { UseQueryResult } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 
+import { markForceRefresh } from "../../api/hooks";
 import type { RefreshResult, SourceInfo } from "../../types";
 import { JobCard } from "../JobCard/JobCard";
 import { JobCardSkeleton } from "../JobCardSkeleton/JobCardSkeleton";
@@ -60,7 +61,10 @@ export function SourceSection({ source, query }: Props) {
           )}
           <button
             className={styles.btn}
-            onClick={() => refetch()}
+            onClick={() => {
+              markForceRefresh(source.key);
+              refetch();
+            }}
             disabled={isFetching}
           >
             {isFetching ? t("source.loading") : t("source.refresh")}

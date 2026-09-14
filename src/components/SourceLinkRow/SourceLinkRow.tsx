@@ -1,6 +1,7 @@
 import type { UseQueryResult } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 
+import { markForceRefresh } from "../../api/hooks";
 import type { RefreshResult, SourceInfo } from "../../types";
 import styles from "./SourceLinkRow.module.css";
 
@@ -36,7 +37,10 @@ export function SourceLinkRow({ source, query }: Props) {
         )}
         <button
           className={styles.btn}
-          onClick={() => refetch()}
+          onClick={() => {
+            markForceRefresh(source.key);
+            refetch();
+          }}
           disabled={isFetching}
         >
           {isFetching ? t("source.loading") : t("source.refresh")}

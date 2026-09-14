@@ -39,8 +39,13 @@ export function getRegions(): Promise<RegionInfo[]> {
 export function refreshSource(
   key: string,
   filters: Filters,
+  force = false,
 ): Promise<RefreshResult> {
-  const params = new URLSearchParams({ region: filters.region, q: filters.q });
+  const params = new URLSearchParams({
+    region: filters.region,
+    q: filters.q,
+    force: String(force),
+  });
   return request<RefreshResult>(`/api/refresh/${key}?${params}`, {
     method: "POST",
   });

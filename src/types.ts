@@ -24,6 +24,7 @@ export interface RefreshResult {
   count: number;
   new_count: number;
   jobs: Job[];
+  cached: boolean;
 }
 
 export interface RegionInfo {

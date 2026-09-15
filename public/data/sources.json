@@ -1,0 +1,26 @@
+[
+{
+"key": "ness",
+"label": "Ness",
+"site_url": "https://www.ness-tech.co.il/careers/",
+"auto_fetch": true
+},
+{
+"key": "matrix",
+"label": "Matrix",
+"site_url": "https://www.matrix.co.il/jobs/משרות/פיתוח-תוכנה/",
+"auto_fetch": true
+},
+{
+"key": "sqlink",
+"label": "SQLink",
+"site_url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/",
+"auto_fetch": true
+},
+{
+"key": "malam",
+"label": "Malam Team",
+"site_url": "https://www.malamteam.com/לובי-חיפוש-קריירה/?serch=&field=%D7%A4%D7%99%D7%AA%D7%95%D7%97&location=%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D%20%D7%95%D7%94%D7%A1%D7%91%D7%99%D7%91%D7%94",
+"auto_fetch": true
+}
+]

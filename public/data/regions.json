@@ -1,0 +1,42 @@
+[
+{
+"key": "jerusalem",
+"label_fr": "Jérusalem",
+"label_he": "ירושלים"
+},
+{
+"key": "center",
+"label_fr": "Tel Aviv / Centre",
+"label_he": "תל אביב / גוש דן"
+},
+{
+"key": "sharon",
+"label_fr": "Sharon",
+"label_he": "השרון"
+},
+{
+"key": "shfela",
+"label_fr": "Shfela",
+"label_he": "השפלה"
+},
+{
+"key": "south",
+"label_fr": "Sud",
+"label_he": "דרום"
+},
+{
+"key": "north",
+"label_fr": "Nord",
+"label_he": "צפון"
+},
+{
+"key": "haifa",
+"label_fr": "Haïfa",
+"label_he": "חיפה"
+},
+{
+"key": "all",
+"label_fr": "Tout le pays",
+"label_he": "כל הארץ"
+}
+]

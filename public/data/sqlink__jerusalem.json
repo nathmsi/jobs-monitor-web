@@ -1,0 +1,75 @@
+{
+"source": "sqlink",
+"count": 6,
+"new_count": 3,
+"jobs": [
+{
+"source": "sqlink",
+"external_id": "154693",
+"title": "ארכיטקט/ית פתרונות ענן",
+"location": "",
+"excerpt": "ארגון ממשלתי באזור ירושלים מגייס ארכיטקט/ית פתרונות ענן. התפקיד כולל: הובלת תכנון, אפיון ויישום של פתרונות ענן, גיבוש אסטרטגיית ענן ומפת דרכים, ליווי צוותי פיתוח משלב האפיון ועד העלייה לייצור, תכנון ארכיטקטורות מאובטחות…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/ארכיטקט-תוכנה/ארכיטקטית-פתרונות-ענן/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "sqlink",
+"external_id": "154695",
+"title": "מפתח/ת Full Stack",
+"location": "",
+"excerpt": "ארגון ממשלתי באזור ירושלים מגייס מפתח/ת Full Stack התפקיד כולל: עבודה בפיתוח, תחזוקה ושדרוג של מערכות Web ארגוניות, פיתוח מערכות חדשות ורכיבי צד שרת וצד לקוח, כתיבת שירותים וממשקים, טיפול בתקלות ושיפור מערכות קיימות,…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/מפתחת-full-stack-1/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "sqlink",
+"external_id": "154726",
+"title": "מפתח/ת SAP S/4HANA",
+"location": "",
+"excerpt": "ארגון ממשלתי באזור ירושלים מגייס מפתח/ת SAP S/4HANA התפקיד כולל: עבודה בפיתוח ותחזוקת מערכות ליבה בסביבת SAP S/4HANA, פיתוח Backend ב-ABAP OO, תכנון והובלת אינטגרציות מורכבות מקצה לקצה, פיתוח וצריכה של שירותי REST, SOAP…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-crm/מפתחת-sap-s4hana/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "sqlink",
+"external_id": "154693",
+"title": "ארכיטקט/ית פתרונות ענן",
+"location": "",
+"excerpt": "ארגון ממשלתי באזור ירושלים מגייס ארכיטקט/ית פתרונות ענן. התפקיד כולל: הובלת תכנון, אפיון ויישום של פתרונות ענן, גיבוש אסטרטגיית ענן ומפת דרכים, ליווי צוותי פיתוח משלב האפיון ועד העלייה לייצור, תכנון ארכיטקטורות מאובטחות…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/ארכיטקט-תוכנה/ארכיטקטית-פתרונות-ענן/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "154695",
+"title": "מפתח/ת Full Stack",
+"location": "",
+"excerpt": "ארגון ממשלתי באזור ירושלים מגייס מפתח/ת Full Stack התפקיד כולל: עבודה בפיתוח, תחזוקה ושדרוג של מערכות Web ארגוניות, פיתוח מערכות חדשות ורכיבי צד שרת וצד לקוח, כתיבת שירותים וממשקים, טיפול בתקלות ושיפור מערכות קיימות,…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/מפתחת-full-stack-1/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "154726",
+"title": "מפתח/ת SAP S/4HANA",
+"location": "",
+"excerpt": "ארגון ממשלתי באזור ירושלים מגייס מפתח/ת SAP S/4HANA התפקיד כולל: עבודה בפיתוח ותחזוקת מערכות ליבה בסביבת SAP S/4HANA, פיתוח Backend ב-ABAP OO, תכנון והובלת אינטגרציות מורכבות מקצה לקצה, פיתוח וצריכה של שירותי REST, SOAP…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-crm/מפתחת-sap-s4hana/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+}
+],
+"cached": true,
+"generated_at": "2026-09-15T12:52:52.213348+00:00"
+}

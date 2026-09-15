@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { API_BASE } from "./api/client";
 import { useAllSourceJobs, useSources } from "./api/hooks";
 import { FilterBar } from "./components/FilterBar/FilterBar";
 import { Header } from "./components/Header/Header";
@@ -47,8 +46,6 @@ function App() {
             <strong>{t("error.apiTitle")}</strong>
             <br />
             {(error as Error).message}
-            <br />
-            {t("error.apiHint")} <code>{API_BASE}</code>.
           </div>
         )}
 

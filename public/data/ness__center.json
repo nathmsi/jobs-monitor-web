@@ -1,0 +1,42 @@
+{
+"source": "ness",
+"count": 3,
+"new_count": 3,
+"jobs": [
+{
+"source": "ness",
+"external_id": "43341",
+"title": "מפתח/ת דיגיטל",
+"location": "אזור המרכז",
+"excerpt": "לנס (Ness) דרוש/ה מפתח/ת דיגיטל. התפקיד כולל פיתוח אתרי אינטרנט בסביבת WEB, המשלבת אינטגרציה עם מערכות ליבה וצד שלישי. בנוסף, פיתוח שוטף בטכנולוגיות ובגרסאות מתקדמות. משרה מלאה, בתל אביב. דרישות: ניסיון של 4 שנים ומעלה…",
+"url": "https://www.ness-tech.co.il/careers/",
+"is_hot": false,
+"last_updated": "15/09/2026",
+"is_new": true
+},
+{
+"source": "ness",
+"external_id": "43247",
+"title": "ראש/ת צוות פיתוח CRM Dynamics",
+"location": "אזור המרכז",
+"excerpt": "לNESS דרוש/ה ראש/ת צוות פיתוח CRM Dynamics. התפקיד כולל ניהול והובלה מקצועית של צוות מפתחים, הובלת ארכיטקטורת פתרונות בסביבת Microsoft Dynamics 365 CRM וכתיבת אפיונים טכניים. משרה מלאה, בראשון לציון. דרישות: ניסיון של 3…",
+"url": "https://www.ness-tech.co.il/careers/",
+"is_hot": false,
+"last_updated": "07/09/2026",
+"is_new": true
+},
+{
+"source": "ness",
+"external_id": "43163",
+"title": "Data Integration Engineer",
+"location": "אזור המרכז",
+"excerpt": "לנס (Ness) דרוש/ה Data Integration Engineer. התפקיד כולל הגדרה ופיתוח פתרונות אינטגרציה במערכות מרובות ממשקים. בנוסף, הגדרת ארכיטקטורה, הבנת אפיונים מפורטים, כתיבת תהליכי עיבוד וקליטת נתונים, דיווח ותיעוד תקלות ורישום…",
+"url": "https://www.ness-tech.co.il/careers/",
+"is_hot": false,
+"last_updated": "03/09/2026",
+"is_new": true
+}
+],
+"cached": true,
+"generated_at": "2026-09-15T12:52:44.570448+00:00"
+}

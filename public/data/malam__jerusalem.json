@@ -1,0 +1,229 @@
+{
+"source": "malam",
+"count": 20,
+"new_count": 20,
+"jobs": [
+{
+"source": "malam",
+"external_id": "533482",
+"title": "Full Stack Developer - AI Assisted Development ‎",
+"location": "ירושלים והסביבה",
+"excerpt": "אנחנו מחפשים מפתח/ת Fullstack להשתלבות כחלק מצוות בפיתוח מערכות מאפס. התפקיד מיועד למפתח/ת תוכנה בעל/ת הבנה מעשית בתהליכי פיתוח, המשתמש/ת בכלי AI כדי להאיץ ולשפר את עבודת הפיתוח — החל מתכנון וכתיבת קוד, דרך בדיקות…",
+"url": "https://www.malamteam.com/משרה/full-stack-developer-ai-assisted-development/",
+"is_hot": true,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37544",
+"title": "מנהל.ת מערך טכנולוגי ו- Delivery",
+"location": "השפלה, ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מנהל.ת טכנולוגיות ו- Delivery לארגון ציבורי בירושלים תיאור משרה: דרוש.ה מנהל.ת מערך טכנולוגי ו- Delivery לתפקיד בכיר הכולל הובלת תוכניות טכנולוגיות מורכבות ורחבות היקף, טרנספורמציה…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a0%d7%94%d7%9c-%d7%aa-%d7%9e%d7%a2%d7%a8%d7%9a-%d7%98%d7%9b%d7%a0%d7%95%d7%9c%d7%95%d7%92%d7%99-%d7%95-delivery/",
+"is_hot": true,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37584",
+"title": "מפתח.ת תוכנה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח מערכות חדשניות ואוטומציות מבוססות AI עבור מערכות החינוך, בסביבת Microservices ובארכיטקטורה מודרנית. התפקיד כולל פיתוח קוד ורכיבי Full Stack,…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-5/",
+"is_hot": true,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37587",
+"title": "מפתח.ת Backend",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת Backend לארגון מוביל בירושלים תיאור במסגרת התפקיד פיתוח אפליקציות ושירותי צד שרת בסביבת ענן AWS, עבודה בארכיטקטורת Microservices ו- MVC ופיתוח בסביבות Cross Platform ו- Linux…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-backend-2/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37585",
+"title": "מפתח.ת תוכנה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח ותחזוקה של מערכות חדשניות מבוססות AI, כחלק ממערכת חינוך המיועדת לתמיכה בתוכנית לימודים אישית. פיתוח Full Stack בסביבת Microservices, שילוב…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-4/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37557",
+"title": "מפתח.ת תוכנה בכיר.ה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה בכיר.ה לארגון גדול בירושלים תיאור משרה: תיאור משרה: התפקיד כולל פיתוח, הקמה, תפעול ותחזוקה של מערכות בסביבת Low-Code, בדגש על OutSystems, בהתאם לצרכים העסקיים של הארגון.…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9b%d7%99%d7%a8-%d7%94/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37574",
+"title": "מפתח.ת תוכנה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת תוכנה בסביבת Web לארגון מוביל בירושלים תיאור התפקיד כולל פיתוח ועיצוב פתרונות תוכנה בהתאם למפרטים ובהנחיית ראש צוות או מנתח.ת מערכות בכיר.ה, כתיבת תוכניות מורכבות ומרכזיות בפרויקט,…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-2/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37573",
+"title": "מפתח.ת WinForms",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת WinForms לארגון גדול בירושלים תיאור משרה: פיתוח ותחזוקה של יישומים מבוססי . NET / WinForms, כולל הוספת פיצ'רים חדשים, תיקון תקלות, שיפור ביצועים והתאמת המערכות לצרכים עסקיים…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-winforms/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37554",
+"title": "Full Stack Developer",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת Full Stack Developer לארגון בירושלים תיאור משרה: פיתוח ותחזוקת מערכת רישוי עסקים ארצית, רחבה ואינטגרטיבית, המשמשת עסקים, משרדי ממשלה ורשויות. פיתוח Full Stack הכולל Backend בסביבת . NET /…",
+"url": "https://www.malamteam.com/משרה/full-stack-developer/",
+"is_hot": true,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37361",
+"title": "תכניתן.ית COBOL",
+"location": "השפלה, ירושלים והסביבה",
+"excerpt": "חברת Mertens Malam Team מגייסת תכניתן.ית Cobol לארגון פיננסי במרכז תיאור במסגרת התפקיד פיתוח, תחזוקה ושדרוג של מערכות ליבה פיננסיות בסביבת IBM Mainframe, כולל כתיבת קוד, ביצוע בדיקות וטיפול בתקלות עד לזיהוי שורש הבעיה.…",
+"url": "https://www.malamteam.com/משרה/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa%d7%9f-%d7%99%d7%aa-cobol/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37556",
+"title": "מפתח.ת תוכנה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת תוכנה לארגון ביטחוני במרכז תיאור במסגרת התפקיד פיתוח ותחזוקה של מערכות גדולות, מורכבות ורחבות היקף בסביבה בעלת דרישות אבטחת מידע גבוהות. עבודה עם . NET, C #, SQL Server ו- Web API,…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-3/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37445",
+"title": "מפתח.ת תוכנה במערכות WEB",
+"location": "השפלה, ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה במערכות WEB לארגון ציבורי בירושלים תיאור משרה: מפתח בכיר במערכות WEB - מפתח בכיר למערכת נועם מערכת נועם הינה מערכת במג'יק שעוברת לענן . המערכת משמשת לניהול ועדות רכישות במשרד…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9e%d7%a2%d7%a8%d7%9b%d7%95%d7%aa-web/",
+"is_hot": true,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37396",
+"title": "מפתח.ת תוכנה AI",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת פתח.ת תוכנה AI לארגון ציבורי בירושלים תיאור משרה: מפתח.ת Full Stuck בעל.ת ניסיון מוכח בסביבת אינטרנט. בעל יכולת למידה עצמית גבוהה, עבודה בצוות ויכולות המפורטות להלן. דרישות: ניסיון מעל 4…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-ai/",
+"is_hot": true,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37314",
+"title": "מפתח.ת Full Stack מוביל.ה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: הובלת פיתוח ותחזוקה של מערכות ויישומים במתכונת Full Stack עבור שירותים דיגיטליים בשלטון המקומי, משלב ניתוח האפיון וגיבוש…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94-2/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37315",
+"title": "מפתח.ת Full Stack מוביל.ה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: תכנון, פיתוח ותחזוקה של פתרונות טכנולוגיים מקצה לקצה, כולל עבודה עם . NET Core, C #, JavaScript ו- Angular. העבודה כוללת פיתוח…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37222",
+"title": "מפתח.ת Full Stack",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack לארגון ביטחוני בירושלים תיאור משרה: במסגרת התפקיד, פיתוח צד שרת באמצעות ASP.NET Core ו- Web API לצד פיתוח צד לקוח ב- Angular העבודה כוללת שימוש ב- SQL Server, ‏ Docker,…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-7/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37340",
+"title": "מפתח.ת FS החלפה לחל\"ד",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת FS החלפה לחל\"ד במשרד ממשלתי בירושלים תיאור משרה: פיתוח לתחום בכיר יישומי הפצה, בצוות מודול תוצרים דרישות: פיתוח בסביבת . Net Core עם ניסיון של שלוש שנים לפחות פיתוח בסביבת Angular…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-fs-%d7%94%d7%97%d7%9c%d7%a4%d7%94-%d7%9c%d7%97%d7%9c%d7%93/",
+"is_hot": true,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37295",
+"title": "מפתח.ת  . NET ו- Angular",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת . NET ו- Angular לארגון ממשלתי בירושלים תיאור משרה: פיתוח מקצה לקצה של מערכות מידע מורכבות ומתקדמות עבור משרד החוץ, בטכנולוגיות . NET ו- Angular. עבודה בסביבה טכנולוגית מודרנית…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-net-%d7%95-angular-2/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "31072",
+"title": "מנהל.ת פיתוח",
+"location": "גוש דן, דרום, השפלה, השרון, ירושלים והסביבה",
+"excerpt": "לחברת Mertens- MalamTeam דרוש.ה מנהל.ת פיתוח לארגון מוביל באזור המרכז! תיאור התפקיד הנדרש: תוכניתן.ית בכיר.ה להובלת צוות פיתוח של כ 5 תוכניתנים. תפקיד מאתגר ומעניין הדורש ניהול צוות תוכניתנים הכולל הכוונה, בקרת קוד וכן…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a0%d7%94%d7%9c-%d7%aa-%d7%a4%d7%99%d7%aa%d7%95%d7%97/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "31070",
+"title": "מפתח.ת COBOL",
+"location": "גוש דן, דרום, השפלה, השרון, ירושלים והסביבה",
+"excerpt": "לחברת Mertens-MalamTeam דרוש.ה מפתח.ת COBOL לארגון מוביל. תיאור התפקיד: הצטרפות לצוות הפיתוח בארגון. העבודה משלבת תחזוקה של מערכות קיימות ופיתוחים עתידיים. דרישות התפקיד: ניסיון של שנתיים לפחות בפיתוח ב- Cobol. ניסיון…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-cobol-3/",
+"is_hot": true,
+"last_updated": null,
+"is_new": true
+}
+],
+"cached": true,
+"generated_at": "2026-09-15T12:52:59.147871+00:00"
+}

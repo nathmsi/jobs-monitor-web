@@ -1,8 +1,19 @@
 {
 "source": "malam",
-"count": 51,
-"new_count": 0,
+"count": 53,
+"new_count": 2,
 "jobs": [
+{
+"source": "malam",
+"external_id": "533785",
+"title": "FullStack Developer",
+"location": "ירושלים והסביבה",
+"excerpt": "אגף המחשוב ומערכות המידע בארגון ממשלתי בירושלים מזמין מפתחי/ות Full Stack מנוסים/ות להשתלב בצוותי פיתוח בפרויקטים מורכבים וחשובים. התפקיד כולל פיתוח עצמאי של רכיבי Client ו- Server, פיתוח שירותי API, אינטגרציה בין…",
+"url": "https://www.malamteam.com/משרה/fullstack-developer/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
 {
 "source": "malam",
 "external_id": "533433",
@@ -126,6 +137,39 @@
 },
 {
 "source": "malam",
+"external_id": "37595",
+"title": "מפתח.ת תוכנה",
+"location": "גוש דן",
+"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת תוכנה לארגון מוביל במרכז התפקיד כולל פיתוח אתרי אינטרנט חדשניים בסביבת Web מתקדמת, תוך אינטגרציה עם מערכות ליבה ומערכות צד שלישי. עבודה עם Next.js, React.js, React Native, C # ו-.…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-7/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "36853",
+"title": "מפתח.ת Android",
+"location": "גוש דן",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Android לארגון פיננסי בשפלה תיאור משרה: ענף פלטפורמת דיגיטל, היחידה עוסקת במערכות הערוצים הישירים של בנק דיסקונט, הערוצים בהם הלקוח עובד ישירות מול הבנק (שלא דרך סניף ופקיד) כגון:…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-android/",
+"is_hot": true,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "37585",
+"title": "מפתח.ת תוכנה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח ותחזוקה של מערכות חדשניות מבוססות AI, כחלק ממערכת חינוך המיועדת לתמיכה בתוכנית לימודים אישית. פיתוח Full Stack בסביבת Microservices, שילוב…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-4/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
 "external_id": "37544",
 "title": "מנהל.ת מערך טכנולוגי ו- Delivery",
 "location": "השפלה, ירושלים והסביבה",
@@ -175,17 +219,6 @@
 "location": "ירושלים והסביבה",
 "excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת Backend לארגון מוביל בירושלים תיאור במסגרת התפקיד פיתוח אפליקציות ושירותי צד שרת בסביבת ענן AWS, עבודה בארכיטקטורת Microservices ו- MVC ופיתוח בסביבות Cross Platform ו- Linux…",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-backend-2/",
-"is_hot": false,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37585",
-"title": "מפתח.ת תוכנה",
-"location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח ותחזוקה של מערכות חדשניות מבוססות AI, כחלק ממערכת חינוך המיועדת לתמיכה בתוכנית לימודים אישית. פיתוח Full Stack בסביבת Microservices, שילוב…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-4/",
 "is_hot": false,
 "last_updated": null,
 "is_new": false
@@ -357,22 +390,22 @@
 },
 {
 "source": "malam",
-"external_id": "37315",
+"external_id": "37314",
 "title": "מפתח.ת Full Stack מוביל.ה",
 "location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: תכנון, פיתוח ותחזוקה של פתרונות טכנולוגיים מקצה לקצה, כולל עבודה עם . NET Core, C #, JavaScript ו- Angular. העבודה כוללת פיתוח…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94/",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: הובלת פיתוח ותחזוקה של מערכות ויישומים במתכונת Full Stack עבור שירותים דיגיטליים בשלטון המקומי, משלב ניתוח האפיון וגיבוש…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94-2/",
 "is_hot": false,
 "last_updated": null,
 "is_new": false
 },
 {
 "source": "malam",
-"external_id": "37314",
+"external_id": "37315",
 "title": "מפתח.ת Full Stack מוביל.ה",
 "location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: הובלת פיתוח ותחזוקה של מערכות ויישומים במתכונת Full Stack עבור שירותים דיגיטליים בשלטון המקומי, משלב ניתוח האפיון וגיבוש…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94-2/",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: תכנון, פיתוח ותחזוקה של פתרונות טכנולוגיים מקצה לקצה, כולל עבודה עם . NET Core, C #, JavaScript ו- Angular. העבודה כוללת פיתוח…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94/",
 "is_hot": false,
 "last_updated": null,
 "is_new": false
@@ -440,17 +473,6 @@
 "excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת . NET ו- Angular לארגון ממשלתי בירושלים תיאור משרה: פיתוח מקצה לקצה של מערכות מידע מורכבות ומתקדמות עבור משרד החוץ, בטכנולוגיות . NET ו- Angular. עבודה בסביבה טכנולוגית מודרנית…",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-net-%d7%95-angular-2/",
 "is_hot": false,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "36853",
-"title": "מפתח.ת Android",
-"location": "גוש דן",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Android לארגון פיננסי בשפלה תיאור משרה: ענף פלטפורמת דיגיטל, היחידה עוסקת במערכות הערוצים הישירים של בנק דיסקונט, הערוצים בהם הלקוח עובד ישירות מול הבנק (שלא דרך סניף ופקיד) כגון:…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-android/",
-"is_hot": true,
 "last_updated": null,
 "is_new": false
 },
@@ -566,5 +588,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T13:25:58.502610+00:00"
+"generated_at": "2026-09-15T18:04:53.506495+00:00"
 }

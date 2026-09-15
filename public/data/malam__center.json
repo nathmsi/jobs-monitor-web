@@ -1,7 +1,7 @@
 {
 "source": "malam",
-"count": 28,
-"new_count": 0,
+"count": 29,
+"new_count": 1,
 "jobs": [
 {
 "source": "malam",
@@ -99,6 +99,28 @@
 "excerpt": "אנחנו מגייסים מפתח/ת Angular מוביל/ה מנוסה להצטרפות לצוות הפיתוח של InfraEdge מטעם מלם תים, כחלק מצוות SCRUM ובשיתוף פעולה עם גורמים מקצועיים ו־ Product. התפקיד כולל פיתוח מערכות מורכבות בטכנולוגיות Angular מתקדמות,…",
 "url": "https://www.malamteam.com/משרה/angular-developer/",
 "is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "37595",
+"title": "מפתח.ת תוכנה",
+"location": "גוש דן",
+"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת תוכנה לארגון מוביל במרכז התפקיד כולל פיתוח אתרי אינטרנט חדשניים בסביבת Web מתקדמת, תוך אינטגרציה עם מערכות ליבה ומערכות צד שלישי. עבודה עם Next.js, React.js, React Native, C # ו-.…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-7/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "36853",
+"title": "מפתח.ת Android",
+"location": "גוש דן",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Android לארגון פיננסי בשפלה תיאור משרה: ענף פלטפורמת דיגיטל, היחידה עוסקת במערכות הערוצים הישירים של בנק דיסקונט, הערוצים בהם הלקוח עובד ישירות מול הבנק (שלא דרך סניף ופקיד) כגון:…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-android/",
+"is_hot": true,
 "last_updated": null,
 "is_new": false
 },
@@ -214,17 +236,6 @@
 },
 {
 "source": "malam",
-"external_id": "36853",
-"title": "מפתח.ת Android",
-"location": "גוש דן",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Android לארגון פיננסי בשפלה תיאור משרה: ענף פלטפורמת דיגיטל, היחידה עוסקת במערכות הערוצים הישירים של בנק דיסקונט, הערוצים בהם הלקוח עובד ישירות מול הבנק (שלא דרך סניף ופקיד) כגון:…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-android/",
-"is_hot": true,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "malam",
 "external_id": "37079",
 "title": "RPA Developer",
 "location": "גוש דן",
@@ -313,5 +324,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T13:25:58.501416+00:00"
+"generated_at": "2026-09-15T18:04:53.504617+00:00"
 }

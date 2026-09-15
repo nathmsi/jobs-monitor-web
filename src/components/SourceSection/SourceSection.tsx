@@ -18,7 +18,8 @@ const SKELETON_COUNT = 6;
 export function SourceSection({ source, query }: Props) {
   const { t, i18n } = useTranslation();
   const { data, isFetching, isError, error, refetch, dataUpdatedAt } = query;
-  const [open, setOpen] = useState(true);
+  // Collapsed by default: show every source box at a glance, expand on demand.
+  const [open, setOpen] = useState(false);
 
   const showSkeleton = isFetching && !data;
   const bodyId = `source-body-${source.key}`;

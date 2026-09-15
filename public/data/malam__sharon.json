@@ -1,0 +1,152 @@
+{
+"source": "malam",
+"count": 13,
+"new_count": 0,
+"jobs": [
+{
+"source": "malam",
+"external_id": "533433",
+"title": "Integration Developer",
+"location": "גוש דן, השפלה, השרון",
+"excerpt": "אם אתם חיים ונושמים אוטומציה, אינטגרציות וטכנולוגיות מתקדמות - זו הזדמנות להצטרף לצוות חדשני ולהשפיע על תהליכים עסקיים משמעותיים בארגון גלובלי. במסגרת התפקיד תעסקו בפיתוח, תחזוקה ותמיכה באינטגרציות ותהליכי אוטומציה…",
+"url": "https://www.malamteam.com/משרה/integration-automation-developer/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "533748",
+"title": "Magic Developer",
+"location": "גוש דן, השפלה, השרון",
+"excerpt": "קבוצת Malam Team מחפשת מפתח/ת Magic xpa ו- Angular שיצטרף לצוות הפיתוח שלנו. אנו מציעים מגוון פתרונות פיננסיים המאפשרים אינטגרציה מלאה עם מערכות ERP ומערכות הליבה של הארגון. העבודה היא כחלק מצוות הפיתוח, לפתח מערכות…",
+"url": "https://www.malamteam.com/משרה/magic-developer-2/",
+"is_hot": true,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "533761",
+"title": "Angular Developer",
+"location": "גוש דן, השפלה, השרון",
+"excerpt": "קבוצת Malam Team מחפשת מפתח/ת Angular שיצטרף לצוות הפיתוח שלנו. אנו מציעים מגוון פתרונות פיננסיים המאפשרים אינטגרציה מלאה עם מערכות ERP ומערכות הליבה של הארגון. העבודה היא כחלק מצוות הפיתוח, לפתח מערכות מאפס ובתחזוקה.…",
+"url": "https://www.malamteam.com/משרה/angular-developer-2/",
+"is_hot": true,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "533732",
+"title": ". NET Developer",
+"location": "גוש דן, השפלה, השרון",
+"excerpt": "אנחנו מחפשים . NET Developer תותח/ית, מנוסה ומקצועי/ת להובלת משימות פיתוח מורכבות מקצה לקצה. בתפקיד זה תהיה לך השפעה ישירה על ארכיטקטורת התוכנה, עיצוב המערכות ופתרון אתגרים טכנולוגיים מרתקים בסביבה עתירת ביצועים ( High…",
+"url": "https://www.malamteam.com/משרה/net-developer/",
+"is_hot": true,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "533745",
+"title": "Python / Django Developer",
+"location": "גוש דן, השפלה, השרון",
+"excerpt": "קבוצת Malam Team מחפשים מתכנת/ת בכיר/ה למתן שירותי פיתוח, תחזוקה ותמיכה במערכות מידע ארגוניות ללקוח היושב ברמת גן. במסגרת התפקיד: פיתוח מערכות ווב חדשות ופיצ'רים במערכות קיימות בסביבת Python / Django, Vue.js ו- Flutter.…",
+"url": "https://www.malamteam.com/משרה/python-django-developer/",
+"is_hot": true,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "533401",
+"title": "AI Integration Architect",
+"location": "גוש דן, השפלה, השרון",
+"excerpt": "עבור חברה אמריקאית דרוש/ה ארכיטקט/ית בכיר/ה לתפקיד אסטרטגי עבור לקוח בינלאומי. מדובר בתפקיד ליבה בארגון Enterprise האחראי על הובלת ארכיטקטורת ה־ AI והאינטגרציה הארגונית מקצה לקצה, כולל הגדרת השכבה שמנהלת את אופן הפעולה…",
+"url": "https://www.malamteam.com/משרה/integration-automation-ai-architect/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "37586",
+"title": "מפתח.ת תוכנה",
+"location": "גוש דן, השפלה, השרון",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון ממשלתי בתל אביב! תיאור משרה: התפקיד כולל פיתוח וכתיבת קוד Hands-On במערכות מידע, אתרי אינטרנט, Intranet ומערכות Mobile, בדגש על טכנולוגיות Web ו-. NET. בנוסף, התפקיד…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-6/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "37525",
+"title": "תוכניתן.ית אינטגרציה",
+"location": "גוש דן, השפלה, השרון",
+"excerpt": "חברת Mertens - MalamTeam מגייסת תוכניתן.ית אינטגרציה לארגון גדול בלוד! תיאור משרה: עבודה בצוות אינטגרציה, מול גורמי תשתיות, צוותים טכנולוגיים ומנהלי מערכות. עבודה עם ממשקים בסביבת BizTalk 20162020 , MuleSoft עבודה עם…",
+"url": "https://www.malamteam.com/משרה/%d7%aa%d7%95%d7%9b%d7%a0%d7%99%d7%aa%d7%9f-%d7%99%d7%aa-%d7%90%d7%99%d7%a0%d7%98%d7%92%d7%a8%d7%a6%d7%99%d7%94/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "37456",
+"title": "מפתח.ת Full Stack",
+"location": "גוש דן, השפלה, השרון",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack לארגון מוביל ברמת גן. תיאור משרה: פיתוח אפליקציות ותהליכים דיגיטליים בעבודה עם טכנולוגיות מגוונות וחדשות הכוללות: תכנון, פיתוח ותחזוקה של אפליקציות web ו- mobile מדרגיות…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-3/",
+"is_hot": true,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "37174",
+"title": "מפתח.ת COBOL",
+"location": "גוש דן, השפלה, השרון",
+"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת Cobol לארגון מוביל בפתח תקווה. תיאור במסגרת התפקיד פיתוח תוכנה ב־ COBOL על גבי מחשבי AS 400, עבודה עם ממשקים חיצוניים ועבודה בסביבת Agile בקצבים מהירים. עבודה עם Cobol, AS 400, SQL,…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-cobol/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "33947",
+"title": "משרה כללית טכנולוגית",
+"location": "גוש דן, דרום, השפלה, השרון, חיפה והקריות",
+"excerpt": "מכירים חברים שמחפשים את הצעד הבא בקריירה? זה הזמן לעזור להם! אנחנו ב־ Mertens מגייסים אנשי טכנולוגיה מנוסים להשתלבות במשרות נחשקות אצל הלקוחות הגדולים, המתקדמים והמובילים במשק- גופי ממשלה, ארגונים פיננסיים, וחברות…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a9%d7%a8%d7%94-%d7%9b%d7%9c%d7%9c%d7%99%d7%aa-%d7%98%d7%9b%d7%a0%d7%95%d7%9c%d7%95%d7%92%d7%99%d7%aa/",
+"is_hot": true,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "31072",
+"title": "מנהל.ת פיתוח",
+"location": "גוש דן, דרום, השפלה, השרון, ירושלים והסביבה",
+"excerpt": "לחברת Mertens- MalamTeam דרוש.ה מנהל.ת פיתוח לארגון מוביל באזור המרכז! תיאור התפקיד הנדרש: תוכניתן.ית בכיר.ה להובלת צוות פיתוח של כ 5 תוכניתנים. תפקיד מאתגר ומעניין הדורש ניהול צוות תוכניתנים הכולל הכוונה, בקרת קוד וכן…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a0%d7%94%d7%9c-%d7%aa-%d7%a4%d7%99%d7%aa%d7%95%d7%97/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "31070",
+"title": "מפתח.ת COBOL",
+"location": "גוש דן, דרום, השפלה, השרון, ירושלים והסביבה",
+"excerpt": "לחברת Mertens-MalamTeam דרוש.ה מפתח.ת COBOL לארגון מוביל. תיאור התפקיד: הצטרפות לצוות הפיתוח בארגון. העבודה משלבת תחזוקה של מערכות קיימות ופיתוחים עתידיים. דרישות התפקיד: ניסיון של שנתיים לפחות בפיתוח ב- Cobol. ניסיון…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-cobol-3/",
+"is_hot": true,
+"last_updated": null,
+"is_new": false
+}
+],
+"cached": true,
+"generated_at": "2026-09-15T13:17:06.522272+00:00"
+}

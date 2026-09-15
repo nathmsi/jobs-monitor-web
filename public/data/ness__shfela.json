@@ -1,0 +1,42 @@
+{
+"source": "ness",
+"count": 3,
+"new_count": 0,
+"jobs": [
+{
+"source": "ness",
+"external_id": "43035",
+"title": "Full Stack Developer",
+"location": "אזור השפלה",
+"excerpt": "ל NESS דרוש/ה Full Stack Developer התפקיד כולל הובלת הפרויקט של פיתוח מערכת ב.NET ופיתוח תשתיות משרה מלאה בלוד. דרישות: ניסיון של 3 שנים פיתוח ב – NET. /NET CORE. - חובה ניסיון בבניית WEB API ושימוש ב REST - חובה ניסיון…",
+"url": "https://www.ness-tech.co.il/careers/",
+"is_hot": true,
+"last_updated": "23/07/2026",
+"is_new": false
+},
+{
+"source": "ness",
+"external_id": "43217",
+"title": "מפתח/ת COBOL",
+"location": "אזור השפלה",
+"excerpt": "ל NESS דרוש/ה מפתח/ת COBOL. התפקיד כולל פיתוח, תחזוקה ושדרוג של מערכות ליבה פיננסיות בסביבת IBM Mainframe בשפת COBOL: כתיבת קוד, בדיקות וטיפול בתקלות עד לזיהוי שורש הבעיה. עבודה שוטפת מול מנתחי מערכות וצוותי בדיקות, מול…",
+"url": "https://www.ness-tech.co.il/careers/",
+"is_hot": false,
+"last_updated": "20/08/2026",
+"is_new": false
+},
+{
+"source": "ness",
+"external_id": "43315",
+"title": "מפתח/ת Python",
+"location": "אזור השפלה",
+"excerpt": "לנס (NESS) דרוש/ה מפתח/ת Python. במסגרת התפקיד: פיתוח ותחזוקה של מערכות ותהליכים באמצעות Python ו-JavaScript, עבודה על פיתוחים חדשים ושיפור מערכות קיימות, פתרון תקלות ועוד. משרה מלאה וזמנית, בירושלים. דרישות התפקיד:…",
+"url": "https://www.ness-tech.co.il/careers/",
+"is_hot": false,
+"last_updated": "09/09/2026",
+"is_new": false
+}
+],
+"cached": true,
+"generated_at": "2026-09-15T13:16:58.874571+00:00"
+}

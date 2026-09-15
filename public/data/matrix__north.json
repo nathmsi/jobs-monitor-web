@@ -1,0 +1,31 @@
+{
+"source": "matrix",
+"count": 2,
+"new_count": 0,
+"jobs": [
+{
+"source": "matrix",
+"external_id": "75742",
+"title": "למטריקס (צפון) דרוש/ה מפתח/ת C# בכלי ADO/TFS",
+"location": "צפון",
+"excerpt": "אחריות על תחזוקה שוטפת וניהול של סביבת ה- ADO (Azure DevOps / TFS), לצד פיתוח וכתיבת אוטומציה וסקריפטים לתמיכה בתהליכי בנייה של מוצרי החברה. העבודה מתבצעת כחלק מצוות תוכנה של כ-6–8 מהנדסים, בסביבה טכנולוגית מתקדמת…",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9c%d7%9e%d7%98%d7%a8%d7%99%d7%a7%d7%a1-%d7%a6%d7%a4%d7%95%d7%9f-%d7%93%d7%a8%d7%95%d7%a9%d7%94-%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-c-%d7%91%d7%9b%d7%9c%d7%99-adotfs/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "77472",
+"title": "למטריקס (צפון) דרוש/ה מהנדס/ת לפיתוח מערכות",
+"location": "צפון",
+"excerpt": "פיתוח מערכות מבצעיות עתירות אלגוריתמיקה. התפקיד כולל גיבוש ארכיטקטורת תוכנה, השתתפות בכל שלבי פיתוח המוצר והשתתפות בניסויים דרישות התפקיד:",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9c%d7%9e%d7%98%d7%a8%d7%99%d7%a7%d7%a1-%d7%a6%d7%a4%d7%95%d7%9f-%d7%93%d7%a8%d7%95%d7%a9%d7%94-%d7%9e%d7%94%d7%a0%d7%93%d7%a1%d7%aa-%d7%9c%d7%a4%d7%99%d7%aa%d7%95%d7%97-%d7%9e%d7%a2%d7%a8%d7%9b/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+}
+],
+"cached": true,
+"generated_at": "2026-09-15T13:17:00.488898+00:00"
+}

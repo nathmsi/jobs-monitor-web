@@ -1,6 +1,6 @@
 {
 "source": "malam",
-"count": 28,
+"count": 23,
 "new_count": 0,
 "jobs": [
 {
@@ -82,33 +82,11 @@
 },
 {
 "source": "malam",
-"external_id": "533234",
-"title": "Automation Developer",
-"location": "גוש דן",
-"excerpt": "אנחנו מגייסים מפתח אוטומציה מנוסה להצטרפות לצוות ה- GIS בפעילות אינפראדג' מטעם מלם תים, כחלק מצוות SCRUM ובשיתוף פעולה עם ה- Product Owner. התפקיד כולל עבודה בסביבה טכנולוגית מורכבת ודורש עצמאות, חשיבה רחבה, יכולת עבודה…",
-"url": "https://www.malamteam.com/משרה/automation-developer/",
-"is_hot": false,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "533313",
-"title": "Angular Developer",
-"location": "גוש דן",
-"excerpt": "אנחנו מגייסים מפתח/ת Angular מוביל/ה מנוסה להצטרפות לצוות הפיתוח של InfraEdge מטעם מלם תים, כחלק מצוות SCRUM ובשיתוף פעולה עם גורמים מקצועיים ו־ Product. התפקיד כולל פיתוח מערכות מורכבות בטכנולוגיות Angular מתקדמות,…",
-"url": "https://www.malamteam.com/משרה/angular-developer/",
-"is_hot": false,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37594",
-"title": "מפתח/ת Splunk ו- Monitoring",
-"location": "Devops, פיתוח, גוש דן",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח Splunk ו- Monitoring לארגון ציבורי בתל אביב תיאור משרה: דרו.ה מפתח.ת Splunk ו- Monitoring לתפקיד Hands-On הכולל פיתוח, כתיבת קוד ועבודה בעולמות הניטור וה- Observability. התפקיד כולל…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-splunk-%d7%95-monitoring/",
+"external_id": "37544",
+"title": "מנהל.ת מערך טכנולוגי ו- Delivery",
+"location": "השפלה, ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מנהל.ת טכנולוגיות ו- Delivery לארגון ציבורי בירושלים תיאור משרה: דרוש.ה מנהל.ת מערך טכנולוגי ו- Delivery לתפקיד בכיר הכולל הובלת תוכניות טכנולוגיות מורכבות ורחבות היקף, טרנספורמציה…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a0%d7%94%d7%9c-%d7%aa-%d7%9e%d7%a2%d7%a8%d7%9a-%d7%98%d7%9b%d7%a0%d7%95%d7%9c%d7%95%d7%92%d7%99-%d7%95-delivery/",
 "is_hot": true,
 "last_updated": null,
 "is_new": false
@@ -126,11 +104,11 @@
 },
 {
 "source": "malam",
-"external_id": "37193",
-"title": "RPA מפתח.ת",
-"location": "גוש דן",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת RPA לארגון מוביל באזור גוש דן! תיאור משרה: צוות העוסק בפיתוח והטמעה של פתרונות אוטומציה מתקדמים. במסגרת התפקיד נדרש פיתוח תהליכי RPA מורכבים באמצעות UiPath, החל משלב האפיון ועד…",
-"url": "https://www.malamteam.com/משרה/rpa-%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa/",
+"external_id": "37540",
+"title": "Fullstack Developer",
+"location": "השפלה",
+"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת Full Stack לארגון מוביל בראשון לציון תיאור התפקיד כולל פיתוח Full Stack, קריאה, הבנה וכתיבה של אפיונים עסקיים וטכניים, ניתוח ופתרון בעיות וביצוע בדיקות תוך יכולת בקרה עצמית גבוהה…",
+"url": "https://www.malamteam.com/משרה/fullstack-developer-2/",
 "is_hot": false,
 "last_updated": null,
 "is_new": false
@@ -148,34 +126,23 @@
 },
 {
 "source": "malam",
-"external_id": "37530",
-"title": "מפתח.ת FullStack- החלפה לחל\"ד",
-"location": "גוש דן",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת FullStack לארגון מוביל באזור גוש דן! תיאור משרה: התפקיד כולל פיתוח מערכות Web מורכבות ואתרים רספונסיביים מקצה לקצה, בסביבת . NET Core ו- React, פיתוח ממשקי משתמש מתקדמים לצד שירותי…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-fullstack-%d7%94%d7%97%d7%9c%d7%a4%d7%94-%d7%9c%d7%97%d7%9c%d7%93/",
+"external_id": "37361",
+"title": "תכניתן.ית COBOL",
+"location": "השפלה, ירושלים והסביבה",
+"excerpt": "חברת Mertens Malam Team מגייסת תכניתן.ית Cobol לארגון פיננסי במרכז תיאור במסגרת התפקיד פיתוח, תחזוקה ושדרוג של מערכות ליבה פיננסיות בסביבת IBM Mainframe, כולל כתיבת קוד, ביצוע בדיקות וטיפול בתקלות עד לזיהוי שורש הבעיה.…",
+"url": "https://www.malamteam.com/משרה/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa%d7%9f-%d7%99%d7%aa-cobol/",
 "is_hot": false,
 "last_updated": null,
 "is_new": false
 },
 {
 "source": "malam",
-"external_id": "37164",
-"title": "מפתח.ת Backend",
-"location": "גוש דן",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Backend לארגון מוביל בגוש דן תיאור משרה: תכנון ופיתוח תוכנה בהתאם לסטנדרטים, לארכיטקטורה ולדרישות שהוגדרו. תכנון ובניית פתרונות יצירתיים, סקיילביליים ומאובטחים. עבודה בשיתוף פעולה…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-backend/",
-"is_hot": false,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37520",
-"title": "מפתח.ת מערכות אינטגרציה",
-"location": "גוש דן",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת מערכות אינטגרציה מרובות ממשקים לארגון מוביל בגוש דן תיאור משרה: ליווי פרויקטי אינטגרציה מקצה לקצה – משלב ההתנעה, דרך הגדרת הארכיטקטורה והבנת האפיונים ועד לפיתוח ולהטמעה. פיתוח…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%9e%d7%a2%d7%a8%d7%9b%d7%95%d7%aa-%d7%90%d7%99%d7%a0%d7%98%d7%92%d7%a8%d7%a6%d7%99%d7%94/",
-"is_hot": false,
+"external_id": "37445",
+"title": "מפתח.ת תוכנה במערכות WEB",
+"location": "השפלה, ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה במערכות WEB לארגון ציבורי בירושלים תיאור משרה: מפתח בכיר במערכות WEB - מפתח בכיר למערכת נועם מערכת נועם הינה מערכת במג'יק שעוברת לענן . המערכת משמשת לניהול ועדות רכישות במשרד…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9e%d7%a2%d7%a8%d7%9b%d7%95%d7%aa-web/",
+"is_hot": true,
 "last_updated": null,
 "is_new": false
 },
@@ -187,6 +154,17 @@
 "excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack לארגון מוביל ברמת גן. תיאור משרה: פיתוח אפליקציות ותהליכים דיגיטליים בעבודה עם טכנולוגיות מגוונות וחדשות הכוללות: תכנון, פיתוח ותחזוקה של אפליקציות web ו- mobile מדרגיות…",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-3/",
 "is_hot": true,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "37436",
+"title": "מפתח.ת תוכנה",
+"location": "השפלה",
+"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת Full Stack לארגון מוביל בלוד תיאור במסגרת התפקיד פיתוח ותחזוקה של מערכות מורכבות, תוך הבנת מערכות קיימות וניתוח תהליכים עסקיים מורכבים. עבודה עם Angular ו- C # בסביבת Enterprise…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94/",
+"is_hot": false,
 "last_updated": null,
 "is_new": false
 },
@@ -214,33 +192,11 @@
 },
 {
 "source": "malam",
-"external_id": "36853",
-"title": "מפתח.ת Android",
-"location": "גוש דן",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Android לארגון פיננסי בשפלה תיאור משרה: ענף פלטפורמת דיגיטל, היחידה עוסקת במערכות הערוצים הישירים של בנק דיסקונט, הערוצים בהם הלקוח עובד ישירות מול הבנק (שלא דרך סניף ופקיד) כגון:…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-android/",
-"is_hot": true,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37079",
-"title": "RPA Developer",
-"location": "גוש דן",
-"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת RPA לארגון מוביל במרכז במסגרת התפקיד פיתוח והטמעה של פתרונות RPA לאוטומציה של תהליכים עסקיים ותפעוליים, עבודה על פרויקטים חדשניים ומורכבים, אפיון וניתוח תהליכים עסקיים, פיתוח,…",
-"url": "https://www.malamteam.com/משרה/rpa-developer/",
-"is_hot": false,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "36747",
-"title": "מפתח.ת RPG",
-"location": "גוש דן",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת RPG לארגון מוביל בגוש דן תיאור משרה: מפתח.ת RPG לצוות דינאמי וחדשני שמשלב יציבות של מערכות קריטיות עם חשיבה קדימה, טכנולוגיה וכלים חדשניים. פיתוח בשפת RPG ( RPGLE / Free Format )…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-rpg/",
+"external_id": "34739",
+"title": "מפתח.ת FS",
+"location": "השפלה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת FS למשרד ממשלתי באזור השפלה תיאור משרה: במסגרת התפקיד תהיו אחראים על פיתוח מערכות הליבה בצד השרת והלקוח, כתיבת יישומים איכותיים ובעלי ביצועים גבוהים ב- Java וב- Spring Boot, ותכנון…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-fs/",
 "is_hot": false,
 "last_updated": null,
 "is_new": false
@@ -258,22 +214,11 @@
 },
 {
 "source": "malam",
-"external_id": "36793",
-"title": "מפתח.ת ABAP",
-"location": "גוש דן",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת ABAP לארגון במרכז תיאור משרה: מפתח.ת ABAP לארגון בטחוני במרכז הארץ דרישות: נדרש ניסיון של 3 שנות ניסיון ב- ABAP ניסיון משמעותי ב־ SAP S /4 HANA ניסיון בפיתוח CDS Views ניסיון…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-abap/",
-"is_hot": true,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "36566",
-"title": "מפתח.ת מערכות COBOL",
-"location": "גוש דן",
-"excerpt": "חברת Mertens - Malam Team מגייסת מפתח.ת מערכות Cobol לארגון מוביל במרכז במסגרת התפקיד פיתוח ותחזוקה של תוכניות, שירותים, ממשקים ותהליכים פיננסיים כחלק מצוות פיתוח קופה וגבייה באגף מערכות מידע עבודה עם Cobol, AS 400,…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%9e%d7%a2%d7%a8%d7%9b%d7%95%d7%aa-cobol/",
+"external_id": "36888",
+"title": "מפתח.ת MF",
+"location": "השפלה",
+"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת MF לארגון פיננסי בלוד. תיאור במסגרת התפקיד פיתוח ותחזוקה של מערכות ליבה מרכזיות בסביבת Mainframe, עבודה בפרויקטים מרכזיים ובמערכות מרובות ממשקים תוך שיתוף פעולה עם צוותי פיתוח…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-mf/",
 "is_hot": false,
 "last_updated": null,
 "is_new": false
@@ -313,5 +258,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T13:17:06.521973+00:00"
+"generated_at": "2026-09-15T13:17:06.522517+00:00"
 }

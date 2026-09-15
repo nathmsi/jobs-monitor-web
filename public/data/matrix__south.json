@@ -1,0 +1,31 @@
+{
+"source": "matrix",
+"count": 2,
+"new_count": 0,
+"jobs": [
+{
+"source": "matrix",
+"external_id": "78144",
+"title": "סטודנט/ית מדמ”ח בבאר שבע",
+"location": "דרום",
+"excerpt": "לחברה מוצר גלובלית עם אתר גדול בבאר שבע, דרוש/ה סטודנט/ית מצטיינים/ות לתואר ראשון או שני, להשתלבות בתפקיד מאתגר ומשמעותי בעולמות הקוד, מחקר, הדאטה והבינה המלאכותית. הזדמנות להשתלב בחברה ולעבוד על פרויקטים חדשניים…",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%a1%d7%98%d7%95%d7%93%d7%a0%d7%98%d7%99%d7%aa-%d7%9e%d7%93%d7%9e%d7%97-%d7%91%d7%91%d7%90%d7%a8-%d7%a9%d7%91%d7%a2/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78862",
+"title": "מפתח/ת תוכנה למשרה ממשלתית בדימונה",
+"location": "דרום",
+"excerpt": "משרד מוביל בדימונה מגייס/ת מפתח/ת סביבה פתוחה ברמה ג' להצטרפות לצוות פיתוח דינמי ומאתגר שליטה ב-Angular 19 ניסיון עשיר ב-.NET Core / .NET Framework ו-C# Web API ניסיון בכתיבת פרוצדורות מורכבות ב-SQL Server עבודה עם…",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%9c%d7%9e%d7%a9%d7%a8%d7%94-%d7%9e%d7%9e%d7%a9%d7%9c%d7%aa%d7%99%d7%aa-%d7%91%d7%93%d7%99%d7%9e%d7%95%d7%a0%d7%94/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+}
+],
+"cached": true,
+"generated_at": "2026-09-15T13:17:00.488794+00:00"
+}

@@ -1,7 +1,7 @@
 {
 "source": "ness",
 "count": 3,
-"new_count": 3,
+"new_count": 0,
 "jobs": [
 {
 "source": "ness",
@@ -12,7 +12,7 @@
 "url": "https://www.ness-tech.co.il/careers/",
 "is_hot": false,
 "last_updated": "15/09/2026",
-"is_new": true
+"is_new": false
 },
 {
 "source": "ness",
@@ -23,7 +23,7 @@
 "url": "https://www.ness-tech.co.il/careers/",
 "is_hot": false,
 "last_updated": "07/09/2026",
-"is_new": true
+"is_new": false
 },
 {
 "source": "ness",
@@ -34,9 +34,9 @@
 "url": "https://www.ness-tech.co.il/careers/",
 "is_hot": false,
 "last_updated": "03/09/2026",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T12:52:44.570448+00:00"
+"generated_at": "2026-09-15T13:03:53.172920+00:00"
 }

@@ -1,7 +1,7 @@
 {
 "source": "sqlink",
 "count": 6,
-"new_count": 3,
+"new_count": 0,
 "jobs": [
 {
 "source": "sqlink",
@@ -12,7 +12,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/ארכיטקט-תוכנה/ארכיטקטית-פתרונות-ענן/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -23,7 +23,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/מפתחת-full-stack-1/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -34,7 +34,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-crm/מפתחת-sap-s4hana/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -71,5 +71,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T12:52:52.213348+00:00"
+"generated_at": "2026-09-15T13:03:56.189801+00:00"
 }

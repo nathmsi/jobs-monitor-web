@@ -1,7 +1,7 @@
 {
 "source": "malam",
 "count": 20,
-"new_count": 20,
+"new_count": 0,
 "jobs": [
 {
 "source": "malam",
@@ -12,7 +12,7 @@
 "url": "https://www.malamteam.com/משרה/full-stack-developer-ai-assisted-development/",
 "is_hot": true,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -23,7 +23,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a0%d7%94%d7%9c-%d7%aa-%d7%9e%d7%a2%d7%a8%d7%9a-%d7%98%d7%9b%d7%a0%d7%95%d7%9c%d7%95%d7%92%d7%99-%d7%95-delivery/",
 "is_hot": true,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -34,7 +34,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-5/",
 "is_hot": true,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -45,7 +45,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-backend-2/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -56,7 +56,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-4/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -67,7 +67,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9b%d7%99%d7%a8-%d7%94/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -78,7 +78,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-2/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -89,7 +89,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-winforms/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -100,7 +100,7 @@
 "url": "https://www.malamteam.com/משרה/full-stack-developer/",
 "is_hot": true,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -111,7 +111,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa%d7%9f-%d7%99%d7%aa-cobol/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -122,7 +122,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-3/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -133,7 +133,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9e%d7%a2%d7%a8%d7%9b%d7%95%d7%aa-web/",
 "is_hot": true,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -144,7 +144,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-ai/",
 "is_hot": true,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -155,7 +155,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94-2/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -166,7 +166,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -177,7 +177,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-7/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -188,7 +188,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-fs-%d7%94%d7%97%d7%9c%d7%a4%d7%94-%d7%9c%d7%97%d7%9c%d7%93/",
 "is_hot": true,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -199,7 +199,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-net-%d7%95-angular-2/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -210,7 +210,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a0%d7%94%d7%9c-%d7%aa-%d7%a4%d7%99%d7%aa%d7%95%d7%97/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -221,9 +221,9 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-cobol-3/",
 "is_hot": true,
 "last_updated": null,
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T12:52:59.147871+00:00"
+"generated_at": "2026-09-15T13:04:03.008692+00:00"
 }

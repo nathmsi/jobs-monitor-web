@@ -1,7 +1,7 @@
 {
 "source": "matrix",
 "count": 68,
-"new_count": 11,
+"new_count": 0,
 "jobs": [
 {
 "source": "matrix",
@@ -34,7 +34,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9c%d7%9e%d7%98%d7%a8%d7%99%d7%a7%d7%a1-%d7%a6%d7%a4%d7%95%d7%9f-%d7%93%d7%a8%d7%95%d7%a9%d7%94-%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-c-%d7%91%d7%9b%d7%9c%d7%99-adotfs/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -56,7 +56,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-rpa2/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -89,7 +89,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9c%d7%9e%d7%98%d7%a8%d7%99%d7%a7%d7%a1-%d7%a6%d7%a4%d7%95%d7%9f-%d7%93%d7%a8%d7%95%d7%a9%d7%94-%d7%9e%d7%94%d7%a0%d7%93%d7%a1%d7%aa-%d7%9c%d7%a4%d7%99%d7%aa%d7%95%d7%97-%d7%9e%d7%a2%d7%a8%d7%9b/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -155,7 +155,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%94%d7%a0%d7%93%d7%a1%d7%aa-devops-sre/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -177,7 +177,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%a1%d7%98%d7%95%d7%93%d7%a0%d7%98%d7%99%d7%aa-%d7%9e%d7%93%d7%9e%d7%97-%d7%91%d7%91%d7%90%d7%a8-%d7%a9%d7%91%d7%a2/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -254,7 +254,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/linux-automation-developer/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -287,7 +287,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%aa%d7%95%d7%9b%d7%a0%d7%99%d7%aa%d7%9f%d7%a0%d7%99%d7%aa-cobol-%d7%a2%d7%9d-%d7%a9%d7%a0%d7%aa%d7%99%d7%99%d7%9d-%d7%a0%d7%99%d7%a1%d7%95%d7%9f/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -331,7 +331,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%a8%d7%a6-%d7%a4%d7%99%d7%aa%d7%95%d7%97-net-%d7%95-react-%d7%9e%d7%a0%d7%95%d7%a1%d7%94/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -518,7 +518,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa%d7%9f-mf-%d7%9e%d7%a0%d7%95%d7%a1%d7%94-techlead/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -529,7 +529,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%9c%d7%9e%d7%a9%d7%a8%d7%94-%d7%9e%d7%9e%d7%a9%d7%9c%d7%aa%d7%99%d7%aa-%d7%91%d7%93%d7%99%d7%9e%d7%95%d7%a0%d7%94/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -551,7 +551,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a0%d7%94%d7%9c%d7%aa-%d7%a4%d7%99%d7%aa%d7%95%d7%97-%d7%9c%d7%90%d7%a8%d7%92%d7%95%d7%9f-%d7%a4%d7%99%d7%a0%d7%a0%d7%a1%d7%99-%d7%9e%d7%95%d7%91%d7%99%d7%9c/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -753,5 +753,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T12:52:51.589057+00:00"
+"generated_at": "2026-09-15T13:03:55.489683+00:00"
 }

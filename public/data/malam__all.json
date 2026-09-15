@@ -1,7 +1,7 @@
 {
 "source": "malam",
 "count": 51,
-"new_count": 5,
+"new_count": 0,
 "jobs": [
 {
 "source": "malam",
@@ -23,7 +23,7 @@
 "url": "https://www.malamteam.com/משרה/backend-cloud-developer/",
 "is_hot": true,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -243,7 +243,7 @@
 "url": "https://www.malamteam.com/משרה/fullstack-developer-2/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -386,7 +386,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -463,7 +463,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-fs/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -518,7 +518,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-mf/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -566,5 +566,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T12:53:08.117576+00:00"
+"generated_at": "2026-09-15T13:04:11.983672+00:00"
 }

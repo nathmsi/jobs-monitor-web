@@ -1,7 +1,7 @@
 {
 "source": "sqlink",
 "count": 18,
-"new_count": 9,
+"new_count": 0,
 "jobs": [
 {
 "source": "sqlink",
@@ -12,7 +12,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/מתכנת-backend/מפתחת-backend/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -23,7 +23,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/רצ-פיתוח/senior-product-manager/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -34,7 +34,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-net/מפתחת-תוכנה-desktop/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -45,7 +45,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-אינטגרציה/מפתחת-אינטגרציה/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -56,7 +56,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/מפתחת-full-stack-1/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -67,7 +67,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-net/מפתח-ומנתח-מערכות/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -78,7 +78,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/android-developer/מפתחת-android/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -89,7 +89,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-אינטגרציה/מפתח-מערכות-אינטגרציה-מרובות-ממשקים/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -100,7 +100,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/מפתחת-full-stack/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -203,5 +203,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T12:52:52.848424+00:00"
+"generated_at": "2026-09-15T13:03:56.899822+00:00"
 }

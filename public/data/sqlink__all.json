@@ -1,7 +1,7 @@
 {
 "source": "sqlink",
 "count": 40,
-"new_count": 8,
+"new_count": 0,
 "jobs": [
 {
 "source": "sqlink",
@@ -12,7 +12,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/מהנדסת-rtem/מפתחת-תשתיות-למערכות-embedded-hard-real-time/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -45,7 +45,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/front-end/מפתחת-frontend-vue/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -78,7 +78,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/ארכיטקט-תוכנה/principal-systems-engineer/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -100,7 +100,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/רצ-פיתוח/תוכניתן-abap/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -144,7 +144,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-cobol/תוכניתן-קובול-mf-tech-lead/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -155,7 +155,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-אינטגרציה/תוכניתן-rpa/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -177,7 +177,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/python/מפתחת-תוכנה-לכלי-תחקור/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -188,7 +188,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/מתכנת-backend/backend-data-developer/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -445,5 +445,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T12:52:53.518515+00:00"
+"generated_at": "2026-09-15T13:03:57.490539+00:00"
 }

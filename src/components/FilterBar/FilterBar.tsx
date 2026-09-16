@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useRegions } from "../../api/hooks";
@@ -23,6 +23,20 @@ export function FilterBar({ filters, onChange }: Props) {
     setDraft(q);
     onChange({ ...filters, q });
   };
+
+  // Live search: apply the typed query after a short debounce.
+  useEffect(() => {
+    const id = setTimeout(() => {
+      if (draft.trim() !== filters.q) onChange({ ...filters, q: draft.trim() });
+    }, 250);
+    return () => clearTimeout(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [draft]);
+
+  // Keep the input in sync when the query is changed elsewhere (role chips).
+  useEffect(() => {
+    setDraft(filters.q);
+  }, [filters.q]);
 
   return (
     <div className={styles.bar}>

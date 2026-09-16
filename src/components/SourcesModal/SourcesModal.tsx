@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { avatarColor, initials } from "../../lib/avatar";
 import type { SourceInfo } from "../../types";
 import styles from "./SourcesModal.module.css";
 
@@ -21,9 +22,42 @@ export function SourcesModal({ sources, counts, onClose }: Props) {
   }, [onClose]);
 
   const needle = q.trim().toLowerCase();
-  const list = [...sources]
-    .filter((s) => !needle || s.label.toLowerCase().includes(needle))
-    .sort((a, b) => (counts[b.key] ?? 0) - (counts[a.key] ?? 0));
+  const match = (s: SourceInfo) =>
+    !needle || s.label.toLowerCase().includes(needle);
+  const byCount = (a: SourceInfo, b: SourceInfo) =>
+    (counts[b.key] ?? 0) - (counts[a.key] ?? 0);
+
+  const companies = sources.filter((s) => s.kind === "company" && match(s)).sort(byCount);
+  const agencies = sources.filter((s) => s.kind === "agency" && match(s)).sort(byCount);
+
+  const renderRow = (s: SourceInfo) => {
+    const n = counts[s.key] ?? 0;
+    return (
+      <li key={s.key} className={styles.row}>
+        <span
+          className={styles.avatar}
+          style={{ backgroundColor: avatarColor(s.key) }}
+          aria-hidden
+        >
+          {initials(s.label)}
+        </span>
+        <span className={styles.name}>{s.label}</span>
+        <span className={n > 0 ? styles.count : styles.countZero}>
+          {t("source.offers", { count: n })}
+        </span>
+        {s.site_url && (
+          <a
+            className={styles.link}
+            href={s.site_url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {t("allCompanies.careers")}
+          </a>
+        )}
+      </li>
+    );
+  };
 
   return (
     <div
@@ -54,32 +88,27 @@ export function SourcesModal({ sources, counts, onClose }: Props) {
           onChange={(e) => setQ(e.target.value)}
         />
 
-        <ul className={styles.list}>
-          {list.map((s) => {
-            const n = counts[s.key] ?? 0;
-            return (
-              <li key={s.key} className={styles.row}>
-                <span className={styles.name}>{s.label}</span>
-                <span className={styles.right}>
-                  <span className={n > 0 ? styles.count : styles.countZero}>
-                    {t("source.offers", { count: n })}
-                  </span>
-                  {s.site_url && (
-                    <a
-                      className={styles.link}
-                      href={s.site_url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {t("allCompanies.careers")}
-                    </a>
-                  )}
-                </span>
-              </li>
-            );
-          })}
-          {list.length === 0 && <li className={styles.empty}>—</li>}
-        </ul>
+        <div className={styles.scroll}>
+          {companies.length > 0 && (
+            <>
+              <h3 className={styles.group}>
+                {t("tabs.companies")} <span>{companies.length}</span>
+              </h3>
+              <ul className={styles.list}>{companies.map(renderRow)}</ul>
+            </>
+          )}
+          {agencies.length > 0 && (
+            <>
+              <h3 className={styles.group}>
+                {t("tabs.agencies")} <span>{agencies.length}</span>
+              </h3>
+              <ul className={styles.list}>{agencies.map(renderRow)}</ul>
+            </>
+          )}
+          {companies.length === 0 && agencies.length === 0 && (
+            <p className={styles.empty}>—</p>
+          )}
+        </div>
       </div>
     </div>
   );

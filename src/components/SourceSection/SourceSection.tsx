@@ -39,79 +39,79 @@ export function SourceSection({ source, query }: Props) {
     });
 
   return (
-    <section className={styles.section}>
-      <div className={`${styles.card} ${open ? styles.cardOpen : ""}`}>
-        <button
-          className={styles.toggle}
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls={bodyId}
+    <section
+      className={styles.section}
+      style={open ? { gridColumn: "1 / -1" } : undefined}
+    >
+      <button
+        className={`${styles.card} ${open ? styles.cardOpen : ""}`}
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-controls={bodyId}
+      >
+        <span
+          className={styles.avatar}
+          style={{ backgroundColor: avatarColor(source.key) }}
+          aria-hidden
         >
-          <span
-            className={styles.avatar}
-            style={{ backgroundColor: avatarColor(source.key) }}
-            aria-hidden
-          >
-            {initials(source.label)}
-          </span>
-          <span className={styles.titleGroup}>
-            <span className={styles.title}>{source.label}</span>
-            {data && (
-              <span className={styles.meta}>
-                {t("source.offers", { count: visibleCount })}
-                {newCount > 0 && (
-                  <>
-                    {" · "}
-                    <strong className={styles.metaNew}>
-                      {t("source.new", { count: newCount })}
-                    </strong>
-                  </>
-                )}
-                {dataUpdatedAt > 0 &&
-                  ` · ${t("source.updated", { time: formatTime(dataUpdatedAt) })}`}
-              </span>
+          {initials(source.label)}
+        </span>
+        <span className={styles.titleGroup}>
+          <span className={styles.title}>{source.label}</span>
+          <span className={styles.meta}>
+            {t("source.offers", { count: visibleCount })}
+            {newCount > 0 && (
+              <>
+                {" · "}
+                <strong className={styles.metaNew}>
+                  {t("source.new", { count: newCount })}
+                </strong>
+              </>
             )}
           </span>
-        </button>
-
-        <div className={styles.actions}>
-          {data && visibleCount > 0 && (
-            <span className={styles.countPill}>{visibleCount}</span>
-          )}
-          {source.site_url && (
-            <a
-              className={styles.ghostBtn}
-              href={source.site_url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t("source.openSite")}
-            </a>
-          )}
-          <button
-            className={styles.iconBtn}
-            title={t("source.refresh")}
-            aria-label={t("source.refresh")}
-            onClick={() => {
-              markForceRefresh(source.key);
-              setOpen(true);
-              refetch();
-            }}
-            disabled={isFetching}
-          >
-            ⟳
-          </button>
-          <span
-            className={`${styles.chevron} ${open ? styles.chevronOpen : ""}`}
-            aria-hidden
-          >
-            ▸
-          </span>
-        </div>
-      </div>
+        </span>
+        {visibleCount > 0 && (
+          <span className={styles.countPill}>{visibleCount}</span>
+        )}
+        <span
+          className={`${styles.chevron} ${open ? styles.chevronOpen : ""}`}
+          aria-hidden
+        >
+          ▸
+        </span>
+      </button>
 
       {open && (
         <div id={bodyId} className={styles.body}>
+          <div className={styles.toolbar}>
+            {dataUpdatedAt > 0 && (
+              <span className={styles.updated}>
+                {t("source.updated", { time: formatTime(dataUpdatedAt) })}
+              </span>
+            )}
+            <span className={styles.toolbarSpacer} />
+            {source.site_url && (
+              <a
+                className={styles.ghostBtn}
+                href={source.site_url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t("source.openSite")}
+              </a>
+            )}
+            <button
+              className={styles.ghostBtn}
+              onClick={() => {
+                markForceRefresh(source.key);
+                refetch();
+              }}
+              disabled={isFetching}
+            >
+              {isFetching ? t("source.loading") : t("source.refresh")}
+            </button>
+          </div>
+
           {isError && (
             <div className={styles.alert} role="alert">
               {t("error.generic", { message: (error as Error).message })}

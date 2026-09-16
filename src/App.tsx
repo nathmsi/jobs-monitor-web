@@ -5,7 +5,7 @@ import { useAllSourceJobs, useSources } from "./api/hooks";
 import { FilterBar } from "./components/FilterBar/FilterBar";
 import { Header } from "./components/Header/Header";
 import { JobCardSkeleton } from "./components/JobCardSkeleton/JobCardSkeleton";
-import { SourceLinkRow } from "./components/SourceLinkRow/SourceLinkRow";
+import { SourcesModal } from "./components/SourcesModal/SourcesModal";
 import { SourceSection } from "./components/SourceSection/SourceSection";
 import type { Filters } from "./types";
 import styles from "./App.module.css";
@@ -17,21 +17,21 @@ function App() {
     region: "jerusalem",
     q: "",
   });
+  const [showAll, setShowAll] = useState(false);
 
   const sourceList = sources ?? [];
   const queries = useAllSourceJobs(sourceList, filters);
   const items = sourceList.map((source, i) => ({ source, query: queries[i] }));
 
-  // Sources with offers first (most first), then loading, empties collapse
-  // into a compact "check the site yourself" list at the bottom.
+  // Only show sources that actually have offers (most first). Empty ones are
+  // hidden from the main view — reachable via the "all companies" modal.
   const withJobs = items
     .filter((it) => it.query.data && it.query.data.jobs.length > 0)
     .sort((a, b) => (b.query.data?.count ?? 0) - (a.query.data?.count ?? 0));
   const loading = items.filter((it) => it.query.isFetching && !it.query.data);
-  const empty = items.filter(
-    (it) =>
-      !(it.query.isFetching && !it.query.data) &&
-      !(it.query.data && it.query.data.jobs.length > 0),
+
+  const counts = Object.fromEntries(
+    items.map((it) => [it.source.key, it.query.data?.count ?? 0]),
   );
 
   return (
@@ -39,6 +39,14 @@ function App() {
       <Header />
 
       <FilterBar filters={filters} onChange={setFilters} />
+
+      {sourceList.length > 0 && (
+        <div className={styles.toolbar}>
+          <button className={styles.allBtn} onClick={() => setShowAll(true)}>
+            {t("allCompanies.open", { count: sourceList.length })}
+          </button>
+        </div>
+      )}
 
       <main className={styles.sources}>
         {isError && (
@@ -69,17 +77,20 @@ function App() {
           <SourceSection key={source.key} source={source} query={query} />
         ))}
 
-        {empty.length > 0 && (
-          <div className={styles.empties}>
-            <h2 className={styles.emptiesTitle}>{t("source.otherSources")}</h2>
-            {empty.map(({ source, query }) => (
-              <SourceLinkRow key={source.key} source={source} query={query} />
-            ))}
-          </div>
+        {!isLoading && withJobs.length === 0 && loading.length === 0 && (
+          <p className={styles.noResults}>{t("noResults")}</p>
         )}
       </main>
 
       <footer className={styles.footer}>{t("footer")}</footer>
+
+      {showAll && (
+        <SourcesModal
+          sources={sourceList}
+          counts={counts}
+          onClose={() => setShowAll(false)}
+        />
+      )}
     </div>
   );
 }

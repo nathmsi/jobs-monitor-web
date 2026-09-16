@@ -47,5 +47,13 @@
     "apiHint": "ודאו שהשרת מגיב בכתובת",
     "generic": "שגיאה: {{message}}"
   },
+  "noResults": "אין משרות לפי הסינון הזה.",
+  "allCompanies": {
+    "open": "כל החברות ({{count}})",
+    "title": "כל החברות",
+    "search": "חיפוש חברה…",
+    "careers": "דרושים ↗",
+    "close": "סגור"
+  },
   "footer": "מעקב משרות · מקורות: Ness · Matrix · Malam Team"
 }

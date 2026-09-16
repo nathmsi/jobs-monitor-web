@@ -47,5 +47,13 @@
     "apiHint": "Vérifie que le backend répond sur",
     "generic": "Erreur : {{message}}"
   },
+  "noResults": "Aucune offre pour ces filtres.",
+  "allCompanies": {
+    "open": "Toutes les entreprises ({{count}})",
+    "title": "Toutes les entreprises",
+    "search": "Rechercher une entreprise…",
+    "careers": "Careers ↗",
+    "close": "Fermer"
+  },
   "footer": "Veille d'offres · sources : Ness · Matrix · Malam Team"
 }

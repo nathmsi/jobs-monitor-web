@@ -1,7 +1,7 @@
 {
 "source": "salt",
 "count": 3,
-"new_count": 3,
+"new_count": 0,
 "jobs": [
 {
 "source": "salt",
@@ -12,7 +12,7 @@
 "url": "https://salt.security/job-board?gh_jid=5208152007",
 "is_hot": false,
 "last_updated": "2026-09-07",
-"is_new": true
+"is_new": false
 },
 {
 "source": "salt",
@@ -23,7 +23,7 @@
 "url": "https://salt.security/job-board?gh_jid=5202759007",
 "is_hot": false,
 "last_updated": "2026-08-04",
-"is_new": true
+"is_new": false
 },
 {
 "source": "salt",
@@ -34,9 +34,9 @@
 "url": "https://salt.security/job-board?gh_jid=4950306007",
 "is_hot": false,
 "last_updated": "2025-10-20",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:17:01.518309+00:00"
+"generated_at": "2026-09-16T12:05:03.893623+00:00"
 }

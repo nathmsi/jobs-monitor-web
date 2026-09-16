@@ -1,8 +1,19 @@
 {
 "source": "fireblocks",
-"count": 6,
-"new_count": 0,
+"count": 8,
+"new_count": 2,
 "jobs": [
+{
+"source": "fireblocks",
+"external_id": "4713012006",
+"title": "AI Security Engineer",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"excerpt": "",
+"url": "https://www.fireblocks.com/careers/position?gh_jid=4713012006",
+"is_hot": false,
+"last_updated": "2026-09-16",
+"is_new": true
+},
 {
 "source": "fireblocks",
 "external_id": "4706203006",
@@ -13,6 +24,17 @@
 "is_hot": false,
 "last_updated": "2026-09-10",
 "is_new": false
+},
+{
+"source": "fireblocks",
+"external_id": "4713010006",
+"title": "Director, Security Engineering",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"excerpt": "",
+"url": "https://www.fireblocks.com/careers/position?gh_jid=4713010006",
+"is_hot": false,
+"last_updated": "2026-09-16",
+"is_new": true
 },
 {
 "source": "fireblocks",
@@ -71,5 +93,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:16:57.745612+00:00"
+"generated_at": "2026-09-16T12:05:00.358637+00:00"
 }

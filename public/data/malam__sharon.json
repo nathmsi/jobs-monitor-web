@@ -1,6 +1,6 @@
 {
 "source": "malam",
-"count": 12,
+"count": 13,
 "new_count": 0,
 "jobs": [
 {
@@ -65,6 +65,17 @@
 "location": "גוש דן, השפלה, השרון",
 "excerpt": "עבור חברה אמריקאית דרוש/ה ארכיטקט/ית בכיר/ה לתפקיד אסטרטגי עבור לקוח בינלאומי. מדובר בתפקיד ליבה בארגון Enterprise האחראי על הובלת ארכיטקטורת ה־ AI והאינטגרציה הארגונית מקצה לקצה, כולל הגדרת השכבה שמנהלת את אופן הפעולה…",
 "url": "https://www.malamteam.com/משרה/integration-automation-ai-architect/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "37586",
+"title": "מפתח.ת תוכנה",
+"location": "גוש דן, השפלה, השרון",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון ממשלתי בתל אביב תיאור משרה: התפקיד כולל פיתוח וכתיבת קוד Hands-On במערכות מידע, אתרי אינטרנט, Intranet ומערכות Mobile, בדגש על טכנולוגיות Web ו-. NET. בנוסף, התפקיד…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-6/",
 "is_hot": false,
 "last_updated": null,
 "is_new": false
@@ -137,5 +148,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:16:57.308003+00:00"
+"generated_at": "2026-09-16T12:04:59.929538+00:00"
 }

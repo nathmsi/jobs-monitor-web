@@ -181,17 +181,6 @@
 },
 {
 "source": "catonetworks",
-"external_id": "4970648101",
-"title": "Software Engineer",
-"location": "Tel Aviv District, Israel",
-"excerpt": "",
-"url": "https://www.catonetworks.com/careers/careers-post/4970648101?gh_jid=4970648101",
-"is_hot": false,
-"last_updated": "2026-09-14",
-"is_new": false
-},
-{
-"source": "catonetworks",
 "external_id": "4901284101",
 "title": "Software Engineer",
 "location": "Tel Aviv District, Israel",
@@ -199,6 +188,17 @@
 "url": "https://www.catonetworks.com/careers/careers-post/4901284101?gh_jid=4901284101",
 "is_hot": false,
 "last_updated": "2026-08-31",
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4970648101",
+"title": "Software Engineer",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4970648101?gh_jid=4970648101",
+"is_hot": false,
+"last_updated": "2026-09-14",
 "is_new": false
 },
 {
@@ -280,5 +280,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:16:58.992388+00:00"
+"generated_at": "2026-09-16T12:05:01.399677+00:00"
 }

@@ -1,7 +1,7 @@
 {
 "source": "datadog",
 "count": 2,
-"new_count": 2,
+"new_count": 0,
 "jobs": [
 {
 "source": "datadog",
@@ -12,7 +12,7 @@
 "url": "https://careers.datadoghq.com/detail/8092637/?gh_jid=8092637",
 "is_hot": false,
 "last_updated": "2026-09-15",
-"is_new": true
+"is_new": false
 },
 {
 "source": "datadog",
@@ -23,9 +23,9 @@
 "url": "https://careers.datadoghq.com/detail/4599111/?gh_jid=4599111",
 "is_hot": false,
 "last_updated": "2026-09-15",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:17:04.680620+00:00"
+"generated_at": "2026-09-16T12:05:04.351837+00:00"
 }

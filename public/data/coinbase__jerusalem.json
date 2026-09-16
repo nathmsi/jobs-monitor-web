@@ -1,7 +1,7 @@
 {
 "source": "coinbase",
 "count": 1,
-"new_count": 1,
+"new_count": 0,
 "jobs": [
 {
 "source": "coinbase",
@@ -12,9 +12,9 @@
 "url": "https://www.coinbase.com/careers/positions/8021650?gh_jid=8021650",
 "is_hot": false,
 "last_updated": "2026-08-31",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:17:05.389298+00:00"
+"generated_at": "2026-09-16T12:05:05.114951+00:00"
 }

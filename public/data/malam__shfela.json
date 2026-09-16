@@ -1,7 +1,7 @@
 {
 "source": "malam",
-"count": 22,
-"new_count": 0,
+"count": 24,
+"new_count": 1,
 "jobs": [
 {
 "source": "malam",
@@ -76,6 +76,28 @@
 "location": "גוש דן, השפלה",
 "excerpt": "ללקוח ביטחוני באזור המרכז אנו מחפשים ארכיטקט/ית ראשי/ת במסגרת התפקיד הובלת האסטרטגיה הטכנולוגית של הארגון ולבניית חזון טכנולוגי ארוך טווח, הגדרת ארכיטקטורה ארגונית מקצה לקצה, תוך חיבור בין צרכים עסקיים, מוצר וטכנולוגיה.…",
 "url": "https://www.malamteam.com/משרה/chief-architect/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "37608",
+"title": "מהנדס.ת אינטגרציה",
+"location": "השפלה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מהנדס.ת אינטגרציה לארגון מוביל באזור השפלה! תיאור משרה: התפקיד כולל אחריות כוללת על תהליכי בדיקות האינטגרציה והבדיקות המערכתיות בפרויקט, החל מהקמת מעבדת הפרויקט ועד לביצוע בדיקות…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%94%d7%a0%d7%93%d7%a1-%d7%aa-%d7%90%d7%99%d7%a0%d7%98%d7%92%d7%a8%d7%a6%d7%99%d7%94/",
+"is_hot": false,
+"last_updated": null,
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37586",
+"title": "מפתח.ת תוכנה",
+"location": "גוש דן, השפלה, השרון",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון ממשלתי בתל אביב תיאור משרה: התפקיד כולל פיתוח וכתיבת קוד Hands-On במערכות מידע, אתרי אינטרנט, Intranet ומערכות Mobile, בדגש על טכנולוגיות Web ו-. NET. בנוסף, התפקיד…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-6/",
 "is_hot": false,
 "last_updated": null,
 "is_new": false
@@ -247,5 +269,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:16:57.308238+00:00"
+"generated_at": "2026-09-16T12:04:59.930034+00:00"
 }

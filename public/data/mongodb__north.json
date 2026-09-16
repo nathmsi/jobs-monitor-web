@@ -1,7 +1,7 @@
 {
 "source": "mongodb",
 "count": 2,
-"new_count": 2,
+"new_count": 0,
 "jobs": [
 {
 "source": "mongodb",
@@ -12,7 +12,7 @@
 "url": "https://www.mongodb.com/careers/job/?gh_jid=7334938",
 "is_hot": false,
 "last_updated": "2026-09-15",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mongodb",
@@ -23,9 +23,9 @@
 "url": "https://www.mongodb.com/careers/job/?gh_jid=7925284",
 "is_hot": false,
 "last_updated": "2026-09-15",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:17:05.176049+00:00"
+"generated_at": "2026-09-16T12:05:04.916338+00:00"
 }

@@ -1,7 +1,7 @@
 {
 "source": "zscaler",
 "count": 3,
-"new_count": 3,
+"new_count": 0,
 "jobs": [
 {
 "source": "zscaler",
@@ -12,7 +12,7 @@
 "url": "https://job-boards.greenhouse.io/zscaler/jobs/5217166007",
 "is_hot": false,
 "last_updated": "2026-09-11",
-"is_new": true
+"is_new": false
 },
 {
 "source": "zscaler",
@@ -23,7 +23,7 @@
 "url": "https://job-boards.greenhouse.io/zscaler/jobs/5220291007",
 "is_hot": false,
 "last_updated": "2026-09-14",
-"is_new": true
+"is_new": false
 },
 {
 "source": "zscaler",
@@ -34,9 +34,9 @@
 "url": "https://job-boards.greenhouse.io/zscaler/jobs/5229507007",
 "is_hot": false,
 "last_updated": "2026-09-09",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:17:04.455486+00:00"
+"generated_at": "2026-09-16T12:05:04.127851+00:00"
 }

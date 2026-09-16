@@ -1,6 +1,6 @@
 {
 "source": "jfrog",
-"count": 13,
+"count": 12,
 "new_count": 0,
 "jobs": [
 {
@@ -23,17 +23,6 @@
 "url": "https://join.jfrog.com/job/?job=8167054&gh_jid=8167054",
 "is_hot": false,
 "last_updated": "2026-09-06",
-"is_new": false
-},
-{
-"source": "jfrog",
-"external_id": "8127498",
-"title": "Business Development Representative - French speaker",
-"location": "Tel Aviv/ Netanya",
-"excerpt": "",
-"url": "https://join.jfrog.com/job/?job=8127498&gh_jid=8127498",
-"is_hot": false,
-"last_updated": "2026-08-16",
 "is_new": false
 },
 {
@@ -148,5 +137,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:16:58.131520+00:00"
+"generated_at": "2026-09-16T12:05:00.578357+00:00"
 }

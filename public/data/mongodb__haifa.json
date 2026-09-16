@@ -1,0 +1,31 @@
+{
+"source": "mongodb",
+"count": 2,
+"new_count": 2,
+"jobs": [
+{
+"source": "mongodb",
+"external_id": "7334938",
+"title": "Account Development Representative, Hebrew Speaking",
+"location": "Tel Aviv",
+"excerpt": "",
+"url": "https://www.mongodb.com/careers/job/?gh_jid=7334938",
+"is_hot": false,
+"last_updated": "2026-09-15",
+"is_new": true
+},
+{
+"source": "mongodb",
+"external_id": "7925284",
+"title": "Senior Consulting Engineer",
+"location": "Tel Aviv",
+"excerpt": "",
+"url": "https://www.mongodb.com/careers/job/?gh_jid=7925284",
+"is_hot": false,
+"last_updated": "2026-09-15",
+"is_new": true
+}
+],
+"cached": true,
+"generated_at": "2026-09-16T10:17:05.176216+00:00"
+}

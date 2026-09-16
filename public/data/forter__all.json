@@ -1,7 +1,7 @@
 {
 "source": "forter",
 "count": 5,
-"new_count": 5,
+"new_count": 0,
 "jobs": [
 {
 "source": "forter",
@@ -12,7 +12,7 @@
 "url": "https://job-boards.greenhouse.io/forter/jobs/8651195002",
 "is_hot": false,
 "last_updated": "2026-08-29",
-"is_new": true
+"is_new": false
 },
 {
 "source": "forter",
@@ -23,7 +23,7 @@
 "url": "https://job-boards.greenhouse.io/forter/jobs/8534195002",
 "is_hot": false,
 "last_updated": "2026-09-01",
-"is_new": true
+"is_new": false
 },
 {
 "source": "forter",
@@ -34,7 +34,7 @@
 "url": "https://job-boards.greenhouse.io/forter/jobs/8578429002",
 "is_hot": false,
 "last_updated": "2026-08-29",
-"is_new": true
+"is_new": false
 },
 {
 "source": "forter",
@@ -45,7 +45,7 @@
 "url": "https://job-boards.greenhouse.io/forter/jobs/8289641002",
 "is_hot": false,
 "last_updated": "2026-08-29",
-"is_new": true
+"is_new": false
 },
 {
 "source": "forter",
@@ -56,9 +56,9 @@
 "url": "https://job-boards.greenhouse.io/forter/jobs/8670848002",
 "is_hot": false,
 "last_updated": "2026-08-29",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:08:34.487116+00:00"
+"generated_at": "2026-09-16T10:16:59.598402+00:00"
 }

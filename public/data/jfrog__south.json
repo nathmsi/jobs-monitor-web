@@ -1,7 +1,7 @@
 {
 "source": "jfrog",
 "count": 13,
-"new_count": 13,
+"new_count": 0,
 "jobs": [
 {
 "source": "jfrog",
@@ -12,7 +12,7 @@
 "url": "https://join.jfrog.com/job/?job=8138480&gh_jid=8138480",
 "is_hot": false,
 "last_updated": "2026-08-25",
-"is_new": true
+"is_new": false
 },
 {
 "source": "jfrog",
@@ -23,7 +23,7 @@
 "url": "https://join.jfrog.com/job/?job=8167054&gh_jid=8167054",
 "is_hot": false,
 "last_updated": "2026-09-06",
-"is_new": true
+"is_new": false
 },
 {
 "source": "jfrog",
@@ -34,7 +34,7 @@
 "url": "https://join.jfrog.com/job/?job=8127498&gh_jid=8127498",
 "is_hot": false,
 "last_updated": "2026-08-16",
-"is_new": true
+"is_new": false
 },
 {
 "source": "jfrog",
@@ -45,7 +45,7 @@
 "url": "https://join.jfrog.com/job/?job=7694707&gh_jid=7694707",
 "is_hot": false,
 "last_updated": "2026-08-12",
-"is_new": true
+"is_new": false
 },
 {
 "source": "jfrog",
@@ -56,7 +56,7 @@
 "url": "https://join.jfrog.com/job/?job=7434101&gh_jid=7434101",
 "is_hot": false,
 "last_updated": "2026-08-12",
-"is_new": true
+"is_new": false
 },
 {
 "source": "jfrog",
@@ -67,7 +67,7 @@
 "url": "https://join.jfrog.com/job/?job=8188177&gh_jid=8188177",
 "is_hot": false,
 "last_updated": "2026-09-15",
-"is_new": true
+"is_new": false
 },
 {
 "source": "jfrog",
@@ -78,7 +78,7 @@
 "url": "https://join.jfrog.com/job/?job=7939091&gh_jid=7939091",
 "is_hot": false,
 "last_updated": "2026-08-12",
-"is_new": true
+"is_new": false
 },
 {
 "source": "jfrog",
@@ -89,7 +89,7 @@
 "url": "https://join.jfrog.com/job/?job=8156071&gh_jid=8156071",
 "is_hot": false,
 "last_updated": "2026-08-26",
-"is_new": true
+"is_new": false
 },
 {
 "source": "jfrog",
@@ -100,7 +100,7 @@
 "url": "https://join.jfrog.com/job/?job=7419121&gh_jid=7419121",
 "is_hot": false,
 "last_updated": "2026-09-11",
-"is_new": true
+"is_new": false
 },
 {
 "source": "jfrog",
@@ -111,7 +111,7 @@
 "url": "https://join.jfrog.com/job/?job=8184079&gh_jid=8184079",
 "is_hot": false,
 "last_updated": "2026-09-09",
-"is_new": true
+"is_new": false
 },
 {
 "source": "jfrog",
@@ -122,7 +122,7 @@
 "url": "https://join.jfrog.com/job/?job=8184083&gh_jid=8184083",
 "is_hot": false,
 "last_updated": "2026-09-16",
-"is_new": true
+"is_new": false
 },
 {
 "source": "jfrog",
@@ -133,7 +133,7 @@
 "url": "https://join.jfrog.com/job/?job=7510102&gh_jid=7510102",
 "is_hot": false,
 "last_updated": "2026-09-09",
-"is_new": true
+"is_new": false
 },
 {
 "source": "jfrog",
@@ -144,9 +144,9 @@
 "url": "https://join.jfrog.com/job/?job=8152802&gh_jid=8152802",
 "is_hot": false,
 "last_updated": "2026-08-27",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:08:32.983609+00:00"
+"generated_at": "2026-09-16T10:16:58.131978+00:00"
 }

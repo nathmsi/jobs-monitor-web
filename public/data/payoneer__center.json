@@ -1,7 +1,7 @@
 {
 "source": "payoneer",
 "count": 13,
-"new_count": 13,
+"new_count": 0,
 "jobs": [
 {
 "source": "payoneer",
@@ -12,7 +12,7 @@
 "url": "https://www.payoneer.com/careers/position/8007296/?gh_jid=8007296",
 "is_hot": false,
 "last_updated": "2026-09-14",
-"is_new": true
+"is_new": false
 },
 {
 "source": "payoneer",
@@ -23,7 +23,7 @@
 "url": "https://www.payoneer.com/careers/position/8169289/?gh_jid=8169289",
 "is_hot": false,
 "last_updated": "2026-09-09",
-"is_new": true
+"is_new": false
 },
 {
 "source": "payoneer",
@@ -34,7 +34,7 @@
 "url": "https://www.payoneer.com/careers/position/8185359/?gh_jid=8185359",
 "is_hot": false,
 "last_updated": "2026-09-10",
-"is_new": true
+"is_new": false
 },
 {
 "source": "payoneer",
@@ -45,7 +45,7 @@
 "url": "https://www.payoneer.com/careers/position/7925955/?gh_jid=7925955",
 "is_hot": false,
 "last_updated": "2026-09-09",
-"is_new": true
+"is_new": false
 },
 {
 "source": "payoneer",
@@ -56,7 +56,7 @@
 "url": "https://www.payoneer.com/careers/position/8059499/?gh_jid=8059499",
 "is_hot": false,
 "last_updated": "2026-09-09",
-"is_new": true
+"is_new": false
 },
 {
 "source": "payoneer",
@@ -67,7 +67,7 @@
 "url": "https://www.payoneer.com/careers/position/8166030/?gh_jid=8166030",
 "is_hot": false,
 "last_updated": "2026-09-09",
-"is_new": true
+"is_new": false
 },
 {
 "source": "payoneer",
@@ -78,7 +78,7 @@
 "url": "https://www.payoneer.com/careers/position/6769427/?gh_jid=6769427",
 "is_hot": false,
 "last_updated": "2026-09-14",
-"is_new": true
+"is_new": false
 },
 {
 "source": "payoneer",
@@ -89,7 +89,7 @@
 "url": "https://www.payoneer.com/careers/position/8132080/?gh_jid=8132080",
 "is_hot": false,
 "last_updated": "2026-09-09",
-"is_new": true
+"is_new": false
 },
 {
 "source": "payoneer",
@@ -100,7 +100,7 @@
 "url": "https://www.payoneer.com/careers/position/8132153/?gh_jid=8132153",
 "is_hot": false,
 "last_updated": "2026-09-09",
-"is_new": true
+"is_new": false
 },
 {
 "source": "payoneer",
@@ -111,7 +111,7 @@
 "url": "https://www.payoneer.com/careers/position/8104982/?gh_jid=8104982",
 "is_hot": false,
 "last_updated": "2026-09-09",
-"is_new": true
+"is_new": false
 },
 {
 "source": "payoneer",
@@ -122,7 +122,7 @@
 "url": "https://www.payoneer.com/careers/position/7955754/?gh_jid=7955754",
 "is_hot": false,
 "last_updated": "2026-09-09",
-"is_new": true
+"is_new": false
 },
 {
 "source": "payoneer",
@@ -133,7 +133,7 @@
 "url": "https://www.payoneer.com/careers/position/7709733/?gh_jid=7709733",
 "is_hot": false,
 "last_updated": "2026-09-09",
-"is_new": true
+"is_new": false
 },
 {
 "source": "payoneer",
@@ -144,9 +144,9 @@
 "url": "https://www.payoneer.com/careers/position/7709761/?gh_jid=7709761",
 "is_hot": false,
 "last_updated": "2026-09-09",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:08:33.195662+00:00"
+"generated_at": "2026-09-16T10:16:58.345666+00:00"
 }

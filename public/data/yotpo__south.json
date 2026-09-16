@@ -1,7 +1,7 @@
 {
 "source": "yotpo",
 "count": 1,
-"new_count": 1,
+"new_count": 0,
 "jobs": [
 {
 "source": "yotpo",
@@ -12,9 +12,9 @@
 "url": "https://www.yotpo.com/careers/gid-6879751?gh_jid=6879751",
 "is_hot": false,
 "last_updated": "2026-07-21",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:08:35.083967+00:00"
+"generated_at": "2026-09-16T10:17:00.236571+00:00"
 }

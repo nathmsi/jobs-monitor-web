@@ -112,5 +112,59 @@
 "label": "Bringg",
 "site_url": "https://job-boards.greenhouse.io/bringg",
 "auto_fetch": true
+},
+{
+"key": "nice",
+"label": "NICE",
+"site_url": "https://job-boards.greenhouse.io/nice",
+"auto_fetch": true
+},
+{
+"key": "transmit",
+"label": "Transmit Security",
+"site_url": "https://job-boards.greenhouse.io/transmitsecurity",
+"auto_fetch": true
+},
+{
+"key": "gitlab",
+"label": "GitLab",
+"site_url": "https://job-boards.greenhouse.io/gitlab",
+"auto_fetch": true
+},
+{
+"key": "salt",
+"label": "Salt Security",
+"site_url": "https://job-boards.greenhouse.io/saltsecurity",
+"auto_fetch": true
+},
+{
+"key": "zscaler",
+"label": "Zscaler",
+"site_url": "https://job-boards.greenhouse.io/zscaler",
+"auto_fetch": true
+},
+{
+"key": "datadog",
+"label": "Datadog",
+"site_url": "https://job-boards.greenhouse.io/datadog",
+"auto_fetch": true
+},
+{
+"key": "stripe",
+"label": "Stripe",
+"site_url": "https://job-boards.greenhouse.io/stripe",
+"auto_fetch": true
+},
+{
+"key": "mongodb",
+"label": "MongoDB",
+"site_url": "https://job-boards.greenhouse.io/mongodb",
+"auto_fetch": true
+},
+{
+"key": "coinbase",
+"label": "Coinbase",
+"site_url": "https://job-boards.greenhouse.io/coinbase",
+"auto_fetch": true
 }
 ]

@@ -1,7 +1,7 @@
 {
 "source": "orca",
 "count": 2,
-"new_count": 2,
+"new_count": 0,
 "jobs": [
 {
 "source": "orca",
@@ -12,7 +12,7 @@
 "url": "https://orca.security/about/careers/5263129004?gh_jid=5263129004",
 "is_hot": false,
 "last_updated": "2026-09-06",
-"is_new": true
+"is_new": false
 },
 {
 "source": "orca",
@@ -23,9 +23,9 @@
 "url": "https://orca.security/about/careers/6161068004?gh_jid=6161068004",
 "is_hot": false,
 "last_updated": "2026-09-07",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:08:34.882498+00:00"
+"generated_at": "2026-09-16T10:17:00.009980+00:00"
 }

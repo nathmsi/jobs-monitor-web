@@ -1,0 +1,31 @@
+{
+"source": "datadog",
+"count": 2,
+"new_count": 2,
+"jobs": [
+{
+"source": "datadog",
+"external_id": "8092637",
+"title": "Commercial Sales Engineer (Tel Aviv)",
+"location": "Tel Aviv, Israel",
+"excerpt": "",
+"url": "https://careers.datadoghq.com/detail/8092637/?gh_jid=8092637",
+"is_hot": false,
+"last_updated": "2026-09-15",
+"is_new": true
+},
+{
+"source": "datadog",
+"external_id": "4599111",
+"title": "Senior Software Engineer - Distributed Systems",
+"location": "Bordeaux, France; Grenoble, France; Lyon, France; Madrid, Spain; Montpellier, France; Nantes, France; Paris, France; Sophia Antipolis, France; Tel Aviv, Israel",
+"excerpt": "",
+"url": "https://careers.datadoghq.com/detail/4599111/?gh_jid=4599111",
+"is_hot": false,
+"last_updated": "2026-09-15",
+"is_new": true
+}
+],
+"cached": true,
+"generated_at": "2026-09-16T10:17:04.683000+00:00"
+}

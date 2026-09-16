@@ -1,7 +1,7 @@
 {
 "source": "riskified",
 "count": 1,
-"new_count": 1,
+"new_count": 0,
 "jobs": [
 {
 "source": "riskified",
@@ -12,9 +12,9 @@
 "url": "https://www.riskified.com/careers/job-description/?gh_jid=8487227002",
 "is_hot": false,
 "last_updated": "2026-08-04",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:08:34.287981+00:00"
+"generated_at": "2026-09-16T10:16:59.395783+00:00"
 }

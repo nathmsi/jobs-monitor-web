@@ -1,7 +1,7 @@
 {
 "source": "gong",
 "count": 11,
-"new_count": 11,
+"new_count": 0,
 "jobs": [
 {
 "source": "gong",
@@ -12,7 +12,7 @@
 "url": "https://job-boards.greenhouse.io/gongio/jobs/4693375006",
 "is_hot": false,
 "last_updated": "2026-08-30",
-"is_new": true
+"is_new": false
 },
 {
 "source": "gong",
@@ -23,7 +23,7 @@
 "url": "https://job-boards.greenhouse.io/gongio/jobs/4628626006",
 "is_hot": false,
 "last_updated": "2026-07-06",
-"is_new": true
+"is_new": false
 },
 {
 "source": "gong",
@@ -34,7 +34,7 @@
 "url": "https://job-boards.greenhouse.io/gongio/jobs/4672107006",
 "is_hot": false,
 "last_updated": "2026-07-06",
-"is_new": true
+"is_new": false
 },
 {
 "source": "gong",
@@ -45,7 +45,7 @@
 "url": "https://job-boards.greenhouse.io/gongio/jobs/4666594006",
 "is_hot": false,
 "last_updated": "2026-07-21",
-"is_new": true
+"is_new": false
 },
 {
 "source": "gong",
@@ -56,7 +56,7 @@
 "url": "https://job-boards.greenhouse.io/gongio/jobs/4668007006",
 "is_hot": false,
 "last_updated": "2026-07-06",
-"is_new": true
+"is_new": false
 },
 {
 "source": "gong",
@@ -67,7 +67,7 @@
 "url": "https://job-boards.greenhouse.io/gongio/jobs/4699925006",
 "is_hot": false,
 "last_updated": "2026-08-20",
-"is_new": true
+"is_new": false
 },
 {
 "source": "gong",
@@ -78,7 +78,7 @@
 "url": "https://job-boards.greenhouse.io/gongio/jobs/4668069006",
 "is_hot": false,
 "last_updated": "2026-09-06",
-"is_new": true
+"is_new": false
 },
 {
 "source": "gong",
@@ -89,7 +89,7 @@
 "url": "https://job-boards.greenhouse.io/gongio/jobs/4677810006",
 "is_hot": false,
 "last_updated": "2026-09-15",
-"is_new": true
+"is_new": false
 },
 {
 "source": "gong",
@@ -100,7 +100,7 @@
 "url": "https://job-boards.greenhouse.io/gongio/jobs/4700779006",
 "is_hot": false,
 "last_updated": "2026-08-23",
-"is_new": true
+"is_new": false
 },
 {
 "source": "gong",
@@ -111,7 +111,7 @@
 "url": "https://job-boards.greenhouse.io/gongio/jobs/4672099006",
 "is_hot": false,
 "last_updated": "2026-07-06",
-"is_new": true
+"is_new": false
 },
 {
 "source": "gong",
@@ -122,9 +122,9 @@
 "url": "https://job-boards.greenhouse.io/gongio/jobs/4673075006",
 "is_hot": false,
 "last_updated": "2026-08-23",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:08:34.046271+00:00"
+"generated_at": "2026-09-16T10:16:59.202810+00:00"
 }

@@ -1,7 +1,7 @@
 {
 "source": "melio",
 "count": 5,
-"new_count": 5,
+"new_count": 0,
 "jobs": [
 {
 "source": "melio",
@@ -12,7 +12,7 @@
 "url": "https://job-boards.greenhouse.io/melio/jobs/7806719003",
 "is_hot": false,
 "last_updated": "2026-09-07",
-"is_new": true
+"is_new": false
 },
 {
 "source": "melio",
@@ -23,7 +23,7 @@
 "url": "https://job-boards.greenhouse.io/melio/jobs/7748138003",
 "is_hot": false,
 "last_updated": "2026-07-30",
-"is_new": true
+"is_new": false
 },
 {
 "source": "melio",
@@ -34,7 +34,7 @@
 "url": "https://job-boards.greenhouse.io/melio/jobs/7820154003",
 "is_hot": false,
 "last_updated": "2026-08-09",
-"is_new": true
+"is_new": false
 },
 {
 "source": "melio",
@@ -45,7 +45,7 @@
 "url": "https://job-boards.greenhouse.io/melio/jobs/7806724003",
 "is_hot": false,
 "last_updated": "2026-07-23",
-"is_new": true
+"is_new": false
 },
 {
 "source": "melio",
@@ -56,9 +56,9 @@
 "url": "https://job-boards.greenhouse.io/melio/jobs/7572393003",
 "is_hot": false,
 "last_updated": "2026-04-27",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:08:32.567781+00:00"
+"generated_at": "2026-09-16T10:16:57.538535+00:00"
 }

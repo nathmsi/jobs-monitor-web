@@ -1,7 +1,7 @@
 {
 "source": "taboola",
 "count": 14,
-"new_count": 14,
+"new_count": 0,
 "jobs": [
 {
 "source": "taboola",
@@ -12,7 +12,7 @@
 "url": "https://www.taboola.com/careers/job/8081260?gh_jid=8081260",
 "is_hot": false,
 "last_updated": "2026-09-10",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -23,7 +23,7 @@
 "url": "https://www.taboola.com/careers/job/8131711?gh_jid=8131711",
 "is_hot": false,
 "last_updated": "2026-09-10",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -34,7 +34,7 @@
 "url": "https://www.taboola.com/careers/job/8074372?gh_jid=8074372",
 "is_hot": false,
 "last_updated": "2026-09-10",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -45,7 +45,7 @@
 "url": "https://www.taboola.com/careers/job/7903597?gh_jid=7903597",
 "is_hot": false,
 "last_updated": "2026-09-10",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -56,7 +56,7 @@
 "url": "https://www.taboola.com/careers/job/8073783?gh_jid=8073783",
 "is_hot": false,
 "last_updated": "2026-09-10",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -67,7 +67,7 @@
 "url": "https://www.taboola.com/careers/job/8176690?gh_jid=8176690",
 "is_hot": false,
 "last_updated": "2026-09-15",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -78,7 +78,7 @@
 "url": "https://www.taboola.com/careers/job/8080933?gh_jid=8080933",
 "is_hot": false,
 "last_updated": "2026-09-10",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -89,7 +89,7 @@
 "url": "https://www.taboola.com/careers/job/8142034?gh_jid=8142034",
 "is_hot": false,
 "last_updated": "2026-09-10",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -100,7 +100,7 @@
 "url": "https://www.taboola.com/careers/job/8064004?gh_jid=8064004",
 "is_hot": false,
 "last_updated": "2026-09-10",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -111,7 +111,7 @@
 "url": "https://www.taboola.com/careers/job/8087797?gh_jid=8087797",
 "is_hot": false,
 "last_updated": "2026-09-10",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -122,7 +122,7 @@
 "url": "https://www.taboola.com/careers/job/8070135?gh_jid=8070135",
 "is_hot": false,
 "last_updated": "2026-09-10",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -133,7 +133,7 @@
 "url": "https://www.taboola.com/careers/job/8200807?gh_jid=8200807",
 "is_hot": false,
 "last_updated": "2026-09-14",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -144,7 +144,7 @@
 "url": "https://www.taboola.com/careers/job/8176684?gh_jid=8176684",
 "is_hot": false,
 "last_updated": "2026-09-15",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -155,9 +155,9 @@
 "url": "https://www.taboola.com/careers/job/7903594?gh_jid=7903594",
 "is_hot": false,
 "last_updated": "2026-09-10",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:08:33.431473+00:00"
+"generated_at": "2026-09-16T10:16:58.554803+00:00"
 }

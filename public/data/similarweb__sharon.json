@@ -1,7 +1,7 @@
 {
 "source": "similarweb",
 "count": 17,
-"new_count": 17,
+"new_count": 0,
 "jobs": [
 {
 "source": "similarweb",
@@ -12,7 +12,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/7556263",
 "is_hot": false,
 "last_updated": "2026-04-29",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -23,7 +23,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/8065359",
 "is_hot": false,
 "last_updated": "2026-07-14",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -34,7 +34,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/8131968",
 "is_hot": false,
 "last_updated": "2026-08-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -45,7 +45,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/7972320",
 "is_hot": false,
 "last_updated": "2026-06-01",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -56,7 +56,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/6829705",
 "is_hot": false,
 "last_updated": "2026-04-29",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -67,7 +67,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/8084086",
 "is_hot": false,
 "last_updated": "2026-09-09",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -78,7 +78,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/8124606",
 "is_hot": false,
 "last_updated": "2026-09-16",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -89,7 +89,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/8041082",
 "is_hot": false,
 "last_updated": "2026-07-01",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -100,7 +100,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/8102756",
 "is_hot": false,
 "last_updated": "2026-08-03",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -111,7 +111,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/7962665",
 "is_hot": false,
 "last_updated": "2026-08-24",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -122,7 +122,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/8143476",
 "is_hot": false,
 "last_updated": "2026-09-08",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -133,7 +133,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/7911963",
 "is_hot": false,
 "last_updated": "2026-05-10",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -144,7 +144,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/7556162",
 "is_hot": false,
 "last_updated": "2026-09-01",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -155,7 +155,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/7938197",
 "is_hot": false,
 "last_updated": "2026-07-01",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -166,7 +166,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/8152630",
 "is_hot": false,
 "last_updated": "2026-08-24",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -177,7 +177,7 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/8187911",
 "is_hot": false,
 "last_updated": "2026-09-09",
-"is_new": true
+"is_new": false
 },
 {
 "source": "similarweb",
@@ -188,9 +188,9 @@
 "url": "https://job-boards.greenhouse.io/similarweb/jobs/8093782",
 "is_hot": false,
 "last_updated": "2026-07-30",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:08:33.627272+00:00"
+"generated_at": "2026-09-16T10:16:58.780527+00:00"
 }

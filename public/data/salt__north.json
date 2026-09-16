@@ -1,0 +1,42 @@
+{
+"source": "salt",
+"count": 3,
+"new_count": 3,
+"jobs": [
+{
+"source": "salt",
+"external_id": "5208152007",
+"title": "Platform Engineer- Edge Team",
+"location": "Tel Aviv",
+"excerpt": "",
+"url": "https://salt.security/job-board?gh_jid=5208152007",
+"is_hot": false,
+"last_updated": "2026-09-07",
+"is_new": true
+},
+{
+"source": "salt",
+"external_id": "5202759007",
+"title": "Security Engineer",
+"location": "Tel Aviv",
+"excerpt": "",
+"url": "https://salt.security/job-board?gh_jid=5202759007",
+"is_hot": false,
+"last_updated": "2026-08-04",
+"is_new": true
+},
+{
+"source": "salt",
+"external_id": "4950306007",
+"title": "Software Team Leader",
+"location": "Tel Aviv",
+"excerpt": "",
+"url": "https://salt.security/job-board?gh_jid=4950306007",
+"is_hot": false,
+"last_updated": "2025-10-20",
+"is_new": true
+}
+],
+"cached": true,
+"generated_at": "2026-09-16T10:17:01.519331+00:00"
+}

@@ -1,0 +1,31 @@
+{
+"source": "stripe",
+"count": 2,
+"new_count": 2,
+"jobs": [
+{
+"source": "stripe",
+"external_id": "8129956",
+"title": "Account Executive, Enterprise Grower, Platforms (Israel)",
+"location": "Israel",
+"excerpt": "",
+"url": "https://stripe.com/jobs/search?gh_jid=8129956",
+"is_hot": false,
+"last_updated": "2026-09-10",
+"is_new": true
+},
+{
+"source": "stripe",
+"external_id": "8113401",
+"title": "Solutions Architect, Enterprise",
+"location": "Israel",
+"excerpt": "",
+"url": "https://stripe.com/jobs/search?gh_jid=8113401",
+"is_hot": false,
+"last_updated": "2026-09-10",
+"is_new": true
+}
+],
+"cached": true,
+"generated_at": "2026-09-16T10:17:04.926451+00:00"
+}

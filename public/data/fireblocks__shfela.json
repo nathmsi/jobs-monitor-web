@@ -1,7 +1,7 @@
 {
 "source": "fireblocks",
 "count": 6,
-"new_count": 6,
+"new_count": 0,
 "jobs": [
 {
 "source": "fireblocks",
@@ -12,7 +12,7 @@
 "url": "https://www.fireblocks.com/careers/position?gh_jid=4706203006",
 "is_hot": false,
 "last_updated": "2026-09-10",
-"is_new": true
+"is_new": false
 },
 {
 "source": "fireblocks",
@@ -23,7 +23,7 @@
 "url": "https://www.fireblocks.com/careers/position?gh_jid=4701826006",
 "is_hot": false,
 "last_updated": "2026-09-14",
-"is_new": true
+"is_new": false
 },
 {
 "source": "fireblocks",
@@ -34,7 +34,7 @@
 "url": "https://www.fireblocks.com/careers/position?gh_jid=4683003006",
 "is_hot": false,
 "last_updated": "2026-09-08",
-"is_new": true
+"is_new": false
 },
 {
 "source": "fireblocks",
@@ -45,7 +45,7 @@
 "url": "https://www.fireblocks.com/careers/position?gh_jid=4655907006",
 "is_hot": false,
 "last_updated": "2026-09-08",
-"is_new": true
+"is_new": false
 },
 {
 "source": "fireblocks",
@@ -56,7 +56,7 @@
 "url": "https://www.fireblocks.com/careers/position?gh_jid=4682123006",
 "is_hot": false,
 "last_updated": "2026-09-14",
-"is_new": true
+"is_new": false
 },
 {
 "source": "fireblocks",
@@ -67,9 +67,9 @@
 "url": "https://www.fireblocks.com/careers/position?gh_jid=4709484006",
 "is_hot": false,
 "last_updated": "2026-09-08",
-"is_new": true
+"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T10:08:32.765204+00:00"
+"generated_at": "2026-09-16T10:16:57.747569+00:00"
 }

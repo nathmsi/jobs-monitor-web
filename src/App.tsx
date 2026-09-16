@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import { useAllSourceJobs, useSources } from "./api/hooks";
 import { FilterBar } from "./components/FilterBar/FilterBar";
 import { Header } from "./components/Header/Header";
-import { JobCardSkeleton } from "./components/JobCardSkeleton/JobCardSkeleton";
 import { SourcesModal } from "./components/SourcesModal/SourcesModal";
 import { SourceSection } from "./components/SourceSection/SourceSection";
 import type { Filters } from "./types";
@@ -46,7 +45,25 @@ function App() {
       <FilterBar filters={filters} onChange={setFilters} />
 
       {sourceList.length > 0 && (
-        <div className={styles.toolbar}>
+        <div className={styles.tabbar}>
+          <div className={styles.tabs} role="tablist">
+            <button
+              role="tab"
+              aria-selected={tab === "company"}
+              className={`${styles.tab} ${tab === "company" ? styles.tabActive : ""}`}
+              onClick={() => setTab("company")}
+            >
+              {t("tabs.companies")} <span className={styles.tabCount}>{companyCount}</span>
+            </button>
+            <button
+              role="tab"
+              aria-selected={tab === "agency"}
+              className={`${styles.tab} ${tab === "agency" ? styles.tabActive : ""}`}
+              onClick={() => setTab("agency")}
+            >
+              {t("tabs.agencies")} <span className={styles.tabCount}>{agencyCount}</span>
+            </button>
+          </div>
           <button className={styles.allBtn} onClick={() => setShowAll(true)}>
             {t("allCompanies.open", { count: sourceList.length })}
           </button>
@@ -63,26 +80,15 @@ function App() {
         )}
 
         {isLoading &&
-          Array.from({ length: 2 }).map((_, i) => (
-            <section key={i} className={styles.bootSection}>
-              <div className={styles.bootBar} />
-              <div className={styles.grid}>
-                {Array.from({ length: 3 }).map((_, j) => (
-                  <JobCardSkeleton key={j} />
-                ))}
-              </div>
-            </section>
+          Array.from({ length: 3 }).map((_, i) => (
+            <div key={i} className={styles.bootBar} />
           ))}
 
-        {withJobs.map(({ source, query }) => (
+        {shown.map(({ source, query }) => (
           <SourceSection key={source.key} source={source} query={query} />
         ))}
 
-        {loading.map(({ source, query }) => (
-          <SourceSection key={source.key} source={source} query={query} />
-        ))}
-
-        {!isLoading && withJobs.length === 0 && loading.length === 0 && (
+        {!isLoading && shown.length === 0 && (
           <p className={styles.noResults}>{t("noResults")}</p>
         )}
       </main>

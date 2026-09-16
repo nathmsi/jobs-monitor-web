@@ -47,6 +47,10 @@
     "apiHint": "ודאו שהשרת מגיב בכתובת",
     "generic": "שגיאה: {{message}}"
   },
+  "tabs": {
+    "companies": "חברות הייטק",
+    "agencies": "חברות השמה"
+  },
   "noResults": "אין משרות לפי הסינון הזה.",
   "allCompanies": {
     "open": "כל החברות ({{count}})",

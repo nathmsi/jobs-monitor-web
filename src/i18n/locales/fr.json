@@ -47,6 +47,10 @@
     "apiHint": "Vérifie que le backend répond sur",
     "generic": "Erreur : {{message}}"
   },
+  "tabs": {
+    "companies": "Entreprises tech",
+    "agencies": "Sociétés de placement"
+  },
   "noResults": "Aucune offre pour ces filtres.",
   "allCompanies": {
     "open": "Toutes les entreprises ({{count}})",

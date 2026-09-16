@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { avatarColor, initials } from "../../lib/avatar";
 import type { SourceInfo } from "../../types";
+import { Avatar } from "../Avatar/Avatar";
 import styles from "./SourcesModal.module.css";
 
 interface Props {
@@ -34,13 +34,7 @@ export function SourcesModal({ sources, counts, onClose }: Props) {
     const n = counts[s.key] ?? 0;
     return (
       <li key={s.key} className={styles.row}>
-        <span
-          className={styles.avatar}
-          style={{ backgroundColor: avatarColor(s.key) }}
-          aria-hidden
-        >
-          {initials(s.label)}
-        </span>
+        <Avatar source={s} size={30} />
         <span className={styles.name}>{s.label}</span>
         <span className={n > 0 ? styles.count : styles.countZero}>
           {t("source.offers", { count: n })}

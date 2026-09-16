@@ -1,42 +1,23 @@
-import type { UseQueryResult } from "@tanstack/react-query";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { markForceRefresh } from "../../api/hooks";
-import { avatarColor, initials } from "../../lib/avatar";
-import { jobId, useJobFlags } from "../../lib/jobFlags";
-import type { RefreshResult, SourceInfo } from "../../types";
+import type { Job, SourceInfo } from "../../types";
+import { Avatar } from "../Avatar/Avatar";
 import { JobCard } from "../JobCard/JobCard";
-import { JobCardSkeleton } from "../JobCardSkeleton/JobCardSkeleton";
 import styles from "./SourceSection.module.css";
 
 interface Props {
   source: SourceInfo;
-  query: UseQueryResult<RefreshResult, Error>;
+  jobs: Job[];
 }
 
-const SKELETON_COUNT = 6;
-
-export function SourceSection({ source, query }: Props) {
-  const { t, i18n } = useTranslation();
-  const { data, isFetching, isError, error, refetch, dataUpdatedAt } = query;
-  const { hideSeen, isOpened } = useJobFlags();
+export function SourceSection({ source, jobs }: Props) {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
 
-  const showSkeleton = isFetching && !data;
   const bodyId = `source-body-${source.key}`;
-
-  const jobs = (data?.jobs ?? []).filter(
-    (j) => !hideSeen || !isOpened(jobId(j.source, j.external_id)),
-  );
-  const visibleCount = jobs.length;
+  const count = jobs.length;
   const newCount = jobs.filter((j) => j.is_new).length;
-
-  const formatTime = (ts: number) =>
-    new Date(ts).toLocaleTimeString(i18n.language, {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
 
   return (
     <section
@@ -49,17 +30,11 @@ export function SourceSection({ source, query }: Props) {
         aria-expanded={open}
         aria-controls={bodyId}
       >
-        <span
-          className={styles.avatar}
-          style={{ backgroundColor: avatarColor(source.key) }}
-          aria-hidden
-        >
-          {initials(source.label)}
-        </span>
+        <Avatar source={source} size={42} />
         <span className={styles.titleGroup}>
           <span className={styles.title}>{source.label}</span>
           <span className={styles.meta}>
-            {t("source.offers", { count: visibleCount })}
+            {t("source.offers", { count })}
             {newCount > 0 && (
               <>
                 {" · "}
@@ -70,9 +45,7 @@ export function SourceSection({ source, query }: Props) {
             )}
           </span>
         </span>
-        {visibleCount > 0 && (
-          <span className={styles.countPill}>{visibleCount}</span>
-        )}
+        {count > 0 && <span className={styles.countPill}>{count}</span>}
         <span
           className={`${styles.chevron} ${open ? styles.chevronOpen : ""}`}
           aria-hidden
@@ -83,14 +56,8 @@ export function SourceSection({ source, query }: Props) {
 
       {open && (
         <div id={bodyId} className={styles.body}>
-          <div className={styles.toolbar}>
-            {dataUpdatedAt > 0 && (
-              <span className={styles.updated}>
-                {t("source.updated", { time: formatTime(dataUpdatedAt) })}
-              </span>
-            )}
-            <span className={styles.toolbarSpacer} />
-            {source.site_url && (
+          {source.site_url && (
+            <div className={styles.toolbar}>
               <a
                 className={styles.ghostBtn}
                 href={source.site_url}
@@ -99,38 +66,13 @@ export function SourceSection({ source, query }: Props) {
               >
                 {t("source.openSite")}
               </a>
-            )}
-            <button
-              className={styles.ghostBtn}
-              onClick={() => {
-                markForceRefresh(source.key);
-                refetch();
-              }}
-              disabled={isFetching}
-            >
-              {isFetching ? t("source.loading") : t("source.refresh")}
-            </button>
+            </div>
+          )}
+          <div className={styles.grid}>
+            {jobs.map((job) => (
+              <JobCard key={`${job.source}-${job.external_id}`} job={job} />
+            ))}
           </div>
-
-          {isError && (
-            <div className={styles.alert} role="alert">
-              {t("error.generic", { message: (error as Error).message })}
-            </div>
-          )}
-
-          {showSkeleton ? (
-            <div className={styles.grid}>
-              {Array.from({ length: SKELETON_COUNT }).map((_, i) => (
-                <JobCardSkeleton key={i} />
-              ))}
-            </div>
-          ) : (
-            <div className={styles.grid}>
-              {jobs.map((job) => (
-                <JobCard key={`${job.source}-${job.external_id}`} job={job} />
-              ))}
-            </div>
-          )}
         </div>
       )}
     </section>

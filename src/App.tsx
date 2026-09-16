@@ -1,41 +1,60 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { useAllSourceJobs, useSources } from "./api/hooks";
+import { queryTokens, textMatches } from "./api/client";
+import { useRegionJobs, useSources } from "./api/hooks";
 import { FilterBar } from "./components/FilterBar/FilterBar";
 import { Header } from "./components/Header/Header";
 import { SourcesModal } from "./components/SourcesModal/SourcesModal";
 import { SourceSection } from "./components/SourceSection/SourceSection";
-import type { Filters } from "./types";
+import { jobId, useJobFlags } from "./lib/jobFlags";
+import type { Filters, Job, SourceInfo } from "./types";
 import styles from "./App.module.css";
 
 function App() {
   const { t } = useTranslation();
-  const { data: sources, isLoading, isError, error } = useSources();
-  const [filters, setFilters] = useState<Filters>({
-    region: "jerusalem",
-    q: "",
-  });
+  const { data: sources } = useSources();
+  const [filters, setFilters] = useState<Filters>({ region: "all", q: "" });
   const [showAll, setShowAll] = useState(false);
   const [tab, setTab] = useState<"company" | "agency">("company");
 
+  const { data: regionJobs, isLoading, isError, error } = useRegionJobs(
+    filters.region,
+  );
+  const { hideSeen, isOpened } = useJobFlags();
+
   const sourceList = sources ?? [];
-  const queries = useAllSourceJobs(sourceList, filters);
-  const items = sourceList.map((source, i) => ({ source, query: queries[i] }));
+  const tokens = queryTokens(filters.q);
 
-  // Only show sources that actually have offers (most first). Empty ones are
-  // hidden from the main view — reachable via the "all companies" modal.
-  const withJobs = items
-    .filter((it) => it.query.data && it.query.data.jobs.length > 0)
-    .sort((a, b) => (b.query.data?.count ?? 0) - (a.query.data?.count ?? 0));
-  const loading = items.filter((it) => it.query.isFetching && !it.query.data);
+  // Group the region's jobs by source, applying hide-seen once.
+  const grouped: Record<string, Job[]> = {};
+  for (const job of regionJobs ?? []) {
+    if (hideSeen && isOpened(jobId(job.source, job.external_id))) continue;
+    (grouped[job.source] ??= []).push(job);
+  }
 
-  const companyCount = withJobs.filter((it) => it.source.kind === "company").length;
-  const agencyCount = withJobs.filter((it) => it.source.kind === "agency").length;
-  const shown = [...withJobs, ...loading].filter((it) => it.source.kind === tab);
+  // Generic search: a company matches by name (show all its jobs) or by the
+  // keyword appearing in a job's title/excerpt.
+  const jobsForSource = (s: SourceInfo): Job[] => {
+    const list = grouped[s.key] ?? [];
+    if (tokens.length === 0 || textMatches(s.label, tokens)) return list;
+    return list.filter((j) =>
+      textMatches(`${j.title} ${j.excerpt} ${j.description ?? ""}`, tokens),
+    );
+  };
 
+  const items = sourceList
+    .map((source) => ({ source, jobs: jobsForSource(source) }))
+    .filter((it) => it.jobs.length > 0)
+    .sort((a, b) => b.jobs.length - a.jobs.length);
+
+  const companyCount = items.filter((it) => it.source.kind === "company").length;
+  const agencyCount = items.filter((it) => it.source.kind === "agency").length;
+  const shown = items.filter((it) => it.source.kind === tab);
+
+  // Region counts (before the keyword filter) for the directory modal.
   const counts = Object.fromEntries(
-    items.map((it) => [it.source.key, it.query.data?.count ?? 0]),
+    sourceList.map((s) => [s.key, (grouped[s.key] ?? []).length]),
   );
 
   return (
@@ -53,7 +72,8 @@ function App() {
               className={`${styles.tab} ${tab === "company" ? styles.tabActive : ""}`}
               onClick={() => setTab("company")}
             >
-              {t("tabs.companies")} <span className={styles.tabCount}>{companyCount}</span>
+              {t("tabs.companies")}{" "}
+              <span className={styles.tabCount}>{companyCount}</span>
             </button>
             <button
               role="tab"
@@ -61,7 +81,8 @@ function App() {
               className={`${styles.tab} ${tab === "agency" ? styles.tabActive : ""}`}
               onClick={() => setTab("agency")}
             >
-              {t("tabs.agencies")} <span className={styles.tabCount}>{agencyCount}</span>
+              {t("tabs.agencies")}{" "}
+              <span className={styles.tabCount}>{agencyCount}</span>
             </button>
           </div>
           <button className={styles.allBtn} onClick={() => setShowAll(true)}>
@@ -80,12 +101,12 @@ function App() {
         )}
 
         {isLoading &&
-          Array.from({ length: 3 }).map((_, i) => (
+          Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className={styles.bootBar} />
           ))}
 
-        {shown.map(({ source, query }) => (
-          <SourceSection key={source.key} source={source} query={query} />
+        {shown.map(({ source, jobs }) => (
+          <SourceSection key={source.key} source={source} jobs={jobs} />
         ))}
 
         {!isLoading && shown.length === 0 && (

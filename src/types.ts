@@ -6,6 +6,7 @@ export interface Job {
   title: string;
   location: string;
   excerpt: string;
+  description?: string;
   url: string | null;
   is_hot: boolean;
   last_updated: string | null;
@@ -18,6 +19,13 @@ export interface SourceInfo {
   kind: "agency" | "company" | string;
   site_url: string | null;
   auto_fetch: boolean;
+  logo?: string | null;
+}
+
+export interface RegionJobs {
+  region: string;
+  count: number;
+  jobs: Job[];
 }
 
 export interface RefreshResult {

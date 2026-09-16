@@ -1,7 +1,7 @@
 {
 "source": "malam",
 "count": 53,
-"new_count": 1,
+"new_count": 0,
 "jobs": [
 {
 "source": "malam",
@@ -144,7 +144,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%94%d7%a0%d7%93%d7%a1-%d7%aa-%d7%90%d7%99%d7%a0%d7%98%d7%92%d7%a8%d7%a6%d7%99%d7%94/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -588,5 +588,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T12:04:59.930645+00:00"
+"generated_at": "2026-09-16T12:17:39.667120+00:00"
 }

@@ -1,7 +1,7 @@
 {
 "source": "fireblocks",
 "count": 8,
-"new_count": 2,
+"new_count": 0,
 "jobs": [
 {
 "source": "fireblocks",
@@ -12,7 +12,7 @@
 "url": "https://www.fireblocks.com/careers/position?gh_jid=4713012006",
 "is_hot": false,
 "last_updated": "2026-09-16",
-"is_new": true
+"is_new": false
 },
 {
 "source": "fireblocks",
@@ -34,7 +34,7 @@
 "url": "https://www.fireblocks.com/careers/position?gh_jid=4713010006",
 "is_hot": false,
 "last_updated": "2026-09-16",
-"is_new": true
+"is_new": false
 },
 {
 "source": "fireblocks",
@@ -93,5 +93,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T12:05:00.362079+00:00"
+"generated_at": "2026-09-16T12:17:40.123551+00:00"
 }

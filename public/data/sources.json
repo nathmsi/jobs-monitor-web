@@ -194,5 +194,19 @@
 "kind": "company",
 "site_url": "https://job-boards.greenhouse.io/coinbase",
 "auto_fetch": true
+},
+{
+"key": "via",
+"label": "Via",
+"kind": "company",
+"site_url": "https://job-boards.greenhouse.io/via",
+"auto_fetch": true
+},
+{
+"key": "appsflyer",
+"label": "AppsFlyer",
+"kind": "company",
+"site_url": "https://job-boards.greenhouse.io/appsflyer",
+"auto_fetch": true
 }
 ]

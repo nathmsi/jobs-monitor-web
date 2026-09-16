@@ -49,6 +49,17 @@ describe("api client (static data)", () => {
     expect(res.jobs[0].external_id).toBe("1");
   });
 
+  it("matches ignoring spaces/hyphens ('front end' -> 'Frontend')", async () => {
+    const jobs = [
+      { source: "matrix", external_id: "1", title: "Frontend Developer", location: "", excerpt: "", url: null, is_hot: false, last_updated: null, is_new: false },
+      { source: "matrix", external_id: "2", title: "Front-End Engineer", location: "", excerpt: "", url: null, is_hot: false, last_updated: null, is_new: false },
+      { source: "matrix", external_id: "3", title: "Backend Developer", location: "", excerpt: "", url: null, is_hot: false, last_updated: null, is_new: false },
+    ];
+    vi.stubGlobal("fetch", mockFetch({ source: "matrix", count: 3, new_count: 0, jobs, cached: true }));
+    const res = await refreshSource("matrix", { region: "all", q: "front end" });
+    expect(res.jobs.map((j) => j.external_id)).toEqual(["1", "2"]);
+  });
+
   it("returns empty when the file is missing", async () => {
     vi.stubGlobal("fetch", mockFetch({}, false, 404));
     const res = await refreshSource("matrix", { region: "jerusalem", q: "" });

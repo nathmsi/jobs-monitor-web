@@ -1,7 +1,7 @@
 {
 "source": "sqlink",
 "count": 40,
-"new_count": 1,
+"new_count": 0,
 "jobs": [
 {
 "source": "sqlink",
@@ -12,7 +12,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/ראש-צוות-mobile/מפתחת-תחום-פיתוח-דיגיטל/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -445,5 +445,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-16T09:49:53.991444+00:00"
+"generated_at": "2026-09-16T10:08:28.273915+00:00"
 }

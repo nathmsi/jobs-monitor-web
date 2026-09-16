@@ -22,5 +22,95 @@
 "label": "Malam Team",
 "site_url": "https://www.malamteam.com/לובי-חיפוש-קריירה/?serch=&field=%D7%A4%D7%99%D7%AA%D7%95%D7%97&location=%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D%20%D7%95%D7%94%D7%A1%D7%91%D7%99%D7%91%D7%94",
 "auto_fetch": true
+},
+{
+"key": "melio",
+"label": "Melio",
+"site_url": "https://job-boards.greenhouse.io/melio",
+"auto_fetch": true
+},
+{
+"key": "fireblocks",
+"label": "Fireblocks",
+"site_url": "https://job-boards.greenhouse.io/fireblocks",
+"auto_fetch": true
+},
+{
+"key": "jfrog",
+"label": "JFrog",
+"site_url": "https://job-boards.greenhouse.io/jfrog",
+"auto_fetch": true
+},
+{
+"key": "payoneer",
+"label": "Payoneer",
+"site_url": "https://job-boards.greenhouse.io/payoneer",
+"auto_fetch": true
+},
+{
+"key": "taboola",
+"label": "Taboola",
+"site_url": "https://job-boards.greenhouse.io/taboola",
+"auto_fetch": true
+},
+{
+"key": "similarweb",
+"label": "Similarweb",
+"site_url": "https://job-boards.greenhouse.io/similarweb",
+"auto_fetch": true
+},
+{
+"key": "catonetworks",
+"label": "Cato Networks",
+"site_url": "https://job-boards.greenhouse.io/catonetworks",
+"auto_fetch": true
+},
+{
+"key": "gong",
+"label": "Gong",
+"site_url": "https://job-boards.greenhouse.io/gongio",
+"auto_fetch": true
+},
+{
+"key": "riskified",
+"label": "Riskified",
+"site_url": "https://job-boards.greenhouse.io/riskified",
+"auto_fetch": true
+},
+{
+"key": "forter",
+"label": "Forter",
+"site_url": "https://job-boards.greenhouse.io/forter",
+"auto_fetch": true
+},
+{
+"key": "axonius",
+"label": "Axonius",
+"site_url": "https://job-boards.greenhouse.io/axonius",
+"auto_fetch": true
+},
+{
+"key": "orca",
+"label": "Orca Security",
+"site_url": "https://job-boards.greenhouse.io/orcasecurity",
+"auto_fetch": true
+},
+{
+"key": "yotpo",
+"label": "Yotpo",
+"site_url": "https://job-boards.greenhouse.io/yotpo",
+"auto_fetch": true
+},
+{
+"key": "lightricks",
+"label": "Lightricks",
+"site_url": "https://job-boards.greenhouse.io/lightricks",
+"auto_fetch": true
+},
+{
+"key": "bringg",
+"label": "Bringg",
+"site_url": "https://job-boards.greenhouse.io/bringg",
+"auto_fetch": true
 }
 ]

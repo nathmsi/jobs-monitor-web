@@ -1,106 +1,18 @@
 {
 "source": "sqlink",
 "count": 18,
-"new_count": 0,
+"new_count": 1,
 "jobs": [
 {
 "source": "sqlink",
-"external_id": "153719",
-"title": "מפתח/ת Backend",
+"external_id": "155141",
+"title": "מפתח/ת תחום פיתוח דיגיטל",
 "location": "",
-"excerpt": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Backend התפקיד כולל: עבודה עם NestJS, TypeScript וארכיטקטורת Microservices, פיתוח מערכות Backend סקלאביליות, כתיבת קוד נקי ותחזיקתי, עבודה עם מסדי נתונים, תקשורת אסינכרונית וכלי…",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/מתכנת-backend/מפתחת-backend/",
+"excerpt": "ארגון מוביל באזור המרכז מגייס מפתח/ת תחום פיתוח דיגיטל התפקיד כולל: עבודה עם/ב-פיתוח אתרי Web חדשניים, שילוב עם מערכות ליבה ומערכות צד שלישי, פיתוח ב-React.js וב-Next.js, עבודה עם React Native, ממשקים מול מנתחי מערכות,…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/ראש-צוות-mobile/מפתחת-תחום-פיתוח-דיגיטל/",
 "is_hot": false,
 "last_updated": null,
-"is_new": false
-},
-{
-"source": "sqlink",
-"external_id": "155045",
-"title": "Senior Product Manager",
-"location": "",
-"excerpt": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Full Stack, המשרה ממוקמת על קו רכבת ומשלבת יומיים עבודה היברידית מהבית התפקיד כולל: פיתוח Full Stack בסביבת React ו-React Native, עבודה עם Redux, MobX ו-Hooks, פיתוח באמצעות NodeJS…",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/רצ-פיתוח/senior-product-manager/",
-"is_hot": false,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "sqlink",
-"external_id": "154998",
-"title": "מפתח/ת תוכנה Desktop",
-"location": "",
-"excerpt": "ארגון ביטחוני במרכז הארץ מגייס מפתח/ת תוכנה Desktop התפקיד כולל: עבודה עם פיתוח אפליקציות ב-C++ וב-C# המתקשרות עם ציוד בדיקה וכרטיסים, עבודה מול חומרה וממשקי תקשורת, פיתוח מערכות מורכבות, איתור ופתרון בעיות ועבודה כחלק…",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-net/מפתחת-תוכנה-desktop/",
-"is_hot": false,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "sqlink",
-"external_id": "33439",
-"title": "מפתח/ת אינטגרציה",
-"location": "",
-"excerpt": "בנק במרכז מגייס מפתח/ת אינטגרציה התפקיד כולל עבודה עם צוותי פיתוח, תשתיות וגורמים עסקיים, הובלת תהליכי עלייה לייצור ואינטגרציות בין מערכות הבנק, טיפול בתקלות משלב התחקור ועד להטמעת הפתרון, מעקב אחר תהליכים רוחביים,…",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-אינטגרציה/מפתחת-אינטגרציה/",
-"is_hot": false,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "sqlink",
-"external_id": "154954",
-"title": "מפתח/ת Full Stack",
-"location": "",
-"excerpt": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Full Stack, המשרה ממוקמת על קו רכבת ומשלבת יומיים עבודה היברידית מהבית התפקיד כולל: פיתוח Full Stack בסביבת React ו-React Native, עבודה עם Redux, MobX ו-Hooks, פיתוח באמצעות NodeJS…",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/מפתחת-full-stack-1/",
-"is_hot": false,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "sqlink",
-"external_id": "154749",
-"title": "מפתח ומנתח מערכות",
-"location": "",
-"excerpt": "חברה פיננסית באזור המרכז מגייסת מפתח/ת ומנתח/ת מערכות התפקיד כולל: עבודה במערכת דירוג לווים האחראית על חישוב דירוג האשראי ללקוחות בעלי אובליגו גבוה, שילוב של ניתוח מערכות ופיתוח בחלוקה של 50% ניתוח ו-50% פיתוח, עבודה עם…",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-net/מפתח-ומנתח-מערכות/",
-"is_hot": false,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "sqlink",
-"external_id": "154245",
-"title": "מפתח/ת Android",
-"location": "",
-"excerpt": "ארגון פיננסי באזור המרכז מגייס מפתח/ת Android התפקיד כולל: עבודה עם פיתוח אפליקציות Native Android, פיתוח ותחזוקה של פתרונות Mobile מתקדמים, תכנון ויישום ארכיטקטורת המערכת, עבודה עם ממשקי Backend ו-APIs, הובלה טכנולוגית…",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/android-developer/מפתחת-android/",
-"is_hot": false,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "sqlink",
-"external_id": "154684",
-"title": "מפתח מערכות אינטגרציה מרובות ממשקים",
-"location": "",
-"excerpt": "מפתח/ת מערכות אינטגרציה עבור ארגון בריאות באזור המרכז התפקיד כולל: עבודה עם מערכות אינטגרציה מרובות ממשקים, הגדרת ארכיטקטורה ופיתוח פתרונות אינטגרציה בתקן FHIR, עבודה על בסיס אפיונים עסקיים וטכנולוגיים, פיתוח תהליכי…",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-אינטגרציה/מפתח-מערכות-אינטגרציה-מרובות-ממשקים/",
-"is_hot": false,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "sqlink",
-"external_id": "154678",
-"title": "מפתח/ת Full Stack",
-"location": "",
-"excerpt": "ארגון בריאות באזור המרכז מגייס מפתח/ת Full Stack התפקיד כולל: עבודה בפיתוח מערכות ואתרי אינטרנט חיצוניים, אפליקציות מובייל וממשקי משתמש מתקדמים בסביבת .NET Core, React JS ו-React Native, פיתוח צד שרת ו-Frontend, תכנון…",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/מפתחת-full-stack/",
-"is_hot": false,
-"last_updated": null,
-"is_new": false
+"is_new": true
 },
 {
 "source": "sqlink",
@@ -192,16 +104,104 @@
 },
 {
 "source": "sqlink",
-"external_id": "154678",
+"external_id": "155141",
+"title": "מפתח/ת תחום פיתוח דיגיטל",
+"location": "",
+"excerpt": "ארגון מוביל באזור המרכז מגייס מפתח/ת תחום פיתוח דיגיטל התפקיד כולל: עבודה עם/ב-פיתוח אתרי Web חדשניים, שילוב עם מערכות ליבה ומערכות צד שלישי, פיתוח ב-React.js וב-Next.js, עבודה עם React Native, ממשקים מול מנתחי מערכות,…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/ראש-צוות-mobile/מפתחת-תחום-פיתוח-דיגיטל/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "153719",
+"title": "מפתח/ת Backend",
+"location": "",
+"excerpt": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Backend התפקיד כולל: עבודה עם NestJS, TypeScript וארכיטקטורת Microservices, פיתוח מערכות Backend סקלאביליות, כתיבת קוד נקי ותחזיקתי, עבודה עם מסדי נתונים, תקשורת אסינכרונית וכלי…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/מתכנת-backend/מפתחת-backend/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "155045",
+"title": "Senior Product Manager",
+"location": "",
+"excerpt": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Full Stack, המשרה ממוקמת על קו רכבת ומשלבת יומיים עבודה היברידית מהבית התפקיד כולל: פיתוח Full Stack בסביבת React ו-React Native, עבודה עם Redux, MobX ו-Hooks, פיתוח באמצעות NodeJS…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/רצ-פיתוח/senior-product-manager/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "154998",
+"title": "מפתח/ת תוכנה Desktop",
+"location": "",
+"excerpt": "ארגון ביטחוני במרכז הארץ מגייס מפתח/ת תוכנה Desktop התפקיד כולל: עבודה עם פיתוח אפליקציות ב-C++ וב-C# המתקשרות עם ציוד בדיקה וכרטיסים, עבודה מול חומרה וממשקי תקשורת, פיתוח מערכות מורכבות, איתור ופתרון בעיות ועבודה כחלק…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-net/מפתחת-תוכנה-desktop/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "33439",
+"title": "מפתח/ת אינטגרציה",
+"location": "",
+"excerpt": "בנק במרכז מגייס מפתח/ת אינטגרציה התפקיד כולל עבודה עם צוותי פיתוח, תשתיות וגורמים עסקיים, הובלת תהליכי עלייה לייצור ואינטגרציות בין מערכות הבנק, טיפול בתקלות משלב התחקור ועד להטמעת הפתרון, מעקב אחר תהליכים רוחביים,…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-אינטגרציה/מפתחת-אינטגרציה/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "154954",
 "title": "מפתח/ת Full Stack",
 "location": "",
-"excerpt": "ארגון בריאות באזור המרכז מגייס מפתח/ת Full Stack התפקיד כולל: עבודה בפיתוח מערכות ואתרי אינטרנט חיצוניים, אפליקציות מובייל וממשקי משתמש מתקדמים בסביבת .NET Core, React JS ו-React Native, פיתוח צד שרת ו-Frontend, תכנון…",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/מפתחת-full-stack/",
+"excerpt": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Full Stack, המשרה ממוקמת על קו רכבת ומשלבת יומיים עבודה היברידית מהבית התפקיד כולל: פיתוח Full Stack בסביבת React ו-React Native, עבודה עם Redux, MobX ו-Hooks, פיתוח באמצעות NodeJS…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/מפתחת-full-stack-1/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "154749",
+"title": "מפתח ומנתח מערכות",
+"location": "",
+"excerpt": "חברה פיננסית באזור המרכז מגייסת מפתח/ת ומנתח/ת מערכות התפקיד כולל: עבודה במערכת דירוג לווים האחראית על חישוב דירוג האשראי ללקוחות בעלי אובליגו גבוה, שילוב של ניתוח מערכות ופיתוח בחלוקה של 50% ניתוח ו-50% פיתוח, עבודה עם…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-net/מפתח-ומנתח-מערכות/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "154245",
+"title": "מפתח/ת Android",
+"location": "",
+"excerpt": "ארגון פיננסי באזור המרכז מגייס מפתח/ת Android התפקיד כולל: עבודה עם פיתוח אפליקציות Native Android, פיתוח ותחזוקה של פתרונות Mobile מתקדמים, תכנון ויישום ארכיטקטורת המערכת, עבודה עם ממשקי Backend ו-APIs, הובלה טכנולוגית…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/android-developer/מפתחת-android/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "154684",
+"title": "מפתח מערכות אינטגרציה מרובות ממשקים",
+"location": "",
+"excerpt": "מפתח/ת מערכות אינטגרציה עבור ארגון בריאות באזור המרכז התפקיד כולל: עבודה עם מערכות אינטגרציה מרובות ממשקים, הגדרת ארכיטקטורה ופיתוח פתרונות אינטגרציה בתקן FHIR, עבודה על בסיס אפיונים עסקיים וטכנולוגיים, פיתוח תהליכי…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-אינטגרציה/מפתח-מערכות-אינטגרציה-מרובות-ממשקים/",
 "is_hot": false,
 "last_updated": null,
 "is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T18:04:47.614389+00:00"
+"generated_at": "2026-09-16T09:49:53.990102+00:00"
 }

@@ -1,7 +1,7 @@
 {
 "source": "sqlink",
 "count": 2,
-"new_count": 1,
+"new_count": 0,
 "jobs": [
 {
 "source": "sqlink",
@@ -12,7 +12,7 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/senior-full-stack-engineer/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -27,5 +27,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T18:04:47.615114+00:00"
+"generated_at": "2026-09-16T09:49:53.991217+00:00"
 }

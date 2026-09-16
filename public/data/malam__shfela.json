@@ -1,6 +1,6 @@
 {
 "source": "malam",
-"count": 23,
+"count": 22,
 "new_count": 0,
 "jobs": [
 {
@@ -82,23 +82,23 @@
 },
 {
 "source": "malam",
-"external_id": "37544",
-"title": "מנהל.ת מערך טכנולוגי ו- Delivery",
+"external_id": "37445",
+"title": "מפתח.ת תוכנה במערכות WEB",
 "location": "השפלה, ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מנהל.ת טכנולוגיות ו- Delivery לארגון ציבורי בירושלים תיאור משרה: דרוש.ה מנהל.ת מערך טכנולוגי ו- Delivery לתפקיד בכיר הכולל הובלת תוכניות טכנולוגיות מורכבות ורחבות היקף, טרנספורמציה…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a0%d7%94%d7%9c-%d7%aa-%d7%9e%d7%a2%d7%a8%d7%9a-%d7%98%d7%9b%d7%a0%d7%95%d7%9c%d7%95%d7%92%d7%99-%d7%95-delivery/",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה במערכות WEB לארגון ציבורי בירושלים תיאור משרה: מפתח בכיר במערכות WEB - מפתח בכיר למערכת נועם מערכת נועם הינה מערכת במג'יק שעוברת לענן . המערכת משמשת לניהול ועדות רכישות במשרד…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9e%d7%a2%d7%a8%d7%9b%d7%95%d7%aa-web/",
 "is_hot": true,
 "last_updated": null,
 "is_new": false
 },
 {
 "source": "malam",
-"external_id": "37586",
-"title": "מפתח.ת תוכנה",
-"location": "גוש דן, השפלה, השרון",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון ממשלתי בתל אביב! תיאור משרה: התפקיד כולל פיתוח וכתיבת קוד Hands-On במערכות מידע, אתרי אינטרנט, Intranet ומערכות Mobile, בדגש על טכנולוגיות Web ו-. NET. בנוסף, התפקיד…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-6/",
-"is_hot": false,
+"external_id": "37544",
+"title": "מנהל.ת מערך טכנולוגי ו- Delivery",
+"location": "השפלה, ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מנהל.ת טכנולוגיות ו- Delivery לארגון ציבורי בירושלים תיאור משרה: דרוש.ה מנהל.ת מערך טכנולוגי ו- Delivery לתפקיד בכיר הכולל הובלת תוכניות טכנולוגיות מורכבות ורחבות היקף, טרנספורמציה…",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a0%d7%94%d7%9c-%d7%aa-%d7%9e%d7%a2%d7%a8%d7%9a-%d7%98%d7%9b%d7%a0%d7%95%d7%9c%d7%95%d7%92%d7%99-%d7%95-delivery/",
+"is_hot": true,
 "last_updated": null,
 "is_new": false
 },
@@ -132,17 +132,6 @@
 "excerpt": "חברת Mertens Malam Team מגייסת תכניתן.ית Cobol לארגון פיננסי במרכז תיאור במסגרת התפקיד פיתוח, תחזוקה ושדרוג של מערכות ליבה פיננסיות בסביבת IBM Mainframe, כולל כתיבת קוד, ביצוע בדיקות וטיפול בתקלות עד לזיהוי שורש הבעיה.…",
 "url": "https://www.malamteam.com/משרה/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa%d7%9f-%d7%99%d7%aa-cobol/",
 "is_hot": false,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37445",
-"title": "מפתח.ת תוכנה במערכות WEB",
-"location": "השפלה, ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה במערכות WEB לארגון ציבורי בירושלים תיאור משרה: מפתח בכיר במערכות WEB - מפתח בכיר למערכת נועם מערכת נועם הינה מערכת במג'יק שעוברת לענן . המערכת משמשת לניהול ועדות רכישות במשרד…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9e%d7%a2%d7%a8%d7%9b%d7%95%d7%aa-web/",
-"is_hot": true,
 "last_updated": null,
 "is_new": false
 },
@@ -258,5 +247,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T18:04:53.505663+00:00"
+"generated_at": "2026-09-16T09:49:57.971859+00:00"
 }

@@ -1,7 +1,7 @@
 {
 "source": "malam",
-"count": 29,
-"new_count": 1,
+"count": 28,
+"new_count": 0,
 "jobs": [
 {
 "source": "malam",
@@ -111,7 +111,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-7/",
 "is_hot": false,
 "last_updated": null,
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -132,17 +132,6 @@
 "excerpt": "חברת Mertens - MalamTeam מגייסת מפתח Splunk ו- Monitoring לארגון ציבורי בתל אביב תיאור משרה: דרו.ה מפתח.ת Splunk ו- Monitoring לתפקיד Hands-On הכולל פיתוח, כתיבת קוד ועבודה בעולמות הניטור וה- Observability. התפקיד כולל…",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-splunk-%d7%95-monitoring/",
 "is_hot": true,
-"last_updated": null,
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37586",
-"title": "מפתח.ת תוכנה",
-"location": "גוש דן, השפלה, השרון",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון ממשלתי בתל אביב! תיאור משרה: התפקיד כולל פיתוח וכתיבת קוד Hands-On במערכות מידע, אתרי אינטרנט, Intranet ומערכות Mobile, בדגש על טכנולוגיות Web ו-. NET. בנוסף, התפקיד…",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-6/",
-"is_hot": false,
 "last_updated": null,
 "is_new": false
 },
@@ -324,5 +313,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T18:04:53.504617+00:00"
+"generated_at": "2026-09-16T09:49:57.970705+00:00"
 }

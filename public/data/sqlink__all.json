@@ -5,17 +5,28 @@
 "jobs": [
 {
 "source": "sqlink",
-"external_id": "154773",
-"title": "Senior Full Stack Engineer",
+"external_id": "155141",
+"title": "מפתח/ת תחום פיתוח דיגיטל",
 "location": "",
-"excerpt": "חברת SU באזור הצפון מגייסת Senior Full Stack Engineer התפקיד כולל פיתוח מקצה לקצה של יכולות ומוצרים, עבודה על Backend ב-Node.js ו-Frontend ב-Angular, תכנון וניהול בסיסי נתונים ב-MongoDB, פיתוח ותחזוקת RESTful APIs,…",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/senior-full-stack-engineer/",
+"excerpt": "ארגון מוביל באזור המרכז מגייס מפתח/ת תחום פיתוח דיגיטל התפקיד כולל: עבודה עם/ב-פיתוח אתרי Web חדשניים, שילוב עם מערכות ליבה ומערכות צד שלישי, פיתוח ב-React.js וב-Next.js, עבודה עם React Native, ממשקים מול מנתחי מערכות,…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/ראש-צוות-mobile/מפתחת-תחום-פיתוח-דיגיטל/",
 "is_hot": false,
 "last_updated": null,
 "is_new": true
 },
 {
 "source": "sqlink",
+"external_id": "154773",
+"title": "Senior Full Stack Engineer",
+"location": "",
+"excerpt": "חברת SU באזור הצפון מגייסת Senior Full Stack Engineer התפקיד כולל פיתוח מקצה לקצה של יכולות ומוצרים, עבודה על Backend ב-Node.js ו-Frontend ב-Angular, תכנון וניהול בסיסי נתונים ב-MongoDB, פיתוח ותחזוקת RESTful APIs,…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/senior-full-stack-engineer/",
+"is_hot": false,
+"last_updated": null,
+"is_new": false
+},
+{
+"source": "sqlink",
 "external_id": "155120",
 "title": "מפתח/ת תשתיות למערכות Embedded Hard Real-Time",
 "location": "",
@@ -214,11 +225,11 @@
 },
 {
 "source": "sqlink",
-"external_id": "154678",
-"title": "מפתח/ת Full Stack",
+"external_id": "155141",
+"title": "מפתח/ת תחום פיתוח דיגיטל",
 "location": "",
-"excerpt": "ארגון בריאות באזור המרכז מגייס מפתח/ת Full Stack התפקיד כולל: עבודה בפיתוח מערכות ואתרי אינטרנט חיצוניים, אפליקציות מובייל וממשקי משתמש מתקדמים בסביבת .NET Core, React JS ו-React Native, פיתוח צד שרת ו-Frontend, תכנון…",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/מפתחת-full-stack/",
+"excerpt": "ארגון מוביל באזור המרכז מגייס מפתח/ת תחום פיתוח דיגיטל התפקיד כולל: עבודה עם/ב-פיתוח אתרי Web חדשניים, שילוב עם מערכות ליבה ומערכות צד שלישי, פיתוח ב-React.js וב-Next.js, עבודה עם React Native, ממשקים מול מנתחי מערכות,…",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/ראש-צוות-mobile/מפתחת-תחום-פיתוח-דיגיטל/",
 "is_hot": false,
 "last_updated": null,
 "is_new": false
@@ -431,19 +442,8 @@
 "is_hot": false,
 "last_updated": null,
 "is_new": false
-},
-{
-"source": "sqlink",
-"external_id": "154678",
-"title": "מפתח/ת Full Stack",
-"location": "",
-"excerpt": "ארגון בריאות באזור המרכז מגייס מפתח/ת Full Stack התפקיד כולל: עבודה בפיתוח מערכות ואתרי אינטרנט חיצוניים, אפליקציות מובייל וממשקי משתמש מתקדמים בסביבת .NET Core, React JS ו-React Native, פיתוח צד שרת ו-Frontend, תכנון…",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/מפתחת-full-stack/",
-"is_hot": false,
-"last_updated": null,
-"is_new": false
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T18:04:47.616856+00:00"
+"generated_at": "2026-09-16T09:49:53.991444+00:00"
 }

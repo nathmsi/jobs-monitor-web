@@ -1,8 +1,19 @@
 {
 "source": "ness",
-"count": 3,
-"new_count": 0,
+"count": 4,
+"new_count": 1,
 "jobs": [
+{
+"source": "ness",
+"external_id": "43247",
+"title": "ראש/ת צוות פיתוח CRM Dynamics",
+"location": "אזור המרכז",
+"excerpt": "לNESS דרוש/ה ראש/ת צוות פיתוח CRM Dynamics. התפקיד כולל ניהול והובלה מקצועית של צוות מפתחים, הובלת ארכיטקטורת פתרונות בסביבת Microsoft Dynamics 365 CRM וכתיבת אפיונים טכניים. משרה מלאה, בראשון לציון. דרישות: ניסיון של 3…",
+"url": "https://www.ness-tech.co.il/careers/",
+"is_hot": false,
+"last_updated": "16/09/2026",
+"is_new": false
+},
 {
 "source": "ness",
 "external_id": "43341",
@@ -16,14 +27,14 @@
 },
 {
 "source": "ness",
-"external_id": "43247",
-"title": "ראש/ת צוות פיתוח CRM Dynamics",
+"external_id": "43334",
+"title": "מפתח/ת FULL STACK",
 "location": "אזור המרכז",
-"excerpt": "לNESS דרוש/ה ראש/ת צוות פיתוח CRM Dynamics. התפקיד כולל ניהול והובלה מקצועית של צוות מפתחים, הובלת ארכיטקטורת פתרונות בסביבת Microsoft Dynamics 365 CRM וכתיבת אפיונים טכניים. משרה מלאה, בראשון לציון. דרישות: ניסיון של 3…",
+"excerpt": "לנס (NESS) דרוש/ה מפתח/ת FULL STACK. התפקיד כולל פיתוח אפליקציות מבוסס AI, באמצעות טכנולוגיות ANGULAR, Python ו-SQL. השתלבות בצוות פיתוח קיים. משרה מלאה, בהרצליה. דרישות: ניסיון של שנתיים ומעלה בפיתוח תוכנה - חובה.…",
 "url": "https://www.ness-tech.co.il/careers/",
 "is_hot": false,
-"last_updated": "07/09/2026",
-"is_new": false
+"last_updated": "15/09/2026",
+"is_new": true
 },
 {
 "source": "ness",
@@ -38,5 +49,5 @@
 }
 ],
 "cached": true,
-"generated_at": "2026-09-15T18:04:43.920794+00:00"
+"generated_at": "2026-09-16T09:49:52.128361+00:00"
 }

@@ -13,7 +13,10 @@
     "searchPlaceholder": "חיפוש: React, Node, .NET…",
     "regionLabel": "אזור",
     "roleLabel": "תפקיד:",
-    "clear": "ניקוי"
+    "clear": "ניקוי",
+    "hideSeen": "הסתר משרות שכבר נצפו",
+    "appliedCount_one": "הגשה אחת",
+    "appliedCount_other": "{{count}} הגשות"
   },
   "source": {
     "refresh": "רענון",
@@ -34,7 +37,10 @@
   "job": {
     "new": "חדש",
     "hot": "חם",
-    "view": "צפייה במשרה →"
+    "view": "צפייה במשרה →",
+    "seen": "נצפה",
+    "applied": "הוגש",
+    "markApplied": "הגשתי מועמדות"
   },
   "error": {
     "apiTitle": "לא ניתן להתחבר ל-API.",

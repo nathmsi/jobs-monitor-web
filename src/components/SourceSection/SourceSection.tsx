@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { markForceRefresh } from "../../api/hooks";
+import { jobId, useJobFlags } from "../../lib/jobFlags";
 import type { RefreshResult, SourceInfo } from "../../types";
 import { JobCard } from "../JobCard/JobCard";
 import { JobCardSkeleton } from "../JobCardSkeleton/JobCardSkeleton";
@@ -18,11 +19,18 @@ const SKELETON_COUNT = 6;
 export function SourceSection({ source, query }: Props) {
   const { t, i18n } = useTranslation();
   const { data, isFetching, isError, error, refetch, dataUpdatedAt } = query;
+  const { hideSeen, isOpened } = useJobFlags();
   // Collapsed by default: show every source box at a glance, expand on demand.
   const [open, setOpen] = useState(false);
 
   const showSkeleton = isFetching && !data;
   const bodyId = `source-body-${source.key}`;
+
+  const jobs = (data?.jobs ?? []).filter(
+    (j) => !hideSeen || !isOpened(jobId(j.source, j.external_id)),
+  );
+  const visibleCount = jobs.length;
+  const newCount = jobs.filter((j) => j.is_new).length;
 
   const formatTime = (ts: number) =>
     new Date(ts).toLocaleTimeString(i18n.language, {
@@ -46,12 +54,12 @@ export function SourceSection({ source, query }: Props) {
             <span className={styles.title}>{source.label}</span>
             {data && (
               <span className={styles.meta}>
-                {t("source.offers", { count: data.count })}
-                {data.new_count > 0 && (
+                {t("source.offers", { count: visibleCount })}
+                {newCount > 0 && (
                   <>
                     {" · "}
                     <strong className={styles.metaNew}>
-                      {t("source.new", { count: data.new_count })}
+                      {t("source.new", { count: newCount })}
                     </strong>
                   </>
                 )}
@@ -103,7 +111,7 @@ export function SourceSection({ source, query }: Props) {
             </div>
           ) : (
             <div className={styles.grid}>
-              {data?.jobs.map((job) => (
+              {jobs.map((job) => (
                 <JobCard key={`${job.source}-${job.external_id}`} job={job} />
               ))}
             </div>

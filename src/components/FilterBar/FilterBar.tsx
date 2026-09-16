@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { useRegions } from "../../api/hooks";
 import { ROLES } from "../../constants/roles";
+import { useJobFlags } from "../../lib/jobFlags";
 import type { Filters } from "../../types";
 import styles from "./FilterBar.module.css";
 
@@ -14,6 +15,7 @@ interface Props {
 export function FilterBar({ filters, onChange }: Props) {
   const { t, i18n } = useTranslation();
   const { data: regions } = useRegions();
+  const { hideSeen, setHideSeen, appliedCount } = useJobFlags();
   const [draft, setDraft] = useState(filters.q);
 
   const isHe = i18n.language.startsWith("he");
@@ -85,6 +87,22 @@ export function FilterBar({ filters, onChange }: Props) {
             </button>
           );
         })}
+      </div>
+
+      <div className={styles.prefs}>
+        <label className={styles.check}>
+          <input
+            type="checkbox"
+            checked={hideSeen}
+            onChange={(e) => setHideSeen(e.target.checked)}
+          />
+          {t("filters.hideSeen")}
+        </label>
+        {appliedCount > 0 && (
+          <span className={styles.applied}>
+            {t("filters.appliedCount", { count: appliedCount })}
+          </span>
+        )}
       </div>
     </div>
   );

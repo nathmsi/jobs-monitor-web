@@ -26,6 +26,29 @@
   border-color: color-mix(in srgb, var(--new) 45%, var(--border));
 }
 
+.opened {
+  opacity: 0.62;
+}
+
+.opened:hover {
+  opacity: 1;
+}
+
+.applied {
+  opacity: 1;
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+}
+
+.seenTag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: 1px solid var(--border-strong);
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
 .isNew::before {
   content: "";
   position: absolute;
@@ -97,9 +120,30 @@
   gap: 0.5rem;
 }
 
-.date {
-  font-size: 0.75rem;
+.applyBtn {
+  font-size: 0.78rem;
+  font-weight: 600;
   color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.applyBtn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.applyBtnOn {
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .link {

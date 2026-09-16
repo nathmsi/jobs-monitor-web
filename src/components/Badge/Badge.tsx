@@ -1,6 +1,6 @@
 import styles from "./Badge.module.css";
 
-type Variant = "new" | "hot";
+type Variant = "new" | "hot" | "applied";
 
 interface Props {
   variant: Variant;

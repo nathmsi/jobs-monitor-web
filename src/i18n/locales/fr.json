@@ -13,7 +13,10 @@
     "searchPlaceholder": "Recherche : React, Node, .NET…",
     "regionLabel": "Zone",
     "roleLabel": "Rôle :",
-    "clear": "Effacer"
+    "clear": "Effacer",
+    "hideSeen": "Masquer les offres déjà vues",
+    "appliedCount_one": "{{count}} candidature",
+    "appliedCount_other": "{{count}} candidatures"
   },
   "source": {
     "refresh": "Rafraîchir",
@@ -34,7 +37,10 @@
   "job": {
     "new": "Nouveau",
     "hot": "Hot",
-    "view": "Voir l'offre →"
+    "view": "Voir l'offre →",
+    "seen": "Déjà vu",
+    "applied": "Postulé",
+    "markApplied": "J'ai postulé"
   },
   "error": {
     "apiTitle": "Impossible de contacter l'API.",

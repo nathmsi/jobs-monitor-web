@@ -20,3 +20,8 @@
   background: var(--hot-soft);
   color: var(--hot);
 }
+
+.applied {
+  background: var(--accent);
+  color: #fff;
+}

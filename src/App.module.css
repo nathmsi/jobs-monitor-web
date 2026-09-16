@@ -89,10 +89,16 @@
 
 .sources {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 0.75rem;
   align-items: start;
   margin-top: 1.25rem;
+}
+
+@media (min-width: 700px) {
+  .sources {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .bootBar {

@@ -15,6 +15,7 @@ export interface Job {
 export interface SourceInfo {
   key: string;
   label: string;
+  kind: "agency" | "company" | string;
   site_url: string | null;
   auto_fetch: boolean;
 }

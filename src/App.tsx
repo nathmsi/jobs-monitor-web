@@ -18,6 +18,7 @@ function App() {
     q: "",
   });
   const [showAll, setShowAll] = useState(false);
+  const [tab, setTab] = useState<"company" | "agency">("company");
 
   const sourceList = sources ?? [];
   const queries = useAllSourceJobs(sourceList, filters);
@@ -29,6 +30,10 @@ function App() {
     .filter((it) => it.query.data && it.query.data.jobs.length > 0)
     .sort((a, b) => (b.query.data?.count ?? 0) - (a.query.data?.count ?? 0));
   const loading = items.filter((it) => it.query.isFetching && !it.query.data);
+
+  const companyCount = withJobs.filter((it) => it.source.kind === "company").length;
+  const agencyCount = withJobs.filter((it) => it.source.kind === "agency").length;
+  const shown = [...withJobs, ...loading].filter((it) => it.source.kind === tab);
 
   const counts = Object.fromEntries(
     items.map((it) => [it.source.key, it.query.data?.count ?? 0]),

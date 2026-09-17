@@ -1,6 +1,6 @@
 {
 "region": "jerusalem",
-"count": 97,
+"count": 99,
 "jobs": [
 {
 "source": "malam",
@@ -49,6 +49,18 @@
 "is_hot": true,
 "last_updated": "2026-09-17",
 "is_new": false
+},
+{
+"source": "malam",
+"external_id": "37626",
+"title": "מפתח.ת תוכנה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה ציבורי לארגון ציבורי בירושלים תיאור משרה: דרוש.ה מפתח.ת לכתיבת תוכניות מורכבות או מרכזיות בפרויקט, תכנון וביצוע משימות בצוות. התפקיד כולל: מתן פתרונות טכנולוגיים לאתגרי…",
+"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה ציבורי לארגון ציבורי בירושלים תיאור משרה: דרוש.ה מפתח.ת לכתיבת תוכניות מורכבות או מרכזיות בפרויקט, תכנון וביצוע משימות בצוות. התפקיד כולל: מתן פתרונות טכנולוגיים לאתגרי הפרויקט, ולסייע ביישום הארכיטקטורה והתשתיות ובפיתוח הפרויקט בצורה נכונה. תפקיד זה ...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-8/",
+"is_hot": true,
+"last_updated": "2026-09-17",
+"is_new": true
 },
 {
 "source": "malam",
@@ -160,24 +172,24 @@
 },
 {
 "source": "malam",
-"external_id": "37314",
-"title": "מפתח.ת Full Stack מוביל.ה",
-"location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: הובלת פיתוח ותחזוקה של מערכות ויישומים במתכונת Full Stack עבור שירותים דיגיטליים בשלטון המקומי, משלב ניתוח האפיון וגיבוש…",
-"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: הובלת פיתוח ותחזוקה של מערכות ויישומים במתכונת Full Stack עבור שירותים דיגיטליים בשלטון המקומי, משלב ניתוח האפיון וגיבוש הפתרון ועד עלייה לאוויר. התפקיד כולל פיתוח Front End ו- Back End, עבודה עם בסיסי ...",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94-2/",
-"is_hot": false,
-"last_updated": "2026-09-17",
-"is_new": false
-},
-{
-"source": "malam",
 "external_id": "37315",
 "title": "מפתח.ת Full Stack מוביל.ה",
 "location": "ירושלים והסביבה",
 "excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: תכנון, פיתוח ותחזוקה של פתרונות טכנולוגיים מקצה לקצה, כולל עבודה עם . NET Core, C #, JavaScript ו- Angular. העבודה כוללת פיתוח…",
 "description": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: תכנון, פיתוח ותחזוקה של פתרונות טכנולוגיים מקצה לקצה, כולל עבודה עם . NET Core, C #, JavaScript ו- Angular. העבודה כוללת פיתוח REST API, עבודה עם SQL ו- MongoDB, מחקר טכנולוגיות חדשות ושיתוף פעולה עם צוותי א...",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "37314",
+"title": "מפתח.ת Full Stack מוביל.ה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: הובלת פיתוח ותחזוקה של מערכות ויישומים במתכונת Full Stack עבור שירותים דיגיטליים בשלטון המקומי, משלב ניתוח האפיון וגיבוש…",
+"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: הובלת פיתוח ותחזוקה של מערכות ויישומים במתכונת Full Stack עבור שירותים דיגיטליים בשלטון המקומי, משלב ניתוח האפיון וגיבוש הפתרון ועד עלייה לאוויר. התפקיד כולל פיתוח Front End ו- Back End, עבודה עם בסיסי ...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94-2/",
 "is_hot": false,
 "last_updated": "2026-09-17",
 "is_new": false
@@ -892,6 +904,18 @@
 },
 {
 "source": "mobileye",
+"external_id": "2c818cc2-24a1-4fca-93f2-340e2c9ad82c",
+"title": "Junior C++/Python Integration Engineer",
+"location": "Jerusalem",
+"excerpt": "We act as the Mobileye's main bundle of technologies system integrators, working closely with release managers, validation teams, and various R&D groups within the company to release high quality products. We oversee…",
+"description": "We act as the Mobileye's main bundle of technologies system integrators, working closely with release managers, validation teams, and various R&D groups within the company to release high quality products. We oversee the integration of algorithmic code and software code into Mobileye's main repository, and we handle various scales of gating tests. We deliver ADAS and AV Bundle release as Mobileye's internal R&D versions.",
+"url": "https://careers.mobileye.com/jobs/junior-cpython-integration-engineer/2c818cc2-24a1-4fca-93f2-340e2c9ad82c",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "mobileye",
 "external_id": "6c2c3630-b6cc-465b-9671-2a5dbbf0017d",
 "title": "Production Quality Engineer",
 "location": "Jerusalem",
@@ -1167,5 +1191,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-17T09:00:46.458606+00:00"
+"generated_at": "2026-09-17T11:21:13.515248+00:00"
 }

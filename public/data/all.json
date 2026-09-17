@@ -1,6 +1,6 @@
 {
 "region": "all",
-"count": 494,
+"count": 501,
 "jobs": [
 {
 "source": "appsflyer",
@@ -160,6 +160,18 @@
 },
 {
 "source": "catonetworks",
+"external_id": "4953528101",
+"title": "Junior Software Engineer – Cato Apps Team (AI)",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4953528101?gh_jid=4953528101",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "catonetworks",
 "external_id": "4863034101",
 "title": "Agentic AI Engineer",
 "location": "Tel Aviv District, Israel",
@@ -280,18 +292,6 @@
 },
 {
 "source": "catonetworks",
-"external_id": "4953528101",
-"title": "Junior Software Engineer – Cato Apps Team (AI)",
-"location": "Tel Aviv District, Israel",
-"excerpt": "",
-"description": "",
-"url": "https://www.catonetworks.com/careers/careers-post/4953528101?gh_jid=4953528101",
-"is_hot": false,
-"last_updated": "2026-09-17",
-"is_new": true
-},
-{
-"source": "catonetworks",
 "external_id": "4352164101",
 "title": "macOS/iOS SW Engineer",
 "location": "Tel Aviv District, Israel",
@@ -364,24 +364,24 @@
 },
 {
 "source": "catonetworks",
-"external_id": "4970648101",
-"title": "Software Engineer",
-"location": "Tel Aviv District, Israel",
-"excerpt": "",
-"description": "",
-"url": "https://www.catonetworks.com/careers/careers-post/4970648101?gh_jid=4970648101",
-"is_hot": false,
-"last_updated": "2026-09-17",
-"is_new": false
-},
-{
-"source": "catonetworks",
 "external_id": "4901284101",
 "title": "Software Engineer",
 "location": "Tel Aviv District, Israel",
 "excerpt": "",
 "description": "",
 "url": "https://www.catonetworks.com/careers/careers-post/4901284101?gh_jid=4901284101",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4970648101",
+"title": "Software Engineer",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4970648101?gh_jid=4970648101",
 "is_hot": false,
 "last_updated": "2026-09-17",
 "is_new": false
@@ -1300,6 +1300,42 @@
 },
 {
 "source": "malam",
+"external_id": "37626",
+"title": "מפתח.ת תוכנה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה ציבורי לארגון ציבורי בירושלים תיאור משרה: דרוש.ה מפתח.ת לכתיבת תוכניות מורכבות או מרכזיות בפרויקט, תכנון וביצוע משימות בצוות. התפקיד כולל: מתן פתרונות טכנולוגיים לאתגרי…",
+"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה ציבורי לארגון ציבורי בירושלים תיאור משרה: דרוש.ה מפתח.ת לכתיבת תוכניות מורכבות או מרכזיות בפרויקט, תכנון וביצוע משימות בצוות. התפקיד כולל: מתן פתרונות טכנולוגיים לאתגרי הפרויקט, ולסייע ביישום הארכיטקטורה והתשתיות ובפיתוח הפרויקט בצורה נכונה. תפקיד זה ...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-8/",
+"is_hot": true,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37627",
+"title": "מוביל.ה טכנולוגי.ת- Tech Lead",
+"location": "גוש דן",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מוביל.ה טכנולוגי.ת- Tech Lead לארגון במרכז תיאור משרה: הובלה טכנולוגית של פיתוח והקמת פתרונות דיגיטליים מורכבים, כולל אחריות על ארכיטקטורה, תכנון ופיתוח Hands-On, איכות קוד ואבטחת מערכות.…",
+"description": "חברת Mertens - MalamTeam מגייסת מוביל.ה טכנולוגי.ת- Tech Lead לארגון במרכז תיאור משרה: הובלה טכנולוגית של פיתוח והקמת פתרונות דיגיטליים מורכבים, כולל אחריות על ארכיטקטורה, תכנון ופיתוח Hands-On, איכות קוד ואבטחת מערכות. הובלת צוותי פיתוח, קבלת החלטות טכנולוגיות, ביצוע Code Reviews, קידום Best...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94-%d7%98%d7%9b%d7%a0%d7%95%d7%9c%d7%95%d7%92%d7%99-%d7%aa-tech-lead/",
+"is_hot": true,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37625",
+"title": "מפתח.ת Power Platform",
+"location": "גוש דן",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Power Platform לארגון במרכז תיאור משרה: פיתוח והטמעת פתרונות בסביבת Microsoft Power Platform, בדגש על Dataverse, Dataflow ו- Power Automate, כולל עבודה עם קבצי XLSX ו־ SharePoint.…",
+"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת Power Platform לארגון במרכז תיאור משרה: פיתוח והטמעת פתרונות בסביבת Microsoft Power Platform, בדגש על Dataverse, Dataflow ו- Power Automate, כולל עבודה עם קבצי XLSX ו־ SharePoint. התפקיד כולל תכנון מבני נתונים, בניית תהליכי אוטומציה, טרנספורמציות נתונים וע...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-power-platform/",
+"is_hot": true,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "malam",
 "external_id": "37574",
 "title": "מפתח.ת תוכנה",
 "location": "ירושלים והסביבה",
@@ -1528,24 +1564,24 @@
 },
 {
 "source": "malam",
-"external_id": "37314",
-"title": "מפתח.ת Full Stack מוביל.ה",
-"location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: הובלת פיתוח ותחזוקה של מערכות ויישומים במתכונת Full Stack עבור שירותים דיגיטליים בשלטון המקומי, משלב ניתוח האפיון וגיבוש…",
-"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: הובלת פיתוח ותחזוקה של מערכות ויישומים במתכונת Full Stack עבור שירותים דיגיטליים בשלטון המקומי, משלב ניתוח האפיון וגיבוש הפתרון ועד עלייה לאוויר. התפקיד כולל פיתוח Front End ו- Back End, עבודה עם בסיסי ...",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94-2/",
-"is_hot": false,
-"last_updated": "2026-09-17",
-"is_new": false
-},
-{
-"source": "malam",
 "external_id": "37315",
 "title": "מפתח.ת Full Stack מוביל.ה",
 "location": "ירושלים והסביבה",
 "excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: תכנון, פיתוח ותחזוקה של פתרונות טכנולוגיים מקצה לקצה, כולל עבודה עם . NET Core, C #, JavaScript ו- Angular. העבודה כוללת פיתוח…",
 "description": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: תכנון, פיתוח ותחזוקה של פתרונות טכנולוגיים מקצה לקצה, כולל עבודה עם . NET Core, C #, JavaScript ו- Angular. העבודה כוללת פיתוח REST API, עבודה עם SQL ו- MongoDB, מחקר טכנולוגיות חדשות ושיתוף פעולה עם צוותי א...",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "37314",
+"title": "מפתח.ת Full Stack מוביל.ה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: הובלת פיתוח ותחזוקה של מערכות ויישומים במתכונת Full Stack עבור שירותים דיגיטליים בשלטון המקומי, משלב ניתוח האפיון וגיבוש…",
+"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: הובלת פיתוח ותחזוקה של מערכות ויישומים במתכונת Full Stack עבור שירותים דיגיטליים בשלטון המקומי, משלב ניתוח האפיון וגיבוש הפתרון ועד עלייה לאוויר. התפקיד כולל פיתוח Front End ו- Back End, עבודה עם בסיסי ...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94-2/",
 "is_hot": false,
 "last_updated": "2026-09-17",
 "is_new": false
@@ -2896,6 +2932,18 @@
 },
 {
 "source": "mobileye",
+"external_id": "173fb0c4-6d9d-4131-93d4-a41845dc6398",
+"title": "Deep Learning Developer - REM Modeling",
+"location": "Ramat Gan",
+"excerpt": "You will be part of Mobileye's REM (Road Experience Management) department which is responsible for the automatic High Definition map-making process, which is a key technology in Mobileye's autonomous driving and…",
+"description": "You will be part of Mobileye's REM (Road Experience Management) department which is responsible for the automatic High Definition map-making process, which is a key technology in Mobileye's autonomous driving and high-end Driving Assistance systems. This process involves running advanced algorithmic code in a massively parallel way, utilizing Big Data technologies, and as such is a complex system that requires a deep understanding of our map creation process as well as advanced technical abilities.",
+"url": "https://careers.mobileye.com/jobs/deep-learning-developer-rem-modeling/173fb0c4-6d9d-4131-93d4-a41845dc6398",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "mobileye",
 "external_id": "7095ceb2-0f4a-4cb1-a7dd-642d2cff9dcd",
 "title": "Embedded C++ Software Developer",
 "location": "Petah Tikva",
@@ -3385,6 +3433,18 @@
 "is_hot": false,
 "last_updated": "2026-09-17",
 "is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "9df72c7f-8ae9-420c-a024-c9a3f1cf2998",
+"title": "Senior Deep Learning Software Engineer",
+"location": "Haifa",
+"excerpt": "Mobileye is the world leader in automotive and driving assistance systems, developing the world's most advanced software technologies and hardware architectures. Our team in Haifa develops cutting-edge technologies to…",
+"description": "Mobileye is the world leader in automotive and driving assistance systems, developing the world's most advanced software technologies and hardware architectures. Our team in Haifa develops cutting-edge technologies to deploy deep learning and computer vision algorithms efficiently on the Mobileye platform. Our work contributes to saving lives and advancing the capabilities of autonomous vehicles. Check out our technology in action: https://www.youtube.com/watch?v=50NPqEla0CQ We are looking for a deep learning software engineer to join the Mobileye Autonomous Driving software group in Haifa, focusing on Deep Learning optimizations. This role offers an exciting opportunity to collaborate with highly talented engineers, contribute to an innovative product, and work with cutting-edge AI technologies.",
+"url": "https://careers.mobileye.com/jobs/senior-deep-learning-software-engineer/9df72c7f-8ae9-420c-a024-c9a3f1cf2998",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -3880,6 +3940,42 @@
 },
 {
 "source": "mobileye",
+"external_id": "90d6a522-a4a1-42ba-a89b-55609a4f8c12",
+"title": "Experienced Software Linux Integration Engineer - OS team",
+"location": "Petah Tikva",
+"excerpt": "The Mobileye Operating System Team is looking for a highly talented Embedded SW Integration Engineer with a passion for operating systems and Linux in specific. The team is developing the Boot and Operating System SW…",
+"description": "The Mobileye Operating System Team is looking for a highly talented Embedded SW Integration Engineer with a passion for operating systems and Linux in specific. The team is developing the Boot and Operating System SW for Mobileye’s autonomous vehicle and smart advanced driver assist platforms.",
+"url": "https://careers.mobileye.com/jobs/experienced-software-linux-integration-engineer-os-team/90d6a522-a4a1-42ba-a89b-55609a4f8c12",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "2c818cc2-24a1-4fca-93f2-340e2c9ad82c",
+"title": "Junior C++/Python Integration Engineer",
+"location": "Jerusalem",
+"excerpt": "We act as the Mobileye's main bundle of technologies system integrators, working closely with release managers, validation teams, and various R&D groups within the company to release high quality products. We oversee…",
+"description": "We act as the Mobileye's main bundle of technologies system integrators, working closely with release managers, validation teams, and various R&D groups within the company to release high quality products. We oversee the integration of algorithmic code and software code into Mobileye's main repository, and we handle various scales of gating tests. We deliver ADAS and AV Bundle release as Mobileye's internal R&D versions.",
+"url": "https://careers.mobileye.com/jobs/junior-cpython-integration-engineer/2c818cc2-24a1-4fca-93f2-340e2c9ad82c",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "bf35f001-5134-49fb-ae37-29d6b277e51c",
+"title": "Junior C++/Python Integration Engineer",
+"location": "Tel-Aviv",
+"excerpt": "We act as the Mobileye's main bundle of technologies system integrators, working closely with release managers, validation teams, and various R&D groups within the company to release high quality products. We oversee…",
+"description": "We act as the Mobileye's main bundle of technologies system integrators, working closely with release managers, validation teams, and various R&D groups within the company to release high quality products. We oversee the integration of algorithmic code and software code into Mobileye's main repository, and we handle various scales of gating tests. We deliver ADAS and AV Bundle release as Mobileye's internal R&D versions.",
+"url": "https://careers.mobileye.com/jobs/junior-cpython-integration-engineer/bf35f001-5134-49fb-ae37-29d6b277e51c",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "mobileye",
 "external_id": "23239c7c-5aa1-449b-bc44-4b754d4f42c5",
 "title": "Production Quality Engineer",
 "location": "Haifa",
@@ -3970,18 +4066,6 @@
 "excerpt": "The Mobileye Operating System Team is looking for a highly talented Embedded SW Integration Engineer with a passion for operating systems and Linux in specific. The team is developing the Boot and Operating System SW…",
 "description": "The Mobileye Operating System Team is looking for a highly talented Embedded SW Integration Engineer with a passion for operating systems and Linux in specific. The team is developing the Boot and Operating System SW for Mobileye’s autonomous vehicle and smart advanced driver assist platforms.",
 "url": "https://careers.mobileye.com/jobs/software-linux-integration-engineer-os-team/86638ec0-b5f8-4cd5-b3f9-19b1b8932368",
-"is_hot": false,
-"last_updated": "2026-09-17",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "90d6a522-a4a1-42ba-a89b-55609a4f8c12",
-"title": "Software Linux Integration Engineer - OS team",
-"location": "Petah Tikva",
-"excerpt": "The Mobileye Operating System Team is looking for a highly talented Embedded SW Integration Engineer with a passion for operating systems and Linux in specific. The team is developing the Boot and Operating System SW…",
-"description": "The Mobileye Operating System Team is looking for a highly talented Embedded SW Integration Engineer with a passion for operating systems and Linux in specific. The team is developing the Boot and Operating System SW for Mobileye’s autonomous vehicle and smart advanced driver assist platforms.",
-"url": "https://careers.mobileye.com/jobs/software-linux-integration-engineer-os-team/90d6a522-a4a1-42ba-a89b-55609a4f8c12",
 "is_hot": false,
 "last_updated": "2026-09-17",
 "is_new": false
@@ -4188,7 +4272,7 @@
 "url": "https://www.ness-tech.co.il/careers/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "ness",
@@ -4264,24 +4348,24 @@
 },
 {
 "source": "nice",
-"external_id": "4969705101",
-"title": "Director of Engineering",
-"location": "Israel - Raanana",
-"excerpt": "",
-"description": "",
-"url": "https://boards.eu.greenhouse.io/nice/jobs/4969705101?gh_jid=4969705101",
-"is_hot": false,
-"last_updated": "2026-09-17",
-"is_new": false
-},
-{
-"source": "nice",
 "external_id": "4867642101",
 "title": "Director of Engineering",
 "location": "Israel - Raanana",
 "excerpt": "",
 "description": "",
 "url": "https://boards.eu.greenhouse.io/nice/jobs/4867642101?gh_jid=4867642101",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "nice",
+"external_id": "4969705101",
+"title": "Director of Engineering",
+"location": "Israel - Raanana",
+"excerpt": "",
+"description": "",
+"url": "https://boards.eu.greenhouse.io/nice/jobs/4969705101?gh_jid=4969705101",
 "is_hot": false,
 "last_updated": "2026-09-17",
 "is_new": false
@@ -5256,7 +5340,7 @@
 "url": "https://boards.greenhouse.io/tomorrow/jobs/7977906003?gh_jid=7977906003",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "tomorrowio",
@@ -5268,7 +5352,7 @@
 "url": "https://boards.greenhouse.io/tomorrow/jobs/7802524003?gh_jid=7802524003",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "tomorrowio",
@@ -5280,7 +5364,7 @@
 "url": "https://boards.greenhouse.io/tomorrow/jobs/6569221003?gh_jid=6569221003",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "torq",
@@ -5931,5 +6015,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-17T09:00:46.458606+00:00"
+"generated_at": "2026-09-17T11:21:13.515248+00:00"
 }

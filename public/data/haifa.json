@@ -1,6 +1,6 @@
 {
 "region": "haifa",
-"count": 27,
+"count": 28,
 "jobs": [
 {
 "source": "malam",
@@ -232,6 +232,18 @@
 },
 {
 "source": "mobileye",
+"external_id": "9df72c7f-8ae9-420c-a024-c9a3f1cf2998",
+"title": "Senior Deep Learning Software Engineer",
+"location": "Haifa",
+"excerpt": "Mobileye is the world leader in automotive and driving assistance systems, developing the world's most advanced software technologies and hardware architectures. Our team in Haifa develops cutting-edge technologies to…",
+"description": "Mobileye is the world leader in automotive and driving assistance systems, developing the world's most advanced software technologies and hardware architectures. Our team in Haifa develops cutting-edge technologies to deploy deep learning and computer vision algorithms efficiently on the Mobileye platform. Our work contributes to saving lives and advancing the capabilities of autonomous vehicles. Check out our technology in action: https://www.youtube.com/watch?v=50NPqEla0CQ We are looking for a deep learning software engineer to join the Mobileye Autonomous Driving software group in Haifa, focusing on Deep Learning optimizations. This role offers an exciting opportunity to collaborate with highly talented engineers, contribute to an innovative product, and work with cutting-edge AI technologies.",
+"url": "https://careers.mobileye.com/jobs/senior-deep-learning-software-engineer/9df72c7f-8ae9-420c-a024-c9a3f1cf2998",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "mobileye",
 "external_id": "7969248d-a14e-4a4e-a316-ff323f6d49ff",
 "title": "Senior Python Infrastructure Developer",
 "location": "Haifa",
@@ -327,5 +339,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-17T09:00:46.458606+00:00"
+"generated_at": "2026-09-17T11:21:13.515248+00:00"
 }

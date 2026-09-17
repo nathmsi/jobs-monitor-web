@@ -504,7 +504,7 @@
 "url": "https://www.ness-tech.co.il/careers/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "nice",
@@ -532,24 +532,24 @@
 },
 {
 "source": "nice",
-"external_id": "4969705101",
-"title": "Director of Engineering",
-"location": "Israel - Raanana",
-"excerpt": "",
-"description": "",
-"url": "https://boards.eu.greenhouse.io/nice/jobs/4969705101?gh_jid=4969705101",
-"is_hot": false,
-"last_updated": "2026-09-17",
-"is_new": false
-},
-{
-"source": "nice",
 "external_id": "4867642101",
 "title": "Director of Engineering",
 "location": "Israel - Raanana",
 "excerpt": "",
 "description": "",
 "url": "https://boards.eu.greenhouse.io/nice/jobs/4867642101?gh_jid=4867642101",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "nice",
+"external_id": "4969705101",
+"title": "Director of Engineering",
+"location": "Israel - Raanana",
+"excerpt": "",
+"description": "",
+"url": "https://boards.eu.greenhouse.io/nice/jobs/4969705101?gh_jid=4969705101",
 "is_hot": false,
 "last_updated": "2026-09-17",
 "is_new": false
@@ -639,5 +639,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-17T09:00:46.458606+00:00"
+"generated_at": "2026-09-17T11:21:13.515248+00:00"
 }

@@ -52,6 +52,18 @@
 },
 {
 "source": "malam",
+"external_id": "37574",
+"title": "מפתח.ת תוכנה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת תוכנה בסביבת Web לארגון מוביל בירושלים תיאור התפקיד כולל פיתוח ועיצוב פתרונות תוכנה בהתאם למפרטים ובהנחיית ראש צוות או מנתח.ת מערכות בכיר.ה, כתיבת תוכניות מורכבות ומרכזיות בפרויקט,…",
+"description": "חברת Mertens Malam Team מגייסת מפתח.ת תוכנה בסביבת Web לארגון מוביל בירושלים תיאור התפקיד כולל פיתוח ועיצוב פתרונות תוכנה בהתאם למפרטים ובהנחיית ראש צוות או מנתח.ת מערכות בכיר.ה, כתיבת תוכניות מורכבות ומרכזיות בפרויקט, הנחיה מקצועית של מפתחים בצוות ותכנון וביצוע בדיקות. עבודה עם Web API, REST, Angu...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-2/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "malam",
 "external_id": "37587",
 "title": "מפתח.ת Backend",
 "location": "ירושלים והסביבה",
@@ -94,18 +106,6 @@
 "excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה בכיר.ה לארגון גדול בירושלים תיאור משרה: תיאור משרה: התפקיד כולל פיתוח, הקמה, תפעול ותחזוקה של מערכות בסביבת Low-Code, בדגש על OutSystems, בהתאם לצרכים העסקיים של הארגון.…",
 "description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה בכיר.ה לארגון גדול בירושלים תיאור משרה: תיאור משרה: התפקיד כולל פיתוח, הקמה, תפעול ותחזוקה של מערכות בסביבת Low-Code, בדגש על OutSystems, בהתאם לצרכים העסקיים של הארגון. במסגרת התפקיד נדרשת עבודה על פיתוח תהליכים, מסכים, לוגיקה עסקית ומודלי נתונים, ...",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9b%d7%99%d7%a8-%d7%94/",
-"is_hot": false,
-"last_updated": "2026-09-17",
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37574",
-"title": "מפתח.ת תוכנה",
-"location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת תוכנה בסביבת Web לארגון מוביל בירושלים תיאור התפקיד כולל פיתוח ועיצוב פתרונות תוכנה בהתאם למפרטים ובהנחיית ראש צוות או מנתח.ת מערכות בכיר.ה, כתיבת תוכניות מורכבות ומרכזיות בפרויקט,…",
-"description": "חברת Mertens Malam Team מגייסת מפתח.ת תוכנה בסביבת Web לארגון מוביל בירושלים תיאור התפקיד כולל פיתוח ועיצוב פתרונות תוכנה בהתאם למפרטים ובהנחיית ראש צוות או מנתח.ת מערכות בכיר.ה, כתיבת תוכניות מורכבות ומרכזיות בפרויקט, הנחיה מקצועית של מפתחים בצוות ותכנון וביצוע בדיקות. עבודה עם Web API, REST, Angu...",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-2/",
 "is_hot": false,
 "last_updated": "2026-09-17",
 "is_new": false
@@ -160,24 +160,24 @@
 },
 {
 "source": "malam",
-"external_id": "37315",
-"title": "מפתח.ת Full Stack מוביל.ה",
-"location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: תכנון, פיתוח ותחזוקה של פתרונות טכנולוגיים מקצה לקצה, כולל עבודה עם . NET Core, C #, JavaScript ו- Angular. העבודה כוללת פיתוח…",
-"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: תכנון, פיתוח ותחזוקה של פתרונות טכנולוגיים מקצה לקצה, כולל עבודה עם . NET Core, C #, JavaScript ו- Angular. העבודה כוללת פיתוח REST API, עבודה עם SQL ו- MongoDB, מחקר טכנולוגיות חדשות ושיתוף פעולה עם צוותי א...",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94/",
-"is_hot": false,
-"last_updated": "2026-09-17",
-"is_new": false
-},
-{
-"source": "malam",
 "external_id": "37314",
 "title": "מפתח.ת Full Stack מוביל.ה",
 "location": "ירושלים והסביבה",
 "excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: הובלת פיתוח ותחזוקה של מערכות ויישומים במתכונת Full Stack עבור שירותים דיגיטליים בשלטון המקומי, משלב ניתוח האפיון וגיבוש…",
 "description": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: הובלת פיתוח ותחזוקה של מערכות ויישומים במתכונת Full Stack עבור שירותים דיגיטליים בשלטון המקומי, משלב ניתוח האפיון וגיבוש הפתרון ועד עלייה לאוויר. התפקיד כולל פיתוח Front End ו- Back End, עבודה עם בסיסי ...",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94-2/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "37315",
+"title": "מפתח.ת Full Stack מוביל.ה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: תכנון, פיתוח ותחזוקה של פתרונות טכנולוגיים מקצה לקצה, כולל עבודה עם . NET Core, C #, JavaScript ו- Angular. העבודה כוללת פיתוח…",
+"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: תכנון, פיתוח ותחזוקה של פתרונות טכנולוגיים מקצה לקצה, כולל עבודה עם . NET Core, C #, JavaScript ו- Angular. העבודה כוללת פיתוח REST API, עבודה עם SQL ו- MongoDB, מחקר טכנולוגיות חדשות ושיתוף פעולה עם צוותי א...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94/",
 "is_hot": false,
 "last_updated": "2026-09-17",
 "is_new": false
@@ -996,7 +996,7 @@
 "url": "https://www.drushim.co.il/job/38441582/cafa95d2/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -1008,7 +1008,7 @@
 "url": "https://www.drushim.co.il/job/38231936/fb7d56e6/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -1020,7 +1020,7 @@
 "url": "https://www.drushim.co.il/job/38232164/ae16399f/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -1032,7 +1032,7 @@
 "url": "https://www.drushim.co.il/job/38232487/c233237f/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -1044,7 +1044,7 @@
 "url": "https://www.drushim.co.il/job/38223234/9a3d07af/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -1056,7 +1056,7 @@
 "url": "https://www.drushim.co.il/job/38267447/389aaba4/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -1068,7 +1068,7 @@
 "url": "https://www.drushim.co.il/job/38279284/94ef6d93/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -1080,7 +1080,7 @@
 "url": "https://www.drushim.co.il/job/38279436/1f9391dc/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -1092,7 +1092,7 @@
 "url": "https://www.drushim.co.il/job/38306682/6c4e19f2/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -1104,7 +1104,7 @@
 "url": "https://www.drushim.co.il/job/38312230/9773c9a5/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -1116,7 +1116,7 @@
 "url": "https://www.drushim.co.il/job/38371776/172b836a/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -1128,7 +1128,7 @@
 "url": "https://www.drushim.co.il/job/38142921/bbfb8ef1/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -1140,7 +1140,7 @@
 "url": "https://www.drushim.co.il/job/38333339/fc7f963c/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -1152,7 +1152,7 @@
 "url": "https://www.drushim.co.il/job/38312059/75631a02/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -1164,8 +1164,8 @@
 "url": "https://www.drushim.co.il/job/38267200/d2a113b0/",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 }
 ],
-"generated_at": "2026-09-17T07:40:53.947367+00:00"
+"generated_at": "2026-09-17T08:39:14.374687+00:00"
 }

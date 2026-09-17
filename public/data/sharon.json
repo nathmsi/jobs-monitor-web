@@ -1,6 +1,6 @@
 {
 "region": "sharon",
-"count": 52,
+"count": 53,
 "jobs": [
 {
 "source": "jfrog",
@@ -495,6 +495,18 @@
 "is_new": false
 },
 {
+"source": "ness",
+"external_id": "42260",
+"title": "Data Engineer",
+"location": "אזור השרון",
+"excerpt": "ל NESS דרוש/ה Data engineer התפקיד כולל פיתוח תשתיות דאטה, תהליכי ingestion ו - processing מורכבים, עבודה עם נפחי מידע גדולים ומקורות נתונים מגוונים ושיתוף פעולה הדוק עם ארכיטקטי דאטה, מנתחי מערכות, BI וגורמים עסקיים…",
+"description": "ל NESS דרוש/ה Data engineer התפקיד כולל פיתוח תשתיות דאטה, תהליכי ingestion ו - processing מורכבים, עבודה עם נפחי מידע גדולים ומקורות נתונים מגוונים ושיתוף פעולה הדוק עם ארכיטקטי דאטה, מנתחי מערכות, BI וגורמים עסקיים משרה מלאה והיברידית ברעננה. דרישות: תואר ראשון במדעי המחשב או הנדסאי תוכנה - חובה ניסיון של שנתיים כ Data engineer – חובה ניסיון מעשי בעבודה על גבי GCP בפרויקטי דאטה – חובה ניסיון בעבודה עם BigQuery כ- Data Warehouse/ Lakehouse - חובה ניסיון בפיתוח Data Pipelines בענן (Batch או Streaming) - חובה ניסיון בעבודה עם Cloud Storage לקליטה וניהול נתונים בהיקפים גדולים – חובה ניסיון בפיתוח תהליכי ELT/ ETL בסביבת GCP - חובה ניסיון בשימוש בכלי Orchestration בענן – חובה ניסיון בעבודה עם IAM והרשאות בסביבת GCP- חובה הבנה בארכיטקטורת Data Lake/ Lakehouse בענן – חובה ניסיון בעבודה עם SQL מתקדם בסביבת BigQuery - חובה",
+"url": "https://www.ness-tech.co.il/careers/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
 "source": "nice",
 "external_id": "4961985101",
 "title": "Software Engineer",
@@ -627,5 +639,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-17T08:39:14.374687+00:00"
+"generated_at": "2026-09-17T09:00:46.458606+00:00"
 }

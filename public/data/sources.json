@@ -256,6 +256,14 @@
 "logo": "https://icons.duckduckgo.com/ip3/torq.io.ico"
 },
 {
+"key": "tomorrowio",
+"label": "Tomorrow.io",
+"kind": "company",
+"site_url": "https://job-boards.greenhouse.io/tomorrow",
+"auto_fetch": true,
+"logo": "https://icons.duckduckgo.com/ip3/tomorrow.io.ico"
+},
+{
 "key": "unilink",
 "label": "Unilink",
 "kind": "agency",

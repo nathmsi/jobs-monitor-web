@@ -254,5 +254,13 @@
 "site_url": "https://job-boards.greenhouse.io/torq",
 "auto_fetch": true,
 "logo": "https://icons.duckduckgo.com/ip3/torq.io.ico"
+},
+{
+"key": "unilink",
+"label": "Unilink",
+"kind": "company",
+"site_url": "https://www.drushim.co.il/דרושים-8275-יונילינק/",
+"auto_fetch": true,
+"logo": "https://icons.duckduckgo.com/ip3/unilink.co.il.ico"
 }
 ]

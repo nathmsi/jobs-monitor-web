@@ -1,6 +1,6 @@
 {
 "region": "center",
-"count": 298,
+"count": 311,
 "jobs": [
 {
 "source": "appsflyer",
@@ -16,24 +16,24 @@
 },
 {
 "source": "appsflyer",
-"external_id": "8394076002",
-"title": "Application Security Engineer",
-"location": "Herzliya",
-"excerpt": "",
-"description": "",
-"url": "https://careers.appsflyer.com/jobs/position/8394076002?gh_jid=8394076002",
-"is_hot": false,
-"last_updated": "2026-09-17",
-"is_new": false
-},
-{
-"source": "appsflyer",
 "external_id": "8695882002",
 "title": "DevOps Platform Engineer",
 "location": "Herzliya",
 "excerpt": "",
 "description": "",
 "url": "https://careers.appsflyer.com/jobs/position/8695882002?gh_jid=8695882002",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "appsflyer",
+"external_id": "8394076002",
+"title": "Application Security Engineer",
+"location": "Herzliya",
+"excerpt": "",
+"description": "",
+"url": "https://careers.appsflyer.com/jobs/position/8394076002?gh_jid=8394076002",
 "is_hot": false,
 "last_updated": "2026-09-17",
 "is_new": false
@@ -1860,7 +1860,7 @@
 "url": "https://careers.mobileye.com/jobs/3d-algorithm-developer/bb661a53-79b8-459d-a8df-5dd419d62596",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -1872,7 +1872,7 @@
 "url": "https://careers.mobileye.com/jobs/ai-algorithm-engineer-vision-localization-group/d85072cf-3d47-4c42-a760-2c691af6093b",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -1884,7 +1884,7 @@
 "url": "https://careers.mobileye.com/jobs/algorithm-developer-object-modeling-group/2ffd562c-40cb-42e3-b74d-e6a079ebdf22",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -1896,7 +1896,7 @@
 "url": "https://careers.mobileye.com/jobs/algorithm-engineer-senior-technical-expert-objects-perception/6e32e4d7-2df4-4ff2-b404-a6dba0444e84",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -1908,7 +1908,7 @@
 "url": "https://careers.mobileye.com/jobs/algorithm-researcher-autonomous-driving-cto-group/055a3a86-a6d4-42ae-a09c-8adb41c5b383",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -1920,7 +1920,7 @@
 "url": "https://careers.mobileye.com/jobs/algorithm-team-lead-geometric-data-infrastructure/48a6b951-576a-45cd-b347-9eeb2e3a6e34",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -1932,7 +1932,7 @@
 "url": "https://careers.mobileye.com/jobs/cyber-security-architect/6a5a0009-af24-4325-8451-e391c691611b",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -1944,7 +1944,7 @@
 "url": "https://careers.mobileye.com/jobs/cyber-security-solution-architect/da962759-96d7-4810-9927-351ecc4b6ceb",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -1956,7 +1956,7 @@
 "url": "https://careers.mobileye.com/jobs/deep-learning-algorithm-developer/c359a528-8058-4393-818b-52e162418a58",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -1968,7 +1968,7 @@
 "url": "https://careers.mobileye.com/jobs/deep-learning-algorithm-engineer-learnedpolicy-group/01a16cde-2ce4-4c80-a6df-fe56bc223816",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -1980,7 +1980,7 @@
 "url": "https://careers.mobileye.com/jobs/embedded-c-software-developer/7095ceb2-0f4a-4cb1-a7dd-642d2cff9dcd",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -1992,7 +1992,7 @@
 "url": "https://careers.mobileye.com/jobs/embedded-linux-os-architect/ac5edc03-9478-4fef-ae4a-20d2609ca6da",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2004,7 +2004,7 @@
 "url": "https://careers.mobileye.com/jobs/embedded-software-architect/608dac79-7323-419b-a044-8b8e8fd26618",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2016,7 +2016,7 @@
 "url": "https://careers.mobileye.com/jobs/embedded-team-leader-os-integration-automation/999d5e75-7d50-42f1-879b-18035226641f",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2028,7 +2028,7 @@
 "url": "https://careers.mobileye.com/jobs/experienced-control-algorithms-engineer/0029e8b1-bdf1-4d0a-9895-7b5ee22c4837",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2040,7 +2040,7 @@
 "url": "https://careers.mobileye.com/jobs/experienced-deep-learning-algorithm-developer/878a21c9-1159-4c3d-957d-d278de51b202",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2052,7 +2052,7 @@
 "url": "https://careers.mobileye.com/jobs/experienced-deep-learning-algorithm-developer-object-perception-group/a1d4788f-68d7-46bc-97c4-04c1599f7ff4",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2064,7 +2064,7 @@
 "url": "https://careers.mobileye.com/jobs/experienced-deep-learning-software-engineer-algorithms-data/7ae498b0-6d23-4346-87df-0f97a82b53e0",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2076,7 +2076,7 @@
 "url": "https://careers.mobileye.com/jobs/experienced-dft-engineer/25b51d8d-b2aa-49b9-9864-3b78e8a2a591",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2088,7 +2088,7 @@
 "url": "https://careers.mobileye.com/jobs/experienced-machine-learning-engineer/e85566dc-9827-4058-a1d2-cc6a63f7e286",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2100,7 +2100,7 @@
 "url": "https://careers.mobileye.com/jobs/experienced-physical-design-engineer/49084f32-4a0d-4641-a034-c22310218bb1",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2112,7 +2112,7 @@
 "url": "https://careers.mobileye.com/jobs/experienced-soc-verification-engineer/d41387e9-f9c3-4a72-8f4b-8ecfad129907",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2124,7 +2124,7 @@
 "url": "https://careers.mobileye.com/jobs/mechanical-engineer-automotive-ecu/7a258e61-6cdc-431c-adf2-36b67ef05353",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2136,7 +2136,7 @@
 "url": "https://careers.mobileye.com/jobs/outstanding-graduate-machine-learning-engineer/c5d0b91a-8a21-490f-a02b-23b5ebaa2ec5",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2148,7 +2148,7 @@
 "url": "https://careers.mobileye.com/jobs/outstanding-graduate-algorithm-developer-vision-localization-group/83eaec09-649e-4ea6-b6c8-ace482eb2f59",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2160,7 +2160,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-algorithm-engineer-model-training-optimization/b88433c6-bee5-47be-a91b-9bd8ebe50d00",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2172,7 +2172,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-algorithm-engineer-objects-perception/14e467d6-6412-479d-a827-fb9184522869",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2184,7 +2184,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-cc-software-engineer/ee246ef1-c9ae-4a05-ad95-ad37a744db48",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2196,7 +2196,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-c-software-engineer-integration-delivery-cto-team/f04fed6a-f0f4-4455-900a-be4ccdddc8ee",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2208,7 +2208,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-embedded-software-engineer/1fcefccb-abe1-4bfd-b5c2-46be82d3cd4f",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2220,7 +2220,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-hw-board-design-engineer/4d129447-0cad-4b11-9825-e86b8fe09e47",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2232,7 +2232,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-ml-data-engineer/5d044c94-826e-4685-853f-b70069e3f0a9",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2244,7 +2244,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-python-infrastructure-developer/68245f41-2091-471c-9d65-6b4747ea02d5",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2256,7 +2256,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-signal-integrity-engineerav-hardware/b7c55f83-ff0c-47ca-aaad-8acea30083a6",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2268,7 +2268,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-system-architect/ffd7b3b0-bde6-447f-89cd-1c7f9abf17e5",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2280,7 +2280,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-system-architect-for-ecu-designs/9a5f8911-4fa3-45fd-bc56-48e12533e3f5",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2292,7 +2292,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-thermal-engineer/067d6e5e-f0e2-4cbf-82fd-43c0af539e2b",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2304,7 +2304,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-thermalmechanical-engineer/4c272b78-4384-4ceb-88d4-22161fba5d30",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2316,7 +2316,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-verification-engineer/7494fc97-906c-4ebd-a862-1b6995b82765",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2328,7 +2328,7 @@
 "url": "https://careers.mobileye.com/jobs/software-algorithms-rt-engineer-active-sensor-group/b8c0334c-51c5-420f-8fb1-3f8bf641c9cb",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2340,7 +2340,7 @@
 "url": "https://careers.mobileye.com/jobs/solution-architect-for-cloud-communication/539e7cc7-1c30-43fd-8a72-a631aba80d26",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2352,7 +2352,7 @@
 "url": "https://careers.mobileye.com/jobs/solution-architect-for-embedded-autonomous-vehicle-system/9a48ee39-91f4-4722-a6b4-0f2800b4863c",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2364,7 +2364,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-technical-product-manager-av-platform-hwsw/89a185bd-9ce6-4a08-a0a7-c16eaac7c80f",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2376,7 +2376,7 @@
 "url": "https://careers.mobileye.com/jobs/embedded-integrator-temporary/f197016b-7b7a-46a2-991d-c48852099048",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2388,7 +2388,7 @@
 "url": "https://careers.mobileye.com/jobs/radar-ate-engineer/f08cf90a-2e96-4d27-86db-e124676b4d53",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2400,7 +2400,7 @@
 "url": "https://careers.mobileye.com/jobs/radar-system-integration-engineer-functional-system-flows/d9a6d581-00ee-417b-90de-d9c57c998950",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2412,7 +2412,7 @@
 "url": "https://careers.mobileye.com/jobs/software-integration-and-field-application-engineer/f10044d7-c978-4fed-bb58-0bd0170ab8ec",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2424,7 +2424,7 @@
 "url": "https://careers.mobileye.com/jobs/software-linux-integration-engineer-os-team/90d6a522-a4a1-42ba-a89b-55609a4f8c12",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2436,7 +2436,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-data-engineer/b5e33bc9-f6e1-4201-a42d-61cd409b60c5",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2448,7 +2448,7 @@
 "url": "https://careers.mobileye.com/jobs/ai-researcher/7E.956",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2460,7 +2460,7 @@
 "url": "https://careers.mobileye.com/jobs/backend-team-lead/94.C62",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2472,7 +2472,7 @@
 "url": "https://careers.mobileye.com/jobs/mechanical-technician-service-engineer/74.D51",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2484,7 +2484,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-backend-engineer/53.36C",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2496,7 +2496,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-software-engineer-cc/32.B5B",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mongodb",
@@ -2689,6 +2689,18 @@
 "is_hot": false,
 "last_updated": "2026-09-17",
 "is_new": false
+},
+{
+"source": "payoneer",
+"external_id": "8185354",
+"title": "Senior Domain Operations Lead, Business Applications",
+"location": "Herzliya, Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.payoneer.com/careers/position/8185354/?gh_jid=8185354",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
 },
 {
 "source": "payoneer",
@@ -2944,6 +2956,18 @@
 },
 {
 "source": "similarweb",
+"external_id": "7508300",
+"title": "Senior Data Product Manager- Retail Intelligence",
+"location": "Tel Aviv, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/similarweb/jobs/7508300",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "similarweb",
 "external_id": "7938197",
 "title": "Senior DevOps Engineer",
 "location": "Tel Aviv",
@@ -3004,6 +3028,18 @@
 },
 {
 "source": "sqlink",
+"external_id": "154773",
+"title": "Senior Full Stack Engineer",
+"location": "",
+"excerpt": "חברת SU באזור הצפון מגייסת Senior Full Stack Engineer התפקיד כולל פיתוח מקצה לקצה של יכולות ומוצרים, עבודה על Backend ב-Node.js ו-Frontend ב-Angular, תכנון וניהול בסיסי נתונים ב-MongoDB, פיתוח ותחזוקת RESTful APIs,…",
+"description": "חברת SU באזור הצפון מגייסת Senior Full Stack Engineer התפקיד כולל פיתוח מקצה לקצה של יכולות ומוצרים, עבודה על Backend ב-Node.js ו-Frontend ב-Angular, תכנון וניהול בסיסי נתונים ב-MongoDB, פיתוח ותחזוקת RESTful APIs, שיפור ביצועים, פתרון תקלות בסביבת Production וכו..",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/senior-full-stack-engineer/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "sqlink",
 "external_id": "153719",
 "title": "מפתח/ת Backend",
 "location": "",
@@ -3022,6 +3058,18 @@
 "excerpt": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Full Stack, המשרה ממוקמת על קו רכבת ומשלבת יומיים עבודה היברידית מהבית התפקיד כולל: פיתוח Full Stack בסביבת React ו-React Native, עבודה עם Redux, MobX ו-Hooks, פיתוח באמצעות NodeJS…",
 "description": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Full Stack, המשרה ממוקמת על קו רכבת ומשלבת יומיים עבודה היברידית מהבית התפקיד כולל: פיתוח Full Stack בסביבת React ו-React Native, עבודה עם Redux, MobX ו-Hooks, פיתוח באמצעות NodeJS ו-Express, עבודה עם כלי פיתוח וניהול גרסאות כגון Git, Bitbucket, GitHub, AppCenter, Jenkins ו-Kibana, עבודה עם JavaScript, CSS, HTML ו-ES2023, עבודה בסביבות Android ו-iOS עם Java, Swift ו-Objective-C, עבודה עם מסדי נתונים מסוג NoSQL ובפרט MongoDB, ועוד.",
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/רצ-פיתוח/senior-product-manager/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "155034",
+"title": "מפתח/ת Frontend Vue",
+"location": "",
+"excerpt": "מפתח/ת Frontend Vue עבור חברה ביטחונית באזור השפלה התפקיד כולל: עבודה עם Vue 3, פיתוח ממשקי משתמש אינטראקטיביים עבור מערכות שליטה ובקרה מתקדמות, תחזוקה ושיפור של פרויקטים קיימים, עבודה בצוות פיתוח מול ממשקים מרובים,…",
+"description": "מפתח/ת Frontend Vue עבור חברה ביטחונית באזור השפלה התפקיד כולל: עבודה עם Vue 3, פיתוח ממשקי משתמש אינטראקטיביים עבור מערכות שליטה ובקרה מתקדמות, תחזוקה ושיפור של פרויקטים קיימים, עבודה בצוות פיתוח מול ממשקים מרובים, השתתפות בתכנון ארכיטקטורת Frontend, כתיבת בדיקות ושיפור ביצועים ועוד.",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/front-end/מפתחת-frontend-vue/",
 "is_hot": false,
 "last_updated": "2026-09-17",
 "is_new": false
@@ -3064,6 +3112,18 @@
 },
 {
 "source": "sqlink",
+"external_id": "154902",
+"title": "תוכניתן ABAP",
+"location": "",
+"excerpt": "חברת אנרגיה גלובלית באזור השפלה מגייסת תוכניתן/ית ABAP – מוביל/ה טכני/ת התפקיד כולל: הובלה, חניכה ותמיכה בצוות מפתחי SAP, תכנון ובחינה של פתרונות SAP הניתנים להרחבה ולתחזוקה בהתאם לעקרונות Cleanש Core, הובלת פיתוח…",
+"description": "חברת אנרגיה גלובלית באזור השפלה מגייסת תוכניתן/ית ABAP – מוביל/ה טכני/ת התפקיד כולל: הובלה, חניכה ותמיכה בצוות מפתחי SAP, תכנון ובחינה של פתרונות SAP הניתנים להרחבה ולתחזוקה בהתאם לעקרונות Cleanש Core, הובלת פיתוח באמצעות טכנולוגיות SAP מודרניות, תכנון ויישום אינטגרציות בין SAP לפלטפורמות AI חיצוניות וליישומים ארגוניים ועוד",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/רצ-פיתוח/תוכניתן-abap/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "sqlink",
 "external_id": "154749",
 "title": "מפתח ומנתח מערכות",
 "location": "",
@@ -3088,12 +3148,60 @@
 },
 {
 "source": "sqlink",
+"external_id": "154693",
+"title": "ארכיטקט/ית פתרונות ענן",
+"location": "",
+"excerpt": "ארגון ממשלתי באזור ירושלים מגייס ארכיטקט/ית פתרונות ענן. התפקיד כולל: הובלת תכנון, אפיון ויישום של פתרונות ענן, גיבוש אסטרטגיית ענן ומפת דרכים, ליווי צוותי פיתוח משלב האפיון ועד העלייה לייצור, תכנון ארכיטקטורות מאובטחות…",
+"description": "ארגון ממשלתי באזור ירושלים מגייס ארכיטקט/ית פתרונות ענן. התפקיד כולל: הובלת תכנון, אפיון ויישום של פתרונות ענן, גיבוש אסטרטגיית ענן ומפת דרכים, ליווי צוותי פיתוח משלב האפיון ועד העלייה לייצור, תכנון ארכיטקטורות מאובטחות ותשתיות ענן, בחינת טכנולוגיות חדשות, בקרה על פעילות הארגון בענן והובלת פרויקטי הגירה, אינטגרציה ופתרונות מבוססי AI ועוד.",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/ארכיטקט-תוכנה/ארכיטקטית-פתרונות-ענן/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "sqlink",
 "external_id": "154684",
 "title": "מפתח מערכות אינטגרציה מרובות ממשקים",
 "location": "",
 "excerpt": "מפתח/ת מערכות אינטגרציה עבור ארגון בריאות באזור המרכז התפקיד כולל: עבודה עם מערכות אינטגרציה מרובות ממשקים, הגדרת ארכיטקטורה ופיתוח פתרונות אינטגרציה בתקן FHIR, עבודה על בסיס אפיונים עסקיים וטכנולוגיים, פיתוח תהליכי…",
 "description": "מפתח/ת מערכות אינטגרציה עבור ארגון בריאות באזור המרכז התפקיד כולל: עבודה עם מערכות אינטגרציה מרובות ממשקים, הגדרת ארכיטקטורה ופיתוח פתרונות אינטגרציה בתקן FHIR, עבודה על בסיס אפיונים עסקיים וטכנולוגיים, פיתוח תהליכי עיבוד וקליטת נתונים, ליווי צוותי בדיקות, עבודה מול גורמים טכנולוגיים וספקים ופתרון אתגרים עסקיים וטכנולוגיים ועוד.",
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-אינטגרציה/מפתח-מערכות-אינטגרציה-מרובות-ממשקים/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "154699",
+"title": "מפתח/ת תוכנה לכלי תחקור",
+"location": "",
+"excerpt": "חברה ביטחונית באזור השפלה מגייסת מפתח/ת תוכנה לכלי תחקור התפקיד כולל: עבודה בפיתוח כלי תחקור להוכחת מערכות נשק מורכבות, פיתוח ותחזוקת תשתיות תוכנה וכלי אוטומציה באמצעות MATLAB ו-Python, פיתוח ממשקי משתמש מתקדמים, ביצוע…",
+"description": "חברה ביטחונית באזור השפלה מגייסת מפתח/ת תוכנה לכלי תחקור התפקיד כולל: עבודה בפיתוח כלי תחקור להוכחת מערכות נשק מורכבות, פיתוח ותחזוקת תשתיות תוכנה וכלי אוטומציה באמצעות MATLAB ו-Python, פיתוח ממשקי משתמש מתקדמים, ביצוע תחקורי תכן וחקר ביצועים, אופטימיזציה של קוד ועבודה מול לקוחות וחברות חיצוניות ועוד.",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/python/מפתחת-תוכנה-לכלי-תחקור/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "154706",
+"title": "Backend & Data Developer",
+"location": "",
+"excerpt": "ארגון פיננסי באזור השפלה מגייס Backend & Data Developer התפקיד כולל: עבודה בפיתוח Backend ופתרונות Data ב-.NET Core, פיתוח Web API ומיקרו-שירותים, פיתוח Producers ו-Consumers מול Kafka, עבודה עם בסיסי נתונים ותהליכי…",
+"description": "ארגון פיננסי באזור השפלה מגייס Backend & Data Developer התפקיד כולל: עבודה בפיתוח Backend ופתרונות Data ב-.NET Core, פיתוח Web API ומיקרו-שירותים, פיתוח Producers ו-Consumers מול Kafka, עבודה עם בסיסי נתונים ותהליכי ETL, השתלבות בתהליכי הסבה של מערכות Data ועבודה בסביבת AWS, במודל עבודה היברידי של יום אחד מהבית ועוד.",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/מתכנת-backend/backend-data-developer/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "154695",
+"title": "מפתח/ת Full Stack",
+"location": "",
+"excerpt": "ארגון ממשלתי באזור ירושלים מגייס מפתח/ת Full Stack התפקיד כולל: עבודה בפיתוח, תחזוקה ושדרוג של מערכות Web ארגוניות, פיתוח מערכות חדשות ורכיבי צד שרת וצד לקוח, כתיבת שירותים וממשקים, טיפול בתקלות ושיפור מערכות קיימות,…",
+"description": "ארגון ממשלתי באזור ירושלים מגייס מפתח/ת Full Stack התפקיד כולל: עבודה בפיתוח, תחזוקה ושדרוג של מערכות Web ארגוניות, פיתוח מערכות חדשות ורכיבי צד שרת וצד לקוח, כתיבת שירותים וממשקים, טיפול בתקלות ושיפור מערכות קיימות, עבודה עם .NET Core, Angular ו-GIS, וכן השתתפות בתכנון ויישום פתרונות טכנולוגיים כחלק מצוות פיתוח ועוד.",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/מפתחת-full-stack-1/",
 "is_hot": false,
 "last_updated": "2026-09-17",
 "is_new": false
@@ -3387,6 +3495,54 @@
 "is_new": false
 },
 {
+"source": "unilink",
+"external_id": "38333700",
+"title": "דרוש/ה מהנדס/ת לניהול מידע הנדסי ובקרת תצורה",
+"location": "חולון",
+"excerpt": "לחברה מובילה בתחומה דרוש.ה מהנדס.ת/הנדסאי.ת לתפקיד מרתק בבקרת תצורה וניהול מידע הנדסי מחפשת את הצעד הבא שלך בעולם ההנדסה והתעשייה? זו ההזדמנות שלך להשתלב בתפקיד משמעותי ומרכזי הכולל עבודה על מערכות מתקדמות ונגיעה…",
+"description": "לחברה מובילה בתחומה דרוש.ה מהנדס.ת/הנדסאי.ת לתפקיד מרתק בבקרת תצורה וניהול מידע הנדסי מחפשת את הצעד הבא שלך בעולם ההנדסה והתעשייה? זו ההזדמנות שלך להשתלב בתפקיד משמעותי ומרכזי הכולל עבודה על מערכות מתקדמות ונגיעה בתהליכים הנדסיים מקצה לקצה. מה בתפקיד? עבודה שוטפת במערכת PLM לניהול מידע הנדסי ומוצר ניהול עצי מוצר, פריטים, תיקי מוצר והרכבות קטלוג מסמכים וניהול גרסאות בקרה ואישור תהליכי תכן הנדסיים הובלת ועדות שינוי תכן והפקת דוחות ונתונים ממוחשבים סיוע ותמיכה מקצועית במשתמשי המערכת",
+"url": "https://www.drushim.co.il/job/38333700/e0a0adf3/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38238035",
+"title": "רכז הגנת סייבר",
+"location": "תל אביב",
+"excerpt": "?? דרוש/ה: רכז/ת בקרת סיכוני סייבר וניהול ממצאי אבטחת מידע ?? מיקום: תל אביב (נגיש לתחבורה ציבורית / רכבת) ?? מודל עבודה: היברידי (משולב בית / משרד) ? היקף משרה: משרה מלאה ?? כפיפות: הנהלת הגנת הסייבר / CISO על התפקיד:…",
+"description": "?? דרוש/ה: רכז/ת בקרת סיכוני סייבר וניהול ממצאי אבטחת מידע ?? מיקום: תל אביב (נגיש לתחבורה ציבורית / רכבת) ?? מודל עבודה: היברידי (משולב בית / משרד) ? היקף משרה: משרה מלאה ?? כפיפות: הנהלת הגנת הסייבר / CISO על התפקיד: אנו מחפשים איש/אשת מקצוע לתפקיד מתכלל ומבקר מרכזי בצוות אבטחת המידע. התפקיד מהווה את החוליה המקשרת בין פונקציות הגנת הסייבר לבין צוותי התשתיות, הפיתוח, מערכות המידע והגורמים העסקיים בארגון. מטרת התפקיד היא לוודא כי סיכונים וחולשות מנותחים מקצועית, מתועדפים בהתאם לחשיפה העסקית והטכנולוגית, ומטופלים במסגרת לוחות זמנים מוגדרים. תחומי אחריות מרכזיים: ריכוז ובקרה: מעקב שוטף אחר ממצאי אבטחת מידע וחולשות (סקרים, מבדקי חדירה PT, סורקי חולשות, SIEM, EDR/XDR). ניהול תוכניות עבודה: הובלת פורומים תקופתיים ומעקב אחר תוכניות טיפול מול צוותי תשתיות, פיתוח, מנהלי מערכות ופרויקטים. אכיפת SLA והצפת חריגות: ניהול מעקב הדוק אחר לוחות זמנים, זיהוי עיכובים והצגת תמונת מצב עדכנית ודוחות סטטוס להנהלת הסייבר ול-CISO. הערכת סיכונים: ביצוע ניתוחי סיכון (Probability, Impact, חשיפה, קריטיות הנכס ומנגנוני הגנה) ותרגום ממצאים טכניים למשמעות עסקית. זיהוי מגמות רוחביות: איתור סיכונים מערכתיים חוזרים הדורשים מענה רוחבי, והשתתפות בשדרוג נהלים ומתודולוגיות עבודה. דרישות התפקיד: ניסיון מקצועי: ניסיון של",
+"url": "https://www.drushim.co.il/job/38238035/2a007238/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38141629",
+"title": "מנהל/ת מוצר דאטה- רמה ג למשרד ממשלתי",
+"location": "בני ברק",
+"excerpt": "ניהול מוצרי דאטה ו-AI מקצה לקצה – מגיבוש חזון ואסטרטגיית מוצר, דרך אפיון, תכנון, פיתוח והטמעה ועד למדידת הערך העסקי ושיפור מתמיד. התפקיד כולל ניהול Roadmap ו-Backlog, תיעדוף דרישות והובלת Delivery במתודולוגיית Agile,…",
+"description": "ניהול מוצרי דאטה ו-AI מקצה לקצה – מגיבוש חזון ואסטרטגיית מוצר, דרך אפיון, תכנון, פיתוח והטמעה ועד למדידת הערך העסקי ושיפור מתמיד. התפקיד כולל ניהול Roadmap ו-Backlog, תיעדוף דרישות והובלת Delivery במתודולוגיית Agile, לצד עבודה שוטפת מול צוותי פיתוח, Data, DevOps, Cloud, אבטחת מידע, UX/UI ובדיקות. בנוסף, התפקיד כולל הובלת פתרונות מבוססי ענן, עבודה עם פלטפורמות Data ו-BI, איסוף וניתוח צרכי משתמשים ובעלי עניין, ניהול ממשקים מרובי משתתפים וליווי תהליכי רכש וספקים.",
+"url": "https://www.drushim.co.il/job/38141629/4a49c8c2/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38266630",
+"title": "מומחה/ית אבטחת מידע ותקשורת נתונים",
+"location": "תל אביב",
+"excerpt": "השתלבות בצוות אבטחת המידע והסייבר של חטיבת מערכות מידע בארגון גדול. התפקיד כולל תכנון, יישום והטמעה של מענה תשתיתי-טכנולוגי להגנת הסייבר, לצד תכנון ארכיטקטורת רשת מאובטחת המותאמת לאיומים במרחב הסייבר. תחומי אחריות…",
+"description": "השתלבות בצוות אבטחת המידע והסייבר של חטיבת מערכות מידע בארגון גדול. התפקיד כולל תכנון, יישום והטמעה של מענה תשתיתי-טכנולוגי להגנת הסייבר, לצד תכנון ארכיטקטורת רשת מאובטחת המותאמת לאיומים במרחב הסייבר. תחומי אחריות מרכזיים: בחינה, שילוב והטמעה של טכנולוגיות ומוצרי הגנה בתשתיות המחשוב, האחסון, הגיבוי וההתאוששות. כתיבת מסמכי הקשחה והגנה למרכיבי הרשת (מערכות הפעלה, בסיסי נתונים, ציוד תקשורת, אפליקציות, אחסון, עמדות קצה והצפנה). תכנון, ניטור והטמעה של מערכות פיקוח והתראה עבור מרכז הניטור (SOC). ליווי וטיפול באירועי סייבר ברמה הטכנולוגית והתהליכית (Incident Response). ניהול, הקמה ואכיפת מדיניות אבטחה בפתרונות WAF, Firewalls ורכיבי גישה מאובטחת.",
+"url": "https://www.drushim.co.il/job/38266630/9274a6b8/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
 "source": "via",
 "external_id": "8574774002",
 "title": "DevSecOps Engineer",
@@ -3579,5 +3735,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-17T07:27:27.870514+00:00"
+"generated_at": "2026-09-17T07:40:53.947367+00:00"
 }

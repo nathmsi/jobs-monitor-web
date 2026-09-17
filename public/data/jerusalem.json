@@ -1,6 +1,6 @@
 {
 "region": "jerusalem",
-"count": 82,
+"count": 97,
 "jobs": [
 {
 "source": "malam",
@@ -408,7 +408,7 @@
 "url": "https://careers.mobileye.com/jobs/algorithm-developer-for-geometric-team/3934efbd-71a7-4c15-b552-167d73a1375d",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -420,7 +420,7 @@
 "url": "https://careers.mobileye.com/jobs/algorithm-developer-for-objects-modeling/2a8920e0-6dc6-48a8-b8b7-2f42f432e637",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -432,7 +432,7 @@
 "url": "https://careers.mobileye.com/jobs/algorithm-developer-for-radarlidar-group/c14fbc4f-8047-421b-968f-a3b5bd2c5146",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -444,7 +444,7 @@
 "url": "https://careers.mobileye.com/jobs/algorithm-performance-data-analyst/510d7b7d-4d58-4411-99c0-02a91022a7c6",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -456,7 +456,7 @@
 "url": "https://careers.mobileye.com/jobs/algorithm-researcher-autonomous-driving-cto-group/99456421-9f43-4f5b-98d1-4f2e0695ba04",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -468,7 +468,7 @@
 "url": "https://careers.mobileye.com/jobs/applied-ai-engineer-temporary-position/2dcef828-5169-4a8c-8975-6f4cedf183d9",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -480,7 +480,7 @@
 "url": "https://careers.mobileye.com/jobs/backend-team-lead-rem-engineering/73a2fc5d-ed55-4bd5-b421-ba40955d8247",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -492,7 +492,7 @@
 "url": "https://careers.mobileye.com/jobs/c-software-engineer/9495066e-ebcc-49ed-bac5-0480be15753f",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -504,7 +504,7 @@
 "url": "https://careers.mobileye.com/jobs/camera-system-engineer/2c8dbb83-2f6d-4e2a-a393-770d2a27e679",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -516,7 +516,7 @@
 "url": "https://careers.mobileye.com/jobs/cyber-security-solution-architect/89b5d584-1a18-4087-a8ca-46172fdf9c29",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -528,7 +528,7 @@
 "url": "https://careers.mobileye.com/jobs/deep-learning-algorithm-engineer-rem-semantics/3f688c83-654a-49c2-aa7e-d2636adfc6b0",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -540,7 +540,7 @@
 "url": "https://careers.mobileye.com/jobs/embedded-linux-os-architect/cbb56190-180f-4d21-8a21-95418a3eb8a5",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -552,7 +552,7 @@
 "url": "https://careers.mobileye.com/jobs/embedded-team-leader-os-integration-automation/fdee723f-1dac-49df-a209-6765d40d3beb",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -564,7 +564,7 @@
 "url": "https://careers.mobileye.com/jobs/experienced-control-algorithms-engineer/20a11252-02b4-43c0-9449-6247fb6617fe",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -576,7 +576,7 @@
 "url": "https://careers.mobileye.com/jobs/experienced-deep-learning-algorithm-developer-road-team/48df21e2-84dd-42e7-9d55-f4121d444df8",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -588,7 +588,7 @@
 "url": "https://careers.mobileye.com/jobs/experienced-deep-learning-algorithm-developer-object-perception-group/de4739b8-eda9-4262-ae5b-c3ee15d86a3c",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -600,7 +600,7 @@
 "url": "https://careers.mobileye.com/jobs/experienced-low-level-software-engineer/ae0844fc-26c2-4df9-9a11-03e80dbc90e8",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -612,7 +612,7 @@
 "url": "https://careers.mobileye.com/jobs/outstanding-graduate-algorithm-developer/ed5da113-bd7b-4654-b115-8c29723e0295",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -624,7 +624,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-c-software-engineer-integration-delivery-cto-team/2c2e26d6-d40a-40d1-b6f8-510781e9a3f4",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -636,7 +636,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-computer-vision-data-engineer/ade97368-7948-4dbb-a574-1268ad41cbf0",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -648,7 +648,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-full-stack-developer/050c9118-b8bd-42c7-9a5d-bf0ef7e6a196",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -660,7 +660,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-fullstack-platform-engineer-agentic-ai/169eb36e-82dd-4bcb-bdf0-06d7be6d94c4",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -672,7 +672,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-ml-data-engineer/25f2cd2f-fbac-4101-b913-045cdc4458a3",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -684,7 +684,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-python-developer-for-map-management/16bfb65e-79eb-4a25-b803-0a24f40489b8",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -696,7 +696,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-python-infrastructure-developer/c3489228-75ae-4338-a99d-b8be98e6e79b",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -708,7 +708,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-software-engineer-c-embedded-systems-autonomous-driving/f3de4dd1-fed7-4d16-825a-562746ccfe79",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -720,7 +720,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-system-architect-for-ecu-designs/f566122f-06cb-4359-a7cd-49ee17ec9528",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -732,7 +732,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-thermal-engineer/da38c082-c92f-4287-8d87-ffdb1ad6696f",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -744,7 +744,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-thermalmechanical-engineer/fb4ade19-941d-4b5d-b3c6-a6faa2f61426",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -756,7 +756,7 @@
 "url": "https://careers.mobileye.com/jobs/software-algorithms-rt-engineer-active-sensor-group/ac5f0c5c-3652-478e-aa66-783f70af24b7",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -768,7 +768,7 @@
 "url": "https://careers.mobileye.com/jobs/solution-architect-for-cloud-communication/277476b2-bd2a-44d8-a727-caca1dcb4b45",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -780,7 +780,7 @@
 "url": "https://careers.mobileye.com/jobs/solution-architect-for-embedded-autonomous-vehicle-system/5d23dc1d-fc84-427d-96cf-cd151087561d",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -792,7 +792,7 @@
 "url": "https://careers.mobileye.com/jobs/system-architect/5215cdc7-1576-48da-8c92-ca128ddf2c6e",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -804,7 +804,7 @@
 "url": "https://careers.mobileye.com/jobs/system-integration-engineer/76cc4d7b-72d2-43dd-87c9-3ae595bbaf46",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -816,7 +816,7 @@
 "url": "https://careers.mobileye.com/jobs/system-validation-architect/5f17d79a-7430-48c6-97b0-f4432bac6b7c",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -828,7 +828,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-av-project-manager-team-lead/fcb6a990-573b-49d1-bfb0-ecb6abc003b7",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -840,7 +840,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-customer-solutions-engineer/35d894ad-8260-4ce3-ab56-0ff03c474009",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -852,7 +852,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-platform-software-project-manager/f15e7124-1aab-4301-9fec-547c7c24c6b1",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -864,7 +864,7 @@
 "url": "https://careers.mobileye.com/jobs/software-execution-project-manager-camera-team/1c3bb641-7d60-4cf6-b997-d6e5633f7c12",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -876,7 +876,7 @@
 "url": "https://careers.mobileye.com/jobs/electrical-practical-engineer/a6711d79-22df-4e2f-a21a-3b31b9337175",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -888,7 +888,7 @@
 "url": "https://careers.mobileye.com/jobs/embedded-integrator-temporary/04853139-2a12-4d1e-8ce3-6d315ec31081",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -900,7 +900,7 @@
 "url": "https://careers.mobileye.com/jobs/production-quality-engineer/6c2c3630-b6cc-465b-9671-2a5dbbf0017d",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -912,7 +912,7 @@
 "url": "https://careers.mobileye.com/jobs/software-linux-integration-engineer-os-team/45b127ea-6069-420f-81fd-adf236d08de4",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -924,7 +924,7 @@
 "url": "https://careers.mobileye.com/jobs/system-integration-engineer/0f3e6a6a-45a7-4e4e-9bb9-f7bb11f92443",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -936,7 +936,7 @@
 "url": "https://careers.mobileye.com/jobs/system-validation-team-lead/3e0a8ffc-d04f-41ba-9119-b9b1662063f1",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -948,7 +948,7 @@
 "url": "https://careers.mobileye.com/jobs/technical-support-engineer/746ceb7e-3448-4abb-bf89-b0f0cc952406",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -960,7 +960,7 @@
 "url": "https://careers.mobileye.com/jobs/validation-engineer-embedded-system-integration/7837f11d-f347-40ff-b5c7-6e296be994fb",
 "is_hot": false,
 "last_updated": "2026-09-17",
-"is_new": true
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -985,7 +985,187 @@
 "is_hot": false,
 "last_updated": "2026-09-17",
 "is_new": false
+},
+{
+"source": "unilink",
+"external_id": "38441582",
+"title": "מפתח/ת תוכנה Backend / Full Stack- רמה ב",
+"location": "ירושלים",
+"excerpt": "לפרויקט טכנולוגי משמעותי במגזר הממשלתי דרוש/ה מפתח/ת תוכנה מנוסה להצטרפות לצוות מקצועי העוסק בפיתוח מערכות מתקדמות בסביבת ענן. התפקיד מתאים למפתח/ת עם ניסיון משמעותי בפיתוח צד שרת, עבודה בסביבות ענן ויכולת להשתלב…",
+"description": "לפרויקט טכנולוגי משמעותי במגזר הממשלתי דרוש/ה מפתח/ת תוכנה מנוסה להצטרפות לצוות מקצועי העוסק בפיתוח מערכות מתקדמות בסביבת ענן. התפקיד מתאים למפתח/ת עם ניסיון משמעותי בפיתוח צד שרת, עבודה בסביבות ענן ויכולת להשתלב במערכות מורכבות, אינטגרציות ותהליכי פיתוח מתקדמים. תיאור התפקיד פיתוח תוכנה בהתאם למפרטים ולתיקי תוכניות, בהנחיית ראש צוות או מנתח/ת מערכות בכיר/ה. פיתוח פתרונות מורכבים בצד השרת. ביצוע עבודות תכנות ועיצוב. עבודה עם ארכיטקטורות תוכנה מתקדמות. השתלבות בתהליכי פיתוח, אינטגרציה, בדיקות ואבטחת קוד. עבודה בצוות פיתוח והנחיית תוכניתנים בהתאם לצורך. עבודה בסביבת Cloud ובמערכות מורכבות מרובות ממשקים. השתתפות בפיתוח והטמעה של תהליכי אוטומציה ו־CI/CD.",
+"url": "https://www.drushim.co.il/job/38441582/cafa95d2/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38231936",
+"title": "איש/ת סיסטם ותמיכה טכנית | תשתיות Microsoft",
+"location": "ירושלים",
+"excerpt": "למשרד ממשלתי מוביל דרוש/ה איש/ת סיסטם להשתלבות בצוות טכנולוגי בסביבה ארגונית רחבת היקף. התפקיד כולל תחזוקה וניהול של תשתיות ומערכות IT, תמיכה במשתמשי קצה, טיפול בתקלות, תחזוקת שרתים ומערכות ייעודיות, עבודה מול צוותי…",
+"description": "למשרד ממשלתי מוביל דרוש/ה איש/ת סיסטם להשתלבות בצוות טכנולוגי בסביבה ארגונית רחבת היקף. התפקיד כולל תחזוקה וניהול של תשתיות ומערכות IT, תמיכה במשתמשי קצה, טיפול בתקלות, תחזוקת שרתים ומערכות ייעודיות, עבודה מול צוותי תשתיות וספקים ומתן מענה טכנולוגי שוטף. התפקיד מתאים למועמד/ת בעל/ת אוריינטציה טכנית גבוהה, תודעת שירות, יכולת פתרון תקלות, עצמאות ויכולת למידה מהירה.",
+"url": "https://www.drushim.co.il/job/38231936/fb7d56e6/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38232164",
+"title": "מפתח/ת תוכנה Angular & .NET Core - רמה ג",
+"location": "ירושלים",
+"excerpt": "לארגון ממשלתי מוביל דרוש/ה מפתח/ת תוכנה מנוסה להשתלבות בפרויקט טכנולוגי משמעותי בתחום מערכות המידע. התפקיד כולל פיתוח ושדרוג מערכת מידע מורכבת, עבודה בטכנולוגיות Angular ו-.NET Core, פיתוח שירותים וממשקי API, מסכי Web,…",
+"description": "לארגון ממשלתי מוביל דרוש/ה מפתח/ת תוכנה מנוסה להשתלבות בפרויקט טכנולוגי משמעותי בתחום מערכות המידע. התפקיד כולל פיתוח ושדרוג מערכת מידע מורכבת, עבודה בטכנולוגיות Angular ו-.NET Core, פיתוח שירותים וממשקי API, מסכי Web, ממשקים והסבות, לצד ביצוע בדיקות Unit והשתלבות בסביבה מבוססת Microservices. התפקיד מתאים למפתח/ת בעל/ת ניסיון בפיתוח מערכות מורכבות, יכולת עבודה עצמאית ובצוות, חשיבה מערכתית ויכולת להתמודד עם משימות מורכבות ולוחות זמנים מאתגרים.",
+"url": "https://www.drushim.co.il/job/38232164/ae16399f/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38232487",
+"title": "מפתח/ת תוכנה WEB | .NET Core & Angular- רמה ג",
+"location": "ירושלים",
+"excerpt": "לארגון ממשלתי מוביל דרוש/ה מפתח/ת תוכנה בכיר/ה להשתלבות בפרויקט WEB משמעותי ומורכב. התפקיד כולל פיתוח, תחזוקה ושדרוג של מערכת WEB מרכזית, לרבות השתתפות בתהליך הסבת מערכת ותיקה למערכת חדשה מבוססת ענן. התפקיד משלב פיתוח…",
+"description": "לארגון ממשלתי מוביל דרוש/ה מפתח/ת תוכנה בכיר/ה להשתלבות בפרויקט WEB משמעותי ומורכב. התפקיד כולל פיתוח, תחזוקה ושדרוג של מערכת WEB מרכזית, לרבות השתתפות בתהליך הסבת מערכת ותיקה למערכת חדשה מבוססת ענן. התפקיד משלב פיתוח Full Stack, עבודה עם .NET Core ו-Angular, בסיסי נתונים Oracle, שירותי WebAPI וטכנולוגיות WEB מתקדמות. המשרה מתאימה למפתח/ת מנוסה, עצמאי/ת ובעל/ת יכולת להתמודד עם מספר משימות ופרויקטים במקביל, בסביבה טכנולוגית דינמית ובפרויקטים בעלי חשיבות ארגונית.",
+"url": "https://www.drushim.co.il/job/38232487/c233237f/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38223234",
+"title": "בודק/ת תוכנה - QA | משרד ממשלתי ירושלים",
+"location": "ירושלים",
+"excerpt": "לארגון ממשלתי בירושלים דרוש/ה בודק/ת תוכנה ברמה גבוהה להצטרפות לפרויקט טכנולוגי גדול ומורכב. התפקיד כולל ביצוע בדיקות תוכנה ידניות ואוטומטיות במערכות WEB מורכבות, עבודה עם לוגיקה עסקית וחישובים מורכבים, כתיבת תסריטי…",
+"description": "לארגון ממשלתי בירושלים דרוש/ה בודק/ת תוכנה ברמה גבוהה להצטרפות לפרויקט טכנולוגי גדול ומורכב. התפקיד כולל ביצוע בדיקות תוכנה ידניות ואוטומטיות במערכות WEB מורכבות, עבודה עם לוגיקה עסקית וחישובים מורכבים, כתיבת תסריטי בדיקות מעמיקים וזיהוי מקרי קצה. התפקיד כולל עבודה עצמאית ובצוות, וכן הנחיה וליווי של בודקים/ות נוספים/ות.",
+"url": "https://www.drushim.co.il/job/38223234/9a3d07af/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38267447",
+"title": "מנהל/ת פרויקט סייבר וניהול סיכונים | רמה ג'",
+"location": "ירושלים",
+"excerpt": "למשרד ממשלתי בירושלים דרוש/ה מנהל/ת פרויקט בכיר/ה להובלת פרויקטים ותהליכים בתחום הסייבר, אבטחת המידע וניהול הסיכונים. התפקיד כולל הובלת תהליכים רוחביים מקצה לקצה, הטמעת מדיניות ונהלי סייבר, תכלול ממשקים בין יחידות שונות…",
+"description": "למשרד ממשלתי בירושלים דרוש/ה מנהל/ת פרויקט בכיר/ה להובלת פרויקטים ותהליכים בתחום הסייבר, אבטחת המידע וניהול הסיכונים. התפקיד כולל הובלת תהליכים רוחביים מקצה לקצה, הטמעת מדיניות ונהלי סייבר, תכלול ממשקים בין יחידות שונות וניהול תהליכי בקרה וסיכונים בסביבה טכנולוגית מורכבת. תחומי אחריות: ניהול והובלת פרויקטי סייבר ותהליכים רוחביים מקצה לקצה. הטמעה ומיסוד של מדיניות ונהלי סייבר ואבטחת מידע. ריכוז וניהול תהליכי סיכונים בתחומי הסייבר ואבטחת המידע. ניהול ובקרה של תהליכים מחזוריים כגון מבדקי חדירות, בקרות הרשאות וסקרי סיכונים. תיאום וסנכרון בין צוותים ויחידות שונות באגף. עבודה שוטפת מול צוותים טכנולוגיים, הנהלה וגורמי מקצוע. תעדוף משימות, מעקב אחר ביצוע ועמידה בלוחות זמנים. הובלת תהליכי הטמעה והנעת גורמים מקצועיים ליישום נהלים וסטנדרטים. הצגת תמונת מצב, סטטוסים וסיכונים להנהלה.",
+"url": "https://www.drushim.co.il/job/38267447/389aaba4/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38279284",
+"title": "מפתח/ת Data Science | Python | AI/ML | ירושלים",
+"location": "ירושלים",
+"excerpt": "למשרד ממשלתי בירושלים דרוש/ה מפתח/ת Data Science להצטרפות לצוות טכנולוגי העוסק בפיתוח והטמעה של פתרונות מבוססי דאטה, AI ו-Machine Learning. התפקיד כולל פיתוח בפועל של מודלים ויישומים חכמים, שילוב מודלים במערכות הארגון,…",
+"description": "למשרד ממשלתי בירושלים דרוש/ה מפתח/ת Data Science להצטרפות לצוות טכנולוגי העוסק בפיתוח והטמעה של פתרונות מבוססי דאטה, AI ו-Machine Learning. התפקיד כולל פיתוח בפועל של מודלים ויישומים חכמים, שילוב מודלים במערכות הארגון, עבודה עם כמויות מידע גדולות ומגוונות, ביצוע ניסויים ואופטימיזציה של מודלים ועבודה משותפת עם צוותי Data, Data Engineering, DevOps וארכיטקטים. העבודה משלבת סביבת Cloud ו-On-Premise ומתבצעת בסביבה טכנולוגית מתקדמת עם אתגרים מורכבים ומשמעותיים.",
+"url": "https://www.drushim.co.il/job/38279284/94ef6d93/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38279436",
+"title": "ארכיטקט/ית פתרונות ענן | Cloud Security",
+"location": "ירושלים",
+"excerpt": "למשרד ממשלתי בירושלים דרוש/ה ארכיטקט/ית פתרונות ענן לתפקיד מרכזי העוסק בתכנון, יישום ואבטחת ארכיטקטורות ענן בסביבה ארגונית מורכבת. התפקיד כולל תכנון פתרונות ענן מאובטחים, הובלת תהליכי הקמה והגירה של אפליקציות ותשתיות…",
+"description": "למשרד ממשלתי בירושלים דרוש/ה ארכיטקט/ית פתרונות ענן לתפקיד מרכזי העוסק בתכנון, יישום ואבטחת ארכיטקטורות ענן בסביבה ארגונית מורכבת. התפקיד כולל תכנון פתרונות ענן מאובטחים, הובלת תהליכי הקמה והגירה של אפליקציות ותשתיות לענן, בחינת טכנולוגיות חדשות והטמעתן, וכן בקרה וניטור של סביבות הענן. העבודה מתבצעת מול מגוון גורמים טכנולוגיים וארגוניים ודורשת ראייה מערכתית, יכולת להוביל תהליכים ויכולת לתרגם צרכים עסקיים וטכנולוגיים לפתרונות ארכיטקטוניים.",
+"url": "https://www.drushim.co.il/job/38279436/1f9391dc/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38306682",
+"title": "דרוש/ה ארכיטקט/ית פתרונות ענן – משרה ממשלתית",
+"location": "ירושלים",
+"excerpt": "למשרה ממשלתית דרוש/ה ארכיטקט/ית פתרונות ענן לתפקיד משמעותי הכולל גיבוש, הובלה ויישום של תהליכים טכנולוגיים ותשתיתיים בסביבות ענן. תיאור התפקיד הגדרת מפת דרכים לענן והובלת יישומה. תכנון וכתיבת ארכיטקטורת פתרונות בסביבות…",
+"description": "למשרה ממשלתית דרוש/ה ארכיטקט/ית פתרונות ענן לתפקיד משמעותי הכולל גיבוש, הובלה ויישום של תהליכים טכנולוגיים ותשתיתיים בסביבות ענן. תיאור התפקיד הגדרת מפת דרכים לענן והובלת יישומה. תכנון וכתיבת ארכיטקטורת פתרונות בסביבות Public Cloud. הקמה, ניהול, הגירה והסבה של אפליקציות וסביבות תשתית בענן. תכנון ואבטחת סביבות ענן וניהול כלי אבטחה. בחינה והטמעה של טכנולוגיות ופתרונות חדשים. עבודה עם שירותי IaaS, PaaS ו-SaaS. בקרה וניטור שוטפים של הפעילות הארגונית בענן. הבטחת תאימות הפתרונות לסטנדרטים, תקינה ודרישות ארגוניות.",
+"url": "https://www.drushim.co.il/job/38306682/6c4e19f2/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38312230",
+"title": "Data Engineer / מהנדס/ת נתונים - Data & AI",
+"location": "ירושלים",
+"excerpt": "ליחידת Data & AI בסביבה טכנולוגית מתקדמת דרוש/ה מהנדס/ת נתונים לתפקיד משמעותי הכולל תכנון, פיתוח ותחזוקה של תשתיות נתונים מורכבות בסביבות Cloud ו-On-Premise. התפקיד כולל עבודה עם כמויות מידע גדולות, פיתוח תהליכי עיבוד…",
+"description": "ליחידת Data & AI בסביבה טכנולוגית מתקדמת דרוש/ה מהנדס/ת נתונים לתפקיד משמעותי הכולל תכנון, פיתוח ותחזוקה של תשתיות נתונים מורכבות בסביבות Cloud ו-On-Premise. התפקיד כולל עבודה עם כמויות מידע גדולות, פיתוח תהליכי עיבוד נתונים ו-ETL, אופטימיזציה של שאילתות, שיפור איכות הנתונים ותמיכה בצוותי Data Science ואנליטיקה. במסגרת התפקיד: תכנון, פיתוח ואופטימיזציה של תהליכי עיבוד נתונים. פיתוח ותחזוקת Data Pipelines ותהליכי ETL. עבודה עם תשתיות נתונים בסביבות Cloud ו-On-Premise. עבודה עם מסדי נתונים רלציוניים ו-NoSQL. בניית מנגנוני בקרת איכות נתונים. כתיבת והרצת שאילתות מורכבות וביצוע אופטימיזציה. פתרון בעיות מורכבות במסדי נתונים ובתשתיות מידע. תמיכה בצוותי Data Science, אנליטיקה ו-AI. שדרוג ושיפור תשתיות נתונים. תיעוד תהליכים ותחזוקת ידע טכני.",
+"url": "https://www.drushim.co.il/job/38312230/9773c9a5/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38371776",
+"title": "מדען/ית נתונים ואחראי/ת AI וחדשנות",
+"location": "ירושלים",
+"excerpt": "לארגון ציבורי מוביל בירושלים דרוש/ה מדען/ית נתונים (Data Scientist) לתפקיד מרכזי בתחום הבינה המלאכותית והחדשנות הטכנולוגית. התפקיד כולל הובלת פתרונות AI, החל משלב זיהוי הצורך והמחקר, דרך פיתוח והוכחת היתכנות, ועד להטמעה…",
+"description": "לארגון ציבורי מוביל בירושלים דרוש/ה מדען/ית נתונים (Data Scientist) לתפקיד מרכזי בתחום הבינה המלאכותית והחדשנות הטכנולוגית. התפקיד כולל הובלת פתרונות AI, החל משלב זיהוי הצורך והמחקר, דרך פיתוח והוכחת היתכנות, ועד להטמעה בסביבת ייצור. תיאור התפקיד • הובלת תחום הבינה המלאכותית והחדשנות הטכנולוגית בארגון. • איתור, בחינה, התאמה והטמעה של טכנולוגיות ופתרונות בתחום הבינה המלאכותית. • זיהוי צרכים והזדמנויות לשימוש ב-AI והובלת תהליכי הוכחת היתכנות (POC) משלב הרעיון ועד להטמעה בסביבת ייצור. • עבודה עם מודלי שפה גדולים (LLM) ועם פתרונות בינה מלאכותית יוצרת (Generative AI). • עבודה עם מערכות בינה מלאכותית רב-אופניות (Multimodal AI), טכנולוגיות הטמעה וייצוג נתונים (Embeddings), פתרונות אחזור מידע משולב יצירה (RAG) וסוכני בינה מלאכותית (AI Agents). • שילוב מודלי AI במערכות קיימות, בממשקי תכנות (API) ובמאגרי מידע. • הובלת פרויקטים מבוססי AI משלב הייזום ועד להטמעה בסביבת ייצור (Production). • עבודה עם מידע מסוג טקסט, תמונה, אודיו ווידאו. • אחריות על כלל מחזור החיים של פתרונות AI: אפיון, הכנת נתונים, בחירת מודל, פיתוח, הערכה, הטמעה, ניטור ושיפור מתמשך. • הובלת תהליכי איסוף, טיוב ותיוג נתונים לצורך אימון מודלים. • הנחיה וליווי של צוותי פיתוח בשילוב מודלי AI במערכות הארגון. • עבודה מול צוותי פיתוח, ",
+"url": "https://www.drushim.co.il/job/38371776/172b836a/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38142921",
+"title": "מפתח/ת תוכנה  GenAI- רמה ג",
+"location": "ירושלים",
+"excerpt": "למשרד ממשלתי דרוש/ה מפתח/ת תוכנה בכיר/ה להובלת פתרונות בתחום ה־GenAI. התפקיד כולל פיתוח Hands-on של מערכות תוכנה מורכבות, פיתוח סוכנים חכמים, אינטגרציה עם מערכות ארגוניות ומקורות מידע, הקמת תשתיות ושירותים משותפים…",
+"description": "למשרד ממשלתי דרוש/ה מפתח/ת תוכנה בכיר/ה להובלת פתרונות בתחום ה־GenAI. התפקיד כולל פיתוח Hands-on של מערכות תוכנה מורכבות, פיתוח סוכנים חכמים, אינטגרציה עם מערכות ארגוניות ומקורות מידע, הקמת תשתיות ושירותים משותפים והובלת פרויקטים מקצה לקצה משלב אפיון הצורך ועד לעלייה לייצור והטמעה. התפקיד משלב עבודה טכנולוגית מעשית לצד עבודה מול משתמשים ולקוחות פנימיים, תכנון פתרונות, הובלת ממשקים מקצועיים וקידום טכנולוגיות AI בארגון.",
+"url": "https://www.drushim.co.il/job/38142921/bbfb8ef1/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38333339",
+"title": "בודק/ת תוכנה ידני/ת - רמה ג' | ירושלים",
+"location": "ירושלים",
+"excerpt": "למשרד ממשלתי דרוש/ה בודק/ת תוכנה ידני/ת להשתלבות בצוות מקצועי בסביבה טכנולוגית ומבצעית. התפקיד כולל: קריאת מסמכי אפיון ודרישות מערכת. תרגום דרישות ותרחישים לתרחישי בדיקות. כתיבת מסמכי בדיקות וביצוע בדיקות בפועל. ביצוע…",
+"description": "למשרד ממשלתי דרוש/ה בודק/ת תוכנה ידני/ת להשתלבות בצוות מקצועי בסביבה טכנולוגית ומבצעית. התפקיד כולל: קריאת מסמכי אפיון ודרישות מערכת. תרגום דרישות ותרחישים לתרחישי בדיקות. כתיבת מסמכי בדיקות וביצוע בדיקות בפועל. ביצוע בדיקות במערכות WEB ובמערכות מורכבות וגדולות. עבודה במקביל על מספר מערכות וטכנולוגיות. עבודה מול בסיסי נתונים וביצוע שאילתות. עבודה מול צוותי פיתוח, אפיון וממשקים שונים. ניתוח תקלות ומעקב אחר תוצאות הבדיקות. עבודה בסביבה דינמית ובמערכות קריטיות.",
+"url": "https://www.drushim.co.il/job/38333339/fc7f963c/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38312059",
+"title": "בודק/ת תוכנה בכיר/ה - SAP | רמה ג' | משרה ממשלתית",
+"location": "ירושלים",
+"excerpt": "לצוות בדיקות בסביבה טכנולוגית מורכבת דרוש/ה בודק/ת תוכנה בכיר/ה להשתלבות בסקוואד העוסק בקידום פרויקטים משמעותיים בתחום הגיוס ומערכות המידע. התפקיד כולל הובלת משימות בדיקה באופן עצמאי, עבודה מול צוותי פיתוח ויישום, כתיבת…",
+"description": "לצוות בדיקות בסביבה טכנולוגית מורכבת דרוש/ה בודק/ת תוכנה בכיר/ה להשתלבות בסקוואד העוסק בקידום פרויקטים משמעותיים בתחום הגיוס ומערכות המידע. התפקיד כולל הובלת משימות בדיקה באופן עצמאי, עבודה מול צוותי פיתוח ויישום, כתיבת מסמכי בדיקות וביצוע בדיקות במערכות SAP ובממשקים שונים. מיקום: ירושלים, עם גמישות לעבודה ממודיעין. במסגרת התפקיד: תכנון וביצוע בדיקות תוכנה בהתאם למתודולוגיות בדיקה. כתיבת מסמכי בדיקות ותסריטי בדיקה. עבודה מול צוותי פיתוח, יישום וממשקים. ביצוע בדיקות במערכות SAP S/4HANA. בדיקות ממשקים בפורמטים JSON / XML. עבודה עם כלי ניהול בדיקות ומשימות. עבודה בסביבת Agile / Scrum. הצגת תוצרים, הדרכת בודקים ועבודה בצוות. ביצוע בדיקות ממשקים באמצעות כלים כגון Postman. אפשרות לעבודה עם כלי אוטומציה כגון Tosca.",
+"url": "https://www.drushim.co.il/job/38312059/75631a02/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38267200",
+"title": "אחראי/ת תחום אבטחת איכות תוכנה | מנהל/ת פרויקט QA",
+"location": "ירושלים",
+"excerpt": "למשרד ממשלתי בירושלים דרוש/ה אחראי/ת תחום אבטחת איכות תוכנה, לתפקיד הכולל ניהול מקצועי ומנהלי של צוות QA והובלת תחום הבדיקות בארגון גדול. התפקיד כולל: ניהול צוות אבטחת איכות תוכנה, כולל ניהול מקצועי ומנהלי וגיוס עובדים.…",
+"description": "למשרד ממשלתי בירושלים דרוש/ה אחראי/ת תחום אבטחת איכות תוכנה, לתפקיד הכולל ניהול מקצועי ומנהלי של צוות QA והובלת תחום הבדיקות בארגון גדול. התפקיד כולל: ניהול צוות אבטחת איכות תוכנה, כולל ניהול מקצועי ומנהלי וגיוס עובדים. ניהול וליווי פרויקטים גדולים ומורכבים בתחום הבדיקות. הובלת בדיקות ידניות ואוטומטיות והטמעת תהליכי אוטומציה בפרויקטים. שיפור וייעול מתמיד של תהליכי הבדיקות והטמעת כלים ושיטות עבודה חדשות. עבודה שוטפת מול צוותי פיתוח, מנתחי מערכות, DBA, מנהלי מוצר ומשתמשים עסקיים. מעקב אחר תקציבים והצגת סטטוס, התקדמות ועדכונים להנהלה.",
+"url": "https://www.drushim.co.il/job/38267200/d2a113b0/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": true
 }
 ],
-"generated_at": "2026-09-17T07:27:27.870514+00:00"
+"generated_at": "2026-09-17T07:40:53.947367+00:00"
 }

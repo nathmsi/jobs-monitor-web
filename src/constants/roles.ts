@@ -1,25 +1,96 @@
-// Quick role/keyword presets. Clicking a chip fills the free-text query,
-// matched (space/hyphen-insensitive) against job title + excerpt.
-// Labels are mostly Latin, so they read the same in French and Hebrew.
+// Role presets. Each expands to several keywords matched with OR — clicking
+// "Frontend" finds React OR Angular OR HTML OR CSS… Labels read the same in
+// French and Hebrew (mostly Latin tech terms).
 export interface Role {
   key: string;
   label: string;
-  q: string;
+  terms: string[];
 }
 
 export const ROLES: Role[] = [
-  { key: "fullstack", label: "Full Stack", q: "Full Stack" },
-  { key: "frontend", label: "Frontend", q: "Frontend" },
-  { key: "backend", label: "Backend", q: "Backend" },
-  { key: "devops", label: "DevOps", q: "DevOps" },
-  { key: "mobile", label: "Mobile", q: "Mobile" },
-  { key: "data", label: "Data", q: "Data" },
-  { key: "ai", label: "AI / ML", q: "AI" },
-  { key: "qa", label: "QA", q: "QA" },
-  { key: "cloud", label: "Cloud", q: "Cloud" },
-  { key: "security", label: "Security", q: "Security" },
-  { key: "salesforce", label: "Salesforce", q: "Salesforce" },
-  { key: "sap", label: "SAP", q: "SAP" },
-  { key: "react", label: "React", q: "React" },
-  { key: "dotnet", label: ".NET", q: ".NET" },
+  {
+    key: "fullstack",
+    label: "Full Stack",
+    terms: ["full stack", "fullstack"],
+  },
+  {
+    key: "frontend",
+    label: "Frontend",
+    terms: [
+      "frontend", "front end", "react", "angular", "vue", "svelte",
+      "html", "css", "javascript", "typescript", "next.js",
+    ],
+  },
+  {
+    key: "backend",
+    label: "Backend",
+    terms: [
+      "backend", "back end", "node", "nodejs", "node.js", ".net", "c#",
+      "python", "java", "go", "golang", "ruby", "php", "scala", "rust",
+      "kotlin", "spring",
+    ],
+  },
+  {
+    key: "mobile",
+    label: "Mobile",
+    terms: [
+      "mobile", "ios", "android", "react native", "flutter", "swift",
+      "kotlin", "objective-c",
+    ],
+  },
+  {
+    key: "data",
+    label: "Data",
+    terms: [
+      "data engineer", "data analyst", "analytics", "data scientist",
+      "sql", "spark", "etl", "big data", "bi ", "databricks", "snowflake",
+    ],
+  },
+  {
+    key: "ai",
+    label: "AI / ML",
+    terms: [
+      "machine learning", "deep learning", " ai ", " ml ", "nlp", "llm",
+      "computer vision", "data scientist",
+    ],
+  },
+  {
+    key: "devops",
+    label: "DevOps",
+    terms: [
+      "devops", "sre", "site reliability", "kubernetes", "k8s", "docker",
+      "terraform", "ci/cd", "platform engineer", "infrastructure",
+    ],
+  },
+  {
+    key: "cloud",
+    label: "Cloud",
+    terms: ["cloud", "aws", "azure", "gcp", "google cloud"],
+  },
+  {
+    key: "security",
+    label: "Security",
+    terms: [
+      "security", "cyber", "appsec", "infosec", "soc ", "penetration",
+      "vulnerability",
+    ],
+  },
+  {
+    key: "qa",
+    label: "QA",
+    terms: ["qa", "quality assurance", "automation", "sdet", "test"],
+  },
+  {
+    key: "salesforce",
+    label: "Salesforce",
+    terms: [
+      "salesforce", "sfdc", "apex", "salesforce developer",
+      "salesforce admin", "salesforce architect",
+    ],
+  },
+  {
+    key: "sap",
+    label: "SAP",
+    terms: ["sap", "abap", "hana", "s/4hana"],
+  },
 ];

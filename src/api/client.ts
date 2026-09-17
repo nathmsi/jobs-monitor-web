@@ -51,6 +51,16 @@ export function textMatches(text: string, tokens: string[]): boolean {
   return tokens.every((tok) => hay.includes(tok));
 }
 
+/** True if ANY of the given terms appears in the text (OR match). */
+export function textMatchesAny(text: string, terms: string[]): boolean {
+  if (terms.length === 0) return true;
+  const hay = collapse(text);
+  return terms.some((term) => {
+    const t = collapse(term);
+    return t.length > 0 && hay.includes(t);
+  });
+}
+
 /** Keep jobs whose title/excerpt matches every word of the query. */
 export function filterByKeyword(jobs: Job[], query: string): Job[] {
   const tokens = queryTokens(query);

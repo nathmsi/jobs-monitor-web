@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { queryTokens, textMatches } from "./api/client";
+import { queryTokens, textMatches, textMatchesAny } from "./api/client";
 import { useRegionJobs, useSources } from "./api/hooks";
+import { ROLES } from "./constants/roles";
 import { FilterBar } from "./components/FilterBar/FilterBar";
 import { Header } from "./components/Header/Header";
 import { SourcesModal } from "./components/SourcesModal/SourcesModal";
@@ -33,14 +34,23 @@ function App() {
     (grouped[job.source] ??= []).push(job);
   }
 
-  // Generic search: a company matches by name (show all its jobs) or by the
-  // keyword appearing in a job's title/excerpt.
+  const role = ROLES.find((r) => r.key === filters.role);
+
+  // Role preset OR-matches its keywords; the text search AND-matches its words
+  // (a company name in the search shows all that company's jobs).
   const jobsForSource = (s: SourceInfo): Job[] => {
-    const list = grouped[s.key] ?? [];
-    if (tokens.length === 0 || textMatches(s.label, tokens)) return list;
-    return list.filter((j) =>
-      textMatches(`${j.title} ${j.excerpt} ${j.description ?? ""}`, tokens),
-    );
+    let list = grouped[s.key] ?? [];
+    if (role) {
+      list = list.filter((j) =>
+        textMatchesAny(`${j.title} ${j.excerpt} ${j.description ?? ""}`, role.terms),
+      );
+    }
+    if (tokens.length > 0 && !textMatches(s.label, tokens)) {
+      list = list.filter((j) =>
+        textMatches(`${j.title} ${j.excerpt} ${j.description ?? ""}`, tokens),
+      );
+    }
+    return list;
   };
 
   const items = sourceList

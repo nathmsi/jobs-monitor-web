@@ -45,4 +45,5 @@ export interface RegionInfo {
 export interface Filters {
   region: string;
   q: string;
+  role?: string; // active role preset key (OR-matches its keywords)
 }

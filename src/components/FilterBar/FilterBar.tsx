@@ -88,14 +88,16 @@ export function FilterBar({ filters, onChange }: Props) {
       <div className={styles.roles}>
         <span className={styles.rolesLabel}>{t("filters.roleLabel")}</span>
         {ROLES.map((role) => {
-          const active = filters.q === role.q;
+          const active = filters.role === role.key;
           return (
             <button
               key={role.key}
               type="button"
               className={`${styles.chip} ${active ? styles.chipActive : ""}`}
               aria-pressed={active}
-              onClick={() => commitQuery(active ? "" : role.q)}
+              onClick={() =>
+                onChange({ ...filters, role: active ? undefined : role.key })
+              }
             >
               {role.label}
             </button>

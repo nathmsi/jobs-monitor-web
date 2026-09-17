@@ -32,6 +32,14 @@
 "logo": "https://icons.duckduckgo.com/ip3/malamteam.com.ico"
 },
 {
+"key": "mobileye",
+"label": "Mobileye",
+"kind": "company",
+"site_url": "https://careers.mobileye.com/jobs",
+"auto_fetch": true,
+"logo": "https://icons.duckduckgo.com/ip3/mobileye.com.ico"
+},
+{
 "key": "melio",
 "label": "Melio",
 "kind": "company",

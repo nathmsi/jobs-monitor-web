@@ -4,30 +4,6 @@
 "jobs": [
 {
 "source": "malam",
-"external_id": "533785",
-"title": "FullStack Developer",
-"location": "ירושלים והסביבה",
-"excerpt": "אגף המחשוב ומערכות המידע בארגון ממשלתי בירושלים מזמין מפתחי/ות Full Stack מנוסים/ות להשתלב בצוותי פיתוח בפרויקטים מורכבים וחשובים. התפקיד כולל פיתוח עצמאי של רכיבי Client ו- Server, פיתוח שירותי API, אינטגרציה בין…",
-"description": "אגף המחשוב ומערכות המידע בארגון ממשלתי בירושלים מזמין מפתחי/ות Full Stack מנוסים/ות להשתלב בצוותי פיתוח בפרויקטים מורכבים וחשובים. התפקיד כולל פיתוח עצמאי של רכיבי Client ו- Server, פיתוח שירותי API, אינטגרציה בין מערכות וכתיבת קוד איכותי בסטנדרטים ארגוניים גבוהים. מדובר במשרה מלאה 8:00 - 17:00 עם הי...",
-"url": "https://www.malamteam.com/משרה/fullstack-developer/",
-"is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
-},
-{
-"source": "malam",
-"external_id": "533482",
-"title": "Full Stack Developer - AI Assisted Development ‎",
-"location": "ירושלים והסביבה",
-"excerpt": "אנחנו מחפשים מפתח/ת Fullstack להשתלבות כחלק מצוות בפיתוח מערכות מאפס. התפקיד מיועד למפתח/ת תוכנה בעל/ת הבנה מעשית בתהליכי פיתוח, המשתמש/ת בכלי AI כדי להאיץ ולשפר את עבודת הפיתוח — החל מתכנון וכתיבת קוד, דרך בדיקות…",
-"description": "אנחנו מחפשים מפתח/ת Fullstack להשתלבות כחלק מצוות בפיתוח מערכות מאפס. התפקיד מיועד למפתח/ת תוכנה בעל/ת הבנה מעשית בתהליכי פיתוח, המשתמש/ת בכלי AI כדי להאיץ ולשפר את עבודת הפיתוח — החל מתכנון וכתיבת קוד, דרך בדיקות ושיפור קוד, ועד תיעוד, תחזוקה ופתרון תקלות. במסגרת התפקיד: פיתוח אפליקציות ‎ Web ‎, ובמי...",
-"url": "https://www.malamteam.com/משרה/full-stack-developer-ai-assisted-development/",
-"is_hot": true,
-"last_updated": "2026-09-16",
-"is_new": true
-},
-{
-"source": "malam",
 "external_id": "37445",
 "title": "מפתח.ת תוכנה במערכות WEB",
 "location": "השפלה, ירושלים והסביבה",
@@ -36,31 +12,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9e%d7%a2%d7%a8%d7%9b%d7%95%d7%aa-web/",
 "is_hot": true,
 "last_updated": "2026-09-16",
-"is_new": true
-},
-{
-"source": "malam",
-"external_id": "37587",
-"title": "מפתח.ת Backend",
-"location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת Backend לארגון מוביל בירושלים תיאור במסגרת התפקיד פיתוח אפליקציות ושירותי צד שרת בסביבת ענן AWS, עבודה בארכיטקטורת Microservices ו- MVC ופיתוח בסביבות Cross Platform ו- Linux…",
-"description": "חברת Mertens Malam Team מגייסת מפתח.ת Backend לארגון מוביל בירושלים תיאור במסגרת התפקיד פיתוח אפליקציות ושירותי צד שרת בסביבת ענן AWS, עבודה בארכיטקטורת Microservices ו- MVC ופיתוח בסביבות Cross Platform ו- Linux Containers. עבודה עם C #, . NET Core, AWS, Docker, Microsoft CRM, SQL Server, GitLab ותהלי...",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-backend-2/",
-"is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
-},
-{
-"source": "malam",
-"external_id": "37585",
-"title": "מפתח.ת תוכנה",
-"location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח ותחזוקה של מערכות חדשניות מבוססות AI, כחלק ממערכת חינוך המיועדת לתמיכה בתוכנית לימודים אישית. פיתוח Full Stack בסביבת Microservices, שילוב…",
-"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח ותחזוקה של מערכות חדשניות מבוססות AI, כחלק ממערכת חינוך המיועדת לתמיכה בתוכנית לימודים אישית. פיתוח Full Stack בסביבת Microservices, שילוב יכולות AI, שדרוג ואופטימיזציה של מערכות ושיפור קוד קיים. עבודה בצוות פיתוח ...",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-4/",
-"is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -72,7 +24,55 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a0%d7%94%d7%9c-%d7%aa-%d7%9e%d7%a2%d7%a8%d7%9a-%d7%98%d7%9b%d7%a0%d7%95%d7%9c%d7%95%d7%92%d7%99-%d7%95-delivery/",
 "is_hot": true,
 "last_updated": "2026-09-16",
-"is_new": true
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "533785",
+"title": "FullStack Developer",
+"location": "ירושלים והסביבה",
+"excerpt": "אגף המחשוב ומערכות המידע בארגון ממשלתי בירושלים מזמין מפתחי/ות Full Stack מנוסים/ות להשתלב בצוותי פיתוח בפרויקטים מורכבים וחשובים. התפקיד כולל פיתוח עצמאי של רכיבי Client ו- Server, פיתוח שירותי API, אינטגרציה בין…",
+"description": "אגף המחשוב ומערכות המידע בארגון ממשלתי בירושלים מזמין מפתחי/ות Full Stack מנוסים/ות להשתלב בצוותי פיתוח בפרויקטים מורכבים וחשובים. התפקיד כולל פיתוח עצמאי של רכיבי Client ו- Server, פיתוח שירותי API, אינטגרציה בין מערכות וכתיבת קוד איכותי בסטנדרטים ארגוניים גבוהים. מדובר במשרה מלאה 8:00 - 17:00 עם הי...",
+"url": "https://www.malamteam.com/משרה/fullstack-developer/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "533482",
+"title": "Full Stack Developer - AI Assisted Development ‎",
+"location": "ירושלים והסביבה",
+"excerpt": "אנחנו מחפשים מפתח/ת Fullstack להשתלבות כחלק מצוות בפיתוח מערכות מאפס. התפקיד מיועד למפתח/ת תוכנה בעל/ת הבנה מעשית בתהליכי פיתוח, המשתמש/ת בכלי AI כדי להאיץ ולשפר את עבודת הפיתוח — החל מתכנון וכתיבת קוד, דרך בדיקות…",
+"description": "אנחנו מחפשים מפתח/ת Fullstack להשתלבות כחלק מצוות בפיתוח מערכות מאפס. התפקיד מיועד למפתח/ת תוכנה בעל/ת הבנה מעשית בתהליכי פיתוח, המשתמש/ת בכלי AI כדי להאיץ ולשפר את עבודת הפיתוח — החל מתכנון וכתיבת קוד, דרך בדיקות ושיפור קוד, ועד תיעוד, תחזוקה ופתרון תקלות. במסגרת התפקיד: פיתוח אפליקציות ‎ Web ‎, ובמי...",
+"url": "https://www.malamteam.com/משרה/full-stack-developer-ai-assisted-development/",
+"is_hot": true,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "37587",
+"title": "מפתח.ת Backend",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת Backend לארגון מוביל בירושלים תיאור במסגרת התפקיד פיתוח אפליקציות ושירותי צד שרת בסביבת ענן AWS, עבודה בארכיטקטורת Microservices ו- MVC ופיתוח בסביבות Cross Platform ו- Linux…",
+"description": "חברת Mertens Malam Team מגייסת מפתח.ת Backend לארגון מוביל בירושלים תיאור במסגרת התפקיד פיתוח אפליקציות ושירותי צד שרת בסביבת ענן AWS, עבודה בארכיטקטורת Microservices ו- MVC ופיתוח בסביבות Cross Platform ו- Linux Containers. עבודה עם C #, . NET Core, AWS, Docker, Microsoft CRM, SQL Server, GitLab ותהלי...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-backend-2/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "37585",
+"title": "מפתח.ת תוכנה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח ותחזוקה של מערכות חדשניות מבוססות AI, כחלק ממערכת חינוך המיועדת לתמיכה בתוכנית לימודים אישית. פיתוח Full Stack בסביבת Microservices, שילוב…",
+"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח ותחזוקה של מערכות חדשניות מבוססות AI, כחלק ממערכת חינוך המיועדת לתמיכה בתוכנית לימודים אישית. פיתוח Full Stack בסביבת Microservices, שילוב יכולות AI, שדרוג ואופטימיזציה של מערכות ושיפור קוד קיים. עבודה בצוות פיתוח ...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-4/",
+"is_hot": false,
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "malam",
@@ -83,8 +83,8 @@
 "description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח מערכות חדשניות ואוטומציות מבוססות AI עבור מערכות החינוך, בסביבת Microservices ובארכיטקטורה מודרנית. התפקיד כולל פיתוח קוד ורכיבי Full Stack, שילוב יכולות AI, פיתוח בדיקות אוטומטיות, שדרוג ואופטימיזציה של מערכות קיימ...",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-5/",
 "is_hot": true,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "malam",
@@ -95,8 +95,8 @@
 "description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה בכיר.ה לארגון גדול בירושלים תיאור משרה: תיאור משרה: התפקיד כולל פיתוח, הקמה, תפעול ותחזוקה של מערכות בסביבת Low-Code, בדגש על OutSystems, בהתאם לצרכים העסקיים של הארגון. במסגרת התפקיד נדרשת עבודה על פיתוח תהליכים, מסכים, לוגיקה עסקית ומודלי נתונים, ...",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9b%d7%99%d7%a8-%d7%94/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "malam",
@@ -107,8 +107,8 @@
 "description": "חברת Mertens Malam Team מגייסת מפתח.ת תוכנה בסביבת Web לארגון מוביל בירושלים תיאור התפקיד כולל פיתוח ועיצוב פתרונות תוכנה בהתאם למפרטים ובהנחיית ראש צוות או מנתח.ת מערכות בכיר.ה, כתיבת תוכניות מורכבות ומרכזיות בפרויקט, הנחיה מקצועית של מפתחים בצוות ותכנון וביצוע בדיקות. עבודה עם Web API, REST, Angu...",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-2/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "malam",
@@ -119,8 +119,8 @@
 "description": "חברת Mertens - MalamTeam מגייסת מפתח.ת WinForms לארגון גדול בירושלים תיאור משרה: פיתוח ותחזוקה של יישומים מבוססי . NET / WinForms, כולל הוספת פיצ'רים חדשים, תיקון תקלות, שיפור ביצועים והתאמת המערכות לצרכים עסקיים משתנים. העבודה כוללת שילוב עם בסיסי נתונים, שירותים חיצוניים וכתיבת קוד נקי ומודול...",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-winforms/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "malam",
@@ -131,8 +131,8 @@
 "description": "חברת Mertens Malam Team מגייסת תכניתן.ית Cobol לארגון פיננסי במרכז תיאור במסגרת התפקיד פיתוח, תחזוקה ושדרוג של מערכות ליבה פיננסיות בסביבת IBM Mainframe, כולל כתיבת קוד, ביצוע בדיקות וטיפול בתקלות עד לזיהוי שורש הבעיה. עבודה עם Cobol, IBM Mainframe, DB 2 ו- SQL. עבודה שוטפת מול מנתחי מערכות, צוותי בד...",
 "url": "https://www.malamteam.com/משרה/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa%d7%9f-%d7%99%d7%aa-cobol/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "malam",
@@ -143,8 +143,8 @@
 "description": "חברת Mertens Malam Team מגייסת מפתח.ת תוכנה לארגון ביטחוני במרכז תיאור במסגרת התפקיד פיתוח ותחזוקה של מערכות גדולות, מורכבות ורחבות היקף בסביבה בעלת דרישות אבטחת מידע גבוהות. עבודה עם . NET, C #, SQL Server ו- Web API, תוך יישום מתודולוגיות פיתוח מסודרות ו- Design Patterns. דרישות ניסיון מוכח בפיתוח מ...",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-3/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "malam",
@@ -155,8 +155,8 @@
 "description": "חברת Mertens - MalamTeam מגייסת פתח.ת תוכנה AI לארגון ציבורי בירושלים תיאור משרה: מפתח.ת Full Stuck בעל.ת ניסיון מוכח בסביבת אינטרנט. בעל יכולת למידה עצמית גבוהה, עבודה בצוות ויכולות המפורטות להלן. דרישות: ניסיון מעל 4 שנים כ- Full Stuck - חובה נדרש ניסיון בפיתוח פתרונות AI על גבי פלטפורמ...",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-ai/",
 "is_hot": true,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "malam",
@@ -167,8 +167,8 @@
 "description": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: תכנון, פיתוח ותחזוקה של פתרונות טכנולוגיים מקצה לקצה, כולל עבודה עם . NET Core, C #, JavaScript ו- Angular. העבודה כוללת פיתוח REST API, עבודה עם SQL ו- MongoDB, מחקר טכנולוגיות חדשות ושיתוף פעולה עם צוותי א...",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "malam",
@@ -179,8 +179,8 @@
 "description": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack מוביל.ה לארגון ממשלתי בירושלים תיאור משרה: הובלת פיתוח ותחזוקה של מערכות ויישומים במתכונת Full Stack עבור שירותים דיגיטליים בשלטון המקומי, משלב ניתוח האפיון וגיבוש הפתרון ועד עלייה לאוויר. התפקיד כולל פיתוח Front End ו- Back End, עבודה עם בסיסי ...",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94-2/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "malam",
@@ -191,8 +191,8 @@
 "description": "חברת Mertens - MalamTeam מגייסת מפתח.ת Full Stack לארגון ביטחוני בירושלים תיאור משרה: במסגרת התפקיד, פיתוח צד שרת באמצעות ASP.NET Core ו- Web API לצד פיתוח צד לקוח ב- Angular העבודה כוללת שימוש ב- SQL Server, ‏ Docker, כלי ניהול תצורה ועבודה בסביבה טכנולוגית מתקדמת נדרשת נכונות לזמינות 24/7 ולעבוד...",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-7/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "malam",
@@ -203,8 +203,8 @@
 "description": "חברת Mertens - MalamTeam מגייסת מפתח.ת FS החלפה לחל\"ד במשרד ממשלתי בירושלים תיאור משרה: פיתוח לתחום בכיר יישומי הפצה, בצוות מודול תוצרים דרישות: פיתוח בסביבת . Net Core עם ניסיון של שלוש שנים לפחות פיתוח בסביבת Angular עבודה מול בסיס נתונים SQL כולל כתיבת פרוצדורות עבודה מול git",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-fs-%d7%94%d7%97%d7%9c%d7%a4%d7%94-%d7%9c%d7%97%d7%9c%d7%93/",
 "is_hot": true,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "malam",
@@ -215,8 +215,8 @@
 "description": "חברת Mertens - MalamTeam מגייסת מפתח.ת . NET ו- Angular לארגון ממשלתי בירושלים תיאור משרה: פיתוח מקצה לקצה של מערכות מידע מורכבות ומתקדמות עבור משרד החוץ, בטכנולוגיות . NET ו- Angular. עבודה בסביבה טכנולוגית מודרנית כחלק מצוות מקצועי, כולל תכנון, פיתוח, בדיקות ואינטגרציות מול APIs. עבודה בהתאם למ...",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-net-%d7%95-angular-2/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "malam",
@@ -227,8 +227,8 @@
 "description": "לחברת Mertens- MalamTeam דרוש.ה מנהל.ת פיתוח לארגון מוביל באזור המרכז! תיאור התפקיד הנדרש: תוכניתן.ית בכיר.ה להובלת צוות פיתוח של כ 5 תוכניתנים. תפקיד מאתגר ומעניין הדורש ניהול צוות תוכניתנים הכולל הכוונה, בקרת קוד וכן פיתוח תהליכים מורכבים במערכת. דרישות: ניסיון ניהולי של צוות ניסיון HO...",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a0%d7%94%d7%9c-%d7%aa-%d7%a4%d7%99%d7%aa%d7%95%d7%97/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "malam",
@@ -239,8 +239,8 @@
 "description": "לחברת Mertens-MalamTeam דרוש.ה מפתח.ת COBOL לארגון מוביל. תיאור התפקיד: הצטרפות לצוות הפיתוח בארגון. העבודה משלבת תחזוקה של מערכות קיימות ופיתוחים עתידיים. דרישות התפקיד: ניסיון של שנתיים לפחות בפיתוח ב- Cobol. ניסיון בכתיבת CL- ים. ניסיון בכתיבת שאילתות SQL לעיבוד DB 2.",
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-cobol-3/",
 "is_hot": true,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "matrix",
@@ -251,8 +251,8 @@
 "description": "אנו מחפשים ר\"צ פיתוח להובלת פרויקטים טכנולוגיים מורכבים ומערכות מרכזיות. התפקיד כולל ניהול צוות פיתוח והבנה באיפיון וניתוח מערכות",
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%a8%d7%a6-%d7%a4%d7%99%d7%aa%d7%95%d7%97-%d7%9c%d7%9e%d7%a9%d7%a8%d7%93-%d7%9e%d7%9e%d7%a9%d7%9c%d7%aa%d7%99-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c%d7%99%d7%9d/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "matrix",
@@ -263,8 +263,8 @@
 "description": "אנחנו מגייסים מפתח/ת תוכנה FullStack לארגון ממשלתי בירושלים ! משרה היברידית",
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-fullstack/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "matrix",
@@ -275,8 +275,8 @@
 "description": "דרוש/ה מפתח תוכנה מנוסה ב Siebel לארגון מוביל באיזור המרגז במסגרת התפקיד, פיתוח ותחזוקה שוטפת של רכיבי מערכת Siebel CRM כתיבת Scripts ו‑Workflows בהתאם לדרישות עסקיות וטכנולוגיות",
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%a1%d7%99%d7%91%d7%9c-2030/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "matrix",
@@ -287,8 +287,8 @@
 "description": "אנחנו מחפשים מפתח/ת תוכנה להצטרפות לצוות שלנו! בתפקיד זה תבצע/י פיתוח מערכות Web (Client & Server) על פי מפרטים, תשתתף/י בעיצוב ופיתוח פרויקטים בתחומי תשתיות ודיגיטל, ותעבוד/י על פיתוח Microservices ותחזוקת מערכות קיימות. בנוסף, תהיה/י מעורב/ת בהנחיית תוכניתנים בצוות",
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%9c%d7%90%d7%a8%d7%92%d7%95%d7%9f-%d7%91%d7%99%d7%98%d7%97%d7%95%d7%a0%d7%99-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c%d7%99%d7%9d2/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "matrix",
@@ -299,8 +299,8 @@
 "description": "אנחנו מחפשים מפתח/ת תוכנה מנוסה להצטרפות לצוות דיגיטלי התפקיד כולל פיתוח תוכנה על פי מפרטים, ביצוע עבודות תכנות מורכבות ועיצוב, כתיבת תוכניות מרכזיות בפרויקט, הנחיית מתכנתים בצוות וביצוע בדיקות סופיות",
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%9c%d7%9e%d7%a9%d7%a8%d7%94-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c%d7%99%d7%9d2/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "matrix",
@@ -311,8 +311,8 @@
 "description": "מפתח/ת תוכנה בכיר/ה – פיתוח AI",
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9b%d7%99%d7%a8%d7%94-%d7%a4%d7%99%d7%aa%d7%95%d7%97-ai/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "matrix",
@@ -323,8 +323,8 @@
 "description": "אנחנו מחפשים מפתח/ת תוכנה המפתח/ת אחראי/ת על יישום דרישות, תיקון תקלות, כתיבת קוד איכותי והשתלבות בתהליכי הפיתוח של הארגון. פיתוח, תחזוקה ושיפור של יישומי Web מבוססי Angular תוך עבודה כחלק מצוות פיתוח פיתוח מסכים ורכיבי UI ב- Angular או react יישום דרישות פונקציונליות בהתאם למסמכי אפיון פיתוח בסביבת AWS אינטגרציה עם REST APIs איתור חסימות ועבודה עם SWAGGER תיקון תקלות ושיפור ביצועים כתיבת קוד בהתאם לסטנדרטים ולנהלי הפיתוח השתתפות ב-Code Reviews וקבלת משוב ממפתחים בכירים כתיבת Unit Tests בסיסיים עבודה מול מערכת ניהול משימות TFS שיתוף פעולה עם מנהלי פרויקטים, מנתחי מערכות, בודקים תיעוד בסיסי של הפיתוח בעת הצורך",
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%92%d7%95%d7%a0%d7%99%d7%95%d7%a8-%d7%9c%d7%9e%d7%a9%d7%a8%d7%93-%d7%9e%d7%9e%d7%a9%d7%9c%d7%aa%d7%99-%d7%91%d7%99%d7%a8%d7%95%d7%a9/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "matrix",
@@ -335,8 +335,8 @@
 "description": "מפתח/ת Full Stack בכיר/ה – פרויקט אסטרטגי וטכנולוגי",
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9b%d7%99%d7%a8%d7%94-%d7%9c%d7%9e%d7%a9%d7%a8%d7%93-%d7%9e%d7%9e%d7%a9%d7%9c%d7%aa%d7%99-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "matrix",
@@ -347,8 +347,8 @@
 "description": "אנחנו מחפשים מפתח/ת תוכנה להצטרפות לצוות פיתוח ותחזוקה של מערכות מורכבות העבודה מתבצעת בסביבת M.F. בשפות COBOL / SAPIENS / NATURAL / PL1",
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%9c%d7%9e%d7%a9%d7%a8%d7%94-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c%d7%99%d7%9d/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "matrix",
@@ -359,8 +359,8 @@
 "description": "אנחנו מחפשים מפתח/ת מנוסה להצטרפות לצוות פיתוח מערכות קצה גבוהה ומורכבות התפקיד כולל עבודה עם טכנולוגיות מתקדמות ביותר בסביבת ענן ומערכות Scale גדולות פיתוח באמצעות ASP.NET Core 8 עבודה מול SQL Server ו-Elasticsearch עבודה בסביבת Docker ו-Kubernetes פיתוח Frontend ב-Angular 18+ (כולל Signals, RxJS, Angular Material) שימוש ופיתוח בשילוב כלי AI ומודלי שפה (LLM) עבודה בסביבת ענן וניהול תצורה (GIT, Azure וכד')",
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%9c%d7%90%d7%a8%d7%92%d7%95%d7%9f-%d7%91%d7%99%d7%98%d7%97%d7%95%d7%a0%d7%99-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c%d7%99%d7%9d/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "matrix",
@@ -371,8 +371,8 @@
 "description": "אנחנו מחפשים מפתח/ת Full Stack מנוסה להצטרפות לצוות פיתוח הצוות אחראי על פיתוח הדור הבא של מערכות ניהול המידע הארגוני (ניהול, ארכוב, תיוק ואיתור מסמכים) ושדרוג מערכת החיפוש הארגונית, תוך שילוב טכנולוגיות AI ובינה מלאכותית מתקדמות",
 "url": "https://www.matrix.co.il/jobs/משרה/full-stack/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "matrix",
@@ -383,8 +383,8 @@
 "description": "אנחנו מחפשים מפתח/ת Full Stack בכיר/ה ומיומן/ת, בעל/ת יכולת עבודה מול צוותי רוחב התפקיד כולל פיתוח מערכות חדשות בטכנולוגיות .Net Core + Angular וטכנולוגיות GIS, לצד תחזוקה וטיפול בבאגים במערכות קיימות",
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%9c%d7%9e%d7%a9%d7%a8%d7%94-%d7%9e%d7%9e%d7%a9%d7%9c%d7%aa%d7%99%d7%aa-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c%d7%99%d7%9d/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "matrix",
@@ -395,8 +395,8 @@
 "description": "לתפקיד פיתוח משמעותי בסביבת SAP מתקדמת דרוש/ה מפתח/ת ABAP מנוסה להשתלבות בפרויקטים טכנולוגיים מורכבים משרה קבועה , היברידית ומלאה בירושלים\\מודיעין",
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%93%d7%a8%d7%95%d7%a9%d7%94-%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-abap-%d7%9e%d7%a0%d7%95%d7%a1%d7%94/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -407,8 +407,8 @@
 "description": "ארגון ממשלתי באזור ירושלים מגייס ארכיטקט/ית פתרונות ענן. התפקיד כולל: הובלת תכנון, אפיון ויישום של פתרונות ענן, גיבוש אסטרטגיית ענן ומפת דרכים, ליווי צוותי פיתוח משלב האפיון ועד העלייה לייצור, תכנון ארכיטקטורות מאובטחות ותשתיות ענן, בחינת טכנולוגיות חדשות, בקרה על פעילות הארגון בענן והובלת פרויקטי הגירה, אינטגרציה ופתרונות מבוססי AI ועוד.",
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/ארכיטקט-תוכנה/ארכיטקטית-פתרונות-ענן/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 },
 {
 "source": "sqlink",
@@ -419,9 +419,9 @@
 "description": "ארגון ממשלתי באזור ירושלים מגייס מפתח/ת Full Stack התפקיד כולל: עבודה בפיתוח, תחזוקה ושדרוג של מערכות Web ארגוניות, פיתוח מערכות חדשות ורכיבי צד שרת וצד לקוח, כתיבת שירותים וממשקים, טיפול בתקלות ושיפור מערכות קיימות, עבודה עם .NET Core, Angular ו-GIS, וכן השתתפות בתכנון ויישום פתרונות טכנולוגיים כחלק מצוות פיתוח ועוד.",
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/מפתחת-full-stack-1/",
 "is_hot": false,
-"last_updated": "2026-09-16",
-"is_new": true
+"last_updated": "2026-09-17",
+"is_new": false
 }
 ],
-"generated_at": "2026-09-16T12:42:54.682389+00:00"
+"generated_at": "2026-09-17T07:11:38.757118+00:00"
 }

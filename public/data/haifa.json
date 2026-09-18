@@ -12,7 +12,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-developer-at-edwards-lifesciences-4444147286",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-integra-lifesciences",
@@ -24,7 +24,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-software-engineer-c%2B%2B-c%23-medical-devices-at-integra-lifesciences-4458244264",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-kendago",
@@ -36,7 +36,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-back-end-engineer-at-kendago-4452975842",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-mobile-group",
@@ -48,7 +48,7 @@
 "url": "https://il.linkedin.com/jobs/view/frontend-manager-at-mobile-group-ltd-4466500708",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-pearson",
@@ -60,7 +60,7 @@
 "url": "https://il.linkedin.com/jobs/view/software-engineer-iii-at-pearson-4448916483",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-plus500",
@@ -72,7 +72,7 @@
 "url": "https://il.linkedin.com/jobs/view/backend-software-engineer-at-plus500%E2%84%A2-4440135525",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -411,5 +411,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-18T09:49:42.962070+00:00"
+"generated_at": "2026-09-18T10:00:42.791404+00:00"
 }

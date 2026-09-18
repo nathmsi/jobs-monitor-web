@@ -1,6 +1,6 @@
 {
 "region": "center",
-"count": 403,
+"count": 421,
 "jobs": [
 {
 "source": "appsflyer",
@@ -1008,7 +1008,7 @@
 "url": "https://il.linkedin.com/jobs/view/frontend-engineer-at-act-4466093704",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-act",
@@ -1020,7 +1020,7 @@
 "url": "https://il.linkedin.com/jobs/view/full-stack-engineer-at-act-4466310487",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-aidoc",
@@ -1032,7 +1032,7 @@
 "url": "https://il.linkedin.com/jobs/view/core-backend-engineer-at-aidoc-4439798199",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-amazon",
@@ -1044,7 +1044,7 @@
 "url": "https://il.linkedin.com/jobs/view/software-development-engineer-shopping-personalization-ai-amazon-stores-at-amazon-4455920703",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-amazon-web-services-aws",
@@ -1056,7 +1056,7 @@
 "url": "https://il.linkedin.com/jobs/view/software-development-engineer-elastic-block-storage-server-durability-engine-at-amazon-web-services-aws-4455903010",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-amazon-web-services-aws",
@@ -1068,7 +1068,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-software-development-engineer-elastic-block-storage-server-durability-engine-at-amazon-web-services-aws-4455916068",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-appdome",
@@ -1080,7 +1080,7 @@
 "url": "https://il.linkedin.com/jobs/view/backend-developer-node-js-at-appdome-4408594685",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-apple",
@@ -1092,7 +1092,7 @@
 "url": "https://il.linkedin.com/jobs/view/backend-sw-engineer-at-apple-4465777363",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-apple",
@@ -1104,7 +1104,7 @@
 "url": "https://il.linkedin.com/jobs/view/ios-software-engineer-location-technologies-at-apple-4463824466",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-beyondtrust",
@@ -1116,7 +1116,7 @@
 "url": "https://il.linkedin.com/jobs/view/sr-software-development-engineer-backend-at-beyondtrust-4438247954",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-brandlight",
@@ -1128,7 +1128,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-at-brandlight-4467752409",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-check-point-software",
@@ -1140,7 +1140,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-software-developer-at-check-point-software-4464360986",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-check-point-software",
@@ -1152,7 +1152,7 @@
 "url": "https://il.linkedin.com/jobs/view/backend-developer-at-check-point-software-4468605946",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-clover-security",
@@ -1164,7 +1164,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-frontend-engineer-at-clover-security-4426496515",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-commit",
@@ -1176,7 +1176,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-backend-engineer-node-js-at-commit-4464315679",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-connecteam",
@@ -1188,7 +1188,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-at-connecteam-4429940437",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-crowdstrike",
@@ -1200,7 +1200,7 @@
 "url": "https://il.linkedin.com/jobs/view/sr-software-engineer-cloud-identity-protection-hybrid-isr-at-crowdstrike-4442890703",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-crowdstrike",
@@ -1212,7 +1212,7 @@
 "url": "https://il.linkedin.com/jobs/view/sr-software-engineer-browser-extension-data-protection-hybrid-isr-at-crowdstrike-4315925142",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-faye",
@@ -1224,7 +1224,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-backend-engineer-at-faye-4288912418",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-figma",
@@ -1236,7 +1236,7 @@
 "url": "https://il.linkedin.com/jobs/view/software-engineer-figma-weave-tel-aviv-israel-at-figma-4428770671",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-frame-security",
@@ -1248,7 +1248,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-frontend-engineer-at-frame-security-4432285288",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-g2-risk-solutions",
@@ -1260,7 +1260,7 @@
 "url": "https://il.linkedin.com/jobs/view/software-engineer-at-g2-risk-solutions-4428568872",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-google",
@@ -1272,7 +1272,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-software-engineer-google-cloud-data-movement-platform-at-google-4452981999",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-hello-heart",
@@ -1284,7 +1284,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-mobile-specialization-at-hello-heart-4464601851",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-hio",
@@ -1296,7 +1296,7 @@
 "url": "https://il.linkedin.com/jobs/view/full-stack-engineer-at-hio-4461847156",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-honeycomb-insurance",
@@ -1308,7 +1308,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-backend-developer-at-honeycomb-insurance-4408366840",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-infinidat",
@@ -1320,7 +1320,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-c%2B%2B-software-engineer-at-infinidat-4466203943",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-infinidat",
@@ -1332,7 +1332,7 @@
 "url": "https://il.linkedin.com/jobs/view/c%2B%2B-software-engineer-nas-group-at-infinidat-4464025946",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-itron",
@@ -1344,7 +1344,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-frontend-engineer-at-itron-inc-4465630684",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-kendago",
@@ -1356,7 +1356,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-back-end-engineer-at-kendago-4452975842",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-locusview",
@@ -1368,7 +1368,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-frontend-engineer-at-locusview-4465642139",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-locusview",
@@ -1380,7 +1380,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-at-locusview-4465635334",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-lumana",
@@ -1392,7 +1392,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-software-engineer-cloud-at-lumana-4410911131",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-moveo-source",
@@ -1404,7 +1404,7 @@
 "url": "https://il.linkedin.com/jobs/view/full-stack-developer-php-laravel-%2B-react-at-moveo-source-4466840078",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-mylo-ai",
@@ -1416,7 +1416,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-flutter-developer-animation-focus-at-mylo-ai-4465548803",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-navan",
@@ -1428,7 +1428,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-front-end-software-engineer-at-navan-4465644082",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-netapp",
@@ -1440,7 +1440,7 @@
 "url": "https://il.linkedin.com/jobs/view/full-stack-engineer-at-netapp-4464036097",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-netapp",
@@ -1452,7 +1452,7 @@
 "url": "https://il.linkedin.com/jobs/view/back-end-developer-at-netapp-4464015312",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-netapp",
@@ -1464,7 +1464,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-software-engineer-at-netapp-4467082579",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-noma-security",
@@ -1476,7 +1476,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-frontend-developer-at-noma-security-4464567957",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-nuvei",
@@ -1488,7 +1488,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-developer-at-nuvei-4429279014",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-nvidia",
@@ -1500,7 +1500,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-c%2B%2B-software-engineer-at-nvidia-4453278549",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-oktopost",
@@ -1512,7 +1512,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-developer-at-oktopost-4467496653",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-originai",
@@ -1524,7 +1524,7 @@
 "url": "https://il.linkedin.com/jobs/view/backend-software-developer-at-originai-4462203755",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-ox-security",
@@ -1536,7 +1536,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-backend-engineer-vibesec-at-ox-security-4468267086",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-palo-alto-networks",
@@ -1548,7 +1548,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-principal-backend-engineer-cortex-autonomous-soc-at-palo-alto-networks-4463030874",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-palo-alto-networks",
@@ -1560,7 +1560,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-frontend-engineer-cortex-platform-at-palo-alto-networks-4429845230",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-palo-alto-networks",
@@ -1572,7 +1572,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-angular-frontend-engineer-email-security-cortex-at-palo-alto-networks-4466603963",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-paragon",
@@ -1584,7 +1584,7 @@
 "url": "https://il.linkedin.com/jobs/view/backend-engineer-platform-at-paragon-4429311891",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-pecan-ai",
@@ -1596,7 +1596,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-back-end-engineer-at-pecan-ai-4465722332",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-placer-ai",
@@ -1608,7 +1608,7 @@
 "url": "https://il.linkedin.com/jobs/view/backend-engineer-mobile-platform-at-placer-ai-4452433778",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-play-perfect",
@@ -1620,7 +1620,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-backend-developer-at-play-perfect-4463998464",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-quantum-machines",
@@ -1632,7 +1632,7 @@
 "url": "https://il.linkedin.com/jobs/view/front-end-team-leader-at-quantum-machines-4354868335",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-realplay",
@@ -1644,7 +1644,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-backend-developer-at-realplay-4466176841",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-reindeer",
@@ -1656,7 +1656,7 @@
 "url": "https://il.linkedin.com/jobs/view/software-engineer-backend-at-reindeer-4373808142",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-shield",
@@ -1668,7 +1668,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-backend-engineer-at-shield-4467229244",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-siemens-eda-siemens-digital-industries-software",
@@ -1680,7 +1680,7 @@
 "url": "https://il.linkedin.com/jobs/view/c%2B%2B-software-engineer-with-qt-expertise-at-siemens-eda-siemens-digital-industries-software-4466539338",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-siemens-energy",
@@ -1692,7 +1692,7 @@
 "url": "https://il.linkedin.com/jobs/view/full-stack-ai-product-specialist-at-siemens-energy-4390729268",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-silverfort",
@@ -1704,7 +1704,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-software-engineer-at-silverfort-4451177462",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-slice-global-equity",
@@ -1716,7 +1716,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-at-slice-global-equity-4463510775",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-sunbit",
@@ -1728,7 +1728,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-python-developer-at-sunbit-4464616743",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-traild",
@@ -1740,7 +1740,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-data-ai-at-traild-4438138492",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-unframe",
@@ -1752,7 +1752,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-software-engineer-at-unframe-4467762178",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-unframe",
@@ -1764,7 +1764,7 @@
 "url": "https://il.linkedin.com/jobs/view/full-stack-software-engineer-at-unframe-4468654724",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-venn",
@@ -1776,7 +1776,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-developer-at-venn-4326740765",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-viz-ai",
@@ -1788,7 +1788,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-software-engineer-edge-services-at-viz-ai-4463889539",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-walkme",
@@ -1800,7 +1800,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-c%23-developer-at-walkme-4461452101",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-walkme",
@@ -1812,7 +1812,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-software-engineer-big-data-platform-at-walkme-4461439323",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-wix",
@@ -1824,7 +1824,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-xengineer-backend-oriented-user-voice-at-wix-4461000093",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-wix",
@@ -1836,7 +1836,7 @@
 "url": "https://il.linkedin.com/jobs/view/xengineer-backend-oriented-for-wix-code-infrastructure-at-wix-4456181508",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-wiz",
@@ -1848,7 +1848,7 @@
 "url": "https://il.linkedin.com/jobs/view/expert-frontend-engineer-at-wiz-4406752504",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-worldquant",
@@ -1860,7 +1860,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-python-software-engineer-at-worldquant-4438259179",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -3519,6 +3519,222 @@
 "is_new": false
 },
 {
+"source": "monday",
+"external_id": "6b945ea6-f095-42b4-a83d-b9b5f407feae",
+"title": "DevOps Tech Lead (BigBrain)",
+"location": "Tel Aviv",
+"excerpt": "About monday.com http://monday.com monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together…",
+"description": "About monday.com http://monday.com monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible platform where AI doesn't just assist, it executes. We move fast, build things that matter, and foster an ownership-driven culture where you're empowered to shape how organizations work and outpace their competition. About the team We are looking for a Senior DevOps Engineer / Tech Lead to join the BigBrain group. The team that builds and operates monday.com http://monday.com's Data Platform and leads the company's internal AI innovation. We own the infrastructure behind billions of daily events - from streaming pipelines and data orchestration to the AI Gateway and ML inference platform that power monday.com http://monday.com's intelligent features. We manage some of the most sensitive data in the company, operate across multiple global regions, and are responsible for keeping it all secure and running at scale. The BigBrain group consists of diverse teams, including Data Scientists, Full-Stack Engineers, Data Engineers, and BI Engineers. As a Senior",
+"url": "https://jobs.ashbyhq.com/monday.com/6b945ea6-f095-42b4-a83d-b9b5f407feae",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "3ce06e40-f9bf-4bb6-b60b-65f8dc763e1d",
+"title": "Application Security Team Lead",
+"location": "Tel Aviv",
+"excerpt": "About monday.com http://monday.com monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together…",
+"description": "About monday.com http://monday.com monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible platform where AI doesn't just assist, it executes. We move fast, build things that matter, and foster an ownership-driven culture where you're empowered to shape how organizations work and outpace their competition. About the Role As our Application Security Team Lead, you will lead a team of talented security engineers, collaborating closely with Product, R&D and Internal Technology to embed security across every phase of the software development lifecycle (SDLC), CI/CD Security and Application Runtime Security in the era of agentic developer tools and environment. You will own the planning and execution of our global AppSec program, work with executives on strategic initiatives and drive a \"secure-by-design\" culture to ensure our agile deployment cycles never compromise on security. Strategic Leadership & Collaboration - Meet and engage with technical leaders within monday for fostering a culture of security ownership across R&D and providing visib",
+"url": "https://jobs.ashbyhq.com/monday.com/3ce06e40-f9bf-4bb6-b60b-65f8dc763e1d",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "fee48786-19a6-452e-afef-9301f26bf4f2",
+"title": "Lead Product Designer - AI Workflows",
+"location": "Tel Aviv",
+"excerpt": "monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible platform where AI…",
+"description": "monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible platform where AI doesn't just assist, it executes. We move fast, build things that matter, and foster an ownership-driven culture where you're empowered to shape how organizations work and outpace their competition. AI Workflows sits at the intersection of deterministic automation and agentic reasoning — workflows that don't just execute steps, they reason through them. Our goal is to give monday's users, technical or not, the depth and power of a dedicated automation platform, wrapped in the design clarity and product craft monday is known for. As Design Lead, you'll own that vision end to end, working as an equal partner to your PM and engineering counterparts, with direct visibility into senior leadership. #LI-DNI About The Role: - Conceptualize, define, and ship end-to-end agentic experiences — from how users build, configure, and trust AI-powered work, to how agents and assistants communicate, act, and hand off work back to humans. - Design new interaction paradigms for human–AI ",
+"url": "https://jobs.ashbyhq.com/monday.com/fee48786-19a6-452e-afef-9301f26bf4f2",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "077675a8-bfb6-47f4-a466-347561c26258",
+"title": "AI Engineer (render.ai)",
+"location": "Tel Aviv",
+"excerpt": "Meet render.ai, monday.com http://Monday.com's new AI venture. At render.ai http://render.ai, we're redefining how humans use AI for work. render.ai http://render.ai enables anyone to bring ideas to life in minutes,…",
+"description": "Meet render.ai, monday.com http://Monday.com's new AI venture. At render.ai http://render.ai, we're redefining how humans use AI for work. render.ai http://render.ai enables anyone to bring ideas to life in minutes, using their words. We're a small, autonomous team - closer in spirit to an early-stage startup than to an established company. There's no fixed playbook: we're still figuring out what the product looks like, and every engineer helps shape that, not just build it. What are we looking for? - You love prompt engineering for LLM and image generation, chasing high-fidelity outputs at scale, and you know how to push foundation models further than most think possible - You own the model quality lifecycle end-to-end, from early experiments to production monitoring, turning the latest LLM breakthroughs into systems that hold up at scale - You build evaluation frameworks you can trust, offline tests, and A/B experiments that turn feedback into real, measurable improvements - You keep a close eye on live AI systems, watching latency, hallucinations, and drift, and get ahead of failure modes before they become real problems - You're genuinely strong in TypeScript and Python, comfor",
+"url": "https://jobs.ashbyhq.com/monday.com/077675a8-bfb6-47f4-a466-347561c26258",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "b980719c-fdfe-4055-9326-55466ee9f1be",
+"title": "Senior Software Engineer (render.ai)",
+"location": "Tel Aviv",
+"excerpt": "Meet render.ai, monday.com http://Monday.com's new AI venture. At render.ai http://render.ai, we're redefining how humans use AI for work. render.ai http://render.ai enables anyone to bring ideas to life in minutes,…",
+"description": "Meet render.ai, monday.com http://Monday.com's new AI venture. At render.ai http://render.ai, we're redefining how humans use AI for work. render.ai http://render.ai enables anyone to bring ideas to life in minutes, using their words. We're a small, autonomous team - closer in spirit to an early-stage startup than to an established company. There's no fixed playbook: we're still figuring out what the product looks like, and every engineer helps shape that, not just build it. What are we looking for? We believe the role of a software engineer is changing. As AI takes on more of the implementation work, great engineers spend less time translating specs into code and more time deciding what should be built and whether it's actually good. - An experienced, product-minded engineer with ~4+ years of software engineering experience. Problems here won't arrive as polished specs; you'll start from a user need, help define the product, and take it all the way to production. - You use AI as leverage, not a substitute for judgment. We expect AI to write a meaningful share of the code. Your value is knowing what to ask for and spotting when the output is wrong. - You think like a product builde",
+"url": "https://jobs.ashbyhq.com/monday.com/b980719c-fdfe-4055-9326-55466ee9f1be",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "90a0c5b3-45e8-49fe-be71-6ab6adc1da12",
+"title": "Senior Product Illustrator/AI visual creator",
+"location": "Tel Aviv",
+"excerpt": "monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible platform where AI…",
+"description": "monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible platform where AI doesn't just assist, it executes. We move fast, build things that matter, and foster an ownership-driven culture where you're empowered to shape how organizations work and outpace their competition. We are seeking a Senior Illustrator & visual designer to join our growing Product Design Foundation Team (Design Systems). This is an opportunity to bring a new look to our current illustration & product visual language and to future monday products' look & feel. You'll be the person who gives our product a face & a character - empty states, onboarding moments, error screens, celebratory wins, in-app announcements, agents' character concepting - the small visual moments that make complex workflows feel warm & human. You'll be the one building the visual language system at scale & enhancing it with AI, across all monday products used by millions. You'll work closely with Brand Illustrators, Product Designers, Brand Designers, and Content Designers owning the illustration sy",
+"url": "https://jobs.ashbyhq.com/monday.com/90a0c5b3-45e8-49fe-be71-6ab6adc1da12",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "aa767bbc-ae1a-4152-9787-20f2b6062e64",
+"title": "Senior AI Software Engineer - Internal AI",
+"location": "Tel Aviv",
+"excerpt": "About monday.com http://monday.com monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together…",
+"description": "About monday.com http://monday.com monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible platform where AI doesn't just assist, it executes. We move fast, build things that matter, and foster an ownership-driven culture where you're empowered to shape how organizations work and outpace their competition. About the team We are looking for full-stack engineers with a special passion for AI and DevEx to build the vision for the future of SDLC powered by AI. You’ll join our AI engineering organization based in our headquarters in Tel Aviv, Israel. The Agentic Release team's mission is to pioneer the Agentic SDLC, leveraging cutting-edge AI technology to dramatically increase the organization's velocity and efficiency. This involves integrating autonomous agents across the entire R&D lifecycle - from ideation through monitoring - to accelerate delivery, ensure higher quality, and drive innovation. About the role - Build monday's core Agentic SDLC, leveraging cutting-edge AI and autonomous agents to automate, stabilize, and pioneer the future o",
+"url": "https://jobs.ashbyhq.com/monday.com/aa767bbc-ae1a-4152-9787-20f2b6062e64",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "a41b40da-19e3-4afe-b954-39bc26ebe66f",
+"title": "Senior Product Designer - Harmony AI",
+"location": "Tel Aviv",
+"excerpt": "Harmony is a cutting edge platform for building and deploying AI voice agents. We're a monday.com http://monday.com company, which means startup speed with enterprise reach. We're looking for a Senior Product Designer…",
+"description": "Harmony is a cutting edge platform for building and deploying AI voice agents. We're a monday.com http://monday.com company, which means startup speed with enterprise reach. We're looking for a Senior Product Designer to join us in Tel Aviv. We're focused on creating a seamless and innovative experience for creating and optimizing the agents. Everything we design exists around it, how someone builds an agent, shapes how it thinks, hears what it said, corrects it, and learns to trust it with real customers and real revenue. Almost none of these patterns are settled. Most of them we're inventing. You'll work as an equal alongside Product and Engineering, owning problems end to end. This is a high-impact role for a designer who thrives on ambiguity, builds with AI tools rather than just designing for them, and knows how to make something complex feel simple and human. Full-time, hybrid: 3 days a week from the Tel Aviv office. About The Role - Own problems from a vague business goal through research, exploration, and shipped solution, leading decisions and defending them with reasoning, not waiting for direction. - Define and ship agent experiences that break open the black box: helpin",
+"url": "https://jobs.ashbyhq.com/monday.com/a41b40da-19e3-4afe-b954-39bc26ebe66f",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "80f67a02-d68c-4934-9f42-de670a41103a",
+"title": "R&D Technical Support (RTS)",
+"location": "Tel Aviv",
+"excerpt": "About monday.com monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible…",
+"description": "About monday.com monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible platform where AI doesn't just assist, it executes. We move fast, build things that matter, and foster an ownership-driven culture where you're empowered to shape how organizations work and outpace their competition. About the team: monday service is our AI-driven service management solution, placing AI Agents at the heart of request resolution for modern teams. We are pioneering an AI-first approach in which Agents independently investigate, take action, and resolve cases, escalating to human experts only when necessary. Operating at a significant scale, we tackle sophisticated technical hurdles across the entire service lifecycle to deliver a more reliable and effective AI-powered experience. About the role: We are looking for a highly technical R&D Technical Support (RTS) professional to join the team and act as a technical bridge between Customer Experience (CX), Technical Support, Product, and R&D. The RTS role is essentially Tier 3 technical support, but with a s",
+"url": "https://jobs.ashbyhq.com/monday.com/80f67a02-d68c-4934-9f42-de670a41103a",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "badda4f4-4bed-4493-808f-fd4e71b9e06c",
+"title": "Senior AI Software Engineer- monday Service",
+"location": "Tel Aviv",
+"excerpt": "About monday.com http://monday.com monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together…",
+"description": "About monday.com http://monday.com monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible platform where AI doesn't just assist, it executes. We move fast, build things that matter, and foster an ownership-driven culture where you're empowered to shape how organizations work and outpace their competition. About the team: monday Service is expanding into new, AI-native product areas. We're a growing, exceptionally talented engineering group that builds new products from the ground up — combining startup velocity with monday.com http://monday.com's scale and engineering excellence. You'll help build the new best-in-market Agentic service solution, supporting huge scale and a fast-changing product. About the role: - Build new AI-native products and features from 0→1, iterating rapidly based on user feedback - Work across the stack using modern technologies to create delightful user experiences - Lead and participate in architectural decisions as we scale multiple new product lines - Take full ownership of features from design to implementatio",
+"url": "https://jobs.ashbyhq.com/monday.com/badda4f4-4bed-4493-808f-fd4e71b9e06c",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "9de6a3e3-2b7d-4208-949f-b3b9de936bd3",
+"title": "AI Research Scientist (Harmony)",
+"location": "Tel Aviv",
+"excerpt": "Meet Harmony, Monday.com http://Monday.com's new AI venture. We're redefining how businesses interact with their customers through next-generation conversational AI and agentic systems. Harmony doesn't just react- it…",
+"description": "Meet Harmony, Monday.com http://Monday.com's new AI venture. We're redefining how businesses interact with their customers through next-generation conversational AI and agentic systems. Harmony doesn't just react- it plans, reasons, and acts. You’ll join a small, highly autonomous team with the agility, ownership, and pace of a startup, working alongside world-class engineers and researchers to build the next generation of conversational AI. You’ll have access to large-scale real-world data, the compute and resources to pursue groundbreaking research, and the freedom to move fast while helping shape our AI vision. About The Role • Research novel algorithms and design new deep learning architectures to advance our in-house NLP and conversational models. - Develop methods for translating customer goals into structured representations with controlled states and real-time observations. - Help design the reasoning layer that orchestrates our AI models efficiently alongside a range of LLMs, enabling each agent to adapt its policy throughout a conversation while remaining aligned with customer objectives. - Build analytical tools that trace our AI decision process across a vast corpus of ",
+"url": "https://jobs.ashbyhq.com/monday.com/9de6a3e3-2b7d-4208-949f-b3b9de936bd3",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "848f8d63-e680-433b-b266-c2bae8119931",
+"title": "Customer Enablement AI Builder",
+"location": "Tel Aviv",
+"excerpt": "monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible platform where AI…",
+"description": "monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible platform where AI doesn't just assist, it executes. We move fast, build things that matter, and foster an ownership-driven culture where you're empowered to shape how organizations work and outpace their competition. Enabling our teams in this new era requires a genuinely different approach. We're setting out to pioneer enablement that's innovative, hands-on, and deep enough to actually change how teams work, not just add another course to the pile. Come help us define and build it. monday.com http://monday.com is becoming an AI Work Platform, and our mission is to lead that shift through how people learn, consume knowledge, and become true platform and business experts. This role builds the AI-first solutions that make that possible. About The Role - Build enablement solutions through innovative, engaging, AI-first tools and content. - Think about how teams consume knowledge and learn, and build smart solutions that help them learn effectively in the AI era. - Build engaging AI conten",
+"url": "https://jobs.ashbyhq.com/monday.com/848f8d63-e680-433b-b266-c2bae8119931",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "23ffcb8e-5ca5-48f5-8cb4-6a21baf27c66",
+"title": "Technical Support Engineer",
+"location": "Tel Aviv",
+"excerpt": "monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible platform where AI…",
+"description": "monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible platform where AI doesn't just assist, it executes. We move fast, build things that matter, and foster an ownership-driven culture where you're empowered to shape how organizations work and outpace their competition. CX at monday.com http://monday.com is evolving. As part of the CX–TT organization, we're looking for a Technical Support Engineer who combines strong product knowledge with deep technical depth and strategic thinking. This individual can resolve what's in front of them while understanding how we increase business value for customers, leading to expansion and retention. You'll be the primary point of contact for customer product and technical questions, and just as importantly, the person who notices when a customer's need is bigger than the ticket at hand and knows how to bring in supporting teams to deliver the fuller solution. ABOUT THE ROLE - WHAT YOU'LL DO Diagnose and resolve - Own inbound customer interactions end-to-end — effectively understand customer needs, and p",
+"url": "https://jobs.ashbyhq.com/monday.com/23ffcb8e-5ca5-48f5-8cb4-6a21baf27c66",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "95f547f4-285a-48db-a396-fae0cecf8f41",
+"title": "Maintenance & Operations Technician",
+"location": "Tel Aviv",
+"excerpt": "Maintenance & Operations Technician monday.com is the AI work platform powering the most ambitious teams. Over 250,000 customers across industries use us to bring people, workflows, and AI agents together on one…",
+"description": "Maintenance & Operations Technician monday.com is the AI work platform powering the most ambitious teams. Over 250,000 customers across industries use us to bring people, workflows, and AI agents together on one flexible platform where AI doesn't just assist—it executes. Our fast-paced, impactful environment nurtures an ownership-driven culture, empowering you to shape how organizations work and maintain a competitive edge. About the Role We are seeking a skilled Maintenance & Operations Technician to join our vibrant Tel Aviv office. This hands-on role is ideal for a proactive professional who thrives on resolving technical challenges, performing routine maintenance, and ensuring a seamless office environment. You will be responsible for both day-to-day maintenance tasks and the smooth operation of our office facilities, taking ownership from initiation to completion in a dynamic, service-focused setting. Key Responsibilities - Perform general maintenance and repairs, including plumbing, hardware, door and furniture repairs, painting, drywall, and other routine upkeep tasks. - Execute preventive maintenance and adhere to maintenance plans and periodic inspections. - Manage service",
+"url": "https://jobs.ashbyhq.com/monday.com/95f547f4-285a-48db-a396-fae0cecf8f41",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "0b0b653c-2d75-4bbb-aea1-1a805620b740",
+"title": "Agent Engineer, Luna",
+"location": "Tel Aviv",
+"excerpt": "Luna https://luna.com.ai is a new startup inside monday.com http://monday.com Agent Labs, founded and run by monday.com http://monday.com's CEO, the program that spins up independent startups from scratch. Each one runs…",
+"description": "Luna https://luna.com.ai is a new startup inside monday.com http://monday.com Agent Labs, founded and run by monday.com http://monday.com's CEO, the program that spins up independent startups from scratch. Each one runs like a seed-stage company: a tiny team, a real product, real users, with monday.com http://monday.com's backing and distribution. Luna already has a live product, a pile of open problems nobody has answered yet, and no layers between you and the person making the calls. We're hiring the engineer who builds it. You work directly with the founder, monday.com http://monday.com's CEO. Decisions happen in the conversation, not in a roadmap review. You own the engineering. The founder owns the product. WHAT WE'RE BUILDING Meet Luna https://luna.com.ai, the first generation of autonomous agents, which proved that agents can do real work. It also proved they broke. Unbounded self-coding that can touch any key. Everything is riding on raw LLM reasoning, so execution drifts. No way to see what actually happened. Luna is the second generation. It still learns and improves itself, but on a scaffold built for trust: - Deterministic workflows, the agent writes and refines, then r",
+"url": "https://jobs.ashbyhq.com/monday.com/0b0b653c-2d75-4bbb-aea1-1a805620b740",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "4543af91-161f-4302-a0a4-97ffd020cc1b",
+"title": "Senior Software Engineer, Funnel Fighters",
+"location": "Tel Aviv",
+"excerpt": "Funnel Fighters https://www.google.com/url?q=https%3A%2F%2Ffunnelfighters.io%2F&sa=D&source=docs&usg=AOvVaw3pcGwkYaTbBXzo1BAOK5S4&ust=1788855272560616 is a product developed in monday.com http://monday.com's Agent Lab…",
+"description": "Funnel Fighters https://www.google.com/url?q=https%3A%2F%2Ffunnelfighters.io%2F&sa=D&source=docs&usg=AOvVaw3pcGwkYaTbBXzo1BAOK5S4&ust=1788855272560616 is a product developed in monday.com http://monday.com's Agent Lab -founded and run by monday.com http://monday.com's CEO, the program that spins up independent startups from scratch. Each one runs like a seed-stage company: a tiny team, a real product, real users, with monday.com http://monday.com's backing and distribution. Funnel Fighters https://www.google.com/url?q=https%3A%2F%2Ffunnelfighters.io%2F&sa=D&source=docs&usg=AOvVaw3pcGwkYaTbBXzo1BAOK5S4&ust=1788855272560616: It's a product that already runs on live marketing funnels for startups in the Agent Labs portfolio. The role sits between data engineering, backend, and AI engineering. If you've called yourself any of the three, keep reading. You work directly with the founder, monday.com http://monday.com's CEO. Decisions happen in the conversation, not in a roadmap review. You own the engineering. The founder owns the product. What we're building Funnel Fighters https://www.google.com/url?q=https%3A%2F%2Ffunnelfighters.io%2F&sa=D&source=docs&usg=AOvVaw3pcGwkYaTbBXzo1BAOK5S4&u",
+"url": "https://jobs.ashbyhq.com/monday.com/4543af91-161f-4302-a0a4-97ffd020cc1b",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "99e4485e-f6a2-4d35-9e6e-aecad38fd340",
+"title": "Senior AI Software Engineer- Work Experience",
+"location": "Tel Aviv",
+"excerpt": "About monday.com http://monday.com monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together…",
+"description": "About monday.com http://monday.com monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible platform where AI doesn't just assist, it executes. We move fast, build things that matter, and foster an ownership-driven culture where you're empowered to shape how organizations work and outpace their competition. About the team: The Workspace & Layout team is part of the Work Experience group within monday.com http://monday.com's Human Agent Collaboration department. We own the core workspace product — the visual environment where users organize, navigate, and interact with everything inside monday.com http://monday.com — from layout and structure to the evolving workspace agent experience. We sit at the intersection of foundational infrastructure and end-user delight, shipping features that touch every monday.com http://monday.com customer. About the role: • Build new AI-native products and features from 0→1, iterating rapidly based on user feedback • Work across the stack using modern technologies to create delightful user experiences • Lead and",
+"url": "https://jobs.ashbyhq.com/monday.com/99e4485e-f6a2-4d35-9e6e-aecad38fd340",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "monday",
+"external_id": "9151c380-9f47-43a1-90fd-916c0232414b",
+"title": "Senior AI Software Engineer- monday Notetaker",
+"location": "Tel Aviv",
+"excerpt": "About monday.com http://monday.com monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together…",
+"description": "About monday.com http://monday.com monday.com http://monday.com is the AI work platform powering the most ambitious teams. 250,000+ customers across departments use us to bring people, workflows, and AI agents together on one flexible platform where AI doesn’t just assist, it executes. We move fast, build things that matter, and foster an ownership-driven culture where you’re empowered to shape how organizations work and outpace their competition. About the team The Notetaker team is building the next generation of meetings at monday.com http://monday.com. We’re taking meetings beyond recording, transcription, and summaries. We’re building an AI-native experience that understands conversations across audio, video, and organizational context, and turns that understanding into action. We’re building the layer that connects meetings with monday.com http://monday.com’s agentic ecosystem, enabling the work people discuss to be carried forward by agents, autonomously or with people in the loop. We’re also building toward AI becoming part of the meeting itself, bringing real-time context, insights, guidance, and agents into the conversation. To get there, we work at the edge of multimodal",
+"url": "https://jobs.ashbyhq.com/monday.com/9151c380-9f47-43a1-90fd-916c0232414b",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
 "source": "mongodb",
 "external_id": "7334938",
 "title": "Account Development Representative, Hebrew Speaking",
@@ -3544,11 +3760,11 @@
 },
 {
 "source": "ness",
-"external_id": "43334",
-"title": "מפתח/ת FULL STACK",
+"external_id": "43247",
+"title": "ראש/ת צוות פיתוח CRM Dynamics",
 "location": "אזור המרכז",
-"excerpt": "לנס (NESS) דרוש/ה מפתח/ת FULL STACK. התפקיד כולל פיתוח אפליקציות מבוסס AI, באמצעות טכנולוגיות ANGULAR, Python ו-SQL. השתלבות בצוות פיתוח קיים. משרה מלאה, בהרצליה. דרישות: ניסיון של שנתיים ומעלה בפיתוח תוכנה - חובה.…",
-"description": "לנס (NESS) דרוש/ה מפתח/ת FULL STACK. התפקיד כולל פיתוח אפליקציות מבוסס AI, באמצעות טכנולוגיות ANGULAR, Python ו-SQL. השתלבות בצוות פיתוח קיים. משרה מלאה, בהרצליה. דרישות: ניסיון של שנתיים ומעלה בפיתוח תוכנה - חובה. ניסיון בפיתוח WEB באמצעות Python - חובה. ניסיון בפיתוח ANGULAR גרסה 17 ומעלה - חובה. ניסיון בעבודה עם OpenAI או מודלי שפה אחרים (LLM) - חובה. שליטה ב-HTML, CSS, SCSS, JavaScript, Typescript - חובה. ניסיון עם בסיס נתונים SQL כולל כתיבת שאילתות, פונקציות ופרוצדורות - חובה.",
+"excerpt": "לNESS דרוש/ה ראש/ת צוות פיתוח CRM Dynamics. התפקיד כולל ניהול והובלה מקצועית של צוות מפתחים, הובלת ארכיטקטורת פתרונות בסביבת Microsoft Dynamics 365 CRM וכתיבת אפיונים טכניים. משרה מלאה, בראשון לציון. דרישות: ניסיון של 3…",
+"description": "לNESS דרוש/ה ראש/ת צוות פיתוח CRM Dynamics. התפקיד כולל ניהול והובלה מקצועית של צוות מפתחים, הובלת ארכיטקטורת פתרונות בסביבת Microsoft Dynamics 365 CRM וכתיבת אפיונים טכניים. משרה מלאה, בראשון לציון. דרישות: ניסיון של 3 שנים ומעלה בניהול צוות – חובה. ניסיון של 5 שנים ומעלה בפיתוח בעולמות ה CRM Dynamics ו Microsoft Dynamics 365 – חובה. ניסיון בכתיבת מסמכי אפיון טכניים- חובה. ניסיון בפיתוח בשפות Angular, React, .NET, C# - חובה. ניסיון ב SQL Server, SSIS, Azure - חובה.",
 "url": "https://www.ness-tech.co.il/careers/",
 "is_hot": false,
 "last_updated": "2026-09-18",
@@ -3556,11 +3772,11 @@
 },
 {
 "source": "ness",
-"external_id": "43247",
-"title": "ראש/ת צוות פיתוח CRM Dynamics",
+"external_id": "43334",
+"title": "מפתח/ת FULL STACK",
 "location": "אזור המרכז",
-"excerpt": "לNESS דרוש/ה ראש/ת צוות פיתוח CRM Dynamics. התפקיד כולל ניהול והובלה מקצועית של צוות מפתחים, הובלת ארכיטקטורת פתרונות בסביבת Microsoft Dynamics 365 CRM וכתיבת אפיונים טכניים. משרה מלאה, בראשון לציון. דרישות: ניסיון של 3…",
-"description": "לNESS דרוש/ה ראש/ת צוות פיתוח CRM Dynamics. התפקיד כולל ניהול והובלה מקצועית של צוות מפתחים, הובלת ארכיטקטורת פתרונות בסביבת Microsoft Dynamics 365 CRM וכתיבת אפיונים טכניים. משרה מלאה, בראשון לציון. דרישות: ניסיון של 3 שנים ומעלה בניהול צוות – חובה. ניסיון של 5 שנים ומעלה בפיתוח בעולמות ה CRM Dynamics ו Microsoft Dynamics 365 – חובה. ניסיון בכתיבת מסמכי אפיון טכניים- חובה. ניסיון בפיתוח בשפות Angular, React, .NET, C# - חובה. ניסיון ב SQL Server, SSIS, Azure - חובה.",
+"excerpt": "לנס (NESS) דרוש/ה מפתח/ת FULL STACK. התפקיד כולל פיתוח אפליקציות מבוסס AI, באמצעות טכנולוגיות ANGULAR, Python ו-SQL. השתלבות בצוות פיתוח קיים. משרה מלאה, בהרצליה. דרישות: ניסיון של שנתיים ומעלה בפיתוח תוכנה - חובה.…",
+"description": "לנס (NESS) דרוש/ה מפתח/ת FULL STACK. התפקיד כולל פיתוח אפליקציות מבוסס AI, באמצעות טכנולוגיות ANGULAR, Python ו-SQL. השתלבות בצוות פיתוח קיים. משרה מלאה, בהרצליה. דרישות: ניסיון של שנתיים ומעלה בפיתוח תוכנה - חובה. ניסיון בפיתוח WEB באמצעות Python - חובה. ניסיון בפיתוח ANGULAR גרסה 17 ומעלה - חובה. ניסיון בעבודה עם OpenAI או מודלי שפה אחרים (LLM) - חובה. שליטה ב-HTML, CSS, SCSS, JavaScript, Typescript - חובה. ניסיון עם בסיס נתונים SQL כולל כתיבת שאילתות, פונקציות ופרוצדורות - חובה.",
 "url": "https://www.ness-tech.co.il/careers/",
 "is_hot": false,
 "last_updated": "2026-09-18",
@@ -4839,5 +5055,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-18T09:49:42.962070+00:00"
+"generated_at": "2026-09-18T10:00:42.791404+00:00"
 }

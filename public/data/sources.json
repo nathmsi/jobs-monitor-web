@@ -315,6 +315,24 @@
 "logo": "https://icons.duckduckgo.com/ip3/cognyte.com.ico"
 },
 {
+"key": "monday",
+"label": "monday.com",
+"kind": "company",
+"category": "web-ecom",
+"site_url": "https://jobs.ashbyhq.com/monday.com",
+"auto_fetch": true,
+"logo": "https://icons.duckduckgo.com/ip3/monday.com.ico"
+},
+{
+"key": "lemonade",
+"label": "Lemonade",
+"kind": "company",
+"category": "fintech",
+"site_url": "https://jobs.ashbyhq.com/lemonade",
+"auto_fetch": true,
+"logo": "https://icons.duckduckgo.com/ip3/lemonade.com.ico"
+},
+{
 "key": "li-nvidia",
 "label": "NVIDIA",
 "kind": "company",

@@ -12,7 +12,31 @@
 "url": "https://careers.appsflyer.com/jobs/position/8394076002?gh_jid=8394076002",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "appsflyer",
+"external_id": "8732730002",
+"title": "Software Team Leader",
+"location": "Herzliya",
+"excerpt": "",
+"description": "",
+"url": "https://careers.appsflyer.com/jobs/position/8732730002?gh_jid=8732730002",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "appsflyer",
+"external_id": "8535473002",
+"title": "Senior Support Engineer",
+"location": "Herzliya",
+"excerpt": "",
+"description": "",
+"url": "https://careers.appsflyer.com/jobs/position/8535473002?gh_jid=8535473002",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "appsflyer",
@@ -24,7 +48,7 @@
 "url": "https://careers.appsflyer.com/jobs/position/8781235002?gh_jid=8781235002",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "appsflyer",
@@ -36,7 +60,7 @@
 "url": "https://careers.appsflyer.com/jobs/position/8692870002?gh_jid=8692870002",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "appsflyer",
@@ -72,31 +96,7 @@
 "url": "https://careers.appsflyer.com/jobs/position/8732730002?gh_jid=8732730002",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "axonius",
-"external_id": "7748661003",
-"title": "Senior Product Security Architect",
-"location": "Tel Aviv, Israel",
-"excerpt": "",
-"description": "",
-"url": "https://www.axonius.com/company/careers/open-jobs?gh_jid=7748661003",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "axonius",
-"external_id": "7987636003",
-"title": "Senior Full-Stack Engineer (Internal Apps)",
-"location": "Tel Aviv, Israel",
-"excerpt": "",
-"description": "",
-"url": "https://www.axonius.com/company/careers/open-jobs?gh_jid=7987636003",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "axonius",
@@ -108,7 +108,19 @@
 "url": "https://www.axonius.com/company/careers/open-jobs?gh_jid=7824320003",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "axonius",
+"external_id": "7987636003",
+"title": "Senior Full-Stack Engineer (Internal Apps)",
+"location": "Tel Aviv, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.axonius.com/company/careers/open-jobs?gh_jid=7987636003",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "axonius",
@@ -132,7 +144,7 @@
 "url": "https://www.axonius.com/company/careers/open-jobs?gh_jid=7699687003",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "catonetworks",
@@ -336,43 +348,139 @@
 "url": "https://www.catonetworks.com/careers/careers-post/4769033101?gh_jid=4769033101",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "catonetworks",
-"external_id": "4848229101",
-"title": "Data Scientist",
+"external_id": "4853323101",
+"title": "Full Stack Developer",
 "location": "Tel Aviv District, Israel",
 "excerpt": "",
 "description": "",
-"url": "https://www.catonetworks.com/careers/careers-post/4848229101?gh_jid=4848229101",
+"url": "https://www.catonetworks.com/careers/careers-post/4853323101?gh_jid=4853323101",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "catonetworks",
-"external_id": "4937879101",
-"title": "Automation Engineer",
+"external_id": "4970686101",
+"title": "IT System Engineer",
 "location": "Tel Aviv District, Israel",
 "excerpt": "",
 "description": "",
-"url": "https://www.catonetworks.com/careers/careers-post/4937879101?gh_jid=4937879101",
+"url": "https://www.catonetworks.com/careers/careers-post/4970686101?gh_jid=4970686101",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "catonetworks",
-"external_id": "4702426101",
-"title": "AI Security - Senior Software Engineer",
+"external_id": "4352164101",
+"title": "macOS/iOS SW Engineer",
 "location": "Tel Aviv District, Israel",
 "excerpt": "",
 "description": "",
-"url": "https://www.catonetworks.com/careers/careers-post/4702426101?gh_jid=4702426101",
+"url": "https://www.catonetworks.com/careers/careers-post/4352164101?gh_jid=4352164101",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4882479101",
+"title": "Product Manager - AI Security",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4882479101?gh_jid=4882479101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4850403101",
+"title": "Research Engineer (Network)",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4850403101?gh_jid=4850403101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4845229101",
+"title": "Software Engineer – RBI",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4845229101?gh_jid=4845229101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4895403101",
+"title": "Software Engineer – Networking Group",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4895403101?gh_jid=4895403101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4855946101",
+"title": "Software Engineer, Lakehouse (Data Platform Group)",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4855946101?gh_jid=4855946101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4860424101",
+"title": "Software Engineer (Endpoint DLP)",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4860424101?gh_jid=4860424101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4901284101",
+"title": "Software Engineer",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4901284101?gh_jid=4901284101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4648864101",
+"title": "SW Engineer - Enterprise Browser team",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4648864101?gh_jid=4648864101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "catonetworks",
@@ -420,7 +528,7 @@
 "url": "https://www.catonetworks.com/careers/careers-post/4863034101?gh_jid=4863034101",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "catonetworks",
@@ -432,7 +540,7 @@
 "url": "https://www.catonetworks.com/careers/careers-post/4853323101?gh_jid=4853323101",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "cognyte",
@@ -456,19 +564,19 @@
 "url": "https://www.comeet.com/jobs/cognyte/F2.009/finance-business-partner-team-lead/72.C68",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
-"source": "cognyte",
-"external_id": "63.B61",
-"title": "Senior Signal Processing & Communications Algorithm Engineer",
-"location": "Herzliya",
-"excerpt": "SPG",
-"description": "SPG",
-"url": "https://www.comeet.com/jobs/cognyte/F2.009/senior-signal-processing--communications-algorithm-engineer/63.B61",
+"source": "catonetworks",
+"external_id": "4874416101",
+"title": "AI Security - AI Platform Team Lead",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4874416101?gh_jid=4874416101",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "cognyte",
@@ -480,7 +588,91 @@
 "url": "https://www.comeet.com/jobs/cognyte/F2.009/senior-ai-applications-backend-engineer/6D.17E",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4702426101",
+"title": "AI Security - Senior Software Engineer",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4702426101?gh_jid=4702426101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4937879101",
+"title": "Automation Engineer",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4937879101?gh_jid=4937879101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4848229101",
+"title": "Data Scientist",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4848229101?gh_jid=4848229101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4939362101",
+"title": "Senior Software Engineer",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4939362101?gh_jid=4939362101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4888366101",
+"title": "Senior Software Engineer",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4888366101?gh_jid=4888366101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4632362101",
+"title": "Software Architect",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4632362101?gh_jid=4632362101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "catonetworks",
+"external_id": "4970648101",
+"title": "Software Engineer",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4970648101?gh_jid=4970648101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "cognyte",
@@ -492,7 +684,7 @@
 "url": "https://www.comeet.com/jobs/cognyte/F2.009/sales---pre-sales-engineer/36.D68",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "cognyte",
@@ -504,7 +696,43 @@
 "url": "https://www.comeet.com/jobs/cognyte/F2.009/field-support-engineer-and-asset-manager/89.E6F",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "cognyte",
+"external_id": "9D.F69",
+"title": "Data Science Team Leader",
+"location": "Herzliya",
+"excerpt": "SPG",
+"description": "SPG",
+"url": "https://www.comeet.com/jobs/cognyte/F2.009/data-science-team-leader/9D.F69",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "cognyte",
+"external_id": "63.B61",
+"title": "Senior Signal Processing & Communications Algorithm Engineer",
+"location": "Herzliya",
+"excerpt": "SPG",
+"description": "SPG",
+"url": "https://www.comeet.com/jobs/cognyte/F2.009/senior-signal-processing--communications-algorithm-engineer/63.B61",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "cognyte",
+"external_id": "6D.17E",
+"title": "Senior AI Applications Backend Engineer",
+"location": "Herzliya",
+"excerpt": "SPG",
+"description": "SPG",
+"url": "https://www.comeet.com/jobs/cognyte/F2.009/senior-ai-applications-backend-engineer/6D.17E",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "datadog",
@@ -516,7 +744,7 @@
 "url": "https://careers.datadoghq.com/detail/8092637/?gh_jid=8092637",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "datadog",
@@ -540,7 +768,7 @@
 "url": "https://www.fireblocks.com/careers/position?gh_jid=4655907006",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "fireblocks",
@@ -552,7 +780,19 @@
 "url": "https://www.fireblocks.com/careers/position?gh_jid=4701826006",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "fireblocks",
+"external_id": "4682123006",
+"title": "Senior Backend Engineer, Trusted Platform",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.fireblocks.com/careers/position?gh_jid=4682123006",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "fireblocks",
@@ -564,7 +804,19 @@
 "url": "https://www.fireblocks.com/careers/position?gh_jid=4706203006",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "fireblocks",
+"external_id": "4706203006",
+"title": "DevOps Team Leader",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.fireblocks.com/careers/position?gh_jid=4706203006",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "fireblocks",
@@ -624,43 +876,31 @@
 "url": "https://www.fireblocks.com/careers/position?gh_jid=4683003006",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
-"source": "forter",
-"external_id": "8534195002",
-"title": "Senior Full Stack Engineer II - CX Offering",
-"location": "Israel - Tel Aviv",
+"source": "fireblocks",
+"external_id": "4713010006",
+"title": "Director, Security Engineering",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
 "excerpt": "",
 "description": "",
-"url": "https://job-boards.greenhouse.io/forter/jobs/8534195002",
+"url": "https://www.fireblocks.com/careers/position?gh_jid=4713010006",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
-"source": "forter",
-"external_id": "8651195002",
-"title": "Senior Engineering Manager, Decision Engineering",
-"location": "Israel - Tel Aviv",
+"source": "fireblocks",
+"external_id": "4683003006",
+"title": "Product Manager, Mobile",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
 "excerpt": "",
 "description": "",
-"url": "https://job-boards.greenhouse.io/forter/jobs/8651195002",
+"url": "https://www.fireblocks.com/careers/position?gh_jid=4683003006",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "forter",
-"external_id": "8670848002",
-"title": "Staff Engineer, Core Engineering",
-"location": "Israel - Tel Aviv",
-"excerpt": "",
-"description": "",
-"url": "https://job-boards.greenhouse.io/forter/jobs/8670848002",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "forter",
@@ -672,7 +912,7 @@
 "url": "https://job-boards.greenhouse.io/forter/jobs/8289641002",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "forter",
@@ -705,10 +945,10 @@
 "location": "Tel Aviv",
 "excerpt": "",
 "description": "",
-"url": "https://job-boards.greenhouse.io/gongio/jobs/4677810006",
+"url": "https://job-boards.greenhouse.io/forter/jobs/8670848002",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "gong",
@@ -729,82 +969,34 @@
 "location": "Tel Aviv",
 "excerpt": "",
 "description": "",
-"url": "https://job-boards.greenhouse.io/gongio/jobs/4699925006",
+"url": "https://job-boards.greenhouse.io/forter/jobs/8578429002",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
-"source": "gong",
-"external_id": "4668007006",
-"title": "Senior Backend Engineer - AI Framework (Python)",
-"location": "Tel Aviv",
+"source": "forter",
+"external_id": "8534195002",
+"title": "Senior Full Stack Engineer II - CX Offering",
+"location": "Israel - Tel Aviv",
 "excerpt": "",
 "description": "",
-"url": "https://job-boards.greenhouse.io/gongio/jobs/4668007006",
+"url": "https://job-boards.greenhouse.io/forter/jobs/8534195002",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
-"source": "gong",
-"external_id": "4666594006",
-"title": "R&D, Manager - AI Agentic Frameworks",
-"location": "Tel Aviv",
+"source": "forter",
+"external_id": "8651195002",
+"title": "Senior Engineering Manager, Decision Engineering",
+"location": "Israel - Tel Aviv",
 "excerpt": "",
 "description": "",
-"url": "https://job-boards.greenhouse.io/gongio/jobs/4666594006",
+"url": "https://job-boards.greenhouse.io/forter/jobs/8651195002",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "gong",
-"external_id": "4672107006",
-"title": "Head of AI Security",
-"location": "Tel Aviv",
-"excerpt": "",
-"description": "",
-"url": "https://job-boards.greenhouse.io/gongio/jobs/4672107006",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "gong",
-"external_id": "4628626006",
-"title": "Engineering Team Lead - Application Infrastructure",
-"location": "Tel Aviv",
-"excerpt": "",
-"description": "",
-"url": "https://job-boards.greenhouse.io/gongio/jobs/4628626006",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "gong",
-"external_id": "4693375006",
-"title": "Developer Experience (DevEx) Team Lead",
-"location": "Tel Aviv",
-"excerpt": "",
-"description": "",
-"url": "https://job-boards.greenhouse.io/gongio/jobs/4693375006",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "gong",
-"external_id": "4673075006",
-"title": "Senior SRE Engineer /Senior DevOps",
-"location": "Tel Aviv",
-"excerpt": "",
-"description": "",
-"url": "https://job-boards.greenhouse.io/gongio/jobs/4673075006",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "gong",
@@ -816,7 +1008,91 @@
 "url": "https://job-boards.greenhouse.io/gongio/jobs/4700779006",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "gong",
+"external_id": "4673075006",
+"title": "Senior SRE Engineer /Senior DevOps",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/gongio/jobs/4673075006",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "gong",
+"external_id": "4693375006",
+"title": "Developer Experience (DevEx) Team Lead",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/gongio/jobs/4693375006",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "gong",
+"external_id": "4628626006",
+"title": "Engineering Team Lead - Application Infrastructure",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/gongio/jobs/4628626006",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "gong",
+"external_id": "4672107006",
+"title": "Head of AI Security",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/gongio/jobs/4672107006",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "gong",
+"external_id": "4666594006",
+"title": "R&D, Manager - AI Agentic Frameworks",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/gongio/jobs/4666594006",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "gong",
+"external_id": "4668007006",
+"title": "Senior Backend Engineer - AI Framework (Python)",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/gongio/jobs/4668007006",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "gong",
+"external_id": "4699925006",
+"title": "Senior Bookkeeper - Global AP Team Lead",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/gongio/jobs/4699925006",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "jfrog",
@@ -828,31 +1104,19 @@
 "url": "https://join.jfrog.com/job/?job=8188177&gh_jid=8188177",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "jfrog",
-"external_id": "7939091",
-"title": "GenAI & Competitive Intelligence Engineer",
+"external_id": "8184079",
+"title": "R&D Team Lead, Data Engineering- JFrog Security",
 "location": "Tel Aviv/ Netanya, Israel",
 "excerpt": "",
 "description": "",
-"url": "https://join.jfrog.com/job/?job=7939091&gh_jid=7939091",
+"url": "https://join.jfrog.com/job/?job=8184079&gh_jid=8184079",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "jfrog",
-"external_id": "8156071",
-"title": "IS Integration Engineer",
-"location": "Tel Aviv/ Netanya, Israel",
-"excerpt": "",
-"description": "",
-"url": "https://join.jfrog.com/job/?job=8156071&gh_jid=8156071",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "jfrog",
@@ -864,7 +1128,7 @@
 "url": "https://join.jfrog.com/job/?job=7419121&gh_jid=7419121",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "jfrog",
@@ -936,7 +1200,79 @@
 "url": "https://join.jfrog.com/job/?job=7434101&gh_jid=7434101",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "jfrog",
+"external_id": "7939091",
+"title": "GenAI & Competitive Intelligence Engineer",
+"location": "Tel Aviv/ Netanya, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://join.jfrog.com/job/?job=7939091&gh_jid=7939091",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "jfrog",
+"external_id": "8138480",
+"title": "AI Solutions Specialist",
+"location": "Tel Aviv/ Netanya, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://join.jfrog.com/job/?job=8138480&gh_jid=8138480",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "jfrog",
+"external_id": "7510102",
+"title": "Senior Software Engineer",
+"location": "Tel Aviv/ Netanya, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://join.jfrog.com/job/?job=7510102&gh_jid=7510102",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "jfrog",
+"external_id": "8167054",
+"title": "Application Security Engineer",
+"location": "Tel Aviv/ Netanya, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://join.jfrog.com/job/?job=8167054&gh_jid=8167054",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "jfrog",
+"external_id": "7694707",
+"title": "Business Development Representative - German Speaker",
+"location": "Tel Aviv/ Netanya, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://join.jfrog.com/job/?job=7694707&gh_jid=7694707",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "jfrog",
+"external_id": "7434101",
+"title": "Developer Advocate",
+"location": "Tel Aviv/ Netanya, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://join.jfrog.com/job/?job=7434101&gh_jid=7434101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "li-act",
@@ -948,7 +1284,19 @@
 "url": "https://il.linkedin.com/jobs/view/frontend-engineer-at-act-4466093704",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "li-act",
+"external_id": "4466310487",
+"title": "Full Stack Engineer",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"excerpt": "Act · Tel Aviv-Yafo, Tel Aviv District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/full-stack-engineer-at-act-4466310487",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "li-act",
@@ -972,7 +1320,7 @@
 "url": "https://il.linkedin.com/jobs/view/core-backend-engineer-at-aidoc-4439798199",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-amazon",
@@ -984,7 +1332,7 @@
 "url": "https://il.linkedin.com/jobs/view/software-development-engineer-shopping-personalization-ai-amazon-stores-at-amazon-4455920703",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-amazon-web-services-aws",
@@ -996,7 +1344,7 @@
 "url": "https://il.linkedin.com/jobs/view/software-development-engineer-elastic-block-storage-server-durability-engine-at-amazon-web-services-aws-4455903010",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-amazon-web-services-aws",
@@ -1020,7 +1368,7 @@
 "url": "https://il.linkedin.com/jobs/view/backend-developer-node-js-at-appdome-4408594685",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-apple",
@@ -1032,7 +1380,7 @@
 "url": "https://il.linkedin.com/jobs/view/backend-sw-engineer-at-apple-4465777363",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-apple",
@@ -1056,7 +1404,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-developer-at-autofleet-4440651880",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-beyondtrust",
@@ -1068,7 +1416,7 @@
 "url": "https://il.linkedin.com/jobs/view/sr-software-development-engineer-backend-at-beyondtrust-4438247954",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-brandlight",
@@ -1080,7 +1428,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-at-brandlight-4467752409",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-check-point-software",
@@ -1104,7 +1452,19 @@
 "url": "https://il.linkedin.com/jobs/view/senior-software-developer-at-check-point-software-4464360986",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "li-check-point-software",
+"external_id": "4468605946",
+"title": "Backend developer",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"excerpt": "Check Point Software · Tel Aviv-Yafo, Tel Aviv District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/backend-developer-at-check-point-software-4468605946",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "li-clover-security",
@@ -1116,7 +1476,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-frontend-engineer-at-clover-security-4426496515",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-commit",
@@ -1128,7 +1488,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-backend-engineer-node-js-at-commit-4464315679",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-crowdstrike",
@@ -1140,7 +1500,7 @@
 "url": "https://il.linkedin.com/jobs/view/sr-software-engineer-browser-extension-data-protection-hybrid-isr-at-crowdstrike-4315925142",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-crowdstrike",
@@ -1152,7 +1512,7 @@
 "url": "https://il.linkedin.com/jobs/view/sr-software-engineer-cloud-identity-protection-hybrid-isr-at-crowdstrike-4442890703",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-faye",
@@ -1164,7 +1524,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-backend-engineer-at-faye-4288912418",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-figma",
@@ -1176,7 +1536,7 @@
 "url": "https://il.linkedin.com/jobs/view/software-engineer-figma-weave-tel-aviv-israel-at-figma-4428770671",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-frame-security",
@@ -1188,7 +1548,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-frontend-engineer-at-frame-security-4432285288",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-g2-risk-solutions",
@@ -1200,7 +1560,7 @@
 "url": "https://il.linkedin.com/jobs/view/software-engineer-at-g2-risk-solutions-4428568872",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-google",
@@ -1212,7 +1572,7 @@
 "url": "https://il.linkedin.com/jobs/view/software-engineer-iii-waze-mobile-android-at-google-4458662012",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-hello-heart",
@@ -1224,7 +1584,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-mobile-specialization-at-hello-heart-4464601851",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-hio",
@@ -1236,7 +1596,7 @@
 "url": "https://il.linkedin.com/jobs/view/full-stack-engineer-at-hio-4461847156",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-honeycomb-insurance",
@@ -1260,7 +1620,19 @@
 "url": "https://il.linkedin.com/jobs/view/senior-c%2B%2B-software-engineer-at-infinidat-4466203943",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "li-infinidat",
+"external_id": "4464025946",
+"title": "C++ Software Engineer - NAS Group",
+"location": "Herzliya, Tel Aviv District, Israel",
+"excerpt": "Infinidat · Herzliya, Tel Aviv District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/c%2B%2B-software-engineer-nas-group-at-infinidat-4464025946",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "li-itron",
@@ -1272,7 +1644,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-frontend-engineer-at-itron-inc-4465630684",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-kendago",
@@ -1284,7 +1656,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-back-end-engineer-at-kendago-4452975842",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-locusview",
@@ -1296,7 +1668,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-at-locusview-4465635334",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-locusview",
@@ -1308,7 +1680,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-frontend-engineer-at-locusview-4465642139",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-lumana",
@@ -1320,7 +1692,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-software-engineer-cloud-at-lumana-4410911131",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-moveo-source",
@@ -1332,7 +1704,7 @@
 "url": "https://il.linkedin.com/jobs/view/full-stack-developer-php-laravel-%2B-react-at-moveo-source-4466840078",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-mylo-ai",
@@ -1344,7 +1716,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-flutter-developer-animation-focus-at-mylo-ai-4465548803",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-navan",
@@ -1356,31 +1728,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-front-end-software-engineer-at-navan-4465644082",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "li-netapp",
-"external_id": "4464036097",
-"title": "Full Stack Engineer",
-"location": "Tel Aviv District, Israel",
-"excerpt": "NetApp · Tel Aviv District, Israel",
-"description": "",
-"url": "https://il.linkedin.com/jobs/view/full-stack-engineer-at-netapp-4464036097",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "li-netapp",
-"external_id": "4464015312",
-"title": "Back End Developer",
-"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
-"excerpt": "NetApp · Tel Aviv-Yafo, Tel Aviv District, Israel",
-"description": "",
-"url": "https://il.linkedin.com/jobs/view/back-end-developer-at-netapp-4464015312",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-netapp",
@@ -1392,7 +1740,31 @@
 "url": "https://il.linkedin.com/jobs/view/senior-software-engineer-at-netapp-4467082579",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "li-netapp",
+"external_id": "4464036097",
+"title": "Full Stack Engineer",
+"location": "Tel Aviv District, Israel",
+"excerpt": "NetApp · Tel Aviv District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/full-stack-engineer-at-netapp-4464036097",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "li-netapp",
+"external_id": "4464015312",
+"title": "Back End Developer",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"excerpt": "NetApp · Tel Aviv-Yafo, Tel Aviv District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/back-end-developer-at-netapp-4464015312",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "li-noma-security",
@@ -1404,7 +1776,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-frontend-developer-at-noma-security-4464567957",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-nuvei",
@@ -1416,7 +1788,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-developer-at-nuvei-4429279014",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-nvidia",
@@ -1428,7 +1800,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-c%2B%2B-software-engineer-at-nvidia-4453278549",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-oktopost",
@@ -1440,7 +1812,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-developer-at-oktopost-4467496653",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-originai",
@@ -1452,7 +1824,7 @@
 "url": "https://il.linkedin.com/jobs/view/backend-software-developer-at-originai-4462203755",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-ox-security",
@@ -1500,7 +1872,31 @@
 "url": "https://il.linkedin.com/jobs/view/senior-frontend-engineer-cortex-platform-at-palo-alto-networks-4429845230",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "li-palo-alto-networks",
+"external_id": "4463030874",
+"title": "Senior Principal Backend Engineer (CORTEX - Autonomous SOC)",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"excerpt": "Palo Alto Networks · Tel Aviv-Yafo, Tel Aviv District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/senior-principal-backend-engineer-cortex-autonomous-soc-at-palo-alto-networks-4463030874",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "li-palo-alto-networks",
+"external_id": "4429845230",
+"title": "Senior Frontend Engineer (Cortex Platform)",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"excerpt": "Palo Alto Networks · Tel Aviv-Yafo, Tel Aviv District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/senior-frontend-engineer-cortex-platform-at-palo-alto-networks-4429845230",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "li-paragon",
@@ -1512,7 +1908,7 @@
 "url": "https://il.linkedin.com/jobs/view/backend-engineer-platform-at-paragon-4429311891",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-pecan-ai",
@@ -1524,7 +1920,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-back-end-engineer-at-pecan-ai-4465722332",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-placer-ai",
@@ -1536,7 +1932,7 @@
 "url": "https://il.linkedin.com/jobs/view/backend-engineer-mobile-platform-at-placer-ai-4452433778",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-play-perfect",
@@ -1548,7 +1944,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-backend-developer-at-play-perfect-4463998464",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-qualcomm",
@@ -1572,7 +1968,7 @@
 "url": "https://il.linkedin.com/jobs/view/front-end-team-leader-at-quantum-machines-4354868335",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-realplay",
@@ -1584,7 +1980,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-backend-developer-at-realplay-4466176841",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-reindeer",
@@ -1596,7 +1992,7 @@
 "url": "https://il.linkedin.com/jobs/view/software-engineer-backend-at-reindeer-4373808142",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-shield",
@@ -1608,7 +2004,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-backend-engineer-at-shield-4467229244",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-siemens-eda-siemens-digital-industries-software",
@@ -1620,7 +2016,7 @@
 "url": "https://il.linkedin.com/jobs/view/c%2B%2B-software-engineer-with-qt-expertise-at-siemens-eda-siemens-digital-industries-software-4466539338",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-siemens-energy",
@@ -1632,7 +2028,7 @@
 "url": "https://il.linkedin.com/jobs/view/full-stack-ai-product-specialist-at-siemens-energy-4390729268",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-silverfort",
@@ -1644,7 +2040,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-software-engineer-at-silverfort-4451177462",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-slice-global-equity",
@@ -1656,7 +2052,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-at-slice-global-equity-4463510775",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-sunbit",
@@ -1668,7 +2064,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-python-developer-at-sunbit-4464616743",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-traild",
@@ -1680,19 +2076,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-data-ai-at-traild-4438138492",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "li-unframe",
-"external_id": "4468654724",
-"title": "Full Stack Software Engineer",
-"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
-"excerpt": "Unframe · Tel Aviv-Yafo, Tel Aviv District, Israel",
-"description": "",
-"url": "https://il.linkedin.com/jobs/view/full-stack-software-engineer-at-unframe-4468654724",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-unframe",
@@ -1704,7 +2088,19 @@
 "url": "https://il.linkedin.com/jobs/view/senior-software-engineer-at-unframe-4467762178",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "li-unframe",
+"external_id": "4468654724",
+"title": "Full Stack Software Engineer",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"excerpt": "Unframe · Tel Aviv-Yafo, Tel Aviv District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/full-stack-software-engineer-at-unframe-4468654724",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "li-unity",
@@ -1728,7 +2124,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-full-stack-developer-at-venn-4326740765",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-viz-ai",
@@ -1752,7 +2148,19 @@
 "url": "https://il.linkedin.com/jobs/view/senior-c%23-developer-at-walkme-4461452101",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "li-walkme",
+"external_id": "4461439323",
+"title": "Senior Software Engineer - Big Data Platform",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"excerpt": "WalkMe · Tel Aviv-Yafo, Tel Aviv District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/senior-software-engineer-big-data-platform-at-walkme-4461439323",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "li-wix",
@@ -1764,7 +2172,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-xengineer-backend-oriented-user-voice-at-wix-4461000093",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-wix",
@@ -1788,7 +2196,7 @@
 "url": "https://il.linkedin.com/jobs/view/expert-frontend-engineer-at-wiz-4406752504",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-worldquant",
@@ -2076,7 +2484,19 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-cobol/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "malam",
+"external_id": "36566",
+"title": "מפתח.ת מערכות COBOL",
+"location": "גוש דן",
+"excerpt": "חברת Mertens - Malam Team מגייסת מפתח.ת מערכות Cobol לארגון מוביל במרכז במסגרת התפקיד פיתוח ותחזוקה של תוכניות, שירותים, ממשקים ותהליכים פיננסיים כחלק מצוות פיתוח קופה וגבייה באגף מערכות מידע עבודה עם Cobol, AS 400,…",
+"description": "חברת Mertens - Malam Team מגייסת מפתח.ת מערכות Cobol לארגון מוביל במרכז במסגרת התפקיד פיתוח ותחזוקה של תוכניות, שירותים, ממשקים ותהליכים פיננסיים כחלק מצוות פיתוח קופה וגבייה באגף מערכות מידע עבודה עם Cobol, AS 400, SAP, ESB, Web העבודה כוללת שיתוף פעולה עם צוותי פיתוח, מנתחי מערכות, משתמשים ומנהלים...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%9e%d7%a2%d7%a8%d7%9b%d7%95%d7%aa-cobol/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "malam",
@@ -2088,7 +2508,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-abap/",
 "is_hot": true,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -2148,7 +2568,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-rpa/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -2160,7 +2580,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%95%d7%91%d7%99%d7%9c%d7%94-%d7%98%d7%9b%d7%a0%d7%95%d7%9c%d7%95%d7%92%d7%99%d7%aa/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -2172,7 +2592,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%a2%d7%99%d7%9c%d7%aa-%d7%9e%d7%a2%d7%a8%d7%9b%d7%aa-%d7%9e%d7%99%d7%93%d7%a2-%d7%92%d7%99%d7%90%d7%95%d7%92%d7%a8%d7%a4%d7%99-gis/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -2280,7 +2700,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-fullstack/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -2400,7 +2820,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%a8%d7%90%d7%a9%d7%aa-%d7%a6%d7%95%d7%95%d7%aa-fullstack-web-mobile/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -2460,7 +2880,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-gis/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "matrix",
@@ -2472,7 +2892,235 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%aa%d7%95%d7%9b%d7%a0%d7%99%d7%aa%d7%9f%d7%99%d7%aa-fullstack/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78990",
+"title": "מפתח/ת תוכניתן GIS",
+"location": "גוש דן",
+"excerpt": "עבור מטריקס דרוש/ה מפתח/ת GIS במסגרת התפקיד: • תחזוקה של מערכת קיימת ופיתוח מודולים חדשים בעולם התוכן העירוני • אפיון דרישות וזיהוי צרכי משתמש, איתור כלים מתאימים, יישום והטמעה • ניתוחים גיאוגרפיים מתקדמים",
+"description": "עבור מטריקס דרוש/ה מפתח/ת GIS במסגרת התפקיד: • תחזוקה של מערכת קיימת ופיתוח מודולים חדשים בעולם התוכן העירוני • אפיון דרישות וזיהוי צרכי משתמש, איתור כלים מתאימים, יישום והטמעה • ניתוחים גיאוגרפיים מתקדמים",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%99%d7%aa%d7%9f-gis/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78894",
+"title": "מפתח API – FHIR",
+"location": "גוש דן",
+"excerpt": "עבור ארגון רפואי גדול במרכז דרוש מפתח FHIR – API!",
+"description": "עבור ארגון רפואי גדול במרכז דרוש מפתח FHIR – API!",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97-api-fhir/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78986",
+"title": "לארגון פיננסי מוביל דרוש/ה Back End Developer",
+"location": "גוש דן, השפלה, השרון",
+"excerpt": "לארגון פיננסי מוביל דרוש/ה Back End Developer הצטרפות לאגף ה- CTO עבור צוות COE אשר מורכב מ Principal Engineers בעלי מומחיות עמוקה בעולמות הפיתוח, הארכיטקטורה, הענן, DevOps ו-AI אשר יובילו את תחום החדשנות, פלטפורמות…",
+"description": "לארגון פיננסי מוביל דרוש/ה Back End Developer הצטרפות לאגף ה- CTO עבור צוות COE אשר מורכב מ Principal Engineers בעלי מומחיות עמוקה בעולמות הפיתוח, הארכיטקטורה, הענן, DevOps ו-AI אשר יובילו את תחום החדשנות, פלטפורמות הפיתוח וחוויית המפתחים בארגון. התפקיד כולל הובלה טכנולוגית של יוזמות אסטרטגיות, בחינה והטמעה של טכנולוגיות חדשות, תכנון ארכיטקטורות מתקדמות, גיבוש סטנדרטים הנדסיים והובלת פתרונות המשפיעים על מאות מפתחים בארגון. העבודה משלבת מחקר טכנולוגי , כתיבת קוד הובלת POC פיתוח והטמעה של פלטפורמות ארגוניות, שיפור תהליכי SDLC קידום יכולות AI למפתחים והעצמת ה־Developer Experience. כמו כן, המועמד/ת יהיה/תהיה שותף/ה מרכזי/ת בעיצוב עתיד הפיתוח בארגון, יעבוד/תעבוד מול צוותי פיתוח, ארכיטקטים, תשתיות, אבטחת מידע ויוביל יוזמות חוצות ארגון בתחומי Cloud, DevOps, Platform Engineering, AI ו־Developer Productivity . זהו תפקיד המיועד לאנשים בעלי ראייה מערכתית רחבה, יכולת השפעה גבוהה, תשוקה לחדשנות ויכולת להפוך רעיונות ויכולות טכנולוגיות חדשות לפתרונות בעלי ערך עסקי והנדסי משמעותי. משרה מלאה בתל אביב במתכונת היברידית.",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9c%d7%90%d7%a8%d7%92%d7%95%d7%9f-%d7%a4%d7%99%d7%a0%d7%a0%d7%a1%d7%99-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%93%d7%a8%d7%95%d7%a9%d7%94-back-end-developer2/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78758",
+"title": "מפתח SQL לצוות הבילינג במחלקת מערכות מידע",
+"location": "גוש דן",
+"excerpt": "לחברה מובילה במרכז הארץ דרוש/ה מפתח/ת SQL Server מנוסה להשתלבות בצוות מקצועי, בתפקיד הכולל פיתוח, אינטגרציה ועבודה על מערכות מורכבות.",
+"description": "לחברה מובילה במרכז הארץ דרוש/ה מפתח/ת SQL Server מנוסה להשתלבות בצוות מקצועי, בתפקיד הכולל פיתוח, אינטגרציה ועבודה על מערכות מורכבות.",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97-sql-%d7%9c%d7%a6%d7%95%d7%95%d7%aa-%d7%94%d7%91%d7%99%d7%9c%d7%99%d7%a0%d7%92-%d7%91%d7%9e%d7%97%d7%9c%d7%a7%d7%aa-%d7%9e%d7%a2%d7%a8%d7%9b%d7%95%d7%aa-%d7%9e%d7%99%d7%93/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78720",
+"title": "מפתח אינטגרציות ואוטומציה",
+"location": "גוש דן",
+"excerpt": "לבית השקעות במרכז הארץ מגייסים, מפתח/ת אינטגרציות ואוטומציה מוכשר/ת להצטרפות לצוות מערכות המידע.",
+"description": "לבית השקעות במרכז הארץ מגייסים, מפתח/ת אינטגרציות ואוטומציה מוכשר/ת להצטרפות לצוות מערכות המידע.",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%90%d7%99%d7%a0%d7%98%d7%92%d7%a8%d7%a6%d7%99%d7%95%d7%aa-%d7%95%d7%90%d7%95%d7%98%d7%95%d7%9e%d7%a6%d7%99%d7%94/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78710",
+"title": "פנייה מספר 549 לקבלת הצעות למפעיל GIS",
+"location": "השפלה, גוש דן",
+"excerpt": "מפעיל/ת GIS | משרה מלאה | אזור רמלה",
+"description": "מפעיל/ת GIS | משרה מלאה | אזור רמלה",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%a4%d7%a0%d7%99%d7%99%d7%94-%d7%9e%d7%a1%d7%a4%d7%a8-549-%d7%9c%d7%a7%d7%91%d7%9c%d7%aa-%d7%94%d7%a6%d7%a2%d7%95%d7%aa-%d7%9c%d7%9e%d7%a4%d7%a2%d7%99%d7%9c-gis/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78687",
+"title": "דרוש/ה מפתח/ת  NET.CORE",
+"location": "גוש דן",
+"excerpt": "לארגון רפואי באזור המכרז דרוש/ה מפתח/ת NET. תיאור התפקיד מפתח.ת Full Stack לפיתוח מערכות ואתרי אינטרנט חיצוניים, אפליקציות מובייל וממשקי משתמש מתקדמים. התפקיד כולל עבודה עם טכנולוגיות חדשניות בסביבת .NET Core, React JS…",
+"description": "לארגון רפואי באזור המכרז דרוש/ה מפתח/ת NET. תיאור התפקיד מפתח.ת Full Stack לפיתוח מערכות ואתרי אינטרנט חיצוניים, אפליקציות מובייל וממשקי משתמש מתקדמים. התפקיד כולל עבודה עם טכנולוגיות חדשניות בסביבת .NET Core, React JS וReact Native דרישות לתפקיד: לפחות 4 שנות ניסיון מוכח בפיתוח מערכות ואתרי אינטרנט רספונסיביים בסביבת .NET Core ניסיון בשימוש בכלי AI להאצת פיתוח (GitHub Copilot, ChatGPT) ניסיון בעבודה עם Git ניסיון בעבודה עם כלי ניהול משימות וגרסאות היכרות עם Azure DevOps Portal ניסיון בעבודה בצוותי Scrum ניסיון בטכנולוגיות Web כגון HTML5, CSS3, Bootstrap , AJAX ניסיון או היכרות עם כליState Management כגון Redux, MobX או אחר ניסיון בפיתוח UI עשיר ומתקדם ניסיון משמעותי בפיתוח מערכות מורכבות לארגונים גדולים דרישות נוספות (יתרון): הקפדה על כתיבת קוד איכותי, ביצועים ותחזוקה עבודה בשיתוף פעולה עם צוותי מוצר, UX/UI וQA לאורך מחזור חיי הפיתוח יכולת עבודה עצמאית ובצוות, יוזמה וחשיבה מערכתית הבנה של ארכיטקטורת Web ומערכות full stack ניסיון בעבודה מול מסדי נתונים SQL/NoSQL ניסיון בפיתוח צד שרת מבוסס .NET Core וREST APIs לפחות שנתיים ניסיון בפיתוח Frontend בReact (hooks, עבודה עם APIs, ניהול state)",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%93%d7%a8%d7%95%d7%a9%d7%94-%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-netcore/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78674",
+"title": "דרוש/ה מפתח/ת  Full Stack",
+"location": "גוש דן",
+"excerpt": "לארגון רפואי מוביל דרוש/ה מפתח/ת Fullstack לפיתוח מערכות ואתרי אינטרנט חיצוניים, אפליקציות מובייל וממשקי משתמש מתקדמים. התפקיד כולל עבודה עם טכנולוגיות חדשניות בסביבת .NET Core, React JS וReact Native דרישות לתפקיד:",
+"description": "לארגון רפואי מוביל דרוש/ה מפתח/ת Fullstack לפיתוח מערכות ואתרי אינטרנט חיצוניים, אפליקציות מובייל וממשקי משתמש מתקדמים. התפקיד כולל עבודה עם טכנולוגיות חדשניות בסביבת .NET Core, React JS וReact Native דרישות לתפקיד:",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%93%d7%a8%d7%95%d7%a9%d7%94-%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-full-stack/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78659",
+"title": "מפתח/ת AS400 RPG",
+"location": "גוש דן",
+"excerpt": "לחברה פיננסית מובילה דרוש/ה מפתח/ת AS400 RPG ! מהות התפקיד: * פיתוח ותחזוקת מערכת ללקוחות * קבלת אחריות על מערכת מקצה לקצה. * הבנה ובניית ארכיטקטורת Microservice * עבודה במתודולוגית Agile וחשיפה למתודולוגיות…",
+"description": "לחברה פיננסית מובילה דרוש/ה מפתח/ת AS400 RPG ! מהות התפקיד: * פיתוח ותחזוקת מערכת ללקוחות * קבלת אחריות על מערכת מקצה לקצה. * הבנה ובניית ארכיטקטורת Microservice * עבודה במתודולוגית Agile וחשיפה למתודולוגיות וארכיטקטורות חדשות. * התפקיד כולל אחריות על פיתוח ותחזוקה של מספר מערכות/תהליכים בתחום שוק ההון",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-as400-rpg/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78539",
+"title": "ראש צוות תשתיות תוכנה",
+"location": "גוש דן, השפלה",
+"excerpt": "עבור ארגון בריאות גדול במרכז דרוש/ה ראש/ת צוות תשתיות תוכנה! במסגרת התפקיד - ניהול צוות מפתחים כולל ניהול תכנית עבודה שבועית לצוות והנחיה מקצועית, כתיבת מסמכי אפיון לדרישות פיתוח חדשות, בקרת קוד, תחזוקה שוטפת כולל טיפול…",
+"description": "עבור ארגון בריאות גדול במרכז דרוש/ה ראש/ת צוות תשתיות תוכנה! במסגרת התפקיד - ניהול צוות מפתחים כולל ניהול תכנית עבודה שבועית לצוות והנחיה מקצועית, כתיבת מסמכי אפיון לדרישות פיתוח חדשות, בקרת קוד, תחזוקה שוטפת כולל טיפול בתקלות ומענה למשתמשים.",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%a8%d7%90%d7%a9-%d7%a6%d7%95%d7%95%d7%aa-%d7%aa%d7%a9%d7%aa%d7%99%d7%95%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78487",
+"title": "מפתח סיבל 2030",
+"location": "גוש דן, ירושלים יו\"ש",
+"excerpt": "דרוש/ה מפתח תוכנה מנוסה ב Siebel לארגון מוביל באיזור המרגז במסגרת התפקיד, פיתוח ותחזוקה שוטפת של רכיבי מערכת Siebel CRM כתיבת Scripts ו‑Workflows בהתאם לדרישות עסקיות וטכנולוגיות",
+"description": "דרוש/ה מפתח תוכנה מנוסה ב Siebel לארגון מוביל באיזור המרגז במסגרת התפקיד, פיתוח ותחזוקה שוטפת של רכיבי מערכת Siebel CRM כתיבת Scripts ו‑Workflows בהתאם לדרישות עסקיות וטכנולוגיות",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%a1%d7%99%d7%91%d7%9c-2030/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78423",
+"title": "לארגון רפואי מוביל דרוש/ה Full Stack Developer",
+"location": "גוש דן, השפלה, השרון",
+"excerpt": "לארגון רפואי מוביל דרוש/ה Full Stack Developer מחפשים מפתח/ת Full-Stack מנוסה (Mid/Senior) בעל/ת יכולת הובלה ופיתוח מקצה לקצה, עם פוטנציאל גבוה וזיקה עמוקה לעבודה עם כלי AI . התפקיד כולל עבודה בסביבה דינמית ומאתגרת, תוך…",
+"description": "לארגון רפואי מוביל דרוש/ה Full Stack Developer מחפשים מפתח/ת Full-Stack מנוסה (Mid/Senior) בעל/ת יכולת הובלה ופיתוח מקצה לקצה, עם פוטנציאל גבוה וזיקה עמוקה לעבודה עם כלי AI . התפקיד כולל עבודה בסביבה דינמית ומאתגרת, תוך דגש על יחסי אנוש מעולים ותכונות אופי המתאימות לעבודת צוות קרובה. התפקיד כולל תחומי אחריות כגון: -פיתוח אפליקציות ומערכות Web מקצה לקצה (Client & Server). -פיתוח Frontend בטכנולוגיית React. -פיתוח Backend בטכנולוגיית .NET Core בארכיטקטורות מורכבות ו- Microservices . -הובלה טכנולוגית, חקירה עצמאית והטמעה של כלי פיתוח, מתודולוגיות ופרוטוקולים חדשים בתחום ה-AI בצוות. -לקחת משימות ואפיונים מורכבים משלב התכנון ועד ל-Production באופן עצמאי. -עבודה צמודה עם ממשקים שונים צוותי פיתוח, מוצר ותשתיות, תוך שיתוף ידע וחנוך חברי הצוות. משרה מלאה בתל אביב במתכונת היברידית.",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9c%d7%90%d7%a8%d7%92%d7%95%d7%9f-%d7%a8%d7%a4%d7%95%d7%90%d7%99-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%93%d7%a8%d7%95%d7%a9%d7%94%c2%a0full-stack-developer/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78422",
+"title": "לארגון רפואי מוביל דרוש/ה מפתח/ת COBOL בסביבת AS400",
+"location": "גוש דן, השפלה, השרון",
+"excerpt": "לארגון רפואי מוביל דרוש/ה מפתח/ת COBOL בסביבת AS400 חבר/ה בצוות במחלקת מערכות ליבה באגף הטכנולוגיות, כפיפות ניהולית ומקצועית לראש הצוות. התפקיד כולל פיתוח ותחזוקה של תוכניות/שירותים/ממשקים/תהליכים שונים ועוד עבור מערכת…",
+"description": "לארגון רפואי מוביל דרוש/ה מפתח/ת COBOL בסביבת AS400 חבר/ה בצוות במחלקת מערכות ליבה באגף הטכנולוגיות, כפיפות ניהולית ומקצועית לראש הצוות. התפקיד כולל פיתוח ותחזוקה של תוכניות/שירותים/ממשקים/תהליכים שונים ועוד עבור מערכת זימון תורים. סביבת עבודה AS400, עם אינטגרציה ענפה לטכנולוגיות שונות כגון: SAP, ESB, WEB ועוד. במסגרת התפקיד העובד/ת יהיה בקשרי עבודה עם ראש הצוות, חברי הצוות וצוותים משיקים אחרים כגון: מנתחי מערכות, צוותים רוחבייים, משתמשים/לקוחות ומנהלי עבודה לפי מתודולוגיה סדורה ואג'ילית. משרה מלאה בתל אביב במתכונת היברידית.",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9c%d7%90%d7%a8%d7%92%d7%95%d7%9f-%d7%a8%d7%a4%d7%95%d7%90%d7%99-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%93%d7%a8%d7%95%d7%a9%d7%94-%d7%9e%d7%a4%d7%aa%d7%97%d7%aa%c2%a0cobol-%d7%91%d7%a1%d7%91%d7%99/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78408",
+"title": "Full Stack Java Developer in Document Management",
+"location": "גוש דן",
+"excerpt": "מפתח/ת Full Stack Java יצטרף/תצטרף לצוות פיתוח מוביל האחראי על בניית מוצרים, ממשקים ואינטגרציות, תוך דגש משמעותי על פיתוח מערכות ניהול, אינטגרציה מול ממשקי API מגוונים, פיתוח ממשקי משתמש מודרניים ושילוב טכנולוגיות…",
+"description": "מפתח/ת Full Stack Java יצטרף/תצטרף לצוות פיתוח מוביל האחראי על בניית מוצרים, ממשקים ואינטגרציות, תוך דגש משמעותי על פיתוח מערכות ניהול, אינטגרציה מול ממשקי API מגוונים, פיתוח ממשקי משתמש מודרניים ושילוב טכנולוגיות מבוססות LLM (מודלי שפה גדולים).",
+"url": "https://www.matrix.co.il/jobs/משרה/full-stack-java-developer-in-document-management/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78407",
+"title": "Senior Generative AI Engineer",
+"location": "גוש דן",
+"excerpt": "תיאור התפקיד:",
+"description": "תיאור התפקיד:",
+"url": "https://www.matrix.co.il/jobs/משרה/senior-generative-ai-engineer/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78396",
+"title": "מפתח/ת Full Stack לארגון בריאות מוביל",
+"location": "גוש דן, השרון",
+"excerpt": "ארגון שירותי בריאות מוביל דרוש/ה Full Stack Developer מנוסה להצטרפות לצוות טכנולוגי מתקדם. התפקיד כולל פיתוח מערכות Web מורכבות מקצה לקצה, עבודה בסביבת Microservices, הובלת משימות טכנולוגיות משמעותיות משלב האפיון ועד…",
+"description": "ארגון שירותי בריאות מוביל דרוש/ה Full Stack Developer מנוסה להצטרפות לצוות טכנולוגי מתקדם. התפקיד כולל פיתוח מערכות Web מורכבות מקצה לקצה, עבודה בסביבת Microservices, הובלת משימות טכנולוגיות משמעותיות משלב האפיון ועד העלייה לייצור, ושילוב כלי AI חדשניים כחלק מתהליכי הפיתוח. הזדמנות לקחת חלק בפרויקטים בעלי השפעה רחבה בסביבה חדשנית, דינמית ומאתגרת.",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-full-stack-%d7%9c%d7%90%d7%a8%d7%92%d7%95%d7%9f-%d7%91%d7%a8%d7%99%d7%90%d7%95%d7%aa-%d7%9e%d7%95%d7%91%d7%99%d7%9c/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78379",
+"title": "Integration Developer",
+"location": "גוש דן, השרון",
+"excerpt": "לחטיבת עסקיות במטריקס דרוש/ה מפתח/ת אינטגרציה. במסגרת התפקיד אחריות על פיתוח, יישום ותחזוקה של תהליכי אינטגרציה בין מערכות, אפליקציות וממשקים שונים בארגון. התפקיד כולל עבודה מול צוותי פיתוח, תשתיות ולקוחות פנימיים,…",
+"description": "לחטיבת עסקיות במטריקס דרוש/ה מפתח/ת אינטגרציה. במסגרת התפקיד אחריות על פיתוח, יישום ותחזוקה של תהליכי אינטגרציה בין מערכות, אפליקציות וממשקים שונים בארגון. התפקיד כולל עבודה מול צוותי פיתוח, תשתיות ולקוחות פנימיים, בדיקות אינטגרציה, ניתוח תקלות, תיעוד ועמידה בדרישות ביצועים ואמינות. פיתוח, תחזוקה ובדיקת API's עבור תקשורת בין מערכות פנים ארגוניות וחיצוניות. תכנון וביצוע בדיקות אינטגרציה, כולל כתיבת מסמכי בדיקות, אימות ותיקוף התנהגות המערכת. שיתוף פעולה עם צוותי פיתוח, QA, DevOps ותשתיות להבנת צרכים ודרישות אינטגרציה כתיבת תיעוד טכני מלא—מפרטי אינטגרציה, API specs, נהלים ותיעוד תקלות. משרה מלאה , ישיבה בכפר סבא",
+"url": "https://www.matrix.co.il/jobs/משרה/integration-developer/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78375",
+"title": "דרוש/ה Backend Developer  (Python + TypeScript)",
+"location": "גוש דן",
+"excerpt": "לארגון פיננסי מוביל דרוש/ה Backend Developer מנוסה להצטרפות לצוות חדש העוסק בפיתוח פתרונות AI ותשתיות מתקדמות עבור ארגון המונה כ-1,000 מפתחים. מה התפקיד כולל?",
+"description": "לארגון פיננסי מוביל דרוש/ה Backend Developer מנוסה להצטרפות לצוות חדש העוסק בפיתוח פתרונות AI ותשתיות מתקדמות עבור ארגון המונה כ-1,000 מפתחים. מה התפקיד כולל?",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%93%d7%a8%d7%95%d7%a9%d7%94-backend-developer-python-typescript/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "matrix",
+"external_id": "78307",
+"title": "מפתח/ת SharePoint",
+"location": "השפלה, גוש דן",
+"excerpt": "עבור מטריקס דרוש/ה מפתח/ת SharePoint תיאור התפקיד הנדרש: ü אחריות מלאה על פיתוחים בסביבת 2019 premise on Point Share ü כתיבת WS ועבודה מול ממשקים מ/ואל הפורטל ü בניית טפסים ממוחשבים באקסטרא-נט עבור מערכות הפורטל. ü…",
+"description": "עבור מטריקס דרוש/ה מפתח/ת SharePoint תיאור התפקיד הנדרש: ü אחריות מלאה על פיתוחים בסביבת 2019 premise on Point Share ü כתיבת WS ועבודה מול ממשקים מ/ואל הפורטל ü בניית טפסים ממוחשבים באקסטרא-נט עבור מערכות הפורטל. ü ניתוח והבנה של פיתוחים קיימים – ביצוע engineering reverse ü יכולת תחקור והבנה של תהליכים מורכבים לצורך טיפול בתקלות",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-sharepoint/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "matrix",
@@ -2712,7 +3360,7 @@
 "url": "https://job-boards.greenhouse.io/melio/jobs/7806724003",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "melio",
@@ -2724,7 +3372,7 @@
 "url": "https://job-boards.greenhouse.io/melio/jobs/7572393003",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -2760,7 +3408,31 @@
 "url": "https://careers.mobileye.com/jobs/ai-algorithm-engineer-vision-localization-group/d85072cf-3d47-4c42-a760-2c691af6093b",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "melio",
+"external_id": "7748138003",
+"title": "Data Scientist",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/melio/jobs/7748138003",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "melio",
+"external_id": "7820154003",
+"title": "Engineering Manager, AP",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/melio/jobs/7820154003",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -3069,10 +3741,10 @@
 "location": "Ramat Gan",
 "excerpt": "Our vision Localization group is responsible for accurately localizing the vehicle on a high-definition 3D map with centimeter-level precision using surround camera systems to enable autonomous driving. Our work…",
 "description": "Our vision Localization group is responsible for accurately localizing the vehicle on a high-definition 3D map with centimeter-level precision using surround camera systems to enable autonomous driving. Our work combines advanced geometric reasoning, scene understanding, and large-scale mapping to solve one of the core challenges of autonomous vehicles in complex real-world environments. The role involves developing algorithmic and deep learning solutions that integrate mathematical optimization, computer vision, and 3D geometry. We work with modern neural network architectures including Transformers, GNNs, and CNNs to solve problems involving scene understanding, object association, and precise spatial reasoning in dynamic environments. The HD map contains rich geometric and semantic information that is critical for safe driving and cannot always be inferred reliably from images alone under all visibility conditions or viewpoints. In addition to achieving highly accurate localization, the team is also responsible for estimating map relevance and consistency with the current world state to ensure safe and reliable autonomous driving.",
-"url": "https://careers.mobileye.com/jobs/outstanding-graduate-algorithm-developer-vision-localization-group/83eaec09-649e-4ea6-b6c8-ace482eb2f59",
+"url": "https://careers.mobileye.com/jobs/ai-algorithm-engineer-vision-localization-group/d85072cf-3d47-4c42-a760-2c691af6093b",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -3108,19 +3780,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-cc-software-engineer/ee246ef1-c9ae-4a05-ad95-ad37a744db48",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "mobileye",
-"external_id": "f04fed6a-f0f4-4455-900a-be4ccdddc8ee",
-"title": "Senior C++ Software Engineer - Integration & Delivery (CTO Team)",
-"location": "Ramat Gan",
-"excerpt": "Mobileye is looking for an experienced Software and Integration Engineer to join the CTO group and take a key role in delivering robust, large-scale autonomous driving software. The group is primarily focused on the…",
-"description": "Mobileye is looking for an experienced Software and Integration Engineer to join the CTO group and take a key role in delivering robust, large-scale autonomous driving software. The group is primarily focused on the decision-making module of Mobileye's self-driving car. It leverages a wide range of algorithmic approaches, rigorous formal definitions, and mathematical modeling- enriched by insights drawn from large-scale data and real-world driving experience. In this role you will play a key role in designing, building, and maintaining Algo utility and software infrastructure within the company's primary algorithmic flow.",
-"url": "https://careers.mobileye.com/jobs/senior-c-software-engineer-integration-delivery-cto-team/f04fed6a-f0f4-4455-900a-be4ccdddc8ee",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -3132,7 +3792,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-embedded-software-engineer/1fcefccb-abe1-4bfd-b5c2-46be82d3cd4f",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -3180,7 +3840,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-system-architect/ffd7b3b0-bde6-447f-89cd-1c7f9abf17e5",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -3192,7 +3852,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-thermal-engineer/067d6e5e-f0e2-4cbf-82fd-43c0af539e2b",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -3324,19 +3984,463 @@
 "url": "https://careers.mobileye.com/jobs/software-integration-and-field-application-engineer/f10044d7-c978-4fed-bb58-0bd0170ab8ec",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
-"external_id": "b5e33bc9-f6e1-4201-a42d-61cd409b60c5",
-"title": "Senior Data Engineer",
+"external_id": "7095ceb2-0f4a-4cb1-a7dd-642d2cff9dcd",
+"title": "Embedded C++ Software Developer",
 "location": "Petah Tikva",
-"excerpt": "We are looking for a strong, hands-on Data Engineer to join our team and play a key role in building our data infrastructure from the ground up. In this role, you will design and implement scalable data pipelines and…",
-"description": "We are looking for a strong, hands-on Data Engineer to join our team and play a key role in building our data infrastructure from the ground up. In this role, you will design and implement scalable data pipelines and platforms, supporting both batch and real-time use cases. You will work closely with analysts and stakeholders to deliver reliable, high-quality data solutions, and take full ownership of data flows – from ingestion to consumption. This is a great opportunity for an executor who enjoys building, moving fast, and making an impact.",
-"url": "https://careers.mobileye.com/jobs/senior-data-engineer/b5e33bc9-f6e1-4201-a42d-61cd409b60c5",
+"excerpt": "Join Mobileye's IMS Embedded Software team and help develop the real-time software behind one of Mobileye's production automotive platforms. Our technology enables commercial vehicle manufacturers to deliver advanced…",
+"description": "Join Mobileye's IMS Embedded Software team and help develop the real-time software behind one of Mobileye's production automotive platforms. Our technology enables commercial vehicle manufacturers to deliver advanced safety capabilities and meet Europe's General Safety Regulation (GSR) requirements. Since the regulation came into effect in 2024, the platform has secured production programs with approximately 60–70 manufacturers worldwide and continues to expand into new global markets. You'll work on complex embedded systems, collaborate with multidisciplinary engineering teams, and build software that helps make roads safer around the world.",
+"url": "https://careers.mobileye.com/jobs/embedded-c-software-developer/7095ceb2-0f4a-4cb1-a7dd-642d2cff9dcd",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "ac5edc03-9478-4fef-ae4a-20d2609ca6da",
+"title": "Embedded Linux OS Architect",
+"location": "Petah Tikva",
+"excerpt": "Mobileye Autonomous Driving software group is looking for an OS expert with strong knowledge in the Linux Kernel. As a Linux Operating System architect, you will be responsible to work with system and SW architecture…",
+"description": "Mobileye Autonomous Driving software group is looking for an OS expert with strong knowledge in the Linux Kernel. As a Linux Operating System architect, you will be responsible to work with system and SW architecture teams to define OS solutions to satisfy customer requirements for the autonomous vehicle world. This involves security and connectivity components in Mobileye’s Safety critical Linux OS involving both the Kernel and the user space worlds. This is an exciting and unique opportunity to work with highly talented Linux OS team and be a leader in the development of the Linux as a platform for the Safety Critical Automotive industry.",
+"url": "https://careers.mobileye.com/jobs/embedded-linux-os-architect/ac5edc03-9478-4fef-ae4a-20d2609ca6da",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "608dac79-7323-419b-a044-8b8e8fd26618",
+"title": "Embedded Software Architect",
+"location": "Petah Tikva",
+"excerpt": "Mobileye's Imaging Radar group develops innovative high-performance Imaging Radar solutions for ADAS and Autonomous Driving markets. We are looking for a Software Architect to join the development of state-of-the-art…",
+"description": "Mobileye's Imaging Radar group develops innovative high-performance Imaging Radar solutions for ADAS and Autonomous Driving markets. We are looking for a Software Architect to join the development of state-of-the-art products in mmW frequencies. You will be part of a winning team in a fast-paced startup-like environment, working on many different components of the entire system. You will have an opportunity to make an impact on the design and implementation of an innovative technology in its early stages.",
+"url": "https://careers.mobileye.com/jobs/embedded-software-architect/608dac79-7323-419b-a044-8b8e8fd26618",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "999d5e75-7d50-42f1-879b-18035226641f",
+"title": "Embedded Team Leader -OS Integration & Automation",
+"location": "Petah Tikva",
+"excerpt": "Mobileye is looking for a skilled and motivated Embedded SW Integration Team Lead for the Platform OS Department to manage the daily integration of the OS deliveries into Mobileye’s SW stack. The Platform OS team of…",
+"description": "Mobileye is looking for a skilled and motivated Embedded SW Integration Team Lead for the Platform OS Department to manage the daily integration of the OS deliveries into Mobileye’s SW stack. The Platform OS team of Mobileye is leading a global effort of making the Linux OS as the Automotive Safety OS that will fuel the Autonomous Vehicle and the whole automotive industry. You’ll lead a fast-paced, hands-on and dynamic team of integration and automation engineers, contributing to the overall qualification and integration effort of Mobileye while collaborating with other teams across the organization.",
+"url": "https://careers.mobileye.com/jobs/embedded-team-leader-os-integration-automation/999d5e75-7d50-42f1-879b-18035226641f",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "0029e8b1-bdf1-4d0a-9895-7b5ee22c4837",
+"title": "Experienced Control Algorithms Engineer",
+"location": "Ramat Gan",
+"excerpt": "We are seeking a highly skilled and innovative Control Engineer to join our dynamic team dedicated to advancing the field of autonomous vehicles. As a Control Engineer, you will play a crucial role in designing,…",
+"description": "We are seeking a highly skilled and innovative Control Engineer to join our dynamic team dedicated to advancing the field of autonomous vehicles. As a Control Engineer, you will play a crucial role in designing, developing, implementing and testing hands on control algorithms to enhance the performance, safety, and efficiency of our autonomous vehicle systems. *Please note that this position requires 2 days a week at our HQ in Jerusalem.",
+"url": "https://careers.mobileye.com/jobs/experienced-control-algorithms-engineer/0029e8b1-bdf1-4d0a-9895-7b5ee22c4837",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "878a21c9-1159-4c3d-957d-d278de51b202",
+"title": "Experienced Deep Learning Algorithm Developer",
+"location": "Ramat Gan",
+"excerpt": "The road algorithm team is responsible for the critical and challenging task of detecting the drivable lanes on the road. We focus on Deep Learning algorithms, classical Computer Vision and Geometric Modeling…",
+"description": "The road algorithm team is responsible for the critical and challenging task of detecting the drivable lanes on the road. We focus on Deep Learning algorithms, classical Computer Vision and Geometric Modeling algorithms. We are looking for an Algorithm Developer to help us advance our technology and push the boundaries of what's possible in autonomous driving.",
+"url": "https://careers.mobileye.com/jobs/experienced-deep-learning-algorithm-developer/878a21c9-1159-4c3d-957d-d278de51b202",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "a1d4788f-68d7-46bc-97c4-04c1599f7ff4",
+"title": "Experienced Deep Learning Algorithm Developer – Object Perception Group",
+"location": "Ramat Gan",
+"excerpt": "We are looking for an experienced Deep Learning Algorithm Developer to join one of our teams developing perception technologies for autonomous driving. Our group tackles diverse challenges — from object detection and…",
+"description": "We are looking for an experienced Deep Learning Algorithm Developer to join one of our teams developing perception technologies for autonomous driving. Our group tackles diverse challenges — from object detection and scene understanding to 3D perception — using large-scale, real-world in-house datasets and state-of-the-art deep learning models.",
+"url": "https://careers.mobileye.com/jobs/experienced-deep-learning-algorithm-developer-object-perception-group/a1d4788f-68d7-46bc-97c4-04c1599f7ff4",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "7ae498b0-6d23-4346-87df-0f97a82b53e0",
+"title": "Experienced Deep Learning Software Engineer - Algorithms & Data",
+"location": "Ramat Gan",
+"excerpt": "Our team develops models for road perception. We turn multi-sensor inputs (vision, maps, and more) into models that understand road geometry and behavior. We work at the intersection of algorithms, DL models,…",
+"description": "Our team develops models for road perception. We turn multi-sensor inputs (vision, maps, and more) into models that understand road geometry and behavior. We work at the intersection of algorithms, DL models, infrastructure, and data engineering.",
+"url": "https://careers.mobileye.com/jobs/experienced-deep-learning-software-engineer-algorithms-data/7ae498b0-6d23-4346-87df-0f97a82b53e0",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "25b51d8d-b2aa-49b9-9864-3b78e8a2a591",
+"title": "Experienced DFT Engineer",
+"location": "Ramat Gan",
+"excerpt": "Mobileye's Automated Driving group is looking for an experienced DFT Engineer. This is an exciting opportunity to join a team of highly talented engineers, working on one of the most cutting-edge technologies -…",
+"description": "Mobileye's Automated Driving group is looking for an experienced DFT Engineer. This is an exciting opportunity to join a team of highly talented engineers, working on one of the most cutting-edge technologies - Autonomous Vehicle (AV) SoC. At Mobileye's Automated Driving group, we know that the idea of a fully autonomous car is no longer science fiction, but a reality that we are creating! We have spent more than 15 years developing the world's most Advanced Driver Assistance Systems (ADAS) and we are now leading the computer vision and machine learning domain, reaching fully automated driving experience (AV).",
+"url": "https://careers.mobileye.com/jobs/experienced-dft-engineer/25b51d8d-b2aa-49b9-9864-3b78e8a2a591",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "e85566dc-9827-4058-a1d2-cc6a63f7e286",
+"title": "Experienced Machine Learning Engineer",
+"location": "Ramat Gan",
+"excerpt": "Mobileye’s Hawkeye team is developing advanced close-range 3D perception for autonomous vehicles, enabling safe automated parking and low-speed maneuvers in tight environments. We build multi-camera deep learning…",
+"description": "Mobileye’s Hawkeye team is developing advanced close-range 3D perception for autonomous vehicles, enabling safe automated parking and low-speed maneuvers in tight environments. We build multi-camera deep learning systems for precise and reliable understanding of the vehicle’s surroundings.",
+"url": "https://careers.mobileye.com/jobs/experienced-machine-learning-engineer/e85566dc-9827-4058-a1d2-cc6a63f7e286",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "49084f32-4a0d-4641-a034-c22310218bb1",
+"title": "Experienced Physical Design Engineer",
+"location": "Petah Tikva",
+"excerpt": "Our Physical Design group operates in a dynamic, startup-like environment that values deep technical expertise and high-level execution. Each engineer holds end-to-end responsibility - from initial definition and…",
+"description": "Our Physical Design group operates in a dynamic, startup-like environment that values deep technical expertise and high-level execution. Each engineer holds end-to-end responsibility - from initial definition and constraints development to execution and full signoff. You will work closely with Design and Architecture teams on RTL modifications and design reviews to ensure seamless convergence. We’re looking for an Experienced Physical Design Engineer to join our growing team, and take a key role in developing our next-generation SoC from definition to Tape-Out.",
+"url": "https://careers.mobileye.com/jobs/experienced-physical-design-engineer/49084f32-4a0d-4641-a034-c22310218bb1",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "d41387e9-f9c3-4a72-8f4b-8ecfad129907",
+"title": "Experienced SoC Verification Engineer",
+"location": "Ramat Gan",
+"excerpt": "Mobileye SOC verification group owns the important and challenging job of verifying Mobileye's chip. It is involved from product specification to final SOC delivery, and involves all the system components. The group is…",
+"description": "Mobileye SOC verification group owns the important and challenging job of verifying Mobileye's chip. It is involved from product specification to final SOC delivery, and involves all the system components. The group is made up of few of the best verification engineers, so besides contributing to making our roads safer, you’ll get the chance to work at one of the most professional verification teams.",
+"url": "https://careers.mobileye.com/jobs/experienced-soc-verification-engineer/d41387e9-f9c3-4a72-8f4b-8ecfad129907",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "78d2b642-98cd-4eeb-893f-3662c46ae13c",
+"title": "Experienced Software Engineer - Data Systems & Tools",
+"location": "Ramat Gan",
+"excerpt": "Mobileye is looking for an experienced Software Engineer to join our Algorithms organization and help build the systems, tools, and workflows that support large-scale data operations and analysis. In this role, you will…",
+"description": "Mobileye is looking for an experienced Software Engineer to join our Algorithms organization and help build the systems, tools, and workflows that support large-scale data operations and analysis. In this role, you will take ownership of designing and developing solutions that streamline data request management, pipeline monitoring, reporting, and operational workflows across multiple products and systems. You will work closely with algorithm developers, analysts, product stakeholders, and infrastructure teams to transform ad-hoc processes into scalable, maintainable systems. The systems and tools will coordinate work through the workflow, detect blockers and rerun needs, and provide a reliable operational view across requests, products, and issues. We are looking for an engineer with strong system-level thinking, a proactive mindset, and the ability to independently define requirements, identify gaps, and drive projects from concept to production.",
+"url": "https://careers.mobileye.com/jobs/experienced-software-engineer-data-systems-tools/78d2b642-98cd-4eeb-893f-3662c46ae13c",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "72e986e2-94b4-49f6-be5f-74a48de8a71d",
+"title": "Machine Learning Software Engineer",
+"location": "Ramat Gan",
+"excerpt": "Mobileye is looking for a Machine Learning Software Engineer, who will be challenged by bridging the gap between cutting-edge machine learning research and robust production deployment. In this position, you will…",
+"description": "Mobileye is looking for a Machine Learning Software Engineer, who will be challenged by bridging the gap between cutting-edge machine learning research and robust production deployment. In this position, you will combine software engineering expertise with machine learning deployment knowledge, responsible for taking our algorithms and developing robust production solutions that serve them at scale. The work at Mobileye’s algorithms department is fast-paced and requires staying ahead of the curve with the latest engineering solutions and best practices adopted across the ML community, while staying informed about emerging solutions in both computer vision and NLP domains and understanding the specific problems they address.",
+"url": "https://careers.mobileye.com/jobs/machine-learning-software-engineer/72e986e2-94b4-49f6-be5f-74a48de8a71d",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "7a258e61-6cdc-431c-adf2-36b67ef05353",
+"title": "Mechanical Engineer - Automotive ECU",
+"location": "Ramat Gan",
+"excerpt": "We are looking for a Senior Mechanical Design Engineer to join our mechanical engineering team at the AV Platform department as a key player in the development of next-generation ECU (electrical control unit) for…",
+"description": "We are looking for a Senior Mechanical Design Engineer to join our mechanical engineering team at the AV Platform department as a key player in the development of next-generation ECU (electrical control unit) for autonomous vehicles. This key position includes leading the product design throughout all lifecycle stages, from inception to mass production, close interaction with hardware, layout, thermal, quality, V&V, reliability, production and working closely with OEMs, stakeholders and suppliers.",
+"url": "https://careers.mobileye.com/jobs/mechanical-engineer-automotive-ecu/7a258e61-6cdc-431c-adf2-36b67ef05353",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "c5d0b91a-8a21-490f-a02b-23b5ebaa2ec5",
+"title": "Outstanding Graduate - Machine Learning Engineer",
+"location": "Ramat Gan",
+"excerpt": "Mobileye’s Hawkeye team is developing advanced close-range 3D perception for autonomous vehicles, enabling safe automated parking and low-speed maneuvers in tight environments. We build multi-camera deep learning…",
+"description": "Mobileye’s Hawkeye team is developing advanced close-range 3D perception for autonomous vehicles, enabling safe automated parking and low-speed maneuvers in tight environments. We build multi-camera deep learning systems for precise and reliable understanding of the vehicle’s surroundings.",
+"url": "https://careers.mobileye.com/jobs/outstanding-graduate-machine-learning-engineer/c5d0b91a-8a21-490f-a02b-23b5ebaa2ec5",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "83eaec09-649e-4ea6-b6c8-ace482eb2f59",
+"title": "Outstanding Graduate Algorithm Developer - Vision Localization Group",
+"location": "Ramat Gan",
+"excerpt": "Our vision Localization group is responsible for accurately localizing the vehicle on a high-definition 3D map with centimeter-level precision using surround camera systems to enable autonomous driving. Our work…",
+"description": "Our vision Localization group is responsible for accurately localizing the vehicle on a high-definition 3D map with centimeter-level precision using surround camera systems to enable autonomous driving. Our work combines advanced geometric reasoning, scene understanding, and large-scale mapping to solve one of the core challenges of autonomous vehicles in complex real-world environments. The role involves developing algorithmic and deep learning solutions that integrate mathematical optimization, computer vision, and 3D geometry. We work with modern neural network architectures including Transformers, GNNs, and CNNs to solve problems involving scene understanding, object association, and precise spatial reasoning in dynamic environments. The HD map contains rich geometric and semantic information that is critical for safe driving and cannot always be inferred reliably from images alone under all visibility conditions or viewpoints. In addition to achieving highly accurate localization, the team is also responsible for estimating map relevance and consistency with the current world state to ensure safe and reliable autonomous driving.",
+"url": "https://careers.mobileye.com/jobs/outstanding-graduate-algorithm-developer-vision-localization-group/83eaec09-649e-4ea6-b6c8-ace482eb2f59",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "b88433c6-bee5-47be-a91b-9bd8ebe50d00",
+"title": "Senior Algorithm Engineer - Model Training & Optimization",
+"location": "Ramat Gan",
+"excerpt": "We are looking for a Senior ML Algorithm Engineer to lead the development and optimization of machine learning models for challenging real-world problems. In this role, you will work hands-on across the full…",
+"description": "We are looking for a Senior ML Algorithm Engineer to lead the development and optimization of machine learning models for challenging real-world problems. In this role, you will work hands-on across the full model-development lifecycle: understanding the task, designing and adapting algorithms, building effective training strategies, analyzing data and failure modes, and improving model quality and efficiency through rigorous experimentation. This is an algorithm-focused role for someone who enjoys getting deeply involved in the details of model training and optimization. You will not simply operate an existing training infrastructure—you will investigate open-ended problems and develop practical solutions involving model architecture, data and sample selection, training objectives, optimization methods, and evaluation",
+"url": "https://careers.mobileye.com/jobs/senior-algorithm-engineer-model-training-optimization/b88433c6-bee5-47be-a91b-9bd8ebe50d00",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "14e467d6-6412-479d-a827-fb9184522869",
+"title": "Senior Algorithm Engineer - Objects Perception",
+"location": "Ramat Gan",
+"excerpt": "We are Object Perception group at Mobileye, developing deep learning–based perception systems for autonomous driving. Our work spans scene understanding, multi-camera reasoning, 3D modeling, and behavior prediction. We…",
+"description": "We are Object Perception group at Mobileye, developing deep learning–based perception systems for autonomous driving. Our work spans scene understanding, multi-camera reasoning, 3D modeling, and behavior prediction. We are looking for a senior computer vision engineer: a hands on individual contributor whose work will be broad and touch many projects across the group, to lead long-term research initiatives and POCs that shape the technical direction of our technology.",
+"url": "https://careers.mobileye.com/jobs/senior-algorithm-engineer-objects-perception/14e467d6-6412-479d-a827-fb9184522869",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "ee246ef1-c9ae-4a05-ad95-ad37a744db48",
+"title": "Senior C\\C++ Software Engineer",
+"location": "Petah Tikva",
+"excerpt": "Mobileye is looking for a Senior Software Engineer to join the development of state-of-the-art automotive imaging radar technology. Our vision is to bring new and cutting-edge automotive radar sensor solutions, while…",
+"description": "Mobileye is looking for a Senior Software Engineer to join the development of state-of-the-art automotive imaging radar technology. Our vision is to bring new and cutting-edge automotive radar sensor solutions, while leveraging Mobileye’s assets and expertise in this field. Introducing best in class Radar sensor that would complement Mobileye’s end-to-end autonomous driving solution platform. You will be part of a winning team in a fast-paced startup-like environment, working on many different components of the entire system. You will have an opportunity to make an impact on the design and implementation of an innovative technology in its early stages.",
+"url": "https://careers.mobileye.com/jobs/senior-cc-software-engineer/ee246ef1-c9ae-4a05-ad95-ad37a744db48",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "f04fed6a-f0f4-4455-900a-be4ccdddc8ee",
+"title": "Senior C++ Software Engineer - Integration & Delivery (CTO Team)",
+"location": "Ramat Gan",
+"excerpt": "Mobileye is looking for an experienced Software and Integration Engineer to join the CTO group and take a key role in delivering robust, large-scale autonomous driving software. The group is primarily focused on the…",
+"description": "Mobileye is looking for an experienced Software and Integration Engineer to join the CTO group and take a key role in delivering robust, large-scale autonomous driving software. The group is primarily focused on the decision-making module of Mobileye's self-driving car. It leverages a wide range of algorithmic approaches, rigorous formal definitions, and mathematical modeling- enriched by insights drawn from large-scale data and real-world driving experience. In this role you will play a key role in designing, building, and maintaining Algo utility and software infrastructure within the company's primary algorithmic flow.",
+"url": "https://careers.mobileye.com/jobs/senior-c-software-engineer-integration-delivery-cto-team/f04fed6a-f0f4-4455-900a-be4ccdddc8ee",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "1fcefccb-abe1-4bfd-b5c2-46be82d3cd4f",
+"title": "Senior Embedded Software Engineer",
+"location": "Petah Tikva",
+"excerpt": "Mobileye is looking for a Senior Embedded Software Engineer to join the development of state-of-the-art automotive imaging radar technology. Our vision is to bring new and cutting-edge automotive radar sensor solutions,…",
+"description": "Mobileye is looking for a Senior Embedded Software Engineer to join the development of state-of-the-art automotive imaging radar technology. Our vision is to bring new and cutting-edge automotive radar sensor solutions, while leveraging Mobileye’s assets and expertise in this field. Introducing best in class Radar sensor that would complement Mobileye’s end-to-end autonomous driving solution platform You will be part of a winning team in a fast-paced startup-like environment, working on many different components of the entire system. You will have an opportunity to make an impact on the design and implementation of an innovative technology in its early stages.",
+"url": "https://careers.mobileye.com/jobs/senior-embedded-software-engineer/1fcefccb-abe1-4bfd-b5c2-46be82d3cd4f",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "4d129447-0cad-4b11-9825-e86b8fe09e47",
+"title": "Senior HW Board Design Engineer",
+"location": "Ramat Gan",
+"excerpt": "Mobileye is looking for a Senior Hardware Engineer to join our AV Platform group in Israel to design the next generation of autonomous driving systems.",
+"description": "Mobileye is looking for a Senior Hardware Engineer to join our AV Platform group in Israel to design the next generation of autonomous driving systems.",
+"url": "https://careers.mobileye.com/jobs/senior-hw-board-design-engineer/4d129447-0cad-4b11-9825-e86b8fe09e47",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "5d044c94-826e-4685-853f-b70069e3f0a9",
+"title": "Senior ML Data Engineer",
+"location": "Ramat Gan",
+"excerpt": "The AI Engineering group builds modern infrastructure and solutions that improve how algorithms are developed at Mobileye. We are a small, independent team of experienced engineers with a mix of skills in algorithms,…",
+"description": "The AI Engineering group builds modern infrastructure and solutions that improve how algorithms are developed at Mobileye. We are a small, independent team of experienced engineers with a mix of skills in algorithms, software, and infrastructure. We work in a DevOps style and build cross-team solutions that support research and development of advanced perception algorithms. Our flagship project is a unified AV dataset used to train and evaluate next-generation models. We take large volumes of multi-camera video, object labels, HD maps, and sensor data from across the organization, and turn it into a curated, high-quality training set - at scale. We are looking for someone who brings ML and computer-vision depth to the team - someone who can help shape the intelligence layer that decides what data is worth training on.",
+"url": "https://careers.mobileye.com/jobs/senior-ml-data-engineer/5d044c94-826e-4685-853f-b70069e3f0a9",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "b7c55f83-ff0c-47ca-aaad-8acea30083a6",
+"title": "Senior Signal Integrity Engineer-AV Hardware",
+"location": "Ramat Gan",
+"excerpt": "Mobileye is looking for a Signal Integrity Engineer to join AV group and develop of the next generation of Autonomous Driving products. Mobileye is a leading innovator in the automotive industry, dedicated to delivering…",
+"description": "Mobileye is looking for a Signal Integrity Engineer to join AV group and develop of the next generation of Autonomous Driving products. Mobileye is a leading innovator in the automotive industry, dedicated to delivering cutting-edge technology and solutions. We are committed to advancing automotive safety, efficiency, and connectivity through our state-of-the-art ECUs. We are seeking a highly skilled Signal and Power Integrity Simulation Engineer to join our hardware engineering team. In this role, you will be responsible for analyzing and optimizing signal and power integrity in complex electronic systems. You will work closely with design and validation teams to ensure high-performance designs that meet industry standards.",
+"url": "https://careers.mobileye.com/jobs/senior-signal-integrity-engineerav-hardware/b7c55f83-ff0c-47ca-aaad-8acea30083a6",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "ffd7b3b0-bde6-447f-89cd-1c7f9abf17e5",
+"title": "Senior System Architect",
+"location": "Petah Tikva",
+"excerpt": "We are seeking a highly motivated and skilled Radar System Architect to join our team, focusing on automotive imaging radar systems. This role is pivotal in bridging the gap between our cutting-edge radar technology and…",
+"description": "We are seeking a highly motivated and skilled Radar System Architect to join our team, focusing on automotive imaging radar systems. This role is pivotal in bridging the gap between our cutting-edge radar technology and our automotive customers' evolving needs. As the key technical focal point, you will lead customer engagements, manage system-level requirements, define system architecture in multiple domains and ensure successful integration and performance of our radar solutions in real-world automotive applications.",
+"url": "https://careers.mobileye.com/jobs/senior-system-architect/ffd7b3b0-bde6-447f-89cd-1c7f9abf17e5",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "9a5f8911-4fa3-45fd-bc56-48e12533e3f5",
+"title": "Senior System Architect for ECU designs",
+"location": "Petah Tikva",
+"excerpt": "Mobileye is at the forefront of developing autonomous driving systems with leading OEMs, by integrating Mobileye state-of-the-art ECUs into various vehicles.We are developing advanced automotive ECUs for next-generation…",
+"description": "Mobileye is at the forefront of developing autonomous driving systems with leading OEMs, by integrating Mobileye state-of-the-art ECUs into various vehicles.We are developing advanced automotive ECUs for next-generation vehicle functions. Our programs require a robust end-to-end verification strategy that ensures design correctness, safety, and performance across complex HW/SW systems and multiple suppliers In this role, you will own the system architecture for our ECU designs—from defining the verification concept and traceability, through specifying verification environments and evidence, to leading technical alignment across hardware, embedded software, and validation teams.You’ll collaborate with architects, design engineers, verification leads, and suppliers to deliver high-quality ECU platforms to OEMs and Tier 1s. Your work will directly influence product quality, time-to-market, and readiness for customer reviews and audits.",
+"url": "https://careers.mobileye.com/jobs/senior-system-architect-for-ecu-designs/9a5f8911-4fa3-45fd-bc56-48e12533e3f5",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "067d6e5e-f0e2-4cbf-82fd-43c0af539e2b",
+"title": "Senior Thermal Engineer",
+"location": "Ramat Gan",
+"excerpt": "We are looking for a highly experienced Senior Thermal Engineer to join Mobileye’s Architecture engineering team and take a key role in the development of next-generation SoCs, ECUs, and high-performance compute…",
+"description": "We are looking for a highly experienced Senior Thermal Engineer to join Mobileye’s Architecture engineering team and take a key role in the development of next-generation SoCs, ECUs, and high-performance compute platforms for autonomous driving systems. The position combines SoC/package thermal development, ECU cooling architecture, thermal simulation, characterization, validation, and vehicle-level thermal integration, working across multiple next-generation programs from early concept through qualification and production. Please note: This position is also relevant for our other sites in Haifa, Petah Tikva, and Jerusalem.",
+"url": "https://careers.mobileye.com/jobs/senior-thermal-engineer/067d6e5e-f0e2-4cbf-82fd-43c0af539e2b",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "4c272b78-4384-4ceb-88d4-22161fba5d30",
+"title": "Senior Thermal-Mechanical Engineer",
+"location": "Ramat Gan",
+"excerpt": "We are looking for a highly skilled Senior Thermal-Mechanical Engineer to join our mechanical engineering team as a key player in the development of next-generation high-performance compute platforms for autonomous…",
+"description": "We are looking for a highly skilled Senior Thermal-Mechanical Engineer to join our mechanical engineering team as a key player in the development of next-generation high-performance compute platforms for autonomous driving systems. This key position includes leading the thermal-mechanical design and cooling architecture of advanced electronic systems throughout all lifecycle stages—from concept to mass production—while working closely with hardware, PCB layout, mechanical, validation, manufacturing, suppliers, and customers.",
+"url": "https://careers.mobileye.com/jobs/senior-thermalmechanical-engineer/4c272b78-4384-4ceb-88d4-22161fba5d30",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "7494fc97-906c-4ebd-a862-1b6995b82765",
+"title": "Senior Verification Engineer",
+"location": "Ramat Gan",
+"excerpt": "Mobileye’s Unit Level Verification Team in Haifa is looking for an experienced verification engineer to be involved in the development of Mobileye’s future AI and deep learning HW accelerators. This is an exciting…",
+"description": "Mobileye’s Unit Level Verification Team in Haifa is looking for an experienced verification engineer to be involved in the development of Mobileye’s future AI and deep learning HW accelerators. This is an exciting opportunity to join a team of highly talented engineers, working on the most cutting-edge technologies to deliver Mobileye’s EyeQ future chips, aimed to power the world’s first fully Autonomous Vehicle!",
+"url": "https://careers.mobileye.com/jobs/senior-verification-engineer/7494fc97-906c-4ebd-a862-1b6995b82765",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "b8c0334c-51c5-420f-8fb1-3f8bf641c9cb",
+"title": "Software Algorithms RT Engineer - Active Sensor Group",
+"location": "Petah Tikva",
+"excerpt": "The team is responsible for the software infrastructure surrounding Radar and LiDAR sensors and is part of Mobileye’s Algo Optimization group. We bridge the gap between cutting-edge sensor technologies and our…",
+"description": "The team is responsible for the software infrastructure surrounding Radar and LiDAR sensors and is part of Mobileye’s Algo Optimization group. We bridge the gap between cutting-edge sensor technologies and our proprietary hardware accelerators. We build the core software foundation for perception algorithms, managing the end-to-end flow of sensor data ingestion, parsing, validation, and real-time optimization. Working at the intersection of software, firmware, and hardware, we play a critical role in bringing next-generation sensing capabilities to production vehicles.",
+"url": "https://careers.mobileye.com/jobs/software-algorithms-rt-engineer-active-sensor-group/b8c0334c-51c5-420f-8fb1-3f8bf641c9cb",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "539e7cc7-1c30-43fd-8a72-a631aba80d26",
+"title": "Solution Architect for Cloud Communication",
+"location": "Petah Tikva",
+"excerpt": "Join Mobileye, a leader in autonomous driving technology, and shape the future of transportation. As a Solution Architect, you'll be at the forefront of innovation, driving cutting-edge features from concept to…",
+"description": "Join Mobileye, a leader in autonomous driving technology, and shape the future of transportation. As a Solution Architect, you'll be at the forefront of innovation, driving cutting-edge features from concept to commercialization. ** This role requires working from our Jerusalem site 1 day per week. It also offers the flexibility to work part-time from our other sites, subject to seat availability.",
+"url": "https://careers.mobileye.com/jobs/solution-architect-for-cloud-communication/539e7cc7-1c30-43fd-8a72-a631aba80d26",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "9a48ee39-91f4-4722-a6b4-0f2800b4863c",
+"title": "Solution Architect for Embedded Autonomous Vehicle System",
+"location": "Petah Tikva",
+"excerpt": "Join Mobileye, a leader in autonomous driving technology, and shape the future of transportation. As a Solution Architect, you'll be at the forefront of innovation, driving cutting-edge features from concept to…",
+"description": "Join Mobileye, a leader in autonomous driving technology, and shape the future of transportation. As a Solution Architect, you'll be at the forefront of innovation, driving cutting-edge features from concept to commercialization. ** This role requires working from our Jerusalem site 1 day per week. It also offers the flexibility to work part-time from our other sites, subject to seat availability.",
+"url": "https://careers.mobileye.com/jobs/solution-architect-for-embedded-autonomous-vehicle-system/9a48ee39-91f4-4722-a6b4-0f2800b4863c",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "89a185bd-9ce6-4a08-a0a7-c16eaac7c80f",
+"title": "Senior Technical Product Manager – AV Platform (HW/SW)",
+"location": "Ramat Gan",
+"excerpt": "Mobileye is seeking a Senior Technical Product Manager to join our AV Platform group, leading the development of multidisciplinary autonomous driving products and defining and executing the go-to-market strategy for…",
+"description": "Mobileye is seeking a Senior Technical Product Manager to join our AV Platform group, leading the development of multidisciplinary autonomous driving products and defining and executing the go-to-market strategy for Mobileye’s next-generation solutions.",
+"url": "https://careers.mobileye.com/jobs/senior-technical-product-manager-av-platform-hwsw/89a185bd-9ce6-4a08-a0a7-c16eaac7c80f",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "f197016b-7b7a-46a2-991d-c48852099048",
+"title": "Embedded Integrator - Temporary",
+"location": "Petah Tikva",
+"excerpt": "We are looking for an exceptional software integrator to join our team. You will be responsible for Integration of embedded application software and algorithm libraries for internal and customer facing software releases.",
+"description": "We are looking for an exceptional software integrator to join our team. You will be responsible for Integration of embedded application software and algorithm libraries for internal and customer facing software releases.",
+"url": "https://careers.mobileye.com/jobs/embedded-integrator-temporary/f197016b-7b7a-46a2-991d-c48852099048",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "90d6a522-a4a1-42ba-a89b-55609a4f8c12",
+"title": "Experienced Software Linux Integration Engineer - OS team",
+"location": "Petah Tikva",
+"excerpt": "The Mobileye Operating System Team is looking for a highly talented Embedded SW Integration Engineer with a passion for operating systems and Linux in specific. The team is developing the Boot and Operating System SW…",
+"description": "The Mobileye Operating System Team is looking for a highly talented Embedded SW Integration Engineer with a passion for operating systems and Linux in specific. The team is developing the Boot and Operating System SW for Mobileye’s autonomous vehicle and smart advanced driver assist platforms.",
+"url": "https://careers.mobileye.com/jobs/experienced-software-linux-integration-engineer-os-team/90d6a522-a4a1-42ba-a89b-55609a4f8c12",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "f08cf90a-2e96-4d27-86db-e124676b4d53",
+"title": "Radar ATE Engineer",
+"location": "Petah Tikva",
+"excerpt": "We are seeking a highly skilled and hands-on Radar ATE Engineer to support the end-to-end production, validation, and analysis of automotive radar systems. This role bridges automated test equipment (ATE) development…",
+"description": "We are seeking a highly skilled and hands-on Radar ATE Engineer to support the end-to-end production, validation, and analysis of automotive radar systems. This role bridges automated test equipment (ATE) development and product analysis, ensuring high-quality sensor delivery and minimal downtime across global production sites. The position includes deep technical involvement in both software and hardware domains, with a strong focus on manufacturing support, system-level troubleshooting, and continuous process improvement.",
+"url": "https://careers.mobileye.com/jobs/radar-ate-engineer/f08cf90a-2e96-4d27-86db-e124676b4d53",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "mobileye",
+"external_id": "d9a6d581-00ee-417b-90de-d9c57c998950",
+"title": "Radar System Integration Engineer – Functional & System Flows",
+"location": "Petah Tikva",
+"excerpt": "Our vision is to bring new and cutting-edge automotive radar sensor solutions, while leveraging our core assets and expertise in this field. Introducing cutting-edge, best-in-class sensors that complement end-to-end…",
+"description": "Our vision is to bring new and cutting-edge automotive radar sensor solutions, while leveraging our core assets and expertise in this field. Introducing cutting-edge, best-in-class sensors that complement end-to-end autonomous driving solution platforms. You will be joining an excellent group of people working on advanced mmWave Imaging Radar technology in a dynamic and challenging environment. This role requires close collaboration with System Architecture, Embedded Software, Security, Algorithm, and Hardware teams to define, integrate, and validate the radar’s operational behavior and system-level flows. The job includes designing functional test environments, developing automated end-to-end validation pipelines, debugging complex SW/HW interactions, verifying system state machines, analyzing functional KPIs, ensuring compliance with automotive cybersecurity standards, and leveraging state-of-the-art AI-assisted development tools to drive scalable engineering velocity.",
+"url": "https://careers.mobileye.com/jobs/radar-system-integration-engineer-functional-system-flows/d9a6d581-00ee-417b-90de-d9c57c998950",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -3348,7 +4452,7 @@
 "url": "https://careers.mobileye.com/jobs/ai-researcher/7E.956",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -3360,7 +4464,7 @@
 "url": "https://careers.mobileye.com/jobs/backend-team-lead/94.C62",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -3372,7 +4476,7 @@
 "url": "https://careers.mobileye.com/jobs/mechanical-technician-service-engineer/74.D51",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -3384,7 +4488,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-backend-engineer/53.36C",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mobileye",
@@ -3612,7 +4716,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/4543af91-161f-4302-a0a4-97ffd020cc1b",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mongodb",
@@ -3624,7 +4728,7 @@
 "url": "https://www.mongodb.com/careers/job/?gh_jid=7334938",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mongodb",
@@ -3636,7 +4740,7 @@
 "url": "https://www.mongodb.com/careers/job/?gh_jid=7925284",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "moonactive",
@@ -3696,19 +4800,19 @@
 "url": "https://jobs.ashbyhq.com/moonactive/b9ef962f-9edd-49f3-bb44-e288bb7885d4",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "moonactive",
-"external_id": "fd2cd6bb-1e02-4270-95cb-e40f7f3d5ccc",
-"title": "Unity Developer",
+"external_id": "918611b6-1ab5-400e-abe2-970470ea0f5d",
+"title": "Product UX Team Lead",
 "location": "Tel Aviv",
-"excerpt": "Moon Active is one of the worlds fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We are looking for…",
-"description": "Moon Active is one of the worlds fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We are looking for an experienced Unity Developer with an AI-first mindset to build next-gen gaming features. You will join a team of engineers building high-scale, real-time game systems, leveraging LLMs for complex logic, automating workflows, and using AI agents to continuously improve how we build. Responsibilities - Manage features from system design and data handling to production deployment. - Design architectures and implement end-to-end client-side features, leveraging LLMs from day-to-day development processes up to system architecture. - Use data-driven methods to resolve production issues and optimize performance across all devices. - Manage the integration of native plugins and third-party services. Requirements - 3+ years of professional experience in software development. - Hands-on experience with Claude Code, Cursor or similar. - Experience with object-oriented programming, including design patterns, algorithms, and data structures. - Strong knowledge of an OOP languag",
-"url": "https://jobs.ashbyhq.com/moonactive/fd2cd6bb-1e02-4270-95cb-e40f7f3d5ccc",
+"excerpt": "Moon Active is looking for an exceptional Product UX Team Lead to join and lead a team within our Product team. The Product team is responsible for driving the strategy and long-term engagement of our games, ensuring…",
+"description": "Moon Active is looking for an exceptional Product UX Team Lead to join and lead a team within our Product team. The Product team is responsible for driving the strategy and long-term engagement of our games, ensuring our millions of daily active players enjoy a seamless and captivating experience. As a Product UX Team Lead, you will manage, mentor, and empower a team of talented UX Designers while remaining hands-on with key strategic initiatives. You’ll work closely with the Product team, Game Design Leads, UI Leads, and Technical Artists to define UX vision, balance player satisfaction with product KPIs, and elevate overall design standards. In this role, you will also lead the charge in transforming our UX workflows through cutting-edge AI tools and driving the expansion of our cross-platform Design System. Responsibilities - Lead, mentor, and grow a high-performing team of UX designers. Provide constructive feedback, clear guidance, and support their ongoing professional development. - Translate complex business goals, monetization strategies, and product roadmap requirements into scalable, engaging, and high-converting user experiences. - Partner daily with Product Managers, G",
+"url": "https://jobs.ashbyhq.com/moonactive/918611b6-1ab5-400e-abe2-970470ea0f5d",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "moonactive",
@@ -3720,7 +4824,7 @@
 "url": "https://jobs.ashbyhq.com/moonactive/9f1eb9b4-17d3-43e3-8d96-ef168ff07c6f",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "moonactive",
@@ -3732,7 +4836,7 @@
 "url": "https://jobs.ashbyhq.com/moonactive/f9d414e9-6bb9-4e35-99c2-6d452a66c7ae",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "ness",
@@ -3744,7 +4848,31 @@
 "url": "https://www.ness-tech.co.il/careers/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "moonactive",
+"external_id": "fd2cd6bb-1e02-4270-95cb-e40f7f3d5ccc",
+"title": "Unity Developer",
+"location": "Tel Aviv",
+"excerpt": "Moon Active is one of the worlds fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We are looking for…",
+"description": "Moon Active is one of the worlds fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We are looking for an experienced Unity Developer with an AI-first mindset to build next-gen gaming features. You will join a team of engineers building high-scale, real-time game systems, leveraging LLMs for complex logic, automating workflows, and using AI agents to continuously improve how we build. Responsibilities - Manage features from system design and data handling to production deployment. - Design architectures and implement end-to-end client-side features, leveraging LLMs from day-to-day development processes up to system architecture. - Use data-driven methods to resolve production issues and optimize performance across all devices. - Manage the integration of native plugins and third-party services. Requirements - 3+ years of professional experience in software development. - Hands-on experience with Claude Code, Cursor or similar. - Experience with object-oriented programming, including design patterns, algorithms, and data structures. - Strong knowledge of an OOP languag",
+"url": "https://jobs.ashbyhq.com/moonactive/fd2cd6bb-1e02-4270-95cb-e40f7f3d5ccc",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "moonactive",
+"external_id": "d6b8e001-c645-4463-9707-09552fab60fd",
+"title": "Backend Developer",
+"location": "Tel Aviv",
+"excerpt": "Moon Active is one of the world's fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We're looking for…",
+"description": "Moon Active is one of the world's fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We're looking for a Backend Developer to join our awesome Core Platform team. The team is responsible for building complex, high-scale, real-time services and infrastructure which is used by all company’s studios to support their business. We are looking for an engineer who views AI not just as a tool, but as a fundamental shift in how we build software. You will be responsible for designing high-performance, distributed systems while leaning heavily into an AI-First engineering culture. We are looking for strong software engineers with practical experience, the drive, and enthusiasm to succeed in a demanding and professional team environment. Responsibilities - You will design, architect, test and implement core services and features in MoonActive's platform services and data pipeline infrastructure. - You will be responsible for scalable, high-traffic production infrastructure across all MoonActive studios. - You will build valuable tools to support the development and business proc",
+"url": "https://jobs.ashbyhq.com/moonactive/d6b8e001-c645-4463-9707-09552fab60fd",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "ness",
@@ -3756,19 +4884,7 @@
 "url": "https://www.ness-tech.co.il/careers/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "ness",
-"external_id": "43163",
-"title": "Data Integration Engineer",
-"location": "אזור המרכז",
-"excerpt": "לנס (Ness) דרוש/ה Data Integration Engineer. התפקיד כולל הגדרה ופיתוח פתרונות אינטגרציה במערכות מרובות ממשקים. בנוסף, הגדרת ארכיטקטורה, הבנת אפיונים מפורטים, כתיבת תהליכי עיבוד וקליטת נתונים, דיווח ותיעוד תקלות ורישום…",
-"description": "לנס (Ness) דרוש/ה Data Integration Engineer. התפקיד כולל הגדרה ופיתוח פתרונות אינטגרציה במערכות מרובות ממשקים. בנוסף, הגדרת ארכיטקטורה, הבנת אפיונים מפורטים, כתיבת תהליכי עיבוד וקליטת נתונים, דיווח ותיעוד תקלות ורישום סיכומי בדיקות. משרה מלאה, בתל אביב. דרישות: השכלה רלוונטית - חובה. ניסיון של 5 שנים ומעלה בהנדסת נתונים - חובה. ניסיון בהקמת מערכות מרובות ממשקים חדשות ובפיתוח פרויקטי אינטגרציה בארגונים גדולים - חובה. ניסיון באינטגרציה של תהליכי אצווה, ניהול קבצים ו-WEB SERVICES - חובה. ניסיון בפיתוח קבצי XML, JSON - חובה. ניסיון בכתיבת קוד ב-Python - יתרון משמעותי.",
-"url": "https://www.ness-tech.co.il/careers/",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "ness",
@@ -3780,7 +4896,7 @@
 "url": "https://www.ness-tech.co.il/careers/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "orca",
@@ -3792,7 +4908,19 @@
 "url": "https://orca.security/about/careers/6161068004?gh_jid=6161068004",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "orca",
+"external_id": "5263129004",
+"title": "Senior Software Engineer",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://orca.security/about/careers/5263129004?gh_jid=5263129004",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "orca",
@@ -3960,7 +5088,7 @@
 "url": "https://www.payoneer.com/careers/position/8007296/?gh_jid=8007296",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "payoneer",
@@ -3981,10 +5109,142 @@
 "location": "Tel Aviv",
 "excerpt": "",
 "description": "",
-"url": "https://www.riskified.com/careers/job-description/?gh_jid=8786543002",
+"url": "https://www.payoneer.com/careers/position/8169289/?gh_jid=8169289",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "payoneer",
+"external_id": "8185359",
+"title": "Platform Enablement & AI Engineer",
+"location": "Herzliya, Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.payoneer.com/careers/position/8185359/?gh_jid=8185359",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "payoneer",
+"external_id": "7925955",
+"title": "Principal Product Manager, Core AI",
+"location": "Herzliya, Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.payoneer.com/careers/position/7925955/?gh_jid=7925955",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "payoneer",
+"external_id": "8059499",
+"title": "R&D Architect Director",
+"location": "Herzliya, Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.payoneer.com/careers/position/8059499/?gh_jid=8059499",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "payoneer",
+"external_id": "8166030",
+"title": "Salesforce Engineer",
+"location": "Herzliya, Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.payoneer.com/careers/position/8166030/?gh_jid=8166030",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "payoneer",
+"external_id": "6769427",
+"title": "Senior Backend Developer (C# or Java)",
+"location": "Herzliya, Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.payoneer.com/careers/position/6769427/?gh_jid=6769427",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "payoneer",
+"external_id": "8132080",
+"title": "Senior DevOps Engineer",
+"location": "Herzliya, Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.payoneer.com/careers/position/8132080/?gh_jid=8132080",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "payoneer",
+"external_id": "8185354",
+"title": "Senior Domain Operations Lead, Business Applications",
+"location": "Herzliya, Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.payoneer.com/careers/position/8185354/?gh_jid=8185354",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "payoneer",
+"external_id": "8132153",
+"title": "Senior .NET Developer - Application Infrastructure - Temporary Position",
+"location": "Herzliya, Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.payoneer.com/careers/position/8132153/?gh_jid=8132153",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "payoneer",
+"external_id": "7955754",
+"title": "Staff Engineer",
+"location": "Herzliya, Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.payoneer.com/careers/position/7955754/?gh_jid=7955754",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "payoneer",
+"external_id": "7709733",
+"title": "Team Lead R&D, Modernization, AI",
+"location": "Herzliya, Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.payoneer.com/careers/position/7709733/?gh_jid=7709733",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "payoneer",
+"external_id": "7709761",
+"title": "Team Lead R&D, Monetization",
+"location": "Herzliya, Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.payoneer.com/careers/position/7709761/?gh_jid=7709761",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "riskified",
@@ -3996,7 +5256,19 @@
 "url": "https://www.riskified.com/careers/job-description/?gh_jid=8805509002",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "riskified",
+"external_id": "8786543002",
+"title": "Staff Data Scientist",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://www.riskified.com/careers/job-description/?gh_jid=8786543002",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "salt",
@@ -4008,7 +5280,7 @@
 "url": "https://salt.security/job-board?gh_jid=4950306007",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "salt",
@@ -4020,7 +5292,7 @@
 "url": "https://salt.security/job-board?gh_jid=5202759007",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "salt",
@@ -4380,55 +5652,55 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-net/מפתחת-תוכנה-desktop/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
-"source": "sqlink",
-"external_id": "155034",
-"title": "מפתח/ת Frontend Vue",
-"location": "",
-"excerpt": "מפתח/ת Frontend Vue עבור חברה ביטחונית באזור השפלה התפקיד כולל: עבודה עם Vue 3, פיתוח ממשקי משתמש אינטראקטיביים עבור מערכות שליטה ובקרה מתקדמות, תחזוקה ושיפור של פרויקטים קיימים, עבודה בצוות פיתוח מול ממשקים מרובים,…",
-"description": "מפתח/ת Frontend Vue עבור חברה ביטחונית באזור השפלה התפקיד כולל: עבודה עם Vue 3, פיתוח ממשקי משתמש אינטראקטיביים עבור מערכות שליטה ובקרה מתקדמות, תחזוקה ושיפור של פרויקטים קיימים, עבודה בצוות פיתוח מול ממשקים מרובים, השתתפות בתכנון ארכיטקטורת Frontend, כתיבת בדיקות ושיפור ביצועים ועוד.",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/front-end/מפתחת-frontend-vue/",
+"source": "similarweb",
+"external_id": "8187911",
+"title": "Senior Full Stack Developer (Backend Oriented)",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/similarweb/jobs/8187911",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
-"source": "sqlink",
-"external_id": "155045",
-"title": "Senior Product Manager",
-"location": "",
-"excerpt": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Full Stack, המשרה ממוקמת על קו רכבת ומשלבת יומיים עבודה היברידית מהבית התפקיד כולל: פיתוח Full Stack בסביבת React ו-React Native, עבודה עם Redux, MobX ו-Hooks, פיתוח באמצעות NodeJS…",
-"description": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Full Stack, המשרה ממוקמת על קו רכבת ומשלבת יומיים עבודה היברידית מהבית התפקיד כולל: פיתוח Full Stack בסביבת React ו-React Native, עבודה עם Redux, MobX ו-Hooks, פיתוח באמצעות NodeJS ו-Express, עבודה עם כלי פיתוח וניהול גרסאות כגון Git, Bitbucket, GitHub, AppCenter, Jenkins ו-Kibana, עבודה עם JavaScript, CSS, HTML ו-ES2023, עבודה בסביבות Android ו-iOS עם Java, Swift ו-Objective-C, עבודה עם מסדי נתונים מסוג NoSQL ובפרט MongoDB, ועוד.",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/רצ-פיתוח/senior-product-manager/",
+"source": "similarweb",
+"external_id": "8152630",
+"title": "Senior Full Stack Developer",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/similarweb/jobs/8152630",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
-"source": "sqlink",
-"external_id": "153719",
-"title": "מפתח/ת Backend",
-"location": "",
-"excerpt": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Backend התפקיד כולל: עבודה עם NestJS, TypeScript וארכיטקטורת Microservices, פיתוח מערכות Backend סקלאביליות, כתיבת קוד נקי ותחזיקתי, עבודה עם מסדי נתונים, תקשורת אסינכרונית וכלי…",
-"description": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Backend התפקיד כולל: עבודה עם NestJS, TypeScript וארכיטקטורת Microservices, פיתוח מערכות Backend סקלאביליות, כתיבת קוד נקי ותחזיקתי, עבודה עם מסדי נתונים, תקשורת אסינכרונית וכלי בדיקות כחלק מפלטפורמת מוצר מתקדמת ועוד.",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/מתכנת-backend/מפתחת-backend/",
+"source": "similarweb",
+"external_id": "7508300",
+"title": "Senior Data Product Manager- Retail Intelligence",
+"location": "Tel Aviv, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/similarweb/jobs/7508300",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
-"source": "sqlink",
-"external_id": "154773",
-"title": "Senior Full Stack Engineer",
-"location": "",
-"excerpt": "חברת SU באזור הצפון מגייסת Senior Full Stack Engineer התפקיד כולל פיתוח מקצה לקצה של יכולות ומוצרים, עבודה על Backend ב-Node.js ו-Frontend ב-Angular, תכנון וניהול בסיסי נתונים ב-MongoDB, פיתוח ותחזוקת RESTful APIs,…",
-"description": "חברת SU באזור הצפון מגייסת Senior Full Stack Engineer התפקיד כולל פיתוח מקצה לקצה של יכולות ומוצרים, עבודה על Backend ב-Node.js ו-Frontend ב-Angular, תכנון וניהול בסיסי נתונים ב-MongoDB, פיתוח ותחזוקת RESTful APIs, שיפור ביצועים, פתרון תקלות בסביבת Production וכו..",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/senior-full-stack-engineer/",
+"source": "similarweb",
+"external_id": "7556162",
+"title": "Senior Data Infrastructure Engineer",
+"location": "Tel Aviv-Yafo",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/similarweb/jobs/7556162",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -4440,7 +5712,7 @@
 "url": "https://www.taboola.com/careers/job/8176690?gh_jid=8176690",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -4452,7 +5724,7 @@
 "url": "https://www.taboola.com/careers/job/8064004?gh_jid=8064004",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -4464,7 +5736,7 @@
 "url": "https://www.taboola.com/careers/job/8087797?gh_jid=8087797",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -4476,19 +5748,19 @@
 "url": "https://www.taboola.com/careers/job/8200807?gh_jid=8200807",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
-"source": "taboola",
-"external_id": "8176684",
-"title": "Software Developer – Production Engineering",
-"location": "Tel Aviv, Israel",
-"excerpt": "",
-"description": "",
-"url": "https://www.taboola.com/careers/job/8176684?gh_jid=8176684",
+"source": "sqlink",
+"external_id": "154998",
+"title": "מפתח/ת תוכנה Desktop",
+"location": "",
+"excerpt": "ארגון ביטחוני במרכז הארץ מגייס מפתח/ת תוכנה Desktop התפקיד כולל: עבודה עם פיתוח אפליקציות ב-C++ וב-C# המתקשרות עם ציוד בדיקה וכרטיסים, עבודה מול חומרה וממשקי תקשורת, פיתוח מערכות מורכבות, איתור ופתרון בעיות ועבודה כחלק…",
+"description": "ארגון ביטחוני במרכז הארץ מגייס מפתח/ת תוכנה Desktop התפקיד כולל: עבודה עם פיתוח אפליקציות ב-C++ וב-C# המתקשרות עם ציוד בדיקה וכרטיסים, עבודה מול חומרה וממשקי תקשורת, פיתוח מערכות מורכבות, איתור ופתרון בעיות ועבודה כחלק מצוות טכנולוגי.",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/פיתוח-net/מפתחת-תוכנה-desktop/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -4548,19 +5820,55 @@
 "url": "https://www.taboola.com/careers/job/8081260?gh_jid=8081260",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
-"source": "taboola",
-"external_id": "8131711",
-"title": "Algorithm Team Lead",
-"location": "Tel Aviv, Israel",
-"excerpt": "",
-"description": "",
-"url": "https://www.taboola.com/careers/job/8131711?gh_jid=8131711",
+"source": "sqlink",
+"external_id": "155045",
+"title": "Senior Product Manager",
+"location": "",
+"excerpt": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Full Stack, המשרה ממוקמת על קו רכבת ומשלבת יומיים עבודה היברידית מהבית התפקיד כולל: פיתוח Full Stack בסביבת React ו-React Native, עבודה עם Redux, MobX ו-Hooks, פיתוח באמצעות NodeJS…",
+"description": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Full Stack, המשרה ממוקמת על קו רכבת ומשלבת יומיים עבודה היברידית מהבית התפקיד כולל: פיתוח Full Stack בסביבת React ו-React Native, עבודה עם Redux, MobX ו-Hooks, פיתוח באמצעות NodeJS ו-Express, עבודה עם כלי פיתוח וניהול גרסאות כגון Git, Bitbucket, GitHub, AppCenter, Jenkins ו-Kibana, עבודה עם JavaScript, CSS, HTML ו-ES2023, עבודה בסביבות Android ו-iOS עם Java, Swift ו-Objective-C, עבודה עם מסדי נתונים מסוג NoSQL ובפרט MongoDB, ועוד.",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/רצ-פיתוח/senior-product-manager/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "153719",
+"title": "מפתח/ת Backend",
+"location": "",
+"excerpt": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Backend התפקיד כולל: עבודה עם NestJS, TypeScript וארכיטקטורת Microservices, פיתוח מערכות Backend סקלאביליות, כתיבת קוד נקי ותחזיקתי, עבודה עם מסדי נתונים, תקשורת אסינכרונית וכלי…",
+"description": "חברה פיננסית באזור המרכז מגייסת מפתח/ת Backend התפקיד כולל: עבודה עם NestJS, TypeScript וארכיטקטורת Microservices, פיתוח מערכות Backend סקלאביליות, כתיבת קוד נקי ותחזיקתי, עבודה עם מסדי נתונים, תקשורת אסינכרונית וכלי בדיקות כחלק מפלטפורמת מוצר מתקדמת ועוד.",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/מתכנת-backend/מפתחת-backend/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "154773",
+"title": "Senior Full Stack Engineer",
+"location": "",
+"excerpt": "חברת SU באזור הצפון מגייסת Senior Full Stack Engineer התפקיד כולל פיתוח מקצה לקצה של יכולות ומוצרים, עבודה על Backend ב-Node.js ו-Frontend ב-Angular, תכנון וניהול בסיסי נתונים ב-MongoDB, פיתוח ותחזוקת RESTful APIs,…",
+"description": "חברת SU באזור הצפון מגייסת Senior Full Stack Engineer התפקיד כולל פיתוח מקצה לקצה של יכולות ומוצרים, עבודה על Backend ב-Node.js ו-Frontend ב-Angular, תכנון וניהול בסיסי נתונים ב-MongoDB, פיתוח ותחזוקת RESTful APIs, שיפור ביצועים, פתרון תקלות בסביבת Production וכו..",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/senior-full-stack-engineer/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "sqlink",
+"external_id": "155141",
+"title": "מפתח/ת תחום פיתוח דיגיטל",
+"location": "",
+"excerpt": "ארגון מוביל באזור המרכז מגייס מפתח/ת תחום פיתוח דיגיטל התפקיד כולל: עבודה עם/ב-פיתוח אתרי Web חדשניים, שילוב עם מערכות ליבה ומערכות צד שלישי, פיתוח ב-React.js וב-Next.js, עבודה עם React Native, ממשקים מול מנתחי מערכות,…",
+"description": "ארגון מוביל באזור המרכז מגייס מפתח/ת תחום פיתוח דיגיטל התפקיד כולל: עבודה עם/ב-פיתוח אתרי Web חדשניים, שילוב עם מערכות ליבה ומערכות צד שלישי, פיתוח ב-React.js וב-Next.js, עבודה עם React Native, ממשקים מול מנתחי מערכות, צוותי פיתוח, בודקים ואנשי DevOps ועוד.",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/ראש-צוות-mobile/מפתחת-תחום-פיתוח-דיגיטל/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "taboola",
@@ -4572,19 +5880,7 @@
 "url": "https://www.taboola.com/careers/job/8074372?gh_jid=8074372",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "taboola",
-"external_id": "7903597",
-"title": "Data Platform Engineering Team Leader",
-"location": "Tel Aviv, Israel",
-"excerpt": "",
-"description": "",
-"url": "https://www.taboola.com/careers/job/7903597?gh_jid=7903597",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "taboola",
@@ -4608,31 +5904,79 @@
 "url": "https://boards.greenhouse.io/tomorrow/jobs/6569221003?gh_jid=6569221003",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
-"source": "tomorrowio",
-"external_id": "7802524003",
-"title": "AI First - Senior Full Stack Engineer",
-"location": "21 Ha'Arba'a St., 20th floor, Tel Aviv",
+"source": "taboola",
+"external_id": "8070135",
+"title": "Senior Site Reliability Engineer (SRE)",
+"location": "Tel Aviv, Israel",
 "excerpt": "",
 "description": "",
-"url": "https://boards.greenhouse.io/tomorrow/jobs/7802524003?gh_jid=7802524003",
+"url": "https://www.taboola.com/careers/job/8070135?gh_jid=8070135",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
-"source": "tomorrowio",
-"external_id": "7977906003",
-"title": "AI First DevOps Engineer",
-"location": "21 Ha'Arba'a St., 20th floor, Tel Aviv",
+"source": "taboola",
+"external_id": "8200807",
+"title": "Site Reliability Engineer, Traffic Infrastructure",
+"location": "Tel Aviv, Israel",
 "excerpt": "",
 "description": "",
-"url": "https://boards.greenhouse.io/tomorrow/jobs/7977906003?gh_jid=7977906003",
+"url": "https://www.taboola.com/careers/job/8200807?gh_jid=8200807",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "taboola",
+"external_id": "8176684",
+"title": "Software Developer – Production Engineering",
+"location": "Tel Aviv, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.taboola.com/careers/job/8176684?gh_jid=8176684",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "taboola",
+"external_id": "8081260",
+"title": "Algorithm Engineer (RTB)",
+"location": "Tel Aviv, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.taboola.com/careers/job/8081260?gh_jid=8081260",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "taboola",
+"external_id": "8131711",
+"title": "Algorithm Team Lead",
+"location": "Tel Aviv, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.taboola.com/careers/job/8131711?gh_jid=8131711",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "taboola",
+"external_id": "7903597",
+"title": "Data Platform Engineering Team Leader",
+"location": "Tel Aviv, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.taboola.com/careers/job/7903597?gh_jid=7903597",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "torq",
@@ -4644,7 +5988,31 @@
 "url": "https://job-boards.greenhouse.io/torq/jobs/6177808004",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "tomorrowio",
+"external_id": "7802524003",
+"title": "AI First - Senior Full Stack Engineer",
+"location": "21 Ha'Arba'a St., 20th floor, Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://boards.greenhouse.io/tomorrow/jobs/7802524003?gh_jid=7802524003",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "tomorrowio",
+"external_id": "7977906003",
+"title": "AI First DevOps Engineer",
+"location": "21 Ha'Arba'a St., 20th floor, Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://boards.greenhouse.io/tomorrow/jobs/7977906003?gh_jid=7977906003",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "torq",
@@ -4656,7 +6024,7 @@
 "url": "https://job-boards.greenhouse.io/torq/jobs/6147498004",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "transmit",
@@ -4728,7 +6096,19 @@
 "url": "https://www.transmitsecurity.com/about/careers/job?gh_jid=8427129002",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "transmit",
+"external_id": "7974762002",
+"title": "Engineering Team Lead",
+"location": "Tel Aviv-Yafo, Gush Dan, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.transmitsecurity.com/about/careers/job?gh_jid=7974762002",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "transmit",
@@ -4740,7 +6120,7 @@
 "url": "https://www.transmitsecurity.com/about/careers/job?gh_jid=8539030002",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "transmit",
@@ -4752,7 +6132,19 @@
 "url": "https://www.transmitsecurity.com/about/careers/job?gh_jid=8533933002",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "transmit",
+"external_id": "7763271002",
+"title": "Senior Full Stack Engineer",
+"location": "Tel Aviv-Yafo, Gush Dan, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.transmitsecurity.com/about/careers/job?gh_jid=7763271002",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "unilink",
@@ -4764,7 +6156,7 @@
 "url": "https://www.drushim.co.il/job/38266630/9274a6b8/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -4776,7 +6168,7 @@
 "url": "https://www.drushim.co.il/job/38238035/2a007238/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "unilink",
@@ -4800,19 +6192,19 @@
 "url": "https://www.drushim.co.il/job/38474775/df971281/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
-"source": "via",
-"external_id": "8620691002",
-"title": "Staff ML Engineer",
-"location": "Tel Aviv",
-"excerpt": "",
-"description": "",
-"url": "https://job-boards.greenhouse.io/via/jobs/8620691002",
+"source": "unilink",
+"external_id": "38474775",
+"title": "מפתח/ת cobol",
+"location": "תל אביב",
+"excerpt": "חבר/ה בצוות פיתוח קופה וגביה במחלקת יישומי מינהליים באגף מערכות מידע. כפיפות ניהולית ומקצועית לראש הצוות. התפקיד כולל פיתוח ותחזוקה של תוכניות ,שירותים/ממשקים/ תהליכים כספיים ועוד. סביבת עבודה AS400, עם אינטגרציה ענפה…",
+"description": "חבר/ה בצוות פיתוח קופה וגביה במחלקת יישומי מינהליים באגף מערכות מידע. כפיפות ניהולית ומקצועית לראש הצוות. התפקיד כולל פיתוח ותחזוקה של תוכניות ,שירותים/ממשקים/ תהליכים כספיים ועוד. סביבת עבודה AS400, עם אינטגרציה ענפה לטכנולוגיות שונות כגון: SAP, ESB, WEB ועוד. התפקיד כולל: פיתוח ותחזוקה של תוכניות ,שירותים/ממשקים/ תהליכים כספיים ועוד. סביבת עבודה AS400, עם אינטגרציה ענפה לטכנולוגיות שונות כגון: SAP, ESB, WEB ועוד. במסגרת התפקיד העובד/ת יהיה בקשרי עבודה עם ראש הצוות, הצוות שלו וצוותים משיקים אחרים כמו כן, קשרי העבודה עבודה יהיו עם בעלי תפקידים שונים כגון: מנתחי מערכות, צוותים רוחבייים, משתמשים/לקוחות ומנהלים העבודה לפי מתודולוגיה סדורה ואג'ילית.",
+"url": "https://www.drushim.co.il/job/38474775/df971281/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "via",
@@ -4944,7 +6336,127 @@
 "url": "https://job-boards.greenhouse.io/via/jobs/8533935002",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "via",
+"external_id": "8356511002",
+"title": "Senior DevOps Engineer",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/via/jobs/8356511002",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "via",
+"external_id": "8574774002",
+"title": "DevSecOps Engineer",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/via/jobs/8574774002",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "via",
+"external_id": "8625905002",
+"title": "Mobile Team Lead",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/via/jobs/8625905002",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "via",
+"external_id": "8620691002",
+"title": "Staff ML Engineer",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/via/jobs/8620691002",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "via",
+"external_id": "8627735002",
+"title": "Front-End Engineer",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/via/jobs/8627735002",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "via",
+"external_id": "8629901002",
+"title": "Front-End Team lead",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/via/jobs/8629901002",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "via",
+"external_id": "7992214002",
+"title": "Senior Backend Engineer",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/via/jobs/7992214002",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "via",
+"external_id": "8171972002",
+"title": "Senior Platform Engineer",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/via/jobs/8171972002",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "via",
+"external_id": "8327606002",
+"title": "Senior Software Engineer, Routing",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/via/jobs/8327606002",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "via",
+"external_id": "8557879002",
+"title": "Software & Data Engineer",
+"location": "Tel Aviv",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/via/jobs/8557879002",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 },
 {
 "source": "yotpo",
@@ -4956,7 +6468,7 @@
 "url": "https://www.yotpo.com/careers/gid-6879751?gh_jid=6879751",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "yotpo",
@@ -4968,19 +6480,7 @@
 "url": "https://www.yotpo.com/careers/gid-8211515?gh_jid=8211515",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "zscaler",
-"external_id": "5217166007",
-"title": "Director of Data Engineering",
-"location": "Tel Aviv-Yafo Municipality, ISR",
-"excerpt": "",
-"description": "",
-"url": "https://job-boards.greenhouse.io/zscaler/jobs/5217166007",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "zscaler",
@@ -4992,7 +6492,19 @@
 "url": "https://job-boards.greenhouse.io/zscaler/jobs/5220291007",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
+},
+{
+"source": "zscaler",
+"external_id": "5217166007",
+"title": "Director of Data Engineering",
+"location": "Tel Aviv-Yafo Municipality, ISR",
+"excerpt": "",
+"description": "",
+"url": "https://job-boards.greenhouse.io/zscaler/jobs/5217166007",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
 }
 ],
 "generated_at": "2026-09-18T14:45:13.698360+00:00"

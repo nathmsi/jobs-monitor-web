@@ -496,24 +496,24 @@
 },
 {
 "source": "nice",
-"external_id": "4904281101",
-"title": "AI QA Automation Lead",
-"location": "Israel - Raanana",
-"excerpt": "",
-"description": "",
-"url": "https://boards.eu.greenhouse.io/nice/jobs/4904281101?gh_jid=4904281101",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "nice",
 "external_id": "4969705101",
 "title": "Director of Engineering",
 "location": "Israel - Raanana",
 "excerpt": "",
 "description": "",
 "url": "https://boards.eu.greenhouse.io/nice/jobs/4969705101?gh_jid=4969705101",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "nice",
+"external_id": "4904281101",
+"title": "AI QA Automation Lead",
+"location": "Israel - Raanana",
+"excerpt": "",
+"description": "",
+"url": "https://boards.eu.greenhouse.io/nice/jobs/4904281101?gh_jid=4904281101",
 "is_hot": false,
 "last_updated": "2026-09-18",
 "is_new": false
@@ -615,5 +615,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-18T16:13:31.588949+00:00"
+"generated_at": "2026-09-18T20:44:44.336884+00:00"
 }

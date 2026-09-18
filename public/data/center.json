@@ -1,6 +1,6 @@
 {
 "region": "center",
-"count": 421,
+"count": 429,
 "jobs": [
 {
 "source": "appsflyer",
@@ -3528,7 +3528,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/6b945ea6-f095-42b4-a83d-b9b5f407feae",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3540,7 +3540,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/3ce06e40-f9bf-4bb6-b60b-65f8dc763e1d",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3552,7 +3552,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/fee48786-19a6-452e-afef-9301f26bf4f2",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3564,7 +3564,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/077675a8-bfb6-47f4-a466-347561c26258",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3576,7 +3576,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/b980719c-fdfe-4055-9326-55466ee9f1be",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3588,7 +3588,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/90a0c5b3-45e8-49fe-be71-6ab6adc1da12",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3600,7 +3600,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/aa767bbc-ae1a-4152-9787-20f2b6062e64",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3612,7 +3612,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/a41b40da-19e3-4afe-b954-39bc26ebe66f",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3624,7 +3624,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/80f67a02-d68c-4934-9f42-de670a41103a",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3636,7 +3636,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/badda4f4-4bed-4493-808f-fd4e71b9e06c",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3648,7 +3648,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/9de6a3e3-2b7d-4208-949f-b3b9de936bd3",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3660,7 +3660,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/848f8d63-e680-433b-b266-c2bae8119931",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3672,7 +3672,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/23ffcb8e-5ca5-48f5-8cb4-6a21baf27c66",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3684,7 +3684,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/95f547f4-285a-48db-a396-fae0cecf8f41",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3696,7 +3696,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/0b0b653c-2d75-4bbb-aea1-1a805620b740",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3708,7 +3708,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/4543af91-161f-4302-a0a4-97ffd020cc1b",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3720,7 +3720,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/99e4485e-f6a2-4d35-9e6e-aecad38fd340",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "monday",
@@ -3732,7 +3732,7 @@
 "url": "https://jobs.ashbyhq.com/monday.com/9151c380-9f47-43a1-90fd-916c0232414b",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "mongodb",
@@ -3757,6 +3757,102 @@
 "is_hot": false,
 "last_updated": "2026-09-18",
 "is_new": false
+},
+{
+"source": "moonactive",
+"external_id": "f9d414e9-6bb9-4e35-99c2-6d452a66c7ae",
+"title": "DevOps Engineer",
+"location": "Tel Aviv",
+"excerpt": "Moon Active is one of the world's fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We're looking for…",
+"description": "Moon Active is one of the world's fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We're looking for a talented DevOps Engineer to join our team. As a DevOps Engineer, you will architect and operate scalable, resilient cloud environments, using advanced automation and AI-based tools to improve system health, reduce manual intervention, and optimize infrastructure costs. Responsibilities - Own the full lifecycle of the Coin Master platform. Ensure high availability, performance, and cost-efficiency across our multi-region AWS environment. - Design and maintain robust, high-performance infrastructure using IaC. You will focus on building self-healing environments where AI agents continuously monitor and remediate issues in real-time. - Embed security into the infrastructure layer. Leverage AI-assisted tooling to proactively identify and patch vulnerabilities across our Kubernetes clusters and AWS stack. - Build tools and services that empower our engineering team to ship code faster. You are the architect of the platform, ensuring it is intuitive, scalable, and fully ",
+"url": "https://jobs.ashbyhq.com/moonactive/f9d414e9-6bb9-4e35-99c2-6d452a66c7ae",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "moonactive",
+"external_id": "9f1eb9b4-17d3-43e3-8d96-ef168ff07c6f",
+"title": "Full Stack Developer",
+"location": "Tel Aviv",
+"excerpt": "Moon Active is one of the world's fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We’re looking for…",
+"description": "Moon Active is one of the world's fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We’re looking for an experienced Full Stack Developer who is passionate about cutting-edge technology to play a significant role in the development of new, AI-powered applications. Responsibilities - Design and develop innovative, state-of-the-art, AI applications and products. - Collaborate with cross-functional teams to understand business requirements and translate them into technical specifications for AI-driven applications. - Lead and own projects from ideation to production. - Work in a dynamic, fast-paced environment where your code contributes directly to our growth and efficiency. Requirements - 5+ years of experience as a software developer. - B.Sc./M.Sc.in Computer Science or equivalent. - Proficiency in modern programming languages such as Python, Typescript or Go. - Deep understanding in modern architectures: microservices, event-driven systems, cloud-native deployments. - Hands-on experience with agentic coding and development workflows. - Strong fluency with front-end ",
+"url": "https://jobs.ashbyhq.com/moonactive/9f1eb9b4-17d3-43e3-8d96-ef168ff07c6f",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "moonactive",
+"external_id": "fd2cd6bb-1e02-4270-95cb-e40f7f3d5ccc",
+"title": "Unity Developer",
+"location": "Tel Aviv",
+"excerpt": "Moon Active is one of the worlds fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We are looking for…",
+"description": "Moon Active is one of the worlds fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We are looking for an experienced Unity Developer with an AI-first mindset to build next-gen gaming features. You will join a team of engineers building high-scale, real-time game systems, leveraging LLMs for complex logic, automating workflows, and using AI agents to continuously improve how we build. Responsibilities - Manage features from system design and data handling to production deployment. - Design architectures and implement end-to-end client-side features, leveraging LLMs from day-to-day development processes up to system architecture. - Use data-driven methods to resolve production issues and optimize performance across all devices. - Manage the integration of native plugins and third-party services. Requirements - 3+ years of professional experience in software development. - Hands-on experience with Claude Code, Cursor or similar. - Experience with object-oriented programming, including design patterns, algorithms, and data structures. - Strong knowledge of an OOP languag",
+"url": "https://jobs.ashbyhq.com/moonactive/fd2cd6bb-1e02-4270-95cb-e40f7f3d5ccc",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "moonactive",
+"external_id": "97952ab6-4175-4727-8c16-914895df3726",
+"title": "Mobile User Acquisition Manager",
+"location": "Tel Aviv",
+"excerpt": "Moon Active is one of the world's fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. As we expand,…",
+"description": "Moon Active is one of the world's fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. As we expand, we're looking for a Mobile User Acquisition Manager to join our amazing Marketing team. Responsibilities - Acquire new and high-quality players for our games in an efficient and profitable manner. - Scale, manage, and optimize performance campaigns across a diverse ecosystem, simultaneously leveraging paid social, DSPs, and offerwalls. - Build strategic relationships with key acquisition partners, and ad networks. - Conduct advanced data analysis to identify key growth trends and lead experimental research into emerging verticals to drive continuous learning. - Manage fast-paced performance marketing projects under tight schedules and budget constraints. - Expand your scope beyond standard user acquisition through specialized development channels in ad monetization, retargeting, and creative pipelines, collaborating closely with cross-functional teams like Product, Art, and R&D. - Integrate custom AI tools into daily workflows to automate campaign optimization, streamlin",
+"url": "https://jobs.ashbyhq.com/moonactive/97952ab6-4175-4727-8c16-914895df3726",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "moonactive",
+"external_id": "b9ef962f-9edd-49f3-bb44-e288bb7885d4",
+"title": "IT Infrastructure & Cloud Engineer",
+"location": "Tel Aviv",
+"excerpt": "Moon Active is one of the world's fastest-growing mobile game companies, providing entertainment for millions of active users across the Universe. The company is headquartered in the heart of Tel Aviv. We're looking for…",
+"description": "Moon Active is one of the world's fastest-growing mobile game companies, providing entertainment for millions of active users across the Universe. The company is headquartered in the heart of Tel Aviv. We're looking for a talented IT Infrastructure & Cloud Engineer who will be responsible for our IT and Cloud corporate infrastructure. You will be suggesting, implementing and deploying new solutions together with maintaining the existing infrastructure, assuring that all our systems are in optimal condition, providing the best service to our clients. Responsibilities - Be responsible for requests from the field, related to our global corporate on-premise and cloud infrastructure. This includes servers, storage appliances, active network equipment, firewalls, cloud services, cloud automations, CI/CD and other initiatives. - Design and oversee the integration of core services and platforms such as AWS, Google Cloud and Workspace, Okta, Cloud Backups, Zero Trust Network Access (ZTNA), Secure Web Gateway, Cloud-based EDR and other cutting-edge technologies. - Spearhead the strategy, implementation, and governance of GenAI tools and platforms across the company, focusing on process impro",
+"url": "https://jobs.ashbyhq.com/moonactive/b9ef962f-9edd-49f3-bb44-e288bb7885d4",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "moonactive",
+"external_id": "d6b8e001-c645-4463-9707-09552fab60fd",
+"title": "Backend Developer",
+"location": "Tel Aviv",
+"excerpt": "Moon Active is one of the world's fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We're looking for…",
+"description": "Moon Active is one of the world's fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We're looking for a Backend Developer to join our awesome Core Platform team. The team is responsible for building complex, high-scale, real-time services and infrastructure which is used by all company’s studios to support their business. We are looking for an engineer who views AI not just as a tool, but as a fundamental shift in how we build software. You will be responsible for designing high-performance, distributed systems while leaning heavily into an AI-First engineering culture. We are looking for strong software engineers with practical experience, the drive, and enthusiasm to succeed in a demanding and professional team environment. Responsibilities - You will design, architect, test and implement core services and features in MoonActive's platform services and data pipeline infrastructure. - You will be responsible for scalable, high-traffic production infrastructure across all MoonActive studios. - You will build valuable tools to support the development and business proc",
+"url": "https://jobs.ashbyhq.com/moonactive/d6b8e001-c645-4463-9707-09552fab60fd",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "moonactive",
+"external_id": "918611b6-1ab5-400e-abe2-970470ea0f5d",
+"title": "Product UX Team Lead",
+"location": "Tel Aviv",
+"excerpt": "Moon Active is looking for an exceptional Product UX Team Lead to join and lead a team within our Product team. The Product team is responsible for driving the strategy and long-term engagement of our games, ensuring…",
+"description": "Moon Active is looking for an exceptional Product UX Team Lead to join and lead a team within our Product team. The Product team is responsible for driving the strategy and long-term engagement of our games, ensuring our millions of daily active players enjoy a seamless and captivating experience. As a Product UX Team Lead, you will manage, mentor, and empower a team of talented UX Designers while remaining hands-on with key strategic initiatives. You’ll work closely with the Product team, Game Design Leads, UI Leads, and Technical Artists to define UX vision, balance player satisfaction with product KPIs, and elevate overall design standards. In this role, you will also lead the charge in transforming our UX workflows through cutting-edge AI tools and driving the expansion of our cross-platform Design System. Responsibilities - Lead, mentor, and grow a high-performing team of UX designers. Provide constructive feedback, clear guidance, and support their ongoing professional development. - Translate complex business goals, monetization strategies, and product roadmap requirements into scalable, engaging, and high-converting user experiences. - Partner daily with Product Managers, G",
+"url": "https://jobs.ashbyhq.com/moonactive/918611b6-1ab5-400e-abe2-970470ea0f5d",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "moonactive",
+"external_id": "d9438ecd-3caf-4705-b308-fc2f55c646de",
+"title": "Game Engineer",
+"location": "Tel Aviv",
+"excerpt": "Moon Active is one of the world’s fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We are looking for…",
+"description": "Moon Active is one of the world’s fastest-growing mobile game companies, providing entertainment to millions of active users across the universe. The company is headquartered in the heart of Tel Aviv. We are looking for an experienced and passionate Game Engineer to take a key role in developing our next-generation games. In this role, you will be deeply involved in shaping the core gameplay experience, building robust client architecture in Unity, and taking end-to-end ownership of features - from smooth client interactions to lightweight, scalable backend development. Responsibilities - Design, build, and maintain high-performance, reusable, and maintainable game features. - Drive features from initial technical design to production, taking responsibility for both client-side logic and the necessary backend endpoints/services - Optimize and scale both client-side gameplay and backend systems for millions of players, ensuring a high-performance, seamless experience across the entire technical stack. - Implement both client and server logic with robust network protocols, state synchronization, and data persistence that seamlessly scale - Work closely with Product Managers, Game Des",
+"url": "https://jobs.ashbyhq.com/moonactive/d9438ecd-3caf-4705-b308-fc2f55c646de",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
 },
 {
 "source": "ness",
@@ -5055,5 +5151,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-18T10:00:42.791404+00:00"
+"generated_at": "2026-09-18T10:10:08.958544+00:00"
 }

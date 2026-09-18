@@ -333,6 +333,15 @@
 "logo": "https://icons.duckduckgo.com/ip3/lemonade.com.ico"
 },
 {
+"key": "moonactive",
+"label": "Moon Active",
+"kind": "company",
+"category": "gaming",
+"site_url": "https://jobs.ashbyhq.com/moonactive",
+"auto_fetch": true,
+"logo": "https://icons.duckduckgo.com/ip3/moonactive.com.ico"
+},
+{
 "key": "li-nvidia",
 "label": "NVIDIA",
 "kind": "company",

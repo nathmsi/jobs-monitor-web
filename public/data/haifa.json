@@ -76,18 +76,6 @@
 },
 {
 "source": "malam",
-"external_id": "533779",
-"title": "Backend Cloud Developer",
-"location": "חיפה והקריות",
-"excerpt": "קבוצת Malam Team מחפשת מפתח/ת Backend לחברת טכנולוגיה רפואית בינלאומית חברת טכנולוגיה מובילה בתחום הרפואה, הפועלת בזירה הבינלאומית, מחפשת להרחיב את צוות הפיתוח לשם פיתוח מערכות מתקדמות בסביבה טכנולוגית חדשנית. העבודה…",
-"description": "קבוצת Malam Team מחפשת מפתח/ת Backend לחברת טכנולוגיה רפואית בינלאומית חברת טכנולוגיה מובילה בתחום הרפואה, הפועלת בזירה הבינלאומית, מחפשת להרחיב את צוות הפיתוח לשם פיתוח מערכות מתקדמות בסביבה טכנולוגית חדשנית. העבודה כוללת פיתוח בסביבת ענן AZURE, שילוב כלי AI פורצי דרך. משרה מלאה ביקנעם, יום אחד מהב...",
-"url": "https://www.malamteam.com/משרה/backend-cloud-developer/",
-"is_hot": true,
-"last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "malam",
 "external_id": "33947",
 "title": "משרה כללית טכנולוגית",
 "location": "גוש דן, דרום, השפלה, השרון, חיפה והקריות",
@@ -99,14 +87,14 @@
 "is_new": true
 },
 {
-"source": "matrix",
-"external_id": "76725",
-"title": "מפתח/ת RPA",
+"source": "malam",
+"external_id": "533779",
+"title": "Backend Cloud Developer",
 "location": "חיפה והקריות",
-"excerpt": "לארגון גדול ומוביל בחיפה אנו מגייסים מפתח/ת RPA להצטרפות לצוות טכנולוגי מוביל.",
-"description": "לארגון גדול ומוביל בחיפה אנו מגייסים מפתח/ת RPA להצטרפות לצוות טכנולוגי מוביל.",
-"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-rpa2/",
-"is_hot": false,
+"excerpt": "קבוצת Malam Team מחפשת מפתח/ת Backend לחברת טכנולוגיה רפואית בינלאומית חברת טכנולוגיה מובילה בתחום הרפואה, הפועלת בזירה הבינלאומית, מחפשת להרחיב את צוות הפיתוח לשם פיתוח מערכות מתקדמות בסביבה טכנולוגית חדשנית. העבודה…",
+"description": "קבוצת Malam Team מחפשת מפתח/ת Backend לחברת טכנולוגיה רפואית בינלאומית חברת טכנולוגיה מובילה בתחום הרפואה, הפועלת בזירה הבינלאומית, מחפשת להרחיב את צוות הפיתוח לשם פיתוח מערכות מתקדמות בסביבה טכנולוגית חדשנית. העבודה כוללת פיתוח בסביבת ענן AZURE, שילוב כלי AI פורצי דרך. משרה מלאה ביקנעם, יום אחד מהב...",
+"url": "https://www.malamteam.com/משרה/backend-cloud-developer/",
+"is_hot": true,
 "last_updated": "2026-09-18",
 "is_new": true
 },
@@ -123,13 +111,13 @@
 "is_new": true
 },
 {
-"source": "mobileye",
-"external_id": "422fa926-abc4-4da0-ba57-57ad102f2754",
-"title": "Experienced Formal Verification  Engineer",
-"location": "Haifa",
-"excerpt": "The Mobileye Automated Driving Hardware group in Haifa is looking for an Experienced Formal Verification Engineer to join a team of talented engineers developing next-generation silicon for autonomous driving platforms.…",
-"description": "The Mobileye Automated Driving Hardware group in Haifa is looking for an Experienced Formal Verification Engineer to join a team of talented engineers developing next-generation silicon for autonomous driving platforms. This is a unique opportunity to enter one of the most challenging and rewarding disciplines in hardware development. Formal Verification combines deep understanding of computer architecture, digital design, and advanced verification methodologies to prove hardware correctness and uncover bugs that traditional testing may never find.",
-"url": "https://careers.mobileye.com/jobs/experienced-formal-verification-engineer/422fa926-abc4-4da0-ba57-57ad102f2754",
+"source": "matrix",
+"external_id": "76725",
+"title": "מפתח/ת RPA",
+"location": "חיפה והקריות",
+"excerpt": "לארגון גדול ומוביל בחיפה אנו מגייסים מפתח/ת RPA להצטרפות לצוות טכנולוגי מוביל.",
+"description": "לארגון גדול ומוביל בחיפה אנו מגייסים מפתח/ת RPA להצטרפות לצוות טכנולוגי מוביל.",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-rpa2/",
 "is_hot": false,
 "last_updated": "2026-09-18",
 "is_new": true
@@ -148,12 +136,12 @@
 },
 {
 "source": "mobileye",
-"external_id": "15ecbd22-fd82-431c-93ff-2ece2caf808e",
-"title": "Experienced Verification Engineer",
+"external_id": "791a4827-bd3e-4942-9e72-b00176e0334c",
+"title": "Experienced SoC Verification Engineer",
 "location": "Haifa",
-"excerpt": "Mobileye’s Unit Level Verification Team in Haifa is looking for an experienced verification engineer to be involved in the development of Mobileye’s future AI and deep learning HW accelerators. This is an exciting…",
-"description": "Mobileye’s Unit Level Verification Team in Haifa is looking for an experienced verification engineer to be involved in the development of Mobileye’s future AI and deep learning HW accelerators. This is an exciting opportunity to join a team of highly talented engineers, working on the most cutting-edge technologies to deliver Mobileye’s EyeQ future chips, aimed to power the world’s first fully Autonomous Vehicle!",
-"url": "https://careers.mobileye.com/jobs/experienced-verification-engineer/15ecbd22-fd82-431c-93ff-2ece2caf808e",
+"excerpt": "Mobileye SOC verification group owns the important and challenging job of verifying Mobileye's chip. It is involved from product specification to final SOC delivery, and involves all the system components. The group is…",
+"description": "Mobileye SOC verification group owns the important and challenging job of verifying Mobileye's chip. It is involved from product specification to final SOC delivery, and involves all the system components. The group is made up of few of the best verification engineers, so besides contributing to making our roads safer, you’ll get the chance to work at one of the most professional verification teams.",
+"url": "https://careers.mobileye.com/jobs/experienced-soc-verification-engineer/791a4827-bd3e-4942-9e72-b00176e0334c",
 "is_hot": false,
 "last_updated": "2026-09-18",
 "is_new": true
@@ -256,24 +244,24 @@
 },
 {
 "source": "mobileye",
-"external_id": "791a4827-bd3e-4942-9e72-b00176e0334c",
-"title": "Experienced SoC Verification Engineer",
-"location": "Haifa",
-"excerpt": "Mobileye SOC verification group owns the important and challenging job of verifying Mobileye's chip. It is involved from product specification to final SOC delivery, and involves all the system components. The group is…",
-"description": "Mobileye SOC verification group owns the important and challenging job of verifying Mobileye's chip. It is involved from product specification to final SOC delivery, and involves all the system components. The group is made up of few of the best verification engineers, so besides contributing to making our roads safer, you’ll get the chance to work at one of the most professional verification teams.",
-"url": "https://careers.mobileye.com/jobs/experienced-soc-verification-engineer/791a4827-bd3e-4942-9e72-b00176e0334c",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": true
-},
-{
-"source": "mobileye",
 "external_id": "86638ec0-b5f8-4cd5-b3f9-19b1b8932368",
 "title": "Software Linux Integration Engineer - OS team",
 "location": "Haifa",
 "excerpt": "The Mobileye Operating System Team is looking for a highly talented Embedded SW Integration Engineer with a passion for operating systems and Linux in specific. The team is developing the Boot and Operating System SW…",
 "description": "The Mobileye Operating System Team is looking for a highly talented Embedded SW Integration Engineer with a passion for operating systems and Linux in specific. The team is developing the Boot and Operating System SW for Mobileye’s autonomous vehicle and smart advanced driver assist platforms.",
 "url": "https://careers.mobileye.com/jobs/software-linux-integration-engineer-os-team/86638ec0-b5f8-4cd5-b3f9-19b1b8932368",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "15ecbd22-fd82-431c-93ff-2ece2caf808e",
+"title": "Experienced Verification Engineer",
+"location": "Haifa",
+"excerpt": "Mobileye’s Unit Level Verification Team in Haifa is looking for an experienced verification engineer to be involved in the development of Mobileye’s future AI and deep learning HW accelerators. This is an exciting…",
+"description": "Mobileye’s Unit Level Verification Team in Haifa is looking for an experienced verification engineer to be involved in the development of Mobileye’s future AI and deep learning HW accelerators. This is an exciting opportunity to join a team of highly talented engineers, working on the most cutting-edge technologies to deliver Mobileye’s EyeQ future chips, aimed to power the world’s first fully Autonomous Vehicle!",
+"url": "https://careers.mobileye.com/jobs/experienced-verification-engineer/15ecbd22-fd82-431c-93ff-2ece2caf808e",
 "is_hot": false,
 "last_updated": "2026-09-18",
 "is_new": true
@@ -375,6 +363,18 @@
 "is_new": true
 },
 {
+"source": "mobileye",
+"external_id": "422fa926-abc4-4da0-ba57-57ad102f2754",
+"title": "Experienced Formal Verification  Engineer",
+"location": "Haifa",
+"excerpt": "The Mobileye Automated Driving Hardware group in Haifa is looking for an Experienced Formal Verification Engineer to join a team of talented engineers developing next-generation silicon for autonomous driving platforms.…",
+"description": "The Mobileye Automated Driving Hardware group in Haifa is looking for an Experienced Formal Verification Engineer to join a team of talented engineers developing next-generation silicon for autonomous driving platforms. This is a unique opportunity to enter one of the most challenging and rewarding disciplines in hardware development. Formal Verification combines deep understanding of computer architecture, digital design, and advanced verification methodologies to prove hardware correctness and uncover bugs that traditional testing may never find.",
+"url": "https://careers.mobileye.com/jobs/experienced-formal-verification-engineer/422fa926-abc4-4da0-ba57-57ad102f2754",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
 "source": "ness",
 "external_id": "43289",
 "title": "מהנדס/ת מכונות",
@@ -387,5 +387,5 @@
 "is_new": true
 }
 ],
-"generated_at": "2026-09-18T12:31:00.732902+00:00"
+"generated_at": "2026-09-18T14:45:13.698360+00:00"
 }

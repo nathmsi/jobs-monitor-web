@@ -369,6 +369,15 @@
 "via": "linkedin"
 },
 {
+"key": "li-google",
+"label": "Google",
+"kind": "company",
+"category": "other",
+"site_url": "https://il.linkedin.com/jobs/view/software-engineer-iii-waze-mobile-android-at-google-4458662012",
+"logo": "https://icons.duckduckgo.com/ip3/google.com.ico",
+"via": "linkedin"
+},
+{
 "key": "li-amazon-web-services-aws",
 "label": "Amazon Web Services (AWS)",
 "kind": "company",
@@ -396,21 +405,21 @@
 "via": "linkedin"
 },
 {
+"key": "li-qualcomm",
+"label": "Qualcomm",
+"kind": "company",
+"category": "hardware",
+"site_url": "https://il.linkedin.com/jobs/view/senior-software-engineer-cloud-data-platforms-ramat-gan-at-qualcomm-4455410667",
+"logo": "https://icons.duckduckgo.com/ip3/qualcomm.com.ico",
+"via": "linkedin"
+},
+{
 "key": "li-wiv-ai",
 "label": "Wiv.ai",
 "kind": "company",
 "category": "data-ai",
 "site_url": "https://il.linkedin.com/jobs/view/senior-backend-developer-join-wiv-and-shape-the-future-of-finops-at-wiv-ai-4462273940",
 "logo": "https://icons.duckduckgo.com/ip3/wivai.com.ico",
-"via": "linkedin"
-},
-{
-"key": "li-google",
-"label": "Google",
-"kind": "company",
-"category": "other",
-"site_url": "https://il.linkedin.com/jobs/view/senior-software-engineer-google-cloud-data-movement-platform-at-google-4452981999",
-"logo": "https://icons.duckduckgo.com/ip3/google.com.ico",
 "via": "linkedin"
 },
 {
@@ -456,6 +465,15 @@
 "category": "web-ecom",
 "site_url": "https://il.linkedin.com/jobs/view/senior-c%23-developer-at-walkme-4461452101",
 "logo": "https://icons.duckduckgo.com/ip3/walkme.com.ico",
+"via": "linkedin"
+},
+{
+"key": "li-ergo-next-insurance",
+"label": "ERGO NEXT Insurance",
+"kind": "company",
+"category": "other",
+"site_url": "https://il.linkedin.com/jobs/view/graduate-backend-software-engineer-upnext-program-at-ergo-next-insurance-4458650584",
+"logo": "https://icons.duckduckgo.com/ip3/ergo.com.ico",
 "via": "linkedin"
 },
 {
@@ -531,12 +549,12 @@
 "via": "linkedin"
 },
 {
-"key": "li-chainalysis",
-"label": "Chainalysis",
+"key": "li-unity",
+"label": "Unity",
 "kind": "company",
-"category": "other",
-"site_url": "https://il.linkedin.com/jobs/view/senior-software-engineer-alterya-at-chainalysis-4419564380",
-"logo": "https://icons.duckduckgo.com/ip3/chainalysis.com.ico",
+"category": "web-ecom",
+"site_url": "https://il.linkedin.com/jobs/view/senior-sdk-developer-monetization-at-unity-4457487733",
+"logo": "https://icons.duckduckgo.com/ip3/unity.com.ico",
 "via": "linkedin"
 },
 {

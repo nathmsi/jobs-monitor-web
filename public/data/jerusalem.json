@@ -1,6 +1,6 @@
 {
 "region": "jerusalem",
-"count": 102,
+"count": 96,
 "jobs": [
 {
 "source": "li-merck-healthcare",
@@ -12,151 +12,7 @@
 "url": "https://il.linkedin.com/jobs/view/principal-full-stack-software-engineer-at-merck-healthcare-4455302163",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37445",
-"title": "מפתח.ת תוכנה במערכות WEB",
-"location": "השפלה, ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה במערכות WEB לארגון ציבורי בירושלים תיאור משרה: מפתח בכיר במערכות WEB - מפתח בכיר למערכת נועם מערכת נועם הינה מערכת במג'יק שעוברת לענן . המערכת משמשת לניהול ועדות רכישות במשרד…",
-"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה במערכות WEB לארגון ציבורי בירושלים תיאור משרה: מפתח בכיר במערכות WEB - מפתח בכיר למערכת נועם מערכת נועם הינה מערכת במג'יק שעוברת לענן . המערכת משמשת לניהול ועדות רכישות במשרד כגון: ועדת ענ\"א, עדת יועצים, ועדת פטור דרישות: ניסיון מעל 4 שנים net cor...",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9e%d7%a2%d7%a8%d7%9b%d7%95%d7%aa-web/",
-"is_hot": true,
-"last_updated": "2026-09-16",
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37544",
-"title": "מנהל.ת מערך טכנולוגי ו- Delivery",
-"location": "השפלה, ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מנהל.ת טכנולוגיות ו- Delivery לארגון ציבורי בירושלים תיאור משרה: דרוש.ה מנהל.ת מערך טכנולוגי ו- Delivery לתפקיד בכיר הכולל הובלת תוכניות טכנולוגיות מורכבות ורחבות היקף, טרנספורמציה…",
-"description": "חברת Mertens - MalamTeam מגייסת מנהל.ת טכנולוגיות ו- Delivery לארגון ציבורי בירושלים תיאור משרה: דרוש.ה מנהל.ת מערך טכנולוגי ו- Delivery לתפקיד בכיר הכולל הובלת תוכניות טכנולוגיות מורכבות ורחבות היקף, טרנספורמציה דיגיטלית וניהול מערכים מולטידיסציפלינריים גדולים. דרישות: ניסיון של לפחות 8 שנים...",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a0%d7%94%d7%9c-%d7%aa-%d7%9e%d7%a2%d7%a8%d7%9a-%d7%98%d7%9b%d7%a0%d7%95%d7%9c%d7%95%d7%92%d7%99-%d7%95-delivery/",
-"is_hot": true,
-"last_updated": "2026-09-16",
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "533785",
-"title": "FullStack Developer",
-"location": "ירושלים והסביבה",
-"excerpt": "אגף המחשוב ומערכות המידע בארגון ממשלתי בירושלים מזמין מפתחי/ות Full Stack מנוסים/ות להשתלב בצוותי פיתוח בפרויקטים מורכבים וחשובים. התפקיד כולל פיתוח עצמאי של רכיבי Client ו- Server, פיתוח שירותי API, אינטגרציה בין…",
-"description": "אגף המחשוב ומערכות המידע בארגון ממשלתי בירושלים מזמין מפתחי/ות Full Stack מנוסים/ות להשתלב בצוותי פיתוח בפרויקטים מורכבים וחשובים. התפקיד כולל פיתוח עצמאי של רכיבי Client ו- Server, פיתוח שירותי API, אינטגרציה בין מערכות וכתיבת קוד איכותי בסטנדרטים ארגוניים גבוהים. מדובר במשרה מלאה 8:00 - 17:00 עם הי...",
-"url": "https://www.malamteam.com/משרה/fullstack-developer/",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "533482",
-"title": "Full Stack Developer - AI Assisted Development ‎",
-"location": "ירושלים והסביבה",
-"excerpt": "אנחנו מחפשים מפתח/ת Fullstack להשתלבות כחלק מצוות בפיתוח מערכות מאפס. התפקיד מיועד למפתח/ת תוכנה בעל/ת הבנה מעשית בתהליכי פיתוח, המשתמש/ת בכלי AI כדי להאיץ ולשפר את עבודת הפיתוח — החל מתכנון וכתיבת קוד, דרך בדיקות…",
-"description": "אנחנו מחפשים מפתח/ת Fullstack להשתלבות כחלק מצוות בפיתוח מערכות מאפס. התפקיד מיועד למפתח/ת תוכנה בעל/ת הבנה מעשית בתהליכי פיתוח, המשתמש/ת בכלי AI כדי להאיץ ולשפר את עבודת הפיתוח — החל מתכנון וכתיבת קוד, דרך בדיקות ושיפור קוד, ועד תיעוד, תחזוקה ופתרון תקלות. במסגרת התפקיד: פיתוח אפליקציות ‎ Web ‎, ובמי...",
-"url": "https://www.malamteam.com/משרה/full-stack-developer-ai-assisted-development/",
-"is_hot": true,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37626",
-"title": "מפתח.ת תוכנה",
-"location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה ציבורי לארגון ציבורי בירושלים תיאור משרה: דרוש.ה מפתח.ת לכתיבת תוכניות מורכבות או מרכזיות בפרויקט, תכנון וביצוע משימות בצוות. התפקיד כולל: מתן פתרונות טכנולוגיים לאתגרי…",
-"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה ציבורי לארגון ציבורי בירושלים תיאור משרה: דרוש.ה מפתח.ת לכתיבת תוכניות מורכבות או מרכזיות בפרויקט, תכנון וביצוע משימות בצוות. התפקיד כולל: מתן פתרונות טכנולוגיים לאתגרי הפרויקט, ולסייע ביישום הארכיטקטורה והתשתיות ובפיתוח הפרויקט בצורה נכונה. תפקיד זה ...",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-8/",
-"is_hot": true,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37574",
-"title": "מפתח.ת תוכנה",
-"location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת תוכנה בסביבת Web לארגון מוביל בירושלים תיאור התפקיד כולל פיתוח ועיצוב פתרונות תוכנה בהתאם למפרטים ובהנחיית ראש צוות או מנתח.ת מערכות בכיר.ה, כתיבת תוכניות מורכבות ומרכזיות בפרויקט,…",
-"description": "חברת Mertens Malam Team מגייסת מפתח.ת תוכנה בסביבת Web לארגון מוביל בירושלים תיאור התפקיד כולל פיתוח ועיצוב פתרונות תוכנה בהתאם למפרטים ובהנחיית ראש צוות או מנתח.ת מערכות בכיר.ה, כתיבת תוכניות מורכבות ומרכזיות בפרויקט, הנחיה מקצועית של מפתחים בצוות ותכנון וביצוע בדיקות. עבודה עם Web API, REST, Angu...",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-2/",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37587",
-"title": "מפתח.ת Backend",
-"location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת Backend לארגון מוביל בירושלים תיאור במסגרת התפקיד פיתוח אפליקציות ושירותי צד שרת בסביבת ענן AWS, עבודה בארכיטקטורת Microservices ו- MVC ופיתוח בסביבות Cross Platform ו- Linux…",
-"description": "חברת Mertens Malam Team מגייסת מפתח.ת Backend לארגון מוביל בירושלים תיאור במסגרת התפקיד פיתוח אפליקציות ושירותי צד שרת בסביבת ענן AWS, עבודה בארכיטקטורת Microservices ו- MVC ופיתוח בסביבות Cross Platform ו- Linux Containers. עבודה עם C #, . NET Core, AWS, Docker, Microsoft CRM, SQL Server, GitLab ותהלי...",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-backend-2/",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37585",
-"title": "מפתח.ת תוכנה",
-"location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח ותחזוקה של מערכות חדשניות מבוססות AI, כחלק ממערכת חינוך המיועדת לתמיכה בתוכנית לימודים אישית. פיתוח Full Stack בסביבת Microservices, שילוב…",
-"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח ותחזוקה של מערכות חדשניות מבוססות AI, כחלק ממערכת חינוך המיועדת לתמיכה בתוכנית לימודים אישית. פיתוח Full Stack בסביבת Microservices, שילוב יכולות AI, שדרוג ואופטימיזציה של מערכות ושיפור קוד קיים. עבודה בצוות פיתוח ...",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-4/",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37584",
-"title": "מפתח.ת תוכנה",
-"location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח מערכות חדשניות ואוטומציות מבוססות AI עבור מערכות החינוך, בסביבת Microservices ובארכיטקטורה מודרנית. התפקיד כולל פיתוח קוד ורכיבי Full Stack,…",
-"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח מערכות חדשניות ואוטומציות מבוססות AI עבור מערכות החינוך, בסביבת Microservices ובארכיטקטורה מודרנית. התפקיד כולל פיתוח קוד ורכיבי Full Stack, שילוב יכולות AI, פיתוח בדיקות אוטומטיות, שדרוג ואופטימיזציה של מערכות קיימ...",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-5/",
-"is_hot": true,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37557",
-"title": "מפתח.ת תוכנה בכיר.ה",
-"location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה בכיר.ה לארגון גדול בירושלים תיאור משרה: תיאור משרה: התפקיד כולל פיתוח, הקמה, תפעול ותחזוקה של מערכות בסביבת Low-Code, בדגש על OutSystems, בהתאם לצרכים העסקיים של הארגון.…",
-"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה בכיר.ה לארגון גדול בירושלים תיאור משרה: תיאור משרה: התפקיד כולל פיתוח, הקמה, תפעול ותחזוקה של מערכות בסביבת Low-Code, בדגש על OutSystems, בהתאם לצרכים העסקיים של הארגון. במסגרת התפקיד נדרשת עבודה על פיתוח תהליכים, מסכים, לוגיקה עסקית ומודלי נתונים, ...",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9b%d7%99%d7%a8-%d7%94/",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37573",
-"title": "מפתח.ת WinForms",
-"location": "ירושלים והסביבה",
-"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת WinForms לארגון גדול בירושלים תיאור משרה: פיתוח ותחזוקה של יישומים מבוססי . NET / WinForms, כולל הוספת פיצ'רים חדשים, תיקון תקלות, שיפור ביצועים והתאמת המערכות לצרכים עסקיים…",
-"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת WinForms לארגון גדול בירושלים תיאור משרה: פיתוח ותחזוקה של יישומים מבוססי . NET / WinForms, כולל הוספת פיצ'רים חדשים, תיקון תקלות, שיפור ביצועים והתאמת המערכות לצרכים עסקיים משתנים. העבודה כוללת שילוב עם בסיסי נתונים, שירותים חיצוניים וכתיבת קוד נקי ומודול...",
-"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-winforms/",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "malam",
-"external_id": "37361",
-"title": "תכניתן.ית COBOL",
-"location": "השפלה, ירושלים והסביבה",
-"excerpt": "חברת Mertens Malam Team מגייסת תכניתן.ית Cobol לארגון פיננסי במרכז תיאור במסגרת התפקיד פיתוח, תחזוקה ושדרוג של מערכות ליבה פיננסיות בסביבת IBM Mainframe, כולל כתיבת קוד, ביצוע בדיקות וטיפול בתקלות עד לזיהוי שורש הבעיה.…",
-"description": "חברת Mertens Malam Team מגייסת תכניתן.ית Cobol לארגון פיננסי במרכז תיאור במסגרת התפקיד פיתוח, תחזוקה ושדרוג של מערכות ליבה פיננסיות בסביבת IBM Mainframe, כולל כתיבת קוד, ביצוע בדיקות וטיפול בתקלות עד לזיהוי שורש הבעיה. עבודה עם Cobol, IBM Mainframe, DB 2 ו- SQL. עבודה שוטפת מול מנתחי מערכות, צוותי בד...",
-"url": "https://www.malamteam.com/משרה/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa%d7%9f-%d7%99%d7%aa-cobol/",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "malam",
@@ -168,7 +24,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-3/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "malam",
@@ -180,7 +36,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-ai/",
 "is_hot": true,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "malam",
@@ -192,7 +48,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "malam",
@@ -204,7 +60,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%94-2/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "malam",
@@ -216,7 +72,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-full-stack-7/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "malam",
@@ -228,7 +84,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-fs-%d7%94%d7%97%d7%9c%d7%a4%d7%94-%d7%9c%d7%97%d7%9c%d7%93/",
 "is_hot": true,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "malam",
@@ -240,7 +96,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-net-%d7%95-angular-2/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "malam",
@@ -252,7 +108,7 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a0%d7%94%d7%9c-%d7%aa-%d7%a4%d7%99%d7%aa%d7%95%d7%97/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "malam",
@@ -264,55 +120,127 @@
 "url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-cobol-3/",
 "is_hot": true,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
-"source": "matrix",
-"external_id": "78253",
-"title": "ר”צ פיתוח למשרד ממשלתי בירושלים",
-"location": "ירושלים יו\"ש",
-"excerpt": "אנו מחפשים ר\"צ פיתוח להובלת פרויקטים טכנולוגיים מורכבים ומערכות מרכזיות. התפקיד כולל ניהול צוות פיתוח והבנה באיפיון וניתוח מערכות",
-"description": "אנו מחפשים ר\"צ פיתוח להובלת פרויקטים טכנולוגיים מורכבים ומערכות מרכזיות. התפקיד כולל ניהול צוות פיתוח והבנה באיפיון וניתוח מערכות",
-"url": "https://www.matrix.co.il/jobs/משרה/%d7%a8%d7%a6-%d7%a4%d7%99%d7%aa%d7%95%d7%97-%d7%9c%d7%9e%d7%a9%d7%a8%d7%93-%d7%9e%d7%9e%d7%a9%d7%9c%d7%aa%d7%99-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c%d7%99%d7%9d/",
+"source": "malam",
+"external_id": "533785",
+"title": "FullStack Developer",
+"location": "ירושלים והסביבה",
+"excerpt": "אגף המחשוב ומערכות המידע בארגון ממשלתי בירושלים מזמין מפתחי/ות Full Stack מנוסים/ות להשתלב בצוותי פיתוח בפרויקטים מורכבים וחשובים. התפקיד כולל פיתוח עצמאי של רכיבי Client ו- Server, פיתוח שירותי API, אינטגרציה בין…",
+"description": "אגף המחשוב ומערכות המידע בארגון ממשלתי בירושלים מזמין מפתחי/ות Full Stack מנוסים/ות להשתלב בצוותי פיתוח בפרויקטים מורכבים וחשובים. התפקיד כולל פיתוח עצמאי של רכיבי Client ו- Server, פיתוח שירותי API, אינטגרציה בין מערכות וכתיבת קוד איכותי בסטנדרטים ארגוניים גבוהים. מדובר במשרה מלאה 8:00 - 17:00 עם הי...",
+"url": "https://www.malamteam.com/משרה/fullstack-developer/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
-"source": "matrix",
-"external_id": "78255",
-"title": "מפתח/ת תוכנה FullStack",
-"location": "ירושלים יו\"ש",
-"excerpt": "אנחנו מגייסים מפתח/ת תוכנה FullStack לארגון ממשלתי בירושלים ! משרה היברידית",
-"description": "אנחנו מגייסים מפתח/ת תוכנה FullStack לארגון ממשלתי בירושלים ! משרה היברידית",
-"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-fullstack/",
-"is_hot": false,
+"source": "malam",
+"external_id": "533482",
+"title": "Full Stack Developer - AI Assisted Development ‎",
+"location": "ירושלים והסביבה",
+"excerpt": "אנחנו מחפשים מפתח/ת Fullstack להשתלבות כחלק מצוות בפיתוח מערכות מאפס. התפקיד מיועד למפתח/ת תוכנה בעל/ת הבנה מעשית בתהליכי פיתוח, המשתמש/ת בכלי AI כדי להאיץ ולשפר את עבודת הפיתוח — החל מתכנון וכתיבת קוד, דרך בדיקות…",
+"description": "אנחנו מחפשים מפתח/ת Fullstack להשתלבות כחלק מצוות בפיתוח מערכות מאפס. התפקיד מיועד למפתח/ת תוכנה בעל/ת הבנה מעשית בתהליכי פיתוח, המשתמש/ת בכלי AI כדי להאיץ ולשפר את עבודת הפיתוח — החל מתכנון וכתיבת קוד, דרך בדיקות ושיפור קוד, ועד תיעוד, תחזוקה ופתרון תקלות. במסגרת התפקיד: פיתוח אפליקציות ‎ Web ‎, ובמי...",
+"url": "https://www.malamteam.com/משרה/full-stack-developer-ai-assisted-development/",
+"is_hot": true,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
-"source": "matrix",
-"external_id": "78487",
-"title": "מפתח סיבל 2030",
-"location": "גוש דן, ירושלים יו\"ש",
-"excerpt": "דרוש/ה מפתח תוכנה מנוסה ב Siebel לארגון מוביל באיזור המרגז במסגרת התפקיד, פיתוח ותחזוקה שוטפת של רכיבי מערכת Siebel CRM כתיבת Scripts ו‑Workflows בהתאם לדרישות עסקיות וטכנולוגיות",
-"description": "דרוש/ה מפתח תוכנה מנוסה ב Siebel לארגון מוביל באיזור המרגז במסגרת התפקיד, פיתוח ותחזוקה שוטפת של רכיבי מערכת Siebel CRM כתיבת Scripts ו‑Workflows בהתאם לדרישות עסקיות וטכנולוגיות",
-"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%a1%d7%99%d7%91%d7%9c-2030/",
-"is_hot": false,
+"source": "malam",
+"external_id": "37626",
+"title": "מפתח.ת תוכנה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה ציבורי לארגון ציבורי בירושלים תיאור משרה: דרוש.ה מפתח.ת לכתיבת תוכניות מורכבות או מרכזיות בפרויקט, תכנון וביצוע משימות בצוות. התפקיד כולל: מתן פתרונות טכנולוגיים לאתגרי…",
+"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה ציבורי לארגון ציבורי בירושלים תיאור משרה: דרוש.ה מפתח.ת לכתיבת תוכניות מורכבות או מרכזיות בפרויקט, תכנון וביצוע משימות בצוות. התפקיד כולל: מתן פתרונות טכנולוגיים לאתגרי הפרויקט, ולסייע ביישום הארכיטקטורה והתשתיות ובפיתוח הפרויקט בצורה נכונה. תפקיד זה ...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-8/",
+"is_hot": true,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
-"source": "matrix",
-"external_id": "78527",
-"title": "מפתח/ת תוכנה לארגון ביטחוני בירושלים",
-"location": "ירושלים יו\"ש",
-"excerpt": "אנחנו מחפשים מפתח/ת תוכנה להצטרפות לצוות שלנו! בתפקיד זה תבצע/י פיתוח מערכות Web (Client & Server) על פי מפרטים, תשתתף/י בעיצוב ופיתוח פרויקטים בתחומי תשתיות ודיגיטל, ותעבוד/י על פיתוח Microservices ותחזוקת מערכות…",
-"description": "אנחנו מחפשים מפתח/ת תוכנה להצטרפות לצוות שלנו! בתפקיד זה תבצע/י פיתוח מערכות Web (Client & Server) על פי מפרטים, תשתתף/י בעיצוב ופיתוח פרויקטים בתחומי תשתיות ודיגיטל, ותעבוד/י על פיתוח Microservices ותחזוקת מערכות קיימות. בנוסף, תהיה/י מעורב/ת בהנחיית תוכניתנים בצוות",
-"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%9c%d7%90%d7%a8%d7%92%d7%95%d7%9f-%d7%91%d7%99%d7%98%d7%97%d7%95%d7%a0%d7%99-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c%d7%99%d7%9d2/",
+"source": "malam",
+"external_id": "37574",
+"title": "מפתח.ת תוכנה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת תוכנה בסביבת Web לארגון מוביל בירושלים תיאור התפקיד כולל פיתוח ועיצוב פתרונות תוכנה בהתאם למפרטים ובהנחיית ראש צוות או מנתח.ת מערכות בכיר.ה, כתיבת תוכניות מורכבות ומרכזיות בפרויקט,…",
+"description": "חברת Mertens Malam Team מגייסת מפתח.ת תוכנה בסביבת Web לארגון מוביל בירושלים תיאור התפקיד כולל פיתוח ועיצוב פתרונות תוכנה בהתאם למפרטים ובהנחיית ראש צוות או מנתח.ת מערכות בכיר.ה, כתיבת תוכניות מורכבות ומרכזיות בפרויקט, הנחיה מקצועית של מפתחים בצוות ותכנון וביצוע בדיקות. עבודה עם Web API, REST, Angu...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-2/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37587",
+"title": "מפתח.ת Backend",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens Malam Team מגייסת מפתח.ת Backend לארגון מוביל בירושלים תיאור במסגרת התפקיד פיתוח אפליקציות ושירותי צד שרת בסביבת ענן AWS, עבודה בארכיטקטורת Microservices ו- MVC ופיתוח בסביבות Cross Platform ו- Linux…",
+"description": "חברת Mertens Malam Team מגייסת מפתח.ת Backend לארגון מוביל בירושלים תיאור במסגרת התפקיד פיתוח אפליקציות ושירותי צד שרת בסביבת ענן AWS, עבודה בארכיטקטורת Microservices ו- MVC ופיתוח בסביבות Cross Platform ו- Linux Containers. עבודה עם C #, . NET Core, AWS, Docker, Microsoft CRM, SQL Server, GitLab ותהלי...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-backend-2/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37585",
+"title": "מפתח.ת תוכנה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח ותחזוקה של מערכות חדשניות מבוססות AI, כחלק ממערכת חינוך המיועדת לתמיכה בתוכנית לימודים אישית. פיתוח Full Stack בסביבת Microservices, שילוב…",
+"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח ותחזוקה של מערכות חדשניות מבוססות AI, כחלק ממערכת חינוך המיועדת לתמיכה בתוכנית לימודים אישית. פיתוח Full Stack בסביבת Microservices, שילוב יכולות AI, שדרוג ואופטימיזציה של מערכות ושיפור קוד קיים. עבודה בצוות פיתוח ...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-4/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37584",
+"title": "מפתח.ת תוכנה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח מערכות חדשניות ואוטומציות מבוססות AI עבור מערכות החינוך, בסביבת Microservices ובארכיטקטורה מודרנית. התפקיד כולל פיתוח קוד ורכיבי Full Stack,…",
+"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה לארגון בירושלים תיאור משרה: פיתוח מערכות חדשניות ואוטומציות מבוססות AI עבור מערכות החינוך, בסביבת Microservices ובארכיטקטורה מודרנית. התפקיד כולל פיתוח קוד ורכיבי Full Stack, שילוב יכולות AI, פיתוח בדיקות אוטומטיות, שדרוג ואופטימיזציה של מערכות קיימ...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-5/",
+"is_hot": true,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37557",
+"title": "מפתח.ת תוכנה בכיר.ה",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה בכיר.ה לארגון גדול בירושלים תיאור משרה: תיאור משרה: התפקיד כולל פיתוח, הקמה, תפעול ותחזוקה של מערכות בסביבת Low-Code, בדגש על OutSystems, בהתאם לצרכים העסקיים של הארגון.…",
+"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת תוכנה בכיר.ה לארגון גדול בירושלים תיאור משרה: תיאור משרה: התפקיד כולל פיתוח, הקמה, תפעול ותחזוקה של מערכות בסביבת Low-Code, בדגש על OutSystems, בהתאם לצרכים העסקיים של הארגון. במסגרת התפקיד נדרשת עבודה על פיתוח תהליכים, מסכים, לוגיקה עסקית ומודלי נתונים, ...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9b%d7%99%d7%a8-%d7%94/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37361",
+"title": "תכניתן.ית COBOL",
+"location": "השפלה, ירושלים והסביבה",
+"excerpt": "חברת Mertens Malam Team מגייסת תכניתן.ית Cobol לארגון פיננסי במרכז תיאור במסגרת התפקיד פיתוח, תחזוקה ושדרוג של מערכות ליבה פיננסיות בסביבת IBM Mainframe, כולל כתיבת קוד, ביצוע בדיקות וטיפול בתקלות עד לזיהוי שורש הבעיה.…",
+"description": "חברת Mertens Malam Team מגייסת תכניתן.ית Cobol לארגון פיננסי במרכז תיאור במסגרת התפקיד פיתוח, תחזוקה ושדרוג של מערכות ליבה פיננסיות בסביבת IBM Mainframe, כולל כתיבת קוד, ביצוע בדיקות וטיפול בתקלות עד לזיהוי שורש הבעיה. עבודה עם Cobol, IBM Mainframe, DB 2 ו- SQL. עבודה שוטפת מול מנתחי מערכות, צוותי בד...",
+"url": "https://www.malamteam.com/משרה/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa%d7%9f-%d7%99%d7%aa-cobol/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "malam",
+"external_id": "37573",
+"title": "מפתח.ת WinForms",
+"location": "ירושלים והסביבה",
+"excerpt": "חברת Mertens - MalamTeam מגייסת מפתח.ת WinForms לארגון גדול בירושלים תיאור משרה: פיתוח ותחזוקה של יישומים מבוססי . NET / WinForms, כולל הוספת פיצ'רים חדשים, תיקון תקלות, שיפור ביצועים והתאמת המערכות לצרכים עסקיים…",
+"description": "חברת Mertens - MalamTeam מגייסת מפתח.ת WinForms לארגון גדול בירושלים תיאור משרה: פיתוח ותחזוקה של יישומים מבוססי . NET / WinForms, כולל הוספת פיצ'רים חדשים, תיקון תקלות, שיפור ביצועים והתאמת המערכות לצרכים עסקיים משתנים. העבודה כוללת שילוב עם בסיסי נתונים, שירותים חיצוניים וכתיבת קוד נקי ומודול...",
+"url": "https://www.malamteam.com/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-winforms/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
 },
 {
 "source": "matrix",
@@ -324,19 +252,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%9c%d7%9e%d7%a9%d7%a8%d7%94-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c%d7%99%d7%9d2/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "matrix",
-"external_id": "78704",
-"title": "מפתח/ת תוכנה בכיר/ה – פיתוח AI",
-"location": "ירושלים יו\"ש",
-"excerpt": "מפתח/ת תוכנה בכיר/ה – פיתוח AI",
-"description": "מפתח/ת תוכנה בכיר/ה – פיתוח AI",
-"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9b%d7%99%d7%a8%d7%94-%d7%a4%d7%99%d7%aa%d7%95%d7%97-ai/",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "matrix",
@@ -348,7 +264,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%92%d7%95%d7%a0%d7%99%d7%95%d7%a8-%d7%9c%d7%9e%d7%a9%d7%a8%d7%93-%d7%9e%d7%9e%d7%a9%d7%9c%d7%aa%d7%99-%d7%91%d7%99%d7%a8%d7%95%d7%a9/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "matrix",
@@ -360,7 +276,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9b%d7%99%d7%a8%d7%94-%d7%9c%d7%9e%d7%a9%d7%a8%d7%93-%d7%9e%d7%9e%d7%a9%d7%9c%d7%aa%d7%99-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "matrix",
@@ -372,7 +288,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%9c%d7%9e%d7%a9%d7%a8%d7%94-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c%d7%99%d7%9d/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "matrix",
@@ -384,7 +300,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%9c%d7%90%d7%a8%d7%92%d7%95%d7%9f-%d7%91%d7%99%d7%98%d7%97%d7%95%d7%a0%d7%99-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c%d7%99%d7%9d/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "matrix",
@@ -396,7 +312,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/full-stack/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "matrix",
@@ -408,7 +324,7 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%9c%d7%9e%d7%a9%d7%a8%d7%94-%d7%9e%d7%9e%d7%a9%d7%9c%d7%aa%d7%99%d7%aa-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c%d7%99%d7%9d/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "matrix",
@@ -420,427 +336,67 @@
 "url": "https://www.matrix.co.il/jobs/משרה/%d7%93%d7%a8%d7%95%d7%a9%d7%94-%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-abap-%d7%9e%d7%a0%d7%95%d7%a1%d7%94/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
-"source": "mobileye",
-"external_id": "510d7b7d-4d58-4411-99c0-02a91022a7c6",
-"title": "Algorithm Performance & Data Analyst",
-"location": "Jerusalem",
-"excerpt": "Join Mobileye’s Autonomous Vehicle (AV) validation division, where algorithmic theory meets real-world performance. You will analyze and stress-test core algorithms powering autonomous driving, evaluating cutting-edge…",
-"description": "Join Mobileye’s Autonomous Vehicle (AV) validation division, where algorithmic theory meets real-world performance. You will analyze and stress-test core algorithms powering autonomous driving, evaluating cutting-edge computer vision, machine learning, and multi-sensor systems to ensure safety and system reliability.",
-"url": "https://careers.mobileye.com/jobs/algorithm-performance-data-analyst/510d7b7d-4d58-4411-99c0-02a91022a7c6",
-"is_hot": false,
-"last_updated": "2026-09-17",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "c3489228-75ae-4338-a99d-b8be98e6e79b",
-"title": "Senior Python Infrastructure Developer",
-"location": "Jerusalem",
-"excerpt": "Mobileye’s Software Group is looking for an experienced Python Infrastructure Tech Lead to join our Software Infrastructure Team. Our group is responsible for the full software stack running in the vehicle, as well as…",
-"description": "Mobileye’s Software Group is looking for an experienced Python Infrastructure Tech Lead to join our Software Infrastructure Team. Our group is responsible for the full software stack running in the vehicle, as well as the development tools and infrastructure that support it. We build and maintain a large-scale automation and infrastructure platform that serves multiple engineering teams across Mobileye. In this role, you will lead the architecture, design, development, and maintenance of high-quality Python-based infrastructure and applications. You will collaborate closely with software engineers, system architects, and project stakeholders to deliver robust, scalable, and innovative solutions that directly impact Mobileye’s core automotive technologies.",
-"url": "https://careers.mobileye.com/jobs/senior-python-infrastructure-developer/c3489228-75ae-4338-a99d-b8be98e6e79b",
-"is_hot": false,
-"last_updated": "2026-09-17",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "2c818cc2-24a1-4fca-93f2-340e2c9ad82c",
-"title": "Junior C++/Python Integration Engineer",
-"location": "Jerusalem",
-"excerpt": "We act as the Mobileye's main bundle of technologies system integrators, working closely with release managers, validation teams, and various R&D groups within the company to release high quality products. We oversee…",
-"description": "We act as the Mobileye's main bundle of technologies system integrators, working closely with release managers, validation teams, and various R&D groups within the company to release high quality products. We oversee the integration of algorithmic code and software code into Mobileye's main repository, and we handle various scales of gating tests. We deliver ADAS and AV Bundle release as Mobileye's internal R&D versions.",
-"url": "https://careers.mobileye.com/jobs/junior-cpython-integration-engineer/2c818cc2-24a1-4fca-93f2-340e2c9ad82c",
-"is_hot": false,
-"last_updated": "2026-09-17",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "3934efbd-71a7-4c15-b552-167d73a1375d",
-"title": "Algorithm Developer for Geometric Team",
-"location": "Jerusalem",
-"excerpt": "You will be part of Mobileye's REM (Road Experience Management) department, responsible for the automatic 3D High Definition map making process, a key technology powering Mobileye's autonomous driving and advanced…",
-"description": "You will be part of Mobileye's REM (Road Experience Management) department, responsible for the automatic 3D High Definition map making process, a key technology powering Mobileye's autonomous driving and advanced driver assistance systems. This process runs large‑scale algorithmic pipelines on big‑data infrastructure and requires a deep understanding of the team level code, a good understanding of the data flow integration with the group level, along with strong technical and algorithmic capabilities. We are seeking a geometrically‑inclined algorithm developer to solve real‑world geometric problems using signal processing, contributing directly to technologies that improve road safety.",
-"url": "https://careers.mobileye.com/jobs/algorithm-developer-for-geometric-team/3934efbd-71a7-4c15-b552-167d73a1375d",
+"source": "matrix",
+"external_id": "78253",
+"title": "ר”צ פיתוח למשרד ממשלתי בירושלים",
+"location": "ירושלים יו\"ש",
+"excerpt": "אנו מחפשים ר\"צ פיתוח להובלת פרויקטים טכנולוגיים מורכבים ומערכות מרכזיות. התפקיד כולל ניהול צוות פיתוח והבנה באיפיון וניתוח מערכות",
+"description": "אנו מחפשים ר\"צ פיתוח להובלת פרויקטים טכנולוגיים מורכבים ומערכות מרכזיות. התפקיד כולל ניהול צוות פיתוח והבנה באיפיון וניתוח מערכות",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%a8%d7%a6-%d7%a4%d7%99%d7%aa%d7%95%d7%97-%d7%9c%d7%9e%d7%a9%d7%a8%d7%93-%d7%9e%d7%9e%d7%a9%d7%9c%d7%aa%d7%99-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c%d7%99%d7%9d/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
-"source": "mobileye",
-"external_id": "2a8920e0-6dc6-48a8-b8b7-2f42f432e637",
-"title": "Algorithm Developer for Objects Modeling",
-"location": "Jerusalem",
-"excerpt": "Mobileye is looking for an Algorithm Developer, who will be challenged by solving problems from the real world using Computer Vision and Signal Processing. Our mission in the Algorithms department has a significant…",
-"description": "Mobileye is looking for an Algorithm Developer, who will be challenged by solving problems from the real world using Computer Vision and Signal Processing. Our mission in the Algorithms department has a significant impact on autonomous driving technologies and on saving lives. In this position, you will combine classic programming and algorithm development in Python/C++, you will be responsible for both maintaining the product and developing new features. As an Algorithm Developer, you will learn and develop new algorithms which can address new problems and challenges to solve as they arise. The work at Mobileye’s algorithms department is dynamic and includes hands-on work in running the process from the early stage of research to bringing the product to production, in collaboration with other teams at Mobileye.",
-"url": "https://careers.mobileye.com/jobs/algorithm-developer-for-objects-modeling/2a8920e0-6dc6-48a8-b8b7-2f42f432e637",
+"source": "matrix",
+"external_id": "78255",
+"title": "מפתח/ת תוכנה FullStack",
+"location": "ירושלים יו\"ש",
+"excerpt": "אנחנו מגייסים מפתח/ת תוכנה FullStack לארגון ממשלתי בירושלים ! משרה היברידית",
+"description": "אנחנו מגייסים מפתח/ת תוכנה FullStack לארגון ממשלתי בירושלים ! משרה היברידית",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-fullstack/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
-"source": "mobileye",
-"external_id": "c14fbc4f-8047-421b-968f-a3b5bd2c5146",
-"title": "Algorithm Developer for Radar/Lidar Group",
-"location": "Jerusalem",
-"excerpt": "Mobileye is looking for an Algorithm Developer, who will be challenged by solving problems from the real world using Computer Vision and Signal Processing. Our mission in the Algorithms department has a significant…",
-"description": "Mobileye is looking for an Algorithm Developer, who will be challenged by solving problems from the real world using Computer Vision and Signal Processing. Our mission in the Algorithms department has a significant impact on autonomous driving technologies and on saving lives. In this position, you will combine classic programming and algorithm development in Python/C++, you will be responsible for both maintaining the product and developing new features. As an Algorithm Developer, you will learn and develop new algorithms which can address new problems and challenges to solve as they arise. The work at Mobileye’s algorithms department is dynamic and includes hands-on work in running the process from the early stage of research to bringing the product to production, in collaboration with other teams at Mobileye.",
-"url": "https://careers.mobileye.com/jobs/algorithm-developer-for-radarlidar-group/c14fbc4f-8047-421b-968f-a3b5bd2c5146",
+"source": "matrix",
+"external_id": "78487",
+"title": "מפתח סיבל 2030",
+"location": "גוש דן, ירושלים יו\"ש",
+"excerpt": "דרוש/ה מפתח תוכנה מנוסה ב Siebel לארגון מוביל באיזור המרגז במסגרת התפקיד, פיתוח ותחזוקה שוטפת של רכיבי מערכת Siebel CRM כתיבת Scripts ו‑Workflows בהתאם לדרישות עסקיות וטכנולוגיות",
+"description": "דרוש/ה מפתח תוכנה מנוסה ב Siebel לארגון מוביל באיזור המרגז במסגרת התפקיד, פיתוח ותחזוקה שוטפת של רכיבי מערכת Siebel CRM כתיבת Scripts ו‑Workflows בהתאם לדרישות עסקיות וטכנולוגיות",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97-%d7%a1%d7%99%d7%91%d7%9c-2030/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
-"source": "mobileye",
-"external_id": "99456421-9f43-4f5b-98d1-4f2e0695ba04",
-"title": "Algorithm Researcher – Autonomous Driving (CTO Group)",
-"location": "Jerusalem",
-"excerpt": "The CTO Group is a small, elite team focused on the decision-making module of Mobileye's autonomous driving system. Our mission is to solve some of the hardest problems in autonomous driving by combining the full…",
-"description": "The CTO Group is a small, elite team focused on the decision-making module of Mobileye's autonomous driving system. Our mission is to solve some of the hardest problems in autonomous driving by combining the full spectrum of modern computer science - from rigorous mathematical modeling, optimization, and algorithm design to deep learning. The team develops the driving policies that translate system-wide inputs into safe, efficient, and human-like driving behavior. Our work spans classical algorithms, optimization under constraints, probabilistic reasoning, reinforcement & supervised learning, all grounded in real-world driving data. The group is comprised of top researchers and developers and is led by world-class scientists, offering a unique opportunity to work closely with the CTO, shape the future of autonomous driving, and influence the company's technical direction.",
-"url": "https://careers.mobileye.com/jobs/algorithm-researcher-autonomous-driving-cto-group/99456421-9f43-4f5b-98d1-4f2e0695ba04",
+"source": "matrix",
+"external_id": "78527",
+"title": "מפתח/ת תוכנה לארגון ביטחוני בירושלים",
+"location": "ירושלים יו\"ש",
+"excerpt": "אנחנו מחפשים מפתח/ת תוכנה להצטרפות לצוות שלנו! בתפקיד זה תבצע/י פיתוח מערכות Web (Client & Server) על פי מפרטים, תשתתף/י בעיצוב ופיתוח פרויקטים בתחומי תשתיות ודיגיטל, ותעבוד/י על פיתוח Microservices ותחזוקת מערכות…",
+"description": "אנחנו מחפשים מפתח/ת תוכנה להצטרפות לצוות שלנו! בתפקיד זה תבצע/י פיתוח מערכות Web (Client & Server) על פי מפרטים, תשתתף/י בעיצוב ופיתוח פרויקטים בתחומי תשתיות ודיגיטל, ותעבוד/י על פיתוח Microservices ותחזוקת מערכות קיימות. בנוסף, תהיה/י מעורב/ת בהנחיית תוכניתנים בצוות",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%9c%d7%90%d7%a8%d7%92%d7%95%d7%9f-%d7%91%d7%99%d7%98%d7%97%d7%95%d7%a0%d7%99-%d7%91%d7%99%d7%a8%d7%95%d7%a9%d7%9c%d7%99%d7%9d2/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
-"source": "mobileye",
-"external_id": "2dcef828-5169-4a8c-8975-6f4cedf183d9",
-"title": "Applied AI Engineer - Temporary Position",
-"location": "Jerusalem",
-"excerpt": "Mobileye is looking for an Applied AI Engineer to join the MECI Interfaces team within the Software Engineering organization. The MECI Group enables Mobileye’s algorithmic development flow by building scalable CI,…",
-"description": "Mobileye is looking for an Applied AI Engineer to join the MECI Interfaces team within the Software Engineering organization. The MECI Group enables Mobileye’s algorithmic development flow by building scalable CI, build, test, and AI-driven tooling that supports the full development lifecycle. Our platforms allow Mobileye to scale efficiently and increase development velocity, while maintaining high standards of reliability, collaboration, and developer well-being. As an Applied AI Engineer, you will be at the forefront of integrating Large Language Models (LLMs) and agentic workflows into our internal platforms. Your primary goal will be to solve complex problems across the Software Development Life Cycle (SDLC) by building intuitive, AI-powered tools that directly support our developers and internal users. This role offers the unique opportunity to both expand the intelligence of our existing developer tools and architect entirely new workflows from the ground up in a highly technical, fast-paced environment.",
-"url": "https://careers.mobileye.com/jobs/applied-ai-engineer-temporary-position/2dcef828-5169-4a8c-8975-6f4cedf183d9",
+"source": "matrix",
+"external_id": "78704",
+"title": "מפתח/ת תוכנה בכיר/ה – פיתוח AI",
+"location": "ירושלים יו\"ש",
+"excerpt": "מפתח/ת תוכנה בכיר/ה – פיתוח AI",
+"description": "מפתח/ת תוכנה בכיר/ה – פיתוח AI",
+"url": "https://www.matrix.co.il/jobs/משרה/%d7%9e%d7%a4%d7%aa%d7%97%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94-%d7%91%d7%9b%d7%99%d7%a8%d7%94-%d7%a4%d7%99%d7%aa%d7%95%d7%97-ai/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "73a2fc5d-ed55-4bd5-b421-ba40955d8247",
-"title": "Backend Team Lead - REM Engineering",
-"location": "Jerusalem",
-"excerpt": "As the Backend Team Lead for REM Ingestion, you will spearhead the design, development, and scaling of the critical entry point for Mobileye’s Road Experience Management (REM) platform. Your team is responsible for…",
-"description": "As the Backend Team Lead for REM Ingestion, you will spearhead the design, development, and scaling of the critical entry point for Mobileye’s Road Experience Management (REM) platform. Your team is responsible for capturing, processing, and validating massive streams of crowdsourced data from millions of vehicles worldwide in real time.This is a hybrid leadership and technical role. You will lead a squad of engineers while remaining hands-on in architecting resilient, ultra-high-throughput distributed systems that power the future of autonomous driving and advanced mapping.",
-"url": "https://careers.mobileye.com/jobs/backend-team-lead-rem-engineering/73a2fc5d-ed55-4bd5-b421-ba40955d8247",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "9495066e-ebcc-49ed-bac5-0480be15753f",
-"title": "C++ Software Engineer",
-"location": "Jerusalem",
-"excerpt": "We are looking for an adaptable, proactive C++ Software Engineer to join our Algorithm & Software team. In this role, you’ll be a vital link between algorithm development, software architecture, and cross-functional…",
-"description": "We are looking for an adaptable, proactive C++ Software Engineer to join our Algorithm & Software team. In this role, you’ll be a vital link between algorithm development, software architecture, and cross-functional engineering teams. Your primary mission will be to turn core algorithmic logic into robust software, integrate components across diverse platforms, and coordinate directly with adjacent teams to advance our software goals.",
-"url": "https://careers.mobileye.com/jobs/c-software-engineer/9495066e-ebcc-49ed-bac5-0480be15753f",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "2c8dbb83-2f6d-4e2a-a393-770d2a27e679",
-"title": "Camera System Engineer",
-"location": "Jerusalem",
-"excerpt": "Mobileye builds camera-based ADAS and autonomous-driving systems with leading OEMs. This role is part of the Optical Path System Architecture and Integration team: the group that takes a new sensor integration from…",
-"description": "Mobileye builds camera-based ADAS and autonomous-driving systems with leading OEMs. This role is part of the Optical Path System Architecture and Integration team: the group that takes a new sensor integration from early requirements to a fully validated optical path. As Camera System Engineer you will drive the full integration lifecycle of complex real-time embedded systems — bridging hardware platforms and software stacks from early requirements definition and platform bring-up through system-level validation and verification. You will support pre-nomination and help close optical-path requirement gaps. Working closely with the Camera SW team and providing the pre-requisite they need for development and productization.",
-"url": "https://careers.mobileye.com/jobs/camera-system-engineer/2c8dbb83-2f6d-4e2a-a393-770d2a27e679",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "89b5d584-1a18-4087-a8ca-46172fdf9c29",
-"title": "Cyber Security Solution Architect",
-"location": "Jerusalem",
-"excerpt": "The Mobileye Platform Product Management team is looking for a highly driven, experienced, and dynamic Cybersecurity Product Manager, to join our team and help shape the future of ADAS and Autonomous Driving systems.…",
-"description": "The Mobileye Platform Product Management team is looking for a highly driven, experienced, and dynamic Cybersecurity Product Manager, to join our team and help shape the future of ADAS and Autonomous Driving systems. The team is leading Platform Products and Features Requirements and Execution, E2E, across all Mobileye teams and across projects. In this role, you will be involved in defining the product roadmap, and the product release planning, tracking the execution and helping in removing blockers, work with customers outside and inside Mobileye, to ensure the TTM and quality are met.",
-"url": "https://careers.mobileye.com/jobs/cyber-security-solution-architect/89b5d584-1a18-4087-a8ca-46172fdf9c29",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "3f688c83-654a-49c2-aa7e-d2636adfc6b0",
-"title": "Deep Learning Algorithm Engineer - REM Semantics",
-"location": "Jerusalem",
-"excerpt": "You will be part of Mobileye's REM (Road Experience Management) department which is responsible for the automatic High Definition map-making process, which is a key technology in Mobileye's autonomous driving and…",
-"description": "You will be part of Mobileye's REM (Road Experience Management) department which is responsible for the automatic High Definition map-making process, which is a key technology in Mobileye's autonomous driving and high-end Driving Assistance systems. You will be joining the team that builds the state-of-the-art AI-powered relevancy systems at scale. You will be designing and implementing semantic understanding engines that power data-driven products across autonomous driving and beyond, combining cutting-edge Computer Vision, Graph Neural Networks, and efficient inference to solve real-world perception challenges.",
-"url": "https://careers.mobileye.com/jobs/deep-learning-algorithm-engineer-rem-semantics/3f688c83-654a-49c2-aa7e-d2636adfc6b0",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "cbb56190-180f-4d21-8a21-95418a3eb8a5",
-"title": "Embedded Linux OS Architect",
-"location": "Jerusalem",
-"excerpt": "Mobileye Autonomous Driving software group is looking for an OS expert with strong knowledge in the Linux Kernel. As a Linux Operating System architect, you will be responsible to work with system and SW architecture…",
-"description": "Mobileye Autonomous Driving software group is looking for an OS expert with strong knowledge in the Linux Kernel. As a Linux Operating System architect, you will be responsible to work with system and SW architecture teams to define OS solutions to satisfy customer requirements for the autonomous vehicle world. This involves security and connectivity components in Mobileye’s Safety critical Linux OS involving both the Kernel and the user space worlds. This is an exciting and unique opportunity to work with highly talented Linux OS team and be a leader in the development of the Linux as a platform for the Safety Critical Automotive industry.",
-"url": "https://careers.mobileye.com/jobs/embedded-linux-os-architect/cbb56190-180f-4d21-8a21-95418a3eb8a5",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "fdee723f-1dac-49df-a209-6765d40d3beb",
-"title": "Embedded Team Leader -OS Integration & Automation",
-"location": "Jerusalem",
-"excerpt": "Mobileye is looking for a skilled and motivated Embedded SW Integration Team Lead for the Platform OS Department to manage the daily integration of the OS deliveries into Mobileye’s SW stack. The Platform OS team of…",
-"description": "Mobileye is looking for a skilled and motivated Embedded SW Integration Team Lead for the Platform OS Department to manage the daily integration of the OS deliveries into Mobileye’s SW stack. The Platform OS team of Mobileye is leading a global effort of making the Linux OS as the Automotive Safety OS that will fuel the Autonomous Vehicle and the whole automotive industry. You’ll lead a fast-paced, hands-on and dynamic team of integration and automation engineers, contributing to the overall qualification and integration effort of Mobileye while collaborating with other teams across the organization.",
-"url": "https://careers.mobileye.com/jobs/embedded-team-leader-os-integration-automation/fdee723f-1dac-49df-a209-6765d40d3beb",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "20a11252-02b4-43c0-9449-6247fb6617fe",
-"title": "Experienced Control Algorithms Engineer",
-"location": "Jerusalem",
-"excerpt": "We are seeking a highly skilled and innovative Control Engineer to join our dynamic team dedicated to advancing the field of autonomous vehicles. As a Control Engineer, you will play a crucial role in designing,…",
-"description": "We are seeking a highly skilled and innovative Control Engineer to join our dynamic team dedicated to advancing the field of autonomous vehicles. As a Control Engineer, you will play a crucial role in designing, developing, implementing and testing hands on control algorithms to enhance the performance, safety, and efficiency of our autonomous vehicle systems.",
-"url": "https://careers.mobileye.com/jobs/experienced-control-algorithms-engineer/20a11252-02b4-43c0-9449-6247fb6617fe",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "48df21e2-84dd-42e7-9d55-f4121d444df8",
-"title": "Experienced Deep Learning Algorithm Developer - Road Team",
-"location": "Jerusalem",
-"excerpt": "The road algorithm team is responsible for the critical and challenging task of detecting the drivable lanes on the road. We focus on Deep Learning algorithms, classical Computer Vision and Geometric Modeling…",
-"description": "The road algorithm team is responsible for the critical and challenging task of detecting the drivable lanes on the road. We focus on Deep Learning algorithms, classical Computer Vision and Geometric Modeling algorithms. We are looking for an Algorithm Developer to help us advance our technology and push the boundaries of what's possible in autonomous driving.",
-"url": "https://careers.mobileye.com/jobs/experienced-deep-learning-algorithm-developer-road-team/48df21e2-84dd-42e7-9d55-f4121d444df8",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "de4739b8-eda9-4262-ae5b-c3ee15d86a3c",
-"title": "Experienced Deep Learning Algorithm Developer – Object Perception Group",
-"location": "Jerusalem",
-"excerpt": "We are looking for an experienced Deep Learning Algorithm Developer to join one of our teams developing perception technologies for autonomous driving. Our group tackles diverse challenges — from object detection and…",
-"description": "We are looking for an experienced Deep Learning Algorithm Developer to join one of our teams developing perception technologies for autonomous driving. Our group tackles diverse challenges — from object detection and scene understanding to 3D perception — using large-scale, real-world in-house datasets and state-of-the-art deep learning models.",
-"url": "https://careers.mobileye.com/jobs/experienced-deep-learning-algorithm-developer-object-perception-group/de4739b8-eda9-4262-ae5b-c3ee15d86a3c",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "ae0844fc-26c2-4df9-9a11-03e80dbc90e8",
-"title": "Experienced Low Level Software Engineer",
-"location": "Jerusalem",
-"excerpt": "Mobileye's EyeQ Platform Group in Jerusalem is looking for an embedded SW developer who will be responsible for validating custom hardware in Mobileye SoC. As an experienced embedded developer, you will be writing C/C++…",
-"description": "Mobileye's EyeQ Platform Group in Jerusalem is looking for an embedded SW developer who will be responsible for validating custom hardware in Mobileye SoC. As an experienced embedded developer, you will be writing C/C++ code for Mobileye vision SoC and be engaged in a wide range of activities: starting from system verification on simulators, moving through the design and implementation of HW drivers for Mobileye's proprietary OS, working closely with ASIC designers to cover all HW features, gaining insight into the inner workings of hardware, and using your knowledge to iron out bugs in silicon on customer boards via JTAG probes. It's a unique opportunity to be part of the complete lifecycle of a system on a chip. Our group's area of responsibility resides on the SW/HW boundary and thus requires the ability to understand and use complex HW specifications for SW drivers and test development.",
-"url": "https://careers.mobileye.com/jobs/experienced-low-level-software-engineer/ae0844fc-26c2-4df9-9a11-03e80dbc90e8",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "cf198663-8759-4f08-96c3-e564aca85d8d",
-"title": "Experienced Software Engineer - Data Systems & Tools",
-"location": "Jerusalem",
-"excerpt": "Mobileye is looking for an experienced Software Engineer to join our Algorithms organization and help build the systems, tools, and workflows that support large-scale data operations and analysis. In this role, you will…",
-"description": "Mobileye is looking for an experienced Software Engineer to join our Algorithms organization and help build the systems, tools, and workflows that support large-scale data operations and analysis. In this role, you will take ownership of designing and developing solutions that streamline data request management, pipeline monitoring, reporting, and operational workflows across multiple products and systems. You will work closely with algorithm developers, analysts, product stakeholders, and infrastructure teams to transform ad-hoc processes into scalable, maintainable systems. The systems and tools will coordinate work through the workflow, detect blockers and rerun needs, and provide a reliable operational view across requests, products, and issues. We are looking for an engineer with strong system-level thinking, a proactive mindset, and the ability to independently define requirements, identify gaps, and drive projects from concept to production.",
-"url": "https://careers.mobileye.com/jobs/experienced-software-engineer-data-systems-tools/cf198663-8759-4f08-96c3-e564aca85d8d",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "1b3f71b9-fe39-41d3-bd43-4ae7ad18f92e",
-"title": "Machine Learning Software Engineer",
-"location": "Jerusalem",
-"excerpt": "Mobileye is looking for a Machine Learning Software Engineer, who will be challenged by bridging the gap between cutting-edge machine learning research and robust production deployment. In this position, you will…",
-"description": "Mobileye is looking for a Machine Learning Software Engineer, who will be challenged by bridging the gap between cutting-edge machine learning research and robust production deployment. In this position, you will combine software engineering expertise with machine learning deployment knowledge, responsible for taking our algorithms and developing robust production solutions that serve them at scale. The work at Mobileye’s algorithms department is fast-paced and requires staying ahead of the curve with the latest engineering solutions and best practices adopted across the ML community, while staying informed about emerging solutions in both computer vision and NLP domains and understanding the specific problems they address.",
-"url": "https://careers.mobileye.com/jobs/machine-learning-software-engineer/1b3f71b9-fe39-41d3-bd43-4ae7ad18f92e",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "ed5da113-bd7b-4654-b115-8c29723e0295",
-"title": "Outstanding Graduate Algorithm Developer",
-"location": "Jerusalem",
-"excerpt": "Mobileye is a global leader in autonomous vehicle (AV) technology, pioneering advanced driver-assistance systems (ADAS) and self-driving solutions. Across the company, algorithm developers work at the forefront of…",
-"description": "Mobileye is a global leader in autonomous vehicle (AV) technology, pioneering advanced driver-assistance systems (ADAS) and self-driving solutions. Across the company, algorithm developers work at the forefront of AV/ADAS innovation - designing and implementing perception, mapping, computer vision, and decision-making algorithms, typically in Python or C++. At Mobileye, algorithm developers join a variety of teams across a broad range of domains. This role serves as a central entry point, allowing us to match your expertise and aspirations with the team where you can make the greatest impact. Algorithm developers at Mobileye contribute to diverse areas of innovation, including: • Detection: Developing algorithms to identify and track road users, lanes, and other key elements of the driving environment in real time. • Object Modeling: Developing algorithms to identify, classify, and measure objects (general, unclassified, etc.), enabling precise scene understanding. • Geometry: Developing algorithms to model road geometry, vehicle motion, and calibrations, providing essential spatial data that supports localization, 3D object placement, tracking, and other core perception tasks. • M",
-"url": "https://careers.mobileye.com/jobs/outstanding-graduate-algorithm-developer/ed5da113-bd7b-4654-b115-8c29723e0295",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "2c2e26d6-d40a-40d1-b6f8-510781e9a3f4",
-"title": "Senior C++ Software Engineer - Integration & Delivery (CTO Team)",
-"location": "Jerusalem",
-"excerpt": "Mobileye is looking for an experienced Software and Integration Engineer to join the CTO group and take a key role in delivering robust, large-scale autonomous driving software. The group is primarily focused on the…",
-"description": "Mobileye is looking for an experienced Software and Integration Engineer to join the CTO group and take a key role in delivering robust, large-scale autonomous driving software. The group is primarily focused on the decision-making module of Mobileye's self-driving car. It leverages a wide range of algorithmic approaches, rigorous formal definitions, and mathematical modeling- enriched by insights drawn from large-scale data and real-world driving experience. In this role you will play a key role in designing, building, and maintaining Algo utility and software infrastructure within the company's primary algorithmic flow.",
-"url": "https://careers.mobileye.com/jobs/senior-c-software-engineer-integration-delivery-cto-team/2c2e26d6-d40a-40d1-b6f8-510781e9a3f4",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "ade97368-7948-4dbb-a574-1268ad41cbf0",
-"title": "Senior Computer Vision Data Engineer",
-"location": "Jerusalem",
-"excerpt": "The AI Engineering group builds modern infrastructure and solutions that improve how algorithms are developed at Mobileye. We are a small, independent team of experienced engineers with a mix of skills in algorithms,…",
-"description": "The AI Engineering group builds modern infrastructure and solutions that improve how algorithms are developed at Mobileye. We are a small, independent team of experienced engineers with a mix of skills in algorithms, software, and infrastructure. We work in a DevOps style and build cross-team solutions that support research and development of advanced perception algorithms. Our flagship project is a unified AV dataset used to train and evaluate next-generation models. We take large volumes of multi-camera video, object labels, HD maps, and sensor data from across the organization, and turn it into a curated, high-quality training set - at scale. We are looking for someone who brings ML and computer-vision depth to the team - someone who can help shape the intelligence layer that decides what data is worth training on.",
-"url": "https://careers.mobileye.com/jobs/senior-computer-vision-data-engineer/ade97368-7948-4dbb-a574-1268ad41cbf0",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "050c9118-b8bd-42c7-9a5d-bf0ef7e6a196",
-"title": "Senior Full Stack Developer",
-"location": "Jerusalem",
-"excerpt": "Join the MECI team within Mobileye’s Algo Software Engineering group. Our mission is to accelerate developer velocity, streamline the engineering lifecycle, and build high-impact internal platforms for Mobileye’s…",
-"description": "Join the MECI team within Mobileye’s Algo Software Engineering group. Our mission is to accelerate developer velocity, streamline the engineering lifecycle, and build high-impact internal platforms for Mobileye’s algorithm and software teams. We are looking for a Senior Full-Stack Developer (Frontend-Oriented) with a strong frontend focus and an eye for exceptional UX to help us build intuitive, modern, and scalable web applications. In this role, your work will directly boost the productivity of hundreds of engineers across the company.",
-"url": "https://careers.mobileye.com/jobs/senior-full-stack-developer/050c9118-b8bd-42c7-9a5d-bf0ef7e6a196",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "169eb36e-82dd-4bcb-bdf0-06d7be6d94c4",
-"title": "Senior Full-Stack Platform Engineer – Agentic AI",
-"location": "Jerusalem",
-"excerpt": "Mobileye is looking for a talented Senior Full-Stack Platform Engineer to join a our \"Enterprise AI Enablement\" team. In this role, you will combine hands-on full-stack engineering, platform ownership, product thinking,…",
-"description": "Mobileye is looking for a talented Senior Full-Stack Platform Engineer to join a our \"Enterprise AI Enablement\" team. In this role, you will combine hands-on full-stack engineering, platform ownership, product thinking, and technical leadership in agent-led development. You will own solutions end-to-end, from understanding user needs and shaping the experience to architecture, UX/UI, frontend, backend, data modeling, integrations, deployment, and production operation. You will also help lead how we adopt agentic development, continuously evaluating emerging models, tools, and engineering practices and turning them into effective, reliable development workflows.",
-"url": "https://careers.mobileye.com/jobs/senior-fullstack-platform-engineer-agentic-ai/169eb36e-82dd-4bcb-bdf0-06d7be6d94c4",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "25f2cd2f-fbac-4101-b913-045cdc4458a3",
-"title": "Senior ML Data Engineer",
-"location": "Jerusalem",
-"excerpt": "The AI Engineering group builds modern infrastructure and solutions that improve how algorithms are developed at Mobileye. We are a small, independent team of experienced engineers with a mix of skills in algorithms,…",
-"description": "The AI Engineering group builds modern infrastructure and solutions that improve how algorithms are developed at Mobileye. We are a small, independent team of experienced engineers with a mix of skills in algorithms, software, and infrastructure. We work in a DevOps style and build cross-team solutions that support research and development of advanced perception algorithms. Our flagship project is a unified AV dataset used to train and evaluate next-generation models. We take large volumes of multi-camera video, object labels, HD maps, and sensor data from across the organization, and turn it into a curated, high-quality training set - at scale. We are looking for someone who brings ML and computer-vision depth to the team - someone who can help shape the intelligence layer that decides what data is worth training on.",
-"url": "https://careers.mobileye.com/jobs/senior-ml-data-engineer/25f2cd2f-fbac-4101-b913-045cdc4458a3",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "16bfb65e-79eb-4a25-b803-0a24f40489b8",
-"title": "Senior Python Developer for Map Management",
-"location": "Jerusalem",
-"excerpt": "You will be part of Mobileye's REM department that is responsible for the automatic High-Definition map-making process, which is a key technology in Mobileye's autonomous driving and high-end Driving Assistance systems.…",
-"description": "You will be part of Mobileye's REM department that is responsible for the automatic High-Definition map-making process, which is a key technology in Mobileye's autonomous driving and high-end Driving Assistance systems. This process involves running advanced algorithmic code in a massively parallel way, utilizing Big Data technologies, and as such is a complex system that requires a deep understanding of our map creation process as well as advanced technical abilities. Our team focuses on next phase developments within the map creation system, which involves algorithmic developments, cross teams (algo and engineering) developments.",
-"url": "https://careers.mobileye.com/jobs/senior-python-developer-for-map-management/16bfb65e-79eb-4a25-b803-0a24f40489b8",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "f3de4dd1-fed7-4d16-825a-562746ccfe79",
-"title": "Senior Software Engineer - C++ Embedded Systems (Autonomous Driving)",
-"location": "Jerusalem",
-"excerpt": "We are part of Mobileye's REM (Road Experience Management) organization, responsible for the HD maps that power Mobileye's autonomous driving technologies. Our team develops the in-vehicle map platform, including smart…",
-"description": "We are part of Mobileye's REM (Road Experience Management) organization, responsible for the HD maps that power Mobileye's autonomous driving technologies. Our team develops the in-vehicle map platform, including smart cloud map downloads, caching, map management, efficient APIs for map consumers, and protocols for distributing map data across vehicle ECUs. We also develop map-based algorithms such as route calculation and lane network generation, which are key components of autonomous driving systems. This is a highly technical role involving embedded software, large-scale map data, performance optimization, and collaboration across multiple engineering teams.",
-"url": "https://careers.mobileye.com/jobs/senior-software-engineer-c-embedded-systems-autonomous-driving/f3de4dd1-fed7-4d16-825a-562746ccfe79",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "f566122f-06cb-4359-a7cd-49ee17ec9528",
-"title": "Senior System Architect for ECU designs",
-"location": "Jerusalem",
-"excerpt": "Mobileye is at the forefront of developing autonomous driving systems with leading OEMs, by integrating Mobileye state-of-the-art ECUs into various vehicles.We are developing advanced automotive ECUs for next-generation…",
-"description": "Mobileye is at the forefront of developing autonomous driving systems with leading OEMs, by integrating Mobileye state-of-the-art ECUs into various vehicles.We are developing advanced automotive ECUs for next-generation vehicle functions. Our programs require a robust end-to-end verification strategy that ensures design correctness, safety, and performance across complex HW/SW systems and multiple suppliers In this role, you will own the system architecture for our ECU designs—from defining the verification concept and traceability, through specifying verification environments and evidence, to leading technical alignment across hardware, embedded software, and validation teams.You’ll collaborate with architects, design engineers, verification leads, and suppliers to deliver high-quality ECU platforms to OEMs and Tier 1s. Your work will directly influence product quality, time-to-market, and readiness for customer reviews and audits.",
-"url": "https://careers.mobileye.com/jobs/senior-system-architect-for-ecu-designs/f566122f-06cb-4359-a7cd-49ee17ec9528",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "da38c082-c92f-4287-8d87-ffdb1ad6696f",
-"title": "Senior Thermal Engineer",
-"location": "Jerusalem",
-"excerpt": "We are looking for a highly experienced Senior Thermal Engineer to join Mobileye’s Architecture engineering team and take a key role in the development of next-generation SoCs, ECUs, and high-performance compute…",
-"description": "We are looking for a highly experienced Senior Thermal Engineer to join Mobileye’s Architecture engineering team and take a key role in the development of next-generation SoCs, ECUs, and high-performance compute platforms for autonomous driving systems. The position combines SoC/package thermal development, ECU cooling architecture, thermal simulation, characterization, validation, and vehicle-level thermal integration, working across multiple next-generation programs from early concept through qualification and production. Please note: This position is also relevant for our other sites in Haifa, Petah Tikva, and Jerusalem.",
-"url": "https://careers.mobileye.com/jobs/senior-thermal-engineer/da38c082-c92f-4287-8d87-ffdb1ad6696f",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "fb4ade19-941d-4b5d-b3c6-a6faa2f61426",
-"title": "Senior Thermal-Mechanical Engineer",
-"location": "Jerusalem",
-"excerpt": "We are looking for a highly skilled Senior Thermal-Mechanical Engineer to join our mechanical engineering team as a key player in the development of next-generation high-performance compute platforms for autonomous…",
-"description": "We are looking for a highly skilled Senior Thermal-Mechanical Engineer to join our mechanical engineering team as a key player in the development of next-generation high-performance compute platforms for autonomous driving systems. This key position includes leading the thermal-mechanical design and cooling architecture of advanced electronic systems throughout all lifecycle stages—from concept to mass production—while working closely with hardware, PCB layout, mechanical, validation, manufacturing, suppliers, and customers.",
-"url": "https://careers.mobileye.com/jobs/senior-thermalmechanical-engineer/fb4ade19-941d-4b5d-b3c6-a6faa2f61426",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "ac5f0c5c-3652-478e-aa66-783f70af24b7",
-"title": "Software Algorithms RT Engineer - Active Sensor Group",
-"location": "Jerusalem",
-"excerpt": "The team is responsible for the software infrastructure surrounding Radar and LiDAR sensors and is part of Mobileye’s Algo Optimization group. We bridge the gap between cutting-edge sensor technologies and our…",
-"description": "The team is responsible for the software infrastructure surrounding Radar and LiDAR sensors and is part of Mobileye’s Algo Optimization group. We bridge the gap between cutting-edge sensor technologies and our proprietary hardware accelerators. We build the core software foundation for perception algorithms, managing the end-to-end flow of sensor data ingestion, parsing, validation, and real-time optimization. Working at the intersection of software, firmware, and hardware, we play a critical role in bringing next-generation sensing capabilities to production vehicles.",
-"url": "https://careers.mobileye.com/jobs/software-algorithms-rt-engineer-active-sensor-group/ac5f0c5c-3652-478e-aa66-783f70af24b7",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "277476b2-bd2a-44d8-a727-caca1dcb4b45",
-"title": "Solution Architect for Cloud Communication",
-"location": "Jerusalem",
-"excerpt": "Join Mobileye, a leader in autonomous driving technology, and shape the future of transportation. As a Solution Architect, you'll be at the forefront of innovation, driving cutting-edge features from concept to…",
-"description": "Join Mobileye, a leader in autonomous driving technology, and shape the future of transportation. As a Solution Architect, you'll be at the forefront of innovation, driving cutting-edge features from concept to commercialization.",
-"url": "https://careers.mobileye.com/jobs/solution-architect-for-cloud-communication/277476b2-bd2a-44d8-a727-caca1dcb4b45",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "mobileye",
-"external_id": "5d23dc1d-fc84-427d-96cf-cd151087561d",
-"title": "Solution Architect for Embedded Autonomous Vehicle System",
-"location": "Jerusalem",
-"excerpt": "Join Mobileye, a leader in autonomous driving technology, and shape the future of transportation. As a Solution Architect, you'll be at the forefront of innovation, driving cutting-edge features from concept to…",
-"description": "Join Mobileye, a leader in autonomous driving technology, and shape the future of transportation. As a Solution Architect, you'll be at the forefront of innovation, driving cutting-edge features from concept to commercialization. ** This role requires working from our Petah Tikva site 1 day per week. It also offers the flexibility to work part-time from our other sites, subject to seat availability.",
-"url": "https://careers.mobileye.com/jobs/solution-architect-for-embedded-autonomous-vehicle-system/5d23dc1d-fc84-427d-96cf-cd151087561d",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -852,7 +408,7 @@
 "url": "https://careers.mobileye.com/jobs/system-architect/5215cdc7-1576-48da-8c92-ca128ddf2c6e",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -864,7 +420,7 @@
 "url": "https://careers.mobileye.com/jobs/system-integration-engineer/76cc4d7b-72d2-43dd-87c9-3ae595bbaf46",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -876,7 +432,7 @@
 "url": "https://careers.mobileye.com/jobs/system-validation-architect/5f17d79a-7430-48c6-97b0-f4432bac6b7c",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -888,7 +444,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-av-project-manager-team-lead/fcb6a990-573b-49d1-bfb0-ecb6abc003b7",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -900,7 +456,7 @@
 "url": "https://careers.mobileye.com/jobs/senior-customer-solutions-engineer/35d894ad-8260-4ce3-ab56-0ff03c474009",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -912,7 +468,391 @@
 "url": "https://careers.mobileye.com/jobs/senior-platform-software-project-manager/f15e7124-1aab-4301-9fec-547c7c24c6b1",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "9495066e-ebcc-49ed-bac5-0480be15753f",
+"title": "C++ Software Engineer",
+"location": "Jerusalem",
+"excerpt": "We are looking for an adaptable, proactive C++ Software Engineer to join our Algorithm & Software team. In this role, you’ll be a vital link between algorithm development, software architecture, and cross-functional…",
+"description": "We are looking for an adaptable, proactive C++ Software Engineer to join our Algorithm & Software team. In this role, you’ll be a vital link between algorithm development, software architecture, and cross-functional engineering teams. Your primary mission will be to turn core algorithmic logic into robust software, integrate components across diverse platforms, and coordinate directly with adjacent teams to advance our software goals.",
+"url": "https://careers.mobileye.com/jobs/c-software-engineer/9495066e-ebcc-49ed-bac5-0480be15753f",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "73a2fc5d-ed55-4bd5-b421-ba40955d8247",
+"title": "Backend Team Lead - REM Engineering",
+"location": "Jerusalem",
+"excerpt": "As the Backend Team Lead for REM Ingestion, you will spearhead the design, development, and scaling of the critical entry point for Mobileye’s Road Experience Management (REM) platform. Your team is responsible for…",
+"description": "As the Backend Team Lead for REM Ingestion, you will spearhead the design, development, and scaling of the critical entry point for Mobileye’s Road Experience Management (REM) platform. Your team is responsible for capturing, processing, and validating massive streams of crowdsourced data from millions of vehicles worldwide in real time.This is a hybrid leadership and technical role. You will lead a squad of engineers while remaining hands-on in architecting resilient, ultra-high-throughput distributed systems that power the future of autonomous driving and advanced mapping.",
+"url": "https://careers.mobileye.com/jobs/backend-team-lead-rem-engineering/73a2fc5d-ed55-4bd5-b421-ba40955d8247",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "3934efbd-71a7-4c15-b552-167d73a1375d",
+"title": "Algorithm Developer for Geometric Team",
+"location": "Jerusalem",
+"excerpt": "You will be part of Mobileye's REM (Road Experience Management) department, responsible for the automatic 3D High Definition map making process, a key technology powering Mobileye's autonomous driving and advanced…",
+"description": "You will be part of Mobileye's REM (Road Experience Management) department, responsible for the automatic 3D High Definition map making process, a key technology powering Mobileye's autonomous driving and advanced driver assistance systems. This process runs large‑scale algorithmic pipelines on big‑data infrastructure and requires a deep understanding of the team level code, a good understanding of the data flow integration with the group level, along with strong technical and algorithmic capabilities. We are seeking a geometrically‑inclined algorithm developer to solve real‑world geometric problems using signal processing, contributing directly to technologies that improve road safety.",
+"url": "https://careers.mobileye.com/jobs/algorithm-developer-for-geometric-team/3934efbd-71a7-4c15-b552-167d73a1375d",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "2a8920e0-6dc6-48a8-b8b7-2f42f432e637",
+"title": "Algorithm Developer for Objects Modeling",
+"location": "Jerusalem",
+"excerpt": "Mobileye is looking for an Algorithm Developer, who will be challenged by solving problems from the real world using Computer Vision and Signal Processing. Our mission in the Algorithms department has a significant…",
+"description": "Mobileye is looking for an Algorithm Developer, who will be challenged by solving problems from the real world using Computer Vision and Signal Processing. Our mission in the Algorithms department has a significant impact on autonomous driving technologies and on saving lives. In this position, you will combine classic programming and algorithm development in Python/C++, you will be responsible for both maintaining the product and developing new features. As an Algorithm Developer, you will learn and develop new algorithms which can address new problems and challenges to solve as they arise. The work at Mobileye’s algorithms department is dynamic and includes hands-on work in running the process from the early stage of research to bringing the product to production, in collaboration with other teams at Mobileye.",
+"url": "https://careers.mobileye.com/jobs/algorithm-developer-for-objects-modeling/2a8920e0-6dc6-48a8-b8b7-2f42f432e637",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "48df21e2-84dd-42e7-9d55-f4121d444df8",
+"title": "Experienced Deep Learning Algorithm Developer - Road Team",
+"location": "Jerusalem",
+"excerpt": "The road algorithm team is responsible for the critical and challenging task of detecting the drivable lanes on the road. We focus on Deep Learning algorithms, classical Computer Vision and Geometric Modeling…",
+"description": "The road algorithm team is responsible for the critical and challenging task of detecting the drivable lanes on the road. We focus on Deep Learning algorithms, classical Computer Vision and Geometric Modeling algorithms. We are looking for an Algorithm Developer to help us advance our technology and push the boundaries of what's possible in autonomous driving.",
+"url": "https://careers.mobileye.com/jobs/experienced-deep-learning-algorithm-developer-road-team/48df21e2-84dd-42e7-9d55-f4121d444df8",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "c14fbc4f-8047-421b-968f-a3b5bd2c5146",
+"title": "Algorithm Developer for Radar/Lidar Group",
+"location": "Jerusalem",
+"excerpt": "Mobileye is looking for an Algorithm Developer, who will be challenged by solving problems from the real world using Computer Vision and Signal Processing. Our mission in the Algorithms department has a significant…",
+"description": "Mobileye is looking for an Algorithm Developer, who will be challenged by solving problems from the real world using Computer Vision and Signal Processing. Our mission in the Algorithms department has a significant impact on autonomous driving technologies and on saving lives. In this position, you will combine classic programming and algorithm development in Python/C++, you will be responsible for both maintaining the product and developing new features. As an Algorithm Developer, you will learn and develop new algorithms which can address new problems and challenges to solve as they arise. The work at Mobileye’s algorithms department is dynamic and includes hands-on work in running the process from the early stage of research to bringing the product to production, in collaboration with other teams at Mobileye.",
+"url": "https://careers.mobileye.com/jobs/algorithm-developer-for-radarlidar-group/c14fbc4f-8047-421b-968f-a3b5bd2c5146",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "99456421-9f43-4f5b-98d1-4f2e0695ba04",
+"title": "Algorithm Researcher – Autonomous Driving (CTO Group)",
+"location": "Jerusalem",
+"excerpt": "The CTO Group is a small, elite team focused on the decision-making module of Mobileye's autonomous driving system. Our mission is to solve some of the hardest problems in autonomous driving by combining the full…",
+"description": "The CTO Group is a small, elite team focused on the decision-making module of Mobileye's autonomous driving system. Our mission is to solve some of the hardest problems in autonomous driving by combining the full spectrum of modern computer science - from rigorous mathematical modeling, optimization, and algorithm design to deep learning. The team develops the driving policies that translate system-wide inputs into safe, efficient, and human-like driving behavior. Our work spans classical algorithms, optimization under constraints, probabilistic reasoning, reinforcement & supervised learning, all grounded in real-world driving data. The group is comprised of top researchers and developers and is led by world-class scientists, offering a unique opportunity to work closely with the CTO, shape the future of autonomous driving, and influence the company's technical direction.",
+"url": "https://careers.mobileye.com/jobs/algorithm-researcher-autonomous-driving-cto-group/99456421-9f43-4f5b-98d1-4f2e0695ba04",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "2dcef828-5169-4a8c-8975-6f4cedf183d9",
+"title": "Applied AI Engineer - Temporary Position",
+"location": "Jerusalem",
+"excerpt": "Mobileye is looking for an Applied AI Engineer to join the MECI Interfaces team within the Software Engineering organization. The MECI Group enables Mobileye’s algorithmic development flow by building scalable CI,…",
+"description": "Mobileye is looking for an Applied AI Engineer to join the MECI Interfaces team within the Software Engineering organization. The MECI Group enables Mobileye’s algorithmic development flow by building scalable CI, build, test, and AI-driven tooling that supports the full development lifecycle. Our platforms allow Mobileye to scale efficiently and increase development velocity, while maintaining high standards of reliability, collaboration, and developer well-being. As an Applied AI Engineer, you will be at the forefront of integrating Large Language Models (LLMs) and agentic workflows into our internal platforms. Your primary goal will be to solve complex problems across the Software Development Life Cycle (SDLC) by building intuitive, AI-powered tools that directly support our developers and internal users. This role offers the unique opportunity to both expand the intelligence of our existing developer tools and architect entirely new workflows from the ground up in a highly technical, fast-paced environment.",
+"url": "https://careers.mobileye.com/jobs/applied-ai-engineer-temporary-position/2dcef828-5169-4a8c-8975-6f4cedf183d9",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "2c8dbb83-2f6d-4e2a-a393-770d2a27e679",
+"title": "Camera System Engineer",
+"location": "Jerusalem",
+"excerpt": "Mobileye builds camera-based ADAS and autonomous-driving systems with leading OEMs. This role is part of the Optical Path System Architecture and Integration team: the group that takes a new sensor integration from…",
+"description": "Mobileye builds camera-based ADAS and autonomous-driving systems with leading OEMs. This role is part of the Optical Path System Architecture and Integration team: the group that takes a new sensor integration from early requirements to a fully validated optical path. As Camera System Engineer you will drive the full integration lifecycle of complex real-time embedded systems — bridging hardware platforms and software stacks from early requirements definition and platform bring-up through system-level validation and verification. You will support pre-nomination and help close optical-path requirement gaps. Working closely with the Camera SW team and providing the pre-requisite they need for development and productization.",
+"url": "https://careers.mobileye.com/jobs/camera-system-engineer/2c8dbb83-2f6d-4e2a-a393-770d2a27e679",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "89b5d584-1a18-4087-a8ca-46172fdf9c29",
+"title": "Cyber Security Solution Architect",
+"location": "Jerusalem",
+"excerpt": "The Mobileye Platform Product Management team is looking for a highly driven, experienced, and dynamic Cybersecurity Product Manager, to join our team and help shape the future of ADAS and Autonomous Driving systems.…",
+"description": "The Mobileye Platform Product Management team is looking for a highly driven, experienced, and dynamic Cybersecurity Product Manager, to join our team and help shape the future of ADAS and Autonomous Driving systems. The team is leading Platform Products and Features Requirements and Execution, E2E, across all Mobileye teams and across projects. In this role, you will be involved in defining the product roadmap, and the product release planning, tracking the execution and helping in removing blockers, work with customers outside and inside Mobileye, to ensure the TTM and quality are met.",
+"url": "https://careers.mobileye.com/jobs/cyber-security-solution-architect/89b5d584-1a18-4087-a8ca-46172fdf9c29",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "3f688c83-654a-49c2-aa7e-d2636adfc6b0",
+"title": "Deep Learning Algorithm Engineer - REM Semantics",
+"location": "Jerusalem",
+"excerpt": "You will be part of Mobileye's REM (Road Experience Management) department which is responsible for the automatic High Definition map-making process, which is a key technology in Mobileye's autonomous driving and…",
+"description": "You will be part of Mobileye's REM (Road Experience Management) department which is responsible for the automatic High Definition map-making process, which is a key technology in Mobileye's autonomous driving and high-end Driving Assistance systems. You will be joining the team that builds the state-of-the-art AI-powered relevancy systems at scale. You will be designing and implementing semantic understanding engines that power data-driven products across autonomous driving and beyond, combining cutting-edge Computer Vision, Graph Neural Networks, and efficient inference to solve real-world perception challenges.",
+"url": "https://careers.mobileye.com/jobs/deep-learning-algorithm-engineer-rem-semantics/3f688c83-654a-49c2-aa7e-d2636adfc6b0",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "cbb56190-180f-4d21-8a21-95418a3eb8a5",
+"title": "Embedded Linux OS Architect",
+"location": "Jerusalem",
+"excerpt": "Mobileye Autonomous Driving software group is looking for an OS expert with strong knowledge in the Linux Kernel. As a Linux Operating System architect, you will be responsible to work with system and SW architecture…",
+"description": "Mobileye Autonomous Driving software group is looking for an OS expert with strong knowledge in the Linux Kernel. As a Linux Operating System architect, you will be responsible to work with system and SW architecture teams to define OS solutions to satisfy customer requirements for the autonomous vehicle world. This involves security and connectivity components in Mobileye’s Safety critical Linux OS involving both the Kernel and the user space worlds. This is an exciting and unique opportunity to work with highly talented Linux OS team and be a leader in the development of the Linux as a platform for the Safety Critical Automotive industry.",
+"url": "https://careers.mobileye.com/jobs/embedded-linux-os-architect/cbb56190-180f-4d21-8a21-95418a3eb8a5",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "fdee723f-1dac-49df-a209-6765d40d3beb",
+"title": "Embedded Team Leader -OS Integration & Automation",
+"location": "Jerusalem",
+"excerpt": "Mobileye is looking for a skilled and motivated Embedded SW Integration Team Lead for the Platform OS Department to manage the daily integration of the OS deliveries into Mobileye’s SW stack. The Platform OS team of…",
+"description": "Mobileye is looking for a skilled and motivated Embedded SW Integration Team Lead for the Platform OS Department to manage the daily integration of the OS deliveries into Mobileye’s SW stack. The Platform OS team of Mobileye is leading a global effort of making the Linux OS as the Automotive Safety OS that will fuel the Autonomous Vehicle and the whole automotive industry. You’ll lead a fast-paced, hands-on and dynamic team of integration and automation engineers, contributing to the overall qualification and integration effort of Mobileye while collaborating with other teams across the organization.",
+"url": "https://careers.mobileye.com/jobs/embedded-team-leader-os-integration-automation/fdee723f-1dac-49df-a209-6765d40d3beb",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "20a11252-02b4-43c0-9449-6247fb6617fe",
+"title": "Experienced Control Algorithms Engineer",
+"location": "Jerusalem",
+"excerpt": "We are seeking a highly skilled and innovative Control Engineer to join our dynamic team dedicated to advancing the field of autonomous vehicles. As a Control Engineer, you will play a crucial role in designing,…",
+"description": "We are seeking a highly skilled and innovative Control Engineer to join our dynamic team dedicated to advancing the field of autonomous vehicles. As a Control Engineer, you will play a crucial role in designing, developing, implementing and testing hands on control algorithms to enhance the performance, safety, and efficiency of our autonomous vehicle systems.",
+"url": "https://careers.mobileye.com/jobs/experienced-control-algorithms-engineer/20a11252-02b4-43c0-9449-6247fb6617fe",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "de4739b8-eda9-4262-ae5b-c3ee15d86a3c",
+"title": "Experienced Deep Learning Algorithm Developer – Object Perception Group",
+"location": "Jerusalem",
+"excerpt": "We are looking for an experienced Deep Learning Algorithm Developer to join one of our teams developing perception technologies for autonomous driving. Our group tackles diverse challenges — from object detection and…",
+"description": "We are looking for an experienced Deep Learning Algorithm Developer to join one of our teams developing perception technologies for autonomous driving. Our group tackles diverse challenges — from object detection and scene understanding to 3D perception — using large-scale, real-world in-house datasets and state-of-the-art deep learning models.",
+"url": "https://careers.mobileye.com/jobs/experienced-deep-learning-algorithm-developer-object-perception-group/de4739b8-eda9-4262-ae5b-c3ee15d86a3c",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "050c9118-b8bd-42c7-9a5d-bf0ef7e6a196",
+"title": "Senior Full Stack Developer",
+"location": "Jerusalem",
+"excerpt": "Join the MECI team within Mobileye’s Algo Software Engineering group. Our mission is to accelerate developer velocity, streamline the engineering lifecycle, and build high-impact internal platforms for Mobileye’s…",
+"description": "Join the MECI team within Mobileye’s Algo Software Engineering group. Our mission is to accelerate developer velocity, streamline the engineering lifecycle, and build high-impact internal platforms for Mobileye’s algorithm and software teams. We are looking for a Senior Full-Stack Developer (Frontend-Oriented) with a strong frontend focus and an eye for exceptional UX to help us build intuitive, modern, and scalable web applications. In this role, your work will directly boost the productivity of hundreds of engineers across the company.",
+"url": "https://careers.mobileye.com/jobs/senior-full-stack-developer/050c9118-b8bd-42c7-9a5d-bf0ef7e6a196",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "ae0844fc-26c2-4df9-9a11-03e80dbc90e8",
+"title": "Experienced Low Level Software Engineer",
+"location": "Jerusalem",
+"excerpt": "Mobileye's EyeQ Platform Group in Jerusalem is looking for an embedded SW developer who will be responsible for validating custom hardware in Mobileye SoC. As an experienced embedded developer, you will be writing C/C++…",
+"description": "Mobileye's EyeQ Platform Group in Jerusalem is looking for an embedded SW developer who will be responsible for validating custom hardware in Mobileye SoC. As an experienced embedded developer, you will be writing C/C++ code for Mobileye vision SoC and be engaged in a wide range of activities: starting from system verification on simulators, moving through the design and implementation of HW drivers for Mobileye's proprietary OS, working closely with ASIC designers to cover all HW features, gaining insight into the inner workings of hardware, and using your knowledge to iron out bugs in silicon on customer boards via JTAG probes. It's a unique opportunity to be part of the complete lifecycle of a system on a chip. Our group's area of responsibility resides on the SW/HW boundary and thus requires the ability to understand and use complex HW specifications for SW drivers and test development.",
+"url": "https://careers.mobileye.com/jobs/experienced-low-level-software-engineer/ae0844fc-26c2-4df9-9a11-03e80dbc90e8",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "cf198663-8759-4f08-96c3-e564aca85d8d",
+"title": "Experienced Software Engineer - Data Systems & Tools",
+"location": "Jerusalem",
+"excerpt": "Mobileye is looking for an experienced Software Engineer to join our Algorithms organization and help build the systems, tools, and workflows that support large-scale data operations and analysis. In this role, you will…",
+"description": "Mobileye is looking for an experienced Software Engineer to join our Algorithms organization and help build the systems, tools, and workflows that support large-scale data operations and analysis. In this role, you will take ownership of designing and developing solutions that streamline data request management, pipeline monitoring, reporting, and operational workflows across multiple products and systems. You will work closely with algorithm developers, analysts, product stakeholders, and infrastructure teams to transform ad-hoc processes into scalable, maintainable systems. The systems and tools will coordinate work through the workflow, detect blockers and rerun needs, and provide a reliable operational view across requests, products, and issues. We are looking for an engineer with strong system-level thinking, a proactive mindset, and the ability to independently define requirements, identify gaps, and drive projects from concept to production.",
+"url": "https://careers.mobileye.com/jobs/experienced-software-engineer-data-systems-tools/cf198663-8759-4f08-96c3-e564aca85d8d",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "1b3f71b9-fe39-41d3-bd43-4ae7ad18f92e",
+"title": "Machine Learning Software Engineer",
+"location": "Jerusalem",
+"excerpt": "Mobileye is looking for a Machine Learning Software Engineer, who will be challenged by bridging the gap between cutting-edge machine learning research and robust production deployment. In this position, you will…",
+"description": "Mobileye is looking for a Machine Learning Software Engineer, who will be challenged by bridging the gap between cutting-edge machine learning research and robust production deployment. In this position, you will combine software engineering expertise with machine learning deployment knowledge, responsible for taking our algorithms and developing robust production solutions that serve them at scale. The work at Mobileye’s algorithms department is fast-paced and requires staying ahead of the curve with the latest engineering solutions and best practices adopted across the ML community, while staying informed about emerging solutions in both computer vision and NLP domains and understanding the specific problems they address.",
+"url": "https://careers.mobileye.com/jobs/machine-learning-software-engineer/1b3f71b9-fe39-41d3-bd43-4ae7ad18f92e",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "ed5da113-bd7b-4654-b115-8c29723e0295",
+"title": "Outstanding Graduate Algorithm Developer",
+"location": "Jerusalem",
+"excerpt": "Mobileye is a global leader in autonomous vehicle (AV) technology, pioneering advanced driver-assistance systems (ADAS) and self-driving solutions. Across the company, algorithm developers work at the forefront of…",
+"description": "Mobileye is a global leader in autonomous vehicle (AV) technology, pioneering advanced driver-assistance systems (ADAS) and self-driving solutions. Across the company, algorithm developers work at the forefront of AV/ADAS innovation - designing and implementing perception, mapping, computer vision, and decision-making algorithms, typically in Python or C++. At Mobileye, algorithm developers join a variety of teams across a broad range of domains. This role serves as a central entry point, allowing us to match your expertise and aspirations with the team where you can make the greatest impact. Algorithm developers at Mobileye contribute to diverse areas of innovation, including: • Detection: Developing algorithms to identify and track road users, lanes, and other key elements of the driving environment in real time. • Object Modeling: Developing algorithms to identify, classify, and measure objects (general, unclassified, etc.), enabling precise scene understanding. • Geometry: Developing algorithms to model road geometry, vehicle motion, and calibrations, providing essential spatial data that supports localization, 3D object placement, tracking, and other core perception tasks. • M",
+"url": "https://careers.mobileye.com/jobs/outstanding-graduate-algorithm-developer/ed5da113-bd7b-4654-b115-8c29723e0295",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "2c2e26d6-d40a-40d1-b6f8-510781e9a3f4",
+"title": "Senior C++ Software Engineer - Integration & Delivery (CTO Team)",
+"location": "Jerusalem",
+"excerpt": "Mobileye is looking for an experienced Software and Integration Engineer to join the CTO group and take a key role in delivering robust, large-scale autonomous driving software. The group is primarily focused on the…",
+"description": "Mobileye is looking for an experienced Software and Integration Engineer to join the CTO group and take a key role in delivering robust, large-scale autonomous driving software. The group is primarily focused on the decision-making module of Mobileye's self-driving car. It leverages a wide range of algorithmic approaches, rigorous formal definitions, and mathematical modeling- enriched by insights drawn from large-scale data and real-world driving experience. In this role you will play a key role in designing, building, and maintaining Algo utility and software infrastructure within the company's primary algorithmic flow.",
+"url": "https://careers.mobileye.com/jobs/senior-c-software-engineer-integration-delivery-cto-team/2c2e26d6-d40a-40d1-b6f8-510781e9a3f4",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "ade97368-7948-4dbb-a574-1268ad41cbf0",
+"title": "Senior Computer Vision Data Engineer",
+"location": "Jerusalem",
+"excerpt": "The AI Engineering group builds modern infrastructure and solutions that improve how algorithms are developed at Mobileye. We are a small, independent team of experienced engineers with a mix of skills in algorithms,…",
+"description": "The AI Engineering group builds modern infrastructure and solutions that improve how algorithms are developed at Mobileye. We are a small, independent team of experienced engineers with a mix of skills in algorithms, software, and infrastructure. We work in a DevOps style and build cross-team solutions that support research and development of advanced perception algorithms. Our flagship project is a unified AV dataset used to train and evaluate next-generation models. We take large volumes of multi-camera video, object labels, HD maps, and sensor data from across the organization, and turn it into a curated, high-quality training set - at scale. We are looking for someone who brings ML and computer-vision depth to the team - someone who can help shape the intelligence layer that decides what data is worth training on.",
+"url": "https://careers.mobileye.com/jobs/senior-computer-vision-data-engineer/ade97368-7948-4dbb-a574-1268ad41cbf0",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "169eb36e-82dd-4bcb-bdf0-06d7be6d94c4",
+"title": "Senior Full-Stack Platform Engineer – Agentic AI",
+"location": "Jerusalem",
+"excerpt": "Mobileye is looking for a talented Senior Full-Stack Platform Engineer to join a our \"Enterprise AI Enablement\" team. In this role, you will combine hands-on full-stack engineering, platform ownership, product thinking,…",
+"description": "Mobileye is looking for a talented Senior Full-Stack Platform Engineer to join a our \"Enterprise AI Enablement\" team. In this role, you will combine hands-on full-stack engineering, platform ownership, product thinking, and technical leadership in agent-led development. You will own solutions end-to-end, from understanding user needs and shaping the experience to architecture, UX/UI, frontend, backend, data modeling, integrations, deployment, and production operation. You will also help lead how we adopt agentic development, continuously evaluating emerging models, tools, and engineering practices and turning them into effective, reliable development workflows.",
+"url": "https://careers.mobileye.com/jobs/senior-fullstack-platform-engineer-agentic-ai/169eb36e-82dd-4bcb-bdf0-06d7be6d94c4",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "25f2cd2f-fbac-4101-b913-045cdc4458a3",
+"title": "Senior ML Data Engineer",
+"location": "Jerusalem",
+"excerpt": "The AI Engineering group builds modern infrastructure and solutions that improve how algorithms are developed at Mobileye. We are a small, independent team of experienced engineers with a mix of skills in algorithms,…",
+"description": "The AI Engineering group builds modern infrastructure and solutions that improve how algorithms are developed at Mobileye. We are a small, independent team of experienced engineers with a mix of skills in algorithms, software, and infrastructure. We work in a DevOps style and build cross-team solutions that support research and development of advanced perception algorithms. Our flagship project is a unified AV dataset used to train and evaluate next-generation models. We take large volumes of multi-camera video, object labels, HD maps, and sensor data from across the organization, and turn it into a curated, high-quality training set - at scale. We are looking for someone who brings ML and computer-vision depth to the team - someone who can help shape the intelligence layer that decides what data is worth training on.",
+"url": "https://careers.mobileye.com/jobs/senior-ml-data-engineer/25f2cd2f-fbac-4101-b913-045cdc4458a3",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "16bfb65e-79eb-4a25-b803-0a24f40489b8",
+"title": "Senior Python Developer for Map Management",
+"location": "Jerusalem",
+"excerpt": "You will be part of Mobileye's REM department that is responsible for the automatic High-Definition map-making process, which is a key technology in Mobileye's autonomous driving and high-end Driving Assistance systems.…",
+"description": "You will be part of Mobileye's REM department that is responsible for the automatic High-Definition map-making process, which is a key technology in Mobileye's autonomous driving and high-end Driving Assistance systems. This process involves running advanced algorithmic code in a massively parallel way, utilizing Big Data technologies, and as such is a complex system that requires a deep understanding of our map creation process as well as advanced technical abilities. Our team focuses on next phase developments within the map creation system, which involves algorithmic developments, cross teams (algo and engineering) developments.",
+"url": "https://careers.mobileye.com/jobs/senior-python-developer-for-map-management/16bfb65e-79eb-4a25-b803-0a24f40489b8",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "da38c082-c92f-4287-8d87-ffdb1ad6696f",
+"title": "Senior Thermal Engineer",
+"location": "Jerusalem",
+"excerpt": "We are looking for a highly experienced Senior Thermal Engineer to join Mobileye’s Architecture engineering team and take a key role in the development of next-generation SoCs, ECUs, and high-performance compute…",
+"description": "We are looking for a highly experienced Senior Thermal Engineer to join Mobileye’s Architecture engineering team and take a key role in the development of next-generation SoCs, ECUs, and high-performance compute platforms for autonomous driving systems. The position combines SoC/package thermal development, ECU cooling architecture, thermal simulation, characterization, validation, and vehicle-level thermal integration, working across multiple next-generation programs from early concept through qualification and production. Please note: This position is also relevant for our other sites in Haifa, Petah Tikva, and Jerusalem.",
+"url": "https://careers.mobileye.com/jobs/senior-thermal-engineer/da38c082-c92f-4287-8d87-ffdb1ad6696f",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "f3de4dd1-fed7-4d16-825a-562746ccfe79",
+"title": "Senior Software Engineer - C++ Embedded Systems (Autonomous Driving)",
+"location": "Jerusalem",
+"excerpt": "We are part of Mobileye's REM (Road Experience Management) organization, responsible for the HD maps that power Mobileye's autonomous driving technologies. Our team develops the in-vehicle map platform, including smart…",
+"description": "We are part of Mobileye's REM (Road Experience Management) organization, responsible for the HD maps that power Mobileye's autonomous driving technologies. Our team develops the in-vehicle map platform, including smart cloud map downloads, caching, map management, efficient APIs for map consumers, and protocols for distributing map data across vehicle ECUs. We also develop map-based algorithms such as route calculation and lane network generation, which are key components of autonomous driving systems. This is a highly technical role involving embedded software, large-scale map data, performance optimization, and collaboration across multiple engineering teams.",
+"url": "https://careers.mobileye.com/jobs/senior-software-engineer-c-embedded-systems-autonomous-driving/f3de4dd1-fed7-4d16-825a-562746ccfe79",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "f566122f-06cb-4359-a7cd-49ee17ec9528",
+"title": "Senior System Architect for ECU designs",
+"location": "Jerusalem",
+"excerpt": "Mobileye is at the forefront of developing autonomous driving systems with leading OEMs, by integrating Mobileye state-of-the-art ECUs into various vehicles.We are developing advanced automotive ECUs for next-generation…",
+"description": "Mobileye is at the forefront of developing autonomous driving systems with leading OEMs, by integrating Mobileye state-of-the-art ECUs into various vehicles.We are developing advanced automotive ECUs for next-generation vehicle functions. Our programs require a robust end-to-end verification strategy that ensures design correctness, safety, and performance across complex HW/SW systems and multiple suppliers In this role, you will own the system architecture for our ECU designs—from defining the verification concept and traceability, through specifying verification environments and evidence, to leading technical alignment across hardware, embedded software, and validation teams.You’ll collaborate with architects, design engineers, verification leads, and suppliers to deliver high-quality ECU platforms to OEMs and Tier 1s. Your work will directly influence product quality, time-to-market, and readiness for customer reviews and audits.",
+"url": "https://careers.mobileye.com/jobs/senior-system-architect-for-ecu-designs/f566122f-06cb-4359-a7cd-49ee17ec9528",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "fb4ade19-941d-4b5d-b3c6-a6faa2f61426",
+"title": "Senior Thermal-Mechanical Engineer",
+"location": "Jerusalem",
+"excerpt": "We are looking for a highly skilled Senior Thermal-Mechanical Engineer to join our mechanical engineering team as a key player in the development of next-generation high-performance compute platforms for autonomous…",
+"description": "We are looking for a highly skilled Senior Thermal-Mechanical Engineer to join our mechanical engineering team as a key player in the development of next-generation high-performance compute platforms for autonomous driving systems. This key position includes leading the thermal-mechanical design and cooling architecture of advanced electronic systems throughout all lifecycle stages—from concept to mass production—while working closely with hardware, PCB layout, mechanical, validation, manufacturing, suppliers, and customers.",
+"url": "https://careers.mobileye.com/jobs/senior-thermalmechanical-engineer/fb4ade19-941d-4b5d-b3c6-a6faa2f61426",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "ac5f0c5c-3652-478e-aa66-783f70af24b7",
+"title": "Software Algorithms RT Engineer - Active Sensor Group",
+"location": "Jerusalem",
+"excerpt": "The team is responsible for the software infrastructure surrounding Radar and LiDAR sensors and is part of Mobileye’s Algo Optimization group. We bridge the gap between cutting-edge sensor technologies and our…",
+"description": "The team is responsible for the software infrastructure surrounding Radar and LiDAR sensors and is part of Mobileye’s Algo Optimization group. We bridge the gap between cutting-edge sensor technologies and our proprietary hardware accelerators. We build the core software foundation for perception algorithms, managing the end-to-end flow of sensor data ingestion, parsing, validation, and real-time optimization. Working at the intersection of software, firmware, and hardware, we play a critical role in bringing next-generation sensing capabilities to production vehicles.",
+"url": "https://careers.mobileye.com/jobs/software-algorithms-rt-engineer-active-sensor-group/ac5f0c5c-3652-478e-aa66-783f70af24b7",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "277476b2-bd2a-44d8-a727-caca1dcb4b45",
+"title": "Solution Architect for Cloud Communication",
+"location": "Jerusalem",
+"excerpt": "Join Mobileye, a leader in autonomous driving technology, and shape the future of transportation. As a Solution Architect, you'll be at the forefront of innovation, driving cutting-edge features from concept to…",
+"description": "Join Mobileye, a leader in autonomous driving technology, and shape the future of transportation. As a Solution Architect, you'll be at the forefront of innovation, driving cutting-edge features from concept to commercialization.",
+"url": "https://careers.mobileye.com/jobs/solution-architect-for-cloud-communication/277476b2-bd2a-44d8-a727-caca1dcb4b45",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "mobileye",
+"external_id": "5d23dc1d-fc84-427d-96cf-cd151087561d",
+"title": "Solution Architect for Embedded Autonomous Vehicle System",
+"location": "Jerusalem",
+"excerpt": "Join Mobileye, a leader in autonomous driving technology, and shape the future of transportation. As a Solution Architect, you'll be at the forefront of innovation, driving cutting-edge features from concept to…",
+"description": "Join Mobileye, a leader in autonomous driving technology, and shape the future of transportation. As a Solution Architect, you'll be at the forefront of innovation, driving cutting-edge features from concept to commercialization. ** This role requires working from our Petah Tikva site 1 day per week. It also offers the flexibility to work part-time from our other sites, subject to seat availability.",
+"url": "https://careers.mobileye.com/jobs/solution-architect-for-embedded-autonomous-vehicle-system/5d23dc1d-fc84-427d-96cf-cd151087561d",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -924,7 +864,7 @@
 "url": "https://careers.mobileye.com/jobs/software-execution-project-manager-camera-team/1c3bb641-7d60-4cf6-b997-d6e5633f7c12",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -936,7 +876,7 @@
 "url": "https://careers.mobileye.com/jobs/electrical-practical-engineer/a6711d79-22df-4e2f-a21a-3b31b9337175",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -948,7 +888,7 @@
 "url": "https://careers.mobileye.com/jobs/embedded-integrator-temporary/04853139-2a12-4d1e-8ce3-6d315ec31081",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -960,7 +900,7 @@
 "url": "https://careers.mobileye.com/jobs/production-quality-engineer/6c2c3630-b6cc-465b-9671-2a5dbbf0017d",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -972,7 +912,7 @@
 "url": "https://careers.mobileye.com/jobs/software-linux-integration-engineer-os-team/45b127ea-6069-420f-81fd-adf236d08de4",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -984,7 +924,7 @@
 "url": "https://careers.mobileye.com/jobs/system-integration-engineer/0f3e6a6a-45a7-4e4e-9bb9-f7bb11f92443",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -996,7 +936,7 @@
 "url": "https://careers.mobileye.com/jobs/system-validation-team-lead/3e0a8ffc-d04f-41ba-9119-b9b1662063f1",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -1008,7 +948,7 @@
 "url": "https://careers.mobileye.com/jobs/technical-support-engineer/746ceb7e-3448-4abb-bf89-b0f0cc952406",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "mobileye",
@@ -1020,19 +960,7 @@
 "url": "https://careers.mobileye.com/jobs/validation-engineer-embedded-system-integration/7837f11d-f347-40ff-b5c7-6e296be994fb",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "sqlink",
-"external_id": "154693",
-"title": "ארכיטקט/ית פתרונות ענן",
-"location": "",
-"excerpt": "ארגון ממשלתי באזור ירושלים מגייס ארכיטקט/ית פתרונות ענן. התפקיד כולל: הובלת תכנון, אפיון ויישום של פתרונות ענן, גיבוש אסטרטגיית ענן ומפת דרכים, ליווי צוותי פיתוח משלב האפיון ועד העלייה לייצור, תכנון ארכיטקטורות מאובטחות…",
-"description": "ארגון ממשלתי באזור ירושלים מגייס ארכיטקט/ית פתרונות ענן. התפקיד כולל: הובלת תכנון, אפיון ויישום של פתרונות ענן, גיבוש אסטרטגיית ענן ומפת דרכים, ליווי צוותי פיתוח משלב האפיון ועד העלייה לייצור, תכנון ארכיטקטורות מאובטחות ותשתיות ענן, בחינת טכנולוגיות חדשות, בקרה על פעילות הארגון בענן והובלת פרויקטי הגירה, אינטגרציה ופתרונות מבוססי AI ועוד.",
-"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/ארכיטקט-תוכנה/ארכיטקטית-פתרונות-ענן/",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "sqlink",
@@ -1044,31 +972,19 @@
 "url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/full-stack/מפתחת-full-stack-1/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
-"source": "unilink",
-"external_id": "38142921",
-"title": "מפתח/ת תוכנה  GenAI- רמה ג",
-"location": "ירושלים",
-"excerpt": "למשרד ממשלתי דרוש/ה מפתח/ת תוכנה בכיר/ה להובלת פתרונות בתחום ה־GenAI. התפקיד כולל פיתוח Hands-on של מערכות תוכנה מורכבות, פיתוח סוכנים חכמים, אינטגרציה עם מערכות ארגוניות ומקורות מידע, הקמת תשתיות ושירותים משותפים…",
-"description": "למשרד ממשלתי דרוש/ה מפתח/ת תוכנה בכיר/ה להובלת פתרונות בתחום ה־GenAI. התפקיד כולל פיתוח Hands-on של מערכות תוכנה מורכבות, פיתוח סוכנים חכמים, אינטגרציה עם מערכות ארגוניות ומקורות מידע, הקמת תשתיות ושירותים משותפים והובלת פרויקטים מקצה לקצה משלב אפיון הצורך ועד לעלייה לייצור והטמעה. התפקיד משלב עבודה טכנולוגית מעשית לצד עבודה מול משתמשים ולקוחות פנימיים, תכנון פתרונות, הובלת ממשקים מקצועיים וקידום טכנולוגיות AI בארגון.",
-"url": "https://www.drushim.co.il/job/38142921/bbfb8ef1/",
-"is_hot": false,
-"last_updated": "2026-09-17",
-"is_new": false
-},
-{
-"source": "unilink",
-"external_id": "38441582",
-"title": "מפתח/ת תוכנה Backend / Full Stack- רמה ב",
-"location": "ירושלים",
-"excerpt": "לפרויקט טכנולוגי משמעותי במגזר הממשלתי דרוש/ה מפתח/ת תוכנה מנוסה להצטרפות לצוות מקצועי העוסק בפיתוח מערכות מתקדמות בסביבת ענן. התפקיד מתאים למפתח/ת עם ניסיון משמעותי בפיתוח צד שרת, עבודה בסביבות ענן ויכולת להשתלב…",
-"description": "לפרויקט טכנולוגי משמעותי במגזר הממשלתי דרוש/ה מפתח/ת תוכנה מנוסה להצטרפות לצוות מקצועי העוסק בפיתוח מערכות מתקדמות בסביבת ענן. התפקיד מתאים למפתח/ת עם ניסיון משמעותי בפיתוח צד שרת, עבודה בסביבות ענן ויכולת להשתלב במערכות מורכבות, אינטגרציות ותהליכי פיתוח מתקדמים. תיאור התפקיד פיתוח תוכנה בהתאם למפרטים ולתיקי תוכניות, בהנחיית ראש צוות או מנתח/ת מערכות בכיר/ה. פיתוח פתרונות מורכבים בצד השרת. ביצוע עבודות תכנות ועיצוב. עבודה עם ארכיטקטורות תוכנה מתקדמות. השתלבות בתהליכי פיתוח, אינטגרציה, בדיקות ואבטחת קוד. עבודה בצוות פיתוח והנחיית תוכניתנים בהתאם לצורך. עבודה בסביבת Cloud ובמערכות מורכבות מרובות ממשקים. השתתפות בפיתוח והטמעה של תהליכי אוטומציה ו־CI/CD.",
-"url": "https://www.drushim.co.il/job/38441582/cafa95d2/",
+"source": "sqlink",
+"external_id": "154693",
+"title": "ארכיטקט/ית פתרונות ענן",
+"location": "",
+"excerpt": "ארגון ממשלתי באזור ירושלים מגייס ארכיטקט/ית פתרונות ענן. התפקיד כולל: הובלת תכנון, אפיון ויישום של פתרונות ענן, גיבוש אסטרטגיית ענן ומפת דרכים, ליווי צוותי פיתוח משלב האפיון ועד העלייה לייצור, תכנון ארכיטקטורות מאובטחות…",
+"description": "ארגון ממשלתי באזור ירושלים מגייס ארכיטקט/ית פתרונות ענן. התפקיד כולל: הובלת תכנון, אפיון ויישום של פתרונות ענן, גיבוש אסטרטגיית ענן ומפת דרכים, ליווי צוותי פיתוח משלב האפיון ועד העלייה לייצור, תכנון ארכיטקטורות מאובטחות ותשתיות ענן, בחינת טכנולוגיות חדשות, בקרה על פעילות הארגון בענן והובלת פרויקטי הגירה, אינטגרציה ופתרונות מבוססי AI ועוד.",
+"url": "https://www.sqlink.com/career/פיתוח-תוכנה-webmobile/ארכיטקט-תוכנה/ארכיטקטית-פתרונות-ענן/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "unilink",
@@ -1080,7 +996,7 @@
 "url": "https://www.drushim.co.il/job/38231936/fb7d56e6/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "unilink",
@@ -1092,7 +1008,7 @@
 "url": "https://www.drushim.co.il/job/38232164/ae16399f/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "unilink",
@@ -1104,7 +1020,7 @@
 "url": "https://www.drushim.co.il/job/38232487/c233237f/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "unilink",
@@ -1116,7 +1032,7 @@
 "url": "https://www.drushim.co.il/job/38223234/9a3d07af/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "unilink",
@@ -1128,7 +1044,7 @@
 "url": "https://www.drushim.co.il/job/38267447/389aaba4/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "unilink",
@@ -1140,7 +1056,7 @@
 "url": "https://www.drushim.co.il/job/38279284/94ef6d93/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "unilink",
@@ -1152,7 +1068,7 @@
 "url": "https://www.drushim.co.il/job/38279436/1f9391dc/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "unilink",
@@ -1164,7 +1080,7 @@
 "url": "https://www.drushim.co.il/job/38306682/6c4e19f2/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "unilink",
@@ -1176,7 +1092,7 @@
 "url": "https://www.drushim.co.il/job/38312230/9773c9a5/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "unilink",
@@ -1188,7 +1104,7 @@
 "url": "https://www.drushim.co.il/job/38371776/172b836a/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "unilink",
@@ -1200,7 +1116,7 @@
 "url": "https://www.drushim.co.il/job/38333339/fc7f963c/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "unilink",
@@ -1212,7 +1128,7 @@
 "url": "https://www.drushim.co.il/job/38312059/75631a02/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
 },
 {
 "source": "unilink",
@@ -1224,8 +1140,20 @@
 "url": "https://www.drushim.co.il/job/38267200/d2a113b0/",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": false
+"is_new": true
+},
+{
+"source": "unilink",
+"external_id": "38441582",
+"title": "מפתח/ת תוכנה Backend / Full Stack- רמה ב",
+"location": "ירושלים",
+"excerpt": "לפרויקט טכנולוגי משמעותי במגזר הממשלתי דרוש/ה מפתח/ת תוכנה מנוסה להצטרפות לצוות מקצועי העוסק בפיתוח מערכות מתקדמות בסביבת ענן. התפקיד מתאים למפתח/ת עם ניסיון משמעותי בפיתוח צד שרת, עבודה בסביבות ענן ויכולת להשתלב…",
+"description": "לפרויקט טכנולוגי משמעותי במגזר הממשלתי דרוש/ה מפתח/ת תוכנה מנוסה להצטרפות לצוות מקצועי העוסק בפיתוח מערכות מתקדמות בסביבת ענן. התפקיד מתאים למפתח/ת עם ניסיון משמעותי בפיתוח צד שרת, עבודה בסביבות ענן ויכולת להשתלב במערכות מורכבות, אינטגרציות ותהליכי פיתוח מתקדמים. תיאור התפקיד פיתוח תוכנה בהתאם למפרטים ולתיקי תוכניות, בהנחיית ראש צוות או מנתח/ת מערכות בכיר/ה. פיתוח פתרונות מורכבים בצד השרת. ביצוע עבודות תכנות ועיצוב. עבודה עם ארכיטקטורות תוכנה מתקדמות. השתלבות בתהליכי פיתוח, אינטגרציה, בדיקות ואבטחת קוד. עבודה בצוות פיתוח והנחיית תוכניתנים בהתאם לצורך. עבודה בסביבת Cloud ובמערכות מורכבות מרובות ממשקים. השתתפות בפיתוח והטמעה של תהליכי אוטומציה ו־CI/CD.",
+"url": "https://www.drushim.co.il/job/38441582/cafa95d2/",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
 }
 ],
-"generated_at": "2026-09-18T10:18:33.334228+00:00"
+"generated_at": "2026-09-18T12:31:00.732902+00:00"
 }

@@ -459,15 +459,6 @@
 "via": "linkedin"
 },
 {
-"key": "li-hello-heart",
-"label": "Hello Heart",
-"kind": "company",
-"category": "other",
-"site_url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-mobile-specialization-at-hello-heart-4464601851",
-"logo": "https://icons.duckduckgo.com/ip3/hello.com.ico",
-"via": "linkedin"
-},
-{
 "key": "li-check-point-software",
 "label": "Check Point Software",
 "kind": "company",
@@ -537,6 +528,15 @@
 "category": "security",
 "site_url": "https://il.linkedin.com/jobs/view/sr-software-engineer-cloud-identity-protection-hybrid-isr-at-crowdstrike-4442890703",
 "logo": "https://icons.duckduckgo.com/ip3/crowdstrike.com.ico",
+"via": "linkedin"
+},
+{
+"key": "li-chainalysis",
+"label": "Chainalysis",
+"kind": "company",
+"category": "other",
+"site_url": "https://il.linkedin.com/jobs/view/senior-software-engineer-alterya-at-chainalysis-4419564380",
+"logo": "https://icons.duckduckgo.com/ip3/chainalysis.com.ico",
 "via": "linkedin"
 },
 {
@@ -672,6 +672,15 @@
 "category": "other",
 "site_url": "https://il.linkedin.com/jobs/view/front-end-team-leader-at-quantum-machines-4354868335",
 "logo": "https://icons.duckduckgo.com/ip3/quantum.com.ico",
+"via": "linkedin"
+},
+{
+"key": "li-hello-heart",
+"label": "Hello Heart",
+"kind": "company",
+"category": "other",
+"site_url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-mobile-specialization-at-hello-heart-4464601851",
+"logo": "https://icons.duckduckgo.com/ip3/hello.com.ico",
 "via": "linkedin"
 },
 {
@@ -936,6 +945,15 @@
 "via": "linkedin"
 },
 {
+"key": "li-autofleet",
+"label": "Autofleet",
+"kind": "company",
+"category": "mobility",
+"site_url": "https://il.linkedin.com/jobs/view/senior-full-stack-developer-at-autofleet-4440651880",
+"logo": "https://icons.duckduckgo.com/ip3/autofleet.com.ico",
+"via": "linkedin"
+},
+{
 "key": "li-traild",
 "label": "Traild",
 "kind": "company",
@@ -978,15 +996,6 @@
 "category": "other",
 "site_url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-at-brandlight-4467752409",
 "logo": "https://icons.duckduckgo.com/ip3/brandlight.com.ico",
-"via": "linkedin"
-},
-{
-"key": "li-connecteam",
-"label": "Connecteam",
-"kind": "company",
-"category": "other",
-"site_url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-at-connecteam-4429940437",
-"logo": "https://icons.duckduckgo.com/ip3/connecteam.com.ico",
 "via": "linkedin"
 }
 ]

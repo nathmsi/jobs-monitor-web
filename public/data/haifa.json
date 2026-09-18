@@ -1,7 +1,79 @@
 {
 "region": "haifa",
-"count": 28,
+"count": 34,
 "jobs": [
+{
+"source": "li-edwards-lifesciences",
+"external_id": "4444147286",
+"title": "Senior Full stack Developer",
+"location": "Caesarea, Haifa District, Israel",
+"excerpt": "Edwards Lifesciences · Caesarea, Haifa District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/senior-full-stack-developer-at-edwards-lifesciences-4444147286",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "li-integra-lifesciences",
+"external_id": "4458244264",
+"title": "Senior Software Engineer - C++ / C# (Medical Devices)",
+"location": "Haifa, Haifa District, Israel",
+"excerpt": "Integra LifeSciences · Haifa, Haifa District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/senior-software-engineer-c%2B%2B-c%23-medical-devices-at-integra-lifesciences-4458244264",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "li-kendago",
+"external_id": "4452975842",
+"title": "Senior Back End Engineer",
+"location": "Kiryat Ono, Tel Aviv District, Israel",
+"excerpt": "Kendago · Kiryat Ono, Tel Aviv District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/senior-back-end-engineer-at-kendago-4452975842",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "li-mobile-group",
+"external_id": "4466500708",
+"title": "Frontend Manager",
+"location": "Hadera, Haifa District, Israel",
+"excerpt": "Mobile Group · Hadera, Haifa District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/frontend-manager-at-mobile-group-ltd-4466500708",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "li-pearson",
+"external_id": "4448916483",
+"title": "Software Engineer III",
+"location": "Haifa, Haifa District, Israel",
+"excerpt": "Pearson · Haifa, Haifa District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/software-engineer-iii-at-pearson-4448916483",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
+{
+"source": "li-plus500",
+"external_id": "4440135525",
+"title": "Backend Software Engineer",
+"location": "Haifa, Haifa District, Israel",
+"excerpt": "Plus500™ · Haifa, Haifa District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/backend-software-engineer-at-plus500%E2%84%A2-4440135525",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
+},
 {
 "source": "malam",
 "external_id": "533779",
@@ -339,5 +411,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-18T09:42:39.219046+00:00"
+"generated_at": "2026-09-18T09:49:42.962070+00:00"
 }

@@ -1,6 +1,6 @@
 {
 "region": "sharon",
-"count": 53,
+"count": 54,
 "jobs": [
 {
 "source": "jfrog",
@@ -133,6 +133,18 @@
 "is_hot": false,
 "last_updated": "2026-09-18",
 "is_new": false
+},
+{
+"source": "li-bright-data",
+"external_id": "4464101109",
+"title": "Senior Backend JavaScript Developer",
+"location": "Netanya, Center District, Israel",
+"excerpt": "Bright Data · Netanya, Center District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/senior-backend-javascript-developer-at-bright-data-4464101109",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": true
 },
 {
 "source": "malam",
@@ -639,5 +651,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-18T09:42:39.219046+00:00"
+"generated_at": "2026-09-18T09:49:42.962070+00:00"
 }

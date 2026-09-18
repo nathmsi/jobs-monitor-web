@@ -80,6 +80,58 @@
   color: var(--accent);
 }
 
+.catbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.catchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+.catchip:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.catchipActive {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.catcount {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.02rem 0.35rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, currentColor 16%, transparent);
+  font-variant-numeric: tabular-nums;
+}
+
+.stats {
+  margin: 1rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
 .noResults {
   grid-column: 1 / -1;
   color: var(--text-muted);

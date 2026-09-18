@@ -51,6 +51,29 @@
     "companies": "חברות הייטק",
     "agencies": "חברות השמה"
   },
+  "theme": {
+    "system": "מערכת",
+    "light": "בהיר",
+    "dark": "כהה"
+  },
+  "categories": {
+    "aria": "סינון לפי קטגוריה",
+    "all": "הכול",
+    "security": "אבטחה",
+    "fintech": "פינטק",
+    "data-ai": "דאטה / AI",
+    "devtools": "פיתוח / ענן",
+    "hardware": "חומרה / שבבים",
+    "web-ecom": "ווב / מסחר",
+    "gaming": "גיימינג",
+    "mobility": "תחבורה",
+    "health": "בריאות / ביו",
+    "staffing": "השמה",
+    "other": "אחר"
+  },
+  "stats": {
+    "summary": "{{offers}} משרות · {{companies}} חברות"
+  },
   "noResults": "אין משרות לפי הסינון הזה.",
   "allCompanies": {
     "open": "כל החברות ({{count}})",
@@ -59,5 +82,5 @@
     "careers": "דרושים ↗",
     "close": "סגור"
   },
-  "footer": "מעקב משרות · מקורות: Ness · Matrix · Malam Team"
+  "footer": "מעקב משרות · מקורות: LinkedIn · ATS · אתרי קריירה"
 }

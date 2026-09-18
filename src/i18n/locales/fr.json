@@ -51,6 +51,29 @@
     "companies": "Entreprises tech",
     "agencies": "Sociétés de placement"
   },
+  "theme": {
+    "system": "Système",
+    "light": "Clair",
+    "dark": "Sombre"
+  },
+  "categories": {
+    "aria": "Filtrer par catégorie",
+    "all": "Toutes",
+    "security": "Sécurité",
+    "fintech": "Fintech",
+    "data-ai": "Data / IA",
+    "devtools": "Dev / Cloud",
+    "hardware": "Hardware / Semi",
+    "web-ecom": "Web / E-commerce",
+    "gaming": "Gaming",
+    "mobility": "Mobilité",
+    "health": "Santé / Bio",
+    "staffing": "Placement",
+    "other": "Autre"
+  },
+  "stats": {
+    "summary": "{{offers}} offres · {{companies}} entreprises"
+  },
   "noResults": "Aucune offre pour ces filtres.",
   "allCompanies": {
     "open": "Toutes les entreprises ({{count}})",
@@ -59,5 +82,5 @@
     "careers": "Careers ↗",
     "close": "Fermer"
   },
-  "footer": "Veille d'offres · sources : Ness · Matrix · Malam Team"
+  "footer": "Veille d'offres · sources : LinkedIn · ATS · sites carrière"
 }

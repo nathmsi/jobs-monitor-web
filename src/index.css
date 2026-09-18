@@ -33,27 +33,50 @@
   text-rendering: optimizeLegibility;
 }
 
+/* Dark palette — applied when the OS is dark (unless the user forced light),
+   and always when the user explicitly picks dark via the toggle. */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0c0e12;
-    --bg-elevated: #14171d;
-    --card: #14171d;
-    --card-hover: #191d24;
-    --text: #e8eaed;
-    --text-muted: #98a1b0;
-    --border: #242933;
-    --border-strong: #313845;
-    --accent: #5b8bff;
-    --accent-soft: #17203a;
+  :root:not([data-theme="light"]) {
+    --bg: #0a0c10;
+    --bg-elevated: #15181f;
+    --card: #15181f;
+    --card-hover: #1b1f28;
+    --text: #eaecf0;
+    --text-muted: #9aa4b2;
+    --border: #262b35;
+    --border-strong: #343b48;
+    --accent: #6b9bff;
+    --accent-soft: #182448;
     --new: #34d17e;
-    --new-soft: #12331f;
+    --new-soft: #123321;
     --hot: #fb923c;
     --hot-soft: #3a2213;
     --danger: #ff6b5e;
     --danger-soft: #3a1a17;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-    --shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
   }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0a0c10;
+  --bg-elevated: #15181f;
+  --card: #15181f;
+  --card-hover: #1b1f28;
+  --text: #eaecf0;
+  --text-muted: #9aa4b2;
+  --border: #262b35;
+  --border-strong: #343b48;
+  --accent: #6b9bff;
+  --accent-soft: #182448;
+  --new: #34d17e;
+  --new-soft: #123321;
+  --hot: #fb923c;
+  --hot-soft: #3a2213;
+  --danger: #ff6b5e;
+  --danger-soft: #3a1a17;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
 }
 
 * {
@@ -68,7 +91,14 @@ body {
 
 body {
   min-height: 100vh;
-  background: var(--bg);
+  background:
+    radial-gradient(
+      1200px 600px at 50% -200px,
+      color-mix(in srgb, var(--accent) 10%, transparent),
+      transparent 70%
+    ),
+    var(--bg);
+  background-attachment: fixed;
 }
 
 a {

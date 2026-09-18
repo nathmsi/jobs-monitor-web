@@ -17,6 +17,8 @@ export interface SourceInfo {
   key: string;
   label: string;
   kind: "agency" | "company" | string;
+  category?: string; // e.g. "security", "fintech", "data-ai", "staffing"…
+  via?: string; // "linkedin" for the LinkedIn-sourced companies
   site_url: string | null;
   auto_fetch: boolean;
   logo?: string | null;
@@ -46,4 +48,5 @@ export interface Filters {
   region: string;
   q: string;
   role?: string; // active role preset key (OR-matches its keywords)
+  category?: string; // active company category key (undefined = all)
 }

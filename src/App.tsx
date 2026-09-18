@@ -60,7 +60,29 @@ function App() {
 
   const companyCount = items.filter((it) => it.source.kind === "company").length;
   const agencyCount = items.filter((it) => it.source.kind === "agency").length;
-  const shown = items.filter((it) => it.source.kind === tab);
+
+  const tabItems = items.filter((it) => it.source.kind === tab);
+
+  // Categories present in the current tab, ordered by number of companies.
+  const catCounts: Record<string, number> = {};
+  for (const it of tabItems) {
+    const c = it.source.category ?? "other";
+    catCounts[c] = (catCounts[c] ?? 0) + 1;
+  }
+  const categories = Object.keys(catCounts).sort(
+    (a, b) => catCounts[b] - catCounts[a],
+  );
+
+  const activeCategory =
+    filters.category && categories.includes(filters.category)
+      ? filters.category
+      : undefined;
+
+  const shown = activeCategory
+    ? tabItems.filter((it) => (it.source.category ?? "other") === activeCategory)
+    : tabItems;
+
+  const totalOffers = shown.reduce((n, it) => n + it.jobs.length, 0);
 
   // Region counts (before the keyword filter) for the directory modal.
   const counts = Object.fromEntries(
@@ -80,7 +102,10 @@ function App() {
               role="tab"
               aria-selected={tab === "company"}
               className={`${styles.tab} ${tab === "company" ? styles.tabActive : ""}`}
-              onClick={() => setTab("company")}
+              onClick={() => {
+                setTab("company");
+                setFilters((f) => ({ ...f, category: undefined }));
+              }}
             >
               {t("tabs.companies")}{" "}
               <span className={styles.tabCount}>{companyCount}</span>
@@ -89,7 +114,10 @@ function App() {
               role="tab"
               aria-selected={tab === "agency"}
               className={`${styles.tab} ${tab === "agency" ? styles.tabActive : ""}`}
-              onClick={() => setTab("agency")}
+              onClick={() => {
+                setTab("agency");
+                setFilters((f) => ({ ...f, category: undefined }));
+              }}
             >
               {t("tabs.agencies")}{" "}
               <span className={styles.tabCount}>{agencyCount}</span>
@@ -99,6 +127,46 @@ function App() {
             {t("allCompanies.open", { count: sourceList.length })}
           </button>
         </div>
+      )}
+
+      {tab === "company" && categories.length > 1 && (
+        <div className={styles.catbar} role="group" aria-label={t("categories.aria")}>
+          <button
+            type="button"
+            className={`${styles.catchip} ${!activeCategory ? styles.catchipActive : ""}`}
+            aria-pressed={!activeCategory}
+            onClick={() => setFilters((f) => ({ ...f, category: undefined }))}
+          >
+            {t("categories.all")}{" "}
+            <span className={styles.catcount}>{tabItems.length}</span>
+          </button>
+          {categories.map((c) => (
+            <button
+              key={c}
+              type="button"
+              className={`${styles.catchip} ${activeCategory === c ? styles.catchipActive : ""}`}
+              aria-pressed={activeCategory === c}
+              onClick={() =>
+                setFilters((f) => ({
+                  ...f,
+                  category: activeCategory === c ? undefined : c,
+                }))
+              }
+            >
+              {t(`categories.${c}`)}{" "}
+              <span className={styles.catcount}>{catCounts[c]}</span>
+            </button>
+          ))}
+        </div>
+      )}
+
+      {sourceList.length > 0 && !isLoading && (
+        <p className={styles.stats}>
+          {t("stats.summary", {
+            offers: totalOffers,
+            companies: shown.length,
+          })}
+        </p>
       )}
 
       <main className={styles.sources}>

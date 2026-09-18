@@ -32,7 +32,14 @@ export function SourceSection({ source, jobs }: Props) {
       >
         <Avatar source={source} size={42} />
         <span className={styles.titleGroup}>
-          <span className={styles.title}>{source.label}</span>
+          <span className={styles.titleRow}>
+            <span className={styles.title}>{source.label}</span>
+            {source.via === "linkedin" && (
+              <span className={styles.viaBadge} title="LinkedIn">
+                in
+              </span>
+            )}
+          </span>
           <span className={styles.meta}>
             {t("source.offers", { count })}
             {newCount > 0 && (

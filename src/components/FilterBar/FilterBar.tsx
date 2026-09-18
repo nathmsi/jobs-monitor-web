@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useRegions } from "../../api/hooks";
 import { ROLES } from "../../constants/roles";
 import { useJobFlags } from "../../lib/jobFlags";
+import { useSavedJobs } from "../../lib/savedJobs";
 import type { Filters } from "../../types";
 import styles from "./FilterBar.module.css";
 
@@ -15,7 +16,8 @@ interface Props {
 export function FilterBar({ filters, onChange }: Props) {
   const { t, i18n } = useTranslation();
   const { data: regions } = useRegions();
-  const { hideSeen, setHideSeen, appliedCount } = useJobFlags();
+  const { hideSeen, setHideSeen } = useJobFlags();
+  const { appliedCount } = useSavedJobs();
   const [draft, setDraft] = useState(filters.q);
 
   const isHe = i18n.language.startsWith("he");

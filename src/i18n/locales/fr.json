@@ -40,7 +40,24 @@
     "view": "Voir l'offre →",
     "seen": "Déjà vu",
     "applied": "Postulé",
-    "markApplied": "J'ai postulé"
+    "markApplied": "J'ai postulé",
+    "save": "Sauvegarder",
+    "saved": "Sauvegardé",
+    "unsave": "Retirer des sauvegardes"
+  },
+  "auth": {
+    "signInGoogle": "Se connecter avec Google",
+    "signOut": "Se déconnecter"
+  },
+  "mine": {
+    "all": "Toutes",
+    "saved": "Sauvegardées",
+    "applied": "Postulées",
+    "empty": "Aucune offre ici pour l'instant. Sauvegarde des offres avec ★.",
+    "signInHint": "Connecte-toi pour retrouver tes offres sur tous tes appareils.",
+    "untitled": "(sans titre)",
+    "markSaved": "Marquer non postulé",
+    "remove": "Retirer"
   },
   "error": {
     "apiTitle": "Impossible de contacter l'API.",
@@ -49,7 +66,8 @@
   },
   "tabs": {
     "companies": "Entreprises tech",
-    "agencies": "Sociétés de placement"
+    "agencies": "Sociétés de placement",
+    "mine": "Mes offres"
   },
   "theme": {
     "system": "Système",

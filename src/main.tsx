@@ -6,6 +6,7 @@ import "./i18n";
 import App from "./App.tsx";
 import { AuthProvider } from "./lib/auth.tsx";
 import { JobFlagsProvider } from "./lib/jobFlags.tsx";
+import { SavedJobsProvider } from "./lib/savedJobs.tsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -20,9 +21,11 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <JobFlagsProvider>
-          <App />
-        </JobFlagsProvider>
+        <SavedJobsProvider>
+          <JobFlagsProvider>
+            <App />
+          </JobFlagsProvider>
+        </SavedJobsProvider>
       </AuthProvider>
     </QueryClientProvider>
   </StrictMode>,

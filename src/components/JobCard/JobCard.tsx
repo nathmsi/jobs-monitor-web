@@ -1,21 +1,26 @@
 import { useTranslation } from "react-i18next";
 
 import { jobId, useJobFlags } from "../../lib/jobFlags";
+import { useSavedJobs } from "../../lib/savedJobs";
 import { Badge } from "../Badge/Badge";
 import type { Job } from "../../types";
 import styles from "./JobCard.module.css";
 
 interface Props {
   job: Job;
+  sourceLabel?: string;
 }
 
-export function JobCard({ job }: Props) {
+export function JobCard({ job, sourceLabel }: Props) {
   const { t } = useTranslation();
-  const { isOpened, isApplied, markOpened, toggleApplied } = useJobFlags();
+  const { isOpened, markOpened } = useJobFlags();
+  const { statusOf, setStatus } = useSavedJobs();
 
   const id = jobId(job.source, job.external_id);
   const opened = isOpened(id);
-  const applied = isApplied(id);
+  const status = statusOf(job.source, job.external_id);
+  const saved = status !== undefined;
+  const applied = status === "applied";
 
   const cardClass = [
     styles.card,
@@ -70,8 +75,17 @@ export function JobCard({ job }: Props) {
       <footer className={styles.foot}>
         <button
           type="button"
+          className={`${styles.saveBtn} ${saved ? styles.saveBtnOn : ""}`}
+          onClick={() => setStatus(job, saved ? null : "saved", sourceLabel)}
+          aria-pressed={saved}
+          title={saved ? t("job.unsave") : t("job.save")}
+        >
+          {saved ? "★" : "☆"} {saved ? t("job.saved") : t("job.save")}
+        </button>
+        <button
+          type="button"
           className={`${styles.applyBtn} ${applied ? styles.applyBtnOn : ""}`}
-          onClick={() => toggleApplied(id)}
+          onClick={() => setStatus(job, applied ? "saved" : "applied", sourceLabel)}
           aria-pressed={applied}
         >
           {applied ? `✓ ${t("job.applied")}` : t("job.markApplied")}

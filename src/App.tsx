@@ -6,9 +6,11 @@ import { useRegionJobs, useSources } from "./api/hooks";
 import { ROLES } from "./constants/roles";
 import { FilterBar } from "./components/FilterBar/FilterBar";
 import { Header } from "./components/Header/Header";
+import { MyJobs } from "./components/MyJobs/MyJobs";
 import { SourcesModal } from "./components/SourcesModal/SourcesModal";
 import { SourceSection } from "./components/SourceSection/SourceSection";
 import { jobId, useJobFlags } from "./lib/jobFlags";
+import { useSavedJobs } from "./lib/savedJobs";
 import type { Filters, Job, SourceInfo } from "./types";
 import styles from "./App.module.css";
 
@@ -17,7 +19,8 @@ function App() {
   const { data: sources } = useSources();
   const [filters, setFilters] = useState<Filters>({ region: "all", q: "" });
   const [showAll, setShowAll] = useState(false);
-  const [tab, setTab] = useState<"company" | "agency">("company");
+  const [tab, setTab] = useState<"company" | "agency" | "mine">("company");
+  const { items: savedItems } = useSavedJobs();
 
   const { data: regionJobs, isLoading, isError, error } = useRegionJobs(
     filters.region,
@@ -122,6 +125,15 @@ function App() {
               {t("tabs.agencies")}{" "}
               <span className={styles.tabCount}>{agencyCount}</span>
             </button>
+            <button
+              role="tab"
+              aria-selected={tab === "mine"}
+              className={`${styles.tab} ${tab === "mine" ? styles.tabActive : ""}`}
+              onClick={() => setTab("mine")}
+            >
+              {t("tabs.mine")}{" "}
+              <span className={styles.tabCount}>{savedItems.length}</span>
+            </button>
           </div>
           <button className={styles.allBtn} onClick={() => setShowAll(true)}>
             {t("allCompanies.open", { count: sourceList.length })}
@@ -160,7 +172,7 @@ function App() {
         </div>
       )}
 
-      {sourceList.length > 0 && !isLoading && (
+      {tab !== "mine" && sourceList.length > 0 && !isLoading && (
         <p className={styles.stats}>
           {t("stats.summary", {
             offers: totalOffers,
@@ -169,28 +181,32 @@ function App() {
         </p>
       )}
 
-      <main className={styles.sources}>
-        {isError && (
-          <div className={styles.alert} role="alert">
-            <strong>{t("error.apiTitle")}</strong>
-            <br />
-            {(error as Error).message}
-          </div>
-        )}
+      {tab === "mine" ? (
+        <MyJobs />
+      ) : (
+        <main className={styles.sources}>
+          {isError && (
+            <div className={styles.alert} role="alert">
+              <strong>{t("error.apiTitle")}</strong>
+              <br />
+              {(error as Error).message}
+            </div>
+          )}
 
-        {isLoading &&
-          Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} className={styles.bootBar} />
+          {isLoading &&
+            Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className={styles.bootBar} />
+            ))}
+
+          {shown.map(({ source, jobs }) => (
+            <SourceSection key={source.key} source={source} jobs={jobs} />
           ))}
 
-        {shown.map(({ source, jobs }) => (
-          <SourceSection key={source.key} source={source} jobs={jobs} />
-        ))}
-
-        {!isLoading && shown.length === 0 && (
-          <p className={styles.noResults}>{t("noResults")}</p>
-        )}
-      </main>
+          {!isLoading && shown.length === 0 && (
+            <p className={styles.noResults}>{t("noResults")}</p>
+          )}
+        </main>
+      )}
 
       <footer className={styles.footer}>{t("footer")}</footer>
 

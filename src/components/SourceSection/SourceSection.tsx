@@ -77,7 +77,11 @@ export function SourceSection({ source, jobs }: Props) {
           )}
           <div className={styles.grid}>
             {jobs.map((job) => (
-              <JobCard key={`${job.source}-${job.external_id}`} job={job} />
+              <JobCard
+                key={`${job.source}-${job.external_id}`}
+                job={job}
+                sourceLabel={source.label}
+              />
             ))}
           </div>
         </div>

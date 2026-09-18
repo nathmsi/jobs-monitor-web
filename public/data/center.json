@@ -3768,7 +3768,7 @@
 "url": "https://jobs.ashbyhq.com/moonactive/f9d414e9-6bb9-4e35-99c2-6d452a66c7ae",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "moonactive",
@@ -3780,7 +3780,7 @@
 "url": "https://jobs.ashbyhq.com/moonactive/9f1eb9b4-17d3-43e3-8d96-ef168ff07c6f",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "moonactive",
@@ -3792,7 +3792,7 @@
 "url": "https://jobs.ashbyhq.com/moonactive/fd2cd6bb-1e02-4270-95cb-e40f7f3d5ccc",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "moonactive",
@@ -3804,7 +3804,7 @@
 "url": "https://jobs.ashbyhq.com/moonactive/97952ab6-4175-4727-8c16-914895df3726",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "moonactive",
@@ -3816,7 +3816,7 @@
 "url": "https://jobs.ashbyhq.com/moonactive/b9ef962f-9edd-49f3-bb44-e288bb7885d4",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "moonactive",
@@ -3828,7 +3828,7 @@
 "url": "https://jobs.ashbyhq.com/moonactive/d6b8e001-c645-4463-9707-09552fab60fd",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "moonactive",
@@ -3840,7 +3840,7 @@
 "url": "https://jobs.ashbyhq.com/moonactive/918611b6-1ab5-400e-abe2-970470ea0f5d",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "moonactive",
@@ -3852,7 +3852,7 @@
 "url": "https://jobs.ashbyhq.com/moonactive/d9438ecd-3caf-4705-b308-fc2f55c646de",
 "is_hot": false,
 "last_updated": "2026-09-18",
-"is_new": true
+"is_new": false
 },
 {
 "source": "ness",
@@ -5151,5 +5151,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-18T10:10:08.958544+00:00"
+"generated_at": "2026-09-18T10:18:33.334228+00:00"
 }

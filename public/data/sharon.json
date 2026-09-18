@@ -16,12 +16,24 @@
 },
 {
 "source": "jfrog",
-"external_id": "7419121",
-"title": "R&D Team Lead",
+"external_id": "7939091",
+"title": "GenAI & Competitive Intelligence Engineer",
 "location": "Tel Aviv/ Netanya, Israel",
 "excerpt": "",
 "description": "",
-"url": "https://join.jfrog.com/job/?job=7419121&gh_jid=7419121",
+"url": "https://join.jfrog.com/job/?job=7939091&gh_jid=7939091",
+"is_hot": false,
+"last_updated": "2026-09-18",
+"is_new": false
+},
+{
+"source": "jfrog",
+"external_id": "7510102",
+"title": "Senior Software Engineer",
+"location": "Tel Aviv/ Netanya, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://join.jfrog.com/job/?job=7510102&gh_jid=7510102",
 "is_hot": false,
 "last_updated": "2026-09-18",
 "is_new": false
@@ -52,24 +64,12 @@
 },
 {
 "source": "jfrog",
-"external_id": "7939091",
-"title": "GenAI & Competitive Intelligence Engineer",
+"external_id": "7419121",
+"title": "R&D Team Lead",
 "location": "Tel Aviv/ Netanya, Israel",
 "excerpt": "",
 "description": "",
-"url": "https://join.jfrog.com/job/?job=7939091&gh_jid=7939091",
-"is_hot": false,
-"last_updated": "2026-09-18",
-"is_new": false
-},
-{
-"source": "jfrog",
-"external_id": "7510102",
-"title": "Senior Software Engineer",
-"location": "Tel Aviv/ Netanya, Israel",
-"excerpt": "",
-"description": "",
-"url": "https://join.jfrog.com/job/?job=7510102&gh_jid=7510102",
+"url": "https://join.jfrog.com/job/?job=7419121&gh_jid=7419121",
 "is_hot": false,
 "last_updated": "2026-09-18",
 "is_new": false
@@ -615,5 +615,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-18T12:57:04.868992+00:00"
+"generated_at": "2026-09-18T12:58:34.188033+00:00"
 }

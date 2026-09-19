@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { matchScore } from "../../lib/cvAnalysis";
+import { rankScore } from "../../lib/cvAnalysis";
 import { useProfile } from "../../lib/profile";
 import { JobCard } from "../JobCard/JobCard";
 import type { Job, SourceInfo } from "../../types";
@@ -27,10 +27,10 @@ export function ForMe({ jobs, sources, onEditProfile }: Props) {
     return jobs
       .map((job) => ({
         job,
-        score: matchScore(
+        score: rankScore(
           `${job.title} ${job.excerpt} ${job.description ?? ""}`,
           profile,
-        ).count,
+        ),
       }))
       .filter((r) => r.score > 0)
       .sort((a, b) => b.score - a.score)

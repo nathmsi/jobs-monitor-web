@@ -1,9 +1,20 @@
 import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { ROLES } from "../../constants/roles";
 import { analyzeCv, type CvProfile } from "../../lib/cvAnalysis";
 import { useProfile } from "../../lib/profile";
 import styles from "./ProfilePanel.module.css";
+
+const SENIORITY_OPTIONS = [
+  "Junior",
+  "Mid-level",
+  "Senior",
+  "Lead",
+  "Staff",
+  "Principal",
+  "Architect",
+];
 
 interface Props {
   onClose: () => void;
@@ -46,6 +57,18 @@ export function ProfilePanel({ onClose }: Props) {
     if (!draft.skills.includes(s)) setDraft({ ...draft, skills: [...draft.skills, s] });
     setNewSkill("");
   };
+
+  const toggleRole = (key: string) =>
+    setDraft((d) =>
+      d
+        ? {
+            ...d,
+            roles: d.roles.includes(key)
+              ? d.roles.filter((r) => r !== key)
+              : [...d.roles, key],
+          }
+        : d,
+    );
 
   return (
     <div className={styles.overlay} onClick={onClose}>
@@ -106,11 +129,23 @@ export function ProfilePanel({ onClose }: Props) {
         {draft && (
           <div className={styles.result}>
             <div className={styles.metaRow}>
-              {draft.seniority && (
-                <span className={styles.metaPill}>
-                  {t("profile.seniority")}: <strong>{draft.seniority}</strong>
-                </span>
-              )}
+              <label className={styles.metaPill}>
+                {t("profile.seniority")}:{" "}
+                <select
+                  className={styles.select}
+                  value={draft.seniority ?? ""}
+                  onChange={(e) =>
+                    setDraft({ ...draft, seniority: e.target.value || null })
+                  }
+                >
+                  <option value="">—</option>
+                  {SENIORITY_OPTIONS.map((s) => (
+                    <option key={s} value={s}>
+                      {s}
+                    </option>
+                  ))}
+                </select>
+              </label>
               {draft.years != null && (
                 <span className={styles.metaPill}>
                   {t("profile.years")}: <strong>{t("profile.yearsValue", { count: draft.years })}</strong>
@@ -121,6 +156,24 @@ export function ProfilePanel({ onClose }: Props) {
                   {t("profile.languages")}: <strong>{draft.languages.join(", ")}</strong>
                 </span>
               )}
+            </div>
+
+            <div className={styles.blockLabel}>{t("profile.roles")}</div>
+            <div className={styles.chips}>
+              {ROLES.map((r) => {
+                const active = draft.roles.includes(r.key);
+                return (
+                  <button
+                    key={r.key}
+                    type="button"
+                    className={`${styles.roleChip} ${active ? styles.roleChipOn : ""}`}
+                    aria-pressed={active}
+                    onClick={() => toggleRole(r.key)}
+                  >
+                    {r.label}
+                  </button>
+                );
+              })}
             </div>
 
             <div className={styles.blockLabel}>

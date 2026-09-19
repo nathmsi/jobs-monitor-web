@@ -152,3 +152,18 @@ export function matchScore(
   });
   return { count: matched.length, matched };
 }
+
+/** Does the offer match one of the profile's roles (frontend, full stack…)? */
+export function roleMatches(text: string, profile: CvProfile | null): boolean {
+  if (!profile || profile.roles.length === 0) return false;
+  const hay = norm(text);
+  const terms = ROLES.filter((r) => profile.roles.includes(r.key)).flatMap(
+    (r) => r.terms,
+  );
+  return terms.some((t) => hay.includes(t));
+}
+
+/** Overall relevance for ranking: skills matches + a bonus if the role fits. */
+export function rankScore(text: string, profile: CvProfile | null): number {
+  return matchScore(text, profile).count * 2 + (roleMatches(text, profile) ? 3 : 0);
+}

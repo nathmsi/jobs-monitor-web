@@ -138,7 +138,39 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
-  margin-bottom: 0.5rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.select {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.roleChip {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.28rem 0.8rem;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.roleChip:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.roleChipOn {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
 }
 
 .chips {

@@ -14,6 +14,7 @@
     "regionLabel": "אזור",
     "roleLabel": "תפקיד:",
     "clear": "ניקוי",
+    "toggle": "סינון",
     "hideSeen": "הסתר משרות שכבר נצפו",
     "appliedCount_one": "הגשה אחת",
     "appliedCount_other": "{{count}} הגשות"

@@ -4,9 +4,9 @@ import { useTranslation } from "react-i18next";
 import { queryTokens, textMatches, textMatchesAny } from "./api/client";
 import { useRegionJobs, useSources } from "./api/hooks";
 import { ROLES } from "./constants/roles";
-import { FilterBar } from "./components/FilterBar/FilterBar";
 import { ForMe } from "./components/ForMe/ForMe";
 import { Header } from "./components/Header/Header";
+import { Sidebar } from "./components/Sidebar/Sidebar";
 import { MyJobs } from "./components/MyJobs/MyJobs";
 import { ProfilePanel } from "./components/ProfilePanel/ProfilePanel";
 import { SourcesModal } from "./components/SourcesModal/SourcesModal";
@@ -23,6 +23,7 @@ function App() {
   const [filters, setFilters] = useState<Filters>({ region: "all", q: "" });
   const [showAll, setShowAll] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const [tab, setTab] = useState<"company" | "agency" | "mine" | "forme">(
     "company",
   );
@@ -105,134 +106,115 @@ function App() {
     <div className={styles.app}>
       <Header onOpenProfile={() => setShowProfile(true)} />
 
-      <FilterBar filters={filters} onChange={setFilters} />
+      <div className={styles.tabbar} role="tablist">
+        <button
+          role="tab"
+          aria-selected={tab === "company"}
+          className={`${styles.tab} ${tab === "company" ? styles.tabActive : ""}`}
+          onClick={() => {
+            setTab("company");
+            setFilters((f) => ({ ...f, category: undefined }));
+          }}
+        >
+          {t("tabs.companies")} <span className={styles.tabCount}>{companyCount}</span>
+        </button>
+        <button
+          role="tab"
+          aria-selected={tab === "agency"}
+          className={`${styles.tab} ${tab === "agency" ? styles.tabActive : ""}`}
+          onClick={() => {
+            setTab("agency");
+            setFilters((f) => ({ ...f, category: undefined }));
+          }}
+        >
+          {t("tabs.agencies")} <span className={styles.tabCount}>{agencyCount}</span>
+        </button>
+        <button
+          role="tab"
+          aria-selected={tab === "mine"}
+          className={`${styles.tab} ${tab === "mine" ? styles.tabActive : ""}`}
+          onClick={() => setTab("mine")}
+        >
+          {t("tabs.mine")} <span className={styles.tabCount}>{savedItems.length}</span>
+        </button>
+        <button
+          role="tab"
+          aria-selected={tab === "forme"}
+          className={`${styles.tab} ${tab === "forme" ? styles.tabActive : ""}`}
+          onClick={() => setTab("forme")}
+        >
+          {t("tabs.forme")}
+          {profile && profile.skills.length > 0 && (
+            <span className={styles.tabCount}>{profile.skills.length}</span>
+          )}
+        </button>
+      </div>
 
-      {sourceList.length > 0 && (
-        <div className={styles.tabbar}>
-          <div className={styles.tabs} role="tablist">
+      <div className={styles.layout}>
+        <div className={`${styles.side} ${filtersOpen ? styles.sideOpen : ""}`}>
+          <Sidebar
+            filters={filters}
+            onChange={setFilters}
+            showCategories={tab === "company"}
+            categories={categories}
+            catCounts={catCounts}
+            activeCategory={activeCategory}
+            totalInTab={tabItems.length}
+          />
+        </div>
+
+        <div className={styles.content}>
+          <div className={styles.contentBar}>
             <button
-              role="tab"
-              aria-selected={tab === "company"}
-              className={`${styles.tab} ${tab === "company" ? styles.tabActive : ""}`}
-              onClick={() => {
-                setTab("company");
-                setFilters((f) => ({ ...f, category: undefined }));
-              }}
+              className={styles.filtersToggle}
+              onClick={() => setFiltersOpen((v) => !v)}
             >
-              {t("tabs.companies")}{" "}
-              <span className={styles.tabCount}>{companyCount}</span>
+              ⚙ {t("filters.toggle")}
             </button>
-            <button
-              role="tab"
-              aria-selected={tab === "agency"}
-              className={`${styles.tab} ${tab === "agency" ? styles.tabActive : ""}`}
-              onClick={() => {
-                setTab("agency");
-                setFilters((f) => ({ ...f, category: undefined }));
-              }}
-            >
-              {t("tabs.agencies")}{" "}
-              <span className={styles.tabCount}>{agencyCount}</span>
-            </button>
-            <button
-              role="tab"
-              aria-selected={tab === "mine"}
-              className={`${styles.tab} ${tab === "mine" ? styles.tabActive : ""}`}
-              onClick={() => setTab("mine")}
-            >
-              {t("tabs.mine")}{" "}
-              <span className={styles.tabCount}>{savedItems.length}</span>
-            </button>
-            <button
-              role="tab"
-              aria-selected={tab === "forme"}
-              className={`${styles.tab} ${tab === "forme" ? styles.tabActive : ""}`}
-              onClick={() => setTab("forme")}
-            >
-              {t("tabs.forme")}
-              {profile && profile.skills.length > 0 && (
-                <span className={styles.tabCount}>{profile.skills.length}</span>
-              )}
+            {tab !== "mine" && tab !== "forme" && sourceList.length > 0 && !isLoading && (
+              <span className={styles.stats}>
+                {t("stats.summary", { offers: totalOffers, companies: shown.length })}
+              </span>
+            )}
+            <button className={styles.allBtn} onClick={() => setShowAll(true)}>
+              {t("allCompanies.open", { count: sourceList.length })}
             </button>
           </div>
-          <button className={styles.allBtn} onClick={() => setShowAll(true)}>
-            {t("allCompanies.open", { count: sourceList.length })}
-          </button>
-        </div>
-      )}
 
-      {tab === "company" && categories.length > 1 && (
-        <div className={styles.catbar} role="group" aria-label={t("categories.aria")}>
-          <button
-            type="button"
-            className={`${styles.catchip} ${!activeCategory ? styles.catchipActive : ""}`}
-            aria-pressed={!activeCategory}
-            onClick={() => setFilters((f) => ({ ...f, category: undefined }))}
-          >
-            {t("categories.all")}{" "}
-            <span className={styles.catcount}>{tabItems.length}</span>
-          </button>
-          {categories.map((c) => (
-            <button
-              key={c}
-              type="button"
-              className={`${styles.catchip} ${activeCategory === c ? styles.catchipActive : ""}`}
-              aria-pressed={activeCategory === c}
-              onClick={() =>
-                setFilters((f) => ({
-                  ...f,
-                  category: activeCategory === c ? undefined : c,
-                }))
-              }
-            >
-              {t(`categories.${c}`)}{" "}
-              <span className={styles.catcount}>{catCounts[c]}</span>
-            </button>
-          ))}
-        </div>
-      )}
+          {tab === "mine" ? (
+            <MyJobs />
+          ) : tab === "forme" ? (
+            <ForMe
+              jobs={allJobs}
+              sources={sourceList}
+              onEditProfile={() => setShowProfile(true)}
+            />
+          ) : (
+            <main className={styles.sources}>
+              {isError && (
+                <div className={styles.alert} role="alert">
+                  <strong>{t("error.apiTitle")}</strong>
+                  <br />
+                  {(error as Error).message}
+                </div>
+              )}
 
-      {tab !== "mine" && tab !== "forme" && sourceList.length > 0 && !isLoading && (
-        <p className={styles.stats}>
-          {t("stats.summary", {
-            offers: totalOffers,
-            companies: shown.length,
-          })}
-        </p>
-      )}
+              {isLoading &&
+                Array.from({ length: 6 }).map((_, i) => (
+                  <div key={i} className={styles.bootBar} />
+                ))}
 
-      {tab === "mine" ? (
-        <MyJobs />
-      ) : tab === "forme" ? (
-        <ForMe
-          jobs={allJobs}
-          sources={sourceList}
-          onEditProfile={() => setShowProfile(true)}
-        />
-      ) : (
-        <main className={styles.sources}>
-          {isError && (
-            <div className={styles.alert} role="alert">
-              <strong>{t("error.apiTitle")}</strong>
-              <br />
-              {(error as Error).message}
-            </div>
+              {shown.map(({ source, jobs }) => (
+                <SourceSection key={source.key} source={source} jobs={jobs} />
+              ))}
+
+              {!isLoading && shown.length === 0 && (
+                <p className={styles.noResults}>{t("noResults")}</p>
+              )}
+            </main>
           )}
-
-          {isLoading &&
-            Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className={styles.bootBar} />
-            ))}
-
-          {shown.map(({ source, jobs }) => (
-            <SourceSection key={source.key} source={source} jobs={jobs} />
-          ))}
-
-          {!isLoading && shown.length === 0 && (
-            <p className={styles.noResults}>{t("noResults")}</p>
-          )}
-        </main>
-      )}
+        </div>
+      </div>
 
       <footer className={styles.footer}>{t("footer")}</footer>
 

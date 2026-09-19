@@ -15,18 +15,12 @@ export function Header({ onOpenProfile }: Props) {
 
   return (
     <header className={styles.header}>
-      <div className={styles.topbar}>
-        <ProfileButton onClick={onOpenProfile} />
-        <AuthButton />
-        <ThemeToggle />
-        <LanguageSwitcher />
-      </div>
-      <div className={styles.hero}>
+      <div className={styles.brand}>
         <svg
           className={styles.logo}
           viewBox="0 0 48 48"
-          width="52"
-          height="52"
+          width="40"
+          height="40"
           aria-hidden
         >
           <defs>
@@ -48,9 +42,17 @@ export function Header({ onOpenProfile }: Props) {
           />
           <circle cx="32.5" cy="14" r="4.6" fill="#fbbf24" stroke="url(#logoBg)" strokeWidth="2" />
         </svg>
-        <div className={styles.badge}>{t("header.eyebrow")}</div>
-        <h1 className={styles.title}>{t("header.title")}</h1>
-        <p className={styles.subtitle}>{t("header.subtitle")}</p>
+        <div className={styles.brandText}>
+          <span className={styles.name}>{t("header.title")}</span>
+          <span className={styles.tagline}>{t("header.subtitle")}</span>
+        </div>
+      </div>
+
+      <div className={styles.actions}>
+        <ProfileButton onClick={onOpenProfile} />
+        <AuthButton />
+        <ThemeToggle />
+        <LanguageSwitcher />
       </div>
     </header>
   );

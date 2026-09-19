@@ -40,7 +40,8 @@ export interface RefreshResult {
 
 export interface RegionInfo {
   key: string;
-  label_fr: string;
+  label_en: string;
+  label_fr?: string;
   label_he: string;
 }
 

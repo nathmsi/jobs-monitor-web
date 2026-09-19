@@ -1,12 +1,12 @@
 {
-  "name": "Veille d'offres · Israël",
-  "short_name": "Veille d'offres",
-  "description": "Offres tech & ingénierie en Israël, agrégées et rafraîchies automatiquement.",
+  "name": "Israel Tech Jobs",
+  "short_name": "Tech Jobs",
+  "description": "Tech & engineering jobs in Israel, aggregated and refreshed automatically.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0c10",
   "theme_color": "#3b82f6",
-  "lang": "fr",
+  "lang": "en",
   "icons": [
     { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
     { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" },

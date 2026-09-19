@@ -2,10 +2,10 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
-import fr from "./locales/fr.json";
+import en from "./locales/en.json";
 import he from "./locales/he.json";
 
-export const SUPPORTED_LANGUAGES = ["fr", "he"] as const;
+export const SUPPORTED_LANGUAGES = ["en", "he"] as const;
 export type Language = (typeof SUPPORTED_LANGUAGES)[number];
 
 /** Languages that render right-to-left. */
@@ -20,10 +20,10 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      fr: { translation: fr },
+      en: { translation: en },
       he: { translation: he },
     },
-    fallbackLng: "fr",
+    fallbackLng: "en",
     supportedLngs: SUPPORTED_LANGUAGES,
     interpolation: { escapeValue: false },
     detection: {

@@ -1,0 +1,104 @@
+{
+  "header": {
+    "eyebrow": "ISRAEL",
+    "title": "Tech Jobs",
+    "subtitle": "Engineering & tech roles in Israel — development, data, DevOps, cloud, security…"
+  },
+  "lang": {
+    "label": "Language",
+    "en": "EN",
+    "he": "עב"
+  },
+  "filters": {
+    "searchPlaceholder": "Search: React, Node, .NET…",
+    "regionLabel": "Area",
+    "roleLabel": "Role:",
+    "clear": "Clear",
+    "hideSeen": "Hide offers I've seen",
+    "appliedCount_one": "{{count}} application",
+    "appliedCount_other": "{{count}} applications"
+  },
+  "source": {
+    "refresh": "Refresh",
+    "loading": "Loading…",
+    "openSite": "Open site ↗",
+    "offers_one": "{{count}} offer",
+    "offers_other": "{{count}} offers",
+    "new_one": "{{count}} new",
+    "new_other": "{{count}} new",
+    "updated": "updated {{time}}",
+    "empty": "No offers fetched automatically.",
+    "emptyLink": "View directly on the site ↗",
+    "onDemand": "On-demand source — click \"Refresh\" to load offers.",
+    "onDemandShort": "On demand",
+    "otherSources": "Other sources",
+    "ready": "Ready."
+  },
+  "job": {
+    "new": "New",
+    "hot": "Hot",
+    "view": "View offer →",
+    "seen": "Seen",
+    "applied": "Applied",
+    "markApplied": "I applied",
+    "save": "Save",
+    "saved": "Saved",
+    "unsave": "Remove from saved"
+  },
+  "auth": {
+    "signInGoogle": "Sign in with Google",
+    "signOut": "Sign out"
+  },
+  "mine": {
+    "all": "All",
+    "saved": "Saved",
+    "applied": "Applied",
+    "empty": "Nothing here yet. Save offers with ★.",
+    "signInHint": "Sign in to keep your offers across all your devices.",
+    "untitled": "(untitled)",
+    "markSaved": "Mark as not applied",
+    "remove": "Remove"
+  },
+  "error": {
+    "apiTitle": "Could not reach the API.",
+    "apiHint": "Check that the backend responds at",
+    "generic": "Error: {{message}}"
+  },
+  "tabs": {
+    "companies": "Tech companies",
+    "agencies": "Staffing agencies",
+    "mine": "My offers"
+  },
+  "theme": {
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "categories": {
+    "aria": "Filter by category",
+    "all": "All",
+    "security": "Security",
+    "fintech": "Fintech",
+    "data-ai": "Data / AI",
+    "devtools": "Dev / Cloud",
+    "hardware": "Hardware / Semi",
+    "web-ecom": "Web / E-commerce",
+    "gaming": "Gaming",
+    "mobility": "Mobility",
+    "health": "Health / Bio",
+    "staffing": "Staffing",
+    "other": "Other"
+  },
+  "stats": {
+    "summary": "{{offers}} offers · {{companies}} companies"
+  },
+  "noResults": "No offers for these filters.",
+  "allCompanies": {
+    "open": "All companies ({{count}})",
+    "title": "All companies",
+    "search": "Search a company…",
+    "careers": "Careers ↗",
+    "close": "Close"
+  },
+  "footer": "Job watch · sources: LinkedIn · ATS · career sites"
+}

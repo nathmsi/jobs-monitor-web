@@ -81,7 +81,7 @@ export function FilterBar({ filters, onChange }: Props) {
         >
           {regions?.map((r) => (
             <option key={r.key} value={r.key}>
-              {isHe ? r.label_he : r.label_fr}
+              {isHe ? r.label_he : (r.label_en ?? r.label_fr)}
             </option>
           ))}
         </select>

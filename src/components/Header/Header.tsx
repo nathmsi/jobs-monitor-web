@@ -2,15 +2,21 @@ import { useTranslation } from "react-i18next";
 
 import { AuthButton } from "../AuthButton/AuthButton";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
+import { ProfileButton } from "../ProfileButton/ProfileButton";
 import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
 import styles from "./Header.module.css";
 
-export function Header() {
+interface Props {
+  onOpenProfile: () => void;
+}
+
+export function Header({ onOpenProfile }: Props) {
   const { t } = useTranslation();
 
   return (
     <header className={styles.header}>
       <div className={styles.topbar}>
+        <ProfileButton onClick={onOpenProfile} />
         <AuthButton />
         <ThemeToggle />
         <LanguageSwitcher />

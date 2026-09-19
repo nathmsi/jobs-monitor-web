@@ -42,7 +42,7 @@ export function ForMe({ jobs, sources, onEditProfile }: Props) {
       <div className={styles.empty}>
         <p>{t("forme.noProfile")}</p>
         <button className={styles.cta} onClick={onEditProfile}>
-          🎯 {t("profile.open")}
+          {t("profile.title")}
         </button>
       </div>
     );

@@ -103,7 +103,7 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <Header />
+      <Header onOpenProfile={() => setShowProfile(true)} />
 
       <FilterBar filters={filters} onChange={setFilters} />
 
@@ -155,14 +155,9 @@ function App() {
               )}
             </button>
           </div>
-          <div className={styles.tabActions}>
-            <button className={styles.allBtn} onClick={() => setShowProfile(true)}>
-              🎯 {t("profile.open")}
-            </button>
-            <button className={styles.allBtn} onClick={() => setShowAll(true)}>
-              {t("allCompanies.open", { count: sourceList.length })}
-            </button>
-          </div>
+          <button className={styles.allBtn} onClick={() => setShowAll(true)}>
+            {t("allCompanies.open", { count: sourceList.length })}
+          </button>
         </div>
       )}
 

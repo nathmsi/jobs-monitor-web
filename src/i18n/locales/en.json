@@ -67,7 +67,35 @@
   "tabs": {
     "companies": "Tech companies",
     "agencies": "Staffing agencies",
-    "mine": "My offers"
+    "mine": "My offers",
+    "forme": "For me"
+  },
+  "match": {
+    "skills_one": "{{count}} skill match",
+    "skills_other": "{{count}} skills match"
+  },
+  "profile": {
+    "open": "My profile",
+    "title": "Analyze my CV",
+    "privacy": "Analyzed on your device — your CV never leaves your browser.",
+    "placeholder": "Paste your CV text here…",
+    "dropPdf": "Choose / drop a PDF",
+    "analyze": "Analyze",
+    "analyzing": "Analyzing…",
+    "save": "Save profile",
+    "clear": "Clear profile",
+    "close": "Close",
+    "skills": "Skills",
+    "languages": "Languages",
+    "seniority": "Seniority",
+    "years": "Experience",
+    "yearsValue": "{{count}} yrs",
+    "addSkill": "Add a skill…"
+  },
+  "forme": {
+    "noProfile": "Analyze your CV to see the offers that match you.",
+    "noMatch": "No offers match your profile right now — try widening the area filter.",
+    "summary": "{{count}} offers matched to your profile"
   },
   "theme": {
     "system": "System",

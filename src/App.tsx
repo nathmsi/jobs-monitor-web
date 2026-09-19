@@ -5,11 +5,14 @@ import { queryTokens, textMatches, textMatchesAny } from "./api/client";
 import { useRegionJobs, useSources } from "./api/hooks";
 import { ROLES } from "./constants/roles";
 import { FilterBar } from "./components/FilterBar/FilterBar";
+import { ForMe } from "./components/ForMe/ForMe";
 import { Header } from "./components/Header/Header";
 import { MyJobs } from "./components/MyJobs/MyJobs";
+import { ProfilePanel } from "./components/ProfilePanel/ProfilePanel";
 import { SourcesModal } from "./components/SourcesModal/SourcesModal";
 import { SourceSection } from "./components/SourceSection/SourceSection";
 import { jobId, useJobFlags } from "./lib/jobFlags";
+import { useProfile } from "./lib/profile";
 import { useSavedJobs } from "./lib/savedJobs";
 import type { Filters, Job, SourceInfo } from "./types";
 import styles from "./App.module.css";
@@ -19,8 +22,12 @@ function App() {
   const { data: sources } = useSources();
   const [filters, setFilters] = useState<Filters>({ region: "all", q: "" });
   const [showAll, setShowAll] = useState(false);
-  const [tab, setTab] = useState<"company" | "agency" | "mine">("company");
+  const [showProfile, setShowProfile] = useState(false);
+  const [tab, setTab] = useState<"company" | "agency" | "mine" | "forme">(
+    "company",
+  );
   const { items: savedItems } = useSavedJobs();
+  const { profile } = useProfile();
 
   const { data: regionJobs, isLoading, isError, error } = useRegionJobs(
     filters.region,
@@ -36,6 +43,8 @@ function App() {
     if (hideSeen && isOpened(jobId(job.source, job.external_id))) continue;
     (grouped[job.source] ??= []).push(job);
   }
+
+  const allJobs = Object.values(grouped).flat();
 
   const role = ROLES.find((r) => r.key === filters.role);
 
@@ -134,10 +143,26 @@ function App() {
               {t("tabs.mine")}{" "}
               <span className={styles.tabCount}>{savedItems.length}</span>
             </button>
+            <button
+              role="tab"
+              aria-selected={tab === "forme"}
+              className={`${styles.tab} ${tab === "forme" ? styles.tabActive : ""}`}
+              onClick={() => setTab("forme")}
+            >
+              {t("tabs.forme")}
+              {profile && profile.skills.length > 0 && (
+                <span className={styles.tabCount}>{profile.skills.length}</span>
+              )}
+            </button>
           </div>
-          <button className={styles.allBtn} onClick={() => setShowAll(true)}>
-            {t("allCompanies.open", { count: sourceList.length })}
-          </button>
+          <div className={styles.tabActions}>
+            <button className={styles.allBtn} onClick={() => setShowProfile(true)}>
+              🎯 {t("profile.open")}
+            </button>
+            <button className={styles.allBtn} onClick={() => setShowAll(true)}>
+              {t("allCompanies.open", { count: sourceList.length })}
+            </button>
+          </div>
         </div>
       )}
 
@@ -172,7 +197,7 @@ function App() {
         </div>
       )}
 
-      {tab !== "mine" && sourceList.length > 0 && !isLoading && (
+      {tab !== "mine" && tab !== "forme" && sourceList.length > 0 && !isLoading && (
         <p className={styles.stats}>
           {t("stats.summary", {
             offers: totalOffers,
@@ -183,6 +208,12 @@ function App() {
 
       {tab === "mine" ? (
         <MyJobs />
+      ) : tab === "forme" ? (
+        <ForMe
+          jobs={allJobs}
+          sources={sourceList}
+          onEditProfile={() => setShowProfile(true)}
+        />
       ) : (
         <main className={styles.sources}>
           {isError && (
@@ -217,6 +248,8 @@ function App() {
           onClose={() => setShowAll(false)}
         />
       )}
+
+      {showProfile && <ProfilePanel onClose={() => setShowProfile(false)} />}
     </div>
   );
 }

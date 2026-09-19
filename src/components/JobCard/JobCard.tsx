@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 
+import { matchScore } from "../../lib/cvAnalysis";
 import { jobId, useJobFlags } from "../../lib/jobFlags";
+import { useProfile } from "../../lib/profile";
 import { useSavedJobs } from "../../lib/savedJobs";
 import { Badge } from "../Badge/Badge";
 import type { Job } from "../../types";
@@ -15,12 +17,18 @@ export function JobCard({ job, sourceLabel }: Props) {
   const { t } = useTranslation();
   const { isOpened, markOpened } = useJobFlags();
   const { statusOf, setStatus } = useSavedJobs();
+  const { profile } = useProfile();
 
   const id = jobId(job.source, job.external_id);
   const opened = isOpened(id);
   const status = statusOf(job.source, job.external_id);
   const saved = status !== undefined;
   const applied = status === "applied";
+
+  const match = matchScore(
+    `${job.title} ${job.excerpt} ${job.description ?? ""}`,
+    profile,
+  );
 
   const cardClass = [
     styles.card,
@@ -36,6 +44,11 @@ export function JobCard({ job, sourceLabel }: Props) {
       <header className={styles.head}>
         <span className={styles.id}>#{job.external_id}</span>
         <div className={styles.badges}>
+          {match.count > 0 && (
+            <span className={styles.matchTag} title={match.matched.join(", ")}>
+              ★ {t("match.skills", { count: match.count })}
+            </span>
+          )}
           {applied && <Badge variant="applied">✓ {t("job.applied")}</Badge>}
           {!applied && opened && (
             <span className={styles.seenTag}>{t("job.seen")}</span>

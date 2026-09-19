@@ -49,6 +49,17 @@
   white-space: nowrap;
 }
 
+.matchTag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #b7791f;
+  background: color-mix(in srgb, #d69e2e 16%, transparent);
+  border: 1px solid color-mix(in srgb, #d69e2e 40%, transparent);
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
 .isNew::before {
   content: "";
   position: absolute;

@@ -76,30 +76,6 @@
 },
 {
 "source": "jfrog",
-"external_id": "7694707",
-"title": "Business Development Representative - German Speaker",
-"location": "Tel Aviv/ Netanya, Israel",
-"excerpt": "",
-"description": "",
-"url": "https://join.jfrog.com/job/?job=7694707&gh_jid=7694707",
-"is_hot": false,
-"last_updated": "2026-09-19",
-"is_new": false
-},
-{
-"source": "jfrog",
-"external_id": "7434101",
-"title": "Developer Advocate",
-"location": "Tel Aviv/ Netanya, Israel",
-"excerpt": "",
-"description": "",
-"url": "https://join.jfrog.com/job/?job=7434101&gh_jid=7434101",
-"is_hot": false,
-"last_updated": "2026-09-19",
-"is_new": false
-},
-{
-"source": "jfrog",
 "external_id": "8138480",
 "title": "AI Solutions Specialist",
 "location": "Tel Aviv/ Netanya, Israel",
@@ -118,6 +94,30 @@
 "excerpt": "",
 "description": "",
 "url": "https://join.jfrog.com/job/?job=8167054&gh_jid=8167054",
+"is_hot": false,
+"last_updated": "2026-09-19",
+"is_new": false
+},
+{
+"source": "jfrog",
+"external_id": "7694707",
+"title": "Business Development Representative - German Speaker",
+"location": "Tel Aviv/ Netanya, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://join.jfrog.com/job/?job=7694707&gh_jid=7694707",
+"is_hot": false,
+"last_updated": "2026-09-19",
+"is_new": false
+},
+{
+"source": "jfrog",
+"external_id": "7434101",
+"title": "Developer Advocate",
+"location": "Tel Aviv/ Netanya, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://join.jfrog.com/job/?job=7434101&gh_jid=7434101",
 "is_hot": false,
 "last_updated": "2026-09-19",
 "is_new": false
@@ -496,12 +496,12 @@
 },
 {
 "source": "nice",
-"external_id": "4867642101",
+"external_id": "4969705101",
 "title": "Director of Engineering",
 "location": "Israel - Raanana",
 "excerpt": "",
 "description": "",
-"url": "https://boards.eu.greenhouse.io/nice/jobs/4867642101?gh_jid=4867642101",
+"url": "https://boards.eu.greenhouse.io/nice/jobs/4969705101?gh_jid=4969705101",
 "is_hot": false,
 "last_updated": "2026-09-19",
 "is_new": false
@@ -592,12 +592,12 @@
 },
 {
 "source": "nice",
-"external_id": "4969705101",
+"external_id": "4867642101",
 "title": "Director of Engineering",
 "location": "Israel - Raanana",
 "excerpt": "",
 "description": "",
-"url": "https://boards.eu.greenhouse.io/nice/jobs/4969705101?gh_jid=4969705101",
+"url": "https://boards.eu.greenhouse.io/nice/jobs/4867642101?gh_jid=4867642101",
 "is_hot": false,
 "last_updated": "2026-09-19",
 "is_new": false
@@ -615,5 +615,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-19T04:12:57.073944+00:00"
+"generated_at": "2026-09-19T10:42:46.999797+00:00"
 }

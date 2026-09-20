@@ -6,6 +6,7 @@ import { useRegionJobs, useSources } from "../api/hooks";
 import { Header } from "../components/Header/Header";
 import { JobCard } from "../components/JobCard/JobCard";
 import { ProfileEditor } from "../components/ProfileEditor/ProfileEditor";
+import { ThemeSetting } from "../components/ThemeSetting/ThemeSetting";
 import { matchScore, rankScore } from "../lib/cvAnalysis";
 import { useProfile } from "../lib/profile";
 import styles from "./ProfilePage.module.css";
@@ -68,6 +69,14 @@ export function ProfilePage() {
           <h2 className={styles.cardTitle}>{t("profile.editorTitle")}</h2>
           <div className={styles.card}>
             <ProfileEditor />
+          </div>
+
+          <h2 className={styles.cardTitle}>{t("profile.settings")}</h2>
+          <div className={styles.card}>
+            <div className={styles.settingRow}>
+              <span className={styles.settingLabel}>{t("profile.theme")}</span>
+              <ThemeSetting />
+            </div>
           </div>
         </section>
 

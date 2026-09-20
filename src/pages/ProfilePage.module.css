@@ -70,6 +70,25 @@
   font-weight: 800;
 }
 
+/* Space a following section title (e.g. Settings) away from the card above. */
+.card + .cardTitle {
+  margin-top: 1.5rem;
+}
+
+/* Settings rows */
+.settingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.settingLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 .empty {
   margin: 0;
   color: var(--text-muted);

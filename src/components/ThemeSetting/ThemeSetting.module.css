@@ -1,0 +1,43 @@
+.group {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  border-radius: 999px;
+}
+
+.opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.opt:hover {
+  color: var(--text);
+}
+
+.optOn {
+  background: var(--accent);
+  color: #fff;
+}
+
+.optOn:hover {
+  color: #fff;
+}
+
+@media (max-width: 400px) {
+  .opt span:last-child {
+    display: none;
+  }
+}

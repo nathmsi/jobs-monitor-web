@@ -88,6 +88,10 @@
     "close": "Close",
     "roles": "Roles",
     "skills": "Skills",
+    "titles": "Job titles",
+    "education": "Education",
+    "certifications": "Certifications",
+    "locations": "Locations",
     "languages": "Languages",
     "seniority": "Seniority",
     "years": "Experience",
@@ -102,7 +106,9 @@
     "topSkills": "Your most in-demand skills",
     "recommended": "Recommended for you",
     "seeAll": "See all",
-    "emptyStats": "Analyze your CV to unlock your match stats and recommended offers."
+    "emptyStats": "Analyze your CV to unlock your match stats and recommended offers.",
+    "settings": "Settings",
+    "theme": "Appearance"
   },
   "forme": {
     "noProfile": "Analyze your CV to see the offers that match you.",

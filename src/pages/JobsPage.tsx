@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 import { queryTokens, textMatches, textMatchesAny } from "../api/client";
+import { rankScore } from "../lib/cvAnalysis";
 import { useRegionJobs, useSources } from "../api/hooks";
 import { ROLES } from "../constants/roles";
 import { ForMe } from "../components/ForMe/ForMe";
@@ -74,6 +75,16 @@ export function JobsPage() {
   const companyCount = items.filter((it) => it.source.kind === "company").length;
   const agencyCount = items.filter((it) => it.source.kind === "agency").length;
 
+  // "For me" badge = number of offers that actually match the CV profile (not
+  // the number of skills — that reads as offers and is misleading).
+  const formeCount = useMemo(() => {
+    if (!profile || profile.skills.length === 0) return 0;
+    return allJobs.filter(
+      (j) =>
+        rankScore(`${j.title} ${j.excerpt} ${j.description ?? ""}`, profile) > 0,
+    ).length;
+  }, [allJobs, profile]);
+
   const tabItems = items.filter((it) => it.source.kind === tab);
 
   // Categories present in the current tab, ordered by number of companies.
@@ -129,6 +140,9 @@ export function JobsPage() {
         >
           {t("tabs.agencies")} <span className={styles.tabCount}>{agencyCount}</span>
         </button>
+
+        <span className={styles.tabDivider} aria-hidden />
+
         <button
           role="tab"
           aria-selected={tab === "mine"}
@@ -145,7 +159,7 @@ export function JobsPage() {
         >
           {t("tabs.forme")}
           {profile && profile.skills.length > 0 && (
-            <span className={styles.tabCount}>{profile.skills.length}</span>
+            <span className={styles.tabCount}>{formeCount}</span>
           )}
         </button>
       </div>

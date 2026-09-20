@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthButton } from "../AuthButton/AuthButton";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 import { ProfileButton } from "../ProfileButton/ProfileButton";
-import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
 import styles from "./Header.module.css";
 
 export function Header() {
@@ -47,10 +46,9 @@ export function Header() {
       </Link>
 
       <div className={styles.actions}>
-        <ProfileButton onClick={() => navigate("/profile")} />
-        <AuthButton />
-        <ThemeToggle />
         <LanguageSwitcher />
+        <AuthButton />
+        <ProfileButton onClick={() => navigate("/profile")} />
       </div>
     </header>
   );

@@ -146,6 +146,15 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Split the "browse by source" tabs from the personal tabs (Saved / For me). */
+.tabDivider {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 1px;
+  margin: 0.3rem 0.35rem;
+  background: var(--border);
+}
+
 .toolbar {
   display: flex;
   justify-content: flex-end;

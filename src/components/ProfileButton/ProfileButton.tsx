@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 
 import { useProfile } from "../../lib/profile";
 import styles from "./ProfileButton.module.css";
@@ -10,10 +11,17 @@ interface Props {
 export function ProfileButton({ onClick }: Props) {
   const { t } = useTranslation();
   const { profile } = useProfile();
+  const { pathname } = useLocation();
   const count = profile?.skills.length ?? 0;
+  const active = pathname === "/profile";
 
   return (
-    <button type="button" className={styles.btn} onClick={onClick}>
+    <button
+      type="button"
+      className={`${styles.btn} ${active ? styles.btnActive : ""}`}
+      onClick={onClick}
+      aria-current={active ? "page" : undefined}
+    >
       <svg
         viewBox="0 0 24 24"
         width="16"

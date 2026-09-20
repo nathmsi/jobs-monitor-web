@@ -9,6 +9,7 @@ import { AuthProvider } from "./lib/auth.tsx";
 import { JobFlagsProvider } from "./lib/jobFlags.tsx";
 import { ProfileProvider } from "./lib/profile.tsx";
 import { SavedJobsProvider } from "./lib/savedJobs.tsx";
+import { ThemeProvider } from "./lib/theme.tsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,17 +23,19 @@ const queryClient = new QueryClient({
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <ProfileProvider>
-          <SavedJobsProvider>
-            <JobFlagsProvider>
-              <BrowserRouter>
-                <App />
-              </BrowserRouter>
-            </JobFlagsProvider>
-          </SavedJobsProvider>
-        </ProfileProvider>
-      </AuthProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <ProfileProvider>
+            <SavedJobsProvider>
+              <JobFlagsProvider>
+                <BrowserRouter>
+                  <App />
+                </BrowserRouter>
+              </JobFlagsProvider>
+            </SavedJobsProvider>
+          </ProfileProvider>
+        </AuthProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   </StrictMode>,
 );

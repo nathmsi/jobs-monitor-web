@@ -50,6 +50,11 @@ export function ProfileEditor() {
   const removeSkill = (name: string) =>
     setDraft((d) => (d ? { ...d, skills: d.skills.filter((s) => s !== name) } : d));
 
+  const removeFrom = (key: "titles" | "certifications" | "locations", val: string) =>
+    setDraft((d) =>
+      d ? { ...d, [key]: (d[key] ?? []).filter((x) => x !== val) } : d,
+    );
+
   const addSkill = () => {
     const s = newSkill.trim();
     if (!s || !draft) return;
@@ -155,7 +160,33 @@ export function ProfileEditor() {
                 {t("profile.languages")}: <strong>{draft.languages.join(", ")}</strong>
               </span>
             )}
+            {(draft.education ?? []).length > 0 && (
+              <span className={styles.metaPill}>
+                {t("profile.education")}:{" "}
+                <strong>{(draft.education ?? []).join(", ")}</strong>
+              </span>
+            )}
           </div>
+
+          {(draft.titles ?? []).length > 0 && (
+            <>
+              <div className={styles.blockLabel}>{t("profile.titles")}</div>
+              <div className={styles.chips}>
+                {(draft.titles ?? []).map((title) => (
+                  <span key={title} className={styles.chip}>
+                    {title}
+                    <button
+                      className={styles.chipX}
+                      onClick={() => removeFrom("titles", title)}
+                      aria-label={`remove ${title}`}
+                    >
+                      ✕
+                    </button>
+                  </span>
+                ))}
+              </div>
+            </>
+          )}
 
           <div className={styles.blockLabel}>{t("profile.roles")}</div>
           <div className={styles.chips}>
@@ -205,6 +236,46 @@ export function ProfileEditor() {
               +
             </button>
           </div>
+
+          {(draft.certifications ?? []).length > 0 && (
+            <>
+              <div className={styles.blockLabel}>{t("profile.certifications")}</div>
+              <div className={styles.chips}>
+                {(draft.certifications ?? []).map((cert) => (
+                  <span key={cert} className={styles.chip}>
+                    {cert}
+                    <button
+                      className={styles.chipX}
+                      onClick={() => removeFrom("certifications", cert)}
+                      aria-label={`remove ${cert}`}
+                    >
+                      ✕
+                    </button>
+                  </span>
+                ))}
+              </div>
+            </>
+          )}
+
+          {(draft.locations ?? []).length > 0 && (
+            <>
+              <div className={styles.blockLabel}>{t("profile.locations")}</div>
+              <div className={styles.chips}>
+                {(draft.locations ?? []).map((loc) => (
+                  <span key={loc} className={styles.chip}>
+                    {loc}
+                    <button
+                      className={styles.chipX}
+                      onClick={() => removeFrom("locations", loc)}
+                      aria-label={`remove ${loc}`}
+                    >
+                      ✕
+                    </button>
+                  </span>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       )}
 

@@ -50,9 +50,10 @@ export function AuthButton() {
         type="button"
         className={styles.signIn}
         onClick={() => signInWithGoogle()}
+        title={t("auth.signInGoogle")}
       >
         <GoogleIcon />
-        <span>{t("auth.signInGoogle")}</span>
+        <span className={styles.signInLabel}>{t("auth.signInGoogle")}</span>
       </button>
     );
   }

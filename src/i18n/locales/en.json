@@ -92,7 +92,17 @@
     "seniority": "Seniority",
     "years": "Experience",
     "yearsValue": "{{count}} yrs",
-    "addSkill": "Add a skill…"
+    "addSkill": "Add a skill…",
+    "back": "Back to offers",
+    "pageTitle": "My profile",
+    "pageLead": "Analyze your CV to see the offers that fit you best. Everything stays on your device — only the profile you save is stored.",
+    "editorTitle": "Your CV & skills",
+    "saved": "Saved",
+    "matchingOffers": "offers match your profile",
+    "topSkills": "Your most in-demand skills",
+    "recommended": "Recommended for you",
+    "seeAll": "See all",
+    "emptyStats": "Analyze your CV to unlock your match stats and recommended offers."
   },
   "forme": {
     "noProfile": "Analyze your CV to see the offers that match you.",

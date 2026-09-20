@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link, useNavigate } from "react-router-dom";
 
 import { AuthButton } from "../AuthButton/AuthButton";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
@@ -6,16 +7,13 @@ import { ProfileButton } from "../ProfileButton/ProfileButton";
 import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
 import styles from "./Header.module.css";
 
-interface Props {
-  onOpenProfile: () => void;
-}
-
-export function Header({ onOpenProfile }: Props) {
+export function Header() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <header className={styles.header}>
-      <div className={styles.brand}>
+      <Link to="/" className={styles.brand}>
         <svg
           className={styles.logo}
           viewBox="0 0 48 48"
@@ -46,10 +44,10 @@ export function Header({ onOpenProfile }: Props) {
           <span className={styles.name}>{t("header.title")}</span>
           <span className={styles.tagline}>{t("header.subtitle")}</span>
         </div>
-      </div>
+      </Link>
 
       <div className={styles.actions}>
-        <ProfileButton onClick={onOpenProfile} />
+        <ProfileButton onClick={() => navigate("/profile")} />
         <AuthButton />
         <ThemeToggle />
         <LanguageSwitcher />

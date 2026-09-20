@@ -66,6 +66,53 @@
   }
 }
 
+@media (max-width: 640px) {
+  .app {
+    padding: 0 0.85rem 3rem;
+  }
+
+  /* Tabs: a single full-width row that scrolls horizontally instead of
+     wrapping into a tall, half-empty pill. */
+  .tabbar {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tabbar::-webkit-scrollbar {
+    display: none;
+  }
+  .tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 0.55rem 0.95rem;
+    scroll-snap-align: start;
+  }
+
+  /* Toolbar: Filters + All-companies share the top row; stats wraps below. */
+  .contentBar {
+    gap: 0.5rem 0.6rem;
+    margin-top: 0.9rem;
+  }
+  .filtersToggle,
+  .allBtn {
+    padding: 0.55rem 1rem;
+  }
+  .stats {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  /* One clean column of source cards with tighter vertical rhythm. */
+  .sources {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+}
+
 .tab {
   display: inline-flex;
   align-items: center;

@@ -72,7 +72,7 @@
 "url": "https://il.linkedin.com/jobs/view/senior-software-engineer-core-ai-software-haifa-or-ramat-gan-at-qualcomm-4403952974",
 "is_hot": false,
 "last_updated": "2026-09-20",
-"is_new": true
+"is_new": false
 },
 {
 "source": "li-sunbit",
@@ -84,7 +84,7 @@
 "url": "https://il.linkedin.com/jobs/view/front-end-engineer-at-sunbit-4464636848",
 "is_hot": false,
 "last_updated": "2026-09-20",
-"is_new": true
+"is_new": false
 },
 {
 "source": "malam",
@@ -399,5 +399,5 @@
 "is_new": false
 }
 ],
-"generated_at": "2026-09-20T08:56:22.081074+00:00"
+"generated_at": "2026-09-20T11:05:32.926308+00:00"
 }

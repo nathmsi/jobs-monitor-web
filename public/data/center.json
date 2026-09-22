@@ -100,12 +100,12 @@
 },
 {
 "source": "axonius",
-"external_id": "7824320003",
-"title": "Senior DevEx/DevOps Engineer",
+"external_id": "7886132003",
+"title": "Product Security Architect- 9-month temp position",
 "location": "Tel Aviv, Israel",
 "excerpt": "",
 "description": "",
-"url": "https://www.axonius.com/company/careers/open-jobs?gh_jid=7824320003",
+"url": "https://www.axonius.com/company/careers/open-jobs?gh_jid=7886132003",
 "is_hot": false,
 "last_updated": "2026-09-22",
 "is_new": false
@@ -435,37 +435,37 @@
 "is_new": false
 },
 {
-"source": "cognyte",
-"external_id": "89.E6F",
-"title": "Field Support Engineer and Asset Manager",
-"location": "Herzliya",
-"excerpt": "IT",
-"description": "IT",
-"url": "https://www.comeet.com/jobs/cognyte/F2.009/field-support-engineer-and-asset-manager/89.E6F",
+"source": "catonetworks",
+"external_id": "4937879101",
+"title": "Automation Engineer",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4937879101?gh_jid=4937879101",
 "is_hot": false,
 "last_updated": "2026-09-22",
 "is_new": false
 },
 {
-"source": "cognyte",
-"external_id": "63.B61",
-"title": "Senior Signal Processing & Communications Algorithm Engineer",
-"location": "Herzliya",
-"excerpt": "SPG",
-"description": "SPG",
-"url": "https://www.comeet.com/jobs/cognyte/F2.009/senior-signal-processing--communications-algorithm-engineer/63.B61",
+"source": "catonetworks",
+"external_id": "4888366101",
+"title": "Senior Software Engineer",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4888366101?gh_jid=4888366101",
 "is_hot": false,
 "last_updated": "2026-09-22",
 "is_new": false
 },
 {
-"source": "cognyte",
-"external_id": "36.D68",
-"title": "Sales - Pre Sales Engineer",
-"location": "Herzliya",
-"excerpt": "Sales",
-"description": "Sales",
-"url": "https://www.comeet.com/jobs/cognyte/F2.009/sales---pre-sales-engineer/36.D68",
+"source": "catonetworks",
+"external_id": "4939362101",
+"title": "Senior Software Engineer",
+"location": "Tel Aviv District, Israel",
+"excerpt": "",
+"description": "",
+"url": "https://www.catonetworks.com/careers/careers-post/4939362101?gh_jid=4939362101",
 "is_hot": false,
 "last_updated": "2026-09-22",
 "is_new": false
@@ -543,13 +543,13 @@
 "is_new": false
 },
 {
-"source": "fireblocks",
-"external_id": "4709484006",
-"title": "Staff Engineer, AI Platform",
-"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"source": "datadog",
+"external_id": "4599111",
+"title": "Senior Software Engineer - Distributed Systems",
+"location": "Bordeaux, France; Grenoble, France; Lyon, France; Madrid, Spain; Montpellier, France; Nantes, France; Paris, France; Sophia Antipolis, France; Tel Aviv, Israel",
 "excerpt": "",
 "description": "",
-"url": "https://www.fireblocks.com/careers/position?gh_jid=4709484006",
+"url": "https://careers.datadoghq.com/detail/4599111/?gh_jid=4599111",
 "is_hot": false,
 "last_updated": "2026-09-22",
 "is_new": false
@@ -831,13 +831,13 @@
 "is_new": false
 },
 {
-"source": "jfrog",
-"external_id": "8156071",
-"title": "IS Integration Engineer",
-"location": "Tel Aviv/ Netanya, Israel",
+"source": "gong",
+"external_id": "4677810006",
+"title": "Senior Cyber Defense Engineer",
+"location": "Tel Aviv",
 "excerpt": "",
 "description": "",
-"url": "https://join.jfrog.com/job/?job=8156071&gh_jid=8156071",
+"url": "https://job-boards.greenhouse.io/gongio/jobs/4677810006",
 "is_hot": false,
 "last_updated": "2026-09-22",
 "is_new": false
@@ -855,25 +855,25 @@
 "is_new": false
 },
 {
-"source": "jfrog",
-"external_id": "7939091",
-"title": "GenAI & Competitive Intelligence Engineer",
-"location": "Tel Aviv/ Netanya, Israel",
+"source": "gong",
+"external_id": "4672099006",
+"title": "Senior Director of Platform Security",
+"location": "Tel Aviv",
 "excerpt": "",
 "description": "",
-"url": "https://join.jfrog.com/job/?job=7939091&gh_jid=7939091",
+"url": "https://job-boards.greenhouse.io/gongio/jobs/4672099006",
 "is_hot": false,
 "last_updated": "2026-09-22",
 "is_new": false
 },
 {
-"source": "jfrog",
-"external_id": "7419121",
-"title": "R&D Team Lead",
-"location": "Tel Aviv/ Netanya, Israel",
+"source": "gong",
+"external_id": "4700779006",
+"title": "Senior DevOps Engineer",
+"location": "Tel Aviv",
 "excerpt": "",
 "description": "",
-"url": "https://join.jfrog.com/job/?job=7419121&gh_jid=7419121",
+"url": "https://job-boards.greenhouse.io/gongio/jobs/4700779006",
 "is_hot": false,
 "last_updated": "2026-09-22",
 "is_new": false
@@ -1020,6 +1020,18 @@
 "url": "https://il.linkedin.com/jobs/view/software-development-engineer-elastic-block-storage-server-durability-engine-at-amazon-web-services-aws-4455903010",
 "is_hot": false,
 "last_updated": "2026-09-22",
+"is_new": false
+},
+{
+"source": "li-amazon-web-services-aws",
+"external_id": "4455903010",
+"title": "Software Development Engineer, Elastic Block Storage, Server Durability Engine",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"excerpt": "Amazon Web Services (AWS) · Tel Aviv-Yafo, Tel Aviv District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/software-development-engineer-elastic-block-storage-server-durability-engine-at-amazon-web-services-aws-4455903010",
+"is_hot": false,
+"last_updated": "2026-09-20",
 "is_new": false
 },
 {
@@ -1263,6 +1275,18 @@
 "is_new": false
 },
 {
+"source": "li-locusview",
+"external_id": "4465635334",
+"title": "Senior Full Stack Engineer",
+"location": "Herzliya, Tel Aviv District, Israel",
+"excerpt": "Locusview · Herzliya, Tel Aviv District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/senior-full-stack-engineer-at-locusview-4465635334",
+"is_hot": false,
+"last_updated": "2026-09-20",
+"is_new": false
+},
+{
 "source": "li-lumana",
 "external_id": "4410911131",
 "title": "Senior Software Engineer, Cloud",
@@ -1372,12 +1396,12 @@
 },
 {
 "source": "li-palo-alto-networks",
-"external_id": "4463030874",
-"title": "Senior Principal Backend Engineer (CORTEX - Autonomous SOC)",
-"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
-"excerpt": "Palo Alto Networks · Tel Aviv-Yafo, Tel Aviv District, Israel",
+"external_id": "4429857082",
+"title": "Senior Software Engineer (Secure Agentic AI)",
+"location": "Petah Tikva, Center District, Israel",
+"excerpt": "Palo Alto Networks · Petah Tikva, Center District, Israel",
 "description": "",
-"url": "https://il.linkedin.com/jobs/view/senior-principal-backend-engineer-cortex-autonomous-soc-at-palo-alto-networks-4463030874",
+"url": "https://il.linkedin.com/jobs/view/senior-software-engineer-secure-agentic-ai-at-palo-alto-networks-4429857082",
 "is_hot": false,
 "last_updated": "2026-09-22",
 "is_new": false
@@ -1392,6 +1416,18 @@
 "url": "https://il.linkedin.com/jobs/view/senior-angular-frontend-engineer-email-security-cortex-at-palo-alto-networks-4466603963",
 "is_hot": false,
 "last_updated": "2026-09-22",
+"is_new": false
+},
+{
+"source": "li-palo-alto-networks",
+"external_id": "4463030874",
+"title": "Senior Principal Backend Engineer (CORTEX - Autonomous SOC)",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"excerpt": "Palo Alto Networks · Tel Aviv-Yafo, Tel Aviv District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/senior-principal-backend-engineer-cortex-autonomous-soc-at-palo-alto-networks-4463030874",
+"is_hot": false,
+"last_updated": "2026-09-20",
 "is_new": false
 },
 {
@@ -1680,6 +1716,18 @@
 "url": "https://il.linkedin.com/jobs/view/full-stack-software-engineer-at-unframe-4468654724",
 "is_hot": false,
 "last_updated": "2026-09-22",
+"is_new": false
+},
+{
+"source": "li-unframe",
+"external_id": "4468654724",
+"title": "Full Stack Software Engineer",
+"location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+"excerpt": "Unframe · Tel Aviv-Yafo, Tel Aviv District, Israel",
+"description": "",
+"url": "https://il.linkedin.com/jobs/view/full-stack-software-engineer-at-unframe-4468654724",
+"is_hot": false,
+"last_updated": "2026-09-20",
 "is_new": false
 },
 {
@@ -4444,12 +4492,12 @@
 },
 {
 "source": "taboola",
-"external_id": "8176684",
-"title": "Software Developer – Production Engineering",
+"external_id": "8200807",
+"title": "Site Reliability Engineer, Traffic Infrastructure",
 "location": "Tel Aviv, Israel",
 "excerpt": "",
 "description": "",
-"url": "https://www.taboola.com/careers/job/8176684?gh_jid=8176684",
+"url": "https://www.taboola.com/careers/job/8200807?gh_jid=8200807",
 "is_hot": false,
 "last_updated": "2026-09-22",
 "is_new": false
@@ -4659,13 +4707,13 @@
 "is_new": false
 },
 {
-"source": "transmit",
-"external_id": "7974762002",
-"title": "Engineering Team Lead",
-"location": "Tel Aviv-Yafo, Gush Dan, Israel",
+"source": "torq",
+"external_id": "6177808004",
+"title": "Product Analyst Team Lead",
+"location": "Tel Aviv",
 "excerpt": "",
 "description": "",
-"url": "https://www.transmitsecurity.com/about/careers/job?gh_jid=7974762002",
+"url": "https://job-boards.greenhouse.io/torq/jobs/6177808004",
 "is_hot": false,
 "last_updated": "2026-09-22",
 "is_new": false
@@ -4756,8 +4804,8 @@
 },
 {
 "source": "unilink",
-"external_id": "38474775",
-"title": "מפתח/ת cobol",
+"external_id": "38266630",
+"title": "מומחה/ית אבטחת מידע ותקשורת נתונים",
 "location": "תל אביב",
 "excerpt": "חבר/ה בצוות פיתוח קופה וגביה במחלקת יישומי מינהליים באגף מערכות מידע. כפיפות ניהולית ומקצועית לראש הצוות. התפקיד כולל פיתוח ותחזוקה של תוכניות ,שירותים/ממשקים/ תהליכים כספיים ועוד. סביבת עבודה AS400, עם אינטגרציה ענפה…",
 "description": "חבר/ה בצוות פיתוח קופה וגביה במחלקת יישומי מינהליים באגף מערכות מידע. כפיפות ניהולית ומקצועית לראש הצוות. התפקיד כולל פיתוח ותחזוקה של תוכניות ,שירותים/ממשקים/ תהליכים כספיים ועוד. סביבת עבודה AS400, עם אינטגרציה ענפה לטכנולוגיות שונות כגון: SAP, ESB, WEB ועוד. התפקיד כולל: פיתוח ותחזוקה של תוכניות ,שירותים/ממשקים/ תהליכים כספיים ועוד. סביבת עבודה AS400, עם אינטגרציה ענפה לטכנולוגיות שונות כגון: SAP, ESB, WEB ועוד. במסגרת התפקיד העובד/ת יהיה בקשרי עבודה עם ראש הצוות, הצוות שלו וצוותים משיקים אחרים כמו כן, קשרי העבודה עבודה יהיו עם בעלי תפקידים שונים כגון: מנתחי מערכות, צוותים רוחבייים, משתמשים/לקוחות ומנהלים העבודה לפי מתודולוגיה סדורה ואג'ילית.",
@@ -4876,12 +4924,12 @@
 },
 {
 "source": "via",
-"external_id": "8627735002",
-"title": "Front-End Engineer",
+"external_id": "8587562002",
+"title": "Senior Backend Engineer- Routing Data",
 "location": "Tel Aviv",
 "excerpt": "",
 "description": "",
-"url": "https://job-boards.greenhouse.io/via/jobs/8627735002",
+"url": "https://job-boards.greenhouse.io/via/jobs/8587562002",
 "is_hot": false,
 "last_updated": "2026-09-22",
 "is_new": false
@@ -4971,13 +5019,13 @@
 "is_new": false
 },
 {
-"source": "zscaler",
-"external_id": "5220291007",
-"title": "Principal Backend Engineer (Analytics)",
-"location": "Tel Aviv-Yafo Municipality, ISR",
+"source": "yotpo",
+"external_id": "6879751",
+"title": "Software Engineer",
+"location": "Tel Aviv",
 "excerpt": "",
 "description": "",
-"url": "https://job-boards.greenhouse.io/zscaler/jobs/5220291007",
+"url": "https://www.yotpo.com/careers/gid-6879751?gh_jid=6879751",
 "is_hot": false,
 "last_updated": "2026-09-22",
 "is_new": false

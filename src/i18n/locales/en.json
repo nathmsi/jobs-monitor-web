@@ -118,7 +118,7 @@
     "goalPlaceholder": "e.g. become a Staff Engineer, move from data to ML…",
     "cvLabel": "Your CV (paste the full text)",
     "cvPlaceholder": "Paste your CV here…",
-    "analyze": "Analyze CV",
+    "analyze": "CV Analysis",
     "analyzing": "Analyzing…",
     "reading": "Reading PDF…",
     "pdfError": "Could not read this PDF — paste the text instead.",

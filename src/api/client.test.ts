@@ -28,24 +28,26 @@ function job(partial: Partial<Job>): Job {
   };
 }
 
-describe("api client (static data)", () => {
+describe("api client (backend API)", () => {
   beforeEach(() => vi.restoreAllMocks());
 
-  it("getSources reads /data/sources.json", async () => {
+  it("getSources calls the /api/sources endpoint", async () => {
     const data = [{ key: "ness", label: "Ness", kind: "agency", site_url: null, auto_fetch: true }];
     const f = mockFetch(data);
     vi.stubGlobal("fetch", f);
     await expect(getSources()).resolves.toEqual(data);
-    expect(f.mock.calls[0][0]).toBe("/data/sources.json");
+    expect(String(f.mock.calls[0][0])).toContain("/api/sources");
   });
 
-  it("getRegionJobs reads the region file and returns its jobs", async () => {
+  it("getRegionJobs calls /api/jobs and returns its jobs", async () => {
     const jobs = [job({ external_id: "1", title: "React Dev" })];
-    vi.stubGlobal("fetch", mockFetch({ region: "jerusalem", count: 1, jobs }));
+    const f = mockFetch({ region: "jerusalem", count: 1, jobs });
+    vi.stubGlobal("fetch", f);
     await expect(getRegionJobs("jerusalem")).resolves.toEqual(jobs);
+    expect(String(f.mock.calls[0][0])).toContain("/api/jobs?region=jerusalem");
   });
 
-  it("getRegionJobs returns [] when the file is missing", async () => {
+  it("getRegionJobs returns [] when the request fails", async () => {
     vi.stubGlobal("fetch", mockFetch({}, false, 404));
     await expect(getRegionJobs("south")).resolves.toEqual([]);
   });

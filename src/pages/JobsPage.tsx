@@ -2,99 +2,81 @@ import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-import { queryTokens, textMatches, textMatchesAny } from "../api/client";
-import { rankScore } from "../lib/cvAnalysis";
-import { useRegionJobs, useSources } from "../api/hooks";
-import { ROLES } from "../constants/roles";
+import { useCounts, useJobsInfinite, useRegionJobs, useSources } from "../api/hooks";
 import { ForMe } from "../components/ForMe/ForMe";
 import { Header } from "../components/Header/Header";
-import { Sidebar } from "../components/Sidebar/Sidebar";
+import { JobCard } from "../components/JobCard/JobCard";
 import { MyJobs } from "../components/MyJobs/MyJobs";
+import { Sidebar } from "../components/Sidebar/Sidebar";
 import { SourcesModal } from "../components/SourcesModal/SourcesModal";
-import { SourceSection } from "../components/SourceSection/SourceSection";
+import { rankScore } from "../lib/cvAnalysis";
 import { jobId, useJobFlags } from "../lib/jobFlags";
 import { useProfile } from "../lib/profile";
 import { useSavedJobs } from "../lib/savedJobs";
-import type { Filters, Job, SourceInfo } from "../types";
+import type { Filters } from "../types";
 import styles from "../App.module.css";
+
+type Tab = "company" | "agency" | "mine" | "forme";
 
 export function JobsPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { data: sources } = useSources();
+
   const [filters, setFilters] = useState<Filters>({ region: "all", q: "" });
   const [showAll, setShowAll] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [tab, setTab] = useState<"company" | "agency" | "mine" | "forme">(
-    "company",
-  );
+  const [tab, setTab] = useState<Tab>("company");
+  const [sort, setSort] = useState("recent");
+
+  const { data: sources } = useSources();
   const { items: savedItems } = useSavedJobs();
   const { profile } = useProfile();
-
-  const { data: regionJobs, isLoading, isError, error } = useRegionJobs(
-    filters.region,
-  );
   const { hideSeen, isOpened } = useJobFlags();
 
+  const browsing = tab === "company" || tab === "agency";
+  const kind = browsing ? tab : "";
+
+  // Server-side filtered + paginated offers for the browse tabs.
+  const jobsQuery = useJobsInfinite(
+    { region: filters.region, q: filters.q, role: filters.role, category: filters.category, kind, sort },
+    browsing,
+  );
+
+  // Full region set (limit=0) only when the "For me" tab needs to rank locally.
+  const { data: allJobs } = useRegionJobs(filters.region, tab === "forme");
+
+  // Totals for tab + category badges (independent of the page being viewed).
+  const { data: counts } = useCounts({
+    region: filters.region,
+    q: filters.q,
+    role: filters.role,
+  });
+
   const sourceList = sources ?? [];
-  const tokens = queryTokens(filters.q);
+  const sourceByKey = useMemo(
+    () => Object.fromEntries(sourceList.map((s) => [s.key, s])),
+    [sourceList],
+  );
 
-  // Group the region's jobs by source, applying hide-seen once.
-  const grouped: Record<string, Job[]> = {};
-  for (const job of regionJobs ?? []) {
-    if (hideSeen && isOpened(jobId(job.source, job.external_id))) continue;
-    (grouped[job.source] ??= []).push(job);
-  }
+  // Flatten the loaded pages, applying the client-side "hide seen" toggle.
+  const jobs = useMemo(() => {
+    const all = jobsQuery.data?.pages.flatMap((p) => p.jobs) ?? [];
+    if (!hideSeen) return all;
+    return all.filter((j) => !isOpened(jobId(j.source, j.external_id)));
+  }, [jobsQuery.data, hideSeen, isOpened]);
 
-  const allJobs = Object.values(grouped).flat();
+  const companyCount = counts?.kinds.company ?? 0;
+  const agencyCount = counts?.kinds.agency ?? 0;
+  const catCounts = counts?.categories ?? {};
 
-  const role = ROLES.find((r) => r.key === filters.role);
-
-  // Role preset OR-matches its keywords; the text search AND-matches its words
-  // (a company name in the search shows all that company's jobs).
-  const jobsForSource = (s: SourceInfo): Job[] => {
-    let list = grouped[s.key] ?? [];
-    if (role) {
-      list = list.filter((j) =>
-        textMatchesAny(`${j.title} ${j.excerpt} ${j.description ?? ""}`, role.terms),
-      );
-    }
-    if (tokens.length > 0 && !textMatches(s.label, tokens)) {
-      list = list.filter((j) =>
-        textMatches(`${j.title} ${j.excerpt} ${j.description ?? ""}`, tokens),
-      );
-    }
-    return list;
-  };
-
-  const items = sourceList
-    .map((source) => ({ source, jobs: jobsForSource(source) }))
-    .filter((it) => it.jobs.length > 0)
-    .sort((a, b) => b.jobs.length - a.jobs.length);
-
-  const companyCount = items.filter((it) => it.source.kind === "company").length;
-  const agencyCount = items.filter((it) => it.source.kind === "agency").length;
-
-  // "For me" badge = number of offers that actually match the CV profile (not
-  // the number of skills — that reads as offers and is misleading).
-  const formeCount = useMemo(() => {
-    if (!profile || profile.skills.length === 0) return 0;
-    return allJobs.filter(
-      (j) =>
-        rankScore(`${j.title} ${j.excerpt} ${j.description ?? ""}`, profile) > 0,
-    ).length;
-  }, [allJobs, profile]);
-
-  const tabItems = items.filter((it) => it.source.kind === tab);
-
-  // Categories present in the current tab, ordered by number of companies.
-  const catCounts: Record<string, number> = {};
-  for (const it of tabItems) {
-    const c = it.source.category ?? "other";
-    catCounts[c] = (catCounts[c] ?? 0) + 1;
-  }
-  const categories = Object.keys(catCounts).sort(
-    (a, b) => catCounts[b] - catCounts[a],
+  // Categories for the sidebar (company tab): drop the agency-only "staffing"
+  // bucket, order by number of offers.
+  const categories = useMemo(
+    () =>
+      Object.keys(catCounts)
+        .filter((c) => c !== "staffing")
+        .sort((a, b) => (catCounts[b] ?? 0) - (catCounts[a] ?? 0)),
+    [catCounts],
   );
 
   const activeCategory =
@@ -102,16 +84,15 @@ export function JobsPage() {
       ? filters.category
       : undefined;
 
-  const shown = activeCategory
-    ? tabItems.filter((it) => (it.source.category ?? "other") === activeCategory)
-    : tabItems;
+  // "For me" badge = matching offers, computed once the full set is loaded.
+  const formeCount = useMemo(() => {
+    if (!profile || profile.skills.length === 0 || !allJobs) return null;
+    return allJobs.filter(
+      (j) => rankScore(`${j.title} ${j.excerpt} ${j.description ?? ""}`, profile) > 0,
+    ).length;
+  }, [allJobs, profile]);
 
-  const totalOffers = shown.reduce((n, it) => n + it.jobs.length, 0);
-
-  // Region counts (before the keyword filter) for the directory modal.
-  const counts = Object.fromEntries(
-    sourceList.map((s) => [s.key, (grouped[s.key] ?? []).length]),
-  );
+  const tabTotal = tab === "company" ? companyCount : agencyCount;
 
   return (
     <div className={styles.app}>
@@ -158,9 +139,7 @@ export function JobsPage() {
           onClick={() => setTab("forme")}
         >
           {t("tabs.forme")}
-          {profile && profile.skills.length > 0 && (
-            <span className={styles.tabCount}>{formeCount}</span>
-          )}
+          {formeCount != null && <span className={styles.tabCount}>{formeCount}</span>}
         </button>
       </div>
 
@@ -173,7 +152,7 @@ export function JobsPage() {
             categories={categories}
             catCounts={catCounts}
             activeCategory={activeCategory}
-            totalInTab={tabItems.length}
+            totalInTab={companyCount}
           />
         </div>
 
@@ -185,10 +164,25 @@ export function JobsPage() {
             >
               ⚙ {t("filters.toggle")}
             </button>
-            {tab !== "mine" && tab !== "forme" && sourceList.length > 0 && !isLoading && (
+            {browsing && (
               <span className={styles.stats}>
-                {t("stats.summary", { offers: totalOffers, companies: shown.length })}
+                {t("stats.offers", { count: tabTotal })}
               </span>
+            )}
+            {browsing && (
+              <label className={styles.sortWrap}>
+                <span className={styles.sortLabel}>{t("sort.label")}</span>
+                <select
+                  className={styles.sortSelect}
+                  value={sort}
+                  onChange={(e) => setSort(e.target.value)}
+                  aria-label={t("sort.label")}
+                >
+                  <option value="recent">{t("sort.recent")}</option>
+                  <option value="oldest">{t("sort.oldest")}</option>
+                  <option value="hot">{t("sort.hot")}</option>
+                </select>
+              </label>
             )}
             <button className={styles.allBtn} onClick={() => setShowAll(true)}>
               {t("allCompanies.open", { count: sourceList.length })}
@@ -199,31 +193,50 @@ export function JobsPage() {
             <MyJobs />
           ) : tab === "forme" ? (
             <ForMe
-              jobs={allJobs}
+              jobs={allJobs ?? []}
               sources={sourceList}
               onEditProfile={() => navigate("/profile")}
             />
           ) : (
-            <main className={styles.sources}>
-              {isError && (
+            <main className={styles.grid}>
+              {jobsQuery.isError && (
                 <div className={styles.alert} role="alert">
                   <strong>{t("error.apiTitle")}</strong>
                   <br />
-                  {(error as Error).message}
+                  {(jobsQuery.error as Error).message}
                 </div>
               )}
 
-              {isLoading &&
+              {jobsQuery.isLoading &&
                 Array.from({ length: 6 }).map((_, i) => (
                   <div key={i} className={styles.bootBar} />
                 ))}
 
-              {shown.map(({ source, jobs }) => (
-                <SourceSection key={source.key} source={source} jobs={jobs} />
-              ))}
+              {!jobsQuery.isLoading &&
+                jobs.map((job) => (
+                  <JobCard
+                    key={`${job.source}-${job.external_id}`}
+                    job={job}
+                    source={sourceByKey[job.source]}
+                  />
+                ))}
 
-              {!isLoading && shown.length === 0 && (
+              {!jobsQuery.isLoading && jobs.length === 0 && (
                 <p className={styles.noResults}>{t("noResults")}</p>
+              )}
+
+              {jobsQuery.hasNextPage && (
+                <div className={styles.loadMoreRow}>
+                  <button
+                    className={styles.loadMore}
+                    onClick={() => jobsQuery.fetchNextPage()}
+                    disabled={jobsQuery.isFetchingNextPage}
+                  >
+                    {jobsQuery.isFetchingNextPage
+                      ? t("loadMore.loading")
+                      : t("loadMore.button")}
+                  </button>
+                </div>
               )}
             </main>
           )}
@@ -235,7 +248,7 @@ export function JobsPage() {
       {showAll && (
         <SourcesModal
           sources={sourceList}
-          counts={counts}
+          counts={counts?.by_source ?? {}}
           onClose={() => setShowAll(false)}
         />
       )}

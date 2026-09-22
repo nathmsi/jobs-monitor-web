@@ -4,16 +4,18 @@ import { matchScore } from "../../lib/cvAnalysis";
 import { jobId, useJobFlags } from "../../lib/jobFlags";
 import { useProfile } from "../../lib/profile";
 import { useSavedJobs } from "../../lib/savedJobs";
+import { Avatar } from "../Avatar/Avatar";
 import { Badge } from "../Badge/Badge";
-import type { Job } from "../../types";
+import type { Job, SourceInfo } from "../../types";
 import styles from "./JobCard.module.css";
 
 interface Props {
   job: Job;
-  sourceLabel?: string;
+  source?: SourceInfo;
 }
 
-export function JobCard({ job, sourceLabel }: Props) {
+export function JobCard({ job, source }: Props) {
+  const sourceLabel = source?.label;
   const { t } = useTranslation();
   const { isOpened, markOpened } = useJobFlags();
   const { statusOf, setStatus } = useSavedJobs();
@@ -42,7 +44,10 @@ export function JobCard({ job, sourceLabel }: Props) {
   return (
     <article className={cardClass}>
       <header className={styles.head}>
-        <span className={styles.id}>#{job.external_id}</span>
+        <span className={styles.origin} dir="auto">
+          {source && <Avatar source={source} size={34} />}
+          {sourceLabel && <span className={styles.source}>{sourceLabel}</span>}
+        </span>
         <div className={styles.badges}>
           {match.count > 0 && (
             <span className={styles.matchTag} title={match.matched.join(", ")}>

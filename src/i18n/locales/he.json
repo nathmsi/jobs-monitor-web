@@ -136,7 +136,18 @@
     "other": "אחר"
   },
   "stats": {
-    "summary": "{{offers}} משרות · {{companies}} חברות"
+    "summary": "{{offers}} משרות · {{companies}} חברות",
+    "offers": "{{count}} משרות"
+  },
+  "loadMore": {
+    "button": "טען עוד",
+    "loading": "טוען…"
+  },
+  "sort": {
+    "label": "מיון",
+    "recent": "החדשות ביותר",
+    "oldest": "הישנות ביותר",
+    "hot": "החמות ביותר"
   },
   "noResults": "אין משרות לפי הסינון הזה.",
   "allCompanies": {

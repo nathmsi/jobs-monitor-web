@@ -1,6 +1,15 @@
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 
-import { getRegionJobs, getRegions, getSources } from "./client";
+import {
+  getCounts,
+  getJobsPage,
+  getRegionJobs,
+  getRegions,
+  getSources,
+  type JobQuery,
+} from "./client";
+
+const PAGE_SIZE = 24;
 
 /** All available sources (fetched once). */
 export function useSources() {
@@ -20,12 +29,42 @@ export function useRegions() {
   });
 }
 
-/** Every source's jobs for one region, in a single fetch. */
-export function useRegionJobs(region: string) {
+/** Every job for one region (full set) — for the "For me" ranking + profile. */
+export function useRegionJobs(region: string, enabled = true) {
   return useQuery({
     queryKey: ["region-jobs", region],
     queryFn: () => getRegionJobs(region),
     staleTime: 5 * 60_000,
+    refetchOnWindowFocus: false,
+    enabled,
+  });
+}
+
+/** Paginated offers matching the active filters. Changing any filter changes
+ *  the query key, so react-query refetches from page 1 automatically. */
+export function useJobsInfinite(
+  params: Omit<JobQuery, "limit" | "offset">,
+  enabled = true,
+) {
+  return useInfiniteQuery({
+    queryKey: ["jobs", params],
+    queryFn: ({ pageParam }) =>
+      getJobsPage({ ...params, limit: PAGE_SIZE, offset: pageParam }),
+    initialPageParam: 0,
+    getNextPageParam: (last) =>
+      last.has_more ? last.offset + last.limit : undefined,
+    staleTime: 60_000,
+    refetchOnWindowFocus: false,
+    enabled,
+  });
+}
+
+/** Offer totals by kind/category for the current filters (tab/category badges). */
+export function useCounts(params: { region: string; q?: string; role?: string }) {
+  return useQuery({
+    queryKey: ["counts", params],
+    queryFn: () => getCounts(params),
+    staleTime: 60_000,
     refetchOnWindowFocus: false,
   });
 }

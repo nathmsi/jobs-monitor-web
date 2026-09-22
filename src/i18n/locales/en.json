@@ -136,7 +136,18 @@
     "other": "Other"
   },
   "stats": {
-    "summary": "{{offers}} offers · {{companies}} companies"
+    "summary": "{{offers}} offers · {{companies}} companies",
+    "offers": "{{count}} offers"
+  },
+  "loadMore": {
+    "button": "Load more",
+    "loading": "Loading…"
+  },
+  "sort": {
+    "label": "Sort",
+    "recent": "Newest",
+    "oldest": "Oldest",
+    "hot": "Hottest"
   },
   "noResults": "No offers for these filters.",
   "allCompanies": {

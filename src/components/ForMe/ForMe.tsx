@@ -17,8 +17,8 @@ export function ForMe({ jobs, sources, onEditProfile }: Props) {
   const { t } = useTranslation();
   const { profile } = useProfile();
 
-  const labelBySource = useMemo(
-    () => Object.fromEntries(sources.map((s) => [s.key, s.label])),
+  const sourceByKey = useMemo(
+    () => Object.fromEntries(sources.map((s) => [s.key, s])),
     [sources],
   );
 
@@ -62,7 +62,7 @@ export function ForMe({ jobs, sources, onEditProfile }: Props) {
           <JobCard
             key={`${job.source}-${job.external_id}`}
             job={job}
-            sourceLabel={labelBySource[job.source]}
+            source={sourceByKey[job.source]}
           />
         ))}
       </div>

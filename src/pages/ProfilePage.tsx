@@ -19,8 +19,8 @@ export function ProfilePage() {
 
   const hasProfile = !!profile && profile.skills.length > 0;
 
-  const labelBySource = useMemo(
-    () => Object.fromEntries((sources ?? []).map((s) => [s.key, s.label])),
+  const sourceByKey = useMemo(
+    () => Object.fromEntries((sources ?? []).map((s) => [s.key, s])),
     [sources],
   );
 
@@ -130,7 +130,7 @@ export function ProfilePage() {
                       <JobCard
                         key={`${job.source}-${job.external_id}`}
                         job={job}
-                        sourceLabel={labelBySource[job.source]}
+                        source={sourceByKey[job.source]}
                       />
                     ))}
                   </div>

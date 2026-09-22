@@ -106,8 +106,9 @@
     flex-basis: 100%;
   }
 
-  /* One clean column of source cards with tighter vertical rhythm. */
-  .sources {
+  /* One clean column of cards with tighter vertical rhythm. */
+  .sources,
+  .grid {
     grid-template-columns: 1fr;
     gap: 0.6rem;
   }
@@ -239,6 +240,30 @@
   font-weight: 500;
 }
 
+/* Display-order selector */
+.sortWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sortLabel {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.sortSelect {
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
 .noResults {
   grid-column: 1 / -1;
   color: var(--text-muted);
@@ -252,6 +277,44 @@
   gap: 0.75rem;
   align-items: start;
   margin-top: 0.25rem;
+}
+
+/* Flat, paginated offers grid (the browse tabs). */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem;
+  align-items: start;
+  margin-top: 0.25rem;
+}
+
+.loadMoreRow {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.75rem;
+}
+
+.loadMore {
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.loadMore:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.loadMore:disabled {
+  opacity: 0.6;
+  cursor: default;
 }
 
 .bootBar {

@@ -47,6 +47,9 @@ export function Header() {
 
       <div className={styles.actions}>
         <LanguageSwitcher />
+        <Link to="/coach" className={styles.coachLink}>
+          ✨ <span className={styles.coachLabel}>{t("coach.nav")}</span>
+        </Link>
         <AuthButton />
         <ProfileButton onClick={() => navigate("/profile")} />
       </div>

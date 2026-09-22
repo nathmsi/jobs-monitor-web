@@ -60,8 +60,31 @@
   justify-content: flex-end;
 }
 
+.coachLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+.coachLink:hover {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
 @media (max-width: 620px) {
   .tagline {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .coachLabel {
     display: none;
   }
 }

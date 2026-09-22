@@ -79,6 +79,48 @@ export function getCounts(query: {
   return getJson<JobCounts>(`/api/counts?${p.toString()}`);
 }
 
+export interface CvAnalysis {
+  snapshot: {
+    headline: string;
+    current_level: string;
+    years_experience: number;
+    domains: string[];
+    languages: string[];
+  };
+  target: {
+    roles: string[];
+    seniority: string;
+    years_to_target: string;
+    readiness_pct: number;
+    assumptions?: string;
+  };
+  strengths: { point: string; evidence: string }[];
+  gaps: { gap: string; why_it_matters: string; severity: "high" | "low" | "medium" | string }[];
+  cv_feedback: { issue: string; fix: string; example: string }[];
+  skills_to_learn: { skill: string; reason: string; how: string }[];
+  action_plan: {
+    next_30_days: string[];
+    next_90_days: string[];
+    next_6_months: string[];
+  };
+  keywords_missing: string[];
+  overall: { score: number; summary: string };
+}
+
+/** Send a CV (+ optional goal) to the AI career-review endpoint. */
+export async function analyzeCvAi(cvText: string, goal: string): Promise<CvAnalysis> {
+  const resp = await fetch(`${API}/api/cv/analyze`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ cvText, goal }),
+  });
+  if (!resp.ok) {
+    const detail = await resp.json().catch(() => null);
+    throw new Error(detail?.message || `HTTP ${resp.status}`);
+  }
+  return resp.json() as Promise<CvAnalysis>;
+}
+
 /** Every job for a region (limit=0) — used by the client-side "For me" ranking
  *  and the profile page, which need the full set. */
 export async function getRegionJobs(region: string): Promise<Job[]> {

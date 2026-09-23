@@ -23,7 +23,7 @@ export function CoachPage() {
   const { user, signInWithGoogle } = useAuth();
   const { selectedCv, addCv } = useCvs();
 
-  const [goal, setGoal] = useState("");
+  const [goal] = useState("");
   const [busyPdf, setBusyPdf] = useState(false);
   const [pdfError, setPdfError] = useState<string | null>(null);
   const [tab, setTab] = useState<SubTab>("review");

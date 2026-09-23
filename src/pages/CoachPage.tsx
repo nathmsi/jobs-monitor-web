@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { analyzeCvAi, matchCv, type CvAnalysis, type MatchedOffer } from "../api/client";
@@ -6,6 +6,7 @@ import { consumeMatchStream } from "../api/stream";
 import { AgentWorkflow } from "../components/AgentWorkflow/AgentWorkflow";
 import { MatchResults } from "../components/MatchResults/MatchResults";
 import { CVAnalysisResults } from "../components/CVAnalysisResults/CVAnalysisResults";
+import { CVUploadModal } from "../components/CVUploadModal/CVUploadModal";
 import { Header } from "../components/Header/Header";
 import { useAuth } from "../lib/auth";
 import { useCvs } from "../lib/cvs";
@@ -20,13 +21,13 @@ type SubTab = "review" | "match";
 export function CoachPage() {
   const { t, i18n } = useTranslation();
   const { user, signInWithGoogle } = useAuth();
-  const { ready, cvs, selectedCv, selectedId, selectCv, addCv, removeCv } = useCvs();
+  const { cvs, selectedCv, selectedId, selectCv, addCv, removeCv } = useCvs();
 
   const [goal, setGoal] = useState("");
   const [busyPdf, setBusyPdf] = useState(false);
   const [pdfError, setPdfError] = useState<string | null>(null);
-  const fileRef = useRef<HTMLInputElement>(null);
   const [tab, setTab] = useState<SubTab>("review");
+  const [showUploadModal, setShowUploadModal] = useState(false);
 
   const cvText = selectedCv?.text ?? "";
   const isReady = cvText.trim().length >= 50;
@@ -39,14 +40,13 @@ export function CoachPage() {
       const text = await extractPdfText(file);
       const name = file.name.replace(/\.pdf$/i, "").slice(0, 60) || "CV";
       await addCv(name, text);
+      setShowUploadModal(false);
     } catch {
       setPdfError(t("coach.pdfError"));
     } finally {
       setBusyPdf(false);
     }
   };
-
-  const pickPdf = () => fileRef.current?.click();
 
   return (
     <div className={styles.app}>
@@ -56,18 +56,6 @@ export function CoachPage() {
         <h1 className={styles.title}>{t("coach.hubTitle")}</h1>
         <p className={styles.lead}>{t("coach.hubLead")}</p>
       </div>
-
-      <input
-        ref={fileRef}
-        type="file"
-        accept="application/pdf"
-        hidden
-        onChange={(e) => {
-          const f = e.target.files?.[0];
-          if (f) onPdf(f);
-          e.target.value = "";
-        }}
-      />
 
       {!user ? (
         <div className={styles.card}>
@@ -87,23 +75,14 @@ export function CoachPage() {
               type="button"
               className={styles.fileBtn}
               disabled={busyPdf}
-              onClick={pickPdf}
+              onClick={() => setShowUploadModal(true)}
             >
-              ＋ {busyPdf ? t("coach.library.adding") : t("coach.library.add")}
+              ＋ {t("coach.library.add")}
             </button>
           </div>
 
-          {ready && cvs.length === 0 ? (
-            <div
-              className={styles.emptyLib}
-              onClick={pickPdf}
-              onDragOver={(e) => e.preventDefault()}
-              onDrop={(e) => {
-                e.preventDefault();
-                const f = e.dataTransfer.files?.[0];
-                if (f && f.type === "application/pdf") onPdf(f);
-              }}
-            >
+          {cvs.length === 0 ? (
+            <div className={styles.emptyLib} onClick={() => setShowUploadModal(true)}>
               📄 {t("coach.library.none")}
             </div>
           ) : (
@@ -135,7 +114,6 @@ export function CoachPage() {
           {selectedCv && (
             <p className={styles.cvPreview}>{selectedCv.text.slice(0, 240)}…</p>
           )}
-          {pdfError && <span className={styles.error}>⚠ {pdfError}</span>}
 
           <label className={styles.label} style={{ marginTop: "1rem" }}>
             {t("coach.goalLabel")}
@@ -177,6 +155,14 @@ export function CoachPage() {
       )}
 
       <footer className={styles.footer}>{t("footer")}</footer>
+
+      <CVUploadModal
+        open={showUploadModal}
+        onClose={() => setShowUploadModal(false)}
+        onUpload={onPdf}
+        busy={busyPdf}
+        error={pdfError}
+      />
     </div>
   );
 }

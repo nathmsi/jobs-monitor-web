@@ -1,4 +1,4 @@
-import { useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -20,7 +20,21 @@ export function CoachPage() {
   const [busyPdf, setBusyPdf] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<CvAnalysis | null>(null);
+  const [stepIdx, setStepIdx] = useState(0);
   const fileRef = useRef<HTMLInputElement>(null);
+
+  const steps = t("coach.loadingSteps", { returnObjects: true }) as string[];
+  useEffect(() => {
+    if (!busy) {
+      setStepIdx(0);
+      return;
+    }
+    const id = setInterval(
+      () => setStepIdx((i) => (i + 1) % steps.length),
+      2500,
+    );
+    return () => clearInterval(id);
+  }, [busy, steps.length]);
 
   const onPdf = async (file: File) => {
     setBusyPdf(true);
@@ -118,9 +132,42 @@ export function CoachPage() {
         <p className={styles.privacy}>🔒 {t("coach.privacy")}</p>
       </div>
 
-      {result && <Analysis a={result} />}
+      {busy && <LoadingPanel message={steps[stepIdx] ?? ""} />}
+      {result && !busy && <Analysis a={result} />}
 
       <footer className={styles.footer}>{t("footer")}</footer>
+    </div>
+  );
+}
+
+function LoadingPanel({ message }: { message: string }) {
+  return (
+    <div className={styles.result} aria-live="polite" aria-busy>
+      <div className={styles.card}>
+        <div className={styles.loadingHead}>
+          <span className={styles.spinner} aria-hidden />
+          <span className={styles.loadingMsg} key={message}>
+            {message}
+          </span>
+        </div>
+        <div className={styles.skelScoreRow}>
+          <span className={styles.skelCircle} />
+          <div className={styles.skelLines}>
+            <span className={styles.skel} style={{ width: "70%" }} />
+            <span className={styles.skel} style={{ width: "45%" }} />
+          </div>
+        </div>
+      </div>
+      <div className={styles.grid2}>
+        {[0, 1].map((i) => (
+          <div className={styles.card} key={i}>
+            <span className={styles.skel} style={{ width: "40%", height: 14 }} />
+            <span className={styles.skel} style={{ width: "90%" }} />
+            <span className={styles.skel} style={{ width: "80%" }} />
+            <span className={styles.skel} style={{ width: "85%" }} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

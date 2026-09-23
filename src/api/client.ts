@@ -107,6 +107,34 @@ export interface CvAnalysis {
   overall: { score: number; summary: string };
 }
 
+export interface MatchedOffer {
+  id: string;
+  title: string;
+  company: string;
+  url: string | null;
+  score: number;
+  reasons: string[];
+  weak_points: string[];
+}
+
+/** Ask the matching agent for the best offers for a CV. */
+export async function matchCv(
+  cvText: string,
+  filters: { region?: string; kind?: string; remote?: boolean } = {},
+): Promise<MatchedOffer[]> {
+  const resp = await fetch(`${API}/api/match`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ cvText, ...filters }),
+  });
+  if (!resp.ok) {
+    const detail = await resp.json().catch(() => null);
+    throw new Error(detail?.message || `HTTP ${resp.status}`);
+  }
+  const data = (await resp.json()) as { results: MatchedOffer[] };
+  return data.results;
+}
+
 /** Send a CV (+ optional goal) to the AI career-review endpoint. `lang` is the
  *  site language so the analysis comes back in the same language. */
 export async function analyzeCvAi(

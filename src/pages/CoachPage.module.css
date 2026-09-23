@@ -1,7 +1,15 @@
 .app {
-  max-width: 1180px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 1.1rem 4rem;
+  padding: 2rem 1.5rem 5rem;
+  width: 100%;
+  flex: 1;
 }
 
 .back {
@@ -22,29 +30,83 @@
   margin: 1rem 0 1.4rem;
 }
 
-.introRow {
+/* Page title */
+.pageTitle {
+  margin-bottom: 2rem;
+}
+
+/* Hero (not signed in) */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 5rem 2rem;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.heroEyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.heroTitle {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+.heroDesc {
+  margin: 0 0 2rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* Primary button */
+.primaryBtn {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.primaryBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+.primaryBtn:disabled {
+  opacity: 0.55;
+  cursor: default;
+  box-shadow: none;
+}
+
+/* CV context bar */
+.cvBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-}
-
-/* CV chip in header */
-.cvChip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.25rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  flex-shrink: 0;
+  border-radius: 12px;
+  margin-bottom: 2rem;
 }
-.cvChip:hover {
-  border-color: var(--accent);
+.cvBarInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
 }
 .cvDot {
   width: 8px;
@@ -53,167 +115,140 @@
   background: #16a34a;
   flex-shrink: 0;
 }
-.cvName {
-  font-size: 0.88rem;
+.cvBarName {
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--text);
-  max-width: 160px;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.cvChange {
-  font-size: 0.8rem;
-  color: var(--accent);
-  font-weight: 600;
-}
-
-/* Empty hero state */
-.emptyHero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 4rem 2rem;
-  max-width: 520px;
-  margin: 0 auto;
-}
-.emptyHeroIcon {
-  font-size: 2.5rem;
-  color: var(--accent);
-  margin-bottom: 1.25rem;
-  line-height: 1;
-}
-.emptyHeroTitle {
-  margin: 0 0 0.75rem;
-  font-size: 1.6rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--text);
-}
-.emptyHeroLead {
-  margin: 0 0 1.75rem;
-  color: var(--text-muted);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-.emptyHeroHint {
-  margin: 0.75rem 0 0;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-/* Primary CTA button */
-.heroCta {
-  border: none;
-  background: var(--accent);
-  color: #fff;
-  font-size: 1rem;
+.cvBarReady {
+  font-size: 0.75rem;
   font-weight: 700;
-  padding: 0.8rem 2rem;
+  color: #16a34a;
+  background: color-mix(in srgb, #16a34a 12%, transparent);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+.cvBarEmpty {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.cvBarChange {
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
   border-radius: 999px;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--accent) 30%, transparent);
-}
-.heroCta:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 35%, transparent);
-}
-.heroCta:disabled {
-  opacity: 0.55;
-  cursor: default;
-  box-shadow: none;
-}
-
-/* Launch card (pre-launch state for each tab) */
-.launchCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 3.5rem 2rem;
-  max-width: 560px;
-  margin: 0 auto;
-}
-.launchIcon {
-  font-size: 2.5rem;
-  color: var(--accent);
-  margin-bottom: 1.25rem;
-  line-height: 1;
-}
-.launchTitle {
-  margin: 0 0 0.75rem;
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--text);
-}
-.launchDesc {
-  margin: 0 0 2rem;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-.launchHint {
-  margin: 0.75rem 0 0;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-/* How it works steps */
-.steps {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.step {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.5rem 1rem;
-}
-.stepNum {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  white-space: nowrap;
   flex-shrink: 0;
 }
-.stepText {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text);
-}
-.stepArrow {
-  color: var(--text-muted);
-  font-size: 1rem;
+.cvBarChange:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
-/* Result header bar */
-.resultHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border);
+/* Feature selection grid */
+.featureGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
 }
-.resultLabel {
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0.75rem;
+  padding: 2rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none;
+  color: var(--text);
+}
+.featureCard:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 24px color-mix(in srgb, var(--accent) 12%, transparent);
+  transform: translateY(-2px);
+}
+.featureCardDisabled {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+.featureIcon {
+  font-size: 1.5rem;
+  color: var(--accent);
+  line-height: 1;
+}
+.featureTitle {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text);
+}
+.featureDesc {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  flex: 1;
+}
+.featureCta {
   font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 0.5rem;
+}
+.featureCtaDisabled {
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* Active feature panel */
+.featureContent {
+  margin-top: 0;
+}
+.featureContentHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.featureContentTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  flex: 1;
+}
+.backBtn {
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.backBtn:hover {
+  border-color: var(--text);
+  color: var(--text);
 }
 .rerunBtn {
   border: 1px solid var(--border-strong);
@@ -229,6 +264,40 @@
 .rerunBtn:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+/* Loading / error */
+.loadingState {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 3rem 0;
+  justify-content: center;
+}
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 0;
+  text-align: center;
+  color: var(--danger);
+}
+
+/* Launch card (kept for compatibility) */
+.launchCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3.5rem 2rem;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.launchHint {
+  margin: 0.75rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
 }
 .title {
   margin: 0;

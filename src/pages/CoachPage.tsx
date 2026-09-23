@@ -12,7 +12,7 @@ import { useAuth } from "../lib/auth";
 import { useCvs } from "../lib/cvs";
 import styles from "./CoachPage.module.css";
 
-type SubTab = "review" | "match";
+type ActiveFeature = "review" | "match" | null;
 
 export function CoachPage() {
   const { t, i18n } = useTranslation();
@@ -22,7 +22,7 @@ export function CoachPage() {
   const [goal] = useState("");
   const [busyPdf, setBusyPdf] = useState(false);
   const [pdfError, setPdfError] = useState<string | null>(null);
-  const [tab, setTab] = useState<SubTab>("review");
+  const [active, setActive] = useState<ActiveFeature>(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
 
   const cvText = selectedCv?.text ?? "";
@@ -48,82 +48,120 @@ export function CoachPage() {
     <div className={styles.app}>
       <Header />
 
-      {/* Page header */}
-      <div className={styles.intro}>
-        <div className={styles.introRow}>
-          <div>
-            <h1 className={styles.title}>CV Coach</h1>
-            <p className={styles.lead}>Your AI-powered career companion</p>
+      <div className={styles.page}>
+        {/* Page title */}
+        <div className={styles.pageTitle}>
+          <h1 className={styles.title}>CV Coach</h1>
+          <p className={styles.lead}>Your AI-powered career companion</p>
+        </div>
+
+        {/* Not signed in */}
+        {!user && (
+          <div className={styles.hero}>
+            <p className={styles.heroEyebrow}>Get started</p>
+            <h2 className={styles.heroTitle}>Unlock your career potential</h2>
+            <p className={styles.heroDesc}>
+              Upload your CV once and get a deep AI review of your strengths, gaps, and action plan — plus a personalised list of jobs that match your profile.
+            </p>
+            <button className={styles.primaryBtn} onClick={() => signInWithGoogle()}>
+              Sign in with Google
+            </button>
           </div>
-          {user && isReady && (
-            <div className={styles.cvChip} onClick={() => setShowUploadModal(true)}>
-              <span className={styles.cvDot} />
-              <span className={styles.cvName}>{selectedCv?.name ?? "Your CV"}</span>
-              <span className={styles.cvChange}>Change</span>
+        )}
+
+        {/* Signed in */}
+        {user && (
+          <>
+            {/* CV context bar */}
+            <div className={styles.cvBar}>
+              {isReady ? (
+                <>
+                  <div className={styles.cvBarInfo}>
+                    <span className={styles.cvDot} />
+                    <span className={styles.cvBarName}>{selectedCv?.name ?? "Your CV"}</span>
+                    <span className={styles.cvBarReady}>Ready</span>
+                  </div>
+                  <button className={styles.cvBarChange} onClick={() => setShowUploadModal(true)}>
+                    Change CV
+                  </button>
+                </>
+              ) : (
+                <>
+                  <span className={styles.cvBarEmpty}>No CV uploaded yet</span>
+                  <button className={styles.primaryBtn} onClick={() => setShowUploadModal(true)}>
+                    Upload my CV
+                  </button>
+                </>
+              )}
             </div>
-          )}
-        </div>
+
+            {/* Feature cards — always visible */}
+            {isReady && !active && (
+              <div className={styles.featureGrid}>
+                <button
+                  className={styles.featureCard}
+                  onClick={() => setActive("review")}
+                >
+                  <div className={styles.featureIcon}>◈</div>
+                  <h3 className={styles.featureTitle}>Analyze my CV</h3>
+                  <p className={styles.featureDesc}>
+                    Get a detailed review: your level, strengths, gaps to close, and a concrete 6-month action plan.
+                  </p>
+                  <span className={styles.featureCta}>Get my review →</span>
+                </button>
+
+                <button
+                  className={styles.featureCard}
+                  onClick={() => setActive("match")}
+                >
+                  <div className={styles.featureIcon}>◉</div>
+                  <h3 className={styles.featureTitle}>Find matching jobs</h3>
+                  <p className={styles.featureDesc}>
+                    Our AI agent reads your CV, searches all available jobs, and ranks the top matches with an explanation.
+                  </p>
+                  <span className={styles.featureCta}>Find my jobs →</span>
+                </button>
+              </div>
+            )}
+
+            {/* No CV — prompt */}
+            {!isReady && (
+              <div className={styles.featureGrid}>
+                <div className={`${styles.featureCard} ${styles.featureCardDisabled}`}>
+                  <div className={styles.featureIcon}>◈</div>
+                  <h3 className={styles.featureTitle}>Analyze my CV</h3>
+                  <p className={styles.featureDesc}>Upload your CV to get a detailed AI review.</p>
+                  <span className={styles.featureCtaDisabled}>Upload CV to unlock</span>
+                </div>
+                <div className={`${styles.featureCard} ${styles.featureCardDisabled}`}>
+                  <div className={styles.featureIcon}>◉</div>
+                  <h3 className={styles.featureTitle}>Find matching jobs</h3>
+                  <p className={styles.featureDesc}>Upload your CV and let AI find the best job matches for you.</p>
+                  <span className={styles.featureCtaDisabled}>Upload CV to unlock</span>
+                </div>
+              </div>
+            )}
+
+            {/* Active feature content */}
+            {active === "review" && (
+              <ReviewFeature
+                cv={cvText}
+                goal={goal}
+                lang={i18n.language}
+                onBack={() => setActive(null)}
+              />
+            )}
+
+            {active === "match" && (
+              <MatchFeature
+                cv={cvText}
+                onAdapt={() => setActive("review")}
+                onBack={() => setActive(null)}
+              />
+            )}
+          </>
+        )}
       </div>
-
-      {/* Not signed in */}
-      {!user && (
-        <div className={styles.emptyHero}>
-          <div className={styles.emptyHeroIcon}>✦</div>
-          <h2 className={styles.emptyHeroTitle}>Unlock your career potential</h2>
-          <p className={styles.emptyHeroLead}>
-            Sign in to upload your CV and get AI-powered analysis and personalised job matches.
-          </p>
-          <button className={styles.heroCta} onClick={() => signInWithGoogle()}>
-            Sign in with Google
-          </button>
-        </div>
-      )}
-
-      {/* No CV uploaded yet */}
-      {user && !isReady && (
-        <div className={styles.emptyHero}>
-          <div className={styles.emptyHeroIcon}>↑</div>
-          <h2 className={styles.emptyHeroTitle}>Start by uploading your CV</h2>
-          <p className={styles.emptyHeroLead}>
-            Upload a PDF once — then get a detailed AI review and find the jobs that actually fit your profile.
-          </p>
-          <button className={styles.heroCta} onClick={() => setShowUploadModal(true)}>
-            Upload my CV (PDF)
-          </button>
-          <p className={styles.emptyHeroHint}>PDF only · Max 10 MB · Not stored</p>
-        </div>
-      )}
-
-      {/* Main content once CV is ready */}
-      {user && isReady && (
-        <>
-          {/* Sub-tabs */}
-          <div className={styles.subTabs} role="tablist">
-            <button
-              role="tab"
-              aria-selected={tab === "review"}
-              className={`${styles.subTab} ${tab === "review" ? styles.subTabActive : ""}`}
-              onClick={() => setTab("review")}
-            >
-              Improve my CV
-            </button>
-            <button
-              role="tab"
-              aria-selected={tab === "match"}
-              className={`${styles.subTab} ${tab === "match" ? styles.subTabActive : ""}`}
-              onClick={() => setTab("match")}
-            >
-              Find matching jobs
-            </button>
-          </div>
-
-          {tab === "review" ? (
-            <ReviewTab cv={cvText} goal={goal} ready={isReady} lang={i18n.language} />
-          ) : (
-            <MatchTab cv={cvText} ready={isReady} onAdapt={() => setTab("review")} />
-          )}
-        </>
-      )}
 
       <footer className={styles.footer}>{t("footer")}</footer>
 
@@ -141,19 +179,9 @@ export function CoachPage() {
   );
 }
 
-/* ------------------------------- Review tab ------------------------------- */
+/* ─────────────────────────── Review feature ─────────────────────────── */
 
-function ReviewTab({
-  cv,
-  goal,
-  ready,
-  lang,
-}: {
-  cv: string;
-  goal: string;
-  ready: boolean;
-  lang: string;
-}) {
+function ReviewFeature({ cv, goal, lang, onBack }: { cv: string; goal: string; lang: string; onBack: () => void }) {
   const { t } = useTranslation();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -161,18 +189,23 @@ function ReviewTab({
   const [stepIdx, setStepIdx] = useState(0);
 
   const steps = t("coach.loadingSteps", { returnObjects: true }) as string[];
+
   useEffect(() => {
-    if (!busy) {
-      setStepIdx(0);
-      return;
-    }
+    if (!busy) { setStepIdx(0); return; }
     const id = setInterval(() => setStepIdx((i) => (i + 1) % steps.length), 2500);
     return () => clearInterval(id);
   }, [busy, steps.length]);
 
+  // Auto-launch on mount
+  useEffect(() => {
+    run();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const run = async () => {
     setBusy(true);
     setError(null);
+    setResult(null);
     try {
       setResult(await analyzeCvAi(cv.trim(), goal.trim(), lang));
     } catch (e) {
@@ -182,62 +215,54 @@ function ReviewTab({
     }
   };
 
-  if (result && !busy) {
-    return (
-      <div className={styles.result}>
-        <div className={styles.resultHeader}>
-          <span className={styles.resultLabel}>CV Analysis complete</span>
-          <button className={styles.rerunBtn} onClick={() => setResult(null)}>
-            Analyze again
-          </button>
-        </div>
-        <CVAnalysisResults analysis={result} />
-      </div>
-    );
-  }
-
-  if (busy) {
-    return <LoadingPanel message={steps[stepIdx] ?? ""} />;
-  }
-
   return (
-    <div className={styles.launchCard}>
-      <div className={styles.launchIcon}>✦</div>
-      <h2 className={styles.launchTitle}>Get an honest CV review</h2>
-      <p className={styles.launchDesc}>
-        Our AI reads your full CV and gives you a structured analysis: your level, target roles, strengths, gaps, and a concrete action plan to get there.
-      </p>
-      {error && <p className={styles.error}>⚠ {error}</p>}
-      <button className={styles.heroCta} disabled={!ready} onClick={run}>
-        Analyze my CV
-      </button>
-      <p className={styles.launchHint}>Takes about 30 seconds · Free</p>
+    <div className={styles.featureContent}>
+      <div className={styles.featureContentHeader}>
+        <button className={styles.backBtn} onClick={onBack}>← Back</button>
+        <span className={styles.featureContentTitle}>CV Analysis</span>
+        {result && !busy && (
+          <button className={styles.rerunBtn} onClick={run}>Run again</button>
+        )}
+      </div>
+
+      {busy && (
+        <div className={styles.loadingState}>
+          <span className={styles.spinner} />
+          <span className={styles.loadingMsg} key={stepIdx}>{steps[stepIdx] ?? ""}</span>
+        </div>
+      )}
+
+      {error && (
+        <div className={styles.errorState}>
+          <p>{error}</p>
+          <button className={styles.primaryBtn} onClick={run}>Try again</button>
+        </div>
+      )}
+
+      {result && !busy && <CVAnalysisResults analysis={result} />}
     </div>
   );
 }
 
-/* -------------------------------- Match tab ------------------------------- */
+/* ─────────────────────────── Match feature ─────────────────────────── */
 
-function MatchTab({
-  cv,
-  ready,
-  onAdapt,
-}: {
-  cv: string;
-  ready: boolean;
-  onAdapt: () => void;
-}) {
+function MatchFeature({ cv, onAdapt, onBack }: { cv: string; onAdapt: () => void; onBack: () => void }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [results, setResults] = useState<MatchedOffer[] | null>(null);
   const [currentTool, setCurrentTool] = useState<string | undefined>();
 
+  // Auto-launch on mount
+  useEffect(() => {
+    run();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const run = async () => {
     setBusy(true);
     setError(null);
-    setCurrentTool(undefined);
     setResults(null);
-
+    setCurrentTool(undefined);
     try {
       await consumeMatchStream(cv.trim(), {}, {
         onToolCall: (name) => setCurrentTool(name),
@@ -253,89 +278,26 @@ function MatchTab({
     }
   };
 
-  if (busy) {
-    return <AgentWorkflow currentTool={currentTool} />;
-  }
-
-  if (results) {
-    return (
-      <div className={styles.result}>
-        <div className={styles.resultHeader}>
-          <span className={styles.resultLabel}>Matched {results.length} jobs for you</span>
-          <button className={styles.rerunBtn} onClick={() => setResults(null)}>
-            Search again
-          </button>
-        </div>
-        <MatchResults offers={results} onAdapt={onAdapt} />
-      </div>
-    );
-  }
-
   return (
-    <div className={styles.launchCard}>
-      <div className={styles.launchIcon}>◈</div>
-      <h2 className={styles.launchTitle}>Find jobs that match your profile</h2>
-      <p className={styles.launchDesc}>
-        Our AI agent reads your CV, searches the job database, and ranks the best opportunities — with a clear explanation of why each one fits you.
-      </p>
-
-      {/* How it works */}
-      <div className={styles.steps}>
-        <div className={styles.step}>
-          <span className={styles.stepNum}>1</span>
-          <span className={styles.stepText}>Reads your CV</span>
-        </div>
-        <span className={styles.stepArrow}>→</span>
-        <div className={styles.step}>
-          <span className={styles.stepNum}>2</span>
-          <span className={styles.stepText}>Searches jobs</span>
-        </div>
-        <span className={styles.stepArrow}>→</span>
-        <div className={styles.step}>
-          <span className={styles.stepNum}>3</span>
-          <span className={styles.stepText}>Ranks matches</span>
-        </div>
+    <div className={styles.featureContent}>
+      <div className={styles.featureContentHeader}>
+        <button className={styles.backBtn} onClick={onBack}>← Back</button>
+        <span className={styles.featureContentTitle}>Job Matches</span>
+        {results && !busy && (
+          <button className={styles.rerunBtn} onClick={run}>Search again</button>
+        )}
       </div>
 
-      {error && <p className={styles.error}>⚠ {error}</p>}
-      <button className={styles.heroCta} disabled={!ready} onClick={run}>
-        Find my best job matches
-      </button>
-      <p className={styles.launchHint}>Takes about 20 seconds · Powered by AI</p>
-    </div>
-  );
-}
+      {busy && <AgentWorkflow currentTool={currentTool} />}
 
-/* ------------------------------ Shared views ------------------------------ */
+      {error && (
+        <div className={styles.errorState}>
+          <p>{error}</p>
+          <button className={styles.primaryBtn} onClick={run}>Try again</button>
+        </div>
+      )}
 
-function LoadingPanel({ message }: { message: string }) {
-  return (
-    <div className={styles.result} aria-live="polite" aria-busy>
-      <div className={styles.card}>
-        <div className={styles.loadingHead}>
-          <span className={styles.spinner} aria-hidden />
-          <span className={styles.loadingMsg} key={message}>
-            {message}
-          </span>
-        </div>
-        <div className={styles.skelScoreRow}>
-          <span className={styles.skelCircle} />
-          <div className={styles.skelLines}>
-            <span className={styles.skel} style={{ width: "70%" }} />
-            <span className={styles.skel} style={{ width: "45%" }} />
-          </div>
-        </div>
-      </div>
-      <div className={styles.grid2}>
-        {[0, 1].map((i) => (
-          <div className={styles.card} key={i}>
-            <span className={styles.skel} style={{ width: "40%", height: 14 }} />
-            <span className={styles.skel} style={{ width: "90%" }} />
-            <span className={styles.skel} style={{ width: "80%" }} />
-            <span className={styles.skel} style={{ width: "85%" }} />
-          </div>
-        ))}
-      </div>
+      {results && !busy && <MatchResults offers={results} onAdapt={onAdapt} />}
     </div>
   );
 }

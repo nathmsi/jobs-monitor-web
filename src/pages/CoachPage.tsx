@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 
 import { analyzeCvAi, type CvAnalysis } from "../api/client";
 import { Header } from "../components/Header/Header";
+import { useAuth } from "../lib/auth";
+import { useCvs } from "../lib/cvs";
 import styles from "./CoachPage.module.css";
+
+type SubTab = "review" | "match";
 
 const sevClass: Record<string, string> = {
   high: styles.sevHigh,
@@ -12,16 +15,192 @@ const sevClass: Record<string, string> = {
   low: styles.sevLow,
 };
 
+/**
+ * CV Analysis hub: pick a saved CV (per-user library) once, then use it in two
+ * sub-tabs — "Review" (improve my CV) and "Match" (best offers, WIP).
+ */
 export function CoachPage() {
-  const { t } = useTranslation();
-  const [cv, setCv] = useState("");
+  const { t, i18n } = useTranslation();
+  const { user, signInWithGoogle } = useAuth();
+  const { ready, cvs, selectedCv, selectedId, selectCv, addCv, removeCv } = useCvs();
+
   const [goal, setGoal] = useState("");
-  const [busy, setBusy] = useState(false);
   const [busyPdf, setBusyPdf] = useState(false);
+  const [pdfError, setPdfError] = useState<string | null>(null);
+  const fileRef = useRef<HTMLInputElement>(null);
+  const [tab, setTab] = useState<SubTab>("review");
+
+  const cvText = selectedCv?.text ?? "";
+  const isReady = cvText.trim().length >= 50;
+
+  const onPdf = async (file: File) => {
+    setBusyPdf(true);
+    setPdfError(null);
+    try {
+      const { extractPdfText } = await import("../lib/pdf");
+      const text = await extractPdfText(file);
+      const name = file.name.replace(/\.pdf$/i, "").slice(0, 60) || "CV";
+      await addCv(name, text);
+    } catch {
+      setPdfError(t("coach.pdfError"));
+    } finally {
+      setBusyPdf(false);
+    }
+  };
+
+  const pickPdf = () => fileRef.current?.click();
+
+  return (
+    <div className={styles.app}>
+      <Header />
+
+      <div className={styles.intro}>
+        <h1 className={styles.title}>{t("coach.hubTitle")}</h1>
+        <p className={styles.lead}>{t("coach.hubLead")}</p>
+      </div>
+
+      <input
+        ref={fileRef}
+        type="file"
+        accept="application/pdf"
+        hidden
+        onChange={(e) => {
+          const f = e.target.files?.[0];
+          if (f) onPdf(f);
+          e.target.value = "";
+        }}
+      />
+
+      {!user ? (
+        <div className={styles.card}>
+          <h2 className={styles.h2}>{t("coach.signIn.title")}</h2>
+          <p className={styles.lead}>{t("coach.signIn.lead")}</p>
+          <div className={styles.actionsBar}>
+            <button className={styles.analyzeBtn} onClick={() => signInWithGoogle()}>
+              {t("coach.signIn.button")}
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className={styles.card}>
+          <div className={styles.libHead}>
+            <label className={styles.label}>{t("coach.library.title")}</label>
+            <button
+              type="button"
+              className={styles.fileBtn}
+              disabled={busyPdf}
+              onClick={pickPdf}
+            >
+              ＋ {busyPdf ? t("coach.library.adding") : t("coach.library.add")}
+            </button>
+          </div>
+
+          {ready && cvs.length === 0 ? (
+            <div
+              className={styles.emptyLib}
+              onClick={pickPdf}
+              onDragOver={(e) => e.preventDefault()}
+              onDrop={(e) => {
+                e.preventDefault();
+                const f = e.dataTransfer.files?.[0];
+                if (f && f.type === "application/pdf") onPdf(f);
+              }}
+            >
+              📄 {t("coach.library.none")}
+            </div>
+          ) : (
+            <div className={styles.cvPicker}>
+              <select
+                className={styles.goal}
+                value={selectedId ?? ""}
+                onChange={(e) => selectCv(e.target.value)}
+              >
+                {cvs.map((c) => (
+                  <option key={c.id} value={c.id}>
+                    {c.name}
+                  </option>
+                ))}
+              </select>
+              {selectedCv && (
+                <button
+                  type="button"
+                  className={styles.deleteBtn}
+                  onClick={() => removeCv(selectedCv.id)}
+                  title={t("coach.library.delete")}
+                >
+                  🗑
+                </button>
+              )}
+            </div>
+          )}
+
+          {selectedCv && (
+            <p className={styles.cvPreview}>{selectedCv.text.slice(0, 240)}…</p>
+          )}
+          {pdfError && <span className={styles.error}>⚠ {pdfError}</span>}
+
+          <label className={styles.label} style={{ marginTop: "1rem" }}>
+            {t("coach.goalLabel")}
+          </label>
+          <input
+            className={styles.goal}
+            value={goal}
+            onChange={(e) => setGoal(e.target.value)}
+            placeholder={t("coach.goalPlaceholder")}
+          />
+          <p className={styles.privacy}>🔒 {t("coach.privacy")}</p>
+        </div>
+      )}
+
+      {/* Sub-tabs */}
+      <div className={styles.subTabs} role="tablist">
+        <button
+          role="tab"
+          aria-selected={tab === "review"}
+          className={`${styles.subTab} ${tab === "review" ? styles.subTabActive : ""}`}
+          onClick={() => setTab("review")}
+        >
+          📝 {t("coach.tabReview")}
+        </button>
+        <button
+          role="tab"
+          aria-selected={tab === "match"}
+          className={`${styles.subTab} ${tab === "match" ? styles.subTabActive : ""}`}
+          onClick={() => setTab("match")}
+        >
+          🎯 {t("coach.tabMatch")}
+        </button>
+      </div>
+
+      {tab === "review" ? (
+        <ReviewTab cv={cvText} goal={goal} ready={isReady} lang={i18n.language} />
+      ) : (
+        <MatchTab ready={isReady} />
+      )}
+
+      <footer className={styles.footer}>{t("footer")}</footer>
+    </div>
+  );
+}
+
+/* ------------------------------- Review tab ------------------------------- */
+
+function ReviewTab({
+  cv,
+  goal,
+  ready,
+  lang,
+}: {
+  cv: string;
+  goal: string;
+  ready: boolean;
+  lang: string;
+}) {
+  const { t } = useTranslation();
+  const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<CvAnalysis | null>(null);
   const [stepIdx, setStepIdx] = useState(0);
-  const fileRef = useRef<HTMLInputElement>(null);
 
   const steps = t("coach.loadingSteps", { returnObjects: true }) as string[];
   useEffect(() => {
@@ -29,31 +208,15 @@ export function CoachPage() {
       setStepIdx(0);
       return;
     }
-    const id = setInterval(
-      () => setStepIdx((i) => (i + 1) % steps.length),
-      2500,
-    );
+    const id = setInterval(() => setStepIdx((i) => (i + 1) % steps.length), 2500);
     return () => clearInterval(id);
   }, [busy, steps.length]);
-
-  const onPdf = async (file: File) => {
-    setBusyPdf(true);
-    setError(null);
-    try {
-      const { extractPdfText } = await import("../lib/pdf");
-      setCv(await extractPdfText(file));
-    } catch {
-      setError(t("coach.pdfError"));
-    } finally {
-      setBusyPdf(false);
-    }
-  };
 
   const run = async () => {
     setBusy(true);
     setError(null);
     try {
-      setResult(await analyzeCvAi(cv.trim(), goal.trim()));
+      setResult(await analyzeCvAi(cv.trim(), goal.trim(), lang));
     } catch (e) {
       setError((e as Error).message);
     } finally {
@@ -62,83 +225,63 @@ export function CoachPage() {
   };
 
   return (
-    <div className={styles.app}>
-      <Header />
-
-      <Link to="/" className={styles.back}>
-        ← {t("profile.back")}
-      </Link>
-
-      <div className={styles.intro}>
-        <h1 className={styles.title}>{t("coach.title")}</h1>
-        <p className={styles.lead}>{t("coach.lead")}</p>
+    <>
+      <div className={styles.actionsBar}>
+        {error && <span className={styles.error}>⚠ {error}</span>}
+        <button className={styles.analyzeBtn} disabled={busy || !ready} onClick={run}>
+          {busy ? t("coach.analyzing") : t("coach.analyze")}
+        </button>
       </div>
-
-      <div className={styles.card}>
-        <label className={styles.label}>{t("coach.goalLabel")}</label>
-        <input
-          className={styles.goal}
-          value={goal}
-          onChange={(e) => setGoal(e.target.value)}
-          placeholder={t("coach.goalPlaceholder")}
-        />
-        <label className={styles.label}>{t("coach.cvLabel")}</label>
-        <div
-          className={styles.dropzone}
-          onDragOver={(e) => e.preventDefault()}
-          onDrop={(e) => {
-            e.preventDefault();
-            const f = e.dataTransfer.files?.[0];
-            if (f && f.type === "application/pdf") onPdf(f);
-          }}
-        >
-          <textarea
-            className={styles.textarea}
-            value={cv}
-            onChange={(e) => setCv(e.target.value)}
-            placeholder={t("coach.cvPlaceholder")}
-          />
-          <div className={styles.uploadRow}>
-            <button
-              type="button"
-              className={styles.fileBtn}
-              disabled={busyPdf}
-              onClick={() => fileRef.current?.click()}
-            >
-              📄 {busyPdf ? t("coach.reading") : t("profile.dropPdf")}
-            </button>
-            <input
-              ref={fileRef}
-              type="file"
-              accept="application/pdf"
-              hidden
-              onChange={(e) => {
-                const f = e.target.files?.[0];
-                if (f) onPdf(f);
-              }}
-            />
-          </div>
-        </div>
-        <div className={styles.actions}>
-          {error && <span className={styles.error}>⚠ {error}</span>}
-          <button
-            className={styles.analyzeBtn}
-            disabled={busy || cv.trim().length < 50}
-            onClick={run}
-          >
-            {busy ? t("coach.analyzing") : t("coach.analyze")}
-          </button>
-        </div>
-        <p className={styles.privacy}>🔒 {t("coach.privacy")}</p>
-      </div>
-
       {busy && <LoadingPanel message={steps[stepIdx] ?? ""} />}
       {result && !busy && <Analysis a={result} />}
-
-      <footer className={styles.footer}>{t("footer")}</footer>
-    </div>
+    </>
   );
 }
+
+/* -------------------------------- Match tab ------------------------------- */
+/* UI shell only — the AI matching agent is wired in a later step. */
+
+function MatchTab({ ready }: { ready: boolean }) {
+  const { t } = useTranslation();
+  return (
+    <>
+      <div className={styles.actionsBar}>
+        <span className={styles.soon}>🚧 {t("coach.match.soon")}</span>
+        <button className={styles.analyzeBtn} disabled title={t("coach.match.soon")}>
+          🎯 {t("coach.match.cta")}
+        </button>
+      </div>
+      <div className={styles.card}>
+        <p className={styles.lead}>{t("coach.match.lead")}</p>
+      </div>
+      {/* Preview of the target result layout (placeholders) */}
+      <div className={styles.grid2}>
+        {[1, 2, 3, 4].map((i) => (
+          <div className={`${styles.card} ${styles.previewCard}`} key={i}>
+            <div className={styles.previewHead}>
+              <span className={styles.previewLogo} />
+              <span className={styles.previewScore}>{92 - i * 7}</span>
+            </div>
+            <span className={styles.skel} style={{ width: "70%" }} />
+            <span className={styles.skel} style={{ width: "45%" }} />
+            <div className={styles.previewReasons}>
+              <span className={styles.previewChip}>{t("coach.match.why")}</span>
+              <span className={styles.skel} style={{ width: "85%" }} />
+              <span className={styles.skel} style={{ width: "60%" }} />
+            </div>
+            <div className={styles.previewFoot}>
+              <span className={styles.previewGhost}>{t("coach.match.adapt")}</span>
+              <span className={styles.previewGhost}>{t("coach.match.view")}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      {!ready && <p className={styles.note}>{t("coach.match.needCv")}</p>}
+    </>
+  );
+}
+
+/* ------------------------------ Shared views ------------------------------ */
 
 function LoadingPanel({ message }: { message: string }) {
   return (
@@ -176,7 +319,6 @@ function Analysis({ a }: { a: CvAnalysis }) {
   const { t } = useTranslation();
   return (
     <div className={styles.result}>
-      {/* Overall score + snapshot */}
       <div className={styles.card}>
         <div className={styles.scoreRow}>
           <div className={styles.scoreBadge}>{a.overall?.score ?? "—"}</div>
@@ -198,7 +340,6 @@ function Analysis({ a }: { a: CvAnalysis }) {
         <p className={styles.summary}>{a.overall?.summary}</p>
       </div>
 
-      {/* Target */}
       <div className={styles.card}>
         <h2 className={styles.h2}>{t("coach.target")}</h2>
         <div className={styles.metaLine}>

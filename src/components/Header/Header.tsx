@@ -1,14 +1,18 @@
 import { useTranslation } from "react-i18next";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
+import { useProfile } from "../../lib/profile";
 import { AuthButton } from "../AuthButton/AuthButton";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
-import { ProfileButton } from "../ProfileButton/ProfileButton";
 import styles from "./Header.module.css";
 
 export function Header() {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const { profile } = useProfile();
+  const skillCount = profile?.skills.length ?? 0;
+
+  const tabClass = ({ isActive }: { isActive: boolean }) =>
+    `${styles.navTab} ${isActive ? styles.navTabActive : ""}`;
 
   return (
     <header className={styles.header}>
@@ -45,13 +49,22 @@ export function Header() {
         </div>
       </Link>
 
+      <nav className={styles.nav}>
+        <NavLink to="/" end className={tabClass}>
+          {t("nav.offers")}
+        </NavLink>
+        <NavLink to="/coach" className={tabClass}>
+          ✨ {t("nav.cvAnalysis")}
+        </NavLink>
+        <NavLink to="/profile" className={tabClass}>
+          {t("nav.profile")}
+          {skillCount > 0 && <span className={styles.navCount}>{skillCount}</span>}
+        </NavLink>
+      </nav>
+
       <div className={styles.actions}>
         <LanguageSwitcher />
-        <Link to="/coach" className={styles.coachLink}>
-          ✨ <span className={styles.coachLabel}>{t("coach.nav")}</span>
-        </Link>
         <AuthButton />
-        <ProfileButton onClick={() => navigate("/profile")} />
       </div>
     </header>
   );

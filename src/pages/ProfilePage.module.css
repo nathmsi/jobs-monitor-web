@@ -19,8 +19,79 @@
   color: var(--accent);
 }
 
+.account {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 1rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+.avatar,
+.avatarFallback {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.avatarFallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.accountInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.accountName {
+  font-size: 1.05rem;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.accountMail {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.signOut,
+.signInBtn {
+  margin-inline-start: auto;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.45rem 0.95rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.signOut {
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-muted);
+}
+.signOut:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+.signInBtn {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+}
+
 .intro {
-  margin: 1rem 0 1.4rem;
+  margin: 1.25rem 0 1.4rem;
 }
 
 .title {

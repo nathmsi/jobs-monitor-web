@@ -60,31 +60,64 @@
   justify-content: flex-end;
 }
 
-.coachLink {
+/* Primary navigation (Offers · CV Analysis · My Profile) */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.navTab {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.82rem;
-  font-weight: 700;
-  padding: 0.4rem 0.8rem;
-  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
   text-decoration: none;
-  color: var(--accent);
-  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
 }
-.coachLink:hover {
-  background: color-mix(in srgb, var(--accent) 18%, transparent);
+.navTab:hover {
+  color: var(--text);
+}
+.navTabActive {
+  background: var(--accent);
+  color: #fff;
+}
+.navTabActive:hover {
+  color: #fff;
+}
+
+.navCount {
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  padding: 0.12rem 0.4rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, currentColor 20%, transparent);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 720px) {
+  .header {
+    justify-content: center;
+  }
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 620px) {
   .tagline {
-    display: none;
-  }
-}
-
-@media (max-width: 560px) {
-  .coachLabel {
     display: none;
   }
 }

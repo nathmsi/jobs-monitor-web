@@ -98,6 +98,8 @@
     "yearsValue": "{{count}} yrs",
     "addSkill": "Add a skill…",
     "back": "Back to offers",
+    "guest": "Guest",
+    "guestHint": "Sign in to save your profile and CVs to your account.",
     "pageTitle": "My profile",
     "pageLead": "Analyze your CV to see the offers that fit you best. Everything stays on your device — only the profile you save is stored.",
     "editorTitle": "Your CV & skills",
@@ -110,8 +112,39 @@
     "settings": "Settings",
     "theme": "Appearance"
   },
+  "nav": {
+    "offers": "Offers",
+    "cvAnalysis": "CV Analysis",
+    "profile": "My Profile"
+  },
   "coach": {
     "nav": "CV Coach",
+    "hubTitle": "CV Analysis",
+    "hubLead": "Upload your CV once, then use it two ways: get an honest review to improve it, or find the offers that match you best.",
+    "cvReady": "CV ready",
+    "tabReview": "Review my CV",
+    "tabMatch": "Best offers for me",
+    "signIn": {
+      "title": "Sign in to use your CVs",
+      "lead": "Sign in to upload your CVs, keep them in your account, and analyze them anytime without re-uploading.",
+      "button": "Sign in with Google"
+    },
+    "library": {
+      "title": "Your CVs",
+      "add": "Add a CV (PDF)",
+      "adding": "Reading…",
+      "none": "No CV yet — click to upload your first PDF",
+      "delete": "Delete this CV"
+    },
+    "match": {
+      "soon": "Coming soon",
+      "cta": "Find my best offers",
+      "lead": "The AI agent will read your CV, search my job base, rank the 20 best matches and explain, for each, why it fits and where you fall short.",
+      "why": "Why it matches",
+      "adapt": "Adapt my CV",
+      "view": "View offer →",
+      "needCv": "Add your CV above to enable matching."
+    },
     "title": "AI career review",
     "lead": "Paste your CV and get an honest, structured analysis: your level, where you can realistically aim, what to improve, and a concrete action plan. Nothing is stored.",
     "goalLabel": "Your goal (optional)",

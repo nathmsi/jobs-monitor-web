@@ -7,15 +7,24 @@ import { Header } from "../components/Header/Header";
 import { JobCard } from "../components/JobCard/JobCard";
 import { ProfileEditor } from "../components/ProfileEditor/ProfileEditor";
 import { ThemeSetting } from "../components/ThemeSetting/ThemeSetting";
+import { useAuth } from "../lib/auth";
 import { matchScore, rankScore } from "../lib/cvAnalysis";
 import { useProfile } from "../lib/profile";
 import styles from "./ProfilePage.module.css";
 
 export function ProfilePage() {
   const { t } = useTranslation();
+  const { user, enabled, signInWithGoogle, signOut } = useAuth();
   const { profile } = useProfile();
   const { data: sources } = useSources();
   const { data: jobs } = useRegionJobs("all");
+
+  const name =
+    (user?.user_metadata?.full_name as string) ||
+    (user?.user_metadata?.name as string) ||
+    user?.email ||
+    "";
+  const avatar = user?.user_metadata?.avatar_url as string | undefined;
 
   const hasProfile = !!profile && profile.skills.length > 0;
 
@@ -55,9 +64,40 @@ export function ProfilePage() {
     <div className={styles.app}>
       <Header />
 
-      <Link to="/" className={styles.back}>
-        ← {t("profile.back")}
-      </Link>
+      {/* Account header */}
+      <div className={styles.account}>
+        {enabled && user ? (
+          <>
+            {avatar ? (
+              <img className={styles.avatar} src={avatar} alt="" />
+            ) : (
+              <span className={styles.avatarFallback}>
+                {(name || "?").charAt(0).toUpperCase()}
+              </span>
+            )}
+            <div className={styles.accountInfo}>
+              <span className={styles.accountName}>{name}</span>
+              <span className={styles.accountMail}>{user.email}</span>
+            </div>
+            <button className={styles.signOut} onClick={() => signOut()}>
+              {t("auth.signOut")}
+            </button>
+          </>
+        ) : (
+          <>
+            <span className={styles.avatarFallback}>👤</span>
+            <div className={styles.accountInfo}>
+              <span className={styles.accountName}>{t("profile.guest")}</span>
+              <span className={styles.accountMail}>{t("profile.guestHint")}</span>
+            </div>
+            {enabled && (
+              <button className={styles.signInBtn} onClick={() => signInWithGoogle()}>
+                {t("auth.signInGoogle")}
+              </button>
+            )}
+          </>
+        )}
+      </div>
 
       <div className={styles.intro}>
         <h1 className={styles.title}>{t("profile.pageTitle")}</h1>

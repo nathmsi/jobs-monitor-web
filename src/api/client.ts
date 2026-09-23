@@ -107,12 +107,17 @@ export interface CvAnalysis {
   overall: { score: number; summary: string };
 }
 
-/** Send a CV (+ optional goal) to the AI career-review endpoint. */
-export async function analyzeCvAi(cvText: string, goal: string): Promise<CvAnalysis> {
+/** Send a CV (+ optional goal) to the AI career-review endpoint. `lang` is the
+ *  site language so the analysis comes back in the same language. */
+export async function analyzeCvAi(
+  cvText: string,
+  goal: string,
+  lang: string,
+): Promise<CvAnalysis> {
   const resp = await fetch(`${API}/api/cv/analyze`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ cvText, goal }),
+    body: JSON.stringify({ cvText, goal, lang }),
   });
   if (!resp.ok) {
     const detail = await resp.json().catch(() => null);

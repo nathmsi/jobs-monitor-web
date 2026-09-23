@@ -24,12 +24,17 @@ export function MatchResults({
 
   return (
     <div className={styles.container}>
+      {/* AI Badge */}
+      <div className={styles.aiBadge}>
+        <span>🤖 Powered by AI Job Scout</span>
+      </div>
+
       {/* Headline */}
       <div className={styles.headline}>
         <h2 className={styles.title}>
-          🎯 Your AI Agent Found <span className={styles.highlight}>{offers.length}</span> Perfect Matches
+          ✨ Perfect Matches for You • <span className={styles.highlight}>{offers.length}</span> Jobs
         </h2>
-        <p className={styles.subtitle}>Ranked by fit score — best opportunities first</p>
+        <p className={styles.subtitle}>Our AI analyzed your CV and found the best-fit opportunities ranked by match score</p>
       </div>
 
       {/* Top Result - Hero Card */}

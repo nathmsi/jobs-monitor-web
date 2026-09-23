@@ -59,13 +59,23 @@ export function CoachPage() {
             <p className={styles.lead}>{t("coach.hubLead")}</p>
           </div>
           {user && (
-            <button
-              className={styles.analyzeBtn}
-              onClick={() => setShowUploadModal(true)}
-              style={{ whiteSpace: "nowrap", marginTop: "1rem" }}
-            >
-              📤 Upload my CV
-            </button>
+            <div style={{ display: "flex", gap: "0.75rem", whiteSpace: "nowrap", marginTop: "1rem" }}>
+              {selectedId && (
+                <button
+                  className={styles.analyzeBtn}
+                  onClick={() => setTab("review")}
+                  style={{ background: "var(--accent)" }}
+                >
+                  📊 Analyze this CV
+                </button>
+              )}
+              <button
+                className={styles.analyzeBtn}
+                onClick={() => setShowUploadModal(true)}
+              >
+                {selectedId ? "📤 Change CV" : "📤 Upload my CV"}
+              </button>
+            </div>
           )}
         </div>
       </div>

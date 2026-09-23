@@ -21,7 +21,7 @@ type SubTab = "review" | "match";
 export function CoachPage() {
   const { t, i18n } = useTranslation();
   const { user, signInWithGoogle } = useAuth();
-  const { cvs, selectedCv, selectedId, selectCv, addCv, removeCv } = useCvs();
+  const { selectedCv, addCv } = useCvs();
 
   const [goal, setGoal] = useState("");
   const [busyPdf, setBusyPdf] = useState(false);
@@ -70,7 +70,14 @@ export function CoachPage() {
       ) : (
         <div className={styles.card}>
           <div className={styles.libHead}>
-            <label className={styles.label}>{t("coach.library.title")}</label>
+            <div>
+              {selectedCv && (
+                <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginBottom: "0.5rem" }}>
+                  📄 {selectedCv.name}
+                </div>
+              )}
+              <label className={styles.label}>{t("coach.goalLabel")}</label>
+            </div>
             <button
               type="button"
               className={styles.fileBtn}
@@ -81,42 +88,7 @@ export function CoachPage() {
             </button>
           </div>
 
-          {cvs.length === 0 ? (
-            <div className={styles.emptyLib} onClick={() => setShowUploadModal(true)}>
-              📄 {t("coach.library.none")}
-            </div>
-          ) : (
-            <div className={styles.cvPicker}>
-              <select
-                className={styles.goal}
-                value={selectedId ?? ""}
-                onChange={(e) => selectCv(e.target.value)}
-              >
-                {cvs.map((c) => (
-                  <option key={c.id} value={c.id}>
-                    {c.name}
-                  </option>
-                ))}
-              </select>
-              {selectedCv && (
-                <button
-                  type="button"
-                  className={styles.deleteBtn}
-                  onClick={() => removeCv(selectedCv.id)}
-                  title={t("coach.library.delete")}
-                >
-                  🗑
-                </button>
-              )}
-            </div>
-          )}
-
-          {selectedCv && (
-            <p className={styles.cvPreview}>{selectedCv.text.slice(0, 240)}…</p>
-          )}
-
-          <label className={styles.label} style={{ marginTop: "1rem" }}>
-            {t("coach.goalLabel")}
+          <label className={styles.label} style={{ marginTop: "0rem" }}>
           </label>
           <input
             className={styles.goal}

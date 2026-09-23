@@ -21,7 +21,7 @@ type SubTab = "review" | "match";
 export function CoachPage() {
   const { t, i18n } = useTranslation();
   const { user, signInWithGoogle } = useAuth();
-  const { selectedCv, addCv } = useCvs();
+  const { selectedCv, addCv, cvs, selectedId, selectCv } = useCvs();
 
   const [goal] = useState("");
   const [busyPdf, setBusyPdf] = useState(false);
@@ -116,6 +116,9 @@ export function CoachPage() {
         onUpload={onPdf}
         busy={busyPdf}
         error={pdfError}
+        existingCvs={cvs}
+        selectedCvId={selectedId}
+        onSelectCv={selectCv}
       />
     </div>
   );

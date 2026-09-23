@@ -8,12 +8,18 @@ export function CVUploadModal({
   onUpload,
   busy,
   error,
+  existingCvs,
+  selectedCvId,
+  onSelectCv,
 }: {
   open: boolean;
   onClose: () => void;
   onUpload: (file: File) => Promise<void>;
   busy?: boolean;
   error?: string | null;
+  existingCvs?: Array<{ id: string; name: string }>;
+  selectedCvId?: string;
+  onSelectCv?: (id: string) => void;
 }) {
   const { t } = useTranslation();
   const fileRef = useRef<HTMLInputElement>(null);
@@ -35,7 +41,41 @@ export function CVUploadModal({
         </div>
 
         <div className={styles.content}>
-          <p className={styles.lead}>Upload a PDF of your CV to get started</p>
+          {existingCvs && existingCvs.length > 0 && (
+            <div style={{ marginBottom: "1.5rem" }}>
+              <label style={{ fontSize: "0.8rem", color: "var(--text-muted)", textTransform: "uppercase", fontWeight: 600, display: "block", marginBottom: "0.5rem" }}>
+                Or select existing CV
+              </label>
+              <select
+                value={selectedCvId ?? ""}
+                onChange={(e) => {
+                  onSelectCv?.(e.target.value);
+                  onClose();
+                }}
+                style={{
+                  width: "100%",
+                  padding: "0.75rem",
+                  borderRadius: "8px",
+                  border: "1px solid var(--border-strong)",
+                  background: "var(--card)",
+                  color: "var(--text)",
+                  fontSize: "0.95rem",
+                  cursor: "pointer",
+                }}
+              >
+                <option value="">Choose a CV...</option>
+                {existingCvs.map((cv) => (
+                  <option key={cv.id} value={cv.id}>
+                    {cv.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          <div style={{ textAlign: "center", margin: "1rem 0", color: "var(--text-muted)", fontSize: "0.9rem" }}>
+            {existingCvs && existingCvs.length > 0 ? "Or upload a new one" : "Upload a PDF of your CV to get started"}
+          </div>
 
           {error && <div className={styles.error}>⚠ {error}</div>}
 

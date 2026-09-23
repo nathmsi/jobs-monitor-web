@@ -117,7 +117,7 @@ export function CoachPage() {
         busy={busyPdf}
         error={pdfError}
         existingCvs={cvs}
-        selectedCvId={selectedId}
+        selectedCvId={selectedId ?? undefined}
         onSelectCv={selectCv}
       />
     </div>

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 
 import { analyzeCvAi, matchCv, type CvAnalysis, type MatchedOffer } from "../api/client";
+import { consumeMatchStream } from "../api/stream";
 import { Header } from "../components/Header/Header";
 import { useAuth } from "../lib/auth";
 import { useCvs } from "../lib/cvs";
@@ -240,8 +241,6 @@ function ReviewTab({
 
 /* -------------------------------- Match tab ------------------------------- */
 
-const MATCH_STEP_MS = 2500;
-
 function MatchTab({
   cv,
   ready,
@@ -255,27 +254,46 @@ function MatchTab({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [results, setResults] = useState<MatchedOffer[] | null>(null);
-  const [stepIdx, setStepIdx] = useState(0);
-
-  const steps = t("coach.match.loadingSteps", { returnObjects: true }) as string[];
-  useEffect(() => {
-    if (!busy) {
-      setStepIdx(0);
-      return;
-    }
-    const id = setInterval(() => setStepIdx((i) => (i + 1) % steps.length), MATCH_STEP_MS);
-    return () => clearInterval(id);
-  }, [busy, steps.length]);
+  const [currentMessage, setCurrentMessage] = useState("");
 
   const run = async () => {
     setBusy(true);
     setError(null);
+    setCurrentMessage("");
+    setResults(null);
+
     try {
+      await consumeMatchStream(cv.trim(), {}, {
+        onToolCall: (name) => {
+          const toolNames: Record<string, string> = {
+            search_offers: t("coach.match.loadingSteps.0") || "Searching...",
+            read_offer: t("coach.match.loadingSteps.1") || "Reading...",
+            market_stats: t("coach.match.loadingSteps.2") || "Analyzing...",
+            search_and_read_top: t("coach.match.loadingSteps.0") || "Searching...",
+          };
+          setCurrentMessage(toolNames[name] || `Calling ${name}...`);
+        },
+        onToolResult: (name, duration) => {
+          setCurrentMessage(`${name} done (${duration}ms) ✓`);
+        },
+        onToolCached: (name) => {
+          setCurrentMessage(`${name} (cached) ⚡`);
+        },
+        onRetry: (name, count) => {
+          setCurrentMessage(`${name} retry ${count}...`);
+        },
+        onFinal: () => {
+          setCurrentMessage("Ranking results...");
+        },
+      });
+
+      // Fetch final results
       setResults(await matchCv(cv.trim()));
     } catch (e) {
       setError((e as Error).message);
     } finally {
       setBusy(false);
+      setCurrentMessage("");
     }
   };
 
@@ -293,7 +311,7 @@ function MatchTab({
         </div>
       )}
 
-      {busy && <MatchLoadingPanel message={steps[stepIdx] ?? ""} />}
+      {busy && <MatchLoadingPanel message={currentMessage} />}
 
       {results && !busy && (
         <div className={styles.grid2}>

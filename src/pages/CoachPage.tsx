@@ -53,35 +53,30 @@ export function CoachPage() {
       <Header />
 
       <div className={styles.intro}>
-        <h1 className={styles.title}>{t("coach.hubTitle")}</h1>
-        <p className={styles.lead}>{t("coach.hubLead")}</p>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem" }}>
+          <div>
+            <h1 className={styles.title}>{t("coach.hubTitle")}</h1>
+            <p className={styles.lead}>{t("coach.hubLead")}</p>
+          </div>
+          {user && (
+            <button
+              className={styles.analyzeBtn}
+              onClick={() => setShowUploadModal(true)}
+              style={{ whiteSpace: "nowrap", marginTop: "1rem" }}
+            >
+              📤 Upload my CV
+            </button>
+          )}
+        </div>
       </div>
 
-      {!user ? (
+      {!user && (
         <div className={styles.card}>
           <h2 className={styles.h2}>{t("coach.signIn.title")}</h2>
           <p className={styles.lead}>{t("coach.signIn.lead")}</p>
           <div className={styles.actionsBar}>
             <button className={styles.analyzeBtn} onClick={() => signInWithGoogle()}>
               {t("coach.signIn.button")}
-            </button>
-          </div>
-        </div>
-      ) : (
-        <div className={styles.card}>
-          <div className={styles.libHead}>
-            {selectedCv && (
-              <div style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>
-                📄 {selectedCv.name}
-              </div>
-            )}
-            <button
-              type="button"
-              className={styles.fileBtn}
-              disabled={busyPdf}
-              onClick={() => setShowUploadModal(true)}
-            >
-              ＋ {t("coach.library.add")}
             </button>
           </div>
         </div>

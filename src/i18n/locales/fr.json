@@ -1,0 +1,255 @@
+{
+  "header": {
+    "eyebrow": "ISRAËL",
+    "title": "Tech Jobs",
+    "subtitle": "Postes tech en Israël — développement, data, DevOps, cloud, sécurité…"
+  },
+  "lang": {
+    "label": "Langue",
+    "en": "EN",
+    "he": "עב",
+    "fr": "FR"
+  },
+  "filters": {
+    "searchPlaceholder": "Rechercher : React, Node, .NET…",
+    "regionLabel": "Zone",
+    "roleLabel": "Poste :",
+    "clear": "Effacer",
+    "toggle": "Filtres",
+    "hideSeen": "Masquer les offres déjà vues",
+    "appliedCount_one": "{{count}} candidature",
+    "appliedCount_other": "{{count}} candidatures"
+  },
+  "source": {
+    "refresh": "Actualiser",
+    "loading": "Chargement…",
+    "openSite": "Ouvrir le site ↗",
+    "offers_one": "{{count}} offre",
+    "offers_other": "{{count}} offres",
+    "new_one": "{{count}} nouveau",
+    "new_other": "{{count}} nouveaux",
+    "updated": "mis à jour {{time}}",
+    "empty": "Aucune offre récupérée automatiquement.",
+    "emptyLink": "Voir directement sur le site ↗",
+    "onDemand": "Source à la demande — cliquez sur « Actualiser » pour charger les offres.",
+    "onDemandShort": "À la demande",
+    "otherSources": "Autres sources",
+    "ready": "Prêt."
+  },
+  "job": {
+    "new": "Nouveau",
+    "hot": "Populaire",
+    "view": "Voir l'offre →",
+    "seen": "Vu",
+    "applied": "Candidaté",
+    "markApplied": "J'ai postulé",
+    "save": "Sauvegarder",
+    "saved": "Sauvegardé",
+    "unsave": "Retirer des sauvegardes"
+  },
+  "auth": {
+    "signInGoogle": "Se connecter avec Google",
+    "signOut": "Se déconnecter"
+  },
+  "mine": {
+    "all": "Tout",
+    "saved": "Sauvegardés",
+    "applied": "Candidatures",
+    "empty": "Rien ici pour l'instant. Sauvegardez des offres avec ★.",
+    "signInHint": "Connectez-vous pour retrouver vos offres sur tous vos appareils.",
+    "untitled": "(sans titre)",
+    "markSaved": "Marquer comme non postulé",
+    "remove": "Supprimer"
+  },
+  "error": {
+    "apiTitle": "Impossible de joindre l'API.",
+    "apiHint": "Vérifiez que le backend répond à",
+    "generic": "Erreur : {{message}}"
+  },
+  "tabs": {
+    "companies": "Entreprises tech",
+    "agencies": "Agences de recrutement",
+    "mine": "Mes offres",
+    "forme": "Pour moi"
+  },
+  "match": {
+    "skills_one": "{{count}} compétence correspondante",
+    "skills_other": "{{count}} compétences correspondantes"
+  },
+  "profile": {
+    "open": "Mon profil",
+    "title": "Analyser mon CV",
+    "privacy": "Analysé sur votre appareil — votre CV ne quitte jamais votre navigateur.",
+    "placeholder": "Collez votre CV ici…",
+    "dropPdf": "Choisir / déposer un PDF",
+    "analyze": "Analyser",
+    "analyzing": "Analyse…",
+    "save": "Sauvegarder le profil",
+    "clear": "Effacer le profil",
+    "close": "Fermer",
+    "roles": "Postes",
+    "skills": "Compétences",
+    "titles": "Titres de poste",
+    "education": "Formation",
+    "certifications": "Certifications",
+    "locations": "Localisations",
+    "languages": "Langues",
+    "seniority": "Séniorité",
+    "years": "Expérience",
+    "yearsValue": "{{count}} ans",
+    "addSkill": "Ajouter une compétence…",
+    "back": "Retour aux offres",
+    "guest": "Invité",
+    "guestHint": "Connectez-vous pour sauvegarder votre profil et vos CV.",
+    "pageTitle": "Mon profil",
+    "pageLead": "Analysez votre CV pour voir les offres qui vous correspondent le mieux.",
+    "editorTitle": "Votre CV & compétences",
+    "saved": "Sauvegardé",
+    "matchingOffers": "offres correspondent à votre profil",
+    "topSkills": "Vos compétences les plus demandées",
+    "recommended": "Recommandé pour vous",
+    "seeAll": "Tout voir",
+    "emptyStats": "Analysez votre CV pour débloquer vos statistiques de correspondance.",
+    "settings": "Paramètres",
+    "theme": "Apparence"
+  },
+  "nav": {
+    "offers": "Offres",
+    "cvAnalysis": "Coach CV",
+    "profile": "Mon profil"
+  },
+  "coach": {
+    "nav": "Coach CV",
+    "hubTitle": "Coach CV",
+    "hubLead": "Uploadez votre CV une fois, puis utilisez-le de deux façons : obtenez une analyse honnête pour l'améliorer, ou trouvez les offres qui vous correspondent le mieux.",
+    "cvReady": "CV prêt",
+    "tabReview": "Analyser mon CV",
+    "tabMatch": "Meilleures offres pour moi",
+    "signIn": {
+      "title": "Connectez-vous pour utiliser vos CV",
+      "lead": "Connectez-vous pour uploader vos CV, les conserver dans votre compte et les analyser à tout moment.",
+      "button": "Se connecter avec Google"
+    },
+    "library": {
+      "title": "Vos CV",
+      "add": "Ajouter un CV (PDF)",
+      "adding": "Lecture…",
+      "none": "Pas encore de CV — cliquez pour uploader votre premier PDF",
+      "delete": "Supprimer ce CV"
+    },
+    "match": {
+      "soon": "Bientôt disponible",
+      "cta": "Trouver mes meilleures offres",
+      "lead": "L'agent IA va lire votre CV, chercher dans ma base d'offres, classer les 20 meilleures correspondances et expliquer pour chacune pourquoi elle vous convient.",
+      "why": "Pourquoi ça correspond",
+      "adapt": "Adapter mon CV",
+      "view": "Voir l'offre →",
+      "needCv": "Ajoutez votre CV ci-dessus pour activer la correspondance.",
+      "loadingSteps": ["Analyse de votre profil…", "Recherche des offres…", "Classement des meilleures correspondances…", "Presque terminé…"],
+      "none": "Aucune offre correspondante — essayez d'élargir vos filtres."
+    },
+    "title": "Analyse de carrière IA",
+    "lead": "Collez votre CV et obtenez une analyse structurée et honnête : votre niveau, où vous pouvez viser, quoi améliorer, et un plan d'action concret.",
+    "goalLabel": "Votre objectif (optionnel)",
+    "goalPlaceholder": "ex. devenir Staff Engineer, passer de la data au ML…",
+    "cvLabel": "Votre CV (collez le texte complet)",
+    "cvPlaceholder": "Collez votre CV ici…",
+    "analyze": "Analyse CV",
+    "analyzing": "Analyse…",
+    "loadingSteps": [
+      "Lecture du CV…",
+      "Évaluation du niveau et de l'expérience…",
+      "Cartographie des compétences et domaines…",
+      "Identification des forces et lacunes…",
+      "Comparaison avec le poste cible…",
+      "Rédaction du plan d'action…",
+      "Presque terminé — peaufinage de l'analyse…"
+    ],
+    "reading": "Lecture du PDF…",
+    "pdfError": "Impossible de lire ce PDF — collez le texte à la place.",
+    "privacy": "Envoyé au moteur d'analyse uniquement pour cette requête — votre CV n'est pas stocké.",
+    "yrs": "{{count}} ans",
+    "target": "Où vous pouvez viser",
+    "ready": "prêt",
+    "assumed": "Supposé",
+    "strengths": "Points forts",
+    "gaps": "Lacunes à combler",
+    "cvFeedback": "Retours sur la rédaction du CV",
+    "skills": "Compétences à acquérir",
+    "plan": "Plan d'action",
+    "d30": "30 prochains jours",
+    "d90": "90 prochains jours",
+    "m6": "6 prochains mois",
+    "keywords": "Mots-clés ATS manquants",
+    "tagline": "Votre assistant carrière propulsé par l'IA",
+    "getStarted": "Commencer",
+    "heroTitle": "Décuplez votre potentiel de carrière",
+    "heroDesc": "Uploadez votre CV une fois et obtenez une analyse IA approfondie de vos forces, lacunes et plan d'action — plus une liste personnalisée d'offres qui correspondent à votre profil.",
+    "noCv": "Aucun CV uploadé",
+    "uploadCv": "Uploader mon CV (PDF)",
+    "changeCv": "Changer de CV",
+    "cvReadyLabel": "Prêt",
+    "featureReviewTitle": "Analyser mon CV",
+    "featureReviewDesc": "Obtenez une analyse détaillée : votre niveau, vos forces, les lacunes à combler et un plan d'action concret sur 6 mois.",
+    "featureReviewCta": "Obtenir mon analyse →",
+    "featureMatchTitle": "Trouver des offres correspondantes",
+    "featureMatchDesc": "Notre agent IA lit votre CV, recherche toutes les offres disponibles et classe les meilleures correspondances avec une explication.",
+    "featureMatchCta": "Trouver mes offres →",
+    "back": "← Retour",
+    "runAgain": "Relancer",
+    "searchAgain": "Rechercher à nouveau",
+    "analysisTitle": "Analyse CV",
+    "analysisComplete": "Analyse CV terminée",
+    "matchTitle": "Offres correspondantes",
+    "matchedJobs": "{{count}} offres trouvées pour vous",
+    "uploadUnlock": "Uploadez un CV pour débloquer"
+  },
+  "forme": {
+    "noProfile": "Analysez votre CV pour voir les offres qui vous correspondent.",
+    "noMatch": "Aucune offre ne correspond à votre profil — essayez d'élargir le filtre de zone.",
+    "summary": "{{count}} offres correspondant à votre profil"
+  },
+  "theme": {
+    "system": "Système",
+    "light": "Clair",
+    "dark": "Sombre"
+  },
+  "categories": {
+    "aria": "Filtrer par catégorie",
+    "all": "Tout",
+    "security": "Sécurité",
+    "fintech": "Fintech",
+    "data-ai": "Data / IA",
+    "devtools": "Dev / Cloud",
+    "hardware": "Hardware / Semi",
+    "web-ecom": "Web / E-commerce",
+    "gaming": "Gaming",
+    "mobility": "Mobilité",
+    "health": "Santé / Bio",
+    "staffing": "Recrutement",
+    "other": "Autre"
+  },
+  "stats": {
+    "summary": "{{offers}} offres · {{companies}} entreprises",
+    "offers": "{{count}} offres"
+  },
+  "loadMore": {
+    "button": "Charger plus",
+    "loading": "Chargement…"
+  },
+  "sort": {
+    "label": "Trier",
+    "recent": "Plus récentes",
+    "oldest": "Plus anciennes",
+    "hot": "Plus populaires"
+  },
+  "noResults": "Aucune offre pour ces filtres.",
+  "allCompanies": {
+    "open": "Toutes les entreprises ({{count}})",
+    "title": "Toutes les entreprises",
+    "search": "Rechercher une entreprise…",
+    "careers": "Carrières ↗",
+    "close": "Fermer"
+  },
+  "footer": "Veille emploi · sources : LinkedIn · ATS · sites carrières"
+}

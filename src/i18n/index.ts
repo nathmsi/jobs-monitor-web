@@ -4,8 +4,9 @@ import { initReactI18next } from "react-i18next";
 
 import en from "./locales/en.json";
 import he from "./locales/he.json";
+import fr from "./locales/fr.json";
 
-export const SUPPORTED_LANGUAGES = ["en", "he"] as const;
+export const SUPPORTED_LANGUAGES = ["en", "he", "fr"] as const;
 export type Language = (typeof SUPPORTED_LANGUAGES)[number];
 
 /** Languages that render right-to-left. */
@@ -22,6 +23,7 @@ i18n
     resources: {
       en: { translation: en },
       he: { translation: he },
+      fr: { translation: fr },
     },
     fallbackLng: "en",
     supportedLngs: SUPPORTED_LANGUAGES,

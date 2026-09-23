@@ -40,9 +40,9 @@ export function Header() {
 
       {/* Navigation */}
       <nav className={styles.nav} aria-label="Main navigation">
-        <NavLink to="/" end className={navClass}>Jobs</NavLink>
-        <NavLink to="/coach" className={navClass}>CV Coach</NavLink>
-        <NavLink to="/profile" className={navClass}>Profile</NavLink>
+        <NavLink to="/" end className={navClass}>{t("nav.offers")}</NavLink>
+        <NavLink to="/coach" className={navClass}>{t("nav.cvAnalysis")}</NavLink>
+        <NavLink to="/profile" className={navClass}>{t("nav.profile")}</NavLink>
       </nav>
 
       {/* Actions */}

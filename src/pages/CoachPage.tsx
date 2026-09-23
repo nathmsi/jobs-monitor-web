@@ -51,20 +51,18 @@ export function CoachPage() {
       <div className={styles.page}>
         {/* Page title */}
         <div className={styles.pageTitle}>
-          <h1 className={styles.title}>CV Coach</h1>
-          <p className={styles.lead}>Your AI-powered career companion</p>
+          <h1 className={styles.title}>{t("coach.nav")}</h1>
+          <p className={styles.lead}>{t("coach.tagline")}</p>
         </div>
 
         {/* Not signed in */}
         {!user && (
           <div className={styles.hero}>
-            <p className={styles.heroEyebrow}>Get started</p>
-            <h2 className={styles.heroTitle}>Unlock your career potential</h2>
-            <p className={styles.heroDesc}>
-              Upload your CV once and get a deep AI review of your strengths, gaps, and action plan — plus a personalised list of jobs that match your profile.
-            </p>
+            <p className={styles.heroEyebrow}>{t("coach.getStarted")}</p>
+            <h2 className={styles.heroTitle}>{t("coach.heroTitle")}</h2>
+            <p className={styles.heroDesc}>{t("coach.heroDesc")}</p>
             <button className={styles.primaryBtn} onClick={() => signInWithGoogle()}>
-              Sign in with Google
+              {t("coach.signIn.button")}
             </button>
           </div>
         )}
@@ -78,18 +76,18 @@ export function CoachPage() {
                 <>
                   <div className={styles.cvBarInfo}>
                     <span className={styles.cvDot} />
-                    <span className={styles.cvBarName}>{selectedCv?.name ?? "Your CV"}</span>
-                    <span className={styles.cvBarReady}>Ready</span>
+                    <span className={styles.cvBarName}>{selectedCv?.name ?? "CV"}</span>
+                    <span className={styles.cvBarReady}>{t("coach.cvReadyLabel")}</span>
                   </div>
                   <button className={styles.cvBarChange} onClick={() => setShowUploadModal(true)}>
-                    Change CV
+                    {t("coach.changeCv")}
                   </button>
                 </>
               ) : (
                 <>
-                  <span className={styles.cvBarEmpty}>No CV uploaded yet</span>
+                  <span className={styles.cvBarEmpty}>{t("coach.noCv")}</span>
                   <button className={styles.primaryBtn} onClick={() => setShowUploadModal(true)}>
-                    Upload my CV
+                    {t("coach.uploadCv")}
                   </button>
                 </>
               )}
@@ -98,28 +96,18 @@ export function CoachPage() {
             {/* Feature cards — always visible */}
             {isReady && !active && (
               <div className={styles.featureGrid}>
-                <button
-                  className={styles.featureCard}
-                  onClick={() => setActive("review")}
-                >
+                <button className={styles.featureCard} onClick={() => setActive("review")}>
                   <div className={styles.featureIcon}>◈</div>
-                  <h3 className={styles.featureTitle}>Analyze my CV</h3>
-                  <p className={styles.featureDesc}>
-                    Get a detailed review: your level, strengths, gaps to close, and a concrete 6-month action plan.
-                  </p>
-                  <span className={styles.featureCta}>Get my review →</span>
+                  <h3 className={styles.featureTitle}>{t("coach.featureReviewTitle")}</h3>
+                  <p className={styles.featureDesc}>{t("coach.featureReviewDesc")}</p>
+                  <span className={styles.featureCta}>{t("coach.featureReviewCta")}</span>
                 </button>
 
-                <button
-                  className={styles.featureCard}
-                  onClick={() => setActive("match")}
-                >
+                <button className={styles.featureCard} onClick={() => setActive("match")}>
                   <div className={styles.featureIcon}>◉</div>
-                  <h3 className={styles.featureTitle}>Find matching jobs</h3>
-                  <p className={styles.featureDesc}>
-                    Our AI agent reads your CV, searches all available jobs, and ranks the top matches with an explanation.
-                  </p>
-                  <span className={styles.featureCta}>Find my jobs →</span>
+                  <h3 className={styles.featureTitle}>{t("coach.featureMatchTitle")}</h3>
+                  <p className={styles.featureDesc}>{t("coach.featureMatchDesc")}</p>
+                  <span className={styles.featureCta}>{t("coach.featureMatchCta")}</span>
                 </button>
               </div>
             )}
@@ -129,15 +117,15 @@ export function CoachPage() {
               <div className={styles.featureGrid}>
                 <div className={`${styles.featureCard} ${styles.featureCardDisabled}`}>
                   <div className={styles.featureIcon}>◈</div>
-                  <h3 className={styles.featureTitle}>Analyze my CV</h3>
-                  <p className={styles.featureDesc}>Upload your CV to get a detailed AI review.</p>
-                  <span className={styles.featureCtaDisabled}>Upload CV to unlock</span>
+                  <h3 className={styles.featureTitle}>{t("coach.featureReviewTitle")}</h3>
+                  <p className={styles.featureDesc}>{t("coach.featureReviewDesc")}</p>
+                  <span className={styles.featureCtaDisabled}>{t("coach.uploadUnlock")}</span>
                 </div>
                 <div className={`${styles.featureCard} ${styles.featureCardDisabled}`}>
                   <div className={styles.featureIcon}>◉</div>
-                  <h3 className={styles.featureTitle}>Find matching jobs</h3>
-                  <p className={styles.featureDesc}>Upload your CV and let AI find the best job matches for you.</p>
-                  <span className={styles.featureCtaDisabled}>Upload CV to unlock</span>
+                  <h3 className={styles.featureTitle}>{t("coach.featureMatchTitle")}</h3>
+                  <p className={styles.featureDesc}>{t("coach.featureMatchDesc")}</p>
+                  <span className={styles.featureCtaDisabled}>{t("coach.uploadUnlock")}</span>
                 </div>
               </div>
             )}
@@ -218,10 +206,10 @@ function ReviewFeature({ cv, goal, lang, onBack }: { cv: string; goal: string; l
   return (
     <div className={styles.featureContent}>
       <div className={styles.featureContentHeader}>
-        <button className={styles.backBtn} onClick={onBack}>← Back</button>
-        <span className={styles.featureContentTitle}>CV Analysis</span>
+        <button className={styles.backBtn} onClick={onBack}>{t("coach.back")}</button>
+        <span className={styles.featureContentTitle}>{t("coach.analysisTitle")}</span>
         {result && !busy && (
-          <button className={styles.rerunBtn} onClick={run}>Run again</button>
+          <button className={styles.rerunBtn} onClick={run}>{t("coach.runAgain")}</button>
         )}
       </div>
 
@@ -247,6 +235,7 @@ function ReviewFeature({ cv, goal, lang, onBack }: { cv: string; goal: string; l
 /* ─────────────────────────── Match feature ─────────────────────────── */
 
 function MatchFeature({ cv, onAdapt, onBack }: { cv: string; onAdapt: () => void; onBack: () => void }) {
+  const { t } = useTranslation();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [results, setResults] = useState<MatchedOffer[] | null>(null);
@@ -281,10 +270,10 @@ function MatchFeature({ cv, onAdapt, onBack }: { cv: string; onAdapt: () => void
   return (
     <div className={styles.featureContent}>
       <div className={styles.featureContentHeader}>
-        <button className={styles.backBtn} onClick={onBack}>← Back</button>
-        <span className={styles.featureContentTitle}>Job Matches</span>
+        <button className={styles.backBtn} onClick={onBack}>{t("coach.back")}</button>
+        <span className={styles.featureContentTitle}>{t("coach.matchTitle")}</span>
         {results && !busy && (
-          <button className={styles.rerunBtn} onClick={run}>Search again</button>
+          <button className={styles.rerunBtn} onClick={run}>{t("coach.searchAgain")}</button>
         )}
       </div>
 

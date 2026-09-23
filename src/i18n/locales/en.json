@@ -7,7 +7,8 @@
   "lang": {
     "label": "Language",
     "en": "EN",
-    "he": "עב"
+    "he": "עב",
+    "fr": "FR"
   },
   "filters": {
     "searchPlaceholder": "Search: React, Node, .NET…",
@@ -179,7 +180,29 @@
     "d30": "Next 30 days",
     "d90": "Next 90 days",
     "m6": "Next 6 months",
-    "keywords": "Missing ATS keywords"
+    "keywords": "Missing ATS keywords",
+    "tagline": "Your AI-powered career companion",
+    "getStarted": "Get started",
+    "heroTitle": "Unlock your career potential",
+    "heroDesc": "Upload your CV once and get a deep AI review of your strengths, gaps, and action plan — plus a personalised list of jobs that match your profile.",
+    "noCv": "No CV uploaded yet",
+    "uploadCv": "Upload my CV (PDF)",
+    "changeCv": "Change CV",
+    "cvReadyLabel": "Ready",
+    "featureReviewTitle": "Analyze my CV",
+    "featureReviewDesc": "Get a detailed review: your level, strengths, gaps to close, and a concrete 6-month action plan.",
+    "featureReviewCta": "Get my review →",
+    "featureMatchTitle": "Find matching jobs",
+    "featureMatchDesc": "Our AI agent reads your CV, searches all available jobs, and ranks the top matches with an explanation.",
+    "featureMatchCta": "Find my jobs →",
+    "back": "← Back",
+    "runAgain": "Run again",
+    "searchAgain": "Search again",
+    "analysisTitle": "CV Analysis",
+    "analysisComplete": "CV Analysis complete",
+    "matchTitle": "Job Matches",
+    "matchedJobs": "Matched {{count}} jobs for you",
+    "uploadUnlock": "Upload CV to unlock"
   },
   "forme": {
     "noProfile": "Analyze your CV to see the offers that match you.",

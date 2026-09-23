@@ -322,6 +322,12 @@
   margin-top: 0.5rem;
 }
 
+.empty {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}
+
 /* Loading */
 .loadingHead {
   display: flex;

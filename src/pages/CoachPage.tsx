@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 
-import { analyzeCvAi, type CvAnalysis } from "../api/client";
+import { analyzeCvAi, matchCv, type CvAnalysis, type MatchedOffer } from "../api/client";
 import { Header } from "../components/Header/Header";
 import { useAuth } from "../lib/auth";
 import { useCvs } from "../lib/cvs";
@@ -175,7 +175,7 @@ export function CoachPage() {
       {tab === "review" ? (
         <ReviewTab cv={cvText} goal={goal} ready={isReady} lang={i18n.language} />
       ) : (
-        <MatchTab ready={isReady} />
+        <MatchTab cv={cvText} ready={isReady} onAdapt={() => setTab("review")} />
       )}
 
       <footer className={styles.footer}>{t("footer")}</footer>
@@ -239,45 +239,146 @@ function ReviewTab({
 }
 
 /* -------------------------------- Match tab ------------------------------- */
-/* UI shell only — the AI matching agent is wired in a later step. */
 
-function MatchTab({ ready }: { ready: boolean }) {
+const MATCH_STEP_MS = 2500;
+
+function MatchTab({
+  cv,
+  ready,
+  onAdapt,
+}: {
+  cv: string;
+  ready: boolean;
+  onAdapt: () => void;
+}) {
   const { t } = useTranslation();
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [results, setResults] = useState<MatchedOffer[] | null>(null);
+  const [stepIdx, setStepIdx] = useState(0);
+
+  const steps = t("coach.match.loadingSteps", { returnObjects: true }) as string[];
+  useEffect(() => {
+    if (!busy) {
+      setStepIdx(0);
+      return;
+    }
+    const id = setInterval(() => setStepIdx((i) => (i + 1) % steps.length), MATCH_STEP_MS);
+    return () => clearInterval(id);
+  }, [busy, steps.length]);
+
+  const run = async () => {
+    setBusy(true);
+    setError(null);
+    try {
+      setResults(await matchCv(cv.trim()));
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  };
+
   return (
     <>
       <div className={styles.actionsBar}>
-        <span className={styles.soon}>🚧 {t("coach.match.soon")}</span>
-        <button className={styles.analyzeBtn} disabled title={t("coach.match.soon")}>
-          🎯 {t("coach.match.cta")}
+        {error && <span className={styles.error}>⚠ {error}</span>}
+        <button className={styles.analyzeBtn} disabled={busy || !ready} onClick={run}>
+          🎯 {busy ? t("coach.analyzing") : t("coach.match.cta")}
         </button>
       </div>
+      {!results && !busy && (
+        <div className={styles.card}>
+          <p className={styles.lead}>{t("coach.match.lead")}</p>
+        </div>
+      )}
+
+      {busy && <MatchLoadingPanel message={steps[stepIdx] ?? ""} />}
+
+      {results && !busy && (
+        <div className={styles.grid2}>
+          {results.length === 0 && (
+            <p className={styles.empty}>{t("coach.match.none")}</p>
+          )}
+          {results.map((o) => (
+            <div className={styles.card} key={o.id}>
+              <div className={styles.previewHead}>
+                <span className={styles.previewLogo} aria-hidden />
+                <span className={styles.previewScore}>{o.score}</span>
+              </div>
+              <div className={styles.headline}>{o.title}</div>
+              <div className={styles.metaLine}>
+                <span className={styles.chip}>{o.company}</span>
+              </div>
+              <div className={styles.previewReasons}>
+                <span className={styles.previewChip}>{t("coach.match.why")}</span>
+                <ul className={styles.list}>
+                  {o.reasons.map((r, i) => (
+                    <li key={i}>{r}</li>
+                  ))}
+                </ul>
+                {o.weak_points.length > 0 && (
+                  <>
+                    <span className={styles.previewChip}>{t("coach.gaps")}</span>
+                    <ul className={styles.list}>
+                      {o.weak_points.map((w, i) => (
+                        <li key={i} className={styles.evidence}>
+                          {w}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </div>
+              <div className={styles.previewFoot}>
+                <button type="button" className={styles.previewGhost} onClick={onAdapt}>
+                  {t("coach.match.adapt")}
+                </button>
+                {o.url && (
+                  <a
+                    className={styles.previewGhost}
+                    href={o.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {t("coach.match.view")}
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {!ready && <p className={styles.note}>{t("coach.match.needCv")}</p>}
+    </>
+  );
+}
+
+function MatchLoadingPanel({ message }: { message: string }) {
+  return (
+    <div aria-live="polite" aria-busy>
       <div className={styles.card}>
-        <p className={styles.lead}>{t("coach.match.lead")}</p>
+        <div className={styles.loadingHead}>
+          <span className={styles.spinner} aria-hidden />
+          <span className={styles.loadingMsg} key={message}>
+            {message}
+          </span>
+        </div>
       </div>
-      {/* Preview of the target result layout (placeholders) */}
       <div className={styles.grid2}>
-        {[1, 2, 3, 4].map((i) => (
+        {[0, 1, 2, 3].map((i) => (
           <div className={`${styles.card} ${styles.previewCard}`} key={i}>
             <div className={styles.previewHead}>
               <span className={styles.previewLogo} />
-              <span className={styles.previewScore}>{92 - i * 7}</span>
+              <span className={styles.skelCircle} style={{ width: 38, height: 38 }} />
             </div>
             <span className={styles.skel} style={{ width: "70%" }} />
             <span className={styles.skel} style={{ width: "45%" }} />
-            <div className={styles.previewReasons}>
-              <span className={styles.previewChip}>{t("coach.match.why")}</span>
-              <span className={styles.skel} style={{ width: "85%" }} />
-              <span className={styles.skel} style={{ width: "60%" }} />
-            </div>
-            <div className={styles.previewFoot}>
-              <span className={styles.previewGhost}>{t("coach.match.adapt")}</span>
-              <span className={styles.previewGhost}>{t("coach.match.view")}</span>
-            </div>
           </div>
         ))}
       </div>
-      {!ready && <p className={styles.note}>{t("coach.match.needCv")}</p>}
-    </>
+    </div>
   );
 }
 

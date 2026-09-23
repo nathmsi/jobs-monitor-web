@@ -143,7 +143,9 @@
       "why": "Why it matches",
       "adapt": "Adapt my CV",
       "view": "View offer →",
-      "needCv": "Add your CV above to enable matching."
+      "needCv": "Add your CV above to enable matching.",
+      "loadingSteps": ["Analyzing your profile…", "Searching offers…", "Ranking the best matches…", "Almost done…"],
+      "none": "No matching offers found — try widening your filters."
     },
     "title": "AI career review",
     "lead": "Paste your CV and get an honest, structured analysis: your level, where you can realistically aim, what to improve, and a concrete action plan. Nothing is stored.",

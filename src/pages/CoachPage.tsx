@@ -70,14 +70,11 @@ export function CoachPage() {
       ) : (
         <div className={styles.card}>
           <div className={styles.libHead}>
-            <div>
-              {selectedCv && (
-                <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginBottom: "0.5rem" }}>
-                  📄 {selectedCv.name}
-                </div>
-              )}
-              <label className={styles.label}>{t("coach.goalLabel")}</label>
-            </div>
+            {selectedCv && (
+              <div style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>
+                📄 {selectedCv.name}
+              </div>
+            )}
             <button
               type="button"
               className={styles.fileBtn}
@@ -87,16 +84,6 @@ export function CoachPage() {
               ＋ {t("coach.library.add")}
             </button>
           </div>
-
-          <label className={styles.label} style={{ marginTop: "0rem" }}>
-          </label>
-          <input
-            className={styles.goal}
-            value={goal}
-            onChange={(e) => setGoal(e.target.value)}
-            placeholder={t("coach.goalPlaceholder")}
-          />
-          <p className={styles.privacy}>🔒 {t("coach.privacy")}</p>
         </div>
       )}
 

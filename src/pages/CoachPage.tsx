@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 
 import { analyzeCvAi, matchCv, type CvAnalysis, type MatchedOffer } from "../api/client";
 import { consumeMatchStream } from "../api/stream";
+import { AgentWorkflow } from "../components/AgentWorkflow/AgentWorkflow";
+import { MatchResults } from "../components/MatchResults/MatchResults";
 import { Header } from "../components/Header/Header";
 import { useAuth } from "../lib/auth";
 import { useCvs } from "../lib/cvs";
@@ -254,36 +256,24 @@ function MatchTab({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [results, setResults] = useState<MatchedOffer[] | null>(null);
-  const [currentMessage, setCurrentMessage] = useState("");
+  const [currentTool, setCurrentTool] = useState<string | undefined>();
 
   const run = async () => {
     setBusy(true);
     setError(null);
-    setCurrentMessage("");
+    setCurrentTool(undefined);
     setResults(null);
 
     try {
       await consumeMatchStream(cv.trim(), {}, {
         onToolCall: (name) => {
-          const toolNames: Record<string, string> = {
-            search_offers: t("coach.match.loadingSteps.0") || "Searching...",
-            read_offer: t("coach.match.loadingSteps.1") || "Reading...",
-            market_stats: t("coach.match.loadingSteps.2") || "Analyzing...",
-            search_and_read_top: t("coach.match.loadingSteps.0") || "Searching...",
-          };
-          setCurrentMessage(toolNames[name] || `Calling ${name}...`);
+          setCurrentTool(name);
         },
-        onToolResult: (name, duration) => {
-          setCurrentMessage(`${name} done (${duration}ms) ✓`);
-        },
-        onToolCached: (name) => {
-          setCurrentMessage(`${name} (cached) ⚡`);
-        },
-        onRetry: (name, count) => {
-          setCurrentMessage(`${name} retry ${count}...`);
+        onToolResult: () => {
+          // Tool finished, will show next
         },
         onFinal: () => {
-          setCurrentMessage("Ranking results...");
+          setCurrentTool("final");
         },
       });
 
@@ -293,110 +283,32 @@ function MatchTab({
       setError((e as Error).message);
     } finally {
       setBusy(false);
-      setCurrentMessage("");
+      setCurrentTool(undefined);
     }
   };
 
   return (
     <>
-      <div className={styles.actionsBar}>
-        {error && <span className={styles.error}>⚠ {error}</span>}
-        <button className={styles.analyzeBtn} disabled={busy || !ready} onClick={run}>
-          🎯 {busy ? t("coach.analyzing") : t("coach.match.cta")}
-        </button>
-      </div>
-      {!results && !busy && (
+      {!results && (
         <div className={styles.card}>
           <p className={styles.lead}>{t("coach.match.lead")}</p>
+          <div className={styles.actionsBar} style={{ marginTop: "1.5rem" }}>
+            {error && <span className={styles.error}>⚠ {error}</span>}
+            <button className={styles.analyzeBtn} disabled={busy || !ready} onClick={run}>
+              🎯 {busy ? t("coach.analyzing") : t("coach.match.cta")}
+            </button>
+          </div>
         </div>
       )}
 
-      {busy && <MatchLoadingPanel message={currentMessage} />}
+      {busy && <AgentWorkflow currentTool={currentTool} />}
 
       {results && !busy && (
-        <div className={styles.grid2}>
-          {results.length === 0 && (
-            <p className={styles.empty}>{t("coach.match.none")}</p>
-          )}
-          {results.map((o) => (
-            <div className={styles.card} key={o.id}>
-              <div className={styles.previewHead}>
-                <span className={styles.previewLogo} aria-hidden />
-                <span className={styles.previewScore}>{o.score}</span>
-              </div>
-              <div className={styles.headline}>{o.title}</div>
-              <div className={styles.metaLine}>
-                <span className={styles.chip}>{o.company}</span>
-              </div>
-              <div className={styles.previewReasons}>
-                <span className={styles.previewChip}>{t("coach.match.why")}</span>
-                <ul className={styles.list}>
-                  {o.reasons.map((r, i) => (
-                    <li key={i}>{r}</li>
-                  ))}
-                </ul>
-                {o.weak_points.length > 0 && (
-                  <>
-                    <span className={styles.previewChip}>{t("coach.gaps")}</span>
-                    <ul className={styles.list}>
-                      {o.weak_points.map((w, i) => (
-                        <li key={i} className={styles.evidence}>
-                          {w}
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-              </div>
-              <div className={styles.previewFoot}>
-                <button type="button" className={styles.previewGhost} onClick={onAdapt}>
-                  {t("coach.match.adapt")}
-                </button>
-                {o.url && (
-                  <a
-                    className={styles.previewGhost}
-                    href={o.url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {t("coach.match.view")}
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
+        <MatchResults offers={results} onAdapt={onAdapt} />
       )}
 
-      {!ready && <p className={styles.note}>{t("coach.match.needCv")}</p>}
+      {!ready && !results && <p className={styles.note}>{t("coach.match.needCv")}</p>}
     </>
-  );
-}
-
-function MatchLoadingPanel({ message }: { message: string }) {
-  return (
-    <div aria-live="polite" aria-busy>
-      <div className={styles.card}>
-        <div className={styles.loadingHead}>
-          <span className={styles.spinner} aria-hidden />
-          <span className={styles.loadingMsg} key={message}>
-            {message}
-          </span>
-        </div>
-      </div>
-      <div className={styles.grid2}>
-        {[0, 1, 2, 3].map((i) => (
-          <div className={`${styles.card} ${styles.previewCard}`} key={i}>
-            <div className={styles.previewHead}>
-              <span className={styles.previewLogo} />
-              <span className={styles.skelCircle} style={{ width: 38, height: 38 }} />
-            </div>
-            <span className={styles.skel} style={{ width: "70%" }} />
-            <span className={styles.skel} style={{ width: "45%" }} />
-          </div>
-        ))}
-      </div>
-    </div>
   );
 }
 

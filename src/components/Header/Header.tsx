@@ -123,25 +123,6 @@ export function Header() {
 
                       <div className={styles.dropdownDivider} />
 
-                      {/* Language toggle inside menu */}
-                      <div className={styles.dropdownSection}>
-                        <span className={styles.dropdownLabel}>{t("lang.label")}</span>
-                        <div className={styles.langToggle}>
-                          {SUPPORTED_LANGUAGES.map((lng) => (
-                            <button
-                              key={lng}
-                              type="button"
-                              className={`${styles.langBtn} ${currentLang === lng ? styles.langBtnActive : ""}`}
-                              onClick={() => { i18n.changeLanguage(lng); }}
-                            >
-                              {t(`lang.${lng}`)}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className={styles.dropdownDivider} />
-
                       <button
                         type="button"
                         className={styles.signOutBtn}

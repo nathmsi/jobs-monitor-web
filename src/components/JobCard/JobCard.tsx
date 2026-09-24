@@ -84,9 +84,9 @@ export function JobCard({ job, source }: Props) {
         </p>
       )}
 
-      {job.excerpt && (
+      {(job.ai_summary ?? job.excerpt) && (
         <p className={styles.excerpt} dir="auto">
-          {job.excerpt}
+          {job.ai_summary ?? job.excerpt}
         </p>
       )}
 

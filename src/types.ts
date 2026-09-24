@@ -7,6 +7,7 @@ export interface Job {
   location: string;
   excerpt: string;
   description?: string;
+  ai_summary?: string;
   url: string | null;
   is_hot: boolean;
   last_updated: string | null;

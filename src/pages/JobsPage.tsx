@@ -11,6 +11,7 @@ import { Sidebar } from "../components/Sidebar/Sidebar";
 import { SourcesModal } from "../components/SourcesModal/SourcesModal";
 import { rankScore } from "../lib/cvAnalysis";
 import { jobId, useJobFlags } from "../lib/jobFlags";
+import { usePreferences } from "../lib/preferences";
 import { useProfile } from "../lib/profile";
 import { useSavedJobs } from "../lib/savedJobs";
 import type { Filters } from "../types";
@@ -21,11 +22,19 @@ type Tab = "company" | "agency" | "mine" | "forme";
 export function JobsPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const { prefs } = usePreferences();
 
-  const [filters, setFilters] = useState<Filters>({ region: "all", q: "" });
+  const [filters, setFilters] = useState<Filters>({
+    region: prefs.region ?? "all",
+    q: "",
+    role: prefs.roles[0],
+    category: prefs.categories[0],
+  });
   const [showAll, setShowAll] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [tab, setTab] = useState<Tab>("company");
+  const [tab, setTab] = useState<Tab>(
+    prefs.kind === "agency" ? "agency" : "company"
+  );
   const [sort, setSort] = useState("recent");
 
   const { data: sources } = useSources();

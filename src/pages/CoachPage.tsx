@@ -10,6 +10,8 @@ import { CVUploadModal } from "../components/CVUploadModal/CVUploadModal";
 import { Header } from "../components/Header/Header";
 import { useAuth } from "../lib/auth";
 import { useCvs } from "../lib/cvs";
+import { usePreferences } from "../lib/preferences";
+import { useRegions } from "../api/hooks";
 import styles from "./CoachPage.module.css";
 
 type ActiveFeature = "review" | "match" | null;
@@ -18,6 +20,7 @@ export function CoachPage() {
   const { t, i18n } = useTranslation();
   const { user, signInWithGoogle } = useAuth();
   const { selectedCv, addCv, cvs, selectedId, selectCv } = useCvs();
+  const { prefs } = usePreferences();
 
   const [goal] = useState("");
   const [busyPdf, setBusyPdf] = useState(false);
@@ -143,6 +146,7 @@ export function CoachPage() {
             {active === "match" && (
               <MatchFeature
                 cv={cvText}
+                filters={{ region: prefs.region, kind: prefs.kind === "all" ? undefined : prefs.kind }}
                 onAdapt={() => setActive("review")}
                 onBack={() => setActive(null)}
               />
@@ -234,12 +238,25 @@ function ReviewFeature({ cv, goal, lang, onBack }: { cv: string; goal: string; l
 
 /* ─────────────────────────── Match feature ─────────────────────────── */
 
-function MatchFeature({ cv, onAdapt, onBack }: { cv: string; onAdapt: () => void; onBack: () => void }) {
+function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
+  cv: string;
+  filters?: { region?: string; kind?: string };
+  onAdapt: () => void;
+  onBack: () => void;
+}) {
   const { t } = useTranslation();
+  const { data: regions } = useRegions();
+
+  const [localFilters, setLocalFilters] = useState({
+    region: defaultFilters.region ?? "all",
+    kind: (defaultFilters.kind ?? "all") as "all" | "company" | "agency",
+  });
+
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [results, setResults] = useState<MatchedOffer[] | null>(null);
   const [currentTool, setCurrentTool] = useState<string | undefined>();
+  const [hasRun, setHasRun] = useState(false);
 
   // Auto-launch on mount
   useEffect(() => {
@@ -252,13 +269,18 @@ function MatchFeature({ cv, onAdapt, onBack }: { cv: string; onAdapt: () => void
     setError(null);
     setResults(null);
     setCurrentTool(undefined);
+    setHasRun(true);
+    const activeFilters = {
+      region: localFilters.region !== "all" ? localFilters.region : undefined,
+      kind: localFilters.kind !== "all" ? localFilters.kind : undefined,
+    };
     try {
-      await consumeMatchStream(cv.trim(), {}, {
+      await consumeMatchStream(cv.trim(), activeFilters, {
         onToolCall: (name) => setCurrentTool(name),
         onToolResult: () => {},
         onFinal: () => setCurrentTool("final"),
       });
-      setResults(await matchCv(cv.trim()));
+      setResults(await matchCv(cv.trim(), activeFilters));
     } catch (e) {
       setError((e as Error).message);
     } finally {
@@ -272,9 +294,44 @@ function MatchFeature({ cv, onAdapt, onBack }: { cv: string; onAdapt: () => void
       <div className={styles.featureContentHeader}>
         <button className={styles.backBtn} onClick={onBack}>{t("coach.back")}</button>
         <span className={styles.featureContentTitle}>{t("coach.matchTitle")}</span>
-        {results && !busy && (
+        {hasRun && !busy && (
           <button className={styles.rerunBtn} onClick={run}>{t("coach.searchAgain")}</button>
         )}
+      </div>
+
+      {/* Search filters */}
+      <div className={styles.matchFilters}>
+        <div className={styles.matchFilterGroup}>
+          <label className={styles.matchFilterLabel}>{t("filters.regionLabel")}</label>
+          <select
+            className={styles.matchFilterSelect}
+            value={localFilters.region}
+            disabled={busy}
+            onChange={(e) => setLocalFilters((f) => ({ ...f, region: e.target.value }))}
+          >
+            <option value="all">{t("categories.all")}</option>
+            {(regions ?? []).map((r) => (
+              <option key={r.key} value={r.key}>{r.label_en}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className={styles.matchFilterGroup}>
+          <label className={styles.matchFilterLabel}>{t("profile.prefKind")}</label>
+          <div className={styles.matchKindChips}>
+            {(["all", "company", "agency"] as const).map((k) => (
+              <button
+                key={k}
+                type="button"
+                disabled={busy}
+                className={`${styles.matchKindChip} ${localFilters.kind === k ? styles.matchKindChipOn : ""}`}
+                onClick={() => setLocalFilters((f) => ({ ...f, kind: k }))}
+              >
+                {t(`profile.kind_${k}`)}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       {busy && <AgentWorkflow currentTool={currentTool} />}

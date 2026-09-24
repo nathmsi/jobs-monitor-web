@@ -4,94 +4,14 @@
   padding: 0 1.1rem 4rem;
 }
 
-.back {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-decoration: none;
-}
-
-.back:hover {
-  color: var(--accent);
-}
-
-.account {
+/* ── Page header: title + account side by side ── */
+.pageHeader {
   display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  margin-top: 1rem;
-  padding: 0.9rem 1.1rem;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-}
-.avatar,
-.avatarFallback {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.avatarFallback {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent);
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-.accountInfo {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-.accountName {
-  font-size: 1.05rem;
-  font-weight: 800;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.accountMail {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.signOut,
-.signInBtn {
-  margin-inline-start: auto;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 0.45rem 0.95rem;
-  cursor: pointer;
-  white-space: nowrap;
-}
-.signOut {
-  border: 1px solid var(--border-strong);
-  background: transparent;
-  color: var(--text-muted);
-}
-.signOut:hover {
-  border-color: var(--danger);
-  color: var(--danger);
-}
-.signInBtn {
-  border: none;
-  background: var(--accent);
-  color: #fff;
-}
-
-.intro {
-  margin: 1.25rem 0 1.4rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin: 1.5rem 0 1.4rem;
+  flex-wrap: wrap;
 }
 
 .title {
@@ -105,10 +25,92 @@
   margin: 0.35rem 0 0;
   color: var(--text-muted);
   font-size: 0.9rem;
-  max-width: 60ch;
+  max-width: 52ch;
 }
 
-/* Editor on the left (wider), stats + recommendations on the right. */
+/* ── Account strip ── */
+.account {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.avatar,
+.avatarFallback {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.avatarFallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.accountInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.accountName {
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+.accountMail {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+.signOut {
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.signOut:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.signInBtn {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* ── 2-column grid ── */
 .grid {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
@@ -116,8 +118,10 @@
   align-items: start;
 }
 
-.col,
-.aside {
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
   min-width: 0;
 }
 
@@ -125,29 +129,88 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  min-width: 0;
 }
 
-.card {
+/* ── Section card ── */
+.sectionCard {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-  padding: 1.25rem;
+  border-radius: 16px;
+  padding: 1.25rem 1.4rem;
 }
 
-.cardTitle {
-  margin: 0 0 0.7rem;
-  font-size: 1.05rem;
-  font-weight: 800;
+.sectionTitle {
+  margin: 0 0 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-/* Space a following section title (e.g. Settings) away from the card above. */
-.card + .cardTitle {
-  margin-top: 1.5rem;
+/* ── CV bar (reused from CoachPage) ── */
+.cvBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
 }
 
-/* Settings rows */
-.settingRow {
+.cvBarInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.cvDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+}
+
+.cvBarName {
+  font-size: 0.88rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.cvBarReady {
+  font-size: 0.78rem;
+  color: #22c55e;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cvBarChange {
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cvBarChange:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.cvEmpty {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -155,27 +218,112 @@
   flex-wrap: wrap;
 }
 
-.settingLabel {
-  font-size: 0.9rem;
-  font-weight: 600;
+.cvEmptyText {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
 }
 
+.primaryBtn {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.primaryBtn:hover {
+  opacity: 0.9;
+}
+
+/* ── Preferences card ── */
+.prefGroup {
+  margin-bottom: 1.1rem;
+}
+
+.prefLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.prefSelect {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+  width: 100%;
+  max-width: 280px;
+}
+
+.prefChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.prefChip {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.28rem 0.8rem;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.prefChip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.prefChipOn {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.prefFoot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Empty state ── */
 .empty {
   margin: 0;
   color: var(--text-muted);
   font-size: 0.9rem;
 }
 
-/* Match stats */
+/* ── Stats card ── */
 .statHead {
   display: flex;
   align-items: baseline;
   gap: 0.6rem;
   flex-wrap: wrap;
+  margin-bottom: 0.5rem;
 }
 
 .statNumber {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: 800;
   line-height: 1;
   color: var(--accent);
@@ -221,9 +369,9 @@
 }
 
 .demandBar {
-  height: 7px;
+  height: 6px;
   border-radius: 999px;
-  background: var(--card);
+  background: var(--border);
   overflow: hidden;
 }
 
@@ -243,12 +391,17 @@
   text-align: right;
 }
 
-/* Recommendations */
+/* ── Recommendations ── */
 .recHead {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.recHead .sectionTitle {
+  margin: 0;
 }
 
 .seeAll {
@@ -267,9 +420,9 @@
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
-  margin-top: 0.3rem;
 }
 
+/* ── Footer ── */
 .footer {
   margin-top: 3.5rem;
   text-align: center;
@@ -280,5 +433,10 @@
 @media (max-width: 860px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .pageHeader {
+    flex-direction: column;
+    align-items: stretch;
   }
 }

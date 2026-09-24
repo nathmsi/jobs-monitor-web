@@ -7,6 +7,7 @@ import "./i18n";
 import App from "./App.tsx";
 import { AuthProvider } from "./lib/auth.tsx";
 import { JobFlagsProvider } from "./lib/jobFlags.tsx";
+import { PreferencesProvider } from "./lib/preferences.tsx";
 import { ProfileProvider } from "./lib/profile.tsx";
 import { SavedJobsProvider } from "./lib/savedJobs.tsx";
 import { ThemeProvider } from "./lib/theme.tsx";
@@ -26,6 +27,7 @@ createRoot(document.getElementById("root")!).render(
       <ThemeProvider>
         <AuthProvider>
           <ProfileProvider>
+            <PreferencesProvider>
             <SavedJobsProvider>
               <JobFlagsProvider>
                 <BrowserRouter>
@@ -33,6 +35,7 @@ createRoot(document.getElementById("root")!).render(
                 </BrowserRouter>
               </JobFlagsProvider>
             </SavedJobsProvider>
+            </PreferencesProvider>
           </ProfileProvider>
         </AuthProvider>
       </ThemeProvider>

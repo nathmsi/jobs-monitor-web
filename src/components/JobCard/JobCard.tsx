@@ -9,6 +9,29 @@ import { Badge } from "../Badge/Badge";
 import type { Job, SourceInfo } from "../../types";
 import styles from "./JobCard.module.css";
 
+interface AiInfo {
+  headline: string;
+  stack: string[];
+  level: string;
+  remote: string;
+  highlights: string[];
+}
+
+function parseAiSummary(raw: string | undefined): AiInfo | null {
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw) as AiInfo;
+    if (parsed.headline) return parsed;
+  } catch {}
+  return null;
+}
+
+const LEVEL_COLOR: Record<string, string> = {
+  Intern: "#6b7280", Junior: "#3b82f6", Mid: "#8b5cf6",
+  Senior: "#f59e0b", Staff: "#ef4444", Lead: "#ef4444",
+  Manager: "#10b981", Director: "#10b981",
+};
+
 interface Props {
   job: Job;
   source?: SourceInfo;
@@ -26,6 +49,8 @@ export function JobCard({ job, source }: Props) {
   const status = statusOf(job.source, job.external_id);
   const saved = status !== undefined;
   const applied = status === "applied";
+
+  const ai = parseAiSummary(job.ai_summary);
 
   const match = matchScore(
     `${job.title} ${job.excerpt} ${job.description ?? ""}`,
@@ -84,10 +109,37 @@ export function JobCard({ job, source }: Props) {
         </p>
       )}
 
-      {(job.ai_summary ?? job.excerpt) && (
-        <p className={styles.excerpt} dir="auto">
-          {job.ai_summary ?? job.excerpt}
-        </p>
+      {ai ? (
+        <div className={styles.aiBlock}>
+          <p className={styles.aiHeadline} dir="auto">{ai.headline}</p>
+          <div className={styles.aiMeta}>
+            {ai.level && (
+              <span
+                className={styles.aiLevel}
+                style={{ "--level-color": LEVEL_COLOR[ai.level] ?? "#6b7280" } as React.CSSProperties}
+              >
+                {ai.level}
+              </span>
+            )}
+            {ai.remote && ai.remote !== "On-site" && (
+              <span className={styles.aiRemote}>{ai.remote}</span>
+            )}
+            {ai.highlights.map((h) => (
+              <span key={h} className={styles.aiHighlight}>{h}</span>
+            ))}
+          </div>
+          {ai.stack.length > 0 && (
+            <div className={styles.aiStack}>
+              {ai.stack.slice(0, 6).map((s) => (
+                <span key={s} className={styles.aiChip}>{s}</span>
+              ))}
+            </div>
+          )}
+        </div>
+      ) : (
+        job.excerpt && (
+          <p className={styles.excerpt} dir="auto">{job.excerpt}</p>
+        )
       )}
 
       <footer className={styles.foot}>

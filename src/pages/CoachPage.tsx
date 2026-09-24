@@ -258,12 +258,6 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
   const [currentTool, setCurrentTool] = useState<string | undefined>();
   const [hasRun, setHasRun] = useState(false);
 
-  // Auto-launch on mount
-  useEffect(() => {
-    run();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const run = async () => {
     setBusy(true);
     setError(null);
@@ -299,7 +293,7 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
         )}
       </div>
 
-      {/* Search filters */}
+      {/* Search filters — always visible; disabled while running */}
       <div className={styles.matchFilters}>
         <div className={styles.matchFilterGroup}>
           <label className={styles.matchFilterLabel}>{t("filters.regionLabel")}</label>
@@ -332,6 +326,11 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
             ))}
           </div>
         </div>
+        {!hasRun && (
+          <div className={styles.matchFilterGroup}>
+            <button className={styles.primaryBtn} onClick={run}>{t("agent.launchBtn")}</button>
+          </div>
+        )}
       </div>
 
       {busy && <AgentWorkflow currentTool={currentTool} />}
@@ -339,7 +338,7 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
       {error && (
         <div className={styles.errorState}>
           <p>{error}</p>
-          <button className={styles.primaryBtn} onClick={run}>Try again</button>
+          <button className={styles.primaryBtn} onClick={run}>{t("coach.searchAgain")}</button>
         </div>
       )}
 

@@ -154,7 +154,12 @@
       "adapt": "Adapt my CV",
       "view": "View offer →",
       "needCv": "Add your CV above to enable matching.",
-      "loadingSteps": ["Analyzing your profile…", "Searching offers…", "Ranking the best matches…", "Almost done…"],
+      "loadingSteps": [
+        "Analyzing your profile…",
+        "Searching offers…",
+        "Ranking the best matches…",
+        "Almost done…"
+      ],
       "none": "No matching offers found — try widening your filters."
     },
     "title": "AI career review",
@@ -260,5 +265,18 @@
     "careers": "Careers ↗",
     "close": "Close"
   },
-  "footer": "Job watch · sources: LinkedIn · ATS · career sites"
+  "footer": "Job watch · sources: LinkedIn · ATS · career sites",
+  "agent": {
+    "title": "AI Matching Agent",
+    "subtitle": "Intelligently searching for your perfect role",
+    "search": "Search",
+    "searchDesc": "Finding candidates",
+    "read": "Read",
+    "readDesc": "Deep dive details",
+    "rank": "Rank",
+    "rankDesc": "Best matches",
+    "cached": "Cached",
+    "launchBtn": "Find my best offers",
+    "modifySearch": "Modify search"
+  }
 }

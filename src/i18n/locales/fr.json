@@ -154,7 +154,12 @@
       "adapt": "Adapter mon CV",
       "view": "Voir l'offre →",
       "needCv": "Ajoutez votre CV ci-dessus pour activer la correspondance.",
-      "loadingSteps": ["Analyse de votre profil…", "Recherche des offres…", "Classement des meilleures correspondances…", "Presque terminé…"],
+      "loadingSteps": [
+        "Analyse de votre profil…",
+        "Recherche des offres…",
+        "Classement des meilleures correspondances…",
+        "Presque terminé…"
+      ],
       "none": "Aucune offre correspondante — essayez d'élargir vos filtres."
     },
     "title": "Analyse de carrière IA",
@@ -260,5 +265,18 @@
     "careers": "Carrières ↗",
     "close": "Fermer"
   },
-  "footer": "Veille emploi · sources : LinkedIn · ATS · sites carrières"
+  "footer": "Veille emploi · sources : LinkedIn · ATS · sites carrières",
+  "agent": {
+    "title": "Agent de matching IA",
+    "subtitle": "Recherche intelligente de votre poste idéal",
+    "search": "Recherche",
+    "searchDesc": "Candidats trouvés",
+    "read": "Lecture",
+    "readDesc": "Analyse détaillée",
+    "rank": "Classement",
+    "rankDesc": "Meilleures offres",
+    "cached": "En cache",
+    "launchBtn": "Trouver mes meilleures offres",
+    "modifySearch": "Modifier la recherche"
+  }
 }

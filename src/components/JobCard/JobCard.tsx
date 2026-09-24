@@ -21,21 +21,16 @@ interface AiInfo {
 function parseAiSummary(raw: string | undefined): AiInfo | null {
   if (!raw) return null;
   try {
-    const parsed = JSON.parse(raw) as AiInfo;
-    if (parsed.headline) return parsed;
+    const p = JSON.parse(raw) as AiInfo;
+    if (p.headline && p.stack) return p;
   } catch {}
   return null;
 }
 
 const LEVEL_COLOR: Record<string, string> = {
-  Intern: "#6b7280",
-  Junior: "#3b82f6",
-  Mid: "#8b5cf6",
-  Senior: "#f59e0b",
-  Staff: "#ef4444",
-  Lead: "#ef4444",
-  Manager: "#10b981",
-  Director: "#10b981",
+  Intern: "#94a3b8", Junior: "#60a5fa", Mid: "#a78bfa",
+  Senior: "#f59e0b", Staff: "#f97316", Lead: "#ef4444",
+  Manager: "#10b981", Director: "#10b981",
 };
 
 interface Props {
@@ -44,7 +39,6 @@ interface Props {
 }
 
 export function JobCard({ job, source }: Props) {
-  const sourceLabel = source?.label;
   const { t } = useTranslation();
   const { isOpened, markOpened } = useJobFlags();
   const { statusOf, setStatus } = useSavedJobs();
@@ -58,11 +52,7 @@ export function JobCard({ job, source }: Props) {
   const applied = status === "applied";
 
   const ai = parseAiSummary(job.ai_summary);
-  const match = matchScore(
-    `${job.title} ${job.excerpt} ${job.description ?? ""}`,
-    profile,
-  );
-
+  const match = matchScore(`${job.title} ${job.excerpt} ${job.description ?? ""}`, profile);
   const rawDesc = job.description || job.excerpt || "";
 
   const cardClass = [
@@ -70,26 +60,24 @@ export function JobCard({ job, source }: Props) {
     job.is_new ? styles.isNew : "",
     opened ? styles.opened : "",
     applied ? styles.applied : "",
-  ]
-    .filter(Boolean)
-    .join(" ");
+  ].filter(Boolean).join(" ");
 
   return (
     <article className={cardClass}>
 
-      {/* ── Header: logo + company + status badges ── */}
-      <header className={styles.head}>
-        <span className={styles.origin}>
-          {source && <Avatar source={source} size={28} />}
-          {sourceLabel && <span className={styles.source}>{sourceLabel}</span>}
-        </span>
-        <div className={styles.badges}>
+      {/* ── Top bar: company + badges ── */}
+      <div className={styles.topBar}>
+        <div className={styles.company}>
+          {source && <Avatar source={source} size={32} />}
+          <span className={styles.companyName}>{source?.label ?? job.source}</span>
+        </div>
+        <div className={styles.badgeRow}>
           {job.is_new && !opened && <Badge variant="new">{t("job.new")}</Badge>}
           {job.is_hot && <Badge variant="hot">🔥 {t("job.hot")}</Badge>}
           {applied && <Badge variant="applied">✓ {t("job.applied")}</Badge>}
-          {!applied && opened && <span className={styles.seenTag}>{t("job.seen")}</span>}
+          {!applied && opened && <span className={styles.seenDot} title={t("job.seen")} />}
         </div>
-      </header>
+      </div>
 
       {/* ── Title ── */}
       <h3 className={styles.title} dir="auto">
@@ -97,62 +85,35 @@ export function JobCard({ job, source }: Props) {
           <a href={job.url} target="_blank" rel="noreferrer" onClick={() => markOpened(id)}>
             {job.title}
           </a>
-        ) : (
-          job.title
-        )}
+        ) : job.title}
       </h3>
 
-      {/* ── One-line meta: location · level · remote ── */}
-      <div className={styles.meta}>
+      {/* ── Meta row ── */}
+      <div className={styles.metaRow}>
         {job.location && (
-          <span className={styles.metaLocation}>
-            <svg width="11" height="13" viewBox="0 0 12 14" fill="none" aria-hidden>
-              <path d="M6 0C3.24 0 1 2.24 1 5c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 6 3.5a1.5 1.5 0 0 1 0 3z" fill="currentColor"/>
+          <span className={styles.location}>
+            <svg width="10" height="12" viewBox="0 0 10 12" fill="none" aria-hidden>
+              <path d="M5 0C2.8 0 1 1.8 1 4c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4zm0 5.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" fill="currentColor"/>
             </svg>
-            {job.location}
+            {job.location.split(",")[0]}
           </span>
         )}
         {ai?.level && (
-          <span
-            className={styles.metaLevel}
-            style={{ "--level-color": LEVEL_COLOR[ai.level] ?? "#6b7280" } as React.CSSProperties}
-          >
+          <span className={styles.levelBadge} style={{ "--lc": LEVEL_COLOR[ai.level] ?? "#94a3b8" } as React.CSSProperties}>
             {ai.level}
           </span>
         )}
         {ai?.remote && ai.remote !== "On-site" && (
-          <span className={styles.metaRemote}>
-            {ai.remote === "Remote" ? "🌐 " : "⚡ "}{ai.remote}
+          <span className={styles.remoteBadge}>
+            {ai.remote === "Remote" ? "Remote" : "Hybrid"}
           </span>
         )}
       </div>
 
-      {/* ── AI block ── */}
+      {/* ── AI or fallback description ── */}
       {ai ? (
-        <div className={styles.aiBlock}>
-          <div className={styles.aiHeadlineRow}>
-            <p className={styles.aiHeadline} dir="auto">{ai.headline}</p>
-            {rawDesc && (
-              <button
-                className={styles.expandBtn}
-                onClick={() => setExpanded((v) => !v)}
-                title={expanded ? "Réduire" : "Voir la description complète"}
-                aria-expanded={expanded}
-              >
-                <svg
-                  width="14" height="14" viewBox="0 0 14 14" fill="none"
-                  className={expanded ? styles.expandIconOpen : ""}
-                  aria-hidden
-                >
-                  <path d="M2 4.5L7 9.5L12 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-            )}
-          </div>
-
-          {expanded && rawDesc && (
-            <p className={styles.fullDesc} dir="auto">{rawDesc}</p>
-          )}
+        <div className={styles.aiSection}>
+          <p className={styles.aiHeadline}>{ai.headline}</p>
 
           {ai.stack.length > 0 && (
             <div className={styles.stack}>
@@ -169,51 +130,58 @@ export function JobCard({ job, source }: Props) {
               ))}
             </div>
           )}
+
+          {rawDesc && (
+            <>
+              <button
+                className={styles.expandToggle}
+                onClick={() => setExpanded(v => !v)}
+                aria-expanded={expanded}
+              >
+                {expanded ? "Masquer la description" : "Voir la description complète"}
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className={expanded ? styles.chevronUp : ""} aria-hidden>
+                  <path d="M1.5 3L5 6.5L8.5 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              {expanded && <p className={styles.fullDesc}>{rawDesc}</p>}
+            </>
+          )}
         </div>
-      ) : (
-        rawDesc && (
-          <p className={styles.excerpt} dir="auto">
-            {rawDesc.slice(0, 160)}{rawDesc.length > 160 ? "…" : ""}
-          </p>
-        )
-      )}
+      ) : rawDesc ? (
+        <p className={styles.excerpt}>{rawDesc.slice(0, 140)}{rawDesc.length > 140 ? "…" : ""}</p>
+      ) : null}
 
       {/* ── Match bar ── */}
       {match.count > 0 && (
-        <div
-          className={styles.matchBar}
-          title={`Compétences : ${match.matched.join(", ")}`}
-        >
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
-            <path d="M6 1L7.5 4.5H11L8.25 6.75L9.25 10.5L6 8.25L2.75 10.5L3.75 6.75L1 4.5H4.5L6 1Z" fill="currentColor"/>
+        <div className={styles.matchBar} title={match.matched.join(", ")}>
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="currentColor" aria-hidden>
+            <path d="M6 1L7.5 4.5H11L8.25 6.75L9.25 10.5L6 8.25L2.75 10.5L3.75 6.75L1 4.5H4.5L6 1Z"/>
           </svg>
-          {t("match.skills", { count: match.count })}
-          <span className={styles.matchSkills}>{match.matched.slice(0, 3).join(" · ")}</span>
+          <strong>{match.count}</strong> compétence{match.count > 1 ? "s" : ""} — {match.matched.slice(0, 3).join(", ")}
         </div>
       )}
 
-      {/* ── Footer actions ── */}
+      {/* ── Actions ── */}
       <footer className={styles.foot}>
         <button
           type="button"
-          className={`${styles.saveBtn} ${saved ? styles.saveBtnOn : ""}`}
-          onClick={() => setStatus(job, saved ? null : "saved", sourceLabel)}
+          className={`${styles.btn} ${saved ? styles.btnSavedOn : ""}`}
+          onClick={() => setStatus(job, saved ? null : "saved", source?.label)}
           aria-pressed={saved}
-          title={saved ? t("job.unsave") : t("job.save")}
         >
           {saved ? "★" : "☆"} {saved ? t("job.saved") : t("job.save")}
         </button>
         <button
           type="button"
-          className={`${styles.applyBtn} ${applied ? styles.applyBtnOn : ""}`}
-          onClick={() => setStatus(job, applied ? "saved" : "applied", sourceLabel)}
+          className={`${styles.btn} ${applied ? styles.btnAppliedOn : ""}`}
+          onClick={() => setStatus(job, applied ? "saved" : "applied", source?.label)}
           aria-pressed={applied}
         >
           {applied ? `✓ ${t("job.applied")}` : t("job.markApplied")}
         </button>
         {job.url && (
           <a
-            className={styles.link}
+            className={styles.viewLink}
             href={job.url}
             target="_blank"
             rel="noreferrer"

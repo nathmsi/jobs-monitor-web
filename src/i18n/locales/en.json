@@ -16,6 +16,7 @@
     "roleLabel": "Role:",
     "clear": "Clear",
     "toggle": "Filters",
+    "close": "Close",
     "hideSeen": "Hide offers I've seen",
     "appliedCount_one": "{{count}} application",
     "appliedCount_other": "{{count}} applications"

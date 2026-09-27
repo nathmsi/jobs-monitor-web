@@ -16,6 +16,7 @@
     "roleLabel": "Poste :",
     "clear": "Effacer",
     "toggle": "Filtres",
+    "close": "Fermer",
     "hideSeen": "Masquer les offres déjà vues",
     "appliedCount_one": "{{count}} candidature",
     "appliedCount_other": "{{count}} candidatures"

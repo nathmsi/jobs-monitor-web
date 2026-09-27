@@ -16,6 +16,7 @@
     "roleLabel": "תפקיד:",
     "clear": "ניקוי",
     "toggle": "סינון",
+    "close": "סגור",
     "hideSeen": "הסתר משרות שכבר נצפו",
     "appliedCount_one": "הגשה אחת",
     "appliedCount_other": "{{count}} הגשות"

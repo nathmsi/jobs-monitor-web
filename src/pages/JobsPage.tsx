@@ -124,8 +124,19 @@ export function JobsPage() {
         </button>
       </div>
 
+      {filtersOpen && (
+        <div className={styles.filterBackdrop} onClick={() => setFiltersOpen(false)} />
+      )}
+
       <div className={styles.layout}>
         <div className={`${styles.side} ${filtersOpen ? styles.sideOpen : ""}`}>
+          <button
+            className={styles.filterSheetClose}
+            onClick={() => setFiltersOpen(false)}
+            aria-label={t("filters.close")}
+          >
+            ✕ {t("filters.close")}
+          </button>
           <Sidebar
             filters={filters}
             onChange={setFilters}

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
@@ -75,6 +75,10 @@ export function JobsPage() {
     ).length;
   }, [allJobs, profile]);
 
+  useEffect(() => {
+    document.title = t("nav.offers") + " — Tech Jobs";
+  }, [t]);
+
   return (
     <div className={styles.app}>
       <Header />
@@ -135,7 +139,8 @@ export function JobsPage() {
             onClick={() => setFiltersOpen(false)}
             aria-label={t("filters.close")}
           >
-            ✕ {t("filters.close")}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            {t("filters.close")}
           </button>
           <Sidebar
             filters={filters}
@@ -149,7 +154,8 @@ export function JobsPage() {
               className={styles.filtersToggle}
               onClick={() => setFiltersOpen((v) => !v)}
             >
-              ⚙ {t("filters.toggle")}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+              {t("filters.toggle")}
             </button>
             {browsing && (
               <label className={styles.sortWrap}>
@@ -204,7 +210,16 @@ export function JobsPage() {
                 ))}
 
               {!jobsQuery.isLoading && jobs.length === 0 && (
-                <p className={styles.noResults}>{t("noResults")}</p>
+                <div className={styles.noResultsEmpty}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <p className={styles.noResultsText}>{t("noResults")}</p>
+                  <button
+                    className={styles.noResultsClear}
+                    onClick={() => setFilters((f) => ({ ...f, q: "", role: undefined, category: undefined }))}
+                  >
+                    {t("filters.clear")}
+                  </button>
+                </div>
               )}
 
               {jobsQuery.hasNextPage && (

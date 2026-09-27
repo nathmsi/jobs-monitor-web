@@ -150,6 +150,37 @@
   color: var(--accent);
 }
 
+/* Goal input row */
+.goalRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.goalLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.goalInput {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.goalInput:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
 /* Feature selection grid */
 .featureGrid {
   display: grid;

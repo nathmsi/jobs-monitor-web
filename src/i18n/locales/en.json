@@ -65,7 +65,8 @@
   "error": {
     "apiTitle": "Could not reach the API.",
     "apiHint": "Check that the backend responds at",
-    "generic": "Error: {{message}}"
+    "generic": "Error: {{message}}",
+    "tryAgain": "Try again"
   },
   "tabs": {
     "companies": "Tech companies",
@@ -222,7 +223,9 @@
   "forme": {
     "noProfile": "Analyze your CV to see the offers that match you.",
     "noMatch": "No offers match your profile right now — try widening the area filter.",
-    "summary": "{{count}} offers matched to your profile"
+    "summary": "{{count}} offers matched to your profile",
+    "ctaBtn": "Go to CV Coach →",
+    "noResultsHint": "Try clearing your filters or expanding the region."
   },
   "theme": {
     "system": "System",

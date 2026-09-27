@@ -65,7 +65,8 @@
   "error": {
     "apiTitle": "Impossible de joindre l'API.",
     "apiHint": "Vérifiez que le backend répond à",
-    "generic": "Erreur : {{message}}"
+    "generic": "Erreur : {{message}}",
+    "tryAgain": "Réessayer"
   },
   "tabs": {
     "companies": "Entreprises tech",
@@ -222,7 +223,9 @@
   "forme": {
     "noProfile": "Analysez votre CV pour voir les offres qui vous correspondent.",
     "noMatch": "Aucune offre ne correspond à votre profil — essayez d'élargir le filtre de zone.",
-    "summary": "{{count}} offres correspondant à votre profil"
+    "summary": "{{count}} offres correspondant à votre profil",
+    "ctaBtn": "Aller au Coach CV →",
+    "noResultsHint": "Essayez de supprimer vos filtres ou d'élargir la zone."
   },
   "theme": {
     "system": "Système",

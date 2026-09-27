@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -27,6 +27,10 @@ export function ProfilePage() {
 
   const [draftPrefs, setDraftPrefs] = useState<JobPreferences>(prefs);
   const [prefsSaved, setPrefsSaved] = useState(false);
+
+  useEffect(() => {
+    document.title = t("profile.pageTitle") + " — Tech Jobs";
+  }, [t]);
 
   const onSavePrefs = async () => {
     await savePrefs(draftPrefs);
@@ -57,7 +61,9 @@ export function ProfilePage() {
     (user?.user_metadata?.name as string) ||
     user?.email ||
     "";
-  const avatar = user?.user_metadata?.avatar_url as string | undefined;
+  const avatarUrl =
+    ((user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture) as string | undefined) || undefined;
+  const [avatarError, setAvatarError] = useState(false);
 
   const cvText = selectedCv?.text ?? "";
   const hasCv = cvText.trim().length >= 50;
@@ -124,8 +130,14 @@ export function ProfilePage() {
           <div className={styles.account}>
             {user ? (
               <>
-                {avatar ? (
-                  <img className={styles.avatar} src={avatar} alt="" />
+                {avatarUrl && !avatarError ? (
+                  <img
+                    className={styles.avatar}
+                    src={avatarUrl}
+                    alt=""
+                    referrerPolicy="no-referrer"
+                    onError={() => setAvatarError(true)}
+                  />
                 ) : (
                   <span className={styles.avatarFallback}>
                     {(name || "?").charAt(0).toUpperCase()}

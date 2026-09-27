@@ -52,7 +52,7 @@ export function JobsPage() {
   );
 
   // Full region set (limit=0) only when the "For me" tab needs to rank locally.
-  const { data: allJobs } = useRegionJobs(filters.region, tab === "forme");
+  const { data: allJobs, isLoading: allJobsLoading } = useRegionJobs(filters.region, tab === "forme");
 
   const sourceList = sources ?? [];
   const sourceByKey = useMemo(
@@ -186,6 +186,7 @@ export function JobsPage() {
             <ForMe
               jobs={allJobs ?? []}
               sources={sourceList}
+              loading={allJobsLoading}
               onEditProfile={() => navigate("/profile")}
             />
           ) : (

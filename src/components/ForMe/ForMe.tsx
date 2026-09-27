@@ -13,10 +13,11 @@ const PAGE_SIZE = 24;
 interface Props {
   jobs: Job[];
   sources: SourceInfo[];
+  loading?: boolean;
   onEditProfile: () => void;
 }
 
-export function ForMe({ jobs, sources, onEditProfile }: Props) {
+export function ForMe({ jobs, sources, loading = false, onEditProfile }: Props) {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { profile } = useProfile();
@@ -43,6 +44,16 @@ export function ForMe({ jobs, sources, onEditProfile }: Props) {
 
   const visible = ranked.slice(0, page * PAGE_SIZE);
   const hasMore = visible.length < ranked.length;
+
+  if (loading) {
+    return (
+      <div className={styles.skeleton}>
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div key={i} className={styles.skeletonCard} />
+        ))}
+      </div>
+    );
+  }
 
   if (!profile || profile.skills.length === 0) {
     return (

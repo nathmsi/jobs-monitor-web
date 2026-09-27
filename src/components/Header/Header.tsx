@@ -7,12 +7,19 @@ import { useTheme } from "../../lib/theme";
 import { SUPPORTED_LANGUAGES } from "../../i18n";
 import styles from "./Header.module.css";
 
+function getAvatarUrl(meta: Record<string, unknown> | undefined): string | null {
+  if (!meta) return null;
+  const url = (meta.avatar_url ?? meta.picture) as string | undefined;
+  return url || null;
+}
+
 export function Header() {
   const { t, i18n } = useTranslation();
   const { enabled, ready, user, signInWithGoogle, signOut } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [avatarError, setAvatarError] = useState(false);
 
   const currentLang = i18n.resolvedLanguage ?? i18n.language;
   const { theme, setTheme } = useTheme();
@@ -121,11 +128,13 @@ export function Header() {
                     onClick={() => setMenuOpen((v) => !v)}
                     aria-expanded={menuOpen}
                   >
-                    {user.user_metadata?.avatar_url ? (
+                    {getAvatarUrl(user.user_metadata) && !avatarError ? (
                       <img
                         className={styles.avatar}
-                        src={user.user_metadata.avatar_url as string}
+                        src={getAvatarUrl(user.user_metadata)!}
                         alt=""
+                        referrerPolicy="no-referrer"
+                        onError={() => setAvatarError(true)}
                       />
                     ) : (
                       <span className={styles.avatarFallback}>

@@ -985,3 +985,62 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 640px) {
+  .page {
+    padding: 1.25rem 0 1.5rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 2.5rem 0.5rem;
+  }
+  .heroTitle {
+    font-size: 1.5rem;
+  }
+
+  /* Feature cards — 1 column */
+  .featureGrid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  .featureCard {
+    padding: 1.25rem;
+  }
+
+  /* CV bar — stack on narrow */
+  .cvBar {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .cvBarInfo {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* Feature content header — wrap so back/title/rerun don't crush */
+  .featureContentHeader {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+  }
+  .featureContentTitle {
+    flex: 1 1 100%;
+    order: -1;
+  }
+
+  /* Match filters — stack vertically */
+  .matchFilters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    padding: 0.85rem 1rem;
+  }
+  .matchFilterSelect {
+    min-width: 0;
+    width: 100%;
+  }
+  .matchKindChips {
+    flex-wrap: wrap;
+  }
+}

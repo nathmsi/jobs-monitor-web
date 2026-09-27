@@ -43,13 +43,6 @@ export interface JobsPage {
   has_more: boolean;
 }
 
-export interface JobCounts {
-  total: number;
-  kinds: Record<string, number>;
-  categories: Record<string, number>;
-  by_source: Record<string, number>;
-}
-
 function jobsQuery(query: JobQuery): string {
   const p = new URLSearchParams({ region: query.region });
   if (query.q) p.set("q", query.q);
@@ -65,18 +58,6 @@ function jobsQuery(query: JobQuery): string {
 /** One page of offers matching the filters (server-side filter + pagination). */
 export function getJobsPage(query: JobQuery): Promise<JobsPage> {
   return getJson<JobsPage>(`/api/jobs?${jobsQuery(query)}`);
-}
-
-/** Offer totals by kind/category for the current filters (tab/category badges). */
-export function getCounts(query: {
-  region: string;
-  q?: string;
-  role?: string;
-}): Promise<JobCounts> {
-  const p = new URLSearchParams({ region: query.region });
-  if (query.q) p.set("q", query.q);
-  if (query.role) p.set("role", query.role);
-  return getJson<JobCounts>(`/api/counts?${p.toString()}`);
 }
 
 export interface CvAnalysis {

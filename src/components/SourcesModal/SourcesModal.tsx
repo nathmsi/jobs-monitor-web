@@ -7,11 +7,10 @@ import styles from "./SourcesModal.module.css";
 
 interface Props {
   sources: SourceInfo[];
-  counts: Record<string, number>;
   onClose: () => void;
 }
 
-export function SourcesModal({ sources, counts, onClose }: Props) {
+export function SourcesModal({ sources, onClose }: Props) {
   const { t } = useTranslation();
   const [q, setQ] = useState("");
 
@@ -24,21 +23,15 @@ export function SourcesModal({ sources, counts, onClose }: Props) {
   const needle = q.trim().toLowerCase();
   const match = (s: SourceInfo) =>
     !needle || s.label.toLowerCase().includes(needle);
-  const byCount = (a: SourceInfo, b: SourceInfo) =>
-    (counts[b.key] ?? 0) - (counts[a.key] ?? 0);
 
-  const companies = sources.filter((s) => s.kind === "company" && match(s)).sort(byCount);
-  const agencies = sources.filter((s) => s.kind === "agency" && match(s)).sort(byCount);
+  const companies = sources.filter((s) => s.kind === "company" && match(s));
+  const agencies = sources.filter((s) => s.kind === "agency" && match(s));
 
   const renderRow = (s: SourceInfo) => {
-    const n = counts[s.key] ?? 0;
     return (
       <li key={s.key} className={styles.row}>
         <Avatar source={s} size={30} />
         <span className={styles.name}>{s.label}</span>
-        <span className={n > 0 ? styles.count : styles.countZero}>
-          {t("source.offers", { count: n })}
-        </span>
         {s.site_url && (
           <a
             className={styles.link}

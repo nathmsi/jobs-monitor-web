@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-import { useCounts, useJobsInfinite, useRegionJobs, useSources } from "../api/hooks";
+import { useJobsInfinite, useRegionJobs, useSources } from "../api/hooks";
 import { ForMe } from "../components/ForMe/ForMe";
 import { Header } from "../components/Header/Header";
 import { JobCard } from "../components/JobCard/JobCard";
@@ -54,13 +54,6 @@ export function JobsPage() {
   // Full region set (limit=0) only when the "For me" tab needs to rank locally.
   const { data: allJobs } = useRegionJobs(filters.region, tab === "forme");
 
-  // Totals for tab + category badges (independent of the page being viewed).
-  const { data: counts } = useCounts({
-    region: filters.region,
-    q: filters.q,
-    role: filters.role,
-  });
-
   const sourceList = sources ?? [];
   const sourceByKey = useMemo(
     () => Object.fromEntries(sourceList.map((s) => [s.key, s])),
@@ -74,25 +67,6 @@ export function JobsPage() {
     return all.filter((j) => !isOpened(jobId(j.source, j.external_id)));
   }, [jobsQuery.data, hideSeen, isOpened]);
 
-  const companyCount = counts?.kinds.company ?? 0;
-  const agencyCount = counts?.kinds.agency ?? 0;
-  const catCounts = counts?.categories ?? {};
-
-  // Categories for the sidebar (company tab): drop the agency-only "staffing"
-  // bucket, order by number of offers.
-  const categories = useMemo(
-    () =>
-      Object.keys(catCounts)
-        .filter((c) => c !== "staffing")
-        .sort((a, b) => (catCounts[b] ?? 0) - (catCounts[a] ?? 0)),
-    [catCounts],
-  );
-
-  const activeCategory =
-    filters.category && categories.includes(filters.category)
-      ? filters.category
-      : undefined;
-
   // "For me" badge = matching offers, computed once the full set is loaded.
   const formeCount = useMemo(() => {
     if (!profile || profile.skills.length === 0 || !allJobs) return null;
@@ -100,8 +74,6 @@ export function JobsPage() {
       (j) => rankScore(`${j.title} ${j.excerpt} ${j.description ?? ""}`, profile) > 0,
     ).length;
   }, [allJobs, profile]);
-
-  const tabTotal = tab === "company" ? companyCount : agencyCount;
 
   return (
     <div className={styles.app}>
@@ -117,7 +89,7 @@ export function JobsPage() {
             setFilters((f) => ({ ...f, category: undefined }));
           }}
         >
-          {t("tabs.companies")} <span className={styles.tabCount}>{companyCount}</span>
+          {t("tabs.companies")}
         </button>
         <button
           role="tab"
@@ -128,7 +100,7 @@ export function JobsPage() {
             setFilters((f) => ({ ...f, category: undefined }));
           }}
         >
-          {t("tabs.agencies")} <span className={styles.tabCount}>{agencyCount}</span>
+          {t("tabs.agencies")}
         </button>
 
         <span className={styles.tabDivider} aria-hidden />
@@ -157,11 +129,6 @@ export function JobsPage() {
           <Sidebar
             filters={filters}
             onChange={setFilters}
-            showCategories={tab === "company"}
-            categories={categories}
-            catCounts={catCounts}
-            activeCategory={activeCategory}
-            totalInTab={companyCount}
           />
         </div>
 
@@ -173,11 +140,6 @@ export function JobsPage() {
             >
               ⚙ {t("filters.toggle")}
             </button>
-            {browsing && (
-              <span className={styles.stats}>
-                {t("stats.offers", { count: tabTotal })}
-              </span>
-            )}
             {browsing && (
               <label className={styles.sortWrap}>
                 <span className={styles.sortLabel}>{t("sort.label")}</span>
@@ -257,7 +219,6 @@ export function JobsPage() {
       {showAll && (
         <SourcesModal
           sources={sourceList}
-          counts={counts?.by_source ?? {}}
           onClose={() => setShowAll(false)}
         />
       )}

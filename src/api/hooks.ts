@@ -1,7 +1,6 @@
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 
 import {
-  getCounts,
   getJobsPage,
   getRegionJobs,
   getRegions,
@@ -59,12 +58,3 @@ export function useJobsInfinite(
   });
 }
 
-/** Offer totals by kind/category for the current filters (tab/category badges). */
-export function useCounts(params: { region: string; q?: string; role?: string }) {
-  return useQuery({
-    queryKey: ["counts", params],
-    queryFn: () => getCounts(params),
-    staleTime: 60_000,
-    refetchOnWindowFocus: false,
-  });
-}

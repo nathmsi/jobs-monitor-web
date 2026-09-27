@@ -11,22 +11,9 @@ import styles from "./Sidebar.module.css";
 interface Props {
   filters: Filters;
   onChange: (filters: Filters) => void;
-  showCategories: boolean;
-  categories: string[];
-  catCounts: Record<string, number>;
-  activeCategory?: string;
-  totalInTab: number;
 }
 
-export function Sidebar({
-  filters,
-  onChange,
-  showCategories,
-  categories,
-  catCounts,
-  activeCategory,
-  totalInTab,
-}: Props) {
+export function Sidebar({ filters, onChange }: Props) {
   const { t, i18n } = useTranslation();
   const { data: regions } = useRegions();
   const { hideSeen, setHideSeen } = useJobFlags();
@@ -111,38 +98,6 @@ export function Sidebar({
           })}
         </div>
       </div>
-
-      {showCategories && categories.length > 1 && (
-        <div className={styles.section}>
-          <div className={styles.label}>{t("categories.aria")}</div>
-          <div className={styles.chips}>
-            <button
-              type="button"
-              className={`${styles.chip} ${!activeCategory ? styles.chipActive : ""}`}
-              aria-pressed={!activeCategory}
-              onClick={() => onChange({ ...filters, category: undefined })}
-            >
-              {t("categories.all")} <span className={styles.count}>{totalInTab}</span>
-            </button>
-            {categories.map((c) => (
-              <button
-                key={c}
-                type="button"
-                className={`${styles.chip} ${activeCategory === c ? styles.chipActive : ""}`}
-                aria-pressed={activeCategory === c}
-                onClick={() =>
-                  onChange({
-                    ...filters,
-                    category: activeCategory === c ? undefined : c,
-                  })
-                }
-              >
-                {t(`categories.${c}`)} <span className={styles.count}>{catCounts[c]}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
 
       <div className={styles.prefs}>
         <label className={styles.check}>

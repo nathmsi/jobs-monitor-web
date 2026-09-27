@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { analyzeCvAi, matchCv, type CvAnalysis, type MatchedOffer } from "../api/client";
+import { analyzeCvAi, type CvAnalysis, type MatchedOffer } from "../api/client";
 import { consumeMatchStream } from "../api/stream";
 import { AgentWorkflow } from "../components/AgentWorkflow/AgentWorkflow";
 import { MatchResults } from "../components/MatchResults/MatchResults";
@@ -297,12 +297,12 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
       kind: localFilters.kind !== "all" ? localFilters.kind : undefined,
     };
     try {
-      await consumeMatchStream(cv.trim(), activeFilters, {
+      const results = await consumeMatchStream(cv.trim(), activeFilters, {
         onToolCall: (name) => setCurrentTool(name),
         onToolResult: () => {},
         onFinal: () => setCurrentTool("final"),
       });
-      setResults(await matchCv(cv.trim(), activeFilters));
+      setResults(results);
     } catch (e) {
       setError((e as Error).message);
     } finally {

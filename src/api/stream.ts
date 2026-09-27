@@ -1,11 +1,17 @@
+import type { MatchedOffer } from "./client";
+
 export interface ToolEvent {
-  type: "tool_call" | "tool_result" | "final";
+  type: "tool_call" | "tool_result" | "final" | "error";
   name?: string;
   input?: unknown;
   ok?: boolean;
   duration?: number;
   cached?: boolean;
   retryCount?: number;
+  /** Populated on `final` events — contains the full match output. */
+  results?: { results: MatchedOffer[] };
+  /** Populated on `error` events. */
+  message?: string;
 }
 
 const API = (import.meta.env.VITE_API_URL ?? "http://localhost:8080").replace(/\/+$/, "");
@@ -48,8 +54,8 @@ export async function* streamMatch(
           try {
             const json = JSON.parse(line);
             yield json as ToolEvent;
-          } catch (e) {
-            // Ignore parse errors
+          } catch {
+            // Ignore parse errors on malformed lines
           }
         }
       }
@@ -61,7 +67,7 @@ export async function* streamMatch(
       try {
         const json = JSON.parse(buffer);
         yield json as ToolEvent;
-      } catch (e) {
+      } catch {
         // Ignore
       }
     }
@@ -70,7 +76,8 @@ export async function* streamMatch(
   }
 }
 
-/** Consume event stream and call callbacks. */
+/** Consume event stream, call callbacks, and return match results from the final event.
+ *  Eliminates the need for a second POST /api/match call. */
 export async function consumeMatchStream(
   cvText: string,
   filters: { region?: string; kind?: string; remote?: boolean },
@@ -81,7 +88,9 @@ export async function consumeMatchStream(
     onRetry?: (name: string, count: number) => void;
     onFinal?: () => void;
   }
-): Promise<void> {
+): Promise<MatchedOffer[] | null> {
+  let matchResults: MatchedOffer[] | null = null;
+
   for await (const event of streamMatch(cvText, filters)) {
     if (event.type === "tool_call") {
       callbacks.onToolCall?.(event.name || "", event.input);
@@ -94,7 +103,12 @@ export async function consumeMatchStream(
         callbacks.onRetry?.(event.name || "", event.retryCount || 0);
       }
     } else if (event.type === "final") {
+      matchResults = event.results?.results ?? null;
       callbacks.onFinal?.();
+    } else if (event.type === "error") {
+      throw new Error(event.message || "Stream error");
     }
   }
+
+  return matchResults;
 }

@@ -138,7 +138,7 @@ export function JobCard({ job, source }: Props) {
                 onClick={() => setExpanded(v => !v)}
                 aria-expanded={expanded}
               >
-                {expanded ? "Masquer la description" : "Voir la description complète"}
+                {expanded ? t("job.hideDesc") : t("job.showDesc")}
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className={expanded ? styles.chevronUp : ""} aria-hidden>
                   <path d="M1.5 3L5 6.5L8.5 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -157,7 +157,7 @@ export function JobCard({ job, source }: Props) {
           <svg width="11" height="11" viewBox="0 0 12 12" fill="currentColor" aria-hidden>
             <path d="M6 1L7.5 4.5H11L8.25 6.75L9.25 10.5L6 8.25L2.75 10.5L3.75 6.75L1 4.5H4.5L6 1Z"/>
           </svg>
-          <strong>{match.count}</strong> compétence{match.count > 1 ? "s" : ""} — {match.matched.slice(0, 3).join(", ")}
+          {t("match.skills", { count: match.count })} — {match.matched.slice(0, 3).join(", ")}
         </div>
       )}
 

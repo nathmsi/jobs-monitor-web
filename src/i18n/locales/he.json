@@ -259,6 +259,8 @@
     "hot": "החמות ביותר"
   },
   "noResults": "אין משרות לפי הסינון הזה.",
+  "job.showDesc": "הצג תיאור מלא",
+  "job.hideDesc": "הסתר תיאור",
   "allCompanies": {
     "open": "כל החברות ({{count}})",
     "title": "כל החברות",

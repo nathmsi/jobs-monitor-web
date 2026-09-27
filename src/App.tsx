@@ -1,16 +1,27 @@
+import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { CoachPage } from "./pages/CoachPage";
+import { ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
 import { JobsPage } from "./pages/JobsPage";
-import { ProfilePage } from "./pages/ProfilePage";
+
+const CoachPage = lazy(() =>
+  import("./pages/CoachPage").then((m) => ({ default: m.CoachPage })),
+);
+const ProfilePage = lazy(() =>
+  import("./pages/ProfilePage").then((m) => ({ default: m.ProfilePage })),
+);
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<JobsPage />} />
-      <Route path="/profile" element={<ProfilePage />} />
-      <Route path="/coach" element={<CoachPage />} />
-    </Routes>
+    <ErrorBoundary>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<JobsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/coach" element={<CoachPage />} />
+        </Routes>
+      </Suspense>
+    </ErrorBoundary>
   );
 }
 

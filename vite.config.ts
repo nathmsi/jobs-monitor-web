@@ -4,4 +4,8 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  // @ts-expect-error vitest config
+  test: {
+    environment: 'jsdom',
+  },
 })

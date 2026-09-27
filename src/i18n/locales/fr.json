@@ -259,6 +259,8 @@
     "hot": "Plus populaires"
   },
   "noResults": "Aucune offre pour ces filtres.",
+  "job.showDesc": "Voir la description complète",
+  "job.hideDesc": "Masquer la description",
   "allCompanies": {
     "open": "Toutes les entreprises ({{count}})",
     "title": "Toutes les entreprises",

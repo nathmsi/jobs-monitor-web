@@ -259,6 +259,8 @@
     "hot": "Hottest"
   },
   "noResults": "No offers for these filters.",
+  "job.showDesc": "Show full description",
+  "job.hideDesc": "Hide description",
   "allCompanies": {
     "open": "All companies ({{count}})",
     "title": "All companies",

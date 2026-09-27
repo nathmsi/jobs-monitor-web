@@ -172,11 +172,14 @@ export function JobsPage() {
                 </select>
               </label>
             )}
-            <button className={styles.allBtn} onClick={() => setShowAll(true)}>
-              {t("allCompanies.open", { count: sourceList.length })}
-            </button>
+            {browsing && (
+              <button className={styles.allBtn} onClick={() => setShowAll(true)}>
+                {t("allCompanies.open", { count: sourceList.length })}
+              </button>
+            )}
           </div>
 
+          <div key={tab} className={styles.tabContent}>
           {tab === "mine" ? (
             <MyJobs />
           ) : tab === "forme" ? (
@@ -224,6 +227,12 @@ export function JobsPage() {
 
               {jobsQuery.hasNextPage && (
                 <div className={styles.loadMoreRow}>
+                  <div className={styles.loadMoreMeta}>
+                    {t("loadMore.showing", {
+                      shown: jobs.length,
+                      total: jobsQuery.data?.pages[0]?.total ?? jobs.length,
+                    })}
+                  </div>
                   <button
                     className={styles.loadMore}
                     onClick={() => jobsQuery.fetchNextPage()}
@@ -237,6 +246,7 @@ export function JobsPage() {
               )}
             </main>
           )}
+          </div>
         </div>
       </div>
 

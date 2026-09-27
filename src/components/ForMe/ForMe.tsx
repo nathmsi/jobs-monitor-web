@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 import { rankScore } from "../../lib/cvAnalysis";
 import { useProfile } from "../../lib/profile";
@@ -17,6 +18,7 @@ interface Props {
 
 export function ForMe({ jobs, sources, onEditProfile }: Props) {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { profile } = useProfile();
   const [page, setPage] = useState(1);
 
@@ -45,8 +47,12 @@ export function ForMe({ jobs, sources, onEditProfile }: Props) {
   if (!profile || profile.skills.length === 0) {
     return (
       <div className={styles.empty}>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         <p>{t("forme.noProfile")}</p>
-        <button className={styles.cta} onClick={onEditProfile}>
+        <button className={styles.ctaPrimary} onClick={() => navigate("/coach")}>
+          {t("forme.ctaBtn")}
+        </button>
+        <button className={styles.ctaSecondary} onClick={onEditProfile}>
           {t("profile.title")}
         </button>
       </div>

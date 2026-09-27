@@ -13,12 +13,15 @@ interface Props {
   onChange: (filters: Filters) => void;
 }
 
+const ROLES_VISIBLE = 8;
+
 export function Sidebar({ filters, onChange }: Props) {
   const { t, i18n } = useTranslation();
   const { data: regions } = useRegions();
   const { hideSeen, setHideSeen } = useJobFlags();
   const { appliedCount } = useSavedJobs();
   const [draft, setDraft] = useState(filters.q);
+  const [showAllRoles, setShowAllRoles] = useState(false);
 
   const isHe = i18n.language.startsWith("he");
 
@@ -80,7 +83,7 @@ export function Sidebar({ filters, onChange }: Props) {
       <div className={styles.section}>
         <div className={styles.label}>{t("filters.roleLabel")}</div>
         <div className={styles.chips}>
-          {ROLES.map((role) => {
+          {(showAllRoles ? ROLES : ROLES.slice(0, ROLES_VISIBLE)).map((role) => {
             const active = filters.role === role.key;
             return (
               <button
@@ -96,6 +99,17 @@ export function Sidebar({ filters, onChange }: Props) {
               </button>
             );
           })}
+          {ROLES.length > ROLES_VISIBLE && (
+            <button
+              type="button"
+              className={styles.chipMore}
+              onClick={() => setShowAllRoles((v) => !v)}
+            >
+              {showAllRoles
+                ? t("filters.showLess")
+                : t("filters.showMore", { count: ROLES.length - ROLES_VISIBLE })}
+            </button>
+          )}
         </div>
       </div>
 

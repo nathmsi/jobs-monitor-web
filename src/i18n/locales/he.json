@@ -17,6 +17,8 @@
     "clear": "ניקוי",
     "toggle": "סינון",
     "close": "סגור",
+    "showMore": "+{{count}} עוד",
+    "showLess": "הצג פחות",
     "hideSeen": "הסתר משרות שכבר נצפו",
     "appliedCount_one": "הגשה אחת",
     "appliedCount_other": "{{count}} הגשות"
@@ -253,7 +255,8 @@
   },
   "loadMore": {
     "button": "טען עוד",
-    "loading": "טוען…"
+    "loading": "טוען…",
+    "showing": "{{shown}} מתוך {{total}}"
   },
   "sort": {
     "label": "מיון",

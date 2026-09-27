@@ -17,6 +17,8 @@
     "clear": "Effacer",
     "toggle": "Filtres",
     "close": "Fermer",
+    "showMore": "+{{count}} de plus",
+    "showLess": "Voir moins",
     "hideSeen": "Masquer les offres déjà vues",
     "appliedCount_one": "{{count}} candidature",
     "appliedCount_other": "{{count}} candidatures"
@@ -253,7 +255,8 @@
   },
   "loadMore": {
     "button": "Charger plus",
-    "loading": "Chargement…"
+    "loading": "Chargement…",
+    "showing": "{{shown}} sur {{total}} offres"
   },
   "sort": {
     "label": "Trier",

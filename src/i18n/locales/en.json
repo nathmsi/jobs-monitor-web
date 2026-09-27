@@ -17,6 +17,8 @@
     "clear": "Clear",
     "toggle": "Filters",
     "close": "Close",
+    "showMore": "+{{count}} more",
+    "showLess": "Show less",
     "hideSeen": "Hide offers I've seen",
     "appliedCount_one": "{{count}} application",
     "appliedCount_other": "{{count}} applications"
@@ -253,7 +255,8 @@
   },
   "loadMore": {
     "button": "Load more",
-    "loading": "Loading…"
+    "loading": "Loading…",
+    "showing": "Showing {{shown}} of {{total}}"
   },
   "sort": {
     "label": "Sort",

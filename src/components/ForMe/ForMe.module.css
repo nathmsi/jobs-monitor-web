@@ -42,19 +42,49 @@
 }
 
 .empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
   text-align: center;
   color: var(--text-muted);
-  padding: 2.5rem 1rem;
+  padding: 3rem 1rem;
 }
 
-.cta {
-  margin-top: 0.8rem;
+.empty p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.ctaPrimary {
   border: none;
   background: var(--accent);
   color: #fff;
   font-size: 0.9rem;
   font-weight: 700;
-  padding: 0.55rem 1.3rem;
+  padding: 0.6rem 1.4rem;
   border-radius: 999px;
   cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.ctaPrimary:hover {
+  opacity: 0.88;
+}
+
+.ctaSecondary {
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.ctaSecondary:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
 }

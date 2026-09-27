@@ -11,6 +11,7 @@ import { PreferencesProvider } from "./lib/preferences.tsx";
 import { ProfileProvider } from "./lib/profile.tsx";
 import { SavedJobsProvider } from "./lib/savedJobs.tsx";
 import { ThemeProvider } from "./lib/theme.tsx";
+import { ToastProvider } from "./lib/toast.tsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,9 +31,11 @@ createRoot(document.getElementById("root")!).render(
             <PreferencesProvider>
             <SavedJobsProvider>
               <JobFlagsProvider>
-                <BrowserRouter>
-                  <App />
-                </BrowserRouter>
+                <ToastProvider>
+                  <BrowserRouter>
+                    <App />
+                  </BrowserRouter>
+                </ToastProvider>
               </JobFlagsProvider>
             </SavedJobsProvider>
             </PreferencesProvider>

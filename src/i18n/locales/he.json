@@ -48,7 +48,9 @@
     "markApplied": "הגשתי מועמדות",
     "save": "שמירה",
     "saved": "נשמר",
-    "unsave": "הסרה מהשמורים"
+    "unsave": "הסרה מהשמורים",
+    "savedToast": "המשרה נשמרה ★",
+    "appliedToast": "הוגש ✓"
   },
   "auth": {
     "signInGoogle": "התחברות עם Google",

@@ -118,7 +118,7 @@ export function Header() {
                   className={styles.signInBtn}
                   onClick={() => signInWithGoogle()}
                 >
-                  Sign in
+                  {t("auth.signInGoogle")}
                 </button>
               ) : (
                 <div className={styles.userMenu}>

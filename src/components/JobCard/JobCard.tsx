@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { useToast } from "../../lib/toast";
+
 import { matchScore } from "../../lib/cvAnalysis";
 import { jobId, useJobFlags } from "../../lib/jobFlags";
 import { useProfile } from "../../lib/profile";
@@ -40,6 +42,7 @@ interface Props {
 
 export function JobCard({ job, source }: Props) {
   const { t } = useTranslation();
+  const { showToast } = useToast();
   const { isOpened, markOpened } = useJobFlags();
   const { statusOf, setStatus } = useSavedJobs();
   const { profile } = useProfile();
@@ -73,8 +76,18 @@ export function JobCard({ job, source }: Props) {
         </div>
         <div className={styles.badgeRow}>
           {job.is_new && !opened && <Badge variant="new">{t("job.new")}</Badge>}
-          {job.is_hot && <Badge variant="hot">🔥 {t("job.hot")}</Badge>}
-          {applied && <Badge variant="applied">✓ {t("job.applied")}</Badge>}
+          {job.is_hot && (
+            <Badge variant="hot">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 2C13.5 2 13 7 10 9.5 9 10 8 10.5 7 11c-2 1.5-3 4-2.5 6.5C5 20.5 7.5 23 11 23c4 0 7-3 7-7 0-2.5-1.5-4.5-3-5.5-1 2-2.5 3.5-4 4.5 1.5-3 2.5-9 2.5-13z"/></svg>
+              {t("job.hot")}
+            </Badge>
+          )}
+          {applied && (
+            <Badge variant="applied">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              {t("job.applied")}
+            </Badge>
+          )}
           {!applied && opened && <span className={styles.seenDot} title={t("job.seen")} />}
         </div>
       </div>
@@ -166,18 +179,28 @@ export function JobCard({ job, source }: Props) {
         <button
           type="button"
           className={`${styles.btn} ${saved ? styles.btnSavedOn : ""}`}
-          onClick={() => setStatus(job, saved ? null : "saved", source?.label)}
+          onClick={() => {
+            const next = saved ? null : "saved";
+            setStatus(job, next, source?.label);
+            if (next === "saved") showToast(t("job.savedToast"));
+          }}
           aria-pressed={saved}
         >
-          {saved ? "★" : "☆"} {saved ? t("job.saved") : t("job.save")}
+          <svg width="13" height="13" viewBox="0 0 24 24" fill={saved ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          {saved ? t("job.saved") : t("job.save")}
         </button>
         <button
           type="button"
           className={`${styles.btn} ${applied ? styles.btnAppliedOn : ""}`}
-          onClick={() => setStatus(job, applied ? "saved" : "applied", source?.label)}
+          onClick={() => {
+            const next = applied ? "saved" : "applied";
+            setStatus(job, next, source?.label);
+            if (next === "applied") showToast(t("job.appliedToast"));
+          }}
           aria-pressed={applied}
         >
-          {applied ? `✓ ${t("job.applied")}` : t("job.markApplied")}
+          {applied && <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>}
+          {applied ? t("job.applied") : t("job.markApplied")}
         </button>
         {job.url && (
           <a

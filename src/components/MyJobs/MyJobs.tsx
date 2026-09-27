@@ -62,7 +62,17 @@ export function MyJobs() {
                     it.status === "applied" ? styles.pillApplied : styles.pillSaved
                   }`}
                 >
-                  {it.status === "applied" ? `✓ ${t("job.applied")}` : `★ ${t("job.saved")}`}
+                  {it.status === "applied" ? (
+                    <>
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                      {t("job.applied")}
+                    </>
+                  ) : (
+                    <>
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                      {t("job.saved")}
+                    </>
+                  )}
                 </span>
                 <div className={styles.text}>
                   <span className={styles.title} dir="auto">
@@ -100,7 +110,7 @@ export function MyJobs() {
                   aria-label={t("mine.remove")}
                   title={t("mine.remove")}
                 >
-                  ✕
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
               </div>
             </li>

@@ -48,7 +48,9 @@
     "markApplied": "J'ai postulé",
     "save": "Sauvegarder",
     "saved": "Sauvegardé",
-    "unsave": "Retirer des sauvegardes"
+    "unsave": "Retirer des sauvegardes",
+    "savedToast": "Offre sauvegardée ★",
+    "appliedToast": "Candidature enregistrée ✓"
   },
   "auth": {
     "signInGoogle": "Se connecter avec Google",

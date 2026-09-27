@@ -85,6 +85,12 @@
   font-size: 0.95rem;
 }
 
+.emptyHint {
+  font-size: 0.82rem !important;
+  color: var(--text-muted);
+  opacity: 0.75;
+}
+
 .ctaPrimary {
   border: none;
   background: var(--accent);

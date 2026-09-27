@@ -48,7 +48,9 @@
     "markApplied": "I applied",
     "save": "Save",
     "saved": "Saved",
-    "unsave": "Remove from saved"
+    "unsave": "Remove from saved",
+    "savedToast": "Offer saved ★",
+    "appliedToast": "Marked as applied ✓"
   },
   "auth": {
     "signInGoogle": "Sign in with Google",

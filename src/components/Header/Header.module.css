@@ -100,28 +100,74 @@
   background: color-mix(in srgb, var(--text) 8%, transparent);
 }
 
-/* Language toggle in header */
-.langToggleHeader {
-  display: flex;
-  gap: 2px;
+/* Language dropdown */
+.langDropdown {
+  position: relative;
 }
-.langBtnHeader {
-  border: none;
+
+.langTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid var(--border-strong);
   background: transparent;
   color: var(--text-muted);
   font-size: 0.78rem;
-  font-weight: 600;
-  padding: 0.3rem 0.5rem;
+  font-weight: 700;
+  padding: 0.28rem 0.55rem;
   border-radius: 6px;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: color 0.15s, border-color 0.15s;
+  letter-spacing: 0.04em;
 }
-.langBtnHeader:hover {
+.langTrigger:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+
+.chevronUp {
+  transform: rotate(180deg);
+}
+
+.langBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 199;
+}
+
+.langMenu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 200;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+  min-width: 80px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.langOption {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  text-align: left;
+  letter-spacing: 0.04em;
+  transition: background 0.1s, color 0.1s;
+}
+.langOption:hover {
+  background: color-mix(in srgb, var(--text) 6%, transparent);
   color: var(--text);
 }
-.langBtnHeaderActive {
-  color: var(--text);
-  background: color-mix(in srgb, var(--text) 8%, transparent);
+.langOptionActive {
+  color: var(--accent);
 }
 
 /* Sign in — minimal text button */

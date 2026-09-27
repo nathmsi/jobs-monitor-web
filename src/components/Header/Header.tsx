@@ -11,6 +11,7 @@ export function Header() {
   const { t, i18n } = useTranslation();
   const { enabled, ready, user, signInWithGoogle, signOut } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
 
   const currentLang = i18n.resolvedLanguage ?? i18n.language;
   const { theme, setTheme } = useTheme();
@@ -65,18 +66,36 @@ export function Header() {
           )}
         </button>
 
-        {/* Language toggle — minimal */}
-        <div className={styles.langToggleHeader}>
-          {SUPPORTED_LANGUAGES.map((lng) => (
-            <button
-              key={lng}
-              type="button"
-              className={`${styles.langBtnHeader} ${currentLang === lng ? styles.langBtnHeaderActive : ""}`}
-              onClick={() => i18n.changeLanguage(lng)}
-            >
-              {t(`lang.${lng}`)}
-            </button>
-          ))}
+        {/* Language dropdown */}
+        <div className={styles.langDropdown}>
+          <button
+            type="button"
+            className={styles.langTrigger}
+            onClick={() => setLangOpen((v) => !v)}
+            aria-expanded={langOpen}
+          >
+            {t(`lang.${currentLang}`)}
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden className={langOpen ? styles.chevronUp : ""}>
+              <path d="M1.5 3L5 6.5L8.5 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          {langOpen && (
+            <>
+              <div className={styles.langBackdrop} onClick={() => setLangOpen(false)} />
+              <div className={styles.langMenu}>
+                {SUPPORTED_LANGUAGES.map((lng) => (
+                  <button
+                    key={lng}
+                    type="button"
+                    className={`${styles.langOption} ${currentLang === lng ? styles.langOptionActive : ""}`}
+                    onClick={() => { i18n.changeLanguage(lng); setLangOpen(false); }}
+                  >
+                    {t(`lang.${lng}`)}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
         </div>
 
         {enabled && ready && (

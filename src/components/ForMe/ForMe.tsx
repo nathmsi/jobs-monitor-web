@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { rankScore } from "../../lib/cvAnalysis";
@@ -6,6 +6,8 @@ import { useProfile } from "../../lib/profile";
 import { JobCard } from "../JobCard/JobCard";
 import type { Job, SourceInfo } from "../../types";
 import styles from "./ForMe.module.css";
+
+const PAGE_SIZE = 24;
 
 interface Props {
   jobs: Job[];
@@ -16,6 +18,7 @@ interface Props {
 export function ForMe({ jobs, sources, onEditProfile }: Props) {
   const { t } = useTranslation();
   const { profile } = useProfile();
+  const [page, setPage] = useState(1);
 
   const sourceByKey = useMemo(
     () => Object.fromEntries(sources.map((s) => [s.key, s])),
@@ -33,9 +36,11 @@ export function ForMe({ jobs, sources, onEditProfile }: Props) {
         ),
       }))
       .filter((r) => r.score > 0)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 120);
+      .sort((a, b) => b.score - a.score);
   }, [jobs, profile]);
+
+  const visible = ranked.slice(0, page * PAGE_SIZE);
+  const hasMore = visible.length < ranked.length;
 
   if (!profile || profile.skills.length === 0) {
     return (
@@ -58,7 +63,7 @@ export function ForMe({ jobs, sources, onEditProfile }: Props) {
         {t("forme.summary", { count: ranked.length })}
       </p>
       <div className={styles.grid}>
-        {ranked.map(({ job }) => (
+        {visible.map(({ job }) => (
           <JobCard
             key={`${job.source}-${job.external_id}`}
             job={job}
@@ -66,6 +71,13 @@ export function ForMe({ jobs, sources, onEditProfile }: Props) {
           />
         ))}
       </div>
+      {hasMore && (
+        <div className={styles.loadMoreRow}>
+          <button className={styles.loadMore} onClick={() => setPage((p) => p + 1)}>
+            {t("loadMore.button")}
+          </button>
+        </div>
+      )}
     </>
   );
 }

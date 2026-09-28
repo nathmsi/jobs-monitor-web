@@ -237,7 +237,7 @@ export function matchScore(
   text: string,
   profile: CvProfile | null,
 ): JobMatch {
-  if (!profile || profile.skills.length === 0) return { count: 0, matched: [] };
+  if (!profile || !Array.isArray(profile.skills) || profile.skills.length === 0) return { count: 0, matched: [] };
   const hay = norm(text);
   const matched = profile.skills.filter((name) => {
     const terms = SKILLS[name] ?? [name.toLowerCase()];
@@ -248,7 +248,7 @@ export function matchScore(
 
 /** Does the offer match one of the profile's roles (frontend, full stack…)? */
 export function roleMatches(text: string, profile: CvProfile | null): boolean {
-  if (!profile || profile.roles.length === 0) return false;
+  if (!profile || !Array.isArray(profile.roles) || profile.roles.length === 0) return false;
   const hay = norm(text);
   const terms = ROLES.filter((r) => profile.roles.includes(r.key)).flatMap(
     (r) => r.terms,

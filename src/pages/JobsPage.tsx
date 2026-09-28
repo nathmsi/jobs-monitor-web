@@ -69,7 +69,7 @@ export function JobsPage() {
 
   // "For me" badge = matching offers, computed once the full set is loaded.
   const formeCount = useMemo(() => {
-    if (!profile || profile.skills.length === 0 || !allJobs) return null;
+    if (!profile || !Array.isArray(profile.skills) || profile.skills.length === 0 || !allJobs) return null;
     return allJobs.filter(
       (j) => rankScore(`${j.title} ${j.excerpt} ${j.description ?? ""}`, profile) > 0,
     ).length;

@@ -19,7 +19,10 @@ const LOCAL_KEY = "cvProfile.local.v1";
 function loadLocal(): CvProfile | null {
   try {
     const raw = localStorage.getItem(LOCAL_KEY);
-    return raw ? (JSON.parse(raw) as CvProfile) : null;
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as CvProfile;
+    if (!Array.isArray(parsed?.skills) || !Array.isArray(parsed?.roles)) return null;
+    return parsed;
   } catch {
     return null;
   }

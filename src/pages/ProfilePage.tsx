@@ -67,7 +67,7 @@ export function ProfilePage() {
 
   const cvText = selectedCv?.text ?? "";
   const hasCv = cvText.trim().length >= 50;
-  const hasProfile = !!profile && profile.skills.length > 0;
+  const hasProfile = !!profile && Array.isArray(profile.skills) && profile.skills.length > 0;
 
   const onPdf = async (file: File) => {
     setBusyPdf(true);

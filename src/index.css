@@ -1,31 +1,36 @@
 :root {
-  /* Palette (light) */
-  --bg: #f6f7f9;
-  --bg-elevated: #ffffff;
-  --card: #ffffff;
-  --card-hover: #fbfcfe;
-  --text: #14181f;
-  --text-muted: #667085;
-  --border: #e6e8ec;
-  --border-strong: #d3d7de;
-  --accent: #2f6bff;
-  --accent-soft: #e8f0ff;
-  --new: #0a7d43;
-  --new-soft: #dcf5e7;
-  --hot: #c2410c;
-  --hot-soft: #fdeadf;
-  --danger: #b42318;
-  --danger-soft: #fde4e1;
+  /* ── Fonts ── */
+  --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  /* Shape & motion */
+  /* ── Palette (light) ── */
+  --bg: #F4F7FC;
+  --bg-elevated: #FFFFFF;
+  --card: #FFFFFF;
+  --card-hover: #FAFCFF;
+  --text: #0B1628;
+  --text-muted: #5A6B82;
+  --border: #DDE5F4;
+  --border-strong: #B8CADF;
+  --accent: #1D61F5;
+  --accent-soft: #EBF0FF;
+  --new: #0A7D43;
+  --new-soft: #DCFCE7;
+  --hot: #C2410C;
+  --hot-soft: #FEE8DD;
+  --danger: #B42318;
+  --danger-soft: #FDE4E1;
+
+  /* ── Shape & motion ── */
   --radius-sm: 8px;
   --radius: 12px;
   --radius-lg: 18px;
-  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
-  --shadow: 0 6px 20px rgba(16, 24, 40, 0.08);
+  --shadow-sm: 0 1px 3px rgba(16, 36, 80, 0.07), 0 1px 2px rgba(16, 36, 80, 0.04);
+  --shadow: 0 6px 24px rgba(16, 36, 80, 0.10);
+  --shadow-hover: 0 12px 32px rgba(29, 97, 245, 0.13), 0 4px 12px rgba(16, 36, 80, 0.07);
   --ring: 0 0 0 3px var(--accent-soft);
 
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-body);
   color: var(--text);
   background: var(--bg);
   color-scheme: light dark;
@@ -33,50 +38,57 @@
   text-rendering: optimizeLegibility;
 }
 
-/* Dark palette — applied when the OS is dark (unless the user forced light),
-   and always when the user explicitly picks dark via the toggle. */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Dark palette */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0a0c10;
-    --bg-elevated: #15181f;
-    --card: #15181f;
-    --card-hover: #1b1f28;
-    --text: #eaecf0;
-    --text-muted: #9aa4b2;
-    --border: #262b35;
-    --border-strong: #343b48;
-    --accent: #6b9bff;
-    --accent-soft: #182448;
-    --new: #34d17e;
-    --new-soft: #123321;
-    --hot: #fb923c;
-    --hot-soft: #3a2213;
-    --danger: #ff6b5e;
-    --danger-soft: #3a1a17;
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+    --bg: #070D18;
+    --bg-elevated: #0E1625;
+    --card: #0E1625;
+    --card-hover: #141E30;
+    --text: #E4EAF8;
+    --text-muted: #8496B3;
+    --border: #1B2A42;
+    --border-strong: #283F62;
+    --accent: #4D87FF;
+    --accent-soft: #0A1535;
+    --new: #34D17E;
+    --new-soft: #0D2A1C;
+    --hot: #FB923C;
+    --hot-soft: #2A1608;
+    --danger: #FF6B5E;
+    --danger-soft: #3A1A17;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+    --shadow: 0 10px 36px rgba(0, 0, 0, 0.65);
+    --shadow-hover: 0 12px 36px rgba(77, 135, 255, 0.20), 0 4px 14px rgba(0, 0, 0, 0.45);
+    color-scheme: dark;
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #0a0c10;
-  --bg-elevated: #15181f;
-  --card: #15181f;
-  --card-hover: #1b1f28;
-  --text: #eaecf0;
-  --text-muted: #9aa4b2;
-  --border: #262b35;
-  --border-strong: #343b48;
-  --accent: #6b9bff;
-  --accent-soft: #182448;
-  --new: #34d17e;
-  --new-soft: #123321;
-  --hot: #fb923c;
-  --hot-soft: #3a2213;
-  --danger: #ff6b5e;
-  --danger-soft: #3a1a17;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+  --bg: #070D18;
+  --bg-elevated: #0E1625;
+  --card: #0E1625;
+  --card-hover: #141E30;
+  --text: #E4EAF8;
+  --text-muted: #8496B3;
+  --border: #1B2A42;
+  --border-strong: #283F62;
+  --accent: #4D87FF;
+  --accent-soft: #0A1535;
+  --new: #34D17E;
+  --new-soft: #0D2A1C;
+  --hot: #FB923C;
+  --hot-soft: #2A1608;
+  --danger: #FF6B5E;
+  --danger-soft: #3A1A17;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+  --shadow: 0 10px 36px rgba(0, 0, 0, 0.65);
+  --shadow-hover: 0 12px 36px rgba(77, 135, 255, 0.20), 0 4px 14px rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
 }
 
 * {
@@ -93,9 +105,9 @@ body {
   min-height: 100vh;
   background:
     radial-gradient(
-      1200px 600px at 50% -200px,
-      color-mix(in srgb, var(--accent) 10%, transparent),
-      transparent 70%
+      1400px 700px at 60% -180px,
+      color-mix(in srgb, var(--accent) 7%, transparent),
+      transparent 65%
     ),
     var(--bg);
   background-attachment: fixed;

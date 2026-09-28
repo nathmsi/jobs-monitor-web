@@ -8,12 +8,13 @@
 .tabbar {
   display: inline-flex;
   flex-wrap: wrap;
-  gap: 0.25rem;
-  padding: 0.25rem;
+  gap: 0.2rem;
+  padding: 0.3rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: 999px;
-  margin-top: 0.5rem;
+  margin-top: 0.65rem;
+  box-shadow: var(--shadow-sm);
 }
 
 /* Two-column layout: filters sidebar + content. */
@@ -186,9 +187,10 @@
   border: none;
   background: transparent;
   color: var(--text-muted);
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 0.4rem 0.95rem;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.42rem 1rem;
   border-radius: 999px;
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease;
@@ -196,11 +198,14 @@
 
 .tab:hover {
   color: var(--text);
+  background: color-mix(in srgb, var(--text) 5%, transparent);
 }
 
 .tabActive {
   background: var(--accent);
   color: #fff;
+  font-weight: 600;
+  box-shadow: 0 1px 6px color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 .tabCount {

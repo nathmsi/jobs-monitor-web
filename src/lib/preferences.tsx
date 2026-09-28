@@ -26,10 +26,19 @@ const DEFAULT: JobPreferences = {
 
 const LOCAL_KEY = "jobPreferences.v1";
 
+function mergePrefs(raw: Partial<JobPreferences>): JobPreferences {
+  return {
+    ...DEFAULT,
+    ...raw,
+    roles: Array.isArray(raw.roles) ? raw.roles : DEFAULT.roles,
+    categories: Array.isArray(raw.categories) ? raw.categories : DEFAULT.categories,
+  };
+}
+
 function loadLocal(): JobPreferences {
   try {
     const raw = localStorage.getItem(LOCAL_KEY);
-    return raw ? { ...DEFAULT, ...(JSON.parse(raw) as Partial<JobPreferences>) } : DEFAULT;
+    return raw ? mergePrefs(JSON.parse(raw) as Partial<JobPreferences>) : DEFAULT;
   } catch {
     return DEFAULT;
   }
@@ -60,7 +69,7 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
         .maybeSingle();
       if (cancelled) return;
       if (!error && data?.preferences) {
-        const remote = { ...DEFAULT, ...(data.preferences as Partial<JobPreferences>) };
+        const remote = mergePrefs(data.preferences as Partial<JobPreferences>);
         setPrefs(remote);
         localStorage.setItem(LOCAL_KEY, JSON.stringify(remote));
       }

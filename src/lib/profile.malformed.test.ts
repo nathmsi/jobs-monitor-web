@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 
 // Test that loadLocal() rejects malformed localStorage data instead of returning
 // an object with undefined skills/roles that crashes components downstream.

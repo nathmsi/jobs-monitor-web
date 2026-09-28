@@ -8,8 +8,19 @@ import type { CvProfile } from "./cvAnalysis";
 // localStorage or Supabase could return data that type-casts to CvProfile but has
 // undefined fields if stored in an old format.
 
-function badProfile(overrides: Partial<CvProfile> = {}): CvProfile {
-  return { skills: undefined as unknown as string[], roles: undefined as unknown as string[], ...overrides };
+function badProfile(overrides: Partial<Record<keyof CvProfile, unknown>> = {}): CvProfile {
+  return {
+    skills: undefined as unknown as string[],
+    roles: undefined as unknown as string[],
+    languages: [],
+    seniority: null,
+    years: null,
+    locations: [],
+    titles: [],
+    education: [],
+    certifications: [],
+    ...overrides,
+  } as CvProfile;
 }
 
 describe("matchScore — malformed profile", () => {

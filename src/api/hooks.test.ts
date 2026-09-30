@@ -23,7 +23,7 @@ const regions: RegionInfo[] = [
 function job(partial: Partial<Job>): Job {
   return {
     source: "ness", external_id: "1", title: "Dev", location: "TLV",
-    excerpt: "", description: "", url: null, is_hot: false, last_updated: null, is_new: false,
+    excerpt: "", description: "", url: null, is_hot: false, is_expired: false, last_updated: null, is_new: false,
     ...partial,
   };
 }

@@ -50,7 +50,8 @@
     "saved": "Saved",
     "unsave": "Remove from saved",
     "savedToast": "Offer saved ★",
-    "appliedToast": "Marked as applied ✓"
+    "appliedToast": "Marked as applied ✓",
+    "expired": "Expired"
   },
   "auth": {
     "signInGoogle": "Sign in with Google",

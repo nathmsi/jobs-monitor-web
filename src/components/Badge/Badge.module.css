@@ -25,3 +25,9 @@
   background: var(--accent);
   color: #fff;
 }
+
+.expired {
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}

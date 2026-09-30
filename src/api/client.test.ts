@@ -22,6 +22,7 @@ function job(partial: Partial<Job>): Job {
     description: "",
     url: null,
     is_hot: false,
+    is_expired: false,
     last_updated: null,
     is_new: false,
     ...partial,

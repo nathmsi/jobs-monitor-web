@@ -34,6 +34,9 @@
 
 .applied { border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); }
 
+.expired { opacity: 0.65; }
+.expired:hover { opacity: 1; transition: opacity .2s; }
+
 /* ── Top bar ── */
 .topBar {
   display: flex;

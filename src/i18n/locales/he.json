@@ -50,7 +50,8 @@
     "saved": "נשמר",
     "unsave": "הסרה מהשמורים",
     "savedToast": "המשרה נשמרה ★",
-    "appliedToast": "הוגש ✓"
+    "appliedToast": "הוגש ✓",
+    "expired": "פג תוקף"
   },
   "auth": {
     "signInGoogle": "התחברות עם Google",

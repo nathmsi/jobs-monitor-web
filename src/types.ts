@@ -10,6 +10,7 @@ export interface Job {
   ai_summary?: string;
   url: string | null;
   is_hot: boolean;
+  is_expired: boolean;
   last_updated: string | null;
   is_new: boolean;
 }

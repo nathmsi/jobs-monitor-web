@@ -116,6 +116,7 @@ export function Header() {
                 <button
                   type="button"
                   className={styles.signInBtn}
+                  data-testid="sign-in-btn"
                   onClick={() => signInWithGoogle()}
                 >
                   {t("auth.signInGoogle")}

@@ -8,5 +8,5 @@ interface Props {
 }
 
 export function Badge({ variant, children }: Props) {
-  return <span className={`${styles.badge} ${styles[variant]}`}>{children}</span>;
+  return <span className={`${styles.badge} ${styles[variant]}`} data-testid={`badge-${variant}`}>{children}</span>;
 }

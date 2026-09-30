@@ -156,7 +156,7 @@ export function ProfilePage() {
                 </button>
               </>
             ) : (
-              <button className={styles.signInBtn} onClick={() => signInWithGoogle()}>
+              <button className={styles.signInBtn} data-testid="sign-in-btn" onClick={() => signInWithGoogle()}>
                 {t("auth.signInGoogle")}
               </button>
             )}

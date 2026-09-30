@@ -23,5 +23,12 @@
 - `string | null` from hooks → `string | undefined` for props: use `value ?? undefined`.
 - Run `npm run build` before shipping — catches TS errors that dev mode ignores.
 
+## Tests e2e (Playwright)
+- Tout changement fonctionnel (feature, bugfix, refacto touchant l'UI ou un flux utilisateur) doit s'accompagner d'un test e2e ajouté ou mis à jour dans `e2e/tests/`.
+- Avant de finir une tâche, lire les specs concernées, les adapter au changement, puis lancer `npm run test:e2e` et confirmer qu'ils passent.
+- Conventions : Page Object Models dans `e2e/pages/`, sélecteurs `getByRole`/`data-testid` uniquement, aucun `sleep` arbitraire, chaque test indépendant et déterministe.
+- Une tâche n'est pas terminée tant que `npm run test:e2e` n'est pas vert.
+- Les tests unitaires Vitest (`npm run test:unit`) couvrent la logique pure — rester colocalisés dans `src/`.
+
 ## Git
 - Format: `type(scope): message` — types: feat, fix, refactor, chore

@@ -7,5 +7,6 @@ export default defineConfig({
   // @ts-expect-error vitest config
   test: {
     environment: 'jsdom',
+    exclude: ['**/node_modules/**', 'e2e/**'],
   },
 })

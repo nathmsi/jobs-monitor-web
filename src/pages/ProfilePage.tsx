@@ -25,7 +25,11 @@ export function ProfilePage() {
   const { data: sources } = useSources();
   const { data: jobs } = useRegionJobs("all");
 
-  const [draftPrefs, setDraftPrefs] = useState<JobPreferences>(prefs);
+  const [draftPrefs, setDraftPrefs] = useState<JobPreferences>(() => ({
+    ...prefs,
+    roles: Array.isArray(prefs.roles) ? prefs.roles : [],
+    categories: Array.isArray(prefs.categories) ? prefs.categories : [],
+  }));
   const [prefsSaved, setPrefsSaved] = useState(false);
 
   useEffect(() => {

@@ -216,6 +216,24 @@ describe("ProfilePage — crash guards", () => {
     expect(screen.getAllByText("auth.signInGoogle").length).toBeGreaterThan(0);
   });
 
+  it("renders without crash when logged in with no saved preferences (first login)", async () => {
+    // Simulates a brand-new user: logged in, Supabase has no preferences row,
+    // hook returns DEFAULT { roles: [], categories: [], region: 'all', kind: 'all' }
+    await setup({ loggedIn: true, profile: null, prefs: DEFAULT_PREFS });
+    expect(() => render(<ProfilePage />)).not.toThrow();
+  });
+
+  it("renders without crash when logged in and Supabase preferences column is null", async () => {
+    // Simulates a profile row that exists but preferences column is null/never set
+    await setup({
+      loggedIn: true,
+      profile: null,
+      prefs: { region: "all", kind: "all", roles: [], categories: [] },
+    });
+    expect(() => render(<ProfilePage />)).not.toThrow();
+    expect(screen.getAllByText("profile.emptyStats").length).toBeGreaterThan(0);
+  });
+
   it("renders without crash when prefs region is undefined (very old format)", async () => {
     await setup({
       loggedIn: false,

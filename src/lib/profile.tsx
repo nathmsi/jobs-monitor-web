@@ -16,13 +16,18 @@ import type { CvProfile } from "./cvAnalysis";
 
 const LOCAL_KEY = "cvProfile.local.v1";
 
+function validateProfile(p: unknown): CvProfile | null {
+  if (!p || typeof p !== "object") return null;
+  const c = p as CvProfile;
+  if (!Array.isArray(c.skills) || !Array.isArray(c.roles)) return null;
+  return c;
+}
+
 function loadLocal(): CvProfile | null {
   try {
     const raw = localStorage.getItem(LOCAL_KEY);
     if (!raw) return null;
-    const parsed = JSON.parse(raw) as CvProfile;
-    if (!Array.isArray(parsed?.skills) || !Array.isArray(parsed?.roles)) return null;
-    return parsed;
+    return validateProfile(JSON.parse(raw));
   } catch {
     return null;
   }
@@ -54,7 +59,7 @@ export function ProfileProvider({ children }: { children: ReactNode }) {
           .eq("user_id", user.id)
           .maybeSingle();
         if (cancelled) return;
-        setProfile(!error && data?.data ? (data.data as CvProfile) : loadLocal());
+        setProfile(!error && data?.data ? validateProfile(data.data) ?? loadLocal() : loadLocal());
       } else {
         setProfile(loadLocal());
       }

@@ -24,7 +24,19 @@ interface ProfileEditorProps {
 export function ProfileEditor({ cvText }: ProfileEditorProps) {
   const { t } = useTranslation();
   const { profile, saveProfile, clearProfile } = useProfile();
-  const [draft, setDraft] = useState<CvProfile | null>(profile);
+  const [draft, setDraft] = useState<CvProfile | null>(() => {
+    if (!profile) return null;
+    return {
+      ...profile,
+      skills: Array.isArray(profile.skills) ? profile.skills : [],
+      roles: Array.isArray(profile.roles) ? profile.roles : [],
+      languages: Array.isArray(profile.languages) ? profile.languages : [],
+      titles: Array.isArray(profile.titles) ? profile.titles : [],
+      locations: Array.isArray(profile.locations) ? profile.locations : [],
+      education: Array.isArray(profile.education) ? profile.education : [],
+      certifications: Array.isArray(profile.certifications) ? profile.certifications : [],
+    };
+  });
   const [newSkill, setNewSkill] = useState("");
   const [saved, setSaved] = useState(false);
 

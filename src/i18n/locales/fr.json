@@ -267,6 +267,10 @@
     "oldest": "Plus anciennes",
     "hot": "Plus populaires"
   },
+  "viewMode": {
+    "grid": "Vue grille",
+    "list": "Vue liste"
+  },
   "noResults": "Aucune offre pour ces filtres.",
   "job.showDesc": "Voir la description complète",
   "job.hideDesc": "Masquer la description",

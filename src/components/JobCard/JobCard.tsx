@@ -60,6 +60,9 @@ export function JobCard({ job, source }: Props) {
 
   const isExpired = job.is_expired;
 
+  const descLine = ai?.headline
+    ?? (rawDesc ? rawDesc.replace(/\s+/g, " ").slice(0, 120) + (rawDesc.length > 120 ? "…" : "") : null);
+
   const cardClass = [
     styles.card,
     job.is_new ? styles.isNew : "",
@@ -71,158 +74,158 @@ export function JobCard({ job, source }: Props) {
   return (
     <article className={cardClass}>
 
-      {/* ── Top bar: company + badges ── */}
-      <div className={styles.topBar}>
-        <div className={styles.company}>
-          {source && <Avatar source={source} size={32} />}
+      {/* Logo */}
+      {source && <Avatar source={source} size={40} />}
+
+      {/* Body */}
+      <div className={styles.body}>
+
+        {/* Top row: company + badges */}
+        <div className={styles.topRow}>
           <span className={styles.companyName}>{source?.label ?? job.source}</span>
+          <div className={styles.badgeRow}>
+            {isExpired && (
+              <Badge variant="expired">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                {t("job.expired")}
+              </Badge>
+            )}
+            {!isExpired && job.is_new && !opened && <Badge variant="new">{t("job.new")}</Badge>}
+            {job.is_hot && (
+              <Badge variant="hot">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 2C13.5 2 13 7 10 9.5 9 10 8 10.5 7 11c-2 1.5-3 4-2.5 6.5C5 20.5 7.5 23 11 23c4 0 7-3 7-7 0-2.5-1.5-4.5-3-5.5-1 2-2.5 3.5-4 4.5 1.5-3 2.5-9 2.5-13z"/></svg>
+                {t("job.hot")}
+              </Badge>
+            )}
+            {applied && (
+              <Badge variant="applied">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                {t("job.applied")}
+              </Badge>
+            )}
+            {!applied && opened && <span className={styles.seenDot} title={t("job.seen")} />}
+          </div>
         </div>
-        <div className={styles.badgeRow}>
-          {isExpired && (
-            <Badge variant="expired">
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              {t("job.expired")}
-            </Badge>
-          )}
-          {!isExpired && job.is_new && !opened && <Badge variant="new">{t("job.new")}</Badge>}
-          {job.is_hot && (
-            <Badge variant="hot">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 2C13.5 2 13 7 10 9.5 9 10 8 10.5 7 11c-2 1.5-3 4-2.5 6.5C5 20.5 7.5 23 11 23c4 0 7-3 7-7 0-2.5-1.5-4.5-3-5.5-1 2-2.5 3.5-4 4.5 1.5-3 2.5-9 2.5-13z"/></svg>
-              {t("job.hot")}
-            </Badge>
-          )}
-          {applied && (
-            <Badge variant="applied">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              {t("job.applied")}
-            </Badge>
-          )}
-          {!applied && opened && <span className={styles.seenDot} title={t("job.seen")} />}
-        </div>
-      </div>
 
-      {/* ── Title ── */}
-      <h3 className={styles.title} dir="auto">
-        {job.url ? (
-          <a href={job.url} target="_blank" rel="noreferrer" onClick={() => markOpened(id)}>
-            {job.title}
-          </a>
-        ) : job.title}
-      </h3>
+        {/* Title */}
+        <h3 className={styles.title} dir="auto">
+          {job.url ? (
+            <a href={job.url} target="_blank" rel="noreferrer" onClick={() => markOpened(id)}>
+              {job.title}
+            </a>
+          ) : job.title}
+        </h3>
 
-      {/* ── Meta row ── */}
-      <div className={styles.metaRow}>
-        {job.location && (
-          <span className={styles.location}>
-            <svg width="10" height="12" viewBox="0 0 10 12" fill="none" aria-hidden>
-              <path d="M5 0C2.8 0 1 1.8 1 4c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4zm0 5.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" fill="currentColor"/>
-            </svg>
-            {job.location.split(",")[0]}
-          </span>
-        )}
-        {ai?.level && (
-          <span className={styles.levelBadge} style={{ "--lc": LEVEL_COLOR[ai.level] ?? "#94a3b8" } as React.CSSProperties}>
-            {ai.level}
-          </span>
-        )}
-        {ai?.remote && ai.remote !== "On-site" && (
-          <span className={styles.remoteBadge}>
-            {ai.remote === "Remote" ? "Remote" : "Hybrid"}
-          </span>
-        )}
-      </div>
+        {/* Short description */}
+        {descLine && <p className={styles.desc}>{descLine}</p>}
 
-      {/* ── AI or fallback description ── */}
-      {ai ? (
-        <div className={styles.aiSection}>
-          <p className={styles.aiHeadline}>{ai.headline}</p>
-
-          {ai.stack.length > 0 && (
-            <div className={styles.stack}>
-              {ai.stack.slice(0, 6).map((s) => (
+        {/* Footer row: chips + meta + actions */}
+        <div className={styles.foot}>
+          {/* Tech chips */}
+          {ai?.stack && ai.stack.length > 0 && (
+            <div className={styles.chips}>
+              {ai.stack.slice(0, 4).map((s) => (
                 <span key={s} className={styles.chip}>{s}</span>
               ))}
+              {ai.stack.length > 4 && (
+                <span className={styles.chipMore}>+{ai.stack.length - 4}</span>
+              )}
             </div>
           )}
 
-          {ai.highlights.length > 0 && (
-            <div className={styles.highlights}>
-              {ai.highlights.map((h) => (
-                <span key={h} className={styles.highlight}>{h}</span>
-              ))}
+          {/* Location */}
+          {job.location && (
+            <span className={styles.location}>
+              <svg width="10" height="12" viewBox="0 0 10 12" fill="none" aria-hidden>
+                <path d="M5 0C2.8 0 1 1.8 1 4c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4zm0 5.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" fill="currentColor"/>
+              </svg>
+              {job.location.split(",")[0]}
+            </span>
+          )}
+
+          {/* Level */}
+          {ai?.level && (
+            <span className={styles.levelBadge} style={{ "--lc": LEVEL_COLOR[ai.level] ?? "#94a3b8" } as React.CSSProperties}>
+              {ai.level}
+            </span>
+          )}
+
+          {/* Remote */}
+          {ai?.remote && ai.remote !== "On-site" && (
+            <span className={styles.remoteBadge}>
+              {ai.remote === "Remote" ? "Remote" : "Hybrid"}
+            </span>
+          )}
+
+          {/* Match */}
+          {match.count > 0 && (
+            <div className={styles.matchBar} title={match.matched.join(", ")}>
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="currentColor" aria-hidden>
+                <path d="M6 1L7.5 4.5H11L8.25 6.75L9.25 10.5L6 8.25L2.75 10.5L3.75 6.75L1 4.5H4.5L6 1Z"/>
+              </svg>
+              {match.count}
             </div>
           )}
 
-          {rawDesc && (
-            <>
-              <button
-                className={styles.expandToggle}
-                onClick={() => setExpanded(v => !v)}
-                aria-expanded={expanded}
+          {/* Actions */}
+          <div className={styles.actions}>
+            <button
+              type="button"
+              className={`${styles.iconBtn} ${saved ? styles.iconBtnSavedOn : ""}`}
+              onClick={() => {
+                const next = saved ? null : "saved";
+                setStatus(job, next, source?.label);
+                if (next === "saved") showToast(t("job.savedToast"));
+              }}
+              aria-pressed={saved}
+              aria-label={saved ? t("job.saved") : t("job.save")}
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill={saved ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            </button>
+            <button
+              type="button"
+              className={`${styles.iconBtn} ${applied ? styles.iconBtnAppliedOn : ""}`}
+              onClick={() => {
+                const next = applied ? "saved" : "applied";
+                setStatus(job, next, source?.label);
+                if (next === "applied") showToast(t("job.appliedToast"));
+              }}
+              aria-pressed={applied}
+              aria-label={applied ? t("job.applied") : t("job.markApplied")}
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            </button>
+            {job.url && (
+              <a
+                className={styles.viewLink}
+                href={job.url}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => markOpened(id)}
               >
-                {expanded ? t("job.hideDesc") : t("job.showDesc")}
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className={expanded ? styles.chevronUp : ""} aria-hidden>
-                  <path d="M1.5 3L5 6.5L8.5 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              {expanded && <p className={styles.fullDesc}>{rawDesc}</p>}
-            </>
-          )}
+                {t("job.view")}
+              </a>
+            )}
+          </div>
         </div>
-      ) : rawDesc ? (
-        <p className={styles.excerpt}>{rawDesc.slice(0, 140)}{rawDesc.length > 140 ? "…" : ""}</p>
-      ) : null}
 
-      {/* ── Match bar ── */}
-      {match.count > 0 && (
-        <div className={styles.matchBar} title={match.matched.join(", ")}>
-          <svg width="11" height="11" viewBox="0 0 12 12" fill="currentColor" aria-hidden>
-            <path d="M6 1L7.5 4.5H11L8.25 6.75L9.25 10.5L6 8.25L2.75 10.5L3.75 6.75L1 4.5H4.5L6 1Z"/>
-          </svg>
-          {t("match.skills", { count: match.count })} — {match.matched.slice(0, 3).join(", ")}
-        </div>
-      )}
-
-      {/* ── Actions ── */}
-      <footer className={styles.foot}>
-        <button
-          type="button"
-          className={`${styles.btn} ${saved ? styles.btnSavedOn : ""}`}
-          onClick={() => {
-            const next = saved ? null : "saved";
-            setStatus(job, next, source?.label);
-            if (next === "saved") showToast(t("job.savedToast"));
-          }}
-          aria-pressed={saved}
-        >
-          <svg width="13" height="13" viewBox="0 0 24 24" fill={saved ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-          {saved ? t("job.saved") : t("job.save")}
-        </button>
-        <button
-          type="button"
-          className={`${styles.btn} ${applied ? styles.btnAppliedOn : ""}`}
-          onClick={() => {
-            const next = applied ? "saved" : "applied";
-            setStatus(job, next, source?.label);
-            if (next === "applied") showToast(t("job.appliedToast"));
-          }}
-          aria-pressed={applied}
-        >
-          {applied && <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>}
-          {applied ? t("job.applied") : t("job.markApplied")}
-        </button>
-        {job.url && (
-          <a
-            className={styles.viewLink}
-            href={job.url}
-            target="_blank"
-            rel="noreferrer"
-            onClick={() => markOpened(id)}
-          >
-            {t("job.view")}
-          </a>
+        {/* Expand: full description */}
+        {rawDesc && (
+          <div className={styles.expandSection}>
+            <button
+              className={styles.expandToggle}
+              onClick={() => setExpanded(v => !v)}
+              aria-expanded={expanded}
+            >
+              {expanded ? t("job.hideDesc") : t("job.showDesc")}
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className={expanded ? styles.chevronUp : ""} aria-hidden>
+                <path d="M1.5 3L5 6.5L8.5 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            {expanded && <p className={styles.fullDesc}>{rawDesc}</p>}
+          </div>
         )}
-      </footer>
+      </div>
     </article>
   );
 }

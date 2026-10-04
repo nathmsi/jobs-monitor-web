@@ -311,6 +311,39 @@
 }
 
 /* Display-order selector */
+/* View mode toggle (grid / list) */
+.viewToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.2rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-inline-start: auto;
+}
+
+.viewBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .12s, color .12s;
+}
+.viewBtn:hover { color: var(--text); background: color-mix(in srgb, var(--text) 6%, transparent); }
+
+.viewBtnActive {
+  background: var(--accent);
+  color: #fff;
+}
+.viewBtnActive:hover { background: var(--accent); color: #fff; }
+
 .sortWrap {
   display: inline-flex;
   align-items: center;
@@ -358,8 +391,18 @@
   margin-top: 0.25rem;
 }
 
+/* Single-column list layout */
+.gridList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.45rem;
+  align-items: start;
+  margin-top: 0.25rem;
+}
+
 @media (max-width: 640px) {
-  .grid {
+  .grid,
+  .gridList {
     grid-template-columns: 1fr;
   }
 }

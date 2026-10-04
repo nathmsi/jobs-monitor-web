@@ -267,6 +267,10 @@
     "oldest": "Oldest",
     "hot": "Hottest"
   },
+  "viewMode": {
+    "grid": "Grid view",
+    "list": "List view"
+  },
   "noResults": "No offers for these filters.",
   "job.showDesc": "Show full description",
   "job.hideDesc": "Hide description",

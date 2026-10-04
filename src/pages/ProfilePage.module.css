@@ -95,8 +95,8 @@
 }
 
 .signOut:hover {
-  border-color: #ef4444;
-  color: #ef4444;
+  border-color: var(--danger);
+  color: var(--danger);
 }
 
 .signInBtn {
@@ -172,7 +172,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #22c55e;
+  background: var(--new);
   flex-shrink: 0;
 }
 
@@ -187,7 +187,7 @@
 
 .cvBarReady {
   font-size: 0.78rem;
-  color: #22c55e;
+  color: var(--new);
   font-weight: 600;
   white-space: nowrap;
 }
@@ -294,6 +294,12 @@
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
+}
+
+.savedNote {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--new);
 }
 
 .prefFoot {

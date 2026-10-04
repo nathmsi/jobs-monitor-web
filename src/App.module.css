@@ -352,7 +352,7 @@
 /* Flat, paginated offers grid (the browse tabs). */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 0.85rem;
   align-items: start;
   margin-top: 0.25rem;
@@ -401,16 +401,49 @@
 }
 
 .bootBar {
-  height: 68px;
+  height: 200px;
   border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: var(--bg-elevated);
+  /* Static skeleton lines: logo, title, subtitle, body×2, badge */
+  background-image:
+    radial-gradient(circle, var(--border-strong) 100%, transparent 0),
+    linear-gradient(var(--border-strong) 100%, transparent 0),
+    linear-gradient(var(--border) 100%, transparent 0),
+    linear-gradient(var(--border) 100%, transparent 0),
+    linear-gradient(var(--border) 100%, transparent 0),
+    linear-gradient(var(--border-strong) 100%, transparent 0);
+  background-size:
+    32px 32px,
+    50% 13px,
+    30% 11px,
+    70% 9px,
+    55% 9px,
+    72px 22px;
+  background-position:
+    16px 16px,
+    58px 20px,
+    58px 44px,
+    16px 84px,
+    16px 106px,
+    16px 144px;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.bootBar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   background: linear-gradient(
     100deg,
-    var(--border) 30%,
-    var(--border-strong) 50%,
-    var(--border) 70%
+    transparent 25%,
+    color-mix(in srgb, var(--text) 6%, transparent) 50%,
+    transparent 75%
   );
   background-size: 200% 100%;
-  animation: shimmer 1.3s ease-in-out infinite;
+  animation: shimmer 1.5s ease-in-out infinite;
 }
 
 .alert {
@@ -489,7 +522,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bootBar {
+  .bootBar::after,
+  .tabContent,
+  .sideOpen {
     animation: none;
   }
 }

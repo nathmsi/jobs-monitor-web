@@ -1,44 +1,69 @@
-# jobs-monitor-web
+# Tech Jobs (jobs-monitor-web)
 
-Frontend for monitoring job offers on Israeli recruitment sites.
-React + TypeScript + Vite.
+Frontend for browsing job offers from Israeli tech companies and staffing
+agencies, analysing your CV and matching offers to your profile.
+React 19 + TypeScript + Vite, react-query, react-router, i18next (EN / FR / HE with RTL).
 
-Backend lives in a separate repo: **jobs-monitor-api** (FastAPI).
+The API lives in a separate repo: **jobs-monitor-api**. Auth and per-user data
+(saved offers, CVs, profile, preferences) use Supabase; everything also works
+signed-out, persisted in `localStorage`.
 
 ## Features
 
-- One **Rafraîchir** button per source (Ness, Malam Team, ...).
-- Job cards: job number, title, location, excerpt, apply link.
-- **Nouveau** badge on offers never seen before (tracked by the backend).
-- **Hot** badge for offers the site flags as hot.
-- Hebrew content rendered right-to-left automatically (`dir="auto"`).
-- Light / dark theme via `prefers-color-scheme`.
+- Offers browser: server-side search, role/region/sector filters, sorting,
+  pagination, "hide offers I've seen"; state kept in the URL so views are shareable.
+- Save offers / mark as applied (per user, or per device when signed out).
+- **For me**: offers ranked against your CV profile.
+- **CV Coach** (sign-in): upload a PDF, get an AI review, find matching offers.
+- **Profile**: CV-derived skills/roles, job preferences, appearance (system / light / dark).
+- English, French, Hebrew (right-to-left, header always LTR).
 
 ## Setup
 
 ```bash
 pnpm install
-cp .env.example .env   # adjust VITE_API_URL if the API is not on :8000
+cp .env.example .env     # VITE_API_URL, VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY
+pnpm dev                 # http://localhost:5173
 ```
-
-## Run
-
-Start the backend first (see the jobs-monitor-api repo), then:
-
-```bash
-pnpm dev
-```
-
-App: http://localhost:5173
-
-## Configuration
 
 | Variable | Default | Description |
 | --- | --- | --- |
-| `VITE_API_URL` | `http://localhost:8000` | Base URL of the backend API |
+| `VITE_API_URL` | `http://localhost:8080` | Base URL of jobs-monitor-api |
+| `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY` | — | Optional. Without them auth is off and the app is localStorage-only |
 
-## Build
+## Scripts
 
-```bash
-pnpm build
+| Command | What it does |
+| --- | --- |
+| `pnpm dev` / `pnpm build` / `pnpm preview` | dev server / typecheck + production build / preview |
+| `pnpm lint` | oxlint |
+| `pnpm test:unit` | Vitest, isolated unit tests (colocated in `src/`) |
+| `pnpm test:integration` | Vitest, pages + real providers with mocked network/Supabase |
+| `pnpm test:e2e` | Playwright, browser tests per page (`e2e/`) |
+| `pnpm test:all` | all of the above tests |
+
+CI (`.github/workflows/ci.yml`): lint → typecheck/build → unit + integration →
+Playwright → deploy to Vercel (main only).
+
+## Project structure
+
 ```
+src/
+├── main.tsx · App.tsx          # providers + routes (non-home pages are lazy-loaded)
+├── pages/                      # route components: JobsPage, ProfilePage, CoachPage
+├── components/<Name>/          # UI; <Name>.tsx + <Name>.module.css (+ test)
+├── providers/<name>/           # React context state, one folder each:
+│   │                           #   <Name>Context.ts  context + types
+│   │                           #   <Name>Provider.tsx  component only
+│   │                           #   use<Name>.ts  the hook
+│   └── auth · theme · toast · jobFlags · savedJobs · profile · preferences
+├── hooks/                      # useCvs, useCvUpload, useDocumentTitle, useJobsUrlState
+├── api/                        # HTTP client, react-query hooks, match stream
+├── services/supabase.ts        # Supabase client (null when not configured)
+├── utils/                      # pure helpers: cvAnalysis, jobText, aiSummary, …
+├── constants/ · i18n/ · types.ts · index.css
+└── test/                       # test helpers + integration tests (see src/test/README.md)
+e2e/                            # Playwright: fixtures, page objects, specs per page (see e2e/README.md)
+```
+
+Conventions are in `CLAUDE.md` (strings via `t()`, CSS Modules only, tests required for functional changes).

@@ -53,4 +53,15 @@ describe("useJobsUrlState", () => {
     act(() => result.current.s.setFilters((f) => f));
     expect(result.current.loc.search).toBe("");
   });
+
+  it("does not lose an update made right after another one (same tick)", () => {
+    const { result } = setup();
+    act(() => {
+      result.current.s.setTab("company");
+      result.current.s.setSort("hot");
+      result.current.s.setFilters((f) => ({ ...f, q: "go" }));
+    });
+    const params = new URLSearchParams(result.current.loc.search);
+    expect([params.get("tab"), params.get("sort"), params.get("q")]).toEqual(["company", "hot", "go"]);
+  });
 });

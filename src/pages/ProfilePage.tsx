@@ -6,6 +6,7 @@ import { useRegionJobs, useRegions, useSources } from "../api/hooks";
 import { CVUploadModal } from "../components/CVUploadModal/CVUploadModal";
 import { Header } from "../components/Header/Header";
 import { JobCard } from "../components/JobCard/JobCard";
+import { ThemeSetting } from "../components/ThemeSetting/ThemeSetting";
 import { ProfileEditor } from "../components/ProfileEditor/ProfileEditor";
 import { useAuth } from "../providers/auth/useAuth";
 import { useCvs } from "../hooks/useCvs";
@@ -201,8 +202,9 @@ export function ProfilePage() {
 
             {/* Region */}
             <div className={styles.prefGroup}>
-              <div className={styles.prefLabel}>{t("filters.regionLabel")}</div>
+              <label className={styles.prefLabel} htmlFor="prefRegion">{t("filters.regionLabel")}</label>
               <select
+                id="prefRegion"
                 className={styles.prefSelect}
                 value={draftPrefs.region}
                 onChange={(e) => setDraftPrefs((p) => ({ ...p, region: e.target.value }))}
@@ -216,12 +218,13 @@ export function ProfilePage() {
 
             {/* Kind */}
             <div className={styles.prefGroup}>
-              <div className={styles.prefLabel}>{t("profile.prefKind")}</div>
-              <div className={styles.prefChips}>
+              <div className={styles.prefLabel} id="prefKindLabel">{t("profile.prefKind")}</div>
+              <div className={styles.prefChips} role="group" aria-labelledby="prefKindLabel">
                 {(["all", "company", "agency"] as const).map((k) => (
                   <button
                     key={k}
                     type="button"
+                    aria-pressed={draftPrefs.kind === k}
                     className={`${styles.prefChip} ${draftPrefs.kind === k ? styles.prefChipOn : ""}`}
                     onClick={() => setDraftPrefs((p) => ({ ...p, kind: k }))}
                   >
@@ -233,12 +236,13 @@ export function ProfilePage() {
 
             {/* Roles */}
             <div className={styles.prefGroup}>
-              <div className={styles.prefLabel}>{t("profile.roles")}</div>
-              <div className={styles.prefChips}>
+              <div className={styles.prefLabel} id="prefRolesLabel">{t("profile.roles")}</div>
+              <div className={styles.prefChips} role="group" aria-labelledby="prefRolesLabel">
                 {ROLES.map((r) => (
                   <button
                     key={r.key}
                     type="button"
+                    aria-pressed={draftPrefs.roles.includes(r.key)}
                     className={`${styles.prefChip} ${draftPrefs.roles.includes(r.key) ? styles.prefChipOn : ""}`}
                     onClick={() => togglePrefRole(r.key)}
                   >
@@ -250,12 +254,13 @@ export function ProfilePage() {
 
             {/* Categories */}
             <div className={styles.prefGroup}>
-              <div className={styles.prefLabel}>{t("profile.prefCategories")}</div>
-              <div className={styles.prefChips}>
+              <div className={styles.prefLabel} id="prefCategoriesLabel">{t("profile.prefCategories")}</div>
+              <div className={styles.prefChips} role="group" aria-labelledby="prefCategoriesLabel">
                 {(["security","fintech","data-ai","devtools","hardware","web-ecom","gaming","mobility","health"] as const).map((c) => (
                   <button
                     key={c}
                     type="button"
+                    aria-pressed={draftPrefs.categories.includes(c)}
                     className={`${styles.prefChip} ${draftPrefs.categories.includes(c) ? styles.prefChipOn : ""}`}
                     onClick={() => togglePrefCategory(c)}
                   >
@@ -266,11 +271,18 @@ export function ProfilePage() {
             </div>
 
             <div className={styles.prefFoot}>
-              {prefsSaved && <span className={styles.savedNote}>✓ {t("profile.prefSaved")}</span>}
+              {prefsSaved && <span className={styles.savedNote} role="status">✓ {t("profile.prefSaved")}</span>}
               <button className={styles.primaryBtn} onClick={onSavePrefs}>
                 {t("profile.prefSave")}
               </button>
             </div>
+          </div>
+
+          {/* Appearance */}
+          <div className={styles.sectionCard}>
+            <h2 className={styles.sectionTitle}>{t("profile.settings")}</h2>
+            <div className={styles.prefLabel}>{t("profile.theme")}</div>
+            <ThemeSetting />
           </div>
         </section>
 
@@ -278,7 +290,7 @@ export function ProfilePage() {
         <aside className={styles.aside}>
           {!hasProfile ? (
             <div className={styles.sectionCard}>
-              <p className={styles.empty}>{t("profile.emptyStats")}</p>
+              <p className={styles.empty} data-testid="profile-empty-stats">{t("profile.emptyStats")}</p>
             </div>
           ) : (
             <>

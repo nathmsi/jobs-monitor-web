@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import type { Filters } from "../types";
@@ -44,25 +44,31 @@ export function useJobsUrlState() {
 
   const state = useMemo(() => read(params), [read, params]);
 
+  // react-router passes the params of the last *render* to functional updates,
+  // so two updates in quick succession would each start from the same stale
+  // URL and the second would undo the first. Track the latest params ourselves.
+  const latest = useRef(params);
+  useEffect(() => {
+    latest.current = params;
+  }, [params]);
+
   const update = useCallback(
     (patch: (prev: JobsUrlState) => JobsUrlState) => {
-      setParams(
-        (prev) => {
-          const current = read(prev);
-          const next = patch(current);
-          // Nothing changed: keep the URL untouched (no rewrite with defaults).
-          if (JSON.stringify(next) === JSON.stringify(current)) return prev;
-          const out = new URLSearchParams();
-          out.set("region", next.filters.region);
-          out.set("role", next.filters.role ?? "");
-          out.set("category", next.filters.category ?? "");
-          if (next.filters.q) out.set("q", next.filters.q);
-          out.set("tab", next.tab);
-          if (next.sort !== "recent") out.set("sort", next.sort);
-          return out;
-        },
-        { replace: true },
-      );
+      const current = read(latest.current);
+      const next = patch(current);
+      // Nothing changed: keep the URL untouched (no rewrite with defaults).
+      if (JSON.stringify(next) === JSON.stringify(current)) return;
+
+      const out = new URLSearchParams();
+      out.set("region", next.filters.region);
+      out.set("role", next.filters.role ?? "");
+      out.set("category", next.filters.category ?? "");
+      if (next.filters.q) out.set("q", next.filters.q);
+      out.set("tab", next.tab);
+      if (next.sort !== "recent") out.set("sort", next.sort);
+
+      latest.current = out;
+      setParams(out, { replace: true });
     },
     [read, setParams],
   );

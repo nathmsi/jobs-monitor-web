@@ -8,6 +8,8 @@ export default defineConfig({
   reporter: [['html', { open: 'never' }], ['list']],
   use: {
     baseURL: 'http://localhost:5173',
+    locale: 'en-US',
+    colorScheme: 'light',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'off',

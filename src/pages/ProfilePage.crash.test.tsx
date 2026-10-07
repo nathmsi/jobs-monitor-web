@@ -55,6 +55,9 @@ vi.mock("../components/Header/Header", () => ({
 vi.mock("../components/ProfileEditor/ProfileEditor", () => ({
   ProfileEditor: () => <div data-testid="profile-editor" />,
 }));
+vi.mock("../components/ThemeSetting/ThemeSetting", () => ({
+  ThemeSetting: () => null,
+}));
 vi.mock("../components/CVUploadModal/CVUploadModal", () => ({
   CVUploadModal: () => null,
 }));

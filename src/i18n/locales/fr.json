@@ -1,8 +1,10 @@
 {
   "header": {
-    "eyebrow": "ISRAËL",
-    "title": "Tech Jobs",
-    "subtitle": "Postes tech en Israël — développement, data, DevOps, cloud, sécurité…"
+    "switchToLight": "Passer au thème clair",
+    "switchToDark": "Passer au thème sombre",
+    "mainNav": "Navigation principale",
+    "mobileNav": "Navigation mobile",
+    "menu": "Menu"
   },
   "lang": {
     "label": "Langue",

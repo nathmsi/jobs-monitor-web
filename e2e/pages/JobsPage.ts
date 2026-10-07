@@ -1,33 +1,80 @@
-import type { Page, Locator } from '@playwright/test';
+import type { Locator, Page } from '@playwright/test';
 
-export class JobsPagePO {
-  readonly page: Page;
-  readonly jobCards: Locator;
-  readonly regionSelect: Locator;
+import { BasePage } from './BasePage';
+
+type TabName = 'Tech companies' | 'Staffing agencies' | 'My offers' | 'For me';
+
+/** The offers browser at `/`. */
+export class JobsPage extends BasePage {
+  readonly cards: Locator;
   readonly searchInput: Locator;
-  readonly filterBar: Locator;
+  readonly clearSearchButton: Locator;
+  readonly areaSelect: Locator;
+  readonly sortSelect: Locator;
+  readonly hideSeenCheckbox: Locator;
+  readonly loadMoreButton: Locator;
+  readonly alert: Locator;
+  readonly listViewButton: Locator;
+  readonly gridViewButton: Locator;
+  readonly toast: Locator;
 
   constructor(page: Page) {
-    this.page = page;
-    this.jobCards = page.locator('article');
-    this.regionSelect = page.getByRole('combobox', { name: /region/i });
-    this.searchInput = page.getByRole('searchbox');
-    this.filterBar = page.locator('[class*="filterBar"], [class*="filters"]');
+    super(page);
+    this.cards = page.getByRole('article');
+    this.searchInput = page.getByRole('textbox', { name: /search/i });
+    this.clearSearchButton = page.getByRole('button', { name: 'Clear', exact: true });
+    this.areaSelect = page.getByRole('combobox', { name: 'Area' });
+    this.sortSelect = page.getByRole('combobox', { name: 'Sort' });
+    this.hideSeenCheckbox = page.getByRole('checkbox', { name: /hide offers/i });
+    this.loadMoreButton = page.getByRole('button', { name: 'Load more' });
+    this.alert = page.getByRole('alert');
+    this.listViewButton = page.getByRole('button', { name: 'List view' });
+    this.gridViewButton = page.getByRole('button', { name: 'Grid view' });
+    this.toast = page.getByRole('status').filter({ hasText: /./ });
   }
 
-  async goto() {
-    await this.page.goto('/');
+  async goto(path = '/'): Promise<void> {
+    await this.page.goto(path);
+    await this.page.getByRole('tablist').waitFor();
   }
 
-  async waitForJobs() {
-    await this.jobCards.first().waitFor({ state: 'visible', timeout: 10_000 });
+  /** Open the page and wait for the first offer card. */
+  async open(path = '/'): Promise<void> {
+    await this.goto(path);
+    await this.cards.first().waitFor();
   }
 
-  jobCardByTitle(title: string) {
-    return this.page.getByRole('article').filter({ hasText: title });
+  card(title: string): Locator {
+    return this.cards.filter({ hasText: title });
   }
 
-  expiredBadge(card: Locator) {
-    return card.getByTestId('badge-expired');
+  tab(name: TabName | RegExp): Locator {
+    return this.page.getByRole('tab', { name });
+  }
+
+  roleChip(name: string): Locator {
+    return this.page.getByRole('button', { name, exact: true });
+  }
+
+  /** Save / "Saved" toggle inside a card. */
+  saveButton(card: Locator): Locator {
+    return card.getByRole('button', { name: /^saved?$/i });
+  }
+
+  appliedButton(card: Locator): Locator {
+    return card.getByRole('button', { name: /^(i applied|applied)$/i });
+  }
+
+  viewLink(card: Locator): Locator {
+    return card.getByRole('link', { name: /view offer/i });
+  }
+
+  async search(text: string): Promise<void> {
+    await this.searchInput.fill(text);
+  }
+
+  /** Visible titles in DOM order. */
+  async titles(): Promise<string[]> {
+    return this.cards.getByRole('heading', { level: 3 }).allTextContents();
   }
 }

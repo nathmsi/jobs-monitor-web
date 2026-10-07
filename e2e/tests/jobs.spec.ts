@@ -1,4 +1,5 @@
 import { test, expect } from '../fixtures';
+import { MOCK_JOBS, mockApi } from '../utils/api-mocks';
 import { JobsPagePO } from '../pages/JobsPage';
 
 test.describe('Jobs page', () => {
@@ -67,5 +68,32 @@ test.describe('Jobs page', () => {
     await po.waitForJobs();
 
     expect(errors.filter((e) => !e.includes('favicon'))).toHaveLength(0);
+  });
+
+  test('job with a partial ai_summary (no highlights) does not crash the list', async ({ page }) => {
+    const partial = {
+      ...MOCK_JOBS[0],
+      ai_summary: JSON.stringify({ headline: 'Frontend at Melio', stack: ['React'] }),
+    };
+    await page.unrouteAll();
+    await mockApi(page, [partial, MOCK_JOBS[1]]);
+
+    const po = new JobsPagePO(page);
+    await po.goto();
+    await po.waitForJobs();
+
+    await expect(page.getByText('Frontend at Melio')).toBeVisible();
+    await expect(page.getByText('Backend Developer')).toBeVisible();
+  });
+
+  test('saving a job toggles its saved state', async ({ page }) => {
+    const po = new JobsPagePO(page);
+    await po.goto();
+    await po.waitForJobs();
+
+    const card = po.jobCardByTitle('Backend Developer');
+    const save = card.getByRole('button', { pressed: false }).first();
+    await save.click();
+    await expect(card.getByRole('button', { pressed: true }).first()).toBeVisible();
   });
 });

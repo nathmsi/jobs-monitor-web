@@ -14,10 +14,12 @@ interface Props {
   jobs: Job[];
   sources: SourceInfo[];
   loading?: boolean;
+  error?: Error | null;
+  onRetry?: () => void;
   onEditProfile: () => void;
 }
 
-export function ForMe({ jobs, sources, loading = false, onEditProfile }: Props) {
+export function ForMe({ jobs, sources, loading = false, error = null, onRetry, onEditProfile }: Props) {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { profile } = useProfile();
@@ -51,6 +53,20 @@ export function ForMe({ jobs, sources, loading = false, onEditProfile }: Props) 
         {Array.from({ length: 6 }).map((_, i) => (
           <div key={i} className={styles.skeletonCard} />
         ))}
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={styles.error} role="alert">
+        <strong>{t("error.apiTitle")}</strong>
+        <p>{error.message}</p>
+        {onRetry && (
+          <button type="button" className={styles.retryBtn} onClick={onRetry}>
+            {t("error.tryAgain")}
+          </button>
+        )}
       </div>
     );
   }

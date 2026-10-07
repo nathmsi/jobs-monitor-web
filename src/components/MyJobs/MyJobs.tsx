@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useAuth } from "../../lib/auth";
-import { useSavedJobs, type SavedStatus } from "../../lib/savedJobs";
+import { useSavedJobs, type SavedItem, type SavedStatus } from "../../lib/savedJobs";
+import { useToast } from "../../lib/toast";
 import styles from "./MyJobs.module.css";
 
 type Tab = "all" | "saved" | "applied";
@@ -11,6 +12,11 @@ export function MyJobs() {
   const { t } = useTranslation();
   const { enabled, user, signInWithGoogle } = useAuth();
   const { items, changeStatus, savedCount, appliedCount } = useSavedJobs();
+  const { showToast } = useToast();
+
+  const update = async (it: SavedItem, status: SavedStatus | null) => {
+    if (!(await changeStatus(it, status))) showToast(t("job.saveError"));
+  };
   const [tab, setTab] = useState<Tab>("all");
 
   const shown = items
@@ -95,10 +101,7 @@ export function MyJobs() {
                   type="button"
                   className={styles.actionBtn}
                   onClick={() =>
-                    changeStatus(
-                      it,
-                      (it.status === "applied" ? "saved" : "applied") as SavedStatus,
-                    )
+                    update(it, (it.status === "applied" ? "saved" : "applied") as SavedStatus)
                   }
                 >
                   {it.status === "applied" ? t("mine.markSaved") : t("job.markApplied")}
@@ -106,7 +109,7 @@ export function MyJobs() {
                 <button
                   type="button"
                   className={styles.removeBtn}
-                  onClick={() => changeStatus(it, null)}
+                  onClick={() => update(it, null)}
                   aria-label={t("mine.remove")}
                   title={t("mine.remove")}
                 >

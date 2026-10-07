@@ -23,7 +23,6 @@ export function ProfilePage() {
   const { prefs, savePrefs } = usePreferences();
   const { data: regions } = useRegions();
   const { data: sources } = useSources();
-  const { data: jobs } = useRegionJobs("all");
 
   const [draftPrefs, setDraftPrefs] = useState<JobPreferences>(() => ({
     ...prefs,
@@ -72,6 +71,7 @@ export function ProfilePage() {
   const cvText = selectedCv?.text ?? "";
   const hasCv = cvText.trim().length >= 50;
   const hasProfile = !!profile && Array.isArray(profile.skills) && profile.skills.length > 0;
+  const { data: jobs } = useRegionJobs("all", hasProfile);
 
   const onPdf = async (file: File) => {
     setBusyPdf(true);

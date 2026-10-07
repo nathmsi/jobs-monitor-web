@@ -49,6 +49,7 @@
     "save": "Sauvegarder",
     "saved": "Sauvegardé",
     "unsave": "Retirer des sauvegardes",
+    "saveError": "Impossible d'enregistrer votre modification. Veuillez réessayer.",
     "savedToast": "Offre sauvegardée ★",
     "appliedToast": "Candidature enregistrée ✓",
     "expired": "Expirée"

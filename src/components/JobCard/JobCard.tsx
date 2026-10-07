@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 
 import { useToast } from "../../lib/toast";
 
+import { parseAiSummary } from "../../lib/aiSummary";
 import { matchScore } from "../../lib/cvAnalysis";
 import { jobId, useJobFlags } from "../../lib/jobFlags";
 import { useProfile } from "../../lib/profile";
@@ -10,23 +11,6 @@ import { Avatar } from "../Avatar/Avatar";
 import { Badge } from "../Badge/Badge";
 import type { Job, SourceInfo } from "../../types";
 import styles from "./JobCard.module.css";
-
-interface AiInfo {
-  headline: string;
-  stack: string[];
-  level: string;
-  remote: string;
-  highlights: string[];
-}
-
-function parseAiSummary(raw: string | undefined): AiInfo | null {
-  if (!raw) return null;
-  try {
-    const p = JSON.parse(raw) as AiInfo;
-    if (p.headline && p.stack) return p;
-  } catch {}
-  return null;
-}
 
 const LEVEL_COLOR: Record<string, string> = {
   Intern: "#94a3b8", Junior: "#60a5fa", Mid: "#a78bfa",
@@ -170,10 +154,10 @@ export function JobCard({ job, source }: Props) {
         <button
           type="button"
           className={`${styles.btn} ${saved ? styles.btnSavedOn : ""}`}
-          onClick={() => {
+          onClick={async () => {
             const next = saved ? null : "saved";
-            setStatus(job, next, source?.label);
-            if (next === "saved") showToast(t("job.savedToast"));
+            if (!(await setStatus(job, next, source?.label))) showToast(t("job.saveError"));
+            else if (next === "saved") showToast(t("job.savedToast"));
           }}
           aria-pressed={saved}
         >
@@ -183,10 +167,10 @@ export function JobCard({ job, source }: Props) {
         <button
           type="button"
           className={`${styles.btn} ${applied ? styles.btnAppliedOn : ""}`}
-          onClick={() => {
+          onClick={async () => {
             const next = applied ? "saved" : "applied";
-            setStatus(job, next, source?.label);
-            if (next === "applied") showToast(t("job.appliedToast"));
+            if (!(await setStatus(job, next, source?.label))) showToast(t("job.saveError"));
+            else if (next === "applied") showToast(t("job.appliedToast"));
           }}
           aria-pressed={applied}
         >

@@ -37,14 +37,14 @@ export const MOCK_REGIONS = [
 ];
 
 /** Intercept all API calls and return deterministic mock data. */
-export async function mockApi(page: Page) {
+export async function mockApi(page: Page, jobs: unknown[] = MOCK_JOBS) {
   await page.route('**/api/jobs**', (route) =>
     route.fulfill({
       status: 200,
       contentType: 'application/json',
       body: JSON.stringify({
-        jobs: MOCK_JOBS,
-        total: MOCK_JOBS.length,
+        jobs,
+        total: jobs.length,
         limit: 24,
         offset: 0,
         has_more: false,

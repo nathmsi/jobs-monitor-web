@@ -123,3 +123,27 @@
   color: var(--text);
   border-color: var(--text-muted);
 }
+
+.error {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border: 1px solid color-mix(in srgb, var(--danger) 30%, transparent);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.error p {
+  margin: 0.25rem 0 0.75rem;
+}
+
+.retryBtn {
+  background: transparent;
+  color: inherit;
+  border: 1px solid currentColor;
+  border-radius: var(--radius);
+  padding: 0.35rem 0.9rem;
+  font: inherit;
+  cursor: pointer;
+}

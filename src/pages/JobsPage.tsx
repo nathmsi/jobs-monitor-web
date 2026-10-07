@@ -55,9 +55,10 @@ export function JobsPage() {
   );
 
   // Full region set (limit=0) only when the "For me" tab needs to rank locally.
-  const { data: allJobs, isLoading: allJobsLoading } = useRegionJobs(filters.region, tab === "forme");
+  const allJobsQuery = useRegionJobs(filters.region, tab === "forme");
+  const allJobs = allJobsQuery.data;
 
-  const sourceList = sources ?? [];
+  const sourceList = useMemo(() => sources ?? [], [sources]);
   const sourceByKey = useMemo(
     () => Object.fromEntries(sourceList.map((s) => [s.key, s])),
     [sourceList],
@@ -145,10 +146,7 @@ export function JobsPage() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             {t("filters.close")}
           </button>
-          <Sidebar
-            filters={filters}
-            onChange={setFilters}
-          />
+          <Sidebar filters={filters} onChange={setFilters} />
         </div>
 
         <div className={styles.content}>
@@ -222,7 +220,9 @@ export function JobsPage() {
             <ForMe
               jobs={allJobs ?? []}
               sources={sourceList}
-              loading={allJobsLoading}
+              loading={allJobsQuery.isLoading}
+              error={allJobsQuery.error}
+              onRetry={() => allJobsQuery.refetch()}
               onEditProfile={() => navigate("/profile")}
             />
           ) : (
@@ -231,7 +231,7 @@ export function JobsPage() {
                 <div className={styles.alert} role="alert">
                   <strong>{t("error.apiTitle")}</strong>
                   <br />
-                  {(jobsQuery.error as Error).message}
+                  {jobsQuery.error.message}
                 </div>
               )}
 

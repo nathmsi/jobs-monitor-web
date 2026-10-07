@@ -4,6 +4,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
@@ -52,9 +53,10 @@ function saveLocal(map: Map<string, SavedItem>): void {
 interface SavedJobsValue {
   ready: boolean;
   statusOf: (source: string, externalId: string) => SavedStatus | undefined;
-  setStatus: (job: Job, status: SavedStatus | null, company?: string) => void;
+  /** Resolves to false when the remote write failed (the change is rolled back). */
+  setStatus: (job: Job, status: SavedStatus | null, company?: string) => Promise<boolean>;
   /** Change / remove status from an already-saved item (in "My jobs"). */
-  changeStatus: (item: SavedItem, status: SavedStatus | null) => void;
+  changeStatus: (item: SavedItem, status: SavedStatus | null) => Promise<boolean>;
   items: SavedItem[];
   savedCount: number;
   appliedCount: number;
@@ -66,6 +68,13 @@ export function SavedJobsProvider({ children }: { children: ReactNode }) {
   const { user, enabled } = useAuth();
   const [map, setMap] = useState<Map<string, SavedItem>>(() => loadLocal());
   const [ready, setReady] = useState(false);
+  // Mirrors `map` so handlers can compute the next value (and roll back)
+  // without side effects inside a state updater.
+  const mapRef = useRef(map);
+  const commit = useCallback((next: Map<string, SavedItem>) => {
+    mapRef.current = next;
+    setMap(next);
+  }, []);
 
   const useRemote = Boolean(enabled && user && supabase);
 
@@ -80,9 +89,9 @@ export function SavedJobsProvider({ children }: { children: ReactNode }) {
         if (cancelled) return;
         if (error) {
           // fall back to local on error so the UI still works
-          setMap(loadLocal());
+          commit(loadLocal());
         } else {
-          setMap(
+          commit(
             new Map(
               (data as SavedItem[]).map((it) => [
                 jobId(it.source, it.external_id),
@@ -92,7 +101,7 @@ export function SavedJobsProvider({ children }: { children: ReactNode }) {
           );
         }
       } else {
-        setMap(loadLocal());
+        commit(loadLocal());
       }
       setReady(true);
     }
@@ -101,10 +110,10 @@ export function SavedJobsProvider({ children }: { children: ReactNode }) {
     return () => {
       cancelled = true;
     };
-  }, [useRemote, user?.id]);
+  }, [useRemote, user?.id, commit]);
 
   const setStatus = useCallback(
-    (job: Job, status: SavedStatus | null, company?: string) => {
+    async (job: Job, status: SavedStatus | null, company?: string): Promise<boolean> => {
       const key = jobId(job.source, job.external_id);
       const item: SavedItem = {
         source: job.source,
@@ -116,28 +125,23 @@ export function SavedJobsProvider({ children }: { children: ReactNode }) {
         url: job.url,
       };
 
-      // Optimistic local update.
-      setMap((prev) => {
-        const next = new Map(prev);
-        if (status === null) next.delete(key);
-        else next.set(key, item);
-        if (!useRemote) saveLocal(next);
-        return next;
-      });
+      // Optimistic update.
+      const before = mapRef.current.get(key);
+      const next = new Map(mapRef.current);
+      if (status === null) next.delete(key);
+      else next.set(key, item);
+      commit(next);
 
-      if (useRemote && supabase && user) {
-        if (status === null) {
-          supabase
-            .from("saved_jobs")
-            .delete()
-            .match({ source: job.source, external_id: job.external_id })
-            .then(({ error }) => {
-              if (error) console.error("saved_jobs delete", error.message);
-            });
-        } else {
-          supabase
-            .from("saved_jobs")
-            .upsert(
+      if (!(useRemote && supabase && user)) {
+        saveLocal(next);
+        return true;
+      }
+
+      const table = supabase.from("saved_jobs");
+      const { error } =
+        status === null
+          ? await table.delete().match({ source: job.source, external_id: job.external_id })
+          : await table.upsert(
               {
                 user_id: user.id,
                 source: job.source,
@@ -150,18 +154,22 @@ export function SavedJobsProvider({ children }: { children: ReactNode }) {
                 updated_at: new Date().toISOString(),
               },
               { onConflict: "user_id,source,external_id" },
-            )
-            .then(({ error }) => {
-              if (error) console.error("saved_jobs upsert", error.message);
-            });
-        }
-      }
+            );
+      if (!error) return true;
+
+      console.error("saved_jobs write", error.message);
+      // Roll back only this entry so concurrent changes are preserved.
+      const reverted = new Map(mapRef.current);
+      if (before) reverted.set(key, before);
+      else reverted.delete(key);
+      commit(reverted);
+      return false;
     },
-    [useRemote, user],
+    [useRemote, user, commit],
   );
 
   const changeStatus = useCallback(
-    (item: SavedItem, status: SavedStatus | null) => {
+    (item: SavedItem, status: SavedStatus | null): Promise<boolean> => {
       // Reuse setStatus with a minimal Job built from the stored snapshot.
       const job = {
         source: item.source,
@@ -170,7 +178,7 @@ export function SavedJobsProvider({ children }: { children: ReactNode }) {
         location: item.location ?? "",
         url: item.url ?? null,
       } as Job;
-      setStatus(job, status, item.company ?? undefined);
+      return setStatus(job, status, item.company ?? undefined);
     },
     [setStatus],
   );

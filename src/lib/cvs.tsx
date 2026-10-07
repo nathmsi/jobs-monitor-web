@@ -23,6 +23,7 @@ export function useCvs() {
   const load = useCallback(async () => {
     if (!supabase || !user) {
       setCvs([]);
+      setSelectedId(null);
       setReady(true);
       return;
     }
@@ -61,11 +62,16 @@ export function useCvs() {
   );
 
   const removeCv = useCallback(
-    async (id: string) => {
-      if (!supabase || !user) return;
-      await supabase.from("cvs").delete().eq("id", id);
+    async (id: string): Promise<boolean> => {
+      if (!supabase || !user) return false;
+      const { error } = await supabase.from("cvs").delete().eq("id", id);
+      if (error) {
+        console.error("cvs delete", error.message);
+        return false;
+      }
       setCvs((c) => c.filter((x) => x.id !== id));
       setSelectedId((prev) => (prev === id ? null : prev));
+      return true;
     },
     [user],
   );

@@ -49,6 +49,7 @@
     "save": "Save",
     "saved": "Saved",
     "unsave": "Remove from saved",
+    "saveError": "Could not save your change. Please try again.",
     "savedToast": "Offer saved ★",
     "appliedToast": "Marked as applied ✓",
     "expired": "Expired"

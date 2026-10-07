@@ -1,24 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-// parseAiSummary is unexported — test it indirectly via the exported component
-// by testing the logic manually (it's a pure function).
-
-interface AiInfo {
-  headline: string;
-  stack: string[];
-  level: string;
-  remote: string;
-  highlights: string[];
-}
-
-function parseAiSummary(raw: string | undefined): AiInfo | null {
-  if (!raw) return null;
-  try {
-    const p = JSON.parse(raw) as AiInfo;
-    if (p.headline && p.stack) return p;
-  } catch {}
-  return null;
-}
+import { parseAiSummary, type AiInfo } from "../../lib/aiSummary";
 
 const validSummary: AiInfo = {
   headline: "Senior React Developer · Acme",
@@ -57,6 +39,24 @@ describe("parseAiSummary (JobCard)", () => {
     expect(result?.level).toBe("Senior");
     expect(result?.remote).toBe("Hybrid");
     expect(result?.highlights).toContain("Startup");
+  });
+
+  it("normalises missing optional fields instead of leaving them undefined", () => {
+    const result = parseAiSummary(JSON.stringify({ headline: "Dev", stack: ["Go"] }));
+    expect(result).toEqual({ headline: "Dev", stack: ["Go"], level: "", remote: "", highlights: [] });
+  });
+
+  it("drops non-string entries and non-array highlights", () => {
+    const result = parseAiSummary(
+      JSON.stringify({ headline: "Dev", stack: ["Go", 3, null], highlights: "oops" }),
+    );
+    expect(result?.stack).toEqual(["Go"]);
+    expect(result?.highlights).toEqual([]);
+  });
+
+  it("returns null for JSON that is not an object", () => {
+    expect(parseAiSummary("null")).toBeNull();
+    expect(parseAiSummary("42")).toBeNull();
   });
 
   it("parses with empty highlights array", () => {

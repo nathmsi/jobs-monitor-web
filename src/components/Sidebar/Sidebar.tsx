@@ -10,7 +10,9 @@ import styles from "./Sidebar.module.css";
 
 interface Props {
   filters: Filters;
-  onChange: (filters: Filters) => void;
+  /** Same contract as a React state setter, so the debounced search update
+   *  never overwrites filters changed in the meantime. */
+  onChange: (next: Filters | ((prev: Filters) => Filters)) => void;
 }
 
 const ROLES_VISIBLE = 8;
@@ -26,12 +28,12 @@ export function Sidebar({ filters, onChange }: Props) {
   const isHe = i18n.language.startsWith("he");
 
   useEffect(() => {
+    const q = draft.trim();
     const id = setTimeout(() => {
-      if (draft.trim() !== filters.q) onChange({ ...filters, q: draft.trim() });
+      onChange((f) => (f.q === q ? f : { ...f, q }));
     }, 250);
     return () => clearTimeout(id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [draft]);
+  }, [draft, onChange]);
 
   useEffect(() => setDraft(filters.q), [filters.q]);
 

@@ -61,6 +61,13 @@ describe("useRegionJobs", () => {
     expect(result.current.data).toEqual(jobs);
   });
 
+  it("surfaces a fetch failure as an error state", async () => {
+    vi.spyOn(client, "getRegionJobs").mockRejectedValue(new Error("HTTP 500"));
+    const { result } = renderHook(() => useRegionJobs("all"), { wrapper: makeWrapper() });
+    await waitFor(() => expect(result.current.isError).toBe(true));
+    expect(result.current.error?.message).toBe("HTTP 500");
+  });
+
   it("does not fetch when enabled=false", () => {
     const spy = vi.spyOn(client, "getRegionJobs").mockResolvedValue([]);
     renderHook(() => useRegionJobs("all", false), { wrapper: makeWrapper() });

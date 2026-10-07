@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useEffectEvent, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { analyzeCvAi, type CvAnalysis, type MatchedOffer } from "../api/client";
@@ -216,24 +216,32 @@ function ReviewFeature({ cv, goal, lang, onBack }: { cv: string; goal: string; l
     return () => clearInterval(id);
   }, [busy, steps.length]);
 
-  // Auto-launch on mount
-  useEffect(() => {
-    run();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const abortRef = useRef<AbortController | null>(null);
 
   const run = async () => {
+    abortRef.current?.abort();
+    const ctrl = new AbortController();
+    abortRef.current = ctrl;
     setBusy(true);
     setError(null);
     setResult(null);
     try {
-      setResult(await analyzeCvAi(cv.trim(), goal.trim(), lang));
+      const analysis = await analyzeCvAi(cv.trim(), goal.trim(), lang, ctrl.signal);
+      if (!ctrl.signal.aborted) setResult(analysis);
     } catch (e) {
-      setError((e as Error).message);
+      if (!ctrl.signal.aborted) setError((e as Error).message);
     } finally {
-      setBusy(false);
+      if (!ctrl.signal.aborted) setBusy(false);
     }
   };
+
+  // Auto-launch once on mount; abort the in-flight request on unmount (also
+  // makes the StrictMode double-mount cancel its first request).
+  const autoRun = useEffectEvent(run);
+  useEffect(() => {
+    void autoRun();
+    return () => abortRef.current?.abort();
+  }, []);
 
   return (
     <div className={styles.featureContent}>
@@ -285,8 +293,14 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
   const [results, setResults] = useState<MatchedOffer[] | null>(null);
   const [currentTool, setCurrentTool] = useState<string | undefined>();
   const [hasRun, setHasRun] = useState(false);
+  const abortRef = useRef<AbortController | null>(null);
+
+  useEffect(() => () => abortRef.current?.abort(), []);
 
   const run = async () => {
+    abortRef.current?.abort();
+    const ctrl = new AbortController();
+    abortRef.current = ctrl;
     setBusy(true);
     setError(null);
     setResults(null);
@@ -301,13 +315,15 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
         onToolCall: (name) => setCurrentTool(name),
         onToolResult: () => {},
         onFinal: () => setCurrentTool("final"),
-      });
-      setResults(results);
+      }, ctrl.signal);
+      if (!ctrl.signal.aborted) setResults(results);
     } catch (e) {
-      setError((e as Error).message);
+      if (!ctrl.signal.aborted) setError((e as Error).message);
     } finally {
-      setBusy(false);
-      setCurrentTool(undefined);
+      if (!ctrl.signal.aborted) {
+        setBusy(false);
+        setCurrentTool(undefined);
+      }
     }
   };
 

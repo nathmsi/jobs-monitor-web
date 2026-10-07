@@ -71,7 +71,7 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
       if (!error && data?.preferences) {
         const remote = mergePrefs(data.preferences as Partial<JobPreferences>);
         setPrefs(remote);
-        localStorage.setItem(LOCAL_KEY, JSON.stringify(remote));
+        try { localStorage.setItem(LOCAL_KEY, JSON.stringify(remote)); } catch { /* ignore */ }
       }
     }
     load();

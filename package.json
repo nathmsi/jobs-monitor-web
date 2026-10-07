@@ -9,10 +9,11 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:unit": "vitest run",
+    "test:unit": "vitest run --exclude 'src/test/integration/**' --exclude 'e2e/**' --exclude '**/node_modules/**'",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "test:all": "vitest run && playwright test"
+    "test:all": "vitest run && playwright test",
+    "test:integration": "vitest run src/test/integration"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.116.0",
@@ -27,7 +28,9 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
+    "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { useAuth } from "../../lib/auth";
+import { useAuth } from "../../providers/auth/useAuth";
 import styles from "./AuthButton.module.css";
 
 /** Official multicolor Google "G" mark. */

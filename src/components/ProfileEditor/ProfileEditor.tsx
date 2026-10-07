@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ROLES } from "../../constants/roles";
-import { analyzeCv, normalizeProfile, type CvProfile } from "../../lib/cvAnalysis";
-import { useProfile } from "../../lib/profile";
+import { analyzeCv, normalizeProfile, type CvProfile } from "../../utils/cvAnalysis";
+import { useProfile } from "../../providers/profile/useProfile";
 import styles from "./ProfileEditor.module.css";
 
 const SENIORITY_OPTIONS = [

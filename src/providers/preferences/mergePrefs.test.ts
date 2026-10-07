@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { mergePrefs } from "./preferences";
+import { mergePrefs } from "./preferencesStorage";
 
 // Ensures roles/categories always come back as arrays even when old localStorage
 // data or Supabase returns null/undefined for those fields.

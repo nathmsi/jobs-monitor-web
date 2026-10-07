@@ -1,38 +1,14 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-  type ReactNode,
-} from "react";
+import { useCallback, useMemo, type ReactNode } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
-import { useAuth } from "./auth";
-import { normalizeProfile, type CvProfile } from "./cvAnalysis";
-import { supabase } from "./supabase";
+import { supabase } from "../../services/supabase";
+import { normalizeProfile, type CvProfile } from "../../utils/cvAnalysis";
+import { useAuth } from "../auth/useAuth";
+import { ProfileContext, type ProfileValue } from "./ProfileContext";
+import { loadLocalProfile, PROFILE_LOCAL_KEY } from "./profileStorage";
 
 // Per-user CV profile. Backed by Supabase (table profiles, RLS) when signed in,
 // localStorage otherwise. Only the extracted profile is stored — never the raw CV.
-
-const LOCAL_KEY = "cvProfile.local.v1";
-
-export function loadLocalProfile(): CvProfile | null {
-  try {
-    const raw = localStorage.getItem(LOCAL_KEY);
-    return raw ? normalizeProfile(JSON.parse(raw)) : null;
-  } catch {
-    return null;
-  }
-}
-
-interface ProfileValue {
-  ready: boolean;
-  profile: CvProfile | null;
-  saveProfile: (p: CvProfile) => void;
-  clearProfile: () => void;
-}
-
-const Ctx = createContext<ProfileValue | null>(null);
 
 export function ProfileProvider({ children }: { children: ReactNode }) {
   const { user, enabled } = useAuth();
@@ -76,7 +52,7 @@ export function ProfileProvider({ children }: { children: ReactNode }) {
           });
       } else {
         try {
-          localStorage.setItem(LOCAL_KEY, JSON.stringify(withTs));
+          localStorage.setItem(PROFILE_LOCAL_KEY, JSON.stringify(withTs));
         } catch {
           /* ignore */
         }
@@ -97,7 +73,7 @@ export function ProfileProvider({ children }: { children: ReactNode }) {
         });
     } else {
       try {
-        localStorage.removeItem(LOCAL_KEY);
+        localStorage.removeItem(PROFILE_LOCAL_KEY);
       } catch {
         /* ignore */
       }
@@ -109,11 +85,5 @@ export function ProfileProvider({ children }: { children: ReactNode }) {
     [ready, profile, saveProfile, clearProfile],
   );
 
-  return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
-}
-
-export function useProfile(): ProfileValue {
-  const ctx = useContext(Ctx);
-  if (!ctx) throw new Error("useProfile must be used within ProfileProvider");
-  return ctx;
+  return <ProfileContext.Provider value={value}>{children}</ProfileContext.Provider>;
 }

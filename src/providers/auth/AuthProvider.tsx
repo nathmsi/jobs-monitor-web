@@ -1,26 +1,8 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-  type ReactNode,
-} from "react";
-import type { Session, User } from "@supabase/supabase-js";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
+import type { Session } from "@supabase/supabase-js";
 
-import { supabase, supabaseEnabled } from "./supabase";
-
-interface AuthValue {
-  /** true once the initial session check has resolved */
-  ready: boolean;
-  /** whether Supabase is configured at all */
-  enabled: boolean;
-  user: User | null;
-  signInWithGoogle: () => Promise<void>;
-  signOut: () => Promise<void>;
-}
-
-const AuthContext = createContext<AuthValue | null>(null);
+import { supabase, supabaseEnabled } from "../../services/supabase";
+import { AuthContext, type AuthValue } from "./AuthContext";
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
@@ -59,10 +41,4 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-}
-
-export function useAuth(): AuthValue {
-  const ctx = useContext(AuthContext);
-  if (!ctx) throw new Error("useAuth must be used within <AuthProvider>");
-  return ctx;
 }

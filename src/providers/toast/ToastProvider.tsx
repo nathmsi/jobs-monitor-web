@@ -1,16 +1,14 @@
-import { createContext, useCallback, useContext, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState, type ReactNode } from "react";
 
-import styles from "./toast.module.css";
+import { ToastContext } from "./ToastContext";
+import styles from "./ToastProvider.module.css";
 
-interface ToastItem { id: number; message: string; }
+interface ToastItem {
+  id: number;
+  message: string;
+}
 
-interface ToastCtx { showToast: (msg: string) => void; }
-
-const Ctx = createContext<ToastCtx>({ showToast: () => {} });
-
-export function useToast() { return useContext(Ctx); }
-
-export function ToastProvider({ children }: { children: React.ReactNode }) {
+export function ToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<ToastItem[]>([]);
   const counter = useRef(0);
 
@@ -20,8 +18,10 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
     setTimeout(() => setToasts((t) => t.filter((x) => x.id !== id)), 2600);
   }, []);
 
+  const value = useMemo(() => ({ showToast }), [showToast]);
+
   return (
-    <Ctx.Provider value={{ showToast }}>
+    <ToastContext.Provider value={value}>
       {children}
       <div className={styles.stack} role="status" aria-live="polite">
         {toasts.map((t) => (
@@ -30,6 +30,6 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
           </div>
         ))}
       </div>
-    </Ctx.Provider>
+    </ToastContext.Provider>
   );
 }

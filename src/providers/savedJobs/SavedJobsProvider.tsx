@@ -1,70 +1,17 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-  type ReactNode,
-} from "react";
-
+import { useCallback, useMemo, type ReactNode } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
-import { useAuth } from "./auth";
-import { jobId } from "./jobFlags";
-import { supabase } from "./supabase";
-import type { Job } from "../types";
-
-// Per-user "saved" / "applied" jobs. Backed by Supabase (table saved_jobs,
-// protected by RLS) when signed in; falls back to localStorage otherwise so
-// the feature still works logged-out (per-device).
-
-export type SavedStatus = "saved" | "applied";
-
-export interface SavedItem {
-  source: string;
-  external_id: string;
-  status: SavedStatus;
-  title?: string | null;
-  company?: string | null;
-  location?: string | null;
-  url?: string | null;
-}
-
-const LOCAL_KEY = "savedJobs.local.v1";
-
-function loadLocal(): Map<string, SavedItem> {
-  try {
-    const raw = localStorage.getItem(LOCAL_KEY);
-    const arr = raw ? (JSON.parse(raw) as SavedItem[]) : [];
-    return new Map(arr.map((it) => [jobId(it.source, it.external_id), it]));
-  } catch {
-    return new Map();
-  }
-}
-
-function saveLocal(map: Map<string, SavedItem>): void {
-  try {
-    localStorage.setItem(LOCAL_KEY, JSON.stringify([...map.values()]));
-  } catch {
-    /* ignore */
-  }
-}
-
-/** The part of a Job that is stored with a saved entry. */
-export type JobSnapshot = Pick<Job, "source" | "external_id" | "title" | "location" | "url">;
-
-interface SavedJobsValue {
-  ready: boolean;
-  statusOf: (source: string, externalId: string) => SavedStatus | undefined;
-  /** Resolves to false when the remote write failed (the change is rolled back). */
-  setStatus: (job: JobSnapshot, status: SavedStatus | null, company?: string) => Promise<boolean>;
-  /** Change / remove status from an already-saved item (in "My jobs"). */
-  changeStatus: (item: SavedItem, status: SavedStatus | null) => Promise<boolean>;
-  items: SavedItem[];
-  savedCount: number;
-  appliedCount: number;
-}
-
-const Ctx = createContext<SavedJobsValue | null>(null);
+import { supabase } from "../../services/supabase";
+import { jobId } from "../../utils/jobId";
+import { useAuth } from "../auth/useAuth";
+import {
+  SavedJobsContext,
+  type JobSnapshot,
+  type SavedItem,
+  type SavedJobsValue,
+  type SavedStatus,
+} from "./SavedJobsContext";
+import { loadLocal, saveLocal } from "./savedJobsStorage";
 
 const EMPTY = new Map<string, SavedItem>();
 
@@ -182,11 +129,5 @@ export function SavedJobsProvider({ children }: { children: ReactNode }) {
     };
   }, [map, ready, setStatus, changeStatus]);
 
-  return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
-}
-
-export function useSavedJobs(): SavedJobsValue {
-  const ctx = useContext(Ctx);
-  if (!ctx) throw new Error("useSavedJobs must be used within SavedJobsProvider");
-  return ctx;
+  return <SavedJobsContext.Provider value={value}>{children}</SavedJobsContext.Provider>;
 }

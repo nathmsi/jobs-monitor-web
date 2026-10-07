@@ -7,10 +7,10 @@ const upsert = vi.fn();
 const match = vi.fn();
 let signedIn = true;
 
-vi.mock("./auth", () => ({
+vi.mock("../auth/useAuth", () => ({
   useAuth: () => ({ user: signedIn ? { id: "u1" } : null, enabled: true }),
 }));
-vi.mock("./supabase", () => ({
+vi.mock("../../services/supabase", () => ({
   supabase: {
     from: () => ({
       select: async () => ({ data: [], error: null }),
@@ -20,7 +20,8 @@ vi.mock("./supabase", () => ({
   },
 }));
 
-import { SavedJobsProvider, useSavedJobs } from "./savedJobs";
+import { SavedJobsProvider } from "./SavedJobsProvider";
+import { useSavedJobs } from "./useSavedJobs";
 
 const job = {
   source: "melio",

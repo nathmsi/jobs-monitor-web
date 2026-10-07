@@ -1,25 +1,14 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-  type ReactNode,
-} from "react";
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 
-// Per-browser memory of which offers you've opened / applied to, plus the
-// "hide seen" preference. Stored in localStorage (no backend / no login).
+import { JobFlagsContext, type JobFlags } from "./JobFlagsContext";
+
+// Per-browser memory of which offers you've opened, plus the "hide seen"
+// preference. Stored in localStorage (no backend / no login).
 
 const OPENED_KEY = "jobFlags.opened.v1";
+const HIDE_KEY = "jobFlags.hideSeen.v1";
 /** Keep the "opened" history bounded so localStorage never grows forever. */
 const MAX_OPENED = 2000;
-const HIDE_KEY = "jobFlags.hideSeen.v1";
-
-/** Stable per-offer id. */
-export function jobId(source: string, externalId: string): string {
-  return `${source}-${externalId}`;
-}
 
 function loadSet(key: string): Set<string> {
   try {
@@ -37,15 +26,6 @@ function saveSet(key: string, set: Set<string>): void {
     /* ignore quota / disabled storage */
   }
 }
-
-interface JobFlags {
-  isOpened: (id: string) => boolean;
-  markOpened: (id: string) => void;
-  hideSeen: boolean;
-  setHideSeen: (v: boolean) => void;
-}
-
-const Ctx = createContext<JobFlags | null>(null);
 
 export function JobFlagsProvider({ children }: { children: ReactNode }) {
   const [opened, setOpened] = useState<Set<string>>(() => loadSet(OPENED_KEY));
@@ -82,20 +62,9 @@ export function JobFlagsProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const value = useMemo<JobFlags>(
-    () => ({
-      isOpened: (id) => opened.has(id),
-      markOpened,
-      hideSeen,
-      setHideSeen,
-    }),
+    () => ({ isOpened: (id) => opened.has(id), markOpened, hideSeen, setHideSeen }),
     [opened, hideSeen, markOpened, setHideSeen],
   );
 
-  return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
-}
-
-export function useJobFlags(): JobFlags {
-  const ctx = useContext(Ctx);
-  if (!ctx) throw new Error("useJobFlags must be used within JobFlagsProvider");
-  return ctx;
+  return <JobFlagsContext.Provider value={value}>{children}</JobFlagsContext.Provider>;
 }

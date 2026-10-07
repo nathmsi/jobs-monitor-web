@@ -4,14 +4,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import "./i18n";
-import App from "./App.tsx";
-import { AuthProvider } from "./lib/auth.tsx";
-import { JobFlagsProvider } from "./lib/jobFlags.tsx";
-import { PreferencesProvider } from "./lib/preferences.tsx";
-import { ProfileProvider } from "./lib/profile.tsx";
-import { SavedJobsProvider } from "./lib/savedJobs.tsx";
-import { ThemeProvider } from "./lib/theme.tsx";
-import { ToastProvider } from "./lib/toast.tsx";
+import App from "./App";
+import { AuthProvider } from "./providers/auth/AuthProvider";
+import { JobFlagsProvider } from "./providers/jobFlags/JobFlagsProvider";
+import { PreferencesProvider } from "./providers/preferences/PreferencesProvider";
+import { ProfileProvider } from "./providers/profile/ProfileProvider";
+import { SavedJobsProvider } from "./providers/savedJobs/SavedJobsProvider";
+import { ThemeProvider } from "./providers/theme/ThemeProvider";
+import { ToastProvider } from "./providers/toast/ToastProvider";
 
 const queryClient = new QueryClient({
   defaultOptions: {

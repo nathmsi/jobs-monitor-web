@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import type { Cv } from "./cvs";
+import type { Cv } from "./useCvs";
 
 /** PDF → text → saved CV, with busy/error state for the upload modal. */
 export function useCvUpload(addCv: (name: string, text: string) => Promise<Cv | null>) {
@@ -13,7 +13,7 @@ export function useCvUpload(addCv: (name: string, text: string) => Promise<Cv | 
     setBusy(true);
     setError(null);
     try {
-      const { extractPdfText } = await import("./pdf");
+      const { extractPdfText } = await import("../utils/pdf");
       const text = await extractPdfText(file);
       const name = file.name.replace(/\.pdf$/i, "").slice(0, 60) || t("coach.defaultCvName");
       const cv = await addCv(name, text);

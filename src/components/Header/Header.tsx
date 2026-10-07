@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { useAuth } from "../../lib/auth";
-import { useTheme } from "../../lib/theme";
+import { useAuth } from "../../providers/auth/useAuth";
+import { useTheme } from "../../providers/theme/useTheme";
 import { SUPPORTED_LANGUAGES } from "../../i18n";
 import styles from "./Header.module.css";
 

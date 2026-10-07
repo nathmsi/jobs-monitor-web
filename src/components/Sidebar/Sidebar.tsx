@@ -3,10 +3,11 @@ import { useTranslation } from "react-i18next";
 
 import { useRegions } from "../../api/hooks";
 import { ROLES } from "../../constants/roles";
-import { regionLabel } from "../../lib/regionLabel";
-import { useJobFlags } from "../../lib/jobFlags";
-import { useSavedJobs } from "../../lib/savedJobs";
+import { regionLabel } from "../../utils/regionLabel";
+import { useJobFlags } from "../../providers/jobFlags/useJobFlags";
+import { useSavedJobs } from "../../providers/savedJobs/useSavedJobs";
 import type { Filters } from "../../types";
+import { CloseIcon, SearchIcon } from "../Icons/Icons";
 import styles from "./Sidebar.module.css";
 
 interface Props {
@@ -45,7 +46,7 @@ export function Sidebar({ filters, onChange }: Props) {
     <aside className={styles.sidebar}>
       <div className={styles.searchWrap}>
         <span className={styles.searchIcon} aria-hidden="true">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <SearchIcon size={14} strokeWidth={2.2} />
         </span>
         <input
           className={styles.search}
@@ -65,7 +66,7 @@ export function Sidebar({ filters, onChange }: Props) {
             }}
             aria-label={t("filters.clear")}
           >
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <CloseIcon size={12} strokeWidth={2.5} />
           </button>
         )}
       </div>

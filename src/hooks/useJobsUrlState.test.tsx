@@ -4,7 +4,7 @@ import { MemoryRouter, useLocation } from "react-router-dom";
 import { describe, expect, it, vi } from "vitest";
 
 const prefs = { region: "tlv", kind: "agency", roles: ["frontend"], categories: [] as string[] };
-vi.mock("./preferences", () => ({ usePreferences: () => ({ prefs }) }));
+vi.mock("../providers/preferences/usePreferences", () => ({ usePreferences: () => ({ prefs }) }));
 
 import { useJobsUrlState } from "./useJobsUrlState";
 

@@ -1,4 +1,4 @@
-import { jobText } from "../lib/jobText";
+import { jobText } from "../utils/jobText";
 import type { Job, RegionJobs, RegionInfo, SourceInfo } from "../types";
 
 // The frontend talks to the jobs-monitor-api backend, which reads the offers
@@ -12,7 +12,7 @@ export const API = (import.meta.env.VITE_API_URL ?? "http://localhost:8080").rep
 );
 
 async function getJson<T>(path: string): Promise<T> {
-  const resp = await fetch(`${API}${path}`, { cache: "no-store" });
+  const resp = await fetch(`${API}${path}`, { cache: "no-cache" });
   if (!resp.ok) throw new Error(`HTTP ${resp.status} — ${resp.statusText}`);
   return resp.json() as Promise<T>;
 }

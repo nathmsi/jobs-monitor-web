@@ -1,17 +1,19 @@
 import { memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { useToast } from "../../lib/toast";
+import { useToast } from "../../providers/toast/useToast";
 
-import { parseAiSummary } from "../../lib/aiSummary";
-import { matchScore } from "../../lib/cvAnalysis";
-import { jobId, useJobFlags } from "../../lib/jobFlags";
-import { jobText } from "../../lib/jobText";
-import { useProfile } from "../../lib/profile";
-import { useSavedJobs } from "../../lib/savedJobs";
+import { parseAiSummary } from "../../utils/aiSummary";
+import { matchScore } from "../../utils/cvAnalysis";
+import { jobId } from "../../utils/jobId";
+import { useJobFlags } from "../../providers/jobFlags/useJobFlags";
+import { jobText } from "../../utils/jobText";
+import { useProfile } from "../../providers/profile/useProfile";
+import { useSavedJobs } from "../../providers/savedJobs/useSavedJobs";
 import { Avatar } from "../Avatar/Avatar";
 import { Badge } from "../Badge/Badge";
 import type { Job, SourceInfo } from "../../types";
+import { AlertCircleIcon, BookmarkIcon, CheckIcon } from "../Icons/Icons";
 import styles from "./JobCard.module.css";
 
 interface Props {
@@ -58,7 +60,7 @@ export const JobCard = memo(function JobCard({ job, source }: Props) {
         <div className={styles.badgeRow}>
           {isExpired && (
             <Badge variant="expired">
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <AlertCircleIcon size={9} strokeWidth={2.5} />
               {t("job.expired")}
             </Badge>
           )}
@@ -71,7 +73,7 @@ export const JobCard = memo(function JobCard({ job, source }: Props) {
           )}
           {applied && (
             <Badge variant="applied">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <CheckIcon size={10} strokeWidth={2.8} />
               {t("job.applied")}
             </Badge>
           )}
@@ -157,7 +159,7 @@ export const JobCard = memo(function JobCard({ job, source }: Props) {
           }}
           aria-pressed={saved}
         >
-          <svg width="13" height="13" viewBox="0 0 24 24" fill={saved ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          <BookmarkIcon size={13} filled={saved} />
           {saved ? t("job.saved") : t("job.save")}
         </button>
         <button
@@ -170,7 +172,7 @@ export const JobCard = memo(function JobCard({ job, source }: Props) {
           }}
           aria-pressed={applied}
         >
-          {applied && <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>}
+          {applied && <CheckIcon size={12} strokeWidth={2.8} />}
           {applied ? t("job.applied") : t("job.markApplied")}
         </button>
         {job.url && (

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { parseAiSummary, type AiInfo } from "../../lib/aiSummary";
+import { parseAiSummary, type AiInfo } from "../../utils/aiSummary";
 
 const validSummary: AiInfo = {
   headline: "Senior React Developer · Acme",

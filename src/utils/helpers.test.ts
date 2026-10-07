@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { normalizeProfile } from "./cvAnalysis";
 import { errorMessage } from "./errorMessage";
 import { jobText } from "./jobText";
-import { mergePrefs } from "./preferences";
+import { mergePrefs } from "../providers/preferences/preferencesStorage";
 import { regionLabel } from "./regionLabel";
 
 describe("jobText", () => {

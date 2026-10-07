@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { loadLocalProfile } from "./profile";
+import { loadLocalProfile } from "./profileStorage";
 
 // loadLocalProfile() must reject malformed localStorage data instead of returning
 // an object with undefined skills/roles that crashes components downstream.

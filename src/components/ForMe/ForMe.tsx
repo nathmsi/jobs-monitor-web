@@ -2,9 +2,9 @@ import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-import { rankScore } from "../../lib/cvAnalysis";
-import { jobText } from "../../lib/jobText";
-import { useProfile } from "../../lib/profile";
+import { rankScore } from "../../utils/cvAnalysis";
+import { jobText } from "../../utils/jobText";
+import { useProfile } from "../../providers/profile/useProfile";
 import { JobCard } from "../JobCard/JobCard";
 import type { Job, SourceInfo } from "../../types";
 import styles from "./ForMe.module.css";

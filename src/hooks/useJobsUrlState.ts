@@ -2,7 +2,7 @@ import { useCallback, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import type { Filters } from "../types";
-import { usePreferences } from "./preferences";
+import { usePreferences } from "../providers/preferences/usePreferences";
 
 export type JobsTab = "company" | "agency" | "mine" | "forme";
 export type JobsSort = "recent" | "oldest" | "hot";

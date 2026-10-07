@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
-import { useProfile } from "../../lib/profile";
+import { useProfile } from "../../providers/profile/useProfile";
 import styles from "./ProfileButton.module.css";
 
 interface Props {

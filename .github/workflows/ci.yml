@@ -6,10 +6,19 @@ on:
   pull_request:
     branches: [main]
 
+# A newer push to the same branch/PR supersedes the running pipeline.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
 jobs:
   checks:
-    name: Lint · Type-check · Unit tests
+    name: Lint · Type-check · Unit + integration tests
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - uses: actions/checkout@v4
@@ -35,10 +44,14 @@ jobs:
       - name: Unit tests
         run: pnpm test:unit
 
+      - name: Integration tests
+        run: pnpm test:integration
+
   e2e:
     name: E2E tests (Playwright)
     runs-on: ubuntu-latest
     needs: checks
+    timeout-minutes: 20
 
     steps:
       - uses: actions/checkout@v4
@@ -58,10 +71,9 @@ jobs:
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps chromium
 
+      # Hermetic: the API is mocked and Supabase is disabled (see
+      # playwright.config.ts), so no secrets are needed here.
       - name: E2E tests
-        env:
-          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
         run: pnpm test:e2e
 
       - name: Upload test report
@@ -69,7 +81,9 @@ jobs:
         if: always()
         with:
           name: playwright-report
-          path: playwright-report/
+          path: |
+            playwright-report/
+            test-results/
           retention-days: 7
 
   deploy:

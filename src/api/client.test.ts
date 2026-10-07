@@ -48,9 +48,9 @@ describe("api client (backend API)", () => {
     expect(String(f.mock.calls[0][0])).toContain("/api/jobs?region=jerusalem");
   });
 
-  it("getRegionJobs returns [] when the request fails", async () => {
+  it("getRegionJobs rejects when the request fails", async () => {
     vi.stubGlobal("fetch", mockFetch({}, false, 404));
-    await expect(getRegionJobs("south")).resolves.toEqual([]);
+    await expect(getRegionJobs("south")).rejects.toThrow(/404/);
   });
 
   it("filterByKeyword matches ignoring spaces/hyphens", () => {

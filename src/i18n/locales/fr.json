@@ -1,8 +1,10 @@
 {
   "header": {
-    "eyebrow": "ISRAËL",
-    "title": "Tech Jobs",
-    "subtitle": "Postes tech en Israël — développement, data, DevOps, cloud, sécurité…"
+    "switchToLight": "Passer au thème clair",
+    "switchToDark": "Passer au thème sombre",
+    "mainNav": "Navigation principale",
+    "mobileNav": "Navigation mobile",
+    "menu": "Menu"
   },
   "lang": {
     "label": "Langue",
@@ -49,9 +51,12 @@
     "save": "Sauvegarder",
     "saved": "Sauvegardé",
     "unsave": "Retirer des sauvegardes",
+    "saveError": "Impossible d'enregistrer votre modification. Veuillez réessayer.",
     "savedToast": "Offre sauvegardée ★",
     "appliedToast": "Candidature enregistrée ✓",
-    "expired": "Expirée"
+    "expired": "Expirée",
+    "remote": "Télétravail",
+    "hybrid": "Hybride"
   },
   "auth": {
     "signInGoogle": "Se connecter avec Google",
@@ -71,7 +76,8 @@
     "apiTitle": "Impossible de joindre l'API.",
     "apiHint": "Vérifiez que le backend répond à",
     "generic": "Erreur : {{message}}",
-    "tryAgain": "Réessayer"
+    "tryAgain": "Réessayer",
+    "boundary": "Une erreur est survenue. Veuillez recharger la page."
   },
   "tabs": {
     "companies": "Entreprises tech",
@@ -187,6 +193,7 @@
       "Presque terminé — peaufinage de l'analyse…"
     ],
     "reading": "Lecture du PDF…",
+    "defaultCvName": "CV",
     "pdfError": "Impossible de lire ce PDF — collez le texte à la place.",
     "privacy": "Envoyé au moteur d'analyse uniquement pour cette requête — votre CV n'est pas stocké.",
     "yrs": "{{count}} ans",
@@ -294,5 +301,21 @@
     "cached": "En cache",
     "launchBtn": "Trouver mes meilleures offres",
     "modifySearch": "Modifier la recherche"
+  },
+  "cvModal": {
+    "title": "Importez votre CV",
+    "close": "Fermer",
+    "selectExisting": "Ou choisissez un CV existant",
+    "choose": "Choisir un CV…",
+    "orUpload": "Ou importez-en un nouveau",
+    "uploadStart": "Importez votre CV en PDF pour commencer",
+    "drop": "Glissez-déposez votre PDF ici",
+    "or": "ou",
+    "browse": "Parcourir les fichiers",
+    "formats": "Format accepté : PDF uniquement · 10 Mo max",
+    "cancel": "Annuler"
+  },
+  "common": {
+    "loading": "Chargement…"
   }
 }

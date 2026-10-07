@@ -1,45 +1,27 @@
+import { memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { useToast } from "../../lib/toast";
+import { useToast } from "../../providers/toast/useToast";
 
-import { matchScore } from "../../lib/cvAnalysis";
-import { jobId, useJobFlags } from "../../lib/jobFlags";
-import { useProfile } from "../../lib/profile";
-import { useSavedJobs } from "../../lib/savedJobs";
+import { parseAiSummary } from "../../utils/aiSummary";
+import { matchScore } from "../../utils/cvAnalysis";
+import { jobId } from "../../utils/jobId";
+import { useJobFlags } from "../../providers/jobFlags/useJobFlags";
+import { jobText } from "../../utils/jobText";
+import { useProfile } from "../../providers/profile/useProfile";
+import { useSavedJobs } from "../../providers/savedJobs/useSavedJobs";
 import { Avatar } from "../Avatar/Avatar";
 import { Badge } from "../Badge/Badge";
 import type { Job, SourceInfo } from "../../types";
+import { AlertCircleIcon, BookmarkIcon, CheckIcon } from "../Icons/Icons";
 import styles from "./JobCard.module.css";
-
-interface AiInfo {
-  headline: string;
-  stack: string[];
-  level: string;
-  remote: string;
-  highlights: string[];
-}
-
-function parseAiSummary(raw: string | undefined): AiInfo | null {
-  if (!raw) return null;
-  try {
-    const p = JSON.parse(raw) as AiInfo;
-    if (p.headline && p.stack) return p;
-  } catch {}
-  return null;
-}
-
-const LEVEL_COLOR: Record<string, string> = {
-  Intern: "#94a3b8", Junior: "#60a5fa", Mid: "#a78bfa",
-  Senior: "#f59e0b", Staff: "#f97316", Lead: "#ef4444",
-  Manager: "#10b981", Director: "#10b981",
-};
 
 interface Props {
   job: Job;
   source?: SourceInfo;
 }
 
-export function JobCard({ job, source }: Props) {
+export const JobCard = memo(function JobCard({ job, source }: Props) {
   const { t } = useTranslation();
   const { showToast } = useToast();
   const { isOpened, markOpened } = useJobFlags();
@@ -52,8 +34,8 @@ export function JobCard({ job, source }: Props) {
   const saved = status !== undefined;
   const applied = status === "applied";
 
-  const ai = parseAiSummary(job.ai_summary);
-  const match = matchScore(`${job.title} ${job.excerpt} ${job.description ?? ""}`, profile);
+  const ai = useMemo(() => parseAiSummary(job.ai_summary), [job.ai_summary]);
+  const match = useMemo(() => matchScore(jobText(job), profile), [job, profile]);
   const rawDesc = job.description || job.excerpt || "";
 
   const isExpired = job.is_expired;
@@ -78,7 +60,7 @@ export function JobCard({ job, source }: Props) {
         <div className={styles.badgeRow}>
           {isExpired && (
             <Badge variant="expired">
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <AlertCircleIcon size={9} strokeWidth={2.5} />
               {t("job.expired")}
             </Badge>
           )}
@@ -91,7 +73,7 @@ export function JobCard({ job, source }: Props) {
           )}
           {applied && (
             <Badge variant="applied">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <CheckIcon size={10} strokeWidth={2.8} />
               {t("job.applied")}
             </Badge>
           )}
@@ -119,13 +101,13 @@ export function JobCard({ job, source }: Props) {
           </span>
         )}
         {ai?.level && (
-          <span className={styles.levelBadge} style={{ "--lc": LEVEL_COLOR[ai.level] ?? "#94a3b8" } as React.CSSProperties}>
+          <span className={styles.levelBadge} data-level={ai.level.toLowerCase()}>
             {ai.level}
           </span>
         )}
         {ai?.remote && ai.remote !== "On-site" && (
           <span className={styles.remoteBadge}>
-            {ai.remote === "Remote" ? "Remote" : "Hybrid"}
+            {ai.remote === "Remote" ? t("job.remote") : t("job.hybrid")}
           </span>
         )}
       </div>
@@ -170,27 +152,27 @@ export function JobCard({ job, source }: Props) {
         <button
           type="button"
           className={`${styles.btn} ${saved ? styles.btnSavedOn : ""}`}
-          onClick={() => {
+          onClick={async () => {
             const next = saved ? null : "saved";
-            setStatus(job, next, source?.label);
-            if (next === "saved") showToast(t("job.savedToast"));
+            if (!(await setStatus(job, next, source?.label))) showToast(t("job.saveError"));
+            else if (next === "saved") showToast(t("job.savedToast"));
           }}
           aria-pressed={saved}
         >
-          <svg width="13" height="13" viewBox="0 0 24 24" fill={saved ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          <BookmarkIcon size={13} filled={saved} />
           {saved ? t("job.saved") : t("job.save")}
         </button>
         <button
           type="button"
           className={`${styles.btn} ${applied ? styles.btnAppliedOn : ""}`}
-          onClick={() => {
+          onClick={async () => {
             const next = applied ? "saved" : "applied";
-            setStatus(job, next, source?.label);
-            if (next === "applied") showToast(t("job.appliedToast"));
+            if (!(await setStatus(job, next, source?.label))) showToast(t("job.saveError"));
+            else if (next === "applied") showToast(t("job.appliedToast"));
           }}
           aria-pressed={applied}
         >
-          {applied && <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>}
+          {applied && <CheckIcon size={12} strokeWidth={2.8} />}
           {applied ? t("job.applied") : t("job.markApplied")}
         </button>
         {job.url && (
@@ -207,4 +189,4 @@ export function JobCard({ job, source }: Props) {
       </footer>
     </article>
   );
-}
+});

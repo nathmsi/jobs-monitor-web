@@ -1,62 +1,98 @@
 import type { Page } from '@playwright/test';
 
-export const MOCK_JOBS = [
-  {
-    source: 'melio', external_id: 'e1', title: 'Frontend Engineer',
-    location: 'Tel Aviv', excerpt: 'Build great things', description: '',
-    url: 'https://example.com/job/1', is_hot: true, is_expired: false,
-    last_updated: new Date().toISOString().slice(0, 10), is_new: true,
-    ai_summary: null,
-  },
-  {
-    source: 'monday', external_id: 'e2', title: 'Backend Developer',
-    location: 'Remote', excerpt: 'Node.js expertise needed', description: '',
-    url: 'https://example.com/job/2', is_hot: false, is_expired: false,
-    last_updated: new Date().toISOString().slice(0, 10), is_new: false,
-    ai_summary: null,
-  },
-  {
-    source: 'ness', external_id: 'e3', title: 'Expired Role',
-    location: 'Haifa', excerpt: 'Old posting', description: '',
-    url: 'https://example.com/job/3', is_hot: false, is_expired: true,
-    last_updated: '2026-01-01', is_new: false,
-    ai_summary: null,
-  },
-];
+import { MOCK_JOBS, MOCK_REGIONS, MOCK_SOURCES, type MockJob } from '../fixtures/data';
 
-export const MOCK_SOURCES = [
-  { key: 'melio', label: 'Melio', kind: 'company', category: 'fintech', site_url: 'https://melio.com', auto_fetch: true, logo: null },
-  { key: 'monday', label: 'monday.com', kind: 'company', category: 'devtools', site_url: 'https://monday.com', auto_fetch: true, logo: null },
-  { key: 'ness', label: 'Ness', kind: 'agency', category: 'staffing', site_url: 'https://ness.com', auto_fetch: true, logo: null },
-];
+/**
+ * Stateful stand-in for the jobs-monitor-api backend. It honours the query
+ * parameters the frontend sends (q, kind, category, sort, limit, offset) so
+ * specs assert on behaviour, not on canned responses.
+ */
+export interface ApiMock {
+  /** Every request made to `/api/jobs`, oldest first. */
+  jobsRequests: URL[];
+  /** Replace the dataset served from now on. */
+  setJobs(jobs: MockJob[]): void;
+  /** Make `/api/jobs` answer 500 (optionally only the full-set `limit=0` call). */
+  failJobs(scope?: 'all' | 'full-set'): void;
+  /** Stop failing. */
+  recover(): void;
+  lastJobsRequest(): URL | undefined;
+}
 
-export const MOCK_REGIONS = [
-  { key: 'all', label_en: 'All Israel', label_he: 'כל ישראל', label_fr: 'Tout Israël' },
-  { key: 'tlv', label_en: 'Tel Aviv', label_he: 'תל אביב', label_fr: 'Tel Aviv' },
-  { key: 'jerusalem', label_en: 'Jerusalem', label_he: 'ירושלים', label_fr: 'Jérusalem' },
-];
+type Failure = 'none' | 'all' | 'full-set';
 
-/** Intercept all API calls and return deterministic mock data. */
-export async function mockApi(page: Page) {
-  await page.route('**/api/jobs**', (route) =>
-    route.fulfill({
-      status: 200,
-      contentType: 'application/json',
-      body: JSON.stringify({
-        jobs: MOCK_JOBS,
-        total: MOCK_JOBS.length,
-        limit: 24,
-        offset: 0,
-        has_more: false,
+const SOURCE_BY_KEY = new Map(MOCK_SOURCES.map((s) => [s.key, s]));
+
+function matches(job: MockJob, url: URL): boolean {
+  const q = url.searchParams.get('q')?.trim().toLowerCase();
+  if (q) {
+    const hay = `${job.title} ${job.excerpt} ${job.description}`.toLowerCase();
+    if (!q.split(/\s+/).every((tok) => hay.includes(tok))) return false;
+  }
+  const kind = url.searchParams.get('kind');
+  if (kind && SOURCE_BY_KEY.get(job.source)?.kind !== kind) return false;
+  const category = url.searchParams.get('category');
+  if (category && SOURCE_BY_KEY.get(job.source)?.category !== category) return false;
+  return true;
+}
+
+function sorted(jobs: MockJob[], sort: string | null): MockJob[] {
+  if (sort === 'oldest') return [...jobs].reverse();
+  if (sort === 'hot') return [...jobs].sort((a, b) => Number(b.is_hot) - Number(a.is_hot));
+  return jobs;
+}
+
+const json = (body: unknown, status = 200) => ({
+  status,
+  contentType: 'application/json',
+  body: JSON.stringify(body),
+});
+
+export async function mockApi(page: Page, initialJobs: MockJob[] = MOCK_JOBS): Promise<ApiMock> {
+  let jobs = initialJobs;
+  let failure: Failure = 'none';
+  const jobsRequests: URL[] = [];
+
+  await page.route('**/api/jobs**', (route) => {
+    const url = new URL(route.request().url());
+    jobsRequests.push(url);
+    const limitParam = Number(url.searchParams.get('limit') ?? 30);
+    const fullSet = limitParam <= 0;
+    if (failure === 'all' || (failure === 'full-set' && fullSet)) {
+      return route.fulfill(json({ message: 'boom' }, 500));
+    }
+
+    const filtered = sorted(jobs.filter((j) => matches(j, url)), url.searchParams.get('sort'));
+    if (fullSet) {
+      return route.fulfill(json({ region: 'all', count: filtered.length, jobs: filtered }));
+    }
+    const offset = Number(url.searchParams.get('offset') ?? 0);
+    const slice = filtered.slice(offset, offset + limitParam);
+    return route.fulfill(
+      json({
+        jobs: slice,
+        total: filtered.length,
+        limit: limitParam,
+        offset,
+        has_more: offset + limitParam < filtered.length,
       }),
-    }),
-  );
+    );
+  });
 
-  await page.route('**/api/sources', (route) =>
-    route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(MOCK_SOURCES) }),
-  );
+  await page.route('**/api/sources', (route) => route.fulfill(json(MOCK_SOURCES)));
+  await page.route('**/api/regions', (route) => route.fulfill(json(MOCK_REGIONS)));
 
-  await page.route('**/api/regions', (route) =>
-    route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(MOCK_REGIONS) }),
-  );
+  return {
+    jobsRequests,
+    setJobs: (next) => {
+      jobs = next;
+    },
+    failJobs: (scope = 'all') => {
+      failure = scope;
+    },
+    recover: () => {
+      failure = 'none';
+    },
+    lastJobsRequest: () => jobsRequests.at(-1),
+  };
 }

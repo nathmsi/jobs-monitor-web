@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { useAuth } from "../../lib/auth";
-import { useTheme } from "../../lib/theme";
+import { useAuth } from "../../providers/auth/useAuth";
+import { useTheme } from "../../providers/theme/useTheme";
 import { SUPPORTED_LANGUAGES } from "../../i18n";
 import styles from "./Header.module.css";
 
@@ -51,7 +51,7 @@ export function Header() {
         </Link>
 
         {/* Navigation — hidden on mobile */}
-        <nav className={styles.nav} aria-label="Main navigation">
+        <nav className={styles.nav} aria-label={t("header.mainNav")}>
           <NavLink to="/" end className={navClass}>{t("nav.offers")}</NavLink>
           <NavLink to="/coach" className={navClass}>{t("nav.cvAnalysis")}</NavLink>
           <NavLink to="/profile" className={navClass}>{t("nav.profile")}</NavLink>
@@ -64,7 +64,8 @@ export function Header() {
             type="button"
             className={styles.themeBtn}
             onClick={() => setTheme(isDark ? "light" : "dark")}
-            title={isDark ? "Switch to light" : "Switch to dark"}
+            title={isDark ? t("header.switchToLight") : t("header.switchToDark")}
+            aria-label={isDark ? t("header.switchToLight") : t("header.switchToDark")}
           >
             {isDark ? (
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -175,7 +176,7 @@ export function Header() {
             type="button"
             className={styles.hamburger}
             onClick={() => setMobileNavOpen((v) => !v)}
-            aria-label="Menu"
+            aria-label={t("header.menu")}
             aria-expanded={mobileNavOpen}
           >
             {mobileNavOpen ? (
@@ -195,7 +196,7 @@ export function Header() {
       {mobileNavOpen && (
         <>
           <div className={styles.mobileBackdrop} onClick={() => setMobileNavOpen(false)} />
-          <nav className={styles.mobileNav} aria-label="Mobile navigation">
+          <nav className={styles.mobileNav} aria-label={t("header.mobileNav")}>
             <NavLink to="/" end className={navClass} onClick={() => setMobileNavOpen(false)}>{t("nav.offers")}</NavLink>
             <NavLink to="/coach" className={navClass} onClick={() => setMobileNavOpen(false)}>{t("nav.cvAnalysis")}</NavLink>
             <NavLink to="/profile" className={navClass} onClick={() => setMobileNavOpen(false)}>{t("nav.profile")}</NavLink>

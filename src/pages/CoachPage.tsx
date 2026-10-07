@@ -1,17 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 
-import { analyzeCvAi, type CvAnalysis, type MatchedOffer } from "../api/client";
+import { analyzeCvAi, type MatchedOffer } from "../api/client";
 import { consumeMatchStream } from "../api/stream";
 import { AgentWorkflow } from "../components/AgentWorkflow/AgentWorkflow";
 import { MatchResults } from "../components/MatchResults/MatchResults";
 import { CVAnalysisResults } from "../components/CVAnalysisResults/CVAnalysisResults";
 import { CVUploadModal } from "../components/CVUploadModal/CVUploadModal";
 import { Header } from "../components/Header/Header";
-import { useAuth } from "../lib/auth";
-import { useCvs } from "../lib/cvs";
-import { usePreferences } from "../lib/preferences";
+import { useAuth } from "../providers/auth/useAuth";
+import { useCvs } from "../hooks/useCvs";
+import { errorMessage } from "../utils/errorMessage";
+import { regionLabel } from "../utils/regionLabel";
+import { useCvUpload } from "../hooks/useCvUpload";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
+import { usePreferences } from "../providers/preferences/usePreferences";
 import { useRegions } from "../api/hooks";
+import { DocumentIcon, SearchPlusIcon } from "../components/Icons/Icons";
 import styles from "./CoachPage.module.css";
 
 type ActiveFeature = "review" | "match" | null;
@@ -23,33 +29,18 @@ export function CoachPage() {
   const { prefs } = usePreferences();
 
   const [goal, setGoal] = useState("");
-  const [busyPdf, setBusyPdf] = useState(false);
-  const [pdfError, setPdfError] = useState<string | null>(null);
   const [active, setActive] = useState<ActiveFeature>(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
 
   const cvText = selectedCv?.text ?? "";
   const isReady = cvText.trim().length >= 50;
 
+  const cvUpload = useCvUpload(addCv);
   const onPdf = async (file: File) => {
-    setBusyPdf(true);
-    setPdfError(null);
-    try {
-      const { extractPdfText } = await import("../lib/pdf");
-      const text = await extractPdfText(file);
-      const name = file.name.replace(/\.pdf$/i, "").slice(0, 60) || "CV";
-      await addCv(name, text);
-      setShowUploadModal(false);
-    } catch {
-      setPdfError(t("coach.pdfError"));
-    } finally {
-      setBusyPdf(false);
-    }
+    if (await cvUpload.upload(file)) setShowUploadModal(false);
   };
 
-  useEffect(() => {
-    document.title = t("coach.nav") + " — Tech Jobs";
-  }, [t]);
+  useDocumentTitle("coach.nav");
 
   return (
     <div className={styles.app}>
@@ -83,7 +74,7 @@ export function CoachPage() {
                 <>
                   <div className={styles.cvBarInfo}>
                     <span className={styles.cvDot} />
-                    <span className={styles.cvBarName}>{selectedCv?.name ?? "CV"}</span>
+                    <span className={styles.cvBarName}>{selectedCv?.name ?? t("coach.defaultCvName")}</span>
                     <span className={styles.cvBarReady}>{t("coach.cvReadyLabel")}</span>
                   </div>
                   <button className={styles.cvBarChange} onClick={() => setShowUploadModal(true)}>
@@ -121,7 +112,7 @@ export function CoachPage() {
               <div className={styles.featureGrid}>
                 <button className={styles.featureCard} onClick={() => setActive("review")}>
                   <div className={styles.featureIcon}>
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <DocumentIcon size={28} strokeWidth={1.7} />
                   </div>
                   <h3 className={styles.featureTitle}>{t("coach.featureReviewTitle")}</h3>
                   <p className={styles.featureDesc}>{t("coach.featureReviewDesc")}</p>
@@ -130,7 +121,7 @@ export function CoachPage() {
 
                 <button className={styles.featureCard} onClick={() => setActive("match")}>
                   <div className={styles.featureIcon}>
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    <SearchPlusIcon size={28} strokeWidth={1.7} />
                   </div>
                   <h3 className={styles.featureTitle}>{t("coach.featureMatchTitle")}</h3>
                   <p className={styles.featureDesc}>{t("coach.featureMatchDesc")}</p>
@@ -144,7 +135,7 @@ export function CoachPage() {
               <div className={styles.featureGrid}>
                 <div className={`${styles.featureCard} ${styles.featureCardDisabled}`}>
                   <div className={styles.featureIcon}>
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <DocumentIcon size={28} strokeWidth={1.7} />
                   </div>
                   <h3 className={styles.featureTitle}>{t("coach.featureReviewTitle")}</h3>
                   <p className={styles.featureDesc}>{t("coach.featureReviewDesc")}</p>
@@ -152,7 +143,7 @@ export function CoachPage() {
                 </div>
                 <div className={`${styles.featureCard} ${styles.featureCardDisabled}`}>
                   <div className={styles.featureIcon}>
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    <SearchPlusIcon size={28} strokeWidth={1.7} />
                   </div>
                   <h3 className={styles.featureTitle}>{t("coach.featureMatchTitle")}</h3>
                   <p className={styles.featureDesc}>{t("coach.featureMatchDesc")}</p>
@@ -189,8 +180,8 @@ export function CoachPage() {
         open={showUploadModal}
         onClose={() => setShowUploadModal(false)}
         onUpload={onPdf}
-        busy={busyPdf}
-        error={pdfError}
+        busy={cvUpload.busy}
+        error={cvUpload.error}
         existingCvs={cvs}
         selectedCvId={selectedId ?? undefined}
         onSelectCv={selectCv}
@@ -203,37 +194,31 @@ export function CoachPage() {
 
 function ReviewFeature({ cv, goal, lang, onBack }: { cv: string; goal: string; lang: string; onBack: () => void }) {
   const { t } = useTranslation();
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [result, setResult] = useState<CvAnalysis | null>(null);
   const [stepIdx, setStepIdx] = useState(0);
+
+  // react-query aborts the request when the feature unmounts, de-duplicates the
+  // StrictMode double mount, and reuses a finished analysis for the same inputs.
+  const analysis = useQuery({
+    queryKey: ["cv-analysis", cv.trim(), goal.trim(), lang],
+    queryFn: ({ signal }) => analyzeCvAi(cv.trim(), goal.trim(), lang, signal),
+    staleTime: Infinity,
+    retry: false,
+  });
+  const busy = analysis.isFetching;
+  const result = analysis.data ?? null;
+  const error = analysis.isError ? errorMessage(analysis.error) : null;
+  const run = () => {
+    setStepIdx(0);
+    void analysis.refetch();
+  };
 
   const steps = t("coach.loadingSteps", { returnObjects: true }) as string[];
 
   useEffect(() => {
-    if (!busy) { setStepIdx(0); return; }
+    if (!busy) return;
     const id = setInterval(() => setStepIdx((i) => (i + 1) % steps.length), 2500);
     return () => clearInterval(id);
   }, [busy, steps.length]);
-
-  // Auto-launch on mount
-  useEffect(() => {
-    run();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const run = async () => {
-    setBusy(true);
-    setError(null);
-    setResult(null);
-    try {
-      setResult(await analyzeCvAi(cv.trim(), goal.trim(), lang));
-    } catch (e) {
-      setError((e as Error).message);
-    } finally {
-      setBusy(false);
-    }
-  };
 
   return (
     <div className={styles.featureContent}>
@@ -272,7 +257,7 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
   onAdapt: () => void;
   onBack: () => void;
 }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { data: regions } = useRegions();
 
   const [localFilters, setLocalFilters] = useState({
@@ -285,8 +270,14 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
   const [results, setResults] = useState<MatchedOffer[] | null>(null);
   const [currentTool, setCurrentTool] = useState<string | undefined>();
   const [hasRun, setHasRun] = useState(false);
+  const abortRef = useRef<AbortController | null>(null);
+
+  useEffect(() => () => abortRef.current?.abort(), []);
 
   const run = async () => {
+    abortRef.current?.abort();
+    const ctrl = new AbortController();
+    abortRef.current = ctrl;
     setBusy(true);
     setError(null);
     setResults(null);
@@ -301,13 +292,15 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
         onToolCall: (name) => setCurrentTool(name),
         onToolResult: () => {},
         onFinal: () => setCurrentTool("final"),
-      });
-      setResults(results);
+      }, ctrl.signal);
+      if (!ctrl.signal.aborted) setResults(results);
     } catch (e) {
-      setError((e as Error).message);
+      if (!ctrl.signal.aborted) setError(errorMessage(e));
     } finally {
-      setBusy(false);
-      setCurrentTool(undefined);
+      if (!ctrl.signal.aborted) {
+        setBusy(false);
+        setCurrentTool(undefined);
+      }
     }
   };
 
@@ -324,8 +317,9 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
       {/* Search filters — always visible; disabled while running */}
       <div className={styles.matchFilters}>
         <div className={styles.matchFilterGroup}>
-          <label className={styles.matchFilterLabel}>{t("filters.regionLabel")}</label>
+          <label className={styles.matchFilterLabel} htmlFor="matchRegion">{t("filters.regionLabel")}</label>
           <select
+            id="matchRegion"
             className={styles.matchFilterSelect}
             value={localFilters.region}
             disabled={busy}
@@ -333,14 +327,14 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
           >
             <option value="all">{t("categories.all")}</option>
             {(regions ?? []).map((r) => (
-              <option key={r.key} value={r.key}>{r.label_en}</option>
+              <option key={r.key} value={r.key}>{regionLabel(r, i18n.language)}</option>
             ))}
           </select>
         </div>
 
         <div className={styles.matchFilterGroup}>
-          <label className={styles.matchFilterLabel}>{t("profile.prefKind")}</label>
-          <div className={styles.matchKindChips}>
+          <span className={styles.matchFilterLabel} id="matchKindLabel">{t("profile.prefKind")}</span>
+          <div className={styles.matchKindChips} role="group" aria-labelledby="matchKindLabel">
             {(["all", "company", "agency"] as const).map((k) => (
               <button
                 key={k}

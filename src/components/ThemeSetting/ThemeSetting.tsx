@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 
-import { THEME_ICONS, THEMES, useTheme } from "../../lib/theme";
+import { THEME_ICONS, THEMES } from "../../providers/theme/ThemeContext";
+import { useTheme } from "../../providers/theme/useTheme";
 import styles from "./ThemeSetting.module.css";
 
 /** Segmented System / Light / Dark control, used in the profile settings. */

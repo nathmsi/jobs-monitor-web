@@ -111,12 +111,21 @@
   color: var(--text-muted);
 }
 
+.levelBadge[data-level="intern"] { --lc: var(--level-intern); }
+.levelBadge[data-level="junior"] { --lc: var(--level-junior); }
+.levelBadge[data-level="mid"] { --lc: var(--level-mid); }
+.levelBadge[data-level="senior"] { --lc: var(--level-senior); }
+.levelBadge[data-level="staff"] { --lc: var(--level-staff); }
+.levelBadge[data-level="lead"] { --lc: var(--level-lead); }
+.levelBadge[data-level="manager"],
+.levelBadge[data-level="director"] { --lc: var(--level-manager); }
+
 .levelBadge {
   font-size: 0.68rem;
   font-weight: 800;
-  color: var(--lc, #94a3b8);
-  background: color-mix(in srgb, var(--lc, #94a3b8) 13%, transparent);
-  border: 1px solid color-mix(in srgb, var(--lc, #94a3b8) 32%, transparent);
+  color: var(--lc, var(--level-intern));
+  background: color-mix(in srgb, var(--lc, var(--level-intern)) 13%, transparent);
+  border: 1px solid color-mix(in srgb, var(--lc, var(--level-intern)) 32%, transparent);
   padding: 0.1rem 0.5rem;
   border-radius: 999px;
   letter-spacing: .04em;

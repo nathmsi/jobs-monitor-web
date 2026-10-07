@@ -1,25 +1,42 @@
-import type { Page, Locator } from '@playwright/test';
+import type { Locator, Page } from '@playwright/test';
 
-export class ProfilePagePO {
-  readonly page: Page;
-  readonly roleChips: Locator;
-  readonly regionSelect: Locator;
-  readonly savePrefsButton: Locator;
-  readonly emptyStatsCard: Locator;
+import { BasePage } from './BasePage';
+
+/** `/profile`: account, CV profile editor, job preferences, stats. */
+export class ProfilePage extends BasePage {
+  readonly heading: Locator;
   readonly signInButton: Locator;
+  readonly regionSelect: Locator;
+  readonly saveButton: Locator;
+  readonly savedNote: Locator;
+  readonly emptyStats: Locator;
+  readonly themeGroup: Locator;
 
   constructor(page: Page) {
-    this.page = page;
-    this.roleChips = page.locator('[class*="prefChip"]');
-    this.regionSelect = page.locator('[class*="prefSelect"]');
-    this.savePrefsButton = page.getByRole('button', { name: /save|enregistrer|שמור/i });
-    this.emptyStatsCard = page.locator('[class*="empty"]');
+    super(page);
+    this.heading = page.getByRole('heading', { level: 1 });
     this.signInButton = page.getByTestId('sign-in-btn').first();
+    this.regionSelect = page.getByRole('combobox', { name: 'Area' });
+    this.saveButton = page.getByRole('button', { name: 'Save preferences' });
+    this.savedNote = page.getByText('Preferences saved');
+    this.emptyStats = page.getByTestId('profile-empty-stats');
+    this.themeGroup = page.getByRole('radiogroup');
   }
 
-  async goto() {
-    await this.page.goto('/profile');
-    // Wait for the preferences chips to render (they rely on ROLES constant)
-    await this.roleChips.first().waitFor({ state: 'visible', timeout: 10_000 });
+  async goto(path = '/profile'): Promise<void> {
+    await this.page.goto(path);
+    await this.heading.waitFor();
+  }
+
+  group(name: 'Roles' | 'Source type' | 'Sectors'): Locator {
+    return this.page.getByRole('group', { name });
+  }
+
+  chip(group: Locator, name: string | RegExp): Locator {
+    return group.getByRole('button', { name });
+  }
+
+  themeOption(name: 'System' | 'Light' | 'Dark'): Locator {
+    return this.themeGroup.getByRole('radio', { name });
   }
 }

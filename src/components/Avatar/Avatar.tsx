@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { avatarColor, initials } from "../../lib/avatar";
+import { avatarColor, initials } from "../../utils/avatar";
 import type { SourceInfo } from "../../types";
 import styles from "./Avatar.module.css";
 

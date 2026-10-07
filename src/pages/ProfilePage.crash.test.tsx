@@ -3,8 +3,8 @@ import { cleanup, render, screen } from "@testing-library/react";
 import React from "react";
 
 import { ProfilePage } from "./ProfilePage";
-import type { JobPreferences } from "../lib/preferences";
-import type { CvProfile } from "../lib/cvAnalysis";
+import type { JobPreferences } from "../providers/preferences/PreferencesContext";
+import type { CvProfile } from "../utils/cvAnalysis";
 
 // ── Stable mocks ─────────────────────────────────────────────────────────────
 
@@ -28,10 +28,10 @@ vi.mock("../api/hooks", () => ({
   useSources: () => ({ data: [] }),
 }));
 
-vi.mock("../lib/auth");
-vi.mock("../lib/profile");
-vi.mock("../lib/preferences");
-vi.mock("../lib/cvs", () => ({
+vi.mock("../providers/auth/useAuth");
+vi.mock("../providers/profile/useProfile");
+vi.mock("../providers/preferences/usePreferences");
+vi.mock("../hooks/useCvs", () => ({
   useCvs: () => ({
     cvs: [],
     selectedCv: null,
@@ -40,12 +40,11 @@ vi.mock("../lib/cvs", () => ({
     addCv: vi.fn(),
   }),
 }));
-vi.mock("../lib/toast", () => ({ useToast: () => ({ showToast: vi.fn() }) }));
-vi.mock("../lib/jobFlags", () => ({
+vi.mock("../providers/toast/useToast", () => ({ useToast: () => ({ showToast: vi.fn() }) }));
+vi.mock("../providers/jobFlags/useJobFlags", () => ({
   useJobFlags: () => ({ isOpened: () => false, markOpened: vi.fn() }),
-  jobId: (s: string, e: string) => `${s}-${e}`,
 }));
-vi.mock("../lib/savedJobs", () => ({
+vi.mock("../providers/savedJobs/useSavedJobs", () => ({
   useSavedJobs: () => ({ statusOf: () => undefined, setStatus: vi.fn() }),
 }));
 
@@ -55,6 +54,9 @@ vi.mock("../components/Header/Header", () => ({
 }));
 vi.mock("../components/ProfileEditor/ProfileEditor", () => ({
   ProfileEditor: () => <div data-testid="profile-editor" />,
+}));
+vi.mock("../components/ThemeSetting/ThemeSetting", () => ({
+  ThemeSetting: () => null,
 }));
 vi.mock("../components/CVUploadModal/CVUploadModal", () => ({
   CVUploadModal: () => null,
@@ -86,9 +88,9 @@ async function setup(opts: {
   prefs?: Partial<JobPreferences>;
   profile?: CvProfile | null;
 }) {
-  const { useAuth } = await import("../lib/auth");
-  const { useProfile } = await import("../lib/profile");
-  const { usePreferences } = await import("../lib/preferences");
+  const { useAuth } = await import("../providers/auth/useAuth");
+  const { useProfile } = await import("../providers/profile/useProfile");
+  const { usePreferences } = await import("../providers/preferences/usePreferences");
 
   (useAuth as Mock).mockReturnValue(
     opts.loggedIn

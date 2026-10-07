@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { useAuth } from "../../lib/auth";
-import { useSavedJobs, type SavedStatus } from "../../lib/savedJobs";
+import { useAuth } from "../../providers/auth/useAuth";
+import { useSavedJobs } from "../../providers/savedJobs/useSavedJobs";
+import { type SavedItem, type SavedStatus } from "../../providers/savedJobs/SavedJobsContext";
+import { useToast } from "../../providers/toast/useToast";
+import { CheckIcon, CloseIcon } from "../Icons/Icons";
 import styles from "./MyJobs.module.css";
 
 type Tab = "all" | "saved" | "applied";
@@ -11,6 +14,11 @@ export function MyJobs() {
   const { t } = useTranslation();
   const { enabled, user, signInWithGoogle } = useAuth();
   const { items, changeStatus, savedCount, appliedCount } = useSavedJobs();
+  const { showToast } = useToast();
+
+  const update = async (it: SavedItem, status: SavedStatus | null) => {
+    if (!(await changeStatus(it, status))) showToast(t("job.saveError"));
+  };
   const [tab, setTab] = useState<Tab>("all");
 
   const shown = items
@@ -64,7 +72,7 @@ export function MyJobs() {
                 >
                   {it.status === "applied" ? (
                     <>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                      <CheckIcon size={10} strokeWidth={2.8} />
                       {t("job.applied")}
                     </>
                   ) : (
@@ -95,10 +103,7 @@ export function MyJobs() {
                   type="button"
                   className={styles.actionBtn}
                   onClick={() =>
-                    changeStatus(
-                      it,
-                      (it.status === "applied" ? "saved" : "applied") as SavedStatus,
-                    )
+                    update(it, (it.status === "applied" ? "saved" : "applied") as SavedStatus)
                   }
                 >
                   {it.status === "applied" ? t("mine.markSaved") : t("job.markApplied")}
@@ -106,11 +111,11 @@ export function MyJobs() {
                 <button
                   type="button"
                   className={styles.removeBtn}
-                  onClick={() => changeStatus(it, null)}
+                  onClick={() => update(it, null)}
                   aria-label={t("mine.remove")}
                   title={t("mine.remove")}
                 >
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  <CloseIcon size={13} strokeWidth={2.5} />
                 </button>
               </div>
             </li>

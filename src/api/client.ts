@@ -1,3 +1,4 @@
+import { jobText } from "../utils/jobText";
 import type { Job, RegionJobs, RegionInfo, SourceInfo } from "../types";
 
 // The frontend talks to the jobs-monitor-api backend, which reads the offers
@@ -5,13 +6,13 @@ import type { Job, RegionJobs, RegionInfo, SourceInfo } from "../types";
 // No static files, no direct DB access from the browser.
 // Base URL is set via VITE_API_URL (Vercel env in prod); defaults to the local
 // dev server. Trailing slashes are trimmed so `${API}/api/...` stays clean.
-const API = (import.meta.env.VITE_API_URL ?? "http://localhost:8080").replace(
+export const API = (import.meta.env.VITE_API_URL ?? "http://localhost:8080").replace(
   /\/+$/,
   "",
 );
 
 async function getJson<T>(path: string): Promise<T> {
-  const resp = await fetch(`${API}${path}`, { cache: "no-store" });
+  const resp = await fetch(`${API}${path}`, { cache: "no-cache" });
   if (!resp.ok) throw new Error(`HTTP ${resp.status} — ${resp.statusText}`);
   return resp.json() as Promise<T>;
 }
@@ -29,8 +30,8 @@ export interface JobQuery {
   q?: string;
   role?: string;
   category?: string;
-  kind?: string; // "company" | "agency"
-  sort?: string; // "recent" | "oldest" | "hot"
+  kind?: "company" | "agency" | "";
+  sort?: "recent" | "oldest" | "hot";
   limit?: number; // <=0 → every match
   offset?: number;
 }
@@ -76,7 +77,7 @@ export interface CvAnalysis {
     assumptions?: string;
   };
   strengths: { point: string; evidence: string }[];
-  gaps: { gap: string; why_it_matters: string; severity: "high" | "low" | "medium" | string }[];
+  gaps: { gap: string; why_it_matters: string; severity: "high" | "medium" | "low" }[];
   cv_feedback: { issue: string; fix: string; example: string }[];
   skills_to_learn: { skill: string; reason: string; how: string }[];
   action_plan: {
@@ -122,11 +123,13 @@ export async function analyzeCvAi(
   cvText: string,
   goal: string,
   lang: string,
+  signal?: AbortSignal,
 ): Promise<CvAnalysis> {
   const resp = await fetch(`${API}/api/cv/analyze`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ cvText, goal, lang }),
+    signal,
   });
   if (!resp.ok) {
     const detail = await resp.json().catch(() => null);
@@ -136,16 +139,13 @@ export async function analyzeCvAi(
 }
 
 /** Every job for a region (limit=0) — used by the client-side "For me" ranking
- *  and the profile page, which need the full set. */
+ *  and the profile page, which need the full set. Rejects on failure so
+ *  react-query surfaces the error instead of caching an empty result. */
 export async function getRegionJobs(region: string): Promise<Job[]> {
-  try {
-    const data = await getJson<RegionJobs>(
-      `/api/jobs?region=${encodeURIComponent(region)}&limit=0`,
-    );
-    return data.jobs;
-  } catch {
-    return [];
-  }
+  const data = await getJson<RegionJobs>(
+    `/api/jobs?region=${encodeURIComponent(region)}&limit=0`,
+  );
+  return data.jobs;
 }
 
 // Keep letters/digits (Latin + Hebrew), drop spaces/hyphens/punctuation so
@@ -185,6 +185,6 @@ export function filterByKeyword(jobs: Job[], query: string): Job[] {
   const tokens = queryTokens(query);
   if (tokens.length === 0) return jobs;
   return jobs.filter((j) =>
-    textMatches(`${j.title} ${j.excerpt} ${j.description ?? ""}`, tokens),
+    textMatches(jobText(j), tokens),
   );
 }

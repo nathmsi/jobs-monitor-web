@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -6,24 +6,29 @@ import { useRegionJobs, useRegions, useSources } from "../api/hooks";
 import { CVUploadModal } from "../components/CVUploadModal/CVUploadModal";
 import { Header } from "../components/Header/Header";
 import { JobCard } from "../components/JobCard/JobCard";
+import { ThemeSetting } from "../components/ThemeSetting/ThemeSetting";
 import { ProfileEditor } from "../components/ProfileEditor/ProfileEditor";
-import { useAuth } from "../lib/auth";
-import { useCvs } from "../lib/cvs";
-import { matchScore, rankScore } from "../lib/cvAnalysis";
-import { usePreferences, type JobPreferences } from "../lib/preferences";
-import { useProfile } from "../lib/profile";
+import { useAuth } from "../providers/auth/useAuth";
+import { useCvs } from "../hooks/useCvs";
+import { jobText } from "../utils/jobText";
+import { regionLabel } from "../utils/regionLabel";
+import { useCvUpload } from "../hooks/useCvUpload";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
+import { matchScore, rankScore } from "../utils/cvAnalysis";
+import { usePreferences } from "../providers/preferences/usePreferences";
+import { type JobPreferences } from "../providers/preferences/PreferencesContext";
+import { useProfile } from "../providers/profile/useProfile";
 import { ROLES } from "../constants/roles";
 import styles from "./ProfilePage.module.css";
 
 export function ProfilePage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { user, enabled, signInWithGoogle, signOut } = useAuth();
   const { profile } = useProfile();
   const { cvs, selectedCv, selectedId, selectCv, addCv } = useCvs();
   const { prefs, savePrefs } = usePreferences();
   const { data: regions } = useRegions();
   const { data: sources } = useSources();
-  const { data: jobs } = useRegionJobs("all");
 
   const [draftPrefs, setDraftPrefs] = useState<JobPreferences>(() => ({
     ...prefs,
@@ -32,9 +37,7 @@ export function ProfilePage() {
   }));
   const [prefsSaved, setPrefsSaved] = useState(false);
 
-  useEffect(() => {
-    document.title = t("profile.pageTitle") + " — Tech Jobs";
-  }, [t]);
+  useDocumentTitle("profile.pageTitle");
 
   const onSavePrefs = async () => {
     await savePrefs(draftPrefs);
@@ -57,8 +60,6 @@ export function ProfilePage() {
     }));
 
   const [showUploadModal, setShowUploadModal] = useState(false);
-  const [busyPdf, setBusyPdf] = useState(false);
-  const [pdfError, setPdfError] = useState<string | null>(null);
 
   const name =
     (user?.user_metadata?.full_name as string) ||
@@ -72,21 +73,11 @@ export function ProfilePage() {
   const cvText = selectedCv?.text ?? "";
   const hasCv = cvText.trim().length >= 50;
   const hasProfile = !!profile && Array.isArray(profile.skills) && profile.skills.length > 0;
+  const { data: jobs } = useRegionJobs("all", hasProfile);
 
+  const cvUpload = useCvUpload(addCv);
   const onPdf = async (file: File) => {
-    setBusyPdf(true);
-    setPdfError(null);
-    try {
-      const { extractPdfText } = await import("../lib/pdf");
-      const text = await extractPdfText(file);
-      const name = file.name.replace(/\.pdf$/i, "").slice(0, 60) || "CV";
-      await addCv(name, text);
-      setShowUploadModal(false);
-    } catch {
-      setPdfError(t("coach.pdfError"));
-    } finally {
-      setBusyPdf(false);
-    }
+    if (await cvUpload.upload(file)) setShowUploadModal(false);
   };
 
   const sourceByKey = useMemo(
@@ -100,7 +91,7 @@ export function ProfilePage() {
     }
     const scored = jobs
       .map((job) => {
-        const text = `${job.title} ${job.excerpt} ${job.description ?? ""}`;
+        const text = jobText(job);
         return { job, score: rankScore(text, profile), matched: matchScore(text, profile).matched };
       })
       .filter((r) => r.score > 0)
@@ -211,27 +202,29 @@ export function ProfilePage() {
 
             {/* Region */}
             <div className={styles.prefGroup}>
-              <div className={styles.prefLabel}>{t("filters.regionLabel")}</div>
+              <label className={styles.prefLabel} htmlFor="prefRegion">{t("filters.regionLabel")}</label>
               <select
+                id="prefRegion"
                 className={styles.prefSelect}
                 value={draftPrefs.region}
                 onChange={(e) => setDraftPrefs((p) => ({ ...p, region: e.target.value }))}
               >
                 <option value="all">{t("categories.all")}</option>
                 {(regions ?? []).map((r) => (
-                  <option key={r.key} value={r.key}>{r.label_en}</option>
+                  <option key={r.key} value={r.key}>{regionLabel(r, i18n.language)}</option>
                 ))}
               </select>
             </div>
 
             {/* Kind */}
             <div className={styles.prefGroup}>
-              <div className={styles.prefLabel}>{t("profile.prefKind")}</div>
-              <div className={styles.prefChips}>
+              <div className={styles.prefLabel} id="prefKindLabel">{t("profile.prefKind")}</div>
+              <div className={styles.prefChips} role="group" aria-labelledby="prefKindLabel">
                 {(["all", "company", "agency"] as const).map((k) => (
                   <button
                     key={k}
                     type="button"
+                    aria-pressed={draftPrefs.kind === k}
                     className={`${styles.prefChip} ${draftPrefs.kind === k ? styles.prefChipOn : ""}`}
                     onClick={() => setDraftPrefs((p) => ({ ...p, kind: k }))}
                   >
@@ -243,12 +236,13 @@ export function ProfilePage() {
 
             {/* Roles */}
             <div className={styles.prefGroup}>
-              <div className={styles.prefLabel}>{t("profile.roles")}</div>
-              <div className={styles.prefChips}>
+              <div className={styles.prefLabel} id="prefRolesLabel">{t("profile.roles")}</div>
+              <div className={styles.prefChips} role="group" aria-labelledby="prefRolesLabel">
                 {ROLES.map((r) => (
                   <button
                     key={r.key}
                     type="button"
+                    aria-pressed={draftPrefs.roles.includes(r.key)}
                     className={`${styles.prefChip} ${draftPrefs.roles.includes(r.key) ? styles.prefChipOn : ""}`}
                     onClick={() => togglePrefRole(r.key)}
                   >
@@ -260,12 +254,13 @@ export function ProfilePage() {
 
             {/* Categories */}
             <div className={styles.prefGroup}>
-              <div className={styles.prefLabel}>{t("profile.prefCategories")}</div>
-              <div className={styles.prefChips}>
+              <div className={styles.prefLabel} id="prefCategoriesLabel">{t("profile.prefCategories")}</div>
+              <div className={styles.prefChips} role="group" aria-labelledby="prefCategoriesLabel">
                 {(["security","fintech","data-ai","devtools","hardware","web-ecom","gaming","mobility","health"] as const).map((c) => (
                   <button
                     key={c}
                     type="button"
+                    aria-pressed={draftPrefs.categories.includes(c)}
                     className={`${styles.prefChip} ${draftPrefs.categories.includes(c) ? styles.prefChipOn : ""}`}
                     onClick={() => togglePrefCategory(c)}
                   >
@@ -276,11 +271,18 @@ export function ProfilePage() {
             </div>
 
             <div className={styles.prefFoot}>
-              {prefsSaved && <span className={styles.savedNote}>✓ {t("profile.prefSaved")}</span>}
+              {prefsSaved && <span className={styles.savedNote} role="status">✓ {t("profile.prefSaved")}</span>}
               <button className={styles.primaryBtn} onClick={onSavePrefs}>
                 {t("profile.prefSave")}
               </button>
             </div>
+          </div>
+
+          {/* Appearance */}
+          <div className={styles.sectionCard}>
+            <h2 className={styles.sectionTitle}>{t("profile.settings")}</h2>
+            <div className={styles.prefLabel}>{t("profile.theme")}</div>
+            <ThemeSetting />
           </div>
         </section>
 
@@ -288,7 +290,7 @@ export function ProfilePage() {
         <aside className={styles.aside}>
           {!hasProfile ? (
             <div className={styles.sectionCard}>
-              <p className={styles.empty}>{t("profile.emptyStats")}</p>
+              <p className={styles.empty} data-testid="profile-empty-stats">{t("profile.emptyStats")}</p>
             </div>
           ) : (
             <>
@@ -350,8 +352,8 @@ export function ProfilePage() {
         open={showUploadModal}
         onClose={() => setShowUploadModal(false)}
         onUpload={onPdf}
-        busy={busyPdf}
-        error={pdfError}
+        busy={cvUpload.busy}
+        error={cvUpload.error}
         existingCvs={cvs}
         selectedCvId={selectedId ?? undefined}
         onSelectCv={selectCv}

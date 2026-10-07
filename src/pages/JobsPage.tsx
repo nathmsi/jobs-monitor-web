@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState, type KeyboardEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
@@ -9,36 +9,43 @@ import { JobCard } from "../components/JobCard/JobCard";
 import { MyJobs } from "../components/MyJobs/MyJobs";
 import { Sidebar } from "../components/Sidebar/Sidebar";
 import { SourcesModal } from "../components/SourcesModal/SourcesModal";
-import { rankScore } from "../lib/cvAnalysis";
-import { jobId, useJobFlags } from "../lib/jobFlags";
-import { usePreferences } from "../lib/preferences";
-import { useProfile } from "../lib/profile";
-import { useSavedJobs } from "../lib/savedJobs";
-import type { Filters } from "../types";
+import { rankScore } from "../utils/cvAnalysis";
+import { jobId } from "../utils/jobId";
+import { useJobFlags } from "../providers/jobFlags/useJobFlags";
+import { errorMessage } from "../utils/errorMessage";
+import { jobText } from "../utils/jobText";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
+import { useJobsUrlState, type JobsSort } from "../hooks/useJobsUrlState";
+import { useProfile } from "../providers/profile/useProfile";
+import { useSavedJobs } from "../providers/savedJobs/useSavedJobs";
+import { CloseIcon, FilterIcon, SearchIcon } from "../components/Icons/Icons";
 import styles from "../App.module.css";
 
-type Tab = "company" | "agency" | "mine" | "forme";
+const JOBS_TABS = ["company", "agency", "mine", "forme"] as const;
+
+type ViewMode = "grid" | "list";
+const VIEW_MODE_KEY = "jobsViewMode";
+
+function readViewMode(): ViewMode {
+  try {
+    return localStorage.getItem(VIEW_MODE_KEY) === "grid" ? "grid" : "list";
+  } catch {
+    return "list";
+  }
+}
 
 export function JobsPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { prefs } = usePreferences();
+  const { filters, tab, sort, setFilters, setTab, setSort } = useJobsUrlState();
 
-  const [filters, setFilters] = useState<Filters>({
-    region: prefs.region ?? "all",
-    q: "",
-    role: prefs.roles[0],
-    category: prefs.categories[0],
-  });
   const [showAll, setShowAll] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [tab, setTab] = useState<Tab>(
-    prefs.kind === "agency" ? "agency" : "company"
-  );
-  const [sort, setSort] = useState("recent");
-  const [viewMode, setViewMode] = useState<"grid" | "list">(() => {
-    try { return (localStorage.getItem("jobsViewMode") as "grid" | "list") ?? "list"; } catch { return "list"; }
-  });
+  const [viewMode, setViewModeState] = useState<ViewMode>(readViewMode);
+  const setViewMode = (mode: ViewMode) => {
+    setViewModeState(mode);
+    try { localStorage.setItem(VIEW_MODE_KEY, mode); } catch { /* ignore */ }
+  };
 
   const { data: sources } = useSources();
   const { items: savedItems } = useSavedJobs();
@@ -46,7 +53,7 @@ export function JobsPage() {
   const { hideSeen, isOpened } = useJobFlags();
 
   const browsing = tab === "company" || tab === "agency";
-  const kind = browsing ? tab : "";
+  const kind = browsing ? tab : ("" as const);
 
   // Server-side filtered + paginated offers for the browse tabs.
   const jobsQuery = useJobsInfinite(
@@ -55,57 +62,67 @@ export function JobsPage() {
   );
 
   // Full region set (limit=0) only when the "For me" tab needs to rank locally.
-  const { data: allJobs, isLoading: allJobsLoading } = useRegionJobs(filters.region, tab === "forme");
+  const allJobsQuery = useRegionJobs(filters.region, tab === "forme");
+  const allJobs = allJobsQuery.data;
 
-  const sourceList = sources ?? [];
+  const sourceList = useMemo(() => sources ?? [], [sources]);
   const sourceByKey = useMemo(
     () => Object.fromEntries(sourceList.map((s) => [s.key, s])),
     [sourceList],
   );
 
   // Flatten the loaded pages, applying the client-side "hide seen" toggle.
-  const jobs = useMemo(() => {
+  const { jobs, hiddenCount } = useMemo(() => {
     const all = jobsQuery.data?.pages.flatMap((p) => p.jobs) ?? [];
-    if (!hideSeen) return all;
-    return all.filter((j) => !isOpened(jobId(j.source, j.external_id)));
+    if (!hideSeen) return { jobs: all, hiddenCount: 0 };
+    const visible = all.filter((j) => !isOpened(jobId(j.source, j.external_id)));
+    return { jobs: visible, hiddenCount: all.length - visible.length };
   }, [jobsQuery.data, hideSeen, isOpened]);
 
   // "For me" badge = matching offers, computed once the full set is loaded.
   const formeCount = useMemo(() => {
     if (!profile || !Array.isArray(profile.skills) || profile.skills.length === 0 || !allJobs) return null;
     return allJobs.filter(
-      (j) => rankScore(`${j.title} ${j.excerpt} ${j.description ?? ""}`, profile) > 0,
+      (j) => rankScore(jobText(j), profile) > 0,
     ).length;
   }, [allJobs, profile]);
 
-  useEffect(() => {
-    document.title = t("nav.offers") + " — Tech Jobs";
-  }, [t]);
+  useDocumentTitle("nav.offers");
+
+  // Arrow-key navigation between tabs (WAI-ARIA tabs pattern).
+  const onTabKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    const step = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+    if (!step) return;
+    const flip = document.documentElement.dir === "rtl" ? -1 : 1;
+    const next = JOBS_TABS[(JOBS_TABS.indexOf(tab) + step * flip + JOBS_TABS.length) % JOBS_TABS.length];
+    setTab(next);
+    document.getElementById(`tab-${next}`)?.focus();
+  };
 
   return (
     <div className={styles.app}>
       <Header />
 
-      <div className={styles.tabbar} role="tablist">
+      <div className={styles.tabbar} role="tablist" onKeyDown={onTabKeyDown}>
         <button
           role="tab"
+          id="tab-company"
+          aria-controls="jobs-tabpanel"
+          tabIndex={tab === "company" ? 0 : -1}
           aria-selected={tab === "company"}
           className={`${styles.tab} ${tab === "company" ? styles.tabActive : ""}`}
-          onClick={() => {
-            setTab("company");
-            setFilters((f) => ({ ...f, category: undefined }));
-          }}
+          onClick={() => setTab("company")}
         >
           {t("tabs.companies")}
         </button>
         <button
           role="tab"
+          id="tab-agency"
+          aria-controls="jobs-tabpanel"
+          tabIndex={tab === "agency" ? 0 : -1}
           aria-selected={tab === "agency"}
           className={`${styles.tab} ${tab === "agency" ? styles.tabActive : ""}`}
-          onClick={() => {
-            setTab("agency");
-            setFilters((f) => ({ ...f, category: undefined }));
-          }}
+          onClick={() => setTab("agency")}
         >
           {t("tabs.agencies")}
         </button>
@@ -114,6 +131,9 @@ export function JobsPage() {
 
         <button
           role="tab"
+          id="tab-mine"
+          aria-controls="jobs-tabpanel"
+          tabIndex={tab === "mine" ? 0 : -1}
           aria-selected={tab === "mine"}
           className={`${styles.tab} ${tab === "mine" ? styles.tabActive : ""}`}
           onClick={() => setTab("mine")}
@@ -122,6 +142,9 @@ export function JobsPage() {
         </button>
         <button
           role="tab"
+          id="tab-forme"
+          aria-controls="jobs-tabpanel"
+          tabIndex={tab === "forme" ? 0 : -1}
           aria-selected={tab === "forme"}
           className={`${styles.tab} ${tab === "forme" ? styles.tabActive : ""}`}
           onClick={() => setTab("forme")}
@@ -132,7 +155,7 @@ export function JobsPage() {
       </div>
 
       {filtersOpen && (
-        <div className={styles.filterBackdrop} onClick={() => setFiltersOpen(false)} />
+        <div className={styles.filterBackdrop} onClick={() => setFiltersOpen(false)} aria-hidden="true" />
       )}
 
       <div className={styles.layout}>
@@ -142,13 +165,10 @@ export function JobsPage() {
             onClick={() => setFiltersOpen(false)}
             aria-label={t("filters.close")}
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <CloseIcon size={14} strokeWidth={2.5} />
             {t("filters.close")}
           </button>
-          <Sidebar
-            filters={filters}
-            onChange={setFilters}
-          />
+          <Sidebar filters={filters} onChange={setFilters} />
         </div>
 
         <div className={styles.content}>
@@ -157,7 +177,7 @@ export function JobsPage() {
               className={styles.filtersToggle}
               onClick={() => setFiltersOpen((v) => !v)}
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+              <FilterIcon size={14} strokeWidth={2.2} />
               {t("filters.toggle")}
             </button>
             {browsing && (
@@ -166,7 +186,7 @@ export function JobsPage() {
                 <select
                   className={styles.sortSelect}
                   value={sort}
-                  onChange={(e) => setSort(e.target.value)}
+                  onChange={(e) => setSort(e.target.value as JobsSort)}
                   aria-label={t("sort.label")}
                 >
                   <option value="recent">{t("sort.recent")}</option>
@@ -185,7 +205,7 @@ export function JobsPage() {
             <div className={styles.viewToggle} role="group" aria-label={t("viewMode.list")}>
               <button
                 className={`${styles.viewBtn} ${viewMode === "list" ? styles.viewBtnActive : ""}`}
-                onClick={() => { setViewMode("list"); try { localStorage.setItem("jobsViewMode", "list"); } catch {} }}
+                onClick={() => setViewMode("list")}
                 aria-pressed={viewMode === "list"}
                 aria-label={t("viewMode.list")}
                 title={t("viewMode.list")}
@@ -199,7 +219,7 @@ export function JobsPage() {
               </button>
               <button
                 className={`${styles.viewBtn} ${viewMode === "grid" ? styles.viewBtnActive : ""}`}
-                onClick={() => { setViewMode("grid"); try { localStorage.setItem("jobsViewMode", "grid"); } catch {} }}
+                onClick={() => setViewMode("grid")}
                 aria-pressed={viewMode === "grid"}
                 aria-label={t("viewMode.grid")}
                 title={t("viewMode.grid")}
@@ -215,14 +235,16 @@ export function JobsPage() {
             </div>
           </div>
 
-          <div key={tab} className={styles.tabContent}>
+          <div key={tab} id="jobs-tabpanel" role="tabpanel" aria-labelledby={`tab-${tab}`} className={styles.tabContent}>
           {tab === "mine" ? (
             <MyJobs />
           ) : tab === "forme" ? (
             <ForMe
               jobs={allJobs ?? []}
               sources={sourceList}
-              loading={allJobsLoading}
+              loading={allJobsQuery.isLoading}
+              error={allJobsQuery.error}
+              onRetry={() => allJobsQuery.refetch()}
               onEditProfile={() => navigate("/profile")}
             />
           ) : (
@@ -231,7 +253,7 @@ export function JobsPage() {
                 <div className={styles.alert} role="alert">
                   <strong>{t("error.apiTitle")}</strong>
                   <br />
-                  {(jobsQuery.error as Error).message}
+                  {errorMessage(jobsQuery.error)}
                 </div>
               )}
 
@@ -251,7 +273,7 @@ export function JobsPage() {
 
               {!jobsQuery.isLoading && jobs.length === 0 && (
                 <div className={styles.noResultsEmpty}>
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <SearchIcon size={40} strokeWidth={1.5} />
                   <p className={styles.noResultsText}>{t("noResults")}</p>
                   <button
                     className={styles.noResultsClear}
@@ -267,7 +289,10 @@ export function JobsPage() {
                   <div className={styles.loadMoreMeta}>
                     {t("loadMore.showing", {
                       shown: jobs.length,
-                      total: jobsQuery.data?.pages[0]?.total ?? jobs.length,
+                      total: Math.max(
+                        (jobsQuery.data?.pages[0]?.total ?? jobs.length) - hiddenCount,
+                        jobs.length,
+                      ),
                     })}
                   </div>
                   <button

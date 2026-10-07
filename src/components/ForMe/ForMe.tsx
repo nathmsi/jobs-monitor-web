@@ -2,8 +2,9 @@ import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-import { rankScore } from "../../lib/cvAnalysis";
-import { useProfile } from "../../lib/profile";
+import { rankScore } from "../../utils/cvAnalysis";
+import { jobText } from "../../utils/jobText";
+import { useProfile } from "../../providers/profile/useProfile";
 import { JobCard } from "../JobCard/JobCard";
 import type { Job, SourceInfo } from "../../types";
 import styles from "./ForMe.module.css";
@@ -14,10 +15,12 @@ interface Props {
   jobs: Job[];
   sources: SourceInfo[];
   loading?: boolean;
+  error?: Error | null;
+  onRetry?: () => void;
   onEditProfile: () => void;
 }
 
-export function ForMe({ jobs, sources, loading = false, onEditProfile }: Props) {
+export function ForMe({ jobs, sources, loading = false, error = null, onRetry, onEditProfile }: Props) {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { profile } = useProfile();
@@ -33,10 +36,7 @@ export function ForMe({ jobs, sources, loading = false, onEditProfile }: Props) 
     return jobs
       .map((job) => ({
         job,
-        score: rankScore(
-          `${job.title} ${job.excerpt} ${job.description ?? ""}`,
-          profile,
-        ),
+        score: rankScore(jobText(job), profile),
       }))
       .filter((r) => r.score > 0)
       .sort((a, b) => b.score - a.score);
@@ -51,6 +51,20 @@ export function ForMe({ jobs, sources, loading = false, onEditProfile }: Props) 
         {Array.from({ length: 6 }).map((_, i) => (
           <div key={i} className={styles.skeletonCard} />
         ))}
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={styles.error} role="alert">
+        <strong>{t("error.apiTitle")}</strong>
+        <p>{error.message}</p>
+        {onRetry && (
+          <button type="button" className={styles.retryBtn} onClick={onRetry}>
+            {t("error.tryAgain")}
+          </button>
+        )}
       </div>
     );
   }

@@ -23,6 +23,16 @@
 - `string | null` from hooks → `string | undefined` for props: use `value ?? undefined`.
 - Run `npm run build` before shipping — catches TS errors that dev mode ignores.
 
+## Structure
+- `providers/<name>/` = `<Name>Context.ts` + `<Name>Provider.tsx` (component only) + `use<Name>.ts`. Never export a hook or constant from a provider component file.
+- `hooks/` reusable hooks, `utils/` pure functions, `services/` external clients, `api/` backend calls + react-query hooks. No `lib/` and no barrel `index.ts` files.
+- Server state (backend, Supabase) goes through react-query; no `setState` inside `useEffect` to mirror it.
+- Jobs-page state (filters/tab/sort) lives in the URL via `useJobsUrlState`.
+
+## Tests
+- Three levels, see `src/test/README.md` and `e2e/README.md`: unit (colocated, `pnpm test:unit`), integration (`src/test/integration`, `pnpm test:integration`), e2e (`e2e/tests/<page>/`, `pnpm test:e2e`).
+- E2E specs import `test`/`expect` from `e2e/fixtures` (never from `@playwright/test`), drive pages through Page Objects, and assert on behaviour.
+
 ## Tests e2e (Playwright)
 - Tout changement fonctionnel (feature, bugfix, refacto touchant l'UI ou un flux utilisateur) doit s'accompagner d'un test e2e ajouté ou mis à jour dans `e2e/tests/`.
 - Avant de finir une tâche, lire les specs concernées, les adapter au changement, puis lancer `npm run test:e2e` et confirmer qu'ils passent.

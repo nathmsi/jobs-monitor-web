@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ROLES } from "../../constants/roles";
-import { analyzeCv, type CvProfile } from "../../lib/cvAnalysis";
-import { useProfile } from "../../lib/profile";
+import { analyzeCv, normalizeProfile, type CvProfile } from "../../utils/cvAnalysis";
+import { useProfile } from "../../providers/profile/useProfile";
 import styles from "./ProfileEditor.module.css";
 
 const SENIORITY_OPTIONS = [
@@ -25,28 +25,13 @@ export function ProfileEditor({ cvText }: ProfileEditorProps) {
   const { t } = useTranslation();
   const { profile, saveProfile, clearProfile } = useProfile();
   const [draft, setDraft] = useState<CvProfile | null>(() => {
-    if (!profile) return null;
-    return {
-      ...profile,
-      skills: Array.isArray(profile.skills) ? profile.skills : [],
-      roles: Array.isArray(profile.roles) ? profile.roles : [],
-      languages: Array.isArray(profile.languages) ? profile.languages : [],
-      titles: Array.isArray(profile.titles) ? profile.titles : [],
-      locations: Array.isArray(profile.locations) ? profile.locations : [],
-      education: Array.isArray(profile.education) ? profile.education : [],
-      certifications: Array.isArray(profile.certifications) ? profile.certifications : [],
-    };
+    const existing = normalizeProfile(profile);
+    if (existing) return existing;
+    // No profile yet: auto-extract one from the selected CV.
+    return cvText && cvText.trim().length >= 50 ? analyzeCv(cvText) : null;
   });
   const [newSkill, setNewSkill] = useState("");
   const [saved, setSaved] = useState(false);
-
-  // When a CV is selected and no profile exists yet, auto-extract on mount
-  useEffect(() => {
-    if (cvText && cvText.trim().length >= 50 && !draft) {
-      setDraft(analyzeCv(cvText));
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const extract = () => {
     if (cvText && cvText.trim().length >= 50) setDraft(analyzeCv(cvText));

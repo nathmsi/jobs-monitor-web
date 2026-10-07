@@ -1,18 +1,20 @@
-import type { Page, Locator } from '@playwright/test';
+import type { Locator, Page } from '@playwright/test';
 
-export class CoachPagePO {
-  readonly page: Page;
+import { BasePage } from './BasePage';
+
+/** `/coach`: CV review and offer matching (sign-in required). */
+export class CoachPage extends BasePage {
   readonly heading: Locator;
-  readonly uploadButton: Locator;
+  readonly signInButton: Locator;
 
   constructor(page: Page) {
-    this.page = page;
+    super(page);
     this.heading = page.getByRole('heading', { level: 1 });
-    this.uploadButton = page.getByRole('button', { name: /upload|télécharger|העלה/i });
+    this.signInButton = page.getByRole('button', { name: /sign in/i }).last();
   }
 
-  async goto() {
-    await this.page.goto('/coach');
-    await this.heading.waitFor({ state: 'visible', timeout: 10_000 });
+  async goto(path = '/coach'): Promise<void> {
+    await this.page.goto(path);
+    await this.heading.waitFor();
   }
 }

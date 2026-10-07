@@ -1,4 +1,4 @@
-import type { MatchedOffer } from "./client";
+import { API, type MatchedOffer } from "./client";
 
 export interface ToolEvent {
   type: "tool_call" | "tool_result" | "final" | "error";
@@ -14,19 +14,19 @@ export interface ToolEvent {
   message?: string;
 }
 
-const API = (import.meta.env.VITE_API_URL ?? "http://localhost:8080").replace(/\/+$/, "");
-
 /** Stream agent events in real-time (JSON Lines format).
  *  Each line is a JSON event.
  */
 export async function* streamMatch(
   cvText: string,
-  filters: { region?: string; kind?: string; remote?: boolean } = {}
+  filters: { region?: string; kind?: string; remote?: boolean } = {},
+  signal?: AbortSignal,
 ): AsyncGenerator<ToolEvent> {
   const resp = await fetch(`${API}/api/match/stream`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ cvText, ...filters }),
+    signal,
   });
 
   if (!resp.ok) {
@@ -87,11 +87,12 @@ export async function consumeMatchStream(
     onToolCached?: (name: string) => void;
     onRetry?: (name: string, count: number) => void;
     onFinal?: () => void;
-  }
+  },
+  signal?: AbortSignal,
 ): Promise<MatchedOffer[] | null> {
   let matchResults: MatchedOffer[] | null = null;
 
-  for await (const event of streamMatch(cvText, filters)) {
+  for await (const event of streamMatch(cvText, filters, signal)) {
     if (event.type === "tool_call") {
       callbacks.onToolCall?.(event.name || "", event.input);
     } else if (event.type === "tool_result") {

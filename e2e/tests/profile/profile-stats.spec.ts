@@ -16,12 +16,13 @@ const PROFILE = {
 };
 
 test.describe('Profile · stats', () => {
-  test('signed out and without a profile, the stats card is empty', async ({ page }) => {
+  test('without a profile the stats card is empty', async ({ page }) => {
     const profile = new ProfilePage(page);
     await profile.goto();
 
     await expect(profile.emptyStats).toBeVisible();
-    await expect(profile.signInButton).toBeVisible();
+    // Auth is not configured in the e2e environment: no account strip / sign-in.
+    await expect(profile.signInButton).toHaveCount(0);
   });
 
   test.describe('with a stored profile', () => {

@@ -181,3 +181,112 @@ describe("JobsPage (integration)", () => {
     });
   });
 });
+
+describe("JobsPage search experience (integration)", () => {
+  const IOS = makeJob({ external_id: "i1", title: "Senior iOS Developer", description: "Swift and UIKit" });
+  const ANDROID = makeJob({ external_id: "a1", title: "Android Engineer", description: "Kotlin" });
+  const REACT = makeJob({ external_id: "r1", title: "Frontend Engineer", description: "React and Angular" });
+  const BACK = makeJob({ external_id: "b1", title: "Backend Developer", description: "Python and scenarios of radios" });
+  let backend: ReturnType<typeof mockBackend>;
+
+  beforeEach(() => {
+    vi.restoreAllMocks();
+    backend = mockBackend({ jobs: [IOS, ANDROID, REACT, BACK] });
+  });
+
+  const listTitles = () => screen.queryAllByRole("article").map((c) => within(c).getByRole("heading", { level: 3 }).textContent);
+
+  it("shows how many offers match", async () => {
+    renderWithProviders(<JobsPage />);
+    expect(await screen.findByText("4 offers")).toBeInTheDocument();
+  });
+
+  it("'Mobile' finds iOS and Android offers, not words that merely contain 'ios'", async () => {
+    const { user } = renderWithProviders(<JobsPage />);
+    await screen.findByText("Frontend Engineer");
+
+    await user.click(screen.getByRole("button", { name: "Mobile" }));
+
+    await waitFor(() => expect(listTitles()).toEqual(["Senior iOS Developer", "Android Engineer"]));
+    expect(backend.getJobsPage).toHaveBeenLastCalledWith(expect.objectContaining({ role: "mobile" }));
+  });
+
+  it("several roles can be combined", async () => {
+    const { user } = renderWithProviders(<JobsPage />);
+    await screen.findByText("Frontend Engineer");
+
+    await user.click(screen.getByRole("button", { name: "Mobile" }));
+    await user.click(screen.getByRole("button", { name: "Frontend" }));
+
+    await waitFor(() => expect(listTitles()).toHaveLength(3));
+    expect(backend.getJobsPage).toHaveBeenLastCalledWith(expect.objectContaining({ role: "mobile,frontend" }));
+    expect(screen.getByTestId("location")).toHaveTextContent("role=mobile%2Cfrontend");
+  });
+
+  it("selected roles appear as chips with a result count and can be removed one by one", async () => {
+    const { user } = renderWithProviders(<JobsPage />);
+    await screen.findByText("Frontend Engineer");
+    await user.click(screen.getByRole("button", { name: "Mobile" }));
+    await user.click(screen.getByRole("button", { name: "Frontend" }));
+    await screen.findByText("3 offers");
+
+    const chips = screen.getByRole("list", { name: "Active filters" });
+    expect(within(chips).getByText("Mobile")).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "Remove filter Mobile" }));
+
+    await waitFor(() => expect(listTitles()).toEqual(["Frontend Engineer"]));
+    expect(screen.getByText("1 offer")).toBeInTheDocument();
+  });
+
+  it("'Clear all' removes search and roles together", async () => {
+    const { user } = renderWithProviders(<JobsPage />);
+    await screen.findByText("Frontend Engineer");
+    await user.click(screen.getByRole("button", { name: "Mobile" }));
+    await user.type(screen.getByRole("textbox", { name: /search/i }), "ios");
+    await screen.findByText("1 offer");
+
+    await user.click(screen.getByRole("button", { name: "Clear all" }));
+
+    await waitFor(() => expect(listTitles()).toHaveLength(4));
+    expect(screen.getByRole("textbox", { name: /search/i })).toHaveValue("");
+  });
+
+  it("sorts by relevance as soon as something is searched, by newest otherwise", async () => {
+    const { user } = renderWithProviders(<JobsPage />);
+    await screen.findByText("Frontend Engineer");
+    const sort = screen.getByRole("combobox", { name: "Sort" });
+
+    expect(sort).toHaveValue("recent");
+    expect(within(sort).queryByRole("option", { name: "Best match" })).not.toBeInTheDocument();
+
+    await user.type(screen.getByRole("textbox", { name: /search/i }), "developer");
+
+    await waitFor(() => expect(sort).toHaveValue("relevance"));
+    expect(backend.getJobsPage).toHaveBeenLastCalledWith(expect.objectContaining({ q: "developer", sort: "relevance" }));
+  });
+
+  it("an explicit sort wins over the relevance default", async () => {
+    const { user } = renderWithProviders(<JobsPage />);
+    await screen.findByText("Frontend Engineer");
+
+    await user.selectOptions(screen.getByRole("combobox", { name: "Sort" }), "oldest");
+    await user.type(screen.getByRole("textbox", { name: /search/i }), "developer");
+
+    await waitFor(() =>
+      expect(backend.getJobsPage).toHaveBeenLastCalledWith(expect.objectContaining({ q: "developer", sort: "oldest" })),
+    );
+  });
+
+  it("applies every saved role preference, not just the first", async () => {
+    localStorage.setItem(
+      "jobPreferences.v1",
+      JSON.stringify({ region: "all", kind: "all", roles: ["mobile", "frontend"], categories: [] }),
+    );
+    renderWithProviders(<JobsPage />);
+
+    await waitFor(() => expect(listTitles()).toHaveLength(3));
+    expect(screen.getByRole("button", { name: "Mobile" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("button", { name: "Frontend" })).toHaveAttribute("aria-pressed", "true");
+  });
+});

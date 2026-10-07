@@ -13,7 +13,7 @@
     "fr": "FR"
   },
   "filters": {
-    "searchPlaceholder": "חיפוש: React, Node, .NET…",
+    "searchPlaceholder": "חיפוש: React, iOS…",
     "regionLabel": "אזור",
     "roleLabel": "תפקיד:",
     "clear": "ניקוי",
@@ -23,7 +23,10 @@
     "showLess": "הצג פחות",
     "hideSeen": "הסתר משרות שכבר נצפו",
     "appliedCount_one": "הגשה אחת",
-    "appliedCount_other": "{{count}} הגשות"
+    "appliedCount_other": "{{count}} הגשות",
+    "active": "מסננים פעילים",
+    "remove": "הסרת המסנן {{label}}",
+    "clearAll": "ניקוי הכול"
   },
   "source": {
     "refresh": "רענון",
@@ -272,7 +275,8 @@
     "label": "מיון",
     "recent": "החדשות ביותר",
     "oldest": "הישנות ביותר",
-    "hot": "החמות ביותר"
+    "hot": "החמות ביותר",
+    "relevance": "התאמה טובה ביותר"
   },
   "viewMode": {
     "grid": "תצוגת רשת",
@@ -317,5 +321,10 @@
   },
   "common": {
     "loading": "טוען…"
+  },
+  "results": {
+    "count_one": "משרה {{count}}",
+    "count_two": "{{count}} משרות",
+    "count_other": "{{count}} משרות"
   }
 }

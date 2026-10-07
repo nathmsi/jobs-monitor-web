@@ -10,9 +10,12 @@ signed-out, persisted in `localStorage`.
 
 ## Features
 
-- Offers browser: server-side search, role/region/sector filters, sorting,
-  pagination, "hide offers I've seen"; state kept in the URL so views are shareable.
-- Save offers / mark as applied (per user, or per device when signed out).
+- Offers browser: whole-word search over title, description, location and company
+  (aliases like front-end/k8s; "mobile" finds iOS/Android), several roles at once,
+  best-match sorting, active-filter chips with a result count, pagination,
+  "hide offers I've seen"; state kept in the URL so views are shareable.
+  Search runs in jobs-monitor-api (see its ARCHITECTURE.md).
+- Light offer cards: bookmark to save (then mark as applied), per user or per device when signed out.
 - **For me**: offers ranked against your CV profile.
 - **CV Coach** (sign-in): upload a PDF, get an AI review, find matching offers.
 - **Profile**: CV-derived skills/roles, job preferences, appearance (system / light / dark).

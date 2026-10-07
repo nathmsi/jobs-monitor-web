@@ -28,10 +28,11 @@ export function getRegions(): Promise<RegionInfo[]> {
 export interface JobQuery {
   region: string;
   q?: string;
+  /** One role key, or several separated by commas (any of them matches). */
   role?: string;
   category?: string;
   kind?: "company" | "agency" | "";
-  sort?: "recent" | "oldest" | "hot";
+  sort?: "relevance" | "recent" | "oldest" | "hot";
   limit?: number; // <=0 → every match
   offset?: number;
 }

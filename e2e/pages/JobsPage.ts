@@ -61,8 +61,17 @@ export class JobsPage extends BasePage {
     return card.getByRole('button', { name: /^saved?$/i });
   }
 
+  /** Only shown once the offer is saved. */
   appliedButton(card: Locator): Locator {
     return card.getByRole('button', { name: /^(i applied|applied)$/i });
+  }
+
+  activeFilters(): Locator {
+    return this.page.getByRole('list', { name: 'Active filters' });
+  }
+
+  resultCount(): Locator {
+    return this.page.getByRole('status').filter({ hasText: /\d+ offers?/ });
   }
 
   viewLink(card: Locator): Locator {

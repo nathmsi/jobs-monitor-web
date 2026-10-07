@@ -13,7 +13,7 @@
     "fr": "FR"
   },
   "filters": {
-    "searchPlaceholder": "Search: React, Node, .NET…",
+    "searchPlaceholder": "Search: React, iOS…",
     "regionLabel": "Area",
     "roleLabel": "Role:",
     "clear": "Clear",
@@ -23,7 +23,10 @@
     "showLess": "Show less",
     "hideSeen": "Hide offers I've seen",
     "appliedCount_one": "{{count}} application",
-    "appliedCount_other": "{{count}} applications"
+    "appliedCount_other": "{{count}} applications",
+    "active": "Active filters",
+    "remove": "Remove filter {{label}}",
+    "clearAll": "Clear all"
   },
   "source": {
     "refresh": "Refresh",
@@ -272,7 +275,8 @@
     "label": "Sort",
     "recent": "Newest",
     "oldest": "Oldest",
-    "hot": "Hottest"
+    "hot": "Hottest",
+    "relevance": "Best match"
   },
   "viewMode": {
     "grid": "Grid view",
@@ -317,5 +321,9 @@
   },
   "common": {
     "loading": "Loading…"
+  },
+  "results": {
+    "count_one": "{{count}} offer",
+    "count_other": "{{count}} offers"
   }
 }

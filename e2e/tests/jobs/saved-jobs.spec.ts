@@ -47,11 +47,26 @@ test.describe('Jobs · saving and applying (signed out, per device)', () => {
     await jobs.open();
 
     const card = jobs.card('Backend Developer');
+    await jobs.saveButton(card).click();
     await jobs.appliedButton(card).click();
 
     await expect(card.getByTestId('badge-applied')).toBeVisible();
     await expect(page.getByText('Marked as applied ✓')).toBeVisible();
     await expect(jobs.appliedButton(card)).toHaveAttribute('aria-pressed', 'true');
+  });
+
+  test('a card only offers "I applied" once the offer is saved', async ({ page }) => {
+    const jobs = new JobsPage(page);
+    await jobs.open();
+
+    const card = jobs.card('Backend Developer');
+    await expect(jobs.appliedButton(card)).toHaveCount(0);
+
+    await jobs.saveButton(card).click();
+    await expect(jobs.appliedButton(card)).toBeVisible();
+
+    await jobs.saveButton(card).click();
+    await expect(jobs.appliedButton(card)).toHaveCount(0);
   });
 
   test('"My offers" lists saved offers and lets you remove them', async ({ page }) => {

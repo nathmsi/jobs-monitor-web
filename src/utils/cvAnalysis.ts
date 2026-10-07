@@ -274,10 +274,12 @@ export function matchScore(
 export function roleMatches(text: string, profile: CvProfile | null): boolean {
   if (!profile || !Array.isArray(profile.roles) || profile.roles.length === 0) return false;
   const hay = norm(text);
+  // Whole-word match on the discipline-identifying terms: "ios" must not match
+  // "scenarios", and ambiguous words (java, go, test) are left to skill scoring.
   const terms = ROLES.filter((r) => profile.roles.includes(r.key)).flatMap(
-    (r) => r.terms,
+    (r) => r.strong,
   );
-  return terms.some((t) => hay.includes(t));
+  return findTerms(hay, terms);
 }
 
 /** Overall relevance for ranking: skills matches + a bonus if the role fits. */

@@ -91,7 +91,7 @@ export function Sidebar({ filters, onChange }: Props) {
         <div className={styles.label}>{t("filters.roleLabel")}</div>
         <div className={styles.chips}>
           {(showAllRoles ? ROLES : ROLES.slice(0, ROLES_VISIBLE)).map((role) => {
-            const active = filters.role === role.key;
+            const active = filters.roles.includes(role.key);
             return (
               <button
                 key={role.key}
@@ -99,7 +99,10 @@ export function Sidebar({ filters, onChange }: Props) {
                 className={`${styles.chip} ${active ? styles.chipActive : ""}`}
                 aria-pressed={active}
                 onClick={() =>
-                  onChange({ ...filters, role: active ? undefined : role.key })
+                  onChange((f) => ({
+                    ...f,
+                    roles: active ? f.roles.filter((r) => r !== role.key) : [...f.roles, role.key],
+                  }))
                 }
               >
                 {role.label}

@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 import { useJobsInfinite, useRegionJobs, useSources } from "../api/hooks";
+import { ActiveFilters } from "../components/ActiveFilters/ActiveFilters";
 import { ForMe } from "../components/ForMe/ForMe";
 import { Header } from "../components/Header/Header";
 import { JobCard } from "../components/JobCard/JobCard";
@@ -53,11 +54,12 @@ export function JobsPage() {
   const { hideSeen, isOpened } = useJobFlags();
 
   const browsing = tab === "company" || tab === "agency";
+  const searching = filters.q.trim() !== "" || filters.roles.length > 0;
   const kind = browsing ? tab : ("" as const);
 
   // Server-side filtered + paginated offers for the browse tabs.
   const jobsQuery = useJobsInfinite(
-    { region: filters.region, q: filters.q, role: filters.role, category: filters.category, kind, sort },
+    { region: filters.region, q: filters.q, role: filters.roles.join(","), category: filters.category, kind, sort },
     browsing,
   );
 
@@ -189,6 +191,9 @@ export function JobsPage() {
                   onChange={(e) => setSort(e.target.value as JobsSort)}
                   aria-label={t("sort.label")}
                 >
+                  {(searching || sort === "relevance") && (
+                    <option value="relevance">{t("sort.relevance")}</option>
+                  )}
                   <option value="recent">{t("sort.recent")}</option>
                   <option value="oldest">{t("sort.oldest")}</option>
                   <option value="hot">{t("sort.hot")}</option>
@@ -248,6 +253,12 @@ export function JobsPage() {
               onEditProfile={() => navigate("/profile")}
             />
           ) : (
+            <>
+            <ActiveFilters
+              filters={filters}
+              total={jobsQuery.data ? Math.max(jobsQuery.data.pages[0].total - hiddenCount, jobs.length) : undefined}
+              onChange={setFilters}
+            />
             <main className={viewMode === "grid" ? styles.grid : styles.gridList}>
               {jobsQuery.isError && (
                 <div className={styles.alert} role="alert">
@@ -277,7 +288,7 @@ export function JobsPage() {
                   <p className={styles.noResultsText}>{t("noResults")}</p>
                   <button
                     className={styles.noResultsClear}
-                    onClick={() => setFilters((f) => ({ ...f, q: "", role: undefined, category: undefined }))}
+                    onClick={() => setFilters((f) => ({ ...f, q: "", roles: [], category: undefined }))}
                   >
                     {t("filters.clear")}
                   </button>
@@ -307,6 +318,7 @@ export function JobsPage() {
                 </div>
               )}
             </main>
+            </>
           )}
           </div>
         </div>

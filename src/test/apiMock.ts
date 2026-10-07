@@ -1,8 +1,22 @@
 import { vi } from "vitest";
 
 import * as client from "../api/client";
+import { ROLES } from "../constants/roles";
 import type { Job, SourceInfo } from "../types";
 import { REGIONS, SOURCES } from "./factories";
+
+const escape = (t: string) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const word = (t: string) => new RegExp(`(^|[^a-z0-9])${escape(t)}($|[^a-z0-9])`, "i");
+
+/** Same rule as the API: strong terms in title/description, ambiguous ones in the title only. */
+function matchesAnyRole(job: Job, roles: string): boolean {
+  return roles.split(",").some((key) => {
+    const role = ROLES.find((r) => r.key === key);
+    if (!role) return false;
+    const text = `${job.title} ${job.excerpt} ${job.description ?? ""}`;
+    return role.strong.some((t) => word(t).test(text)) || role.title.some((t) => word(t).test(job.title));
+  });
+}
 
 interface Options {
   jobs?: Job[];
@@ -20,6 +34,7 @@ export function mockBackend({ jobs = [], sources = SOURCES }: Options = {}) {
   const getJobsPage = vi.spyOn(client, "getJobsPage").mockImplementation(async (query) => {
     let found = jobs.filter((j) => {
       if (query.kind && kindOf(j.source) !== query.kind) return false;
+      if (query.role && !matchesAnyRole(j, query.role)) return false;
       if (query.q) {
         const hay = `${j.title} ${j.excerpt} ${j.description ?? ""}`.toLowerCase();
         return query.q.toLowerCase().split(/\s+/).every((tok) => hay.includes(tok));

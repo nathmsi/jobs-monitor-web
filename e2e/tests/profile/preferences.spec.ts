@@ -56,7 +56,7 @@ test.describe('Profile · job preferences', () => {
       [STORAGE_KEYS.preferences]: { region: 'tlv', kind: 'agency', roles: ['backend'], categories: [] },
     });
     const jobs = new JobsPage(page);
-    await jobs.open();
+    await jobs.goto();
 
     await expect(jobs.tab('Staffing agencies')).toHaveAttribute('aria-selected', 'true');
     await expect(jobs.areaSelect).toHaveValue('tlv');

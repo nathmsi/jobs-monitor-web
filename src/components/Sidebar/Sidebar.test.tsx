@@ -19,7 +19,7 @@ vi.mock("../../providers/savedJobs/useSavedJobs", () => ({
 }));
 
 // Latest filters seen by the harness (mutated in an effect, read by assertions).
-const latest: { filters: Filters } = { filters: { region: "all", q: "" } };
+const latest: { filters: Filters } = { filters: { region: "all", q: "", roles: [] } };
 function Harness({ initial }: { initial: Filters }) {
   const [state, setState] = useState(initial);
   useEffect(() => {
@@ -33,7 +33,7 @@ function Harness({ initial }: { initial: Filters }) {
   );
 }
 
-const BASE: Filters = { region: "all", q: "" };
+const BASE: Filters = { region: "all", q: "", roles: [] };
 
 describe("Sidebar", () => {
   beforeEach(() => vi.useFakeTimers({ shouldAdvanceTime: true }));
@@ -58,7 +58,7 @@ describe("Sidebar", () => {
     await user.click(screen.getByRole("button", { name: "Frontend" }));
     act(() => vi.advanceTimersByTime(260));
 
-    expect(latest.filters).toMatchObject({ q: "go", role: "frontend" });
+    expect(latest.filters).toMatchObject({ q: "go", roles: ["frontend"] });
   });
 
   it("clears the search immediately with the clear button", async () => {
@@ -80,17 +80,21 @@ describe("Sidebar", () => {
     expect(screen.getByRole("textbox", { name: /search/i })).toHaveValue("external");
   });
 
-  it("toggles a role on and off", async () => {
+  it("selects several roles and toggles each one off independently", async () => {
     const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
     render(<Harness initial={BASE} />);
-    const chip = screen.getByRole("button", { name: "Frontend" });
+    const frontend = screen.getByRole("button", { name: "Frontend" });
+    const mobile = screen.getByRole("button", { name: "Mobile" });
 
-    await user.click(chip);
-    expect(latest.filters.role).toBe("frontend");
-    expect(chip).toHaveAttribute("aria-pressed", "true");
+    await user.click(frontend);
+    await user.click(mobile);
+    expect(latest.filters.roles).toEqual(["frontend", "mobile"]);
+    expect(frontend).toHaveAttribute("aria-pressed", "true");
+    expect(mobile).toHaveAttribute("aria-pressed", "true");
 
-    await user.click(chip);
-    expect(latest.filters.role).toBeUndefined();
+    await user.click(frontend);
+    expect(latest.filters.roles).toEqual(["mobile"]);
+    expect(frontend).toHaveAttribute("aria-pressed", "false");
   });
 
   it("expands the role list", async () => {

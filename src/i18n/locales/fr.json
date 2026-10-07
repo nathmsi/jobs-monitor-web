@@ -13,7 +13,7 @@
     "fr": "FR"
   },
   "filters": {
-    "searchPlaceholder": "Rechercher : React, Node, .NET…",
+    "searchPlaceholder": "Rechercher : React, iOS…",
     "regionLabel": "Zone",
     "roleLabel": "Poste :",
     "clear": "Effacer",
@@ -23,7 +23,10 @@
     "showLess": "Voir moins",
     "hideSeen": "Masquer les offres déjà vues",
     "appliedCount_one": "{{count}} candidature",
-    "appliedCount_other": "{{count}} candidatures"
+    "appliedCount_other": "{{count}} candidatures",
+    "active": "Filtres actifs",
+    "remove": "Retirer le filtre {{label}}",
+    "clearAll": "Tout effacer"
   },
   "source": {
     "refresh": "Actualiser",
@@ -272,7 +275,8 @@
     "label": "Trier",
     "recent": "Plus récentes",
     "oldest": "Plus anciennes",
-    "hot": "Plus populaires"
+    "hot": "Plus populaires",
+    "relevance": "Pertinence"
   },
   "viewMode": {
     "grid": "Vue grille",
@@ -317,5 +321,9 @@
   },
   "common": {
     "loading": "Chargement…"
+  },
+  "results": {
+    "count_one": "{{count}} offre",
+    "count_other": "{{count}} offres"
   }
 }

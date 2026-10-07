@@ -50,6 +50,6 @@ export interface RegionInfo {
 export interface Filters {
   region: string;
   q: string;
-  role?: string; // active role preset key (OR-matches its keywords)
+  roles: string[]; // active role preset keys (any of them matches)
   category?: string; // active company category key (undefined = all)
 }

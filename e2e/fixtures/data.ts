@@ -79,6 +79,35 @@ export const REACT_JOB = makeJob({
   description: 'We build with React and TypeScript every day.',
 });
 
+/** Offers for the search scenarios (mobile / frontend / backend disciplines). */
+export const IOS_JOB = makeJob({
+  external_id: 's1',
+  title: 'Senior iOS Developer',
+  description: 'Build the app in Swift.',
+});
+
+export const ANDROID_JOB = makeJob({
+  external_id: 's2',
+  source: 'monday',
+  title: 'Android Engineer',
+  description: 'Kotlin and Jetpack Compose.',
+});
+
+export const ANGULAR_JOB = makeJob({
+  external_id: 's3',
+  title: 'Web Engineer',
+  description: 'You will work with Angular and RxJS.',
+});
+
+/** Mentions "scenarios" and "radios": must NOT be found by an "ios" search. */
+export const DECOY_JOB = makeJob({
+  external_id: 's4',
+  title: 'Backend Developer',
+  description: 'Handle many scenarios; ship to radios and studios.',
+});
+
+export const SEARCH_JOBS: MockJob[] = [IOS_JOB, ANDROID_JOB, ANGULAR_JOB, DECOY_JOB];
+
 /** `count` generic offers, used to exercise pagination. */
 export function makeJobs(count: number): MockJob[] {
   return Array.from({ length: count }, (_, i) =>

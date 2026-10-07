@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 import { rankScore } from "../../lib/cvAnalysis";
+import { jobText } from "../../lib/jobText";
 import { useProfile } from "../../lib/profile";
 import { JobCard } from "../JobCard/JobCard";
 import type { Job, SourceInfo } from "../../types";
@@ -35,10 +36,7 @@ export function ForMe({ jobs, sources, loading = false, error = null, onRetry, o
     return jobs
       .map((job) => ({
         job,
-        score: rankScore(
-          `${job.title} ${job.excerpt} ${job.description ?? ""}`,
-          profile,
-        ),
+        score: rankScore(jobText(job), profile),
       }))
       .filter((r) => r.score > 0)
       .sort((a, b) => b.score - a.score);

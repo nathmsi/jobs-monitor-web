@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
@@ -11,31 +11,20 @@ import { Sidebar } from "../components/Sidebar/Sidebar";
 import { SourcesModal } from "../components/SourcesModal/SourcesModal";
 import { rankScore } from "../lib/cvAnalysis";
 import { jobId, useJobFlags } from "../lib/jobFlags";
-import { usePreferences } from "../lib/preferences";
+import { jobText } from "../lib/jobText";
+import { useDocumentTitle } from "../lib/useDocumentTitle";
+import { useJobsUrlState, type JobsSort } from "../lib/useJobsUrlState";
 import { useProfile } from "../lib/profile";
 import { useSavedJobs } from "../lib/savedJobs";
-import type { Filters } from "../types";
 import styles from "../App.module.css";
-
-type Tab = "company" | "agency" | "mine" | "forme";
 
 export function JobsPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { prefs } = usePreferences();
+  const { filters, tab, sort, setFilters, setTab, setSort } = useJobsUrlState();
 
-  const [filters, setFilters] = useState<Filters>({
-    region: prefs.region ?? "all",
-    q: "",
-    role: prefs.roles[0],
-    category: prefs.categories[0],
-  });
   const [showAll, setShowAll] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [tab, setTab] = useState<Tab>(
-    prefs.kind === "agency" ? "agency" : "company"
-  );
-  const [sort, setSort] = useState("recent");
   const [viewMode, setViewMode] = useState<"grid" | "list">(() => {
     try { return (localStorage.getItem("jobsViewMode") as "grid" | "list") ?? "list"; } catch { return "list"; }
   });
@@ -65,23 +54,22 @@ export function JobsPage() {
   );
 
   // Flatten the loaded pages, applying the client-side "hide seen" toggle.
-  const jobs = useMemo(() => {
+  const { jobs, hiddenCount } = useMemo(() => {
     const all = jobsQuery.data?.pages.flatMap((p) => p.jobs) ?? [];
-    if (!hideSeen) return all;
-    return all.filter((j) => !isOpened(jobId(j.source, j.external_id)));
+    if (!hideSeen) return { jobs: all, hiddenCount: 0 };
+    const visible = all.filter((j) => !isOpened(jobId(j.source, j.external_id)));
+    return { jobs: visible, hiddenCount: all.length - visible.length };
   }, [jobsQuery.data, hideSeen, isOpened]);
 
   // "For me" badge = matching offers, computed once the full set is loaded.
   const formeCount = useMemo(() => {
     if (!profile || !Array.isArray(profile.skills) || profile.skills.length === 0 || !allJobs) return null;
     return allJobs.filter(
-      (j) => rankScore(`${j.title} ${j.excerpt} ${j.description ?? ""}`, profile) > 0,
+      (j) => rankScore(jobText(j), profile) > 0,
     ).length;
   }, [allJobs, profile]);
 
-  useEffect(() => {
-    document.title = t("nav.offers") + " — Tech Jobs";
-  }, [t]);
+  useDocumentTitle("nav.offers");
 
   return (
     <div className={styles.app}>
@@ -92,10 +80,7 @@ export function JobsPage() {
           role="tab"
           aria-selected={tab === "company"}
           className={`${styles.tab} ${tab === "company" ? styles.tabActive : ""}`}
-          onClick={() => {
-            setTab("company");
-            setFilters((f) => ({ ...f, category: undefined }));
-          }}
+          onClick={() => setTab("company")}
         >
           {t("tabs.companies")}
         </button>
@@ -103,10 +88,7 @@ export function JobsPage() {
           role="tab"
           aria-selected={tab === "agency"}
           className={`${styles.tab} ${tab === "agency" ? styles.tabActive : ""}`}
-          onClick={() => {
-            setTab("agency");
-            setFilters((f) => ({ ...f, category: undefined }));
-          }}
+          onClick={() => setTab("agency")}
         >
           {t("tabs.agencies")}
         </button>
@@ -164,7 +146,7 @@ export function JobsPage() {
                 <select
                   className={styles.sortSelect}
                   value={sort}
-                  onChange={(e) => setSort(e.target.value)}
+                  onChange={(e) => setSort(e.target.value as JobsSort)}
                   aria-label={t("sort.label")}
                 >
                   <option value="recent">{t("sort.recent")}</option>
@@ -267,7 +249,10 @@ export function JobsPage() {
                   <div className={styles.loadMoreMeta}>
                     {t("loadMore.showing", {
                       shown: jobs.length,
-                      total: jobsQuery.data?.pages[0]?.total ?? jobs.length,
+                      total: Math.max(
+                        (jobsQuery.data?.pages[0]?.total ?? jobs.length) - hiddenCount,
+                        jobs.length,
+                      ),
                     })}
                   </div>
                   <button

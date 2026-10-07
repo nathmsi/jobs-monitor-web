@@ -188,6 +188,7 @@
       "Presque terminé — peaufinage de l'analyse…"
     ],
     "reading": "Lecture du PDF…",
+    "defaultCvName": "CV",
     "pdfError": "Impossible de lire ce PDF — collez le texte à la place.",
     "privacy": "Envoyé au moteur d'analyse uniquement pour cette requête — votre CV n'est pas stocké.",
     "yrs": "{{count}} ans",

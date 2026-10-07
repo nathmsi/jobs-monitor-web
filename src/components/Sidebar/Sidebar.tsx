@@ -35,7 +35,12 @@ export function Sidebar({ filters, onChange }: Props) {
     return () => clearTimeout(id);
   }, [draft, onChange]);
 
-  useEffect(() => setDraft(filters.q), [filters.q]);
+  // Adopt external changes to the query (e.g. "clear filters") while rendering.
+  const [syncedQ, setSyncedQ] = useState(filters.q);
+  if (filters.q !== syncedQ) {
+    setSyncedQ(filters.q);
+    setDraft(filters.q);
+  }
 
   return (
     <aside className={styles.sidebar}>

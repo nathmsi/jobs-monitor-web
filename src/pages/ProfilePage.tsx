@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -9,6 +9,9 @@ import { JobCard } from "../components/JobCard/JobCard";
 import { ProfileEditor } from "../components/ProfileEditor/ProfileEditor";
 import { useAuth } from "../lib/auth";
 import { useCvs } from "../lib/cvs";
+import { jobText } from "../lib/jobText";
+import { useCvUpload } from "../lib/useCvUpload";
+import { useDocumentTitle } from "../lib/useDocumentTitle";
 import { matchScore, rankScore } from "../lib/cvAnalysis";
 import { usePreferences, type JobPreferences } from "../lib/preferences";
 import { useProfile } from "../lib/profile";
@@ -31,9 +34,7 @@ export function ProfilePage() {
   }));
   const [prefsSaved, setPrefsSaved] = useState(false);
 
-  useEffect(() => {
-    document.title = t("profile.pageTitle") + " — Tech Jobs";
-  }, [t]);
+  useDocumentTitle("profile.pageTitle");
 
   const onSavePrefs = async () => {
     await savePrefs(draftPrefs);
@@ -56,8 +57,6 @@ export function ProfilePage() {
     }));
 
   const [showUploadModal, setShowUploadModal] = useState(false);
-  const [busyPdf, setBusyPdf] = useState(false);
-  const [pdfError, setPdfError] = useState<string | null>(null);
 
   const name =
     (user?.user_metadata?.full_name as string) ||
@@ -73,20 +72,9 @@ export function ProfilePage() {
   const hasProfile = !!profile && Array.isArray(profile.skills) && profile.skills.length > 0;
   const { data: jobs } = useRegionJobs("all", hasProfile);
 
+  const cvUpload = useCvUpload(addCv);
   const onPdf = async (file: File) => {
-    setBusyPdf(true);
-    setPdfError(null);
-    try {
-      const { extractPdfText } = await import("../lib/pdf");
-      const text = await extractPdfText(file);
-      const name = file.name.replace(/\.pdf$/i, "").slice(0, 60) || "CV";
-      await addCv(name, text);
-      setShowUploadModal(false);
-    } catch {
-      setPdfError(t("coach.pdfError"));
-    } finally {
-      setBusyPdf(false);
-    }
+    if (await cvUpload.upload(file)) setShowUploadModal(false);
   };
 
   const sourceByKey = useMemo(
@@ -100,7 +88,7 @@ export function ProfilePage() {
     }
     const scored = jobs
       .map((job) => {
-        const text = `${job.title} ${job.excerpt} ${job.description ?? ""}`;
+        const text = jobText(job);
         return { job, score: rankScore(text, profile), matched: matchScore(text, profile).matched };
       })
       .filter((r) => r.score > 0)
@@ -350,8 +338,8 @@ export function ProfilePage() {
         open={showUploadModal}
         onClose={() => setShowUploadModal(false)}
         onUpload={onPdf}
-        busy={busyPdf}
-        error={pdfError}
+        busy={cvUpload.busy}
+        error={cvUpload.error}
         existingCvs={cvs}
         selectedCvId={selectedId ?? undefined}
         onSelectCv={selectCv}

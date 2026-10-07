@@ -10,6 +10,8 @@ import { CVUploadModal } from "../components/CVUploadModal/CVUploadModal";
 import { Header } from "../components/Header/Header";
 import { useAuth } from "../lib/auth";
 import { useCvs } from "../lib/cvs";
+import { useCvUpload } from "../lib/useCvUpload";
+import { useDocumentTitle } from "../lib/useDocumentTitle";
 import { usePreferences } from "../lib/preferences";
 import { useRegions } from "../api/hooks";
 import styles from "./CoachPage.module.css";
@@ -23,33 +25,18 @@ export function CoachPage() {
   const { prefs } = usePreferences();
 
   const [goal, setGoal] = useState("");
-  const [busyPdf, setBusyPdf] = useState(false);
-  const [pdfError, setPdfError] = useState<string | null>(null);
   const [active, setActive] = useState<ActiveFeature>(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
 
   const cvText = selectedCv?.text ?? "";
   const isReady = cvText.trim().length >= 50;
 
+  const cvUpload = useCvUpload(addCv);
   const onPdf = async (file: File) => {
-    setBusyPdf(true);
-    setPdfError(null);
-    try {
-      const { extractPdfText } = await import("../lib/pdf");
-      const text = await extractPdfText(file);
-      const name = file.name.replace(/\.pdf$/i, "").slice(0, 60) || "CV";
-      await addCv(name, text);
-      setShowUploadModal(false);
-    } catch {
-      setPdfError(t("coach.pdfError"));
-    } finally {
-      setBusyPdf(false);
-    }
+    if (await cvUpload.upload(file)) setShowUploadModal(false);
   };
 
-  useEffect(() => {
-    document.title = t("coach.nav") + " — Tech Jobs";
-  }, [t]);
+  useDocumentTitle("coach.nav");
 
   return (
     <div className={styles.app}>
@@ -83,7 +70,7 @@ export function CoachPage() {
                 <>
                   <div className={styles.cvBarInfo}>
                     <span className={styles.cvDot} />
-                    <span className={styles.cvBarName}>{selectedCv?.name ?? "CV"}</span>
+                    <span className={styles.cvBarName}>{selectedCv?.name ?? t("coach.defaultCvName")}</span>
                     <span className={styles.cvBarReady}>{t("coach.cvReadyLabel")}</span>
                   </div>
                   <button className={styles.cvBarChange} onClick={() => setShowUploadModal(true)}>
@@ -189,8 +176,8 @@ export function CoachPage() {
         open={showUploadModal}
         onClose={() => setShowUploadModal(false)}
         onUpload={onPdf}
-        busy={busyPdf}
-        error={pdfError}
+        busy={cvUpload.busy}
+        error={cvUpload.error}
         existingCvs={cvs}
         selectedCvId={selectedId ?? undefined}
         onSelectCv={selectCv}
@@ -211,7 +198,7 @@ function ReviewFeature({ cv, goal, lang, onBack }: { cv: string; goal: string; l
   const steps = t("coach.loadingSteps", { returnObjects: true }) as string[];
 
   useEffect(() => {
-    if (!busy) { setStepIdx(0); return; }
+    if (!busy) return;
     const id = setInterval(() => setStepIdx((i) => (i + 1) % steps.length), 2500);
     return () => clearInterval(id);
   }, [busy, steps.length]);
@@ -223,6 +210,7 @@ function ReviewFeature({ cv, goal, lang, onBack }: { cv: string; goal: string; l
     const ctrl = new AbortController();
     abortRef.current = ctrl;
     setBusy(true);
+    setStepIdx(0);
     setError(null);
     setResult(null);
     try {

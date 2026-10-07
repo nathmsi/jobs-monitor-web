@@ -96,4 +96,17 @@ test.describe('Jobs page', () => {
     await save.click();
     await expect(card.getByRole('button', { pressed: true }).first()).toBeVisible();
   });
+
+  test('selected tab and sort are kept in the URL and survive a reload', async ({ page }) => {
+    const po = new JobsPagePO(page);
+    await po.goto();
+    await po.waitForJobs();
+
+    await page.getByRole('tab', { name: /agenc/i }).click();
+    await expect(page).toHaveURL(/tab=agency/);
+
+    await page.reload();
+    await po.waitForJobs();
+    await expect(page.getByRole('tab', { name: /agenc/i })).toHaveAttribute('aria-selected', 'true');
+  });
 });

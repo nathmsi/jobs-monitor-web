@@ -1,3 +1,4 @@
+import { memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useToast } from "../../lib/toast";
@@ -5,6 +6,7 @@ import { useToast } from "../../lib/toast";
 import { parseAiSummary } from "../../lib/aiSummary";
 import { matchScore } from "../../lib/cvAnalysis";
 import { jobId, useJobFlags } from "../../lib/jobFlags";
+import { jobText } from "../../lib/jobText";
 import { useProfile } from "../../lib/profile";
 import { useSavedJobs } from "../../lib/savedJobs";
 import { Avatar } from "../Avatar/Avatar";
@@ -23,7 +25,7 @@ interface Props {
   source?: SourceInfo;
 }
 
-export function JobCard({ job, source }: Props) {
+export const JobCard = memo(function JobCard({ job, source }: Props) {
   const { t } = useTranslation();
   const { showToast } = useToast();
   const { isOpened, markOpened } = useJobFlags();
@@ -36,8 +38,8 @@ export function JobCard({ job, source }: Props) {
   const saved = status !== undefined;
   const applied = status === "applied";
 
-  const ai = parseAiSummary(job.ai_summary);
-  const match = matchScore(`${job.title} ${job.excerpt} ${job.description ?? ""}`, profile);
+  const ai = useMemo(() => parseAiSummary(job.ai_summary), [job.ai_summary]);
+  const match = useMemo(() => matchScore(jobText(job), profile), [job, profile]);
   const rawDesc = job.description || job.excerpt || "";
 
   const isExpired = job.is_expired;
@@ -191,4 +193,4 @@ export function JobCard({ job, source }: Props) {
       </footer>
     </article>
   );
-}
+});

@@ -188,6 +188,7 @@
       "Almost there — polishing the review…"
     ],
     "reading": "Reading PDF…",
+    "defaultCvName": "CV",
     "pdfError": "Could not read this PDF — paste the text instead.",
     "privacy": "Sent to the analysis engine only for this request — your CV is not stored.",
     "yrs": "{{count}} yrs",

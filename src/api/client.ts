@@ -1,3 +1,4 @@
+import { jobText } from "../lib/jobText";
 import type { Job, RegionJobs, RegionInfo, SourceInfo } from "../types";
 
 // The frontend talks to the jobs-monitor-api backend, which reads the offers
@@ -184,6 +185,6 @@ export function filterByKeyword(jobs: Job[], query: string): Job[] {
   const tokens = queryTokens(query);
   if (tokens.length === 0) return jobs;
   return jobs.filter((j) =>
-    textMatches(`${j.title} ${j.excerpt} ${j.description ?? ""}`, tokens),
+    textMatches(jobText(j), tokens),
   );
 }

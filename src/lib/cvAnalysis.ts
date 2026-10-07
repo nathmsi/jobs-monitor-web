@@ -17,6 +17,30 @@ export interface CvProfile {
   updatedAt?: string;
 }
 
+function strArray(v: unknown): string[] {
+  return Array.isArray(v) ? v.filter((x): x is string => typeof x === "string") : [];
+}
+
+/** Coerce any stored/remote profile into a well-formed CvProfile (every list is
+ *  an array). Returns null when the core `skills`/`roles` lists are missing. */
+export function normalizeProfile(p: unknown): CvProfile | null {
+  if (!p || typeof p !== "object") return null;
+  const c = p as Partial<CvProfile>;
+  if (!Array.isArray(c.skills) || !Array.isArray(c.roles)) return null;
+  return {
+    ...c,
+    skills: strArray(c.skills),
+    roles: strArray(c.roles),
+    languages: strArray(c.languages),
+    locations: strArray(c.locations),
+    titles: strArray(c.titles),
+    education: strArray(c.education),
+    certifications: strArray(c.certifications),
+    seniority: c.seniority ?? null,
+    years: c.years ?? null,
+  };
+}
+
 // Canonical skill -> match terms (lowercased). Kept flat and pragmatic.
 const SKILLS: Record<string, string[]> = {
   React: ["react", "react.js", "reactjs"],

@@ -2,12 +2,11 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
   useMemo,
-  useRef,
-  useState,
   type ReactNode,
 } from "react";
+
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { useAuth } from "./auth";
 import { jobId } from "./jobFlags";
@@ -64,53 +63,35 @@ interface SavedJobsValue {
 
 const Ctx = createContext<SavedJobsValue | null>(null);
 
+const EMPTY = new Map<string, SavedItem>();
+
 export function SavedJobsProvider({ children }: { children: ReactNode }) {
   const { user, enabled } = useAuth();
-  const [map, setMap] = useState<Map<string, SavedItem>>(() => loadLocal());
-  const [ready, setReady] = useState(false);
-  // Mirrors `map` so handlers can compute the next value (and roll back)
-  // without side effects inside a state updater.
-  const mapRef = useRef(map);
-  const commit = useCallback((next: Map<string, SavedItem>) => {
-    mapRef.current = next;
-    setMap(next);
-  }, []);
+  const qc = useQueryClient();
+  const userId = user?.id;
+  const useRemote = Boolean(enabled && userId && supabase);
+  const queryKey = useMemo(() => ["saved-jobs", userId ?? "local"] as const, [userId]);
 
-  const useRemote = Boolean(enabled && user && supabase);
+  const query = useQuery({
+    queryKey,
+    queryFn: async (): Promise<Map<string, SavedItem>> => {
+      if (!useRemote || !supabase) return loadLocal();
+      const { data, error } = await supabase
+        .from("saved_jobs")
+        .select("source, external_id, status, title, company, location, url");
+      // fall back to local on error so the UI still works
+      if (error || !data) return loadLocal();
+      return new Map(
+        (data as SavedItem[]).map((it) => [jobId(it.source, it.external_id), it]),
+      );
+    },
+    placeholderData: loadLocal,
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
+  });
 
-  // Load the right store when auth state settles.
-  useEffect(() => {
-    let cancelled = false;
-    async function load() {
-      if (useRemote && supabase) {
-        const { data, error } = await supabase
-          .from("saved_jobs")
-          .select("source, external_id, status, title, company, location, url");
-        if (cancelled) return;
-        if (error) {
-          // fall back to local on error so the UI still works
-          commit(loadLocal());
-        } else {
-          commit(
-            new Map(
-              (data as SavedItem[]).map((it) => [
-                jobId(it.source, it.external_id),
-                it,
-              ]),
-            ),
-          );
-        }
-      } else {
-        commit(loadLocal());
-      }
-      setReady(true);
-    }
-    setReady(false);
-    load();
-    return () => {
-      cancelled = true;
-    };
-  }, [useRemote, user?.id, commit]);
+  const map = query.data ?? EMPTY;
+  const ready = query.isSuccess && !query.isPlaceholderData;
 
   const setStatus = useCallback(
     async (job: Job, status: SavedStatus | null, company?: string): Promise<boolean> => {
@@ -125,14 +106,15 @@ export function SavedJobsProvider({ children }: { children: ReactNode }) {
         url: job.url,
       };
 
-      // Optimistic update.
-      const before = mapRef.current.get(key);
-      const next = new Map(mapRef.current);
+      // Optimistic update, computed from the cache (never inside an updater).
+      const current = () => qc.getQueryData<Map<string, SavedItem>>(queryKey) ?? EMPTY;
+      const before = current().get(key);
+      const next = new Map(current());
       if (status === null) next.delete(key);
       else next.set(key, item);
-      commit(next);
+      qc.setQueryData(queryKey, next);
 
-      if (!(useRemote && supabase && user)) {
+      if (!(useRemote && supabase && userId)) {
         saveLocal(next);
         return true;
       }
@@ -143,7 +125,7 @@ export function SavedJobsProvider({ children }: { children: ReactNode }) {
           ? await table.delete().match({ source: job.source, external_id: job.external_id })
           : await table.upsert(
               {
-                user_id: user.id,
+                user_id: userId,
                 source: job.source,
                 external_id: job.external_id,
                 status,
@@ -159,13 +141,13 @@ export function SavedJobsProvider({ children }: { children: ReactNode }) {
 
       console.error("saved_jobs write", error.message);
       // Roll back only this entry so concurrent changes are preserved.
-      const reverted = new Map(mapRef.current);
+      const reverted = new Map(current());
       if (before) reverted.set(key, before);
       else reverted.delete(key);
-      commit(reverted);
+      qc.setQueryData(queryKey, reverted);
       return false;
     },
-    [useRemote, user, commit],
+    [qc, queryKey, useRemote, userId],
   );
 
   const changeStatus = useCallback(

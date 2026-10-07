@@ -1,33 +1,25 @@
 import {
   createContext,
+  useCallback,
   useContext,
-  useEffect,
   useMemo,
-  useState,
   type ReactNode,
 } from "react";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { useAuth } from "./auth";
+import { normalizeProfile, type CvProfile } from "./cvAnalysis";
 import { supabase } from "./supabase";
-import type { CvProfile } from "./cvAnalysis";
 
 // Per-user CV profile. Backed by Supabase (table profiles, RLS) when signed in,
 // localStorage otherwise. Only the extracted profile is stored — never the raw CV.
 
 const LOCAL_KEY = "cvProfile.local.v1";
 
-function validateProfile(p: unknown): CvProfile | null {
-  if (!p || typeof p !== "object") return null;
-  const c = p as CvProfile;
-  if (!Array.isArray(c.skills) || !Array.isArray(c.roles)) return null;
-  return c;
-}
-
-function loadLocal(): CvProfile | null {
+export function loadLocalProfile(): CvProfile | null {
   try {
     const raw = localStorage.getItem(LOCAL_KEY);
-    if (!raw) return null;
-    return validateProfile(JSON.parse(raw));
+    return raw ? normalizeProfile(JSON.parse(raw)) : null;
   } catch {
     return null;
   }
@@ -44,79 +36,77 @@ const Ctx = createContext<ProfileValue | null>(null);
 
 export function ProfileProvider({ children }: { children: ReactNode }) {
   const { user, enabled } = useAuth();
-  const [profile, setProfile] = useState<CvProfile | null>(() => loadLocal());
-  const [ready, setReady] = useState(false);
+  const qc = useQueryClient();
+  const userId = user?.id;
+  const useRemote = Boolean(enabled && userId && supabase);
+  const queryKey = useMemo(() => ["profile", userId ?? "local"] as const, [userId]);
 
-  const useRemote = Boolean(enabled && user && supabase);
+  const query = useQuery({
+    queryKey,
+    queryFn: async (): Promise<CvProfile | null> => {
+      if (!useRemote || !supabase || !userId) return loadLocalProfile();
+      const { data, error } = await supabase
+        .from("profiles")
+        .select("data")
+        .eq("user_id", userId)
+        .maybeSingle();
+      return (!error && data?.data ? normalizeProfile(data.data) : null) ?? loadLocalProfile();
+    },
+    placeholderData: loadLocalProfile,
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
+  });
 
-  useEffect(() => {
-    let cancelled = false;
-    async function load() {
-      if (useRemote && supabase && user) {
-        const { data, error } = await supabase
+  const profile = query.data ?? null;
+  const ready = query.isSuccess && !query.isPlaceholderData;
+
+  const saveProfile = useCallback(
+    (p: CvProfile) => {
+      const withTs = { ...p, updatedAt: new Date().toISOString() };
+      qc.setQueryData(queryKey, withTs);
+      if (useRemote && supabase && userId) {
+        supabase
           .from("profiles")
-          .select("data")
-          .eq("user_id", user.id)
-          .maybeSingle();
-        if (cancelled) return;
-        setProfile(!error && data?.data ? validateProfile(data.data) ?? loadLocal() : loadLocal());
+          .upsert(
+            { user_id: userId, data: withTs, updated_at: withTs.updatedAt },
+            { onConflict: "user_id" },
+          )
+          .then(({ error }) => {
+            if (error) console.error("profiles upsert", error.message);
+          });
       } else {
-        setProfile(loadLocal());
+        try {
+          localStorage.setItem(LOCAL_KEY, JSON.stringify(withTs));
+        } catch {
+          /* ignore */
+        }
       }
-      setReady(true);
+    },
+    [qc, queryKey, useRemote, userId],
+  );
+
+  const clearProfile = useCallback(() => {
+    qc.setQueryData(queryKey, null);
+    if (useRemote && supabase && userId) {
+      supabase
+        .from("profiles")
+        .delete()
+        .eq("user_id", userId)
+        .then(({ error }) => {
+          if (error) console.error("profiles delete", error.message);
+        });
+    } else {
+      try {
+        localStorage.removeItem(LOCAL_KEY);
+      } catch {
+        /* ignore */
+      }
     }
-    setReady(false);
-    load();
-    return () => {
-      cancelled = true;
-    };
-  }, [useRemote, user?.id]);
+  }, [qc, queryKey, useRemote, userId]);
 
   const value = useMemo<ProfileValue>(
-    () => ({
-      ready,
-      profile,
-      saveProfile: (p) => {
-        const withTs = { ...p, updatedAt: new Date().toISOString() };
-        setProfile(withTs);
-        if (useRemote && supabase && user) {
-          supabase
-            .from("profiles")
-            .upsert(
-              { user_id: user.id, data: withTs, updated_at: withTs.updatedAt },
-              { onConflict: "user_id" },
-            )
-            .then(({ error }) => {
-              if (error) console.error("profiles upsert", error.message);
-            });
-        } else {
-          try {
-            localStorage.setItem(LOCAL_KEY, JSON.stringify(withTs));
-          } catch {
-            /* ignore */
-          }
-        }
-      },
-      clearProfile: () => {
-        setProfile(null);
-        if (useRemote && supabase && user) {
-          supabase
-            .from("profiles")
-            .delete()
-            .eq("user_id", user.id)
-            .then(({ error }) => {
-              if (error) console.error("profiles delete", error.message);
-            });
-        } else {
-          try {
-            localStorage.removeItem(LOCAL_KEY);
-          } catch {
-            /* ignore */
-          }
-        }
-      },
-    }),
-    [ready, profile, useRemote, user],
+    () => ({ ready, profile, saveProfile, clearProfile }),
+    [ready, profile, saveProfile, clearProfile],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

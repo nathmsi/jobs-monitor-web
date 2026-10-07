@@ -2,10 +2,10 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
-  useState,
+  useMemo,
   type ReactNode,
 } from "react";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { useAuth } from "./auth";
 import { supabase } from "./supabase";
@@ -26,7 +26,7 @@ const DEFAULT: JobPreferences = {
 
 const LOCAL_KEY = "jobPreferences.v1";
 
-function mergePrefs(raw: Partial<JobPreferences>): JobPreferences {
+export function mergePrefs(raw: Partial<JobPreferences>): JobPreferences {
   return {
     ...DEFAULT,
     ...raw,
@@ -35,12 +35,20 @@ function mergePrefs(raw: Partial<JobPreferences>): JobPreferences {
   };
 }
 
-function loadLocal(): JobPreferences {
+export function loadLocalPrefs(): JobPreferences {
   try {
     const raw = localStorage.getItem(LOCAL_KEY);
     return raw ? mergePrefs(JSON.parse(raw) as Partial<JobPreferences>) : DEFAULT;
   } catch {
     return DEFAULT;
+  }
+}
+
+function persistLocal(p: JobPreferences): void {
+  try {
+    localStorage.setItem(LOCAL_KEY, JSON.stringify(p));
+  } catch {
+    /* ignore */
   }
 }
 
@@ -53,51 +61,50 @@ const Ctx = createContext<PreferencesValue | null>(null);
 
 export function PreferencesProvider({ children }: { children: ReactNode }) {
   const { user, enabled } = useAuth();
-  const [prefs, setPrefs] = useState<JobPreferences>(loadLocal);
+  const qc = useQueryClient();
+  const userId = user?.id;
+  const useRemote = Boolean(enabled && userId && supabase);
+  const queryKey = useMemo(() => ["preferences", userId ?? "local"] as const, [userId]);
 
-  const useRemote = Boolean(enabled && user && supabase);
-
-  // Load from Supabase on sign-in
-  useEffect(() => {
-    let cancelled = false;
-    async function load() {
-      if (!useRemote || !supabase || !user) return;
+  const { data } = useQuery({
+    queryKey,
+    queryFn: async (): Promise<JobPreferences> => {
+      if (!useRemote || !supabase || !userId) return loadLocalPrefs();
       const { data, error } = await supabase
         .from("profiles")
         .select("preferences")
-        .eq("user_id", user.id)
+        .eq("user_id", userId)
         .maybeSingle();
-      if (cancelled) return;
-      if (!error && data?.preferences) {
-        const remote = mergePrefs(data.preferences as Partial<JobPreferences>);
-        setPrefs(remote);
-        try { localStorage.setItem(LOCAL_KEY, JSON.stringify(remote)); } catch { /* ignore */ }
-      }
-    }
-    load();
-    return () => { cancelled = true; };
-  }, [useRemote, user?.id]);
+      if (error || !data?.preferences) return loadLocalPrefs();
+      const remote = mergePrefs(data.preferences as Partial<JobPreferences>);
+      persistLocal(remote);
+      return remote;
+    },
+    placeholderData: loadLocalPrefs,
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
+  });
+  const prefs = data ?? DEFAULT;
 
   const savePrefs = useCallback(
     async (p: JobPreferences) => {
-      setPrefs(p);
+      qc.setQueryData(queryKey, p);
       // Always persist locally as fallback
-      try { localStorage.setItem(LOCAL_KEY, JSON.stringify(p)); } catch { /* ignore */ }
+      persistLocal(p);
 
-      if (useRemote && supabase && user) {
+      if (useRemote && supabase && userId) {
         const { error } = await supabase
           .from("profiles")
-          .upsert(
-            { user_id: user.id, preferences: p },
-            { onConflict: "user_id" },
-          );
+          .upsert({ user_id: userId, preferences: p }, { onConflict: "user_id" });
         if (error) console.error("preferences upsert", error.message);
       }
     },
-    [useRemote, user],
+    [qc, queryKey, useRemote, userId],
   );
 
-  return <Ctx.Provider value={{ prefs, savePrefs }}>{children}</Ctx.Provider>;
+  const value = useMemo(() => ({ prefs, savePrefs }), [prefs, savePrefs]);
+
+  return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
 
 export function usePreferences(): PreferencesValue {

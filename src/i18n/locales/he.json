@@ -52,7 +52,9 @@
     "saveError": "לא ניתן היה לשמור את השינוי. נסו שוב.",
     "savedToast": "המשרה נשמרה ★",
     "appliedToast": "הוגש ✓",
-    "expired": "פג תוקף"
+    "expired": "פג תוקף",
+    "remote": "מרחוק",
+    "hybrid": "היברידי"
   },
   "auth": {
     "signInGoogle": "התחברות עם Google",
@@ -72,7 +74,8 @@
     "apiTitle": "לא ניתן להתחבר ל-API.",
     "apiHint": "ודאו שהשרת מגיב בכתובת",
     "generic": "שגיאה: {{message}}",
-    "tryAgain": "נסה שוב"
+    "tryAgain": "נסה שוב",
+    "boundary": "משהו השתבש. נא לרענן את הדף."
   },
   "tabs": {
     "companies": "חברות הייטק",
@@ -296,5 +299,21 @@
     "cached": "מטמון",
     "launchBtn": "מצא את ההצעות הטובות ביותר",
     "modifySearch": "שנה חיפוש"
+  },
+  "cvModal": {
+    "title": "העלאת קורות חיים",
+    "close": "סגירה",
+    "selectExisting": "או בחרו קורות חיים קיימים",
+    "choose": "בחרו קורות חיים…",
+    "orUpload": "או העלו חדשים",
+    "uploadStart": "העלו קובץ PDF של קורות החיים כדי להתחיל",
+    "drop": "גררו לכאן את קובץ ה-PDF",
+    "or": "או",
+    "browse": "עיון בקבצים",
+    "formats": "פורמט נתמך: PDF בלבד · עד 10MB",
+    "cancel": "ביטול"
+  },
+  "common": {
+    "loading": "טוען…"
   }
 }

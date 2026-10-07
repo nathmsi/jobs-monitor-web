@@ -29,15 +29,15 @@ createRoot(document.getElementById("root")!).render(
         <AuthProvider>
           <ProfileProvider>
             <PreferencesProvider>
-            <SavedJobsProvider>
-              <JobFlagsProvider>
-                <ToastProvider>
-                  <BrowserRouter>
-                    <App />
-                  </BrowserRouter>
-                </ToastProvider>
-              </JobFlagsProvider>
-            </SavedJobsProvider>
+              <SavedJobsProvider>
+                <JobFlagsProvider>
+                  <ToastProvider>
+                    <BrowserRouter>
+                      <App />
+                    </BrowserRouter>
+                  </ToastProvider>
+                </JobFlagsProvider>
+              </SavedJobsProvider>
             </PreferencesProvider>
           </ProfileProvider>
         </AuthProvider>

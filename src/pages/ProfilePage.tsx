@@ -10,6 +10,7 @@ import { ProfileEditor } from "../components/ProfileEditor/ProfileEditor";
 import { useAuth } from "../lib/auth";
 import { useCvs } from "../lib/cvs";
 import { jobText } from "../lib/jobText";
+import { regionLabel } from "../lib/regionLabel";
 import { useCvUpload } from "../lib/useCvUpload";
 import { useDocumentTitle } from "../lib/useDocumentTitle";
 import { matchScore, rankScore } from "../lib/cvAnalysis";
@@ -19,7 +20,7 @@ import { ROLES } from "../constants/roles";
 import styles from "./ProfilePage.module.css";
 
 export function ProfilePage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { user, enabled, signInWithGoogle, signOut } = useAuth();
   const { profile } = useProfile();
   const { cvs, selectedCv, selectedId, selectCv, addCv } = useCvs();
@@ -207,7 +208,7 @@ export function ProfilePage() {
               >
                 <option value="all">{t("categories.all")}</option>
                 {(regions ?? []).map((r) => (
-                  <option key={r.key} value={r.key}>{r.label_en}</option>
+                  <option key={r.key} value={r.key}>{regionLabel(r, i18n.language)}</option>
                 ))}
               </select>
             </div>

@@ -10,6 +10,8 @@ import { CVUploadModal } from "../components/CVUploadModal/CVUploadModal";
 import { Header } from "../components/Header/Header";
 import { useAuth } from "../lib/auth";
 import { useCvs } from "../lib/cvs";
+import { errorMessage } from "../lib/errorMessage";
+import { regionLabel } from "../lib/regionLabel";
 import { useCvUpload } from "../lib/useCvUpload";
 import { useDocumentTitle } from "../lib/useDocumentTitle";
 import { usePreferences } from "../lib/preferences";
@@ -217,7 +219,7 @@ function ReviewFeature({ cv, goal, lang, onBack }: { cv: string; goal: string; l
       const analysis = await analyzeCvAi(cv.trim(), goal.trim(), lang, ctrl.signal);
       if (!ctrl.signal.aborted) setResult(analysis);
     } catch (e) {
-      if (!ctrl.signal.aborted) setError((e as Error).message);
+      if (!ctrl.signal.aborted) setError(errorMessage(e));
     } finally {
       if (!ctrl.signal.aborted) setBusy(false);
     }
@@ -268,7 +270,7 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
   onAdapt: () => void;
   onBack: () => void;
 }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { data: regions } = useRegions();
 
   const [localFilters, setLocalFilters] = useState({
@@ -306,7 +308,7 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
       }, ctrl.signal);
       if (!ctrl.signal.aborted) setResults(results);
     } catch (e) {
-      if (!ctrl.signal.aborted) setError((e as Error).message);
+      if (!ctrl.signal.aborted) setError(errorMessage(e));
     } finally {
       if (!ctrl.signal.aborted) {
         setBusy(false);
@@ -328,8 +330,9 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
       {/* Search filters — always visible; disabled while running */}
       <div className={styles.matchFilters}>
         <div className={styles.matchFilterGroup}>
-          <label className={styles.matchFilterLabel}>{t("filters.regionLabel")}</label>
+          <label className={styles.matchFilterLabel} htmlFor="matchRegion">{t("filters.regionLabel")}</label>
           <select
+            id="matchRegion"
             className={styles.matchFilterSelect}
             value={localFilters.region}
             disabled={busy}
@@ -337,14 +340,14 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
           >
             <option value="all">{t("categories.all")}</option>
             {(regions ?? []).map((r) => (
-              <option key={r.key} value={r.key}>{r.label_en}</option>
+              <option key={r.key} value={r.key}>{regionLabel(r, i18n.language)}</option>
             ))}
           </select>
         </div>
 
         <div className={styles.matchFilterGroup}>
-          <label className={styles.matchFilterLabel}>{t("profile.prefKind")}</label>
-          <div className={styles.matchKindChips}>
+          <span className={styles.matchFilterLabel} id="matchKindLabel">{t("profile.prefKind")}</span>
+          <div className={styles.matchKindChips} role="group" aria-labelledby="matchKindLabel">
             {(["all", "company", "agency"] as const).map((k) => (
               <button
                 key={k}

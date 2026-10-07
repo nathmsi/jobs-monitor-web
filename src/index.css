@@ -20,6 +20,13 @@
   --hot-soft: #FEE8DD;
   --danger: #B42318;
   --danger-soft: #FDE4E1;
+  --level-intern: #94A3B8;
+  --level-junior: #60A5FA;
+  --level-mid: #A78BFA;
+  --level-senior: #F59E0B;
+  --level-staff: #F97316;
+  --level-lead: #EF4444;
+  --level-manager: #10B981;
 
   /* ── Shape & motion ── */
   --radius-sm: 8px;

@@ -30,8 +30,8 @@ export interface JobQuery {
   q?: string;
   role?: string;
   category?: string;
-  kind?: string; // "company" | "agency"
-  sort?: string; // "recent" | "oldest" | "hot"
+  kind?: "company" | "agency" | "";
+  sort?: "recent" | "oldest" | "hot";
   limit?: number; // <=0 → every match
   offset?: number;
 }
@@ -77,7 +77,7 @@ export interface CvAnalysis {
     assumptions?: string;
   };
   strengths: { point: string; evidence: string }[];
-  gaps: { gap: string; why_it_matters: string; severity: "high" | "low" | "medium" | string }[];
+  gaps: { gap: string; why_it_matters: string; severity: "high" | "medium" | "low" }[];
   cv_feedback: { issue: string; fix: string; example: string }[];
   skills_to_learn: { skill: string; reason: string; how: string }[];
   action_plan: {

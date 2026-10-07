@@ -49,11 +49,14 @@ function saveLocal(map: Map<string, SavedItem>): void {
   }
 }
 
+/** The part of a Job that is stored with a saved entry. */
+export type JobSnapshot = Pick<Job, "source" | "external_id" | "title" | "location" | "url">;
+
 interface SavedJobsValue {
   ready: boolean;
   statusOf: (source: string, externalId: string) => SavedStatus | undefined;
   /** Resolves to false when the remote write failed (the change is rolled back). */
-  setStatus: (job: Job, status: SavedStatus | null, company?: string) => Promise<boolean>;
+  setStatus: (job: JobSnapshot, status: SavedStatus | null, company?: string) => Promise<boolean>;
   /** Change / remove status from an already-saved item (in "My jobs"). */
   changeStatus: (item: SavedItem, status: SavedStatus | null) => Promise<boolean>;
   items: SavedItem[];
@@ -94,7 +97,7 @@ export function SavedJobsProvider({ children }: { children: ReactNode }) {
   const ready = query.isSuccess && !query.isPlaceholderData;
 
   const setStatus = useCallback(
-    async (job: Job, status: SavedStatus | null, company?: string): Promise<boolean> => {
+    async (job: JobSnapshot, status: SavedStatus | null, company?: string): Promise<boolean> => {
       const key = jobId(job.source, job.external_id);
       const item: SavedItem = {
         source: job.source,
@@ -151,17 +154,18 @@ export function SavedJobsProvider({ children }: { children: ReactNode }) {
   );
 
   const changeStatus = useCallback(
-    (item: SavedItem, status: SavedStatus | null): Promise<boolean> => {
-      // Reuse setStatus with a minimal Job built from the stored snapshot.
-      const job = {
-        source: item.source,
-        external_id: item.external_id,
-        title: item.title ?? "",
-        location: item.location ?? "",
-        url: item.url ?? null,
-      } as Job;
-      return setStatus(job, status, item.company ?? undefined);
-    },
+    (item: SavedItem, status: SavedStatus | null): Promise<boolean> =>
+      setStatus(
+        {
+          source: item.source,
+          external_id: item.external_id,
+          title: item.title ?? "",
+          location: item.location ?? "",
+          url: item.url ?? null,
+        },
+        status,
+        item.company ?? undefined,
+      ),
     [setStatus],
   );
 

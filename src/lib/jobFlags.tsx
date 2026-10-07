@@ -12,7 +12,8 @@ import {
 // "hide seen" preference. Stored in localStorage (no backend / no login).
 
 const OPENED_KEY = "jobFlags.opened.v1";
-const APPLIED_KEY = "jobFlags.applied.v1";
+/** Keep the "opened" history bounded so localStorage never grows forever. */
+const MAX_OPENED = 2000;
 const HIDE_KEY = "jobFlags.hideSeen.v1";
 
 /** Stable per-offer id. */
@@ -39,19 +40,15 @@ function saveSet(key: string, set: Set<string>): void {
 
 interface JobFlags {
   isOpened: (id: string) => boolean;
-  isApplied: (id: string) => boolean;
   markOpened: (id: string) => void;
-  toggleApplied: (id: string) => void;
   hideSeen: boolean;
   setHideSeen: (v: boolean) => void;
-  appliedCount: number;
 }
 
 const Ctx = createContext<JobFlags | null>(null);
 
 export function JobFlagsProvider({ children }: { children: ReactNode }) {
   const [opened, setOpened] = useState<Set<string>>(() => loadSet(OPENED_KEY));
-  const [applied, setApplied] = useState<Set<string>>(() => loadSet(APPLIED_KEY));
   const [hideSeen, setHideSeenState] = useState<boolean>(() => {
     try {
       return localStorage.getItem(HIDE_KEY) === "1";
@@ -61,21 +58,18 @@ export function JobFlagsProvider({ children }: { children: ReactNode }) {
   });
 
   useEffect(() => saveSet(OPENED_KEY, opened), [opened]);
-  useEffect(() => saveSet(APPLIED_KEY, applied), [applied]);
 
   const markOpened = useCallback((id: string) => {
-    setOpened((prev) => (prev.has(id) ? prev : new Set(prev).add(id)));
-  }, []);
-
-  const toggleApplied = useCallback((id: string) => {
-    setApplied((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
+    setOpened((prev) => {
+      if (prev.has(id)) return prev;
+      const next = new Set(prev).add(id);
+      // Sets iterate in insertion order: drop the oldest entries first.
+      for (const old of next) {
+        if (next.size <= MAX_OPENED) break;
+        next.delete(old);
+      }
       return next;
     });
-    // Applying implies you've opened it.
-    setOpened((prev) => (prev.has(id) ? prev : new Set(prev).add(id)));
   }, []);
 
   const setHideSeen = useCallback((v: boolean) => {
@@ -90,14 +84,11 @@ export function JobFlagsProvider({ children }: { children: ReactNode }) {
   const value = useMemo<JobFlags>(
     () => ({
       isOpened: (id) => opened.has(id),
-      isApplied: (id) => applied.has(id),
       markOpened,
-      toggleApplied,
       hideSeen,
       setHideSeen,
-      appliedCount: applied.size,
     }),
-    [opened, applied, hideSeen, markOpened, toggleApplied, setHideSeen],
+    [opened, hideSeen, markOpened, setHideSeen],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

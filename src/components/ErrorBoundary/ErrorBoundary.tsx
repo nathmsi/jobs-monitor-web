@@ -1,5 +1,8 @@
 import { Component, type ErrorInfo, type ReactNode } from "react";
 
+import i18n from "../../i18n";
+import styles from "./ErrorBoundary.module.css";
+
 interface Props {
   children: ReactNode;
   fallback?: ReactNode;
@@ -24,15 +27,10 @@ export class ErrorBoundary extends Component<Props, State> {
     if (this.state.error) {
       return (
         this.props.fallback ?? (
-          <div style={{ padding: "2rem", textAlign: "center" }}>
-            <p style={{ color: "var(--text-muted)" }}>
-              Something went wrong. Please reload the page.
-            </p>
-            <button
-              onClick={() => this.setState({ error: null })}
-              style={{ marginTop: "1rem", padding: "0.5rem 1.25rem", cursor: "pointer" }}
-            >
-              Try again
+          <div className={styles.box} role="alert">
+            <p className={styles.message}>{i18n.t("error.boundary")}</p>
+            <button className={styles.retry} onClick={() => this.setState({ error: null })}>
+              {i18n.t("error.tryAgain")}
             </button>
           </div>
         )

@@ -52,7 +52,9 @@
     "saveError": "Could not save your change. Please try again.",
     "savedToast": "Offer saved ★",
     "appliedToast": "Marked as applied ✓",
-    "expired": "Expired"
+    "expired": "Expired",
+    "remote": "Remote",
+    "hybrid": "Hybrid"
   },
   "auth": {
     "signInGoogle": "Sign in with Google",
@@ -72,7 +74,8 @@
     "apiTitle": "Could not reach the API.",
     "apiHint": "Check that the backend responds at",
     "generic": "Error: {{message}}",
-    "tryAgain": "Try again"
+    "tryAgain": "Try again",
+    "boundary": "Something went wrong. Please reload the page."
   },
   "tabs": {
     "companies": "Tech companies",
@@ -296,5 +299,21 @@
     "cached": "Cached",
     "launchBtn": "Find my best offers",
     "modifySearch": "Modify search"
+  },
+  "cvModal": {
+    "title": "Upload your CV",
+    "close": "Close",
+    "selectExisting": "Or select existing CV",
+    "choose": "Choose a CV…",
+    "orUpload": "Or upload a new one",
+    "uploadStart": "Upload a PDF of your CV to get started",
+    "drop": "Drag and drop your PDF here",
+    "or": "or",
+    "browse": "Browse files",
+    "formats": "Supported formats: PDF only · Max 10MB",
+    "cancel": "Cancel"
+  },
+  "common": {
+    "loading": "Loading…"
   }
 }

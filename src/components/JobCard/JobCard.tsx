@@ -14,12 +14,6 @@ import { Badge } from "../Badge/Badge";
 import type { Job, SourceInfo } from "../../types";
 import styles from "./JobCard.module.css";
 
-const LEVEL_COLOR: Record<string, string> = {
-  Intern: "#94a3b8", Junior: "#60a5fa", Mid: "#a78bfa",
-  Senior: "#f59e0b", Staff: "#f97316", Lead: "#ef4444",
-  Manager: "#10b981", Director: "#10b981",
-};
-
 interface Props {
   job: Job;
   source?: SourceInfo;
@@ -105,13 +99,13 @@ export const JobCard = memo(function JobCard({ job, source }: Props) {
           </span>
         )}
         {ai?.level && (
-          <span className={styles.levelBadge} style={{ "--lc": LEVEL_COLOR[ai.level] ?? "#94a3b8" } as React.CSSProperties}>
+          <span className={styles.levelBadge} data-level={ai.level.toLowerCase()}>
             {ai.level}
           </span>
         )}
         {ai?.remote && ai.remote !== "On-site" && (
           <span className={styles.remoteBadge}>
-            {ai.remote === "Remote" ? "Remote" : "Hybrid"}
+            {ai.remote === "Remote" ? t("job.remote") : t("job.hybrid")}
           </span>
         )}
       </div>

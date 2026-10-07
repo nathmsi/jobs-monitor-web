@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { useRegions } from "../../api/hooks";
 import { ROLES } from "../../constants/roles";
+import { regionLabel } from "../../lib/regionLabel";
 import { useJobFlags } from "../../lib/jobFlags";
 import { useSavedJobs } from "../../lib/savedJobs";
 import type { Filters } from "../../types";
@@ -24,8 +25,6 @@ export function Sidebar({ filters, onChange }: Props) {
   const { appliedCount } = useSavedJobs();
   const [draft, setDraft] = useState(filters.q);
   const [showAllRoles, setShowAllRoles] = useState(false);
-
-  const isHe = i18n.language.startsWith("he");
 
   useEffect(() => {
     const q = draft.trim();
@@ -81,7 +80,7 @@ export function Sidebar({ filters, onChange }: Props) {
         >
           {regions?.map((r) => (
             <option key={r.key} value={r.key}>
-              {isHe ? r.label_he : (r.label_en ?? r.label_fr)}
+              {regionLabel(r, i18n.language)}
             </option>
           ))}
         </select>

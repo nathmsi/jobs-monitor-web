@@ -29,41 +29,33 @@ export function CVUploadModal({
   return (
     <>
       {/* Backdrop */}
-      <div className={styles.backdrop} onClick={onClose} />
+      <div className={styles.backdrop} onClick={onClose} aria-hidden="true" />
 
       {/* Modal */}
       <div className={styles.modal}>
         <div className={styles.header}>
-          <h2 className={styles.title}>📄 Upload Your CV</h2>
-          <button className={styles.closeBtn} onClick={onClose} title="Close">
+          <h2 className={styles.title}>{t("cvModal.title")}</h2>
+          <button className={styles.closeBtn} onClick={onClose} title={t("cvModal.close")} aria-label={t("cvModal.close")}>
             ✕
           </button>
         </div>
 
         <div className={styles.content}>
           {existingCvs && existingCvs.length > 0 && (
-            <div style={{ marginBottom: "1.5rem" }}>
-              <label style={{ fontSize: "0.8rem", color: "var(--text-muted)", textTransform: "uppercase", fontWeight: 600, display: "block", marginBottom: "0.5rem" }}>
-                Or select existing CV
+            <div className={styles.existing}>
+              <label className={styles.existingLabel} htmlFor="cvModalSelect">
+                {t("cvModal.selectExisting")}
               </label>
               <select
+                id="cvModalSelect"
+                className={styles.existingSelect}
                 value={selectedCvId ?? ""}
                 onChange={(e) => {
                   onSelectCv?.(e.target.value);
                   onClose();
                 }}
-                style={{
-                  width: "100%",
-                  padding: "0.75rem",
-                  borderRadius: "8px",
-                  border: "1px solid var(--border-strong)",
-                  background: "var(--card)",
-                  color: "var(--text)",
-                  fontSize: "0.95rem",
-                  cursor: "pointer",
-                }}
               >
-                <option value="">Choose a CV...</option>
+                <option value="">{t("cvModal.choose")}</option>
                 {existingCvs.map((cv) => (
                   <option key={cv.id} value={cv.id}>
                     {cv.name}
@@ -73,8 +65,8 @@ export function CVUploadModal({
             </div>
           )}
 
-          <div style={{ textAlign: "center", margin: "1rem 0", color: "var(--text-muted)", fontSize: "0.9rem" }}>
-            {existingCvs && existingCvs.length > 0 ? "Or upload a new one" : "Upload a PDF of your CV to get started"}
+          <div className={styles.uploadHeading}>
+            {existingCvs && existingCvs.length > 0 ? t("cvModal.orUpload") : t("cvModal.uploadStart")}
           </div>
 
           {error && <div className={styles.error}>⚠ {error}</div>}
@@ -92,10 +84,10 @@ export function CVUploadModal({
             onClick={() => fileRef.current?.click()}
           >
             <div className={styles.dropzoneIcon}>📑</div>
-            <div className={styles.dropzoneText}>Drag and drop your PDF here</div>
-            <div className={styles.dropzoneOr}>or</div>
+            <div className={styles.dropzoneText}>{t("cvModal.drop")}</div>
+            <div className={styles.dropzoneOr}>{t("cvModal.or")}</div>
             <button className={styles.browseBtn} disabled={busy}>
-              {busy ? t("coach.library.adding") : "Browse files"}
+              {busy ? t("coach.library.adding") : t("cvModal.browse")}
             </button>
           </div>
 
@@ -111,12 +103,12 @@ export function CVUploadModal({
             }}
           />
 
-          <p className={styles.hint}>Supported formats: PDF only · Max 10MB</p>
+          <p className={styles.hint}>{t("cvModal.formats")}</p>
         </div>
 
         <div className={styles.footer}>
           <button className={styles.cancelBtn} onClick={onClose} disabled={busy}>
-            Cancel
+            {t("cvModal.cancel")}
           </button>
         </div>
       </div>

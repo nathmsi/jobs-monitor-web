@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, type KeyboardEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
@@ -11,12 +11,26 @@ import { Sidebar } from "../components/Sidebar/Sidebar";
 import { SourcesModal } from "../components/SourcesModal/SourcesModal";
 import { rankScore } from "../lib/cvAnalysis";
 import { jobId, useJobFlags } from "../lib/jobFlags";
+import { errorMessage } from "../lib/errorMessage";
 import { jobText } from "../lib/jobText";
 import { useDocumentTitle } from "../lib/useDocumentTitle";
 import { useJobsUrlState, type JobsSort } from "../lib/useJobsUrlState";
 import { useProfile } from "../lib/profile";
 import { useSavedJobs } from "../lib/savedJobs";
 import styles from "../App.module.css";
+
+const JOBS_TABS = ["company", "agency", "mine", "forme"] as const;
+
+type ViewMode = "grid" | "list";
+const VIEW_MODE_KEY = "jobsViewMode";
+
+function readViewMode(): ViewMode {
+  try {
+    return localStorage.getItem(VIEW_MODE_KEY) === "grid" ? "grid" : "list";
+  } catch {
+    return "list";
+  }
+}
 
 export function JobsPage() {
   const { t } = useTranslation();
@@ -25,9 +39,11 @@ export function JobsPage() {
 
   const [showAll, setShowAll] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [viewMode, setViewMode] = useState<"grid" | "list">(() => {
-    try { return (localStorage.getItem("jobsViewMode") as "grid" | "list") ?? "list"; } catch { return "list"; }
-  });
+  const [viewMode, setViewModeState] = useState<ViewMode>(readViewMode);
+  const setViewMode = (mode: ViewMode) => {
+    setViewModeState(mode);
+    try { localStorage.setItem(VIEW_MODE_KEY, mode); } catch { /* ignore */ }
+  };
 
   const { data: sources } = useSources();
   const { items: savedItems } = useSavedJobs();
@@ -35,7 +51,7 @@ export function JobsPage() {
   const { hideSeen, isOpened } = useJobFlags();
 
   const browsing = tab === "company" || tab === "agency";
-  const kind = browsing ? tab : "";
+  const kind = browsing ? tab : ("" as const);
 
   // Server-side filtered + paginated offers for the browse tabs.
   const jobsQuery = useJobsInfinite(
@@ -71,13 +87,26 @@ export function JobsPage() {
 
   useDocumentTitle("nav.offers");
 
+  // Arrow-key navigation between tabs (WAI-ARIA tabs pattern).
+  const onTabKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    const step = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+    if (!step) return;
+    const flip = document.documentElement.dir === "rtl" ? -1 : 1;
+    const next = JOBS_TABS[(JOBS_TABS.indexOf(tab) + step * flip + JOBS_TABS.length) % JOBS_TABS.length];
+    setTab(next);
+    document.getElementById(`tab-${next}`)?.focus();
+  };
+
   return (
     <div className={styles.app}>
       <Header />
 
-      <div className={styles.tabbar} role="tablist">
+      <div className={styles.tabbar} role="tablist" onKeyDown={onTabKeyDown}>
         <button
           role="tab"
+          id="tab-company"
+          aria-controls="jobs-tabpanel"
+          tabIndex={tab === "company" ? 0 : -1}
           aria-selected={tab === "company"}
           className={`${styles.tab} ${tab === "company" ? styles.tabActive : ""}`}
           onClick={() => setTab("company")}
@@ -86,6 +115,9 @@ export function JobsPage() {
         </button>
         <button
           role="tab"
+          id="tab-agency"
+          aria-controls="jobs-tabpanel"
+          tabIndex={tab === "agency" ? 0 : -1}
           aria-selected={tab === "agency"}
           className={`${styles.tab} ${tab === "agency" ? styles.tabActive : ""}`}
           onClick={() => setTab("agency")}
@@ -97,6 +129,9 @@ export function JobsPage() {
 
         <button
           role="tab"
+          id="tab-mine"
+          aria-controls="jobs-tabpanel"
+          tabIndex={tab === "mine" ? 0 : -1}
           aria-selected={tab === "mine"}
           className={`${styles.tab} ${tab === "mine" ? styles.tabActive : ""}`}
           onClick={() => setTab("mine")}
@@ -105,6 +140,9 @@ export function JobsPage() {
         </button>
         <button
           role="tab"
+          id="tab-forme"
+          aria-controls="jobs-tabpanel"
+          tabIndex={tab === "forme" ? 0 : -1}
           aria-selected={tab === "forme"}
           className={`${styles.tab} ${tab === "forme" ? styles.tabActive : ""}`}
           onClick={() => setTab("forme")}
@@ -115,7 +153,7 @@ export function JobsPage() {
       </div>
 
       {filtersOpen && (
-        <div className={styles.filterBackdrop} onClick={() => setFiltersOpen(false)} />
+        <div className={styles.filterBackdrop} onClick={() => setFiltersOpen(false)} aria-hidden="true" />
       )}
 
       <div className={styles.layout}>
@@ -165,7 +203,7 @@ export function JobsPage() {
             <div className={styles.viewToggle} role="group" aria-label={t("viewMode.list")}>
               <button
                 className={`${styles.viewBtn} ${viewMode === "list" ? styles.viewBtnActive : ""}`}
-                onClick={() => { setViewMode("list"); try { localStorage.setItem("jobsViewMode", "list"); } catch {} }}
+                onClick={() => setViewMode("list")}
                 aria-pressed={viewMode === "list"}
                 aria-label={t("viewMode.list")}
                 title={t("viewMode.list")}
@@ -179,7 +217,7 @@ export function JobsPage() {
               </button>
               <button
                 className={`${styles.viewBtn} ${viewMode === "grid" ? styles.viewBtnActive : ""}`}
-                onClick={() => { setViewMode("grid"); try { localStorage.setItem("jobsViewMode", "grid"); } catch {} }}
+                onClick={() => setViewMode("grid")}
                 aria-pressed={viewMode === "grid"}
                 aria-label={t("viewMode.grid")}
                 title={t("viewMode.grid")}
@@ -195,7 +233,7 @@ export function JobsPage() {
             </div>
           </div>
 
-          <div key={tab} className={styles.tabContent}>
+          <div key={tab} id="jobs-tabpanel" role="tabpanel" aria-labelledby={`tab-${tab}`} className={styles.tabContent}>
           {tab === "mine" ? (
             <MyJobs />
           ) : tab === "forme" ? (
@@ -213,7 +251,7 @@ export function JobsPage() {
                 <div className={styles.alert} role="alert">
                   <strong>{t("error.apiTitle")}</strong>
                   <br />
-                  {jobsQuery.error.message}
+                  {errorMessage(jobsQuery.error)}
                 </div>
               )}
 

@@ -52,7 +52,9 @@
     "saveError": "Impossible d'enregistrer votre modification. Veuillez réessayer.",
     "savedToast": "Offre sauvegardée ★",
     "appliedToast": "Candidature enregistrée ✓",
-    "expired": "Expirée"
+    "expired": "Expirée",
+    "remote": "Télétravail",
+    "hybrid": "Hybride"
   },
   "auth": {
     "signInGoogle": "Se connecter avec Google",
@@ -72,7 +74,8 @@
     "apiTitle": "Impossible de joindre l'API.",
     "apiHint": "Vérifiez que le backend répond à",
     "generic": "Erreur : {{message}}",
-    "tryAgain": "Réessayer"
+    "tryAgain": "Réessayer",
+    "boundary": "Une erreur est survenue. Veuillez recharger la page."
   },
   "tabs": {
     "companies": "Entreprises tech",
@@ -296,5 +299,21 @@
     "cached": "En cache",
     "launchBtn": "Trouver mes meilleures offres",
     "modifySearch": "Modifier la recherche"
+  },
+  "cvModal": {
+    "title": "Importez votre CV",
+    "close": "Fermer",
+    "selectExisting": "Ou choisissez un CV existant",
+    "choose": "Choisir un CV…",
+    "orUpload": "Ou importez-en un nouveau",
+    "uploadStart": "Importez votre CV en PDF pour commencer",
+    "drop": "Glissez-déposez votre PDF ici",
+    "or": "ou",
+    "browse": "Parcourir les fichiers",
+    "formats": "Format accepté : PDF uniquement · 10 Mo max",
+    "cancel": "Annuler"
+  },
+  "common": {
+    "loading": "Chargement…"
   }
 }

@@ -109,4 +109,27 @@ test.describe('Jobs page', () => {
     await po.waitForJobs();
     await expect(page.getByRole('tab', { name: /agenc/i })).toHaveAttribute('aria-selected', 'true');
   });
+
+  test('arrow keys move between tabs', async ({ page }) => {
+    const po = new JobsPagePO(page);
+    await po.goto();
+    await po.waitForJobs();
+
+    const companies = page.getByRole('tab', { name: /companies/i });
+    await companies.focus();
+    await page.keyboard.press('ArrowRight');
+    await expect(page.getByRole('tab', { name: /agenc/i })).toHaveAttribute('aria-selected', 'true');
+  });
+
+  test('"For me" shows an error with retry when the full set fails to load', async ({ page }) => {
+    await page.route('**/api/jobs?*limit=0*', (route) =>
+      route.fulfill({ status: 500, contentType: 'application/json', body: '{}' }),
+    );
+    const po = new JobsPagePO(page);
+    await po.goto();
+    await page.getByRole('tab', { name: /for me/i }).click();
+
+    await expect(page.getByRole('alert')).toBeVisible();
+    await expect(page.getByRole('button', { name: /try again/i })).toBeVisible();
+  });
 });

@@ -1,25 +1,18 @@
 import { describe, expect, it } from "vitest";
 
-// Test that loadLocal() rejects malformed localStorage data instead of returning
+import { loadLocalProfile } from "./profile";
+
+// loadLocalProfile() must reject malformed localStorage data instead of returning
 // an object with undefined skills/roles that crashes components downstream.
 
-// We import the module fresh each test via dynamic import to reset module state.
-// Instead, we test the behavior indirectly by inspecting the exported function.
-// loadLocal is not exported, so we test it via the ProfileProvider behavior —
-// but since it depends on React/DOM, we test the guard logic directly here.
+const KEY = "cvProfile.local.v1";
 
 function simulateLoadLocal(stored: unknown): unknown | null {
-  // Mirrors the loadLocal() logic from profile.tsx
-  try {
-    if (!stored) return null;
-    const raw = typeof stored === "string" ? stored : JSON.stringify(stored);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw) as { skills?: unknown; roles?: unknown };
-    if (!Array.isArray(parsed?.skills) || !Array.isArray(parsed?.roles)) return null;
-    return parsed;
-  } catch {
-    return null;
+  localStorage.clear();
+  if (stored !== null && stored !== undefined) {
+    localStorage.setItem(KEY, typeof stored === "string" ? stored : JSON.stringify(stored));
   }
+  return loadLocalProfile();
 }
 
 describe("profile loadLocal guard", () => {

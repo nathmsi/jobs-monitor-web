@@ -1,21 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import type { JobPreferences } from "./preferences";
+import { mergePrefs } from "./preferences";
 
-// Mirror of the mergePrefs guard in preferences.tsx.
 // Ensures roles/categories always come back as arrays even when old localStorage
 // data or Supabase returns null/undefined for those fields.
-
-const DEFAULT: JobPreferences = { region: "all", kind: "all", roles: [], categories: [] };
-
-function mergePrefs(raw: Partial<JobPreferences>): JobPreferences {
-  return {
-    ...DEFAULT,
-    ...raw,
-    roles: Array.isArray(raw.roles) ? raw.roles : DEFAULT.roles,
-    categories: Array.isArray(raw.categories) ? raw.categories : DEFAULT.categories,
-  };
-}
 
 describe("mergePrefs — guard against null/undefined arrays", () => {
   it("returns empty roles when stored value is null", () => {
@@ -64,7 +52,7 @@ describe("mergePrefs — guard against null/undefined arrays", () => {
 
   it("handles completely empty object — all defaults", () => {
     const result = mergePrefs({});
-    expect(result).toEqual(DEFAULT);
+    expect(result).toEqual({ region: "all", kind: "all", roles: [], categories: [] });
   });
 
   it("does not crash when roles is a string (very old format)", () => {

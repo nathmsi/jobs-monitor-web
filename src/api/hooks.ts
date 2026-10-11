@@ -5,6 +5,7 @@ import {
   getRegionJobs,
   getRegions,
   getSources,
+  getStats,
   type JobQuery,
 } from "./client";
 
@@ -58,3 +59,24 @@ export function useJobsInfinite(
   });
 }
 
+
+/** Headline numbers for the home page; they only change when a scrape runs. */
+export function useStats() {
+  return useQuery({
+    queryKey: ["stats"],
+    queryFn: getStats,
+    staleTime: 5 * 60_000,
+    refetchOnWindowFocus: false,
+  });
+}
+
+/** The newest offers across every region, for the home page. */
+export function useLatestJobs(limit = 6) {
+  return useQuery({
+    queryKey: ["latest-jobs", limit],
+    queryFn: () => getJobsPage({ region: "all", sort: "recent", limit }),
+    select: (page) => page.jobs,
+    staleTime: 60_000,
+    refetchOnWindowFocus: false,
+  });
+}

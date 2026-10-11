@@ -55,6 +55,9 @@ export function mockBackend({ jobs = [], sources = SOURCES }: Options = {}) {
   const getRegionJobs = vi.spyOn(client, "getRegionJobs").mockResolvedValue(jobs);
   const getSources = vi.spyOn(client, "getSources").mockResolvedValue(sources);
   const getRegions = vi.spyOn(client, "getRegions").mockResolvedValue(REGIONS);
+  const getStats = vi
+    .spyOn(client, "getStats")
+    .mockResolvedValue({ total: jobs.length, new_this_week: Math.min(jobs.length, 2), companies: sources.length });
 
-  return { getJobsPage, getRegionJobs, getSources, getRegions };
+  return { getJobsPage, getRegionJobs, getSources, getRegions, getStats };
 }

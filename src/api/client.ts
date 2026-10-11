@@ -62,6 +62,17 @@ export function getJobsPage(query: JobQuery): Promise<JobsPage> {
   return getJson<JobsPage>(`/api/jobs?${jobsQuery(query)}`);
 }
 
+/** Headline numbers for the home page (live offers only). */
+export interface JobsStats {
+  total: number;
+  new_this_week: number;
+  companies: number;
+}
+
+export function getStats(): Promise<JobsStats> {
+  return getJson<JobsStats>(`/api/stats`);
+}
+
 export interface CvAnalysis {
   snapshot: {
     headline: string;

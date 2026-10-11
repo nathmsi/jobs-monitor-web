@@ -141,7 +141,8 @@
   "nav": {
     "offers": "Offres",
     "cvAnalysis": "Coach CV",
-    "profile": "Mon profil"
+    "profile": "Mon profil",
+    "home": "Accueil"
   },
   "coach": {
     "nav": "Coach CV",
@@ -325,5 +326,31 @@
   "results": {
     "count_one": "{{count}} offre",
     "count_other": "{{count}} offres"
+  },
+  "home": {
+    "eyebrow": "Emplois tech · Israël",
+    "title": "Trouvez votre prochain emploi tech en Israël",
+    "lead": "Les offres des entreprises et des agences de recrutement, mises à jour chaque jour, au même endroit.",
+    "searchLabel": "Rechercher des offres",
+    "searchPlaceholder": "Poste, technologie ou entreprise",
+    "searchCta": "Rechercher",
+    "popular": "Populaires",
+    "statsLabel": "Chiffres en direct",
+    "statsOffers": "offres en ligne",
+    "statsNew": "nouvelles cette semaine",
+    "statsCompanies": "entreprises",
+    "latestTitle": "Dernières offres",
+    "seeAll": "Voir toutes les offres →",
+    "loadError": "Impossible de charger les dernières offres.",
+    "forYouTitle": "Personnalisez",
+    "matchTitle": "Offres adaptées à votre profil",
+    "matchDesc": "Les compétences de votre CV, classées face aux offres du jour.",
+    "matchCta": "Voir les offres pour moi →",
+    "cvTitle": "Analysez votre CV",
+    "cvDesc": "Obtenez un avis franc et trouvez les offres qui vous correspondent le mieux.",
+    "cvCta": "Ouvrir le Coach CV →",
+    "prefsTitle": "Réglez vos préférences",
+    "prefsDesc": "Choisissez vos rôles et votre région une fois : nous pré-filtrons les offres pour vous.",
+    "prefsCta": "Ouvrir mon profil →"
   }
 }

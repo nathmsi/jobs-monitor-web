@@ -141,7 +141,8 @@
   "nav": {
     "offers": "Offers",
     "cvAnalysis": "CV Analysis",
-    "profile": "My Profile"
+    "profile": "My Profile",
+    "home": "Home"
   },
   "coach": {
     "nav": "CV Coach",
@@ -325,5 +326,31 @@
   "results": {
     "count_one": "{{count}} offer",
     "count_other": "{{count}} offers"
+  },
+  "home": {
+    "eyebrow": "Tech jobs · Israel",
+    "title": "Find your next tech job in Israel",
+    "lead": "Offers from companies and staffing agencies, updated every day, in one place.",
+    "searchLabel": "Search offers",
+    "searchPlaceholder": "Role, technology or company",
+    "searchCta": "Search",
+    "popular": "Popular",
+    "statsLabel": "Live numbers",
+    "statsOffers": "live offers",
+    "statsNew": "new this week",
+    "statsCompanies": "companies",
+    "latestTitle": "Latest offers",
+    "seeAll": "See all offers →",
+    "loadError": "Could not load the latest offers.",
+    "forYouTitle": "Make it yours",
+    "matchTitle": "Offers that match your profile",
+    "matchDesc": "Your CV skills, ranked against today's offers.",
+    "matchCta": "See offers for me →",
+    "cvTitle": "Analyze your CV",
+    "cvDesc": "Get an honest review and find the offers that fit you best.",
+    "cvCta": "Open CV Coach →",
+    "prefsTitle": "Set your preferences",
+    "prefsDesc": "Pick your roles and region once — we pre-filter the offers for you.",
+    "prefsCta": "Open my profile →"
   }
 }

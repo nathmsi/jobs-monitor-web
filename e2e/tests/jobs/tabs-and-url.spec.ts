@@ -35,7 +35,7 @@ test.describe('Jobs · tabs and URL state', () => {
 
   test('a shared link restores search, tab and region', async ({ page, api }) => {
     const jobs = new JobsPage(page);
-    await jobs.open('/?tab=company&q=front&region=tlv');
+    await jobs.open('/jobs?tab=company&q=front&region=tlv');
 
     await expect(jobs.searchInput).toHaveValue('front');
     await expect(jobs.areaSelect).toHaveValue('tlv');
@@ -45,7 +45,7 @@ test.describe('Jobs · tabs and URL state', () => {
 
   test('ignores an unknown tab in the URL', async ({ page }) => {
     const jobs = new JobsPage(page);
-    await jobs.open('/?tab=bogus&sort=bogus');
+    await jobs.open('/jobs?tab=bogus&sort=bogus');
 
     await expect(jobs.tab('Tech companies')).toHaveAttribute('aria-selected', 'true');
     await expect(jobs.sortSelect).toHaveValue('recent');

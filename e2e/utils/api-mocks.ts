@@ -99,6 +99,9 @@ export async function mockApi(page: Page, initialJobs: MockJob[] = MOCK_JOBS): P
     );
   });
 
+  await page.route('**/api/stats', (route) =>
+    route.fulfill(json({ total: 856, new_this_week: 42, companies: 120 })),
+  );
   await page.route('**/api/sources', (route) => route.fulfill(json(MOCK_SOURCES)));
   await page.route('**/api/regions', (route) => route.fulfill(json(MOCK_REGIONS)));
 

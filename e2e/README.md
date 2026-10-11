@@ -24,8 +24,9 @@ e2e/
 ├── pages/              # Page Objects: *how* to drive a page
 │   ├── BasePage.ts
 │   ├── components/HeaderComponent.ts
-│   ├── JobsPage.ts  ProfilePage.ts  CoachPage.ts
+│   ├── HomePage.ts  JobsPage.ts  ProfilePage.ts  CoachPage.ts
 └── tests/              # specs: *what* the app must do, one folder per page
+    ├── home/           home
     ├── jobs/           browse · filters · saved-jobs · seen-offers · pagination
     │                   tabs-and-url · for-me · resilience
     ├── profile/        preferences · profile-stats · appearance · crash-regression

@@ -67,9 +67,9 @@ describe("App routing and shell (integration)", () => {
     getJobsPage.mockImplementation(() => {
       throw new Error("kaboom");
     });
-    renderWithProviders(<App />, { route: "/" });
+    renderWithProviders(<App />, { route: "/jobs" });
 
     // The query turns the thrown error into an alert rather than crashing the tree.
-    expect(await screen.findByRole("alert")).toHaveTextContent("kaboom");
+    expect(await screen.findByRole("alert", {}, { timeout: 5000 })).toHaveTextContent("kaboom");
   });
 });

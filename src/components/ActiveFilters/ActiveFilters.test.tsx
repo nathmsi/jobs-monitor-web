@@ -74,6 +74,15 @@ describe("ActiveFilters", () => {
     expect(applied()).toEqual({ region: "all", q: "", roles: ["mobile", "frontend"] });
   });
 
+  it("shows the 'added' window as a chip that can be removed", async () => {
+    const { user, applied } = setup({ ...NONE, posted: "7d" }, 5);
+
+    expect(screen.getByRole("list", { name: "Active filters" })).toHaveTextContent("Last 7 days");
+    await user.click(screen.getByRole("button", { name: "Remove filter Last 7 days" }));
+
+    expect(applied().posted).toBeUndefined();
+  });
+
   it("resets the region from its chip", async () => {
     const { user, applied } = setup({ region: "tlv", q: "", roles: [] }, 3);
     await user.click(screen.getByRole("button", { name: "Remove filter Tel Aviv" }));
@@ -91,6 +100,12 @@ describe("ActiveFilters", () => {
 
     await user.click(screen.getByRole("button", { name: "Clear all" }));
 
-    expect(applied()).toEqual({ region: "all", q: "", roles: [], category: undefined });
+    expect(applied()).toEqual({ region: "all", q: "", roles: [], category: undefined, posted: undefined });
+  });
+
+  it("'Clear all' also resets the 'added' window", async () => {
+    const { user, applied } = setup({ region: "all", q: "go", roles: [], posted: "24h" }, 2);
+    await user.click(screen.getByRole("button", { name: "Clear all" }));
+    expect(applied().posted).toBeUndefined();
   });
 });

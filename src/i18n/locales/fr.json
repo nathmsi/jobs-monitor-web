@@ -26,7 +26,11 @@
     "appliedCount_other": "{{count}} candidatures",
     "active": "Filtres actifs",
     "remove": "Retirer le filtre {{label}}",
-    "clearAll": "Tout effacer"
+    "clearAll": "Tout effacer",
+    "postedLabel": "Ajoutée",
+    "toggleCount": "Filtres ({{count}})",
+    "show_one": "Voir {{count}} offre",
+    "show_other": "Voir {{count}} offres"
   },
   "source": {
     "refresh": "Actualiser",
@@ -126,7 +130,7 @@
     "recommended": "Recommandé pour vous",
     "seeAll": "Tout voir",
     "emptyStats": "Analysez votre CV pour débloquer vos statistiques de correspondance.",
-    "emptyEditor": "Sélectionnez ou uploadez un CV pour extraire votre profil automatiquement.",
+    "emptyEditor": "Ajoutez votre CV ci-dessus pour extraire votre profil automatiquement.",
     "prefTitle": "Préférences offres",
     "prefKind": "Type de source",
     "kind_all": "Tout",
@@ -142,7 +146,10 @@
     "offers": "Offres",
     "cvAnalysis": "Coach CV",
     "profile": "Mon profil",
-    "home": "Accueil"
+    "home": "Accueil",
+    "forMe": "Pour moi",
+    "saved": "Sauvegardées",
+    "quick": "Navigation rapide"
   },
   "coach": {
     "nav": "Coach CV",
@@ -240,8 +247,9 @@
     "noProfile": "Analysez votre CV pour voir les offres qui vous correspondent.",
     "noMatch": "Aucune offre ne correspond à votre profil — essayez d'élargir le filtre de zone.",
     "summary": "{{count}} offres correspondant à votre profil",
-    "ctaBtn": "Aller au Coach CV →",
-    "noResultsHint": "Essayez de supprimer vos filtres ou d'élargir la zone."
+    "ctaBtn": "Ajouter mon CV →",
+    "noResultsHint": "Essayez de supprimer vos filtres ou d'élargir la zone.",
+    "coachBtn": "Analyse IA (connexion)"
   },
   "theme": {
     "system": "Système",
@@ -346,9 +354,9 @@
     "matchTitle": "Offres adaptées à votre profil",
     "matchDesc": "Les compétences de votre CV, classées face aux offres du jour.",
     "matchCta": "Voir les offres pour moi →",
-    "cvTitle": "Analysez votre CV",
-    "cvDesc": "Obtenez un avis franc et trouvez les offres qui vous correspondent le mieux.",
-    "cvCta": "Ouvrir le Coach CV →",
+    "cvTitle": "Ajoutez votre CV",
+    "cvDesc": "Déposez un PDF ou collez le texte : il est analysé dans votre navigateur, sans compte.",
+    "cvCta": "Ajouter mon CV →",
     "prefsTitle": "Réglez vos préférences",
     "prefsDesc": "Choisissez vos rôles et votre région une fois : nous pré-filtrons les offres pour vous.",
     "prefsCta": "Ouvrir mon profil →"
@@ -367,5 +375,36 @@
     "listLabel": "Suggestions de recherche",
     "available_one": "{{count}} suggestion disponible",
     "available_other": "{{count}} suggestions disponibles"
+  },
+  "cvImport": {
+    "title": "Votre CV",
+    "privacy": "Analysé dans votre navigateur : aucun compte requis, et votre CV ne quitte jamais votre appareil. Seules les compétences extraites sont enregistrées ici.",
+    "drop": "Déposez votre CV (PDF) ici",
+    "browse": "Choisir un PDF",
+    "reading": "Lecture…",
+    "or": "ou",
+    "pasteLabel": "Collez le texte de votre CV",
+    "pastePlaceholder": "Collez votre CV ici…",
+    "analyze": "Analyser mon CV",
+    "cancel": "Annuler",
+    "replace": "Remplacer mon CV",
+    "done_one": "Profil prêt : {{count}} compétence trouvée",
+    "done_other": "Profil prêt : {{count}} compétences trouvées",
+    "tooShort": "C'est trop court pour être analysé : collez votre CV en entier.",
+    "noSkills": "Nous n'avons trouvé aucune compétence technique dans ce texte. Collez davantage de votre CV.",
+    "pdfError": "Impossible de lire ce PDF. Collez le texte à la place.",
+    "signInHint": "Connectez-vous pour garder vos CV sur tous vos appareils"
+  },
+  "time": {
+    "justNow": "à l'instant"
+  },
+  "freshness": {
+    "updated": "Mis à jour"
+  },
+  "posted": {
+    "any": "Toutes dates",
+    "24h": "Dernières 24 heures",
+    "7d": "7 derniers jours",
+    "30d": "30 derniers jours"
   }
 }

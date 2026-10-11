@@ -33,6 +33,8 @@ export interface JobQuery {
   category?: string;
   kind?: "company" | "agency" | "";
   sort?: "relevance" | "recent" | "oldest" | "hot";
+  /** Only offers added in the last 24h | 7d | 30d. */
+  posted?: "24h" | "7d" | "30d";
   limit?: number; // <=0 → every match
   offset?: number;
 }
@@ -52,6 +54,7 @@ function jobsQuery(query: JobQuery): string {
   if (query.category) p.set("category", query.category);
   if (query.kind) p.set("kind", query.kind);
   if (query.sort) p.set("sort", query.sort);
+  if (query.posted) p.set("posted", query.posted);
   p.set("limit", String(query.limit ?? 30));
   p.set("offset", String(query.offset ?? 0));
   return p.toString();
@@ -95,6 +98,8 @@ export interface JobsStats {
   total: number;
   new_this_week: number;
   companies: number;
+  /** Last time an offer was confirmed online (ISO-8601). */
+  updated_at: string | null;
 }
 
 export function getStats(): Promise<JobsStats> {

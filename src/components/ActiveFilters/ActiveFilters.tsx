@@ -43,6 +43,13 @@ export const ActiveFilters = memo(function ActiveFilters({ filters, total, onCha
       remove: (f) => ({ ...f, category: undefined }),
     });
   }
+  if (filters.posted) {
+    chips.push({
+      id: "posted",
+      label: t(`posted.${filters.posted}`),
+      remove: (f) => ({ ...f, posted: undefined }),
+    });
+  }
   const region = regions?.find((r) => r.key === filters.region);
   if (filters.region !== "all" && region) {
     chips.push({
@@ -83,7 +90,7 @@ export const ActiveFilters = memo(function ActiveFilters({ filters, total, onCha
           type="button"
           className={styles.clearAll}
           onClick={() =>
-            onChange((f) => ({ ...f, q: "", roles: [], category: undefined, region: "all" }))
+            onChange((f) => ({ ...f, q: "", roles: [], category: undefined, posted: undefined, region: "all" }))
           }
         >
           {t("filters.clearAll")}

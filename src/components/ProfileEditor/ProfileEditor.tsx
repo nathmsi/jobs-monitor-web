@@ -33,6 +33,14 @@ export function ProfileEditor({ cvText }: ProfileEditorProps) {
   const [newSkill, setNewSkill] = useState("");
   const [saved, setSaved] = useState(false);
 
+  // Follow the saved profile when it changes underneath us (a CV was imported,
+  // the profile was cleared, or it finished loading after sign-in).
+  const [seenAt, setSeenAt] = useState(profile?.updatedAt);
+  if (profile?.updatedAt !== seenAt) {
+    setSeenAt(profile?.updatedAt);
+    setDraft(normalizeProfile(profile));
+  }
+
   const extract = () => {
     if (cvText && cvText.trim().length >= 50) setDraft(analyzeCv(cvText));
   };

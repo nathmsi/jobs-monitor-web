@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useJobsInfinite, useRegionJobs, useSources } from "../api/hooks";
 import { ActiveFilters } from "../components/ActiveFilters/ActiveFilters";
+import { UpdatedAgo } from "../components/UpdatedAgo/UpdatedAgo";
 import { ForMe } from "../components/ForMe/ForMe";
 import { Header } from "../components/Header/Header";
 import { JobCard } from "../components/JobCard/JobCard";
@@ -55,11 +56,18 @@ export function JobsPage() {
 
   const browsing = tab === "company" || tab === "agency";
   const searching = filters.q.trim() !== "" || filters.roles.length > 0;
+  // What the "Filters" button reports on phones (the search text is visible on its own).
+  const activeFilterCount =
+    filters.roles.length +
+    (filters.category ? 1 : 0) +
+    (filters.region !== "all" ? 1 : 0) +
+    (filters.posted ? 1 : 0) +
+    (hideSeen ? 1 : 0);
   const kind = browsing ? tab : ("" as const);
 
   // Server-side filtered + paginated offers for the browse tabs.
   const jobsQuery = useJobsInfinite(
-    { region: filters.region, q: filters.q, role: filters.roles.join(","), category: filters.category, kind, sort },
+    { region: filters.region, q: filters.q, role: filters.roles.join(","), category: filters.category, posted: filters.posted, kind, sort },
     browsing,
   );
 
@@ -80,6 +88,11 @@ export function JobsPage() {
     const visible = all.filter((j) => !isOpened(jobId(j.source, j.external_id)));
     return { jobs: visible, hiddenCount: all.length - visible.length };
   }, [jobsQuery.data, hideSeen, isOpened]);
+
+  /** Offers matching the filters (what the sheet's "Show N offers" reports). */
+  const resultCount = jobsQuery.data
+    ? Math.max(jobsQuery.data.pages[0].total - hiddenCount, jobs.length)
+    : undefined;
 
   // "For me" badge = matching offers, computed once the full set is loaded.
   const formeCount = useMemo(() => {
@@ -129,7 +142,7 @@ export function JobsPage() {
           {t("tabs.agencies")}
         </button>
 
-        <span className={styles.tabDivider} aria-hidden />
+        <span className={`${styles.tabDivider} ${styles.tabSecondary}`} aria-hidden />
 
         <button
           role="tab"
@@ -137,7 +150,7 @@ export function JobsPage() {
           aria-controls="jobs-tabpanel"
           tabIndex={tab === "mine" ? 0 : -1}
           aria-selected={tab === "mine"}
-          className={`${styles.tab} ${tab === "mine" ? styles.tabActive : ""}`}
+          className={`${styles.tab} ${styles.tabSecondary} ${tab === "mine" ? styles.tabActive : ""}`}
           onClick={() => setTab("mine")}
         >
           {t("tabs.mine")} <span className={styles.tabCount}>{savedItems.length}</span>
@@ -148,7 +161,7 @@ export function JobsPage() {
           aria-controls="jobs-tabpanel"
           tabIndex={tab === "forme" ? 0 : -1}
           aria-selected={tab === "forme"}
-          className={`${styles.tab} ${tab === "forme" ? styles.tabActive : ""}`}
+          className={`${styles.tab} ${styles.tabSecondary} ${tab === "forme" ? styles.tabActive : ""}`}
           onClick={() => setTab("forme")}
         >
           {t("tabs.forme")}
@@ -171,6 +184,11 @@ export function JobsPage() {
             {t("filters.close")}
           </button>
           <Sidebar filters={filters} onChange={setFilters} />
+          {browsing && resultCount !== undefined && (
+            <button type="button" className={styles.sheetShow} onClick={() => setFiltersOpen(false)}>
+              {t("filters.show", { count: resultCount })}
+            </button>
+          )}
         </div>
 
         <div className={styles.content}>
@@ -180,7 +198,7 @@ export function JobsPage() {
               onClick={() => setFiltersOpen((v) => !v)}
             >
               <FilterIcon size={14} strokeWidth={2.2} />
-              {t("filters.toggle")}
+              {activeFilterCount > 0 ? t("filters.toggleCount", { count: activeFilterCount }) : t("filters.toggle")}
             </button>
             {browsing && (
               <label className={styles.sortWrap}>
@@ -256,7 +274,7 @@ export function JobsPage() {
             <>
             <ActiveFilters
               filters={filters}
-              total={jobsQuery.data ? Math.max(jobsQuery.data.pages[0].total - hiddenCount, jobs.length) : undefined}
+              total={resultCount}
               onChange={setFilters}
             />
             <main className={viewMode === "grid" ? styles.grid : styles.gridList}>
@@ -324,7 +342,10 @@ export function JobsPage() {
         </div>
       </div>
 
-      <footer className={styles.footer}>{t("footer")}</footer>
+      <footer className={styles.footer}>
+        {t("footer")}
+        <UpdatedAgo className={styles.updated} />
+      </footer>
 
       {showAll && (
         <SourcesModal

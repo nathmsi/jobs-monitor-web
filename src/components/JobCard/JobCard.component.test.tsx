@@ -164,4 +164,34 @@ describe("JobCard", () => {
     expect(screen.queryByRole("link")).not.toBeInTheDocument();
     expect(screen.queryByRole("list")).not.toBeInTheDocument();
   });
+
+  describe("age", () => {
+    const hoursAgo = (h: number) => new Date(Date.now() - h * 3600_000).toISOString();
+
+    it("says how long the offer has been online, next to the place", () => {
+      renderCard(makeJob({ external_id: "7", title: "Aged", added_at: hoursAgo(72) }));
+
+      expect(screen.getByText("Tel Aviv", { exact: false })).toHaveTextContent("Tel Aviv · 3 days ago");
+      expect(screen.getByText("3 days ago").tagName).toBe("TIME");
+    });
+
+    it("uses 'just now' for a very recent offer", () => {
+      renderCard(makeJob({ external_id: "8", title: "New", added_at: hoursAgo(0.005) }));
+      expect(screen.getByText("just now")).toBeInTheDocument();
+    });
+
+    it("shows only the age when the offer has no location", () => {
+      renderCard(makeJob({ external_id: "9", title: "Remote", location: "", added_at: hoursAgo(5) }));
+      expect(screen.getByText("5 hours ago")).toBeInTheDocument();
+    });
+
+    it("shows no age when the date is unknown or invalid", () => {
+      const { unmount } = renderCard(makeJob({ external_id: "10", title: "A", added_at: null }));
+      expect(document.querySelector("time")).toBeNull();
+      unmount();
+
+      renderCard(makeJob({ external_id: "11", title: "B", added_at: "nope" }));
+      expect(document.querySelector("time")).toBeNull();
+    });
+  });
 });

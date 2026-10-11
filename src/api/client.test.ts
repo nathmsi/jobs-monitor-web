@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { filterByKeyword, getPopular, getRegionJobs, getSources, getSuggestions } from "./client";
+import { filterByKeyword, getJobsPage, getPopular, getRegionJobs, getSources, getStats, getSuggestions } from "./client";
 import type { Job } from "../types";
 
 function mockFetch(body: unknown, ok = true, status = 200) {
@@ -100,5 +100,29 @@ describe("api client (backend API)", () => {
   it("getPopular rejects on an HTTP error", async () => {
     vi.stubGlobal("fetch", mockFetch({}, false, 500));
     await expect(getPopular()).rejects.toThrow(/500/);
+  });
+
+  it("getJobsPage sends the 'added' window", async () => {
+    const f = mockFetch({ jobs: [], total: 0, limit: 24, offset: 0, has_more: false });
+    vi.stubGlobal("fetch", f);
+
+    await getJobsPage({ region: "all", posted: "7d", limit: 24 });
+
+    expect(String(f.mock.calls[0][0])).toContain("posted=7d");
+  });
+
+  it("getJobsPage omits the window when there is none", async () => {
+    const f = mockFetch({ jobs: [], total: 0, limit: 24, offset: 0, has_more: false });
+    vi.stubGlobal("fetch", f);
+
+    await getJobsPage({ region: "all", limit: 24 });
+
+    expect(String(f.mock.calls[0][0])).not.toContain("posted");
+  });
+
+  it("getStats returns the numbers and when the data was last updated", async () => {
+    const stats = { total: 692, new_this_week: 162, companies: 137, updated_at: "2026-10-11T06:15:16.410Z" };
+    vi.stubGlobal("fetch", mockFetch(stats));
+    await expect(getStats()).resolves.toEqual(stats);
   });
 });

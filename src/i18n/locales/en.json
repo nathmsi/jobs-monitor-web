@@ -26,7 +26,11 @@
     "appliedCount_other": "{{count}} applications",
     "active": "Active filters",
     "remove": "Remove filter {{label}}",
-    "clearAll": "Clear all"
+    "clearAll": "Clear all",
+    "postedLabel": "Added",
+    "toggleCount": "Filters ({{count}})",
+    "show_one": "Show {{count}} offer",
+    "show_other": "Show {{count}} offers"
   },
   "source": {
     "refresh": "Refresh",
@@ -126,7 +130,7 @@
     "recommended": "Recommended for you",
     "seeAll": "See all",
     "emptyStats": "Analyze your CV to unlock your match stats and recommended offers.",
-    "emptyEditor": "Select or upload a CV to extract your profile automatically.",
+    "emptyEditor": "Add your CV above to extract your profile automatically.",
     "prefTitle": "Job preferences",
     "prefKind": "Source type",
     "kind_all": "All",
@@ -142,7 +146,10 @@
     "offers": "Offers",
     "cvAnalysis": "CV Analysis",
     "profile": "My Profile",
-    "home": "Home"
+    "home": "Home",
+    "forMe": "For you",
+    "saved": "Saved",
+    "quick": "Quick navigation"
   },
   "coach": {
     "nav": "CV Coach",
@@ -240,8 +247,9 @@
     "noProfile": "Analyze your CV to see the offers that match you.",
     "noMatch": "No offers match your profile right now — try widening the area filter.",
     "summary": "{{count}} offers matched to your profile",
-    "ctaBtn": "Go to CV Coach →",
-    "noResultsHint": "Try clearing your filters or expanding the region."
+    "ctaBtn": "Add my CV →",
+    "noResultsHint": "Try clearing your filters or expanding the region.",
+    "coachBtn": "AI review (sign in)"
   },
   "theme": {
     "system": "System",
@@ -346,9 +354,9 @@
     "matchTitle": "Offers that match your profile",
     "matchDesc": "Your CV skills, ranked against today's offers.",
     "matchCta": "See offers for me →",
-    "cvTitle": "Analyze your CV",
-    "cvDesc": "Get an honest review and find the offers that fit you best.",
-    "cvCta": "Open CV Coach →",
+    "cvTitle": "Add your CV",
+    "cvDesc": "Drop a PDF or paste the text: it is analysed in your browser, no account needed.",
+    "cvCta": "Add my CV →",
     "prefsTitle": "Set your preferences",
     "prefsDesc": "Pick your roles and region once — we pre-filter the offers for you.",
     "prefsCta": "Open my profile →"
@@ -367,5 +375,36 @@
     "listLabel": "Search suggestions",
     "available_one": "{{count}} suggestion available",
     "available_other": "{{count}} suggestions available"
+  },
+  "cvImport": {
+    "title": "Your CV",
+    "privacy": "Analysed in your browser: no account needed, and your CV never leaves your device. Only the skills we extract are saved here.",
+    "drop": "Drop your CV (PDF) here",
+    "browse": "Choose a PDF",
+    "reading": "Reading…",
+    "or": "or",
+    "pasteLabel": "Paste the text of your CV",
+    "pastePlaceholder": "Paste your CV here…",
+    "analyze": "Analyse my CV",
+    "cancel": "Cancel",
+    "replace": "Replace my CV",
+    "done_one": "Profile ready: {{count}} skill found",
+    "done_other": "Profile ready: {{count}} skills found",
+    "tooShort": "That is too short to analyse: paste your whole CV.",
+    "noSkills": "We could not find any technical skill in this text. Paste more of your CV.",
+    "pdfError": "Could not read this PDF. Paste the text instead.",
+    "signInHint": "Sign in to keep your CVs on every device"
+  },
+  "time": {
+    "justNow": "just now"
+  },
+  "freshness": {
+    "updated": "Updated"
+  },
+  "posted": {
+    "any": "Any time",
+    "24h": "Last 24 hours",
+    "7d": "Last 7 days",
+    "30d": "Last 30 days"
   }
 }

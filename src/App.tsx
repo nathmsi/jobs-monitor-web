@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 
+import { BottomNav } from "./components/BottomNav/BottomNav";
 import { ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
 import { PageFallback } from "./components/PageFallback/PageFallback";
 import { HomePage } from "./pages/HomePage";
@@ -34,6 +35,7 @@ function App() {
           <Route path="/coach" element={<CoachPage />} />
         </Routes>
       </Suspense>
+      <BottomNav />
     </ErrorBoundary>
   );
 }

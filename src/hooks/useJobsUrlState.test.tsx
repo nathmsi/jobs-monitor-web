@@ -97,4 +97,17 @@ describe("useJobsUrlState", () => {
     const params = new URLSearchParams(result.current.loc.search);
     expect([params.get("tab"), params.get("sort"), params.get("q")]).toEqual(["company", "hot", "go"]);
   });
+
+  it("reads and writes the 'added' window, and ignores unknown values", () => {
+    const { result } = setup("/?posted=7d");
+    expect(result.current.s.filters.posted).toBe("7d");
+
+    act(() => result.current.s.setFilters((f) => ({ ...f, posted: "24h" })));
+    expect(new URLSearchParams(result.current.loc.search).get("posted")).toBe("24h");
+
+    act(() => result.current.s.setFilters((f) => ({ ...f, posted: undefined })));
+    expect(new URLSearchParams(result.current.loc.search).has("posted")).toBe(false);
+
+    expect(setup("/?posted=forever").result.current.s.filters.posted).toBeUndefined();
+  });
 });

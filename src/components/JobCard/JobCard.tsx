@@ -10,6 +10,7 @@ import { parseAiSummary } from "../../utils/aiSummary";
 import { matchScore } from "../../utils/cvAnalysis";
 import { jobId } from "../../utils/jobId";
 import { jobText } from "../../utils/jobText";
+import { formatAgo } from "../../utils/relativeTime";
 import { Avatar } from "../Avatar/Avatar";
 import { Badge } from "../Badge/Badge";
 import { AlertCircleIcon, BookmarkIcon, CheckIcon } from "../Icons/Icons";
@@ -29,7 +30,7 @@ const MAX_STACK = 3;
  * mark it as applied).
  */
 export const JobCard = memo(function JobCard({ job, source }: Props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { showToast } = useToast();
   const { isOpened, markOpened } = useJobFlags();
   const { statusOf, setStatus } = useSavedJobs();
@@ -60,8 +61,12 @@ export const JobCard = memo(function JobCard({ job, source }: Props) {
 
   const remote = ai?.remote === "Remote" ? t("job.remote") : ai?.remote === "Hybrid" ? t("job.hybrid") : "";
   const place = job.location.split(",")[0];
+  const age = useMemo(
+    () => formatAgo(job.added_at, i18n.language, t("time.justNow")),
+    [job.added_at, i18n.language, t],
+  );
   const stack = ai?.stack.slice(0, MAX_STACK) ?? [];
-  const hasTags = Boolean(place || ai?.level || remote || stack.length || match.count > 0);
+  const hasTags = Boolean(place || age || ai?.level || remote || stack.length || match.count > 0);
 
   return (
     <article className={cardClass}>
@@ -111,7 +116,13 @@ export const JobCard = memo(function JobCard({ job, source }: Props) {
 
       {hasTags && (
         <ul className={styles.tags}>
-          {place && <li className={styles.location}>{place}</li>}
+          {(place || age) && (
+            <li className={styles.location}>
+              {place}
+              {place && age && " · "}
+              {age && <time dateTime={job.added_at ?? undefined}>{age}</time>}
+            </li>
+          )}
           {ai?.level && (
             <li className={styles.levelBadge} data-level={ai.level.toLowerCase()}>{ai.level}</li>
           )}

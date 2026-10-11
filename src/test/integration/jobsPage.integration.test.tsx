@@ -290,3 +290,67 @@ describe("JobsPage search experience (integration)", () => {
     expect(screen.getByRole("button", { name: "Frontend" })).toHaveAttribute("aria-pressed", "true");
   });
 });
+
+describe("JobsPage freshness and phone controls (integration)", () => {
+  const hoursAgo = (h: number) => new Date(Date.now() - h * 3600_000).toISOString();
+  let backend: ReturnType<typeof mockBackend>;
+
+  beforeEach(() => {
+    vi.restoreAllMocks();
+    backend = mockBackend({
+      jobs: [
+        makeJob({ external_id: "1", title: "Frontend Engineer", added_at: hoursAgo(5) }),
+        makeJob({ external_id: "2", title: "Backend Developer", added_at: hoursAgo(24 * 20) }),
+      ],
+    });
+  });
+
+  it("each card says how long the offer has been online", async () => {
+    renderWithProviders(<JobsPage />, { route: "/jobs" });
+    await screen.findByText("Frontend Engineer");
+
+    expect(screen.getByText("5 hours ago")).toBeInTheDocument();
+    expect(screen.getByText("2 weeks ago")).toBeInTheDocument();
+  });
+
+  it("'Added' asks the API for that window and shows it as a chip", async () => {
+    const { user } = renderWithProviders(<JobsPage />, { route: "/jobs" });
+    await screen.findByText("Frontend Engineer");
+
+    await user.selectOptions(screen.getByRole("combobox", { name: "Added" }), "7d");
+
+    await waitFor(() => expect(backend.getJobsPage).toHaveBeenLastCalledWith(expect.objectContaining({ posted: "7d" })));
+    expect(screen.getByTestId("location")).toHaveTextContent("posted=7d");
+    expect(await screen.findByRole("list", { name: "Active filters" })).toHaveTextContent("Last 7 days");
+  });
+
+  it("restores the window from the URL", async () => {
+    renderWithProviders(<JobsPage />, { route: "/jobs?posted=24h" });
+    await screen.findByText("Frontend Engineer");
+
+    expect(screen.getByRole("combobox", { name: "Added" })).toHaveValue("24h");
+    expect(backend.getJobsPage).toHaveBeenCalledWith(expect.objectContaining({ posted: "24h" }));
+  });
+
+  it("the 'Filters' button counts the active filters", async () => {
+    const { user } = renderWithProviders(<JobsPage />, { route: "/jobs" });
+    await screen.findByText("Frontend Engineer");
+    expect(screen.getByRole("button", { name: "Filters" })).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "Mobile" }));
+    await user.selectOptions(screen.getByRole("combobox", { name: "Added" }), "30d");
+
+    expect(await screen.findByRole("button", { name: "Filters (2)" })).toBeInTheDocument();
+  });
+
+  it("the filter sheet ends with 'Show N offers', which closes it", async () => {
+    const { user } = renderWithProviders(<JobsPage />, { route: "/jobs" });
+    await screen.findByText("Frontend Engineer");
+
+    await user.click(screen.getByRole("button", { name: "Filters" }));
+    const show = await screen.findByRole("button", { name: "Show 2 offers" });
+    await user.click(show);
+
+    expect(document.querySelector('[class*="filterBackdrop"]')).toBeNull();
+  });
+});

@@ -6,6 +6,7 @@ import { useRegionJobs, useRegions, useSources } from "../api/hooks";
 import { CVUploadModal } from "../components/CVUploadModal/CVUploadModal";
 import { Header } from "../components/Header/Header";
 import { JobCard } from "../components/JobCard/JobCard";
+import { LocalCvImport } from "../components/LocalCvImport/LocalCvImport";
 import { ThemeSetting } from "../components/ThemeSetting/ThemeSetting";
 import { ProfileEditor } from "../components/ProfileEditor/ProfileEditor";
 import { useAuth } from "../providers/auth/useAuth";
@@ -161,9 +162,15 @@ export function ProfilePage() {
 
           {/* CV source card */}
           <div className={styles.sectionCard}>
-            <h2 className={styles.sectionTitle}>{t("coach.nav")}</h2>
+            <h2 className={styles.sectionTitle}>{t("cvImport.title")}</h2>
 
-            {hasCv ? (
+            {!user ? (
+              <LocalCvImport
+                hasProfile={hasProfile}
+                skillCount={profile?.skills.length ?? 0}
+                onSignIn={enabled ? () => signInWithGoogle() : undefined}
+              />
+            ) : hasCv ? (
               <div className={styles.cvBar}>
                 <div className={styles.cvBarInfo}>
                   <span className={styles.cvDot} />
@@ -177,15 +184,9 @@ export function ProfilePage() {
             ) : (
               <div className={styles.cvEmpty}>
                 <p className={styles.cvEmptyText}>{t("coach.noCv")}</p>
-                {user ? (
-                  <button className={styles.primaryBtn} onClick={() => setShowUploadModal(true)}>
-                    {t("coach.uploadCv")}
-                  </button>
-                ) : (
-                  <button className={styles.primaryBtn} onClick={() => signInWithGoogle()}>
-                    {t("auth.signInGoogle")}
-                  </button>
-                )}
+                <button className={styles.primaryBtn} onClick={() => setShowUploadModal(true)}>
+                  {t("coach.uploadCv")}
+                </button>
               </div>
             )}
           </div>

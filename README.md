@@ -10,6 +10,9 @@ signed-out, persisted in `localStorage`.
 
 ## Features
 
+- **CV without an account** (`/profile`): drop a PDF or paste the text; it is read and analysed in the browser (pdf.js + `analyzeCv`), only the extracted skills/roles are saved on the device — the CV itself is never uploaded or stored. It powers "For me" and the recommendations right away; signing in stays optional (CV library, AI review).
+- **Freshness**: each card shows how long the offer has been online ("3 days ago"), an "Added" filter (24 h / 7 days / 30 days, in the URL) and "Updated 12 minutes ago" in the footer (from `/api/stats`).
+- **Phones**: a bottom navigation (Home, Offers, For you, Saved with count, Profile), "Filters (n)", and a sheet ending with "Show N offers".
 - **Autocomplete** (home and offers): roles, technologies, job titles, companies and cities with live offer counts (`/api/search/suggest`), recent searches, popular searches from `/api/search/popular` — nothing hardcoded. ARIA combobox: ↑ ↓ Enter Esc.
 - **Home** (`/`): one search box, popular searches, live numbers (`/api/stats`), the 6 latest offers and shortcuts to the CV coach / preferences. Old `/?tab=…` links redirect to `/jobs`.
 - Offers browser (`/jobs`): whole-word search over title, description, location and company
@@ -57,7 +60,7 @@ src/
 ├── main.tsx · App.tsx          # providers + routes (all pages but the home are lazy-loaded)
 ├── pages/                      # route components: HomePage, JobsPage, ProfilePage, CoachPage
 │                               #   (lazyPages.ts: route chunks, preloaded on link hover/focus)
-├── components/<Name>/          # UI (SearchBox = autocomplete combobox); <Name>.tsx + <Name>.module.css (+ test)
+├── components/<Name>/          # UI (SearchBox = autocomplete combobox, BottomNav = phone nav, LocalCvImport = account-free CV); <Name>.tsx + <Name>.module.css (+ test)
 ├── providers/<name>/           # React context state, one folder each:
 │   │                           #   <Name>Context.ts  context + types
 │   │                           #   <Name>Provider.tsx  component only

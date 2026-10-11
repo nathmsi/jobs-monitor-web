@@ -1,4 +1,4 @@
-import { act, render, screen } from "@testing-library/react";
+import { act, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
@@ -113,5 +113,21 @@ describe("Sidebar", () => {
   it("shows the number of applications", () => {
     render(<Harness initial={BASE} />);
     expect(screen.getByText("2 applications")).toBeInTheDocument();
+  });
+
+  it("filters by how recently offers were added", async () => {
+    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+    render(<Harness initial={BASE} />);
+    const select = screen.getByRole("combobox", { name: "Added" });
+    expect(select).toHaveValue("");
+    expect(within(select).getAllByRole("option").map((o) => o.textContent)).toEqual([
+      "Any time", "Last 24 hours", "Last 7 days", "Last 30 days",
+    ]);
+
+    await user.selectOptions(select, "7d");
+    expect(latest.filters.posted).toBe("7d");
+
+    await user.selectOptions(select, "");
+    expect(latest.filters.posted).toBeUndefined();
   });
 });

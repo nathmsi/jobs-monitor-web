@@ -15,7 +15,7 @@ export class HomePage extends BasePage {
   constructor(page: Page) {
     super(page);
     this.heading = page.getByRole('heading', { level: 1 });
-    this.searchInput = page.getByRole('searchbox', { name: 'Search offers' });
+    this.searchInput = page.getByRole('combobox', { name: 'Search offers' });
     this.searchButton = page.getByRole('button', { name: 'Search', exact: true });
     this.stats = page.getByRole('term').locator('xpath=..');
     this.cards = page.getByRole('article');
@@ -28,9 +28,22 @@ export class HomePage extends BasePage {
     await this.heading.waitFor();
   }
 
-  /** The "Popular" quick links. */
-  popularLink(role: string): Locator {
-    return this.page.getByRole('navigation', { name: 'Popular' }).getByRole('link', { name: role, exact: true });
+  /** A "Popular" quick link (its name is the label followed by the number of offers). */
+  popularLink(label: string): Locator {
+    return this.page.getByRole('navigation', { name: 'Popular' }).getByRole('link', { name: new RegExp(`^${label}\\s*\\d*$`) });
+  }
+
+  popular(): Locator {
+    return this.page.getByRole('navigation', { name: 'Popular' });
+  }
+
+  /** The suggestion popup under the search box. */
+  suggestions(): Locator {
+    return this.page.getByRole('listbox', { name: 'Search suggestions' });
+  }
+
+  suggestion(name: string | RegExp): Locator {
+    return this.suggestions().getByRole('option', { name });
   }
 
   /** One of the live numbers, found by its label ("live offers"). */

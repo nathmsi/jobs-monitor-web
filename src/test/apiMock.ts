@@ -18,9 +18,22 @@ function matchesAnyRole(job: Job, roles: string): boolean {
   });
 }
 
+/** A small vocabulary: what the API would suggest for these offers. */
+export const SUGGESTIONS: client.Suggestion[] = [
+  { type: "role", label: "Mobile", value: "mobile", count: 37 },
+  { type: "role", label: "Frontend", value: "frontend", count: 65 },
+  { type: "skill", label: "React", value: "React", count: 16 },
+  { type: "skill", label: "React Native", value: "React Native", count: 5 },
+  { type: "skill", label: "iOS", value: "iOS", count: 9 },
+  { type: "title", label: "Senior", value: "Senior", count: 215 },
+  { type: "company", label: "Melio", value: "Melio", count: 5 },
+  { type: "location", label: "Tel Aviv", value: "Tel Aviv", count: 316 },
+];
+
 interface Options {
   jobs?: Job[];
   sources?: SourceInfo[];
+  suggestions?: client.Suggestion[];
 }
 
 /**
@@ -28,7 +41,7 @@ interface Options {
  * the filters the UI sends (q, kind, sort, limit/offset). Returns the spies so
  * tests can assert on the requests that were made.
  */
-export function mockBackend({ jobs = [], sources = SOURCES }: Options = {}) {
+export function mockBackend({ jobs = [], sources = SOURCES, suggestions = SUGGESTIONS }: Options = {}) {
   const kindOf = (key: string) => sources.find((s) => s.key === key)?.kind;
 
   const getJobsPage = vi.spyOn(client, "getJobsPage").mockImplementation(async (query) => {
@@ -59,5 +72,13 @@ export function mockBackend({ jobs = [], sources = SOURCES }: Options = {}) {
     .spyOn(client, "getStats")
     .mockResolvedValue({ total: jobs.length, new_this_week: Math.min(jobs.length, 2), companies: sources.length });
 
-  return { getJobsPage, getRegionJobs, getSources, getRegions, getStats };
+  const getSuggestions = vi.spyOn(client, "getSuggestions").mockImplementation(async (q) => {
+    const needle = q.trim().toLowerCase();
+    return suggestions.filter((s) => s.label.toLowerCase().includes(needle)).slice(0, 8);
+  });
+  const getPopular = vi
+    .spyOn(client, "getPopular")
+    .mockImplementation(async (limit = 8) => [...suggestions].filter((s) => s.type !== "company" && s.type !== "location" && s.type !== "title").slice(0, limit));
+
+  return { getJobsPage, getRegionJobs, getSources, getRegions, getStats, getSuggestions, getPopular };
 }

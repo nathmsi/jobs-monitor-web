@@ -10,7 +10,8 @@ signed-out, persisted in `localStorage`.
 
 ## Features
 
-- **Home** (`/`): one search box, popular roles, live numbers (`/api/stats`), the 6 latest offers and shortcuts to the CV coach / preferences. Old `/?tab=…` links redirect to `/jobs`.
+- **Autocomplete** (home and offers): roles, technologies, job titles, companies and cities with live offer counts (`/api/search/suggest`), recent searches, popular searches from `/api/search/popular` — nothing hardcoded. ARIA combobox: ↑ ↓ Enter Esc.
+- **Home** (`/`): one search box, popular searches, live numbers (`/api/stats`), the 6 latest offers and shortcuts to the CV coach / preferences. Old `/?tab=…` links redirect to `/jobs`.
 - Offers browser (`/jobs`): whole-word search over title, description, location and company
   (aliases like front-end/k8s; "mobile" finds iOS/Android), several roles at once,
   best-match sorting, active-filter chips with a result count, pagination,
@@ -56,7 +57,7 @@ src/
 ├── main.tsx · App.tsx          # providers + routes (all pages but the home are lazy-loaded)
 ├── pages/                      # route components: HomePage, JobsPage, ProfilePage, CoachPage
 │                               #   (lazyPages.ts: route chunks, preloaded on link hover/focus)
-├── components/<Name>/          # UI; <Name>.tsx + <Name>.module.css (+ test)
+├── components/<Name>/          # UI (SearchBox = autocomplete combobox); <Name>.tsx + <Name>.module.css (+ test)
 ├── providers/<name>/           # React context state, one folder each:
 │   │                           #   <Name>Context.ts  context + types
 │   │                           #   <Name>Provider.tsx  component only

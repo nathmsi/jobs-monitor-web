@@ -353,5 +353,21 @@
     "prefsTitle": "הגדירו העדפות",
     "prefsDesc": "בחרו תפקידים ואזור פעם אחת — נסנן עבורכם את המשרות מראש.",
     "prefsCta": "לפרופיל שלי ←"
+  },
+  "search": {
+    "groups": {
+      "role": "תפקידים",
+      "skill": "טכנולוגיות",
+      "title": "כותרות משרה",
+      "company": "חברות",
+      "location": "מקומות"
+    },
+    "recent": "חיפושים אחרונים",
+    "popular": "פופולריים",
+    "clearRecent": "ניקוי",
+    "listLabel": "הצעות חיפוש",
+    "available_one": "הצעה {{count}} זמינה",
+    "available_two": "{{count}} הצעות זמינות",
+    "available_other": "{{count}} הצעות זמינות"
   }
 }

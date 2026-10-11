@@ -1,7 +1,7 @@
 import type { Page } from '@playwright/test';
 
 import { ROLES } from '../../src/constants/roles';
-import { MOCK_JOBS, MOCK_REGIONS, MOCK_SOURCES, type MockJob } from '../fixtures/data';
+import { MOCK_JOBS, MOCK_REGIONS, MOCK_SOURCES, VOCAB, type MockJob, type MockSuggestion } from '../fixtures/data';
 
 /**
  * Stateful stand-in for the jobs-monitor-api backend. It honours the query
@@ -18,6 +18,12 @@ export interface ApiMock {
   /** Stop failing. */
   recover(): void;
   lastJobsRequest(): URL | undefined;
+  /** Every request made to `/api/search/suggest`. */
+  suggestRequests: URL[];
+  /** Replace what `/api/search/popular` answers. */
+  setPopular(popular: MockSuggestion[]): void;
+  /** Make the search-suggestion endpoints answer 503. */
+  failSuggestions(): void;
 }
 
 type Failure = 'none' | 'all' | 'full-set';
@@ -62,6 +68,30 @@ function sorted(jobs: MockJob[], sort: string | null): MockJob[] {
   return jobs;
 }
 
+const norm = (s: string) => s.toLowerCase().replace(/[-_/]+/g, ' ').replace(/\s+/g, ' ').trim();
+
+/** Same idea as the API's ranking: exact > prefix > word start; role > skill > title > company > place. */
+function suggest(q: string, limit: number): MockSuggestion[] {
+  const needle = norm(q);
+  if (!needle) return [];
+  const order = ['role', 'skill', 'title', 'company', 'location'];
+  const score = (e: MockSuggestion): number => {
+    const label = norm(e.label);
+    if (label === needle) return 1000;
+    if (e.exact?.includes(needle)) return 700;
+    if (label.startsWith(needle)) return 800;
+    if (label.includes(` ${needle}`)) return 600;
+    return 0;
+  };
+  return VOCAB.map((e) => ({ e, s: score(e) }))
+    .filter((m) => m.s > 0)
+    .sort((a, b) => b.s - a.s || order.indexOf(a.e.type) - order.indexOf(b.e.type) || b.e.count - a.e.count)
+    .slice(0, limit)
+    .map((m) => m.e);
+}
+
+const strip = ({ type, label, value, count }: MockSuggestion) => ({ type, label, value, count });
+
 const json = (body: unknown, status = 200) => ({
   status,
   contentType: 'application/json',
@@ -71,7 +101,12 @@ const json = (body: unknown, status = 200) => ({
 export async function mockApi(page: Page, initialJobs: MockJob[] = MOCK_JOBS): Promise<ApiMock> {
   let jobs = initialJobs;
   let failure: Failure = 'none';
+  let suggestionsDown = false;
+  let popular: MockSuggestion[] = VOCAB.filter((e) => e.type === 'role' || e.type === 'skill')
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 8);
   const jobsRequests: URL[] = [];
+  const suggestRequests: URL[] = [];
 
   await page.route('**/api/jobs**', (route) => {
     const url = new URL(route.request().url());
@@ -99,6 +134,19 @@ export async function mockApi(page: Page, initialJobs: MockJob[] = MOCK_JOBS): P
     );
   });
 
+  await page.route('**/api/search/suggest**', (route) => {
+    const url = new URL(route.request().url());
+    suggestRequests.push(url);
+    if (suggestionsDown) return route.fulfill(json({ message: 'down' }, 503));
+    const limit = Number(url.searchParams.get('limit') ?? 8);
+    return route.fulfill(json({ suggestions: suggest(url.searchParams.get('q') ?? '', limit).map(strip) }));
+  });
+  await page.route('**/api/search/popular**', (route) => {
+    if (suggestionsDown) return route.fulfill(json({ message: 'down' }, 503));
+    const limit = Number(new URL(route.request().url()).searchParams.get('limit') ?? 8);
+    return route.fulfill(json({ popular: popular.slice(0, limit).map(strip) }));
+  });
+
   await page.route('**/api/stats', (route) =>
     route.fulfill(json({ total: 856, new_this_week: 42, companies: 120 })),
   );
@@ -117,5 +165,12 @@ export async function mockApi(page: Page, initialJobs: MockJob[] = MOCK_JOBS): P
       failure = 'none';
     },
     lastJobsRequest: () => jobsRequests.at(-1),
+    suggestRequests,
+    setPopular: (next) => {
+      popular = next;
+    },
+    failSuggestions: () => {
+      suggestionsDown = true;
+    },
   };
 }

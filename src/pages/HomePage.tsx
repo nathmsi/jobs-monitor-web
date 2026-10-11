@@ -1,19 +1,19 @@
-import { useMemo, type FormEvent } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 
-import { useLatestJobs, useSources, useStats } from "../api/hooks";
+import type { Suggestion } from "../api/client";
+import { useLatestJobs, usePopularSearches, useSources, useStats } from "../api/hooks";
 import { Header } from "../components/Header/Header";
-import { SearchIcon } from "../components/Icons/Icons";
 import { JobCard } from "../components/JobCard/JobCard";
-import { roleLabel } from "../constants/roles";
+import { SearchBox } from "../components/SearchBox/SearchBox";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { useProfile } from "../providers/profile/useProfile";
 import { loadJobsPage } from "./lazyPages";
 import styles from "./HomePage.module.css";
 
-/** Quick entry points into the offers browser (role keys from constants/roles). */
-const POPULAR_ROLES = ["mobile", "frontend", "backend", "devops", "data", "ai", "qa"] as const;
+/** How many popular searches the home page shows. */
+const POPULAR_COUNT = 8;
 
 const LATEST_COUNT = 6;
 
@@ -30,8 +30,8 @@ export function HomePage() {
           <p className={styles.eyebrow}>{t("home.eyebrow")}</p>
           <h1 id="home-title" className={styles.title}>{t("home.title")}</h1>
           <p className={styles.lead}>{t("home.lead")}</p>
-          <HeroSearch />
-          <PopularRoles />
+          <div className={styles.heroSearch}><HeroSearch /></div>
+          <PopularSearches />
         </section>
 
         <StatsStrip />
@@ -44,56 +44,69 @@ export function HomePage() {
   );
 }
 
-/** One input, one button. Uncontrolled: nothing re-renders while typing. */
+/** Where a suggestion leads in the offers browser. */
+function suggestionHref(s: Pick<Suggestion, "type" | "value">): string {
+  return s.type === "role"
+    ? `/jobs?role=${encodeURIComponent(s.value)}`
+    : `/jobs?q=${encodeURIComponent(s.value)}`;
+}
+
+/** One input with autocomplete, one button. */
 function HeroSearch() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [value, setValue] = useState("");
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const q = String(new FormData(e.currentTarget).get("q") ?? "").trim();
-    navigate(q ? `/jobs?q=${encodeURIComponent(q)}` : "/jobs");
-  };
+  const search = useCallback(
+    (text: string) => navigate(text ? `/jobs?q=${encodeURIComponent(text)}` : "/jobs"),
+    [navigate],
+  );
+  const pick = useCallback((s: Suggestion) => navigate(suggestionHref(s)), [navigate]);
 
   return (
-    <form className={styles.search} role="search" onSubmit={onSubmit}>
-      <label className={styles.srOnly} htmlFor="home-search">{t("home.searchLabel")}</label>
-      <span className={styles.searchIcon} aria-hidden="true"><SearchIcon size={18} /></span>
-      <input
-        id="home-search"
-        name="q"
-        type="search"
-        className={styles.searchInput}
-        placeholder={t("home.searchPlaceholder")}
-        autoComplete="off"
-        enterKeyHint="search"
-        maxLength={200}
-      />
-      <button type="submit" className={styles.searchBtn} onPointerEnter={loadJobsPage} onFocus={loadJobsPage}>
-        {t("home.searchCta")}
-      </button>
-    </form>
+    <SearchBox
+      id="home-search"
+      variant="hero"
+      value={value}
+      onValueChange={setValue}
+      onSubmit={search}
+      onPick={pick}
+      label={t("home.searchLabel")}
+      placeholder={t("home.searchPlaceholder")}
+      submitLabel={t("home.searchCta")}
+      onSubmitIntent={loadJobsPage}
+    />
   );
 }
 
-function PopularRoles() {
+/** What people search for most, straight from the API (nothing hardcoded). */
+function PopularSearches() {
   const { t } = useTranslation();
+  const popular = usePopularSearches(POPULAR_COUNT);
+
+  if (popular.isError || (popular.isSuccess && popular.data.length === 0)) return null;
+
   return (
     <nav className={styles.popular} aria-label={t("home.popular")}>
       <span className={styles.popularLabel}>{t("home.popular")}</span>
-      <ul className={styles.popularList}>
-        {POPULAR_ROLES.map((key) => (
-          <li key={key}>
-            <Link
-              to={`/jobs?role=${key}`}
-              className={styles.popularChip}
-              onPointerEnter={loadJobsPage}
-              onFocus={loadJobsPage}
-            >
-              {roleLabel(key)}
-            </Link>
-          </li>
-        ))}
+      <ul className={styles.popularList} aria-busy={popular.isPending}>
+        {popular.isPending
+          ? Array.from({ length: POPULAR_COUNT }, (_, i) => (
+              <li key={i} className={styles.popularSkeleton} aria-hidden="true" />
+            ))
+          : popular.data.map((s) => (
+              <li key={`${s.type}:${s.value}`}>
+                <Link
+                  to={suggestionHref(s)}
+                  className={styles.popularChip}
+                  onPointerEnter={loadJobsPage}
+                  onFocus={loadJobsPage}
+                >
+                  {s.label}
+                  <span className={styles.popularCount}>{s.count}</span>
+                </Link>
+              </li>
+            ))}
       </ul>
     </nav>
   );

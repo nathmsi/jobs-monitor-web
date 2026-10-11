@@ -1,11 +1,15 @@
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useInfiniteQuery, useQuery } from "@tanstack/react-query";
+
+import { useDebouncedValue } from "../hooks/useDebouncedValue";
 
 import {
   getJobsPage,
+  getPopular,
   getRegionJobs,
   getRegions,
   getSources,
   getStats,
+  getSuggestions,
   type JobQuery,
 } from "./client";
 
@@ -77,6 +81,37 @@ export function useLatestJobs(limit = 6) {
     queryFn: () => getJobsPage({ region: "all", sort: "recent", limit }),
     select: (page) => page.jobs,
     staleTime: 60_000,
+    refetchOnWindowFocus: false,
+  });
+}
+
+/** Delay between the last keystroke and the suggestions request. */
+const SUGGEST_DELAY_MS = 150;
+
+/**
+ * Suggestions for the text typed so far. Debounced, cancels the request that is
+ * no longer wanted, and keeps showing the previous list while the next one
+ * loads (no flicker).
+ */
+export function useSuggestions(text: string, enabled = true) {
+  const query = useDebouncedValue(text.trim(), SUGGEST_DELAY_MS);
+  return useQuery({
+    queryKey: ["suggest", query],
+    queryFn: ({ signal }) => getSuggestions(query, 8, signal),
+    enabled: enabled && query.length > 0,
+    staleTime: 5 * 60_000,
+    placeholderData: keepPreviousData,
+    refetchOnWindowFocus: false,
+  });
+}
+
+/** The most common roles and technologies (shared by the home page and the search box). */
+export function usePopularSearches(limit = 8, enabled = true) {
+  return useQuery({
+    queryKey: ["popular", limit],
+    queryFn: ({ signal }) => getPopular(limit, signal),
+    enabled,
+    staleTime: 10 * 60_000,
     refetchOnWindowFocus: false,
   });
 }

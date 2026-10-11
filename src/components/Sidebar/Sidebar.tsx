@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useRegions } from "../../api/hooks";
@@ -7,7 +7,8 @@ import { regionLabel } from "../../utils/regionLabel";
 import { useJobFlags } from "../../providers/jobFlags/useJobFlags";
 import { useSavedJobs } from "../../providers/savedJobs/useSavedJobs";
 import type { Filters } from "../../types";
-import { CloseIcon, SearchIcon } from "../Icons/Icons";
+import type { Suggestion } from "../../api/client";
+import { SearchBox } from "../SearchBox/SearchBox";
 import styles from "./Sidebar.module.css";
 
 interface Props {
@@ -42,34 +43,44 @@ export function Sidebar({ filters, onChange }: Props) {
     setDraft(filters.q);
   }
 
+  /** Search the typed text right away (Enter, clear, recent search). */
+  const applySearch = useCallback(
+    (text: string) => {
+      setDraft(text);
+      onChange((f) => (f.q === text ? f : { ...f, q: text }));
+    },
+    [onChange],
+  );
+
+  /** A role is added to the role filters; anything else becomes the search text. */
+  const pickSuggestion = useCallback(
+    (s: Suggestion) => {
+      if (s.type === "role") {
+        setDraft("");
+        onChange((f) => ({
+          ...f,
+          q: "",
+          roles: f.roles.includes(s.value) ? f.roles : [...f.roles, s.value],
+        }));
+      } else {
+        applySearch(s.value);
+      }
+    },
+    [onChange, applySearch],
+  );
+
   return (
     <aside className={styles.sidebar}>
-      <div className={styles.searchWrap}>
-        <span className={styles.searchIcon} aria-hidden="true">
-          <SearchIcon size={14} strokeWidth={2.2} />
-        </span>
-        <input
-          className={styles.search}
-          type="text"
-          value={draft}
-          placeholder={t("filters.searchPlaceholder")}
-          onChange={(e) => setDraft(e.target.value)}
-          aria-label={t("filters.searchPlaceholder")}
-        />
-        {draft && (
-          <button
-            type="button"
-            className={styles.clear}
-            onClick={() => {
-              setDraft("");
-              onChange({ ...filters, q: "" });
-            }}
-            aria-label={t("filters.clear")}
-          >
-            <CloseIcon size={12} strokeWidth={2.5} />
-          </button>
-        )}
-      </div>
+      <SearchBox
+        id="jobs-search"
+        value={draft}
+        onValueChange={setDraft}
+        onSubmit={applySearch}
+        onPick={pickSuggestion}
+        label={t("filters.searchPlaceholder")}
+        placeholder={t("filters.searchPlaceholder")}
+        clearLabel={t("filters.clear")}
+      />
 
       <div className={styles.section}>
         <div className={styles.label}>{t("filters.regionLabel")}</div>

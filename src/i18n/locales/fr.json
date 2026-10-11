@@ -352,5 +352,20 @@
     "prefsTitle": "Réglez vos préférences",
     "prefsDesc": "Choisissez vos rôles et votre région une fois : nous pré-filtrons les offres pour vous.",
     "prefsCta": "Ouvrir mon profil →"
+  },
+  "search": {
+    "groups": {
+      "role": "Rôles",
+      "skill": "Technologies",
+      "title": "Intitulés de poste",
+      "company": "Entreprises",
+      "location": "Lieux"
+    },
+    "recent": "Recherches récentes",
+    "popular": "Populaires",
+    "clearRecent": "Effacer",
+    "listLabel": "Suggestions de recherche",
+    "available_one": "{{count}} suggestion disponible",
+    "available_other": "{{count}} suggestions disponibles"
   }
 }

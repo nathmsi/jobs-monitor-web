@@ -22,16 +22,30 @@ describe("HomePage (integration)", () => {
     await i18n.changeLanguage("en");
   });
 
-  it("leads with the search: heading, search box and popular roles", async () => {
+  it("leads with the search: heading and search box", () => {
     renderWithProviders(<HomePage />);
 
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Find your next tech job in Israel");
-    expect(screen.getByRole("searchbox", { name: "Search offers" })).toBeInTheDocument();
-    const popular = screen.getByRole("navigation", { name: "Popular" });
-    expect(within(popular).getAllByRole("link").map((l) => l.textContent)).toEqual([
-      "Mobile", "Frontend", "Backend", "DevOps", "Data", "AI / ML", "QA",
-    ]);
-    expect(within(popular).getByRole("link", { name: "Mobile" })).toHaveAttribute("href", "/jobs?role=mobile");
+    expect(screen.getByRole("combobox", { name: "Search offers" })).toBeInTheDocument();
+  });
+
+  it("popular searches come from the API, with their number of offers", async () => {
+    renderWithProviders(<HomePage />);
+
+    const popular = await screen.findByRole("navigation", { name: "Popular" });
+    const links = await within(popular).findAllByRole("link");
+    expect(links.map((l) => l.textContent)).toEqual(["Mobile37", "Frontend65", "React16", "React Native5", "iOS9"]);
+    expect(links[0]).toHaveAttribute("href", "/jobs?role=mobile");
+    expect(links[2]).toHaveAttribute("href", "/jobs?q=React");
+    expect(backend.getPopular).toHaveBeenCalledWith(8, expect.anything());
+  });
+
+  it("hides the popular searches when the API has none or fails", async () => {
+    backend.getPopular.mockRejectedValue(new Error("HTTP 503"));
+    renderWithProviders(<HomePage />);
+
+    await screen.findByText("Senior iOS Developer");
+    await waitFor(() => expect(screen.queryByRole("navigation", { name: "Popular" })).not.toBeInTheDocument());
   });
 
   it("shows the live numbers (formatted for the language) from the API", async () => {
@@ -83,7 +97,7 @@ describe("HomePage (integration)", () => {
   it("searching navigates to the offers with the query (encoded and trimmed)", async () => {
     const { user } = renderWithProviders(<HomePage />);
 
-    await user.type(screen.getByRole("searchbox", { name: "Search offers" }), "  c# & .net {enter}");
+    await user.type(screen.getByRole("combobox", { name: "Search offers" }), "  c# & .net {enter}");
 
     expect(screen.getByTestId("location")).toHaveTextContent("/jobs?q=c%23%20%26%20.net");
   });

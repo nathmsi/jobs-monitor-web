@@ -62,6 +62,34 @@ export function getJobsPage(query: JobQuery): Promise<JobsPage> {
   return getJson<JobsPage>(`/api/jobs?${jobsQuery(query)}`);
 }
 
+export type SuggestionType = "role" | "skill" | "title" | "company" | "location";
+
+/** One autocomplete suggestion, counted against the live offers. */
+export interface Suggestion {
+  type: SuggestionType;
+  /** What the user sees. */
+  label: string;
+  /** A role key for `role`; otherwise the text to search. */
+  value: string;
+  /** Offers that match it right now (same as the list total). */
+  count: number;
+}
+
+/** Roles, technologies, titles, companies and cities matching what was typed. */
+export async function getSuggestions(q: string, limit = 8, signal?: AbortSignal): Promise<Suggestion[]> {
+  const params = new URLSearchParams({ q, limit: String(limit) });
+  const resp = await fetch(`${API}/api/search/suggest?${params}`, { signal });
+  if (!resp.ok) throw new Error(`HTTP ${resp.status} — ${resp.statusText}`);
+  return ((await resp.json()) as { suggestions: Suggestion[] }).suggestions;
+}
+
+/** The most common roles and technologies right now. */
+export async function getPopular(limit = 8, signal?: AbortSignal): Promise<Suggestion[]> {
+  const resp = await fetch(`${API}/api/search/popular?limit=${limit}`, { signal });
+  if (!resp.ok) throw new Error(`HTTP ${resp.status} — ${resp.statusText}`);
+  return ((await resp.json()) as { popular: Suggestion[] }).popular;
+}
+
 /** Headline numbers for the home page (live offers only). */
 export interface JobsStats {
   total: number;

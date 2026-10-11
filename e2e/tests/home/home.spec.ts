@@ -17,7 +17,8 @@ test.describe('Home', () => {
     await expect(home.searchButton).toBeVisible();
     // The page leads with search: no tabs, filters or sorting yet.
     await expect(page.getByRole('tablist')).toHaveCount(0);
-    await expect(page.getByRole('combobox')).toHaveCount(0);
+    // The search box is the only control.
+    await expect(page.getByRole('combobox')).toHaveCount(1);
   });
 
   test('shows the live numbers from the API', async ({ page }) => {

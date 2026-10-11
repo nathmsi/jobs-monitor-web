@@ -26,8 +26,8 @@ e2e/
 │   ├── components/HeaderComponent.ts
 │   ├── HomePage.ts  JobsPage.ts  ProfilePage.ts  CoachPage.ts
 └── tests/              # specs: *what* the app must do, one folder per page
-    ├── home/           home
-    ├── jobs/           browse · filters · saved-jobs · seen-offers · pagination
+    ├── home/           home · autocomplete
+    ├── jobs/           browse · autocomplete · filters · saved-jobs · seen-offers · pagination
     │                   tabs-and-url · for-me · resilience
     ├── profile/        preferences · profile-stats · appearance · crash-regression
     ├── coach/          coach (signed-out experience)

@@ -21,8 +21,8 @@ export class JobsPage extends BasePage {
   constructor(page: Page) {
     super(page);
     this.cards = page.getByRole('article');
-    this.searchInput = page.getByRole('textbox', { name: /search/i });
-    this.clearSearchButton = page.getByRole('button', { name: 'Clear', exact: true });
+    this.searchInput = page.getByRole('combobox', { name: /search/i });
+    this.clearSearchButton = page.getByRole('search').getByRole('button', { name: 'Clear', exact: true });
     this.areaSelect = page.getByRole('combobox', { name: 'Area' });
     this.sortSelect = page.getByRole('combobox', { name: 'Sort' });
     this.hideSeenCheckbox = page.getByRole('checkbox', { name: /hide offers/i });
@@ -80,6 +80,15 @@ export class JobsPage extends BasePage {
 
   viewLink(card: Locator): Locator {
     return card.getByRole('link', { name: /view offer/i });
+  }
+
+  /** The suggestion popup under the search box. */
+  suggestions(): Locator {
+    return this.page.getByRole('listbox', { name: 'Search suggestions' });
+  }
+
+  suggestion(name: string | RegExp): Locator {
+    return this.suggestions().getByRole('option', { name });
   }
 
   async search(text: string): Promise<void> {

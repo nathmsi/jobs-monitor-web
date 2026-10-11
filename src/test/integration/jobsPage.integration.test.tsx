@@ -42,7 +42,7 @@ describe("JobsPage (integration)", () => {
     const { user } = await renderJobs();
     backend.getJobsPage.mockClear();
 
-    await user.type(screen.getByRole("textbox", { name: /search/i }), "node");
+    await user.type(screen.getByRole("combobox", { name: /search/i }), "node");
 
     await waitFor(() => expect(titles()).toEqual(["Backend Developer"]));
     const withQuery = backend.getJobsPage.mock.calls.filter(([q]) => q.q);
@@ -55,14 +55,14 @@ describe("JobsPage (integration)", () => {
     await screen.findByText("Staffing Role");
 
     expect(screen.getByRole("tab", { name: "Staffing agencies" })).toHaveAttribute("aria-selected", "true");
-    expect(screen.getByRole("textbox", { name: /search/i })).toHaveValue("staffing");
+    expect(screen.getByRole("combobox", { name: /search/i })).toHaveValue("staffing");
     expect(screen.getByRole("combobox", { name: "Sort" })).toHaveValue("oldest");
   });
 
   it("keeps a role filter and search when both change quickly (no stale overwrite)", async () => {
     const { user } = await renderJobs();
 
-    await user.type(screen.getByRole("textbox", { name: /search/i }), "e");
+    await user.type(screen.getByRole("combobox", { name: /search/i }), "e");
     await user.click(screen.getByRole("button", { name: "Frontend", pressed: false }));
 
     await waitFor(() => {
@@ -132,7 +132,7 @@ describe("JobsPage (integration)", () => {
 
   it("shows the empty state and clears the search from it", async () => {
     const { user } = await renderJobs();
-    await user.type(screen.getByRole("textbox", { name: /search/i }), "zzzz");
+    await user.type(screen.getByRole("combobox", { name: /search/i }), "zzzz");
 
     expect(await screen.findByText("No offers for these filters.")).toBeInTheDocument();
     const emptyClear = screen.getAllByRole("button", { name: "Clear" }).at(-1)!;
@@ -243,13 +243,13 @@ describe("JobsPage search experience (integration)", () => {
     const { user } = renderWithProviders(<JobsPage />);
     await screen.findByText("Frontend Engineer");
     await user.click(screen.getByRole("button", { name: "Mobile" }));
-    await user.type(screen.getByRole("textbox", { name: /search/i }), "ios");
+    await user.type(screen.getByRole("combobox", { name: /search/i }), "ios");
     await screen.findByText("1 offer");
 
     await user.click(screen.getByRole("button", { name: "Clear all" }));
 
     await waitFor(() => expect(listTitles()).toHaveLength(4));
-    expect(screen.getByRole("textbox", { name: /search/i })).toHaveValue("");
+    expect(screen.getByRole("combobox", { name: /search/i })).toHaveValue("");
   });
 
   it("sorts by relevance as soon as something is searched, by newest otherwise", async () => {
@@ -260,7 +260,7 @@ describe("JobsPage search experience (integration)", () => {
     expect(sort).toHaveValue("recent");
     expect(within(sort).queryByRole("option", { name: "Best match" })).not.toBeInTheDocument();
 
-    await user.type(screen.getByRole("textbox", { name: /search/i }), "developer");
+    await user.type(screen.getByRole("combobox", { name: /search/i }), "developer");
 
     await waitFor(() => expect(sort).toHaveValue("relevance"));
     expect(backend.getJobsPage).toHaveBeenLastCalledWith(expect.objectContaining({ q: "developer", sort: "relevance" }));
@@ -271,7 +271,7 @@ describe("JobsPage search experience (integration)", () => {
     await screen.findByText("Frontend Engineer");
 
     await user.selectOptions(screen.getByRole("combobox", { name: "Sort" }), "oldest");
-    await user.type(screen.getByRole("textbox", { name: /search/i }), "developer");
+    await user.type(screen.getByRole("combobox", { name: /search/i }), "developer");
 
     await waitFor(() =>
       expect(backend.getJobsPage).toHaveBeenLastCalledWith(expect.objectContaining({ q: "developer", sort: "oldest" })),

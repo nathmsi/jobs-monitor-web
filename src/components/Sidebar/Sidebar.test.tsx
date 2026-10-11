@@ -9,6 +9,8 @@ import type { Filters } from "../../types";
 import { Sidebar } from "./Sidebar";
 
 vi.mock("../../api/hooks", () => ({
+  useSuggestions: () => ({ data: [] }),
+  usePopularSearches: () => ({ data: [] }),
   useRegions: () => ({ data: [{ key: "all", label_en: "All", label_he: "הכל", label_fr: "Tout" }] }),
 }));
 vi.mock("../../providers/jobFlags/useJobFlags", () => ({
@@ -43,7 +45,7 @@ describe("Sidebar", () => {
     const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
     render(<Harness initial={BASE} />);
 
-    await user.type(screen.getByRole("textbox", { name: /search/i }), "react");
+    await user.type(screen.getByRole("combobox", { name: /search/i }), "react");
     expect(latest.filters.q).toBe("");
 
     act(() => vi.advanceTimersByTime(260));
@@ -54,7 +56,7 @@ describe("Sidebar", () => {
     const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
     render(<Harness initial={BASE} />);
 
-    await user.type(screen.getByRole("textbox", { name: /search/i }), "go");
+    await user.type(screen.getByRole("combobox", { name: /search/i }), "go");
     await user.click(screen.getByRole("button", { name: "Frontend" }));
     act(() => vi.advanceTimersByTime(260));
 
@@ -67,7 +69,7 @@ describe("Sidebar", () => {
 
     await user.click(screen.getByRole("button", { name: "Clear" }));
 
-    expect(screen.getByRole("textbox", { name: /search/i })).toHaveValue("");
+    expect(screen.getByRole("combobox", { name: /search/i })).toHaveValue("");
     expect(latest.filters.q).toBe("");
   });
 
@@ -77,7 +79,7 @@ describe("Sidebar", () => {
 
     await user.click(screen.getByRole("button", { name: "external" }));
 
-    expect(screen.getByRole("textbox", { name: /search/i })).toHaveValue("external");
+    expect(screen.getByRole("combobox", { name: /search/i })).toHaveValue("external");
   });
 
   it("selects several roles and toggles each one off independently", async () => {

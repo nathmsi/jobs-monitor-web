@@ -126,3 +126,33 @@ export const MOCK_REGIONS = [
   { key: 'tlv', label_en: 'Tel Aviv', label_he: 'תל אביב', label_fr: 'Tel Aviv' },
   { key: 'jerusalem', label_en: 'Jerusalem', label_he: 'ירושלים', label_fr: 'Jérusalem' },
 ];
+
+/** What the API would suggest: a small vocabulary with live counts. */
+export interface MockSuggestion {
+  type: 'role' | 'skill' | 'title' | 'company' | 'location';
+  label: string;
+  value: string;
+  count: number;
+  /** Words that match it only as a whole (e.g. "ios" → Mobile). */
+  exact?: string[];
+}
+
+export const VOCAB: MockSuggestion[] = [
+  { type: 'role', label: 'Mobile', value: 'mobile', count: 38, exact: ['mobile', 'ios', 'android', 'flutter', 'react native'] },
+  { type: 'role', label: 'Frontend', value: 'frontend', count: 66, exact: ['frontend', 'front end', 'react', 'angular', 'vue'] },
+  { type: 'role', label: 'Backend', value: 'backend', count: 130, exact: ['backend', 'back end', 'node.js', 'python'] },
+  { type: 'role', label: 'DevOps', value: 'devops', count: 89, exact: ['devops', 'k8s', 'kubernetes'] },
+  { type: 'skill', label: 'React', value: 'React', count: 16, exact: ['react', 'reactjs'] },
+  { type: 'skill', label: 'React Native', value: 'React Native', count: 5, exact: ['react native'] },
+  { type: 'skill', label: 'iOS', value: 'iOS', count: 9, exact: ['ios'] },
+  { type: 'skill', label: 'Android', value: 'Android', count: 8, exact: ['android'] },
+  { type: 'skill', label: 'Angular', value: 'Angular', count: 28, exact: ['angular'] },
+  { type: 'skill', label: 'Python', value: 'Python', count: 26, exact: ['python'] },
+  { type: 'skill', label: 'Kotlin', value: 'Kotlin', count: 6, exact: ['kotlin'] },
+  { type: 'skill', label: 'Kubernetes', value: 'Kubernetes', count: 6, exact: ['kubernetes', 'k8s'] },
+  { type: 'title', label: 'Senior', value: 'Senior', count: 215, exact: ['senior'] },
+  { type: 'company', label: 'Melio', value: 'Melio', count: 5 },
+  { type: 'company', label: 'monday.com', value: 'monday.com', count: 28 },
+  { type: 'location', label: 'Tel Aviv', value: 'Tel Aviv', count: 316 },
+  { type: 'location', label: 'Haifa', value: 'Haifa', count: 32 },
+];

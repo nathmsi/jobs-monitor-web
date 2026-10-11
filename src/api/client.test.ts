@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { filterByKeyword, getRegionJobs, getSources } from "./client";
+import { filterByKeyword, getPopular, getRegionJobs, getSources, getSuggestions } from "./client";
 import type { Job } from "../types";
 
 function mockFetch(body: unknown, ok = true, status = 200) {
@@ -68,5 +68,37 @@ describe("api client (backend API)", () => {
       job({ external_id: "2", title: "Software Engineer", description: "React and Node" }),
     ];
     expect(filterByKeyword(jobs, "kubernetes").map((j) => j.external_id)).toEqual(["1"]);
+  });
+
+  it("getSuggestions sends the text (encoded) and the limit, and unwraps the list", async () => {
+    const suggestions = [{ type: "skill", label: "C#", value: "C#", count: 18 }];
+    const f = mockFetch({ suggestions });
+    vi.stubGlobal("fetch", f);
+    const ctrl = new AbortController();
+
+    await expect(getSuggestions("c# dev", 5, ctrl.signal)).resolves.toEqual(suggestions);
+
+    const [url, init] = f.mock.calls[0];
+    expect(String(url)).toContain("/api/search/suggest?q=c%23+dev&limit=5");
+    expect(init.signal).toBe(ctrl.signal);
+  });
+
+  it("getSuggestions rejects on an HTTP error", async () => {
+    vi.stubGlobal("fetch", mockFetch({}, false, 503));
+    await expect(getSuggestions("re")).rejects.toThrow(/503/);
+  });
+
+  it("getPopular asks for the given number and unwraps the list", async () => {
+    const popular = [{ type: "role", label: "Backend", value: "backend", count: 130 }];
+    const f = mockFetch({ popular });
+    vi.stubGlobal("fetch", f);
+
+    await expect(getPopular(6)).resolves.toEqual(popular);
+    expect(String(f.mock.calls[0][0])).toContain("/api/search/popular?limit=6");
+  });
+
+  it("getPopular rejects on an HTTP error", async () => {
+    vi.stubGlobal("fetch", mockFetch({}, false, 500));
+    await expect(getPopular()).rejects.toThrow(/500/);
   });
 });

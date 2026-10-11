@@ -1,10 +1,10 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { renderHook, waitFor } from "@testing-library/react";
+import { act, renderHook, waitFor } from "@testing-library/react";
 import { createElement } from "react";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import * as client from "./client";
-import { useJobsInfinite, useRegionJobs, useRegions, useSources } from "./hooks";
+import { useJobsInfinite, usePopularSearches, useRegionJobs, useRegions, useSources, useSuggestions } from "./hooks";
 import type { Job, RegionInfo, SourceInfo } from "../types";
 
 function makeWrapper() {
@@ -95,5 +95,109 @@ describe("useJobsInfinite", () => {
     });
     renderHook(() => useJobsInfinite({ region: "all" }, false), { wrapper: makeWrapper() });
     expect(spy).not.toHaveBeenCalled();
+  });
+});
+
+describe("useSuggestions", () => {
+  const react = [{ type: "skill" as const, label: "React", value: "React", count: 16 }];
+
+  beforeEach(() => {
+    vi.restoreAllMocks();
+    vi.useFakeTimers({ shouldAdvanceTime: true });
+  });
+  afterEach(() => vi.useRealTimers());
+
+  it("waits for the typing to pause, then asks once for the trimmed text", async () => {
+    const spy = vi.spyOn(client, "getSuggestions").mockResolvedValue(react);
+    const { result, rerender } = renderHook(({ text }) => useSuggestions(text), {
+      wrapper: makeWrapper(),
+      initialProps: { text: "" },
+    });
+
+    rerender({ text: "r" });
+    rerender({ text: "re" });
+    rerender({ text: " rea " });
+    expect(spy).not.toHaveBeenCalled();
+
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(200);
+    });
+    await waitFor(() => expect(result.current.data).toEqual(react));
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith("rea", 8, expect.any(AbortSignal));
+  });
+
+  it("does not ask for an empty text", async () => {
+    const spy = vi.spyOn(client, "getSuggestions").mockResolvedValue([]);
+    renderHook(() => useSuggestions("   "), { wrapper: makeWrapper() });
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(400);
+    });
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it("does not ask while disabled (popup closed)", async () => {
+    const spy = vi.spyOn(client, "getSuggestions").mockResolvedValue([]);
+    renderHook(() => useSuggestions("react", false), { wrapper: makeWrapper() });
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(400);
+    });
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it("keeps showing the previous suggestions while the next ones load", async () => {
+    const spy = vi.spyOn(client, "getSuggestions").mockResolvedValueOnce(react).mockReturnValueOnce(new Promise(() => {}));
+    const { result, rerender } = renderHook(({ text }) => useSuggestions(text), {
+      wrapper: makeWrapper(),
+      initialProps: { text: "re" },
+    });
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(200);
+    });
+    await waitFor(() => expect(result.current.data).toEqual(react));
+
+    rerender({ text: "rea" });
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(200);
+    });
+
+    expect(spy).toHaveBeenCalledTimes(2);
+    expect(result.current.data).toEqual(react);
+  });
+
+  it("reuses an answer it already has", async () => {
+    const spy = vi.spyOn(client, "getSuggestions").mockResolvedValue(react);
+    const wrapper = makeWrapper();
+    const first = renderHook(() => useSuggestions("react"), { wrapper });
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(200);
+    });
+    await waitFor(() => expect(first.result.current.data).toEqual(react));
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe("usePopularSearches", () => {
+  beforeEach(() => vi.restoreAllMocks());
+
+  it("fetches the requested number of popular searches", async () => {
+    const popular = [{ type: "role" as const, label: "Backend", value: "backend", count: 130 }];
+    const spy = vi.spyOn(client, "getPopular").mockResolvedValue(popular);
+    const { result } = renderHook(() => usePopularSearches(6), { wrapper: makeWrapper() });
+
+    await waitFor(() => expect(result.current.data).toEqual(popular));
+    expect(spy).toHaveBeenCalledWith(6, expect.any(AbortSignal));
+  });
+
+  it("does not fetch when disabled", () => {
+    const spy = vi.spyOn(client, "getPopular").mockResolvedValue([]);
+    renderHook(() => usePopularSearches(8, false), { wrapper: makeWrapper() });
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it("surfaces a failure as an error state", async () => {
+    vi.spyOn(client, "getPopular").mockRejectedValue(new Error("HTTP 503"));
+    const { result } = renderHook(() => usePopularSearches(), { wrapper: makeWrapper() });
+    await waitFor(() => expect(result.current.isError).toBe(true));
   });
 });

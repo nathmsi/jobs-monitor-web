@@ -10,7 +10,8 @@ signed-out, persisted in `localStorage`.
 
 ## Features
 
-- Offers browser: whole-word search over title, description, location and company
+- **Home** (`/`): one search box, popular roles, live numbers (`/api/stats`), the 6 latest offers and shortcuts to the CV coach / preferences. Old `/?tab=…` links redirect to `/jobs`.
+- Offers browser (`/jobs`): whole-word search over title, description, location and company
   (aliases like front-end/k8s; "mobile" finds iOS/Android), several roles at once,
   best-match sorting, active-filter chips with a result count, pagination,
   "hide offers I've seen"; state kept in the URL so views are shareable.
@@ -52,8 +53,9 @@ Playwright → deploy to Vercel (main only).
 
 ```
 src/
-├── main.tsx · App.tsx          # providers + routes (non-home pages are lazy-loaded)
-├── pages/                      # route components: JobsPage, ProfilePage, CoachPage
+├── main.tsx · App.tsx          # providers + routes (all pages but the home are lazy-loaded)
+├── pages/                      # route components: HomePage, JobsPage, ProfilePage, CoachPage
+│                               #   (lazyPages.ts: route chunks, preloaded on link hover/focus)
 ├── components/<Name>/          # UI; <Name>.tsx + <Name>.module.css (+ test)
 ├── providers/<name>/           # React context state, one folder each:
 │   │                           #   <Name>Context.ts  context + types

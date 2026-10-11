@@ -325,7 +325,7 @@ export function ProfilePage() {
               <div className={styles.sectionCard}>
                 <div className={styles.recHead}>
                   <h2 className={styles.sectionTitle}>{t("profile.recommended")}</h2>
-                  <Link to="/" className={styles.seeAll}>{t("profile.seeAll")}</Link>
+                  <Link to="/jobs" className={styles.seeAll}>{t("profile.seeAll")}</Link>
                 </div>
                 {ranked.length === 0 ? (
                   <p className={styles.empty}>{t("forme.noMatch")}</p>

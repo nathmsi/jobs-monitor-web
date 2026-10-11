@@ -33,13 +33,17 @@ export class JobsPage extends BasePage {
     this.toast = page.getByRole('status').filter({ hasText: /./ });
   }
 
-  async goto(path = '/'): Promise<void> {
+  async goto(path = '/jobs'): Promise<void> {
     await this.page.goto(path);
-    await this.page.getByRole('tablist').waitFor();
+    await this.tablist().waitFor();
+  }
+
+  tablist(): Locator {
+    return this.page.getByRole('tablist');
   }
 
   /** Open the page and wait for the first offer card. */
-  async open(path = '/'): Promise<void> {
+  async open(path = '/jobs'): Promise<void> {
     await this.goto(path);
     await this.cards.first().waitFor();
   }

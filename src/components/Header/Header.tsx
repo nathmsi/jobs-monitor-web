@@ -52,7 +52,8 @@ export function Header() {
 
         {/* Navigation — hidden on mobile */}
         <nav className={styles.nav} aria-label={t("header.mainNav")}>
-          <NavLink to="/" end className={navClass}>{t("nav.offers")}</NavLink>
+          <NavLink to="/" end className={navClass}>{t("nav.home")}</NavLink>
+          <NavLink to="/jobs" className={navClass}>{t("nav.offers")}</NavLink>
           <NavLink to="/coach" className={navClass}>{t("nav.cvAnalysis")}</NavLink>
           <NavLink to="/profile" className={navClass}>{t("nav.profile")}</NavLink>
         </nav>
@@ -197,7 +198,8 @@ export function Header() {
         <>
           <div className={styles.mobileBackdrop} onClick={() => setMobileNavOpen(false)} />
           <nav className={styles.mobileNav} aria-label={t("header.mobileNav")}>
-            <NavLink to="/" end className={navClass} onClick={() => setMobileNavOpen(false)}>{t("nav.offers")}</NavLink>
+            <NavLink to="/" end className={navClass} onClick={() => setMobileNavOpen(false)}>{t("nav.home")}</NavLink>
+            <NavLink to="/jobs" className={navClass} onClick={() => setMobileNavOpen(false)}>{t("nav.offers")}</NavLink>
             <NavLink to="/coach" className={navClass} onClick={() => setMobileNavOpen(false)}>{t("nav.cvAnalysis")}</NavLink>
             <NavLink to="/profile" className={navClass} onClick={() => setMobileNavOpen(false)}>{t("nav.profile")}</NavLink>
           </nav>

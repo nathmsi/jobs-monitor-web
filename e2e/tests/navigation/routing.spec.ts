@@ -15,7 +15,7 @@ test.describe('Navigation', () => {
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('My profile');
 
     await jobs.header.link('Offers').click();
-    await expect(page).toHaveURL(/\/$/);
+    await expect(page).toHaveURL(/\/jobs$/);
     await jobs.cards.first().waitFor();
   });
 
@@ -29,15 +29,16 @@ test.describe('Navigation', () => {
     );
   });
 
-  test('the brand link goes back to the offers', async ({ page }) => {
+  test('the brand link and the "Home" link go to the home page', async ({ page }) => {
     await page.goto('/coach');
     await page.getByRole('link', { name: 'Tech Jobs' }).click();
     await expect(page).toHaveURL(/\/$/);
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Find your next tech job in Israel');
   });
 
   test('search and filters are still there after visiting another page', async ({ page }) => {
     const jobs = new JobsPage(page);
-    await jobs.open('/?q=node');
+    await jobs.open('/jobs?q=node');
     await expect(jobs.cards).toHaveCount(1);
 
     await jobs.header.link('My Profile').click();

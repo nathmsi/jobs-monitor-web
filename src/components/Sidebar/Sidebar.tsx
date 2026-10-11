@@ -6,7 +6,7 @@ import { ROLES } from "../../constants/roles";
 import { regionLabel } from "../../utils/regionLabel";
 import { useJobFlags } from "../../providers/jobFlags/useJobFlags";
 import { useSavedJobs } from "../../providers/savedJobs/useSavedJobs";
-import type { Filters } from "../../types";
+import type { Filters, Posted } from "../../types";
 import type { Suggestion } from "../../api/client";
 import { SearchBox } from "../SearchBox/SearchBox";
 import styles from "./Sidebar.module.css";
@@ -95,6 +95,24 @@ export function Sidebar({ filters, onChange }: Props) {
               {regionLabel(r, i18n.language)}
             </option>
           ))}
+        </select>
+      </div>
+
+      <div className={styles.section}>
+        <label className={styles.label} htmlFor="filter-posted">{t("filters.postedLabel")}</label>
+        <select
+          id="filter-posted"
+          className={styles.region}
+          value={filters.posted ?? ""}
+          onChange={(e) => {
+            const posted = (e.target.value || undefined) as Posted | undefined;
+            onChange((f) => ({ ...f, posted }));
+          }}
+        >
+          <option value="">{t("posted.any")}</option>
+          <option value="24h">{t("posted.24h")}</option>
+          <option value="7d">{t("posted.7d")}</option>
+          <option value="30d">{t("posted.30d")}</option>
         </select>
       </div>
 

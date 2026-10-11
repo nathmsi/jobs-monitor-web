@@ -27,11 +27,11 @@ e2e/
 │   ├── HomePage.ts  JobsPage.ts  ProfilePage.ts  CoachPage.ts
 └── tests/              # specs: *what* the app must do, one folder per page
     ├── home/           home · autocomplete
-    ├── jobs/           browse · autocomplete · filters · saved-jobs · seen-offers · pagination
+    ├── jobs/           browse · autocomplete · freshness · filters · saved-jobs · seen-offers · pagination
     │                   tabs-and-url · for-me · resilience
-    ├── profile/        preferences · profile-stats · appearance · crash-regression
+    ├── profile/        cv-import · preferences · profile-stats · appearance · crash-regression
     ├── coach/          coach (signed-out experience)
-    └── navigation/     routing · i18n-theme
+    └── navigation/     routing · mobile-nav · i18n-theme
 ```
 
 ## Rules

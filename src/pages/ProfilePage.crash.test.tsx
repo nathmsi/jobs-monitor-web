@@ -211,11 +211,11 @@ describe("ProfilePage — crash guards", () => {
     expect(screen.queryByText("profile.emptyStats")).toBeNull();
   });
 
-  it("renders sign-in button when not logged in and no CV", async () => {
+  it("offers the account-free CV import when not logged in and no CV", async () => {
     await setup({ loggedIn: false, profile: null });
     render(<ProfilePage />);
-    // The sign-in button uses t("auth.signInGoogle") — may appear once or more
-    expect(screen.getAllByText("auth.signInGoogle").length).toBeGreaterThan(0);
+    expect(screen.getByText("cvImport.privacy")).toBeInTheDocument();
+    expect(screen.getByLabelText("cvImport.pasteLabel")).toBeInTheDocument();
   });
 
   it("renders without crash when logged in with no saved preferences (first login)", async () => {

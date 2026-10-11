@@ -73,3 +73,35 @@ describe("App routing and shell (integration)", () => {
     expect(await screen.findByRole("alert", {}, { timeout: 5000 })).toHaveTextContent("kaboom");
   });
 });
+
+describe("Phone navigation (integration)", () => {
+  beforeEach(async () => {
+    vi.restoreAllMocks();
+    mockBackend({ jobs: [makeJob({ external_id: "1", title: "Frontend Engineer" })] });
+    await i18n.changeLanguage("en");
+  });
+
+  it("the bottom bar is part of every page and opens 'For you' and 'Saved'", async () => {
+    const { user } = renderWithProviders(<App />, { route: "/" });
+    const bar = () => screen.getByRole("navigation", { name: "Quick navigation" });
+
+    await user.click(within(bar()).getByRole("link", { name: "For you" }));
+    expect(await screen.findByRole("tablist", {}, { timeout: 5000 })).toBeInTheDocument();
+    expect(screen.getByTestId("location")).toHaveTextContent("/jobs?tab=forme");
+    expect(screen.getByRole("tab", { name: /For me/ })).toHaveAttribute("aria-selected", "true");
+    expect(within(bar()).getByRole("link", { name: "For you" })).toHaveAttribute("aria-current", "page");
+
+    await user.click(within(bar()).getByRole("link", { name: "Saved" }));
+    expect(await screen.findByText("Nothing here yet. Save offers with ★.")).toBeInTheDocument();
+  }, 20_000);
+
+  it("counts saved offers in the bar", async () => {
+    localStorage.setItem(
+      "savedJobs.local.v1",
+      JSON.stringify([{ source: "melio", external_id: "1", status: "saved", title: "Frontend Engineer" }]),
+    );
+    renderWithProviders(<App />, { route: "/" });
+
+    expect(await screen.findByRole("link", { name: "Saved (1)" })).toBeInTheDocument();
+  });
+});

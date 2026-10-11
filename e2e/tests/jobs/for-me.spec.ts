@@ -24,7 +24,8 @@ test.describe('Jobs · "For me"', () => {
 
     await jobs.tab('For me').click();
     await expect(page.getByText('Analyze your CV to see the offers that match you.')).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Go to CV Coach →' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Add my CV →' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'AI review (sign in)' })).toBeVisible();
   });
 
   test('with a profile it ranks offers that match your skills', async ({ page }) => {
@@ -60,5 +61,18 @@ test.describe('Jobs · "For me"', () => {
     api.recover();
     await jobs.alert.getByRole('button', { name: 'Try again' }).click();
     await expect(jobs.card('Product Engineer')).toBeVisible();
+  });
+});
+
+test.describe('Jobs · "For me" empty state', () => {
+  test('"Add my CV" leads to the account-free import on the profile page', async ({ page }) => {
+    const jobs = new JobsPage(page);
+    await jobs.open();
+    await jobs.tab('For me').click();
+
+    await page.getByRole('button', { name: 'Add my CV →' }).click();
+
+    await expect(page).toHaveURL(/\/profile$/);
+    await expect(page.getByLabel('Paste the text of your CV')).toBeVisible();
   });
 });

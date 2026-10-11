@@ -12,6 +12,8 @@ export interface Job {
   is_hot: boolean;
   is_expired: boolean;
   last_updated: string | null;
+  /** When the offer was first seen (ISO-8601). */
+  added_at?: string | null;
   is_new: boolean;
 }
 
@@ -47,9 +49,13 @@ export interface RegionInfo {
   label_he: string;
 }
 
+/** How recently an offer was added. */
+export type Posted = "24h" | "7d" | "30d";
+
 export interface Filters {
   region: string;
   q: string;
   roles: string[]; // active role preset keys (any of them matches)
   category?: string; // active company category key (undefined = all)
+  posted?: Posted; // only offers added within this window
 }

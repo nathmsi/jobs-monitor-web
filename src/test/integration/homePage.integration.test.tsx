@@ -49,7 +49,7 @@ describe("HomePage (integration)", () => {
   });
 
   it("shows the live numbers (formatted for the language) from the API", async () => {
-    backend.getStats.mockResolvedValue({ total: 1234, new_this_week: 56, companies: 78 });
+    backend.getStats.mockResolvedValue({ total: 1234, new_this_week: 56, companies: 78, updated_at: null });
     renderWithProviders(<HomePage />);
 
     expect(await screen.findByText("1,234")).toBeInTheDocument();
@@ -110,10 +110,10 @@ describe("HomePage (integration)", () => {
     expect(screen.getByTestId("location")).toHaveTextContent(/^\/jobs$/);
   });
 
-  it("points to the CV coach and preferences when there is no profile", () => {
+  it("invites you to add your CV (no account needed) and set preferences when there is no profile", () => {
     renderWithProviders(<HomePage />);
 
-    expect(screen.getByRole("link", { name: /Analyze your CV/ })).toHaveAttribute("href", "/coach");
+    expect(screen.getByRole("link", { name: /Add your CV/ })).toHaveAttribute("href", "/profile");
     expect(screen.getByRole("link", { name: /Set your preferences/ })).toHaveAttribute("href", "/profile");
   });
 
@@ -122,7 +122,7 @@ describe("HomePage (integration)", () => {
     renderWithProviders(<HomePage />);
 
     expect(screen.getByRole("link", { name: /Offers that match your profile/ })).toHaveAttribute("href", "/jobs?tab=forme");
-    expect(screen.queryByRole("link", { name: /Analyze your CV/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /Add your CV/ })).not.toBeInTheDocument();
   });
 
   it("is translated", async () => {

@@ -70,7 +70,7 @@ export function mockBackend({ jobs = [], sources = SOURCES, suggestions = SUGGES
   const getRegions = vi.spyOn(client, "getRegions").mockResolvedValue(REGIONS);
   const getStats = vi
     .spyOn(client, "getStats")
-    .mockResolvedValue({ total: jobs.length, new_this_week: Math.min(jobs.length, 2), companies: sources.length });
+    .mockResolvedValue({ total: jobs.length, new_this_week: Math.min(jobs.length, 2), companies: sources.length, updated_at: new Date(Date.now() - 12 * 60_000).toISOString() });
 
   const getSuggestions = vi.spyOn(client, "getSuggestions").mockImplementation(async (q) => {
     const needle = q.trim().toLowerCase();

@@ -130,3 +130,10 @@ a {
   box-shadow: var(--ring);
   border-radius: var(--radius-sm);
 }
+
+/* Phones: keep content clear of the fixed bottom navigation. */
+@media (max-width: 640px) {
+  body {
+    padding-bottom: calc(3.75rem + env(safe-area-inset-bottom));
+  }
+}

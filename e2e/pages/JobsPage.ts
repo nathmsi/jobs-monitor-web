@@ -12,6 +12,7 @@ export class JobsPage extends BasePage {
   readonly areaSelect: Locator;
   readonly sortSelect: Locator;
   readonly hideSeenCheckbox: Locator;
+  readonly postedSelect: Locator;
   readonly loadMoreButton: Locator;
   readonly alert: Locator;
   readonly listViewButton: Locator;
@@ -26,6 +27,7 @@ export class JobsPage extends BasePage {
     this.areaSelect = page.getByRole('combobox', { name: 'Area' });
     this.sortSelect = page.getByRole('combobox', { name: 'Sort' });
     this.hideSeenCheckbox = page.getByRole('checkbox', { name: /hide offers/i });
+    this.postedSelect = page.getByRole('combobox', { name: 'Added' });
     this.loadMoreButton = page.getByRole('button', { name: 'Load more' });
     this.alert = page.getByRole('alert');
     this.listViewButton = page.getByRole('button', { name: 'List view' });

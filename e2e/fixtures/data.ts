@@ -11,6 +11,8 @@ export interface MockJob {
   is_hot: boolean;
   is_expired: boolean;
   last_updated: string | null;
+  /** When the offer was first seen (ISO-8601). */
+  added_at: string | null;
   is_new: boolean;
   ai_summary?: string | null;
 }
@@ -27,6 +29,17 @@ export interface MockSource {
 
 const TODAY = new Date().toISOString().slice(0, 10);
 
+const HOUR = 60 * 60 * 1000;
+
+/** An ISO timestamp `hours` hours before now (the mock API and the UI share the clock). */
+export function hoursAgo(hours: number): string {
+  return new Date(Date.now() - hours * HOUR).toISOString();
+}
+
+export function daysAgo(days: number): string {
+  return hoursAgo(days * 24);
+}
+
 export function makeJob(overrides: Partial<MockJob> & Pick<MockJob, 'external_id' | 'title'>): MockJob {
   return {
     source: 'melio',
@@ -37,6 +50,7 @@ export function makeJob(overrides: Partial<MockJob> & Pick<MockJob, 'external_id
     is_hot: false,
     is_expired: false,
     last_updated: TODAY,
+    added_at: daysAgo(3),
     is_new: false,
     ai_summary: null,
     ...overrides,

@@ -43,6 +43,12 @@ function matchesRoles(job: MockJob, roles: string): boolean {
   });
 }
 
+const POSTED_WINDOWS: Record<string, number> = {
+  '24h': 24 * 3600_000,
+  '7d': 7 * 24 * 3600_000,
+  '30d': 30 * 24 * 3600_000,
+};
+
 function matches(job: MockJob, url: URL): boolean {
   const q = url.searchParams.get('q')?.trim().toLowerCase();
   if (q) {
@@ -55,6 +61,8 @@ function matches(job: MockJob, url: URL): boolean {
   }
   const role = url.searchParams.get('role');
   if (role && !matchesRoles(job, role)) return false;
+  const window = POSTED_WINDOWS[url.searchParams.get('posted') ?? ''];
+  if (window && (!job.added_at || Date.parse(job.added_at) < Date.now() - window)) return false;
   const kind = url.searchParams.get('kind');
   if (kind && SOURCE_BY_KEY.get(job.source)?.kind !== kind) return false;
   const category = url.searchParams.get('category');
@@ -148,7 +156,7 @@ export async function mockApi(page: Page, initialJobs: MockJob[] = MOCK_JOBS): P
   });
 
   await page.route('**/api/stats', (route) =>
-    route.fulfill(json({ total: 856, new_this_week: 42, companies: 120 })),
+    route.fulfill(json({ total: 856, new_this_week: 42, companies: 120, updated_at: new Date(Date.now() - 12 * 60_000).toISOString() })),
   );
   await page.route('**/api/sources', (route) => route.fulfill(json(MOCK_SOURCES)));
   await page.route('**/api/regions', (route) => route.fulfill(json(MOCK_REGIONS)));

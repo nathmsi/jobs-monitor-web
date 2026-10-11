@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 
-import type { Filters } from "../types";
+import type { Filters, Posted } from "../types";
 import { usePreferences } from "../providers/preferences/usePreferences";
 
 export type JobsTab = "company" | "agency" | "mine" | "forme";
@@ -9,6 +9,7 @@ export type JobsSort = "relevance" | "recent" | "oldest" | "hot";
 
 const TABS: readonly JobsTab[] = ["company", "agency", "mine", "forme"];
 const SORTS: readonly JobsSort[] = ["relevance", "recent", "oldest", "hot"];
+const POSTED: readonly Posted[] = ["24h", "7d", "30d"];
 
 export interface JobsUrlState {
   filters: Filters;
@@ -45,6 +46,7 @@ export function useJobsUrlState() {
         // key present but empty = "no role"; key absent = preference default
         roles: p.has("role") ? list(p.get("role")) : prefs.roles,
         category: p.has("category") ? p.get("category") || undefined : prefs.categories[0],
+        posted: oneOf(p.get("posted"), POSTED),
       };
       const sortChoice = oneOf(p.get("sort"), SORTS) ?? null;
       const searching = filters.q.trim() !== "" || filters.roles.length > 0;
@@ -79,6 +81,7 @@ export function useJobsUrlState() {
       out.set("region", next.filters.region);
       out.set("role", next.filters.roles.join(","));
       out.set("category", next.filters.category ?? "");
+      if (next.filters.posted) out.set("posted", next.filters.posted);
       if (next.filters.q) out.set("q", next.filters.q);
       out.set("tab", next.tab);
       if (next.sortChoice) out.set("sort", next.sortChoice);

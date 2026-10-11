@@ -6,6 +6,7 @@ import type { Suggestion } from "../api/client";
 import { useLatestJobs, usePopularSearches, useSources, useStats } from "../api/hooks";
 import { Header } from "../components/Header/Header";
 import { JobCard } from "../components/JobCard/JobCard";
+import { UpdatedAgo } from "../components/UpdatedAgo/UpdatedAgo";
 import { SearchBox } from "../components/SearchBox/SearchBox";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { useProfile } from "../providers/profile/useProfile";
@@ -39,7 +40,10 @@ export function HomePage() {
         <ForYou />
       </main>
 
-      <footer className={styles.footer}>{t("footer")}</footer>
+      <footer className={styles.footer}>
+        {t("footer")}
+        <UpdatedAgo className={styles.updated} />
+      </footer>
     </div>
   );
 }
@@ -196,7 +200,7 @@ function ForYou() {
             <span className={styles.doorCta}>{t("home.matchCta")}</span>
           </Link>
         ) : (
-          <Link to="/coach" className={styles.door}>
+          <Link to="/profile" className={styles.door}>
             <h3 className={styles.doorTitle}>{t("home.cvTitle")}</h3>
             <p className={styles.doorDesc}>{t("home.cvDesc")}</p>
             <span className={styles.doorCta}>{t("home.cvCta")}</span>

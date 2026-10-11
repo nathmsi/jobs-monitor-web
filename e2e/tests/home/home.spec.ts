@@ -109,11 +109,11 @@ test.describe('Home', () => {
     await expect(home.cards.first()).toBeVisible();
   });
 
-  test('without a profile it points to the CV coach and the preferences', async ({ page }) => {
+  test('without a profile it invites you to add your CV (no account) and set preferences', async ({ page }) => {
     const home = new HomePage(page);
     await home.goto();
 
-    await expect(home.door(/Analyze your CV/)).toHaveAttribute('href', '/coach');
+    await expect(home.door(/Add your CV/)).toHaveAttribute('href', '/profile');
     await expect(home.door(/Set your preferences/)).toHaveAttribute('href', '/profile');
   });
 
@@ -128,7 +128,7 @@ test.describe('Home', () => {
     await home.goto();
 
     await expect(home.door(/Offers that match your profile/)).toHaveAttribute('href', '/jobs?tab=forme');
-    await expect(home.door(/Analyze your CV/)).toHaveCount(0);
+    await expect(home.door(/Add your CV/)).toHaveCount(0);
 
     await home.door(/Offers that match your profile/).click();
     await expect(new JobsPage(page).tab('For me')).toHaveAttribute('aria-selected', 'true');

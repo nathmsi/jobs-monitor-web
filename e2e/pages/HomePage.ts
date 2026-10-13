@@ -11,6 +11,7 @@ export class HomePage extends BasePage {
   readonly cards: Locator;
   readonly seeAllLink: Locator;
   readonly alert: Locator;
+  readonly aiPromos: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -21,6 +22,7 @@ export class HomePage extends BasePage {
     this.cards = page.getByRole('article');
     this.seeAllLink = page.getByRole('link', { name: 'See all offers →' });
     this.alert = page.getByRole('alert');
+    this.aiPromos = page.getByTestId('ai-promo-review').or(page.getByTestId('ai-promo-match'));
   }
 
   async goto(path = '/'): Promise<void> {

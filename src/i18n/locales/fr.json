@@ -241,7 +241,49 @@
     "analysisComplete": "Analyse CV terminée",
     "matchTitle": "Offres correspondantes",
     "matchedJobs": "{{count}} offres trouvées pour vous",
-    "uploadUnlock": "Uploadez un CV pour débloquer"
+    "uploadUnlock": "Uploadez un CV pour débloquer",
+    "analysis": {
+      "score": "Score global",
+      "years": "Années d'expérience",
+      "languages": "Langues",
+      "domains": "Domaines",
+      "fallback": "Analyse de base — le coach IA était indisponible, cette analyse est donc générique. Réessaie pour obtenir l'analyse complète d'un expert.",
+      "verdictTitle": "Le verdict du recruteur",
+      "scan": "Ce qu'un recruteur retient en 6 secondes",
+      "decision": {
+        "yes": "T'inviterait en entretien",
+        "maybe": "Peut-être — selon quelques corrections",
+        "no": "Passerait son tour aujourd'hui"
+      },
+      "scoresTitle": "Détail du score",
+      "scores": {
+        "impact": "Impact",
+        "clarity": "Clarté",
+        "ats": "Mots-clés ATS",
+        "technical_depth": "Profondeur technique"
+      },
+      "worksTitle": "Ce qui fonctionne",
+      "hurtsTitle": "Ce qui te dessert",
+      "impact": {
+        "high": "Fort impact",
+        "medium": "Impact moyen",
+        "low": "Faible impact"
+      },
+      "severity": {
+        "high": "Élevée",
+        "medium": "Moyenne",
+        "low": "Faible"
+      },
+      "whyItHurts": "Pourquoi ça pénalise",
+      "fix": "Correction",
+      "before": "Avant",
+      "after": "Après",
+      "how": "Comment",
+      "example": "Exemple",
+      "issue": "Problème",
+      "evidence": "Preuve",
+      "readiness": "Niveau de préparation"
+    }
   },
   "forme": {
     "noProfile": "Analysez votre CV pour voir les offres qui vous correspondent.",

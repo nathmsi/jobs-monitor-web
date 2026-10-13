@@ -121,7 +121,17 @@ export interface CvAnalysis {
     readiness_pct: number;
     assumptions?: string;
   };
-  strengths: { point: string; evidence: string }[];
+  /** What a recruiter concludes at first glance, and whether they would call. */
+  first_impression?: {
+    recruiter_scan: string;
+    interview_decision: "yes" | "maybe" | "no";
+    reason: string;
+  };
+  /** Sub-scores, same calibration as overall.score. */
+  scores?: { impact: number; clarity: number; ats: number; technical_depth: number };
+  strengths: { point: string; evidence: string; impact?: "high" | "medium" | "low" }[];
+  /** Things that make a recruiter reject or hesitate. */
+  red_flags?: { flag: string; why_it_hurts: string; fix: string }[];
   gaps: { gap: string; why_it_matters: string; severity: "high" | "medium" | "low" }[];
   cv_feedback: { issue: string; fix: string; example: string }[];
   skills_to_learn: { skill: string; reason: string; how: string }[];
@@ -132,6 +142,8 @@ export interface CvAnalysis {
   };
   keywords_missing: string[];
   overall: { score: number; summary: string };
+  /** Which engine wrote it: the AI coach, or the basic fallback. */
+  source?: "ai" | "heuristic";
 }
 
 export interface MatchedOffer {

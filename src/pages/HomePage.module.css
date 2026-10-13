@@ -325,15 +325,8 @@
   margin-top: 0.5rem;
   padding: 1.1rem 0.9rem 1rem;
   background: var(--ai-aurora);
+  border: 1px solid color-mix(in srgb, var(--ai-from) 14%, var(--border));
   border-radius: var(--radius-lg);
-}
-
-.aiStrip::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: var(--ai-sparkles);
 }
 
 .aiStripTitle {

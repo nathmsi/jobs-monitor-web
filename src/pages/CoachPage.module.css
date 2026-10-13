@@ -43,21 +43,21 @@
   padding: 3.5rem 2rem;
   max-width: 640px;
   margin: 0 auto;
-  background: var(--ai-aurora), var(--bg-elevated);
-  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  border: 1px solid color-mix(in srgb, var(--ai-from) 18%, var(--border));
   border-radius: var(--radius-lg);
 }
 .hero::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -30%;
   z-index: -1;
-  background: var(--ai-sparkles);
-  opacity: 0.55;
-  animation: sparkleDrift 18s linear infinite;
+  background: var(--ai-aurora);
+  animation: auroraDrift 12s ease-in-out infinite alternate;
 }
-@keyframes sparkleDrift {
-  to { background-position: 220px 220px; }
+@keyframes auroraDrift {
+  from { transform: translate3d(-4%, -3%, 0) rotate(0deg) scale(1); }
+  to   { transform: translate3d(4%, 3%, 0) rotate(8deg) scale(1.08); }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero::before { animation: none; }

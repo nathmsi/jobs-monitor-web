@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { filterByKeyword, getJobsPage, getPopular, getRegionJobs, getSources, getStats, getSuggestions } from "./client";
+import { extractCvText, filterByKeyword, getJobsPage, getPopular, getRegionJobs, getSources, getStats, getSuggestions } from "./client";
 import type { Job } from "../types";
 
 function mockFetch(body: unknown, ok = true, status = 200) {
@@ -124,5 +124,38 @@ describe("api client (backend API)", () => {
     const stats = { total: 692, new_this_week: 162, companies: 137, updated_at: "2026-10-11T06:15:16.410Z" };
     vi.stubGlobal("fetch", mockFetch(stats));
     await expect(getStats()).resolves.toEqual(stats);
+  });
+});
+
+describe("extractCvText", () => {
+  beforeEach(() => vi.unstubAllGlobals());
+
+  it("sends the PDF as the raw body and returns the text", async () => {
+    const fetchMock = mockFetch({ text: "Eytan Cohen, backend engineer" });
+    vi.stubGlobal("fetch", fetchMock);
+    const file = new File(["%PDF-1.7"], "cv.pdf", { type: "application/pdf" });
+
+    await expect(extractCvText(file)).resolves.toBe("Eytan Cohen, backend engineer");
+
+    const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    expect(url).toMatch(/\/api\/cv\/extract$/);
+    expect(init.method).toBe("POST");
+    expect(init.body).toBe(file); // raw file, not JSON or base64
+    expect(init.headers).toEqual({ "Content-Type": "application/pdf" });
+  });
+
+  it("returns an empty string when the answer has no text", async () => {
+    vi.stubGlobal("fetch", mockFetch({}));
+    await expect(extractCvText(new File(["x"], "a.pdf"))).resolves.toBe("");
+  });
+
+  it("throws the server message on an error", async () => {
+    vi.stubGlobal("fetch", mockFetch({ message: "No readable text was found in this PDF." }, false, 422));
+    await expect(extractCvText(new File(["x"], "a.pdf"))).rejects.toThrow("No readable text was found in this PDF.");
+  });
+
+  it("falls back to the status code when the body is not JSON", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 502, json: async () => { throw new Error("not json"); } }));
+    await expect(extractCvText(new File(["x"], "a.pdf"))).rejects.toThrow("HTTP 502");
   });
 });

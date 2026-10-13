@@ -10,6 +10,7 @@ import { CVUploadModal } from "../components/CVUploadModal/CVUploadModal";
 import { Header } from "../components/Header/Header";
 import { useAuth } from "../providers/auth/useAuth";
 import { useCvs } from "../hooks/useCvs";
+import { isReadableCv } from "../utils/cvText";
 import { errorMessage } from "../utils/errorMessage";
 import { regionLabel } from "../utils/regionLabel";
 import { useCvUpload } from "../hooks/useCvUpload";
@@ -33,7 +34,7 @@ export function CoachPage() {
   const [showUploadModal, setShowUploadModal] = useState(false);
 
   const cvText = selectedCv?.text ?? "";
-  const isReady = cvText.trim().length >= 50;
+  const isReady = isReadableCv(cvText);
 
   const cvUpload = useCvUpload(addCv);
   const onPdf = async (file: File) => {
@@ -83,7 +84,9 @@ export function CoachPage() {
                 </>
               ) : (
                 <>
-                  <span className={styles.cvBarEmpty}>{t("coach.noCv")}</span>
+                  <span className={styles.cvBarEmpty} role={selectedCv ? "alert" : undefined}>
+                    {selectedCv ? t("coach.cvUnreadable", { name: selectedCv.name }) : t("coach.noCv")}
+                  </span>
                   <button className={styles.primaryBtn} onClick={() => setShowUploadModal(true)}>
                     {t("coach.uploadCv")}
                   </button>

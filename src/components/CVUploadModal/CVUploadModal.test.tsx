@@ -77,4 +77,21 @@ describe("CVUploadModal", () => {
 
     expect(onClose).toHaveBeenCalledTimes(2);
   });
+
+  it("flags a CV that has no readable text, and only that one", () => {
+    render(
+      <CVUploadModal
+        open
+        onClose={noop}
+        onUpload={vi.fn()}
+        existingCvs={[
+          { id: "a", name: "Scan", text: "" },
+          { id: "b", name: "Real", text: "x".repeat(80) },
+          { id: "c", name: "Unknown" }, // no text given: nothing to judge
+        ]}
+      />,
+    );
+    const options = screen.getAllByRole("option").map((o) => o.textContent);
+    expect(options).toEqual(["Choose a CV…", "Scan (no readable text)", "Real", "Unknown"]);
+  });
 });

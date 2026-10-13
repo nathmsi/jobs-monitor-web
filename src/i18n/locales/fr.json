@@ -341,7 +341,9 @@
       "issue": "Problème",
       "evidence": "Preuve",
       "readiness": "Niveau de préparation"
-    }
+    },
+    "pdfEmpty": "Impossible de lire du texte dans ce PDF, même avec notre lecteur. Exportez à nouveau votre CV en PDF (par exemple « Télécharger en PDF » depuis Word ou Google Docs) puis importez-le.",
+    "cvUnreadable": "« {{name}} » ne contient aucun texte lisible. Importez-le à nouveau, ou exportez un PDF contenant du texte."
   },
   "forme": {
     "noProfile": "Analysez votre CV pour voir les offres qui vous correspondent.",
@@ -419,7 +421,8 @@
     "or": "ou",
     "browse": "Parcourir les fichiers",
     "formats": "Format accepté : PDF uniquement · 10 Mo max",
-    "cancel": "Annuler"
+    "cancel": "Annuler",
+    "noText": "aucun texte lisible"
   },
   "common": {
     "loading": "Chargement…"

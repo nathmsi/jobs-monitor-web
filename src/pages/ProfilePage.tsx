@@ -11,6 +11,7 @@ import { ThemeSetting } from "../components/ThemeSetting/ThemeSetting";
 import { ProfileEditor } from "../components/ProfileEditor/ProfileEditor";
 import { useAuth } from "../providers/auth/useAuth";
 import { useCvs } from "../hooks/useCvs";
+import { isReadableCv } from "../utils/cvText";
 import { jobText } from "../utils/jobText";
 import { regionLabel } from "../utils/regionLabel";
 import { useCvUpload } from "../hooks/useCvUpload";
@@ -72,7 +73,7 @@ export function ProfilePage() {
   const [avatarError, setAvatarError] = useState(false);
 
   const cvText = selectedCv?.text ?? "";
-  const hasCv = cvText.trim().length >= 50;
+  const hasCv = isReadableCv(cvText);
   const hasProfile = !!profile && Array.isArray(profile.skills) && profile.skills.length > 0;
   const { data: jobs } = useRegionJobs("all", hasProfile);
 
@@ -183,7 +184,9 @@ export function ProfilePage() {
               </div>
             ) : (
               <div className={styles.cvEmpty}>
-                <p className={styles.cvEmptyText}>{t("coach.noCv")}</p>
+                <p className={styles.cvEmptyText} role={selectedCv ? "alert" : undefined}>
+                  {selectedCv ? t("coach.cvUnreadable", { name: selectedCv.name }) : t("coach.noCv")}
+                </p>
                 <button className={styles.primaryBtn} onClick={() => setShowUploadModal(true)}>
                   {t("coach.uploadCv")}
                 </button>

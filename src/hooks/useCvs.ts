@@ -3,6 +3,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { useAuth } from "../providers/auth/useAuth";
 import { supabase } from "../services/supabase";
+import { isReadableCv } from "../utils/cvText";
 
 export interface Cv {
   id: string;
@@ -43,8 +44,10 @@ export function useCvs() {
 
   const cvs = userId ? (query.data ?? NO_CVS) : NO_CVS;
   const ready = !userId || !supabase || !query.isPending;
-  // Default to the newest CV until the user picks another one.
-  const selectedId = cvs.some((c) => c.id === pickedId) ? pickedId : (cvs[0]?.id ?? null);
+  // Default to the newest CV that has text (one without is unusable) until the user picks another.
+  const selectedId = cvs.some((c) => c.id === pickedId)
+    ? pickedId
+    : (cvs.find((c) => isReadableCv(c.text))?.id ?? cvs[0]?.id ?? null);
   const selectedCv = cvs.find((c) => c.id === selectedId) ?? null;
 
   const addCv = useCallback(

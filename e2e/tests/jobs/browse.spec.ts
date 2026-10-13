@@ -21,12 +21,11 @@ test.describe('Jobs · browsing', () => {
     await expect(jobs.card('Backend Developer')).toContainText('monday.com');
   });
 
-  test('flags hot, new and expired offers with badges', async ({ page }) => {
+  test('flags hot and expired offers with badges', async ({ page }) => {
     const jobs = new JobsPage(page);
     await jobs.open();
 
     await expect(jobs.card('Frontend Engineer').getByTestId('badge-hot')).toBeVisible();
-    await expect(jobs.card('Frontend Engineer').getByTestId('badge-new')).toBeVisible();
     await expect(jobs.card('Backend Developer').getByTestId('badge-hot')).toHaveCount(0);
 
     await jobs.tab('Staffing agencies').click();

@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 
 import { analyzeCvAi } from "../api/client";
+import { AiBadge } from "../components/AiBadge/AiBadge";
 import { AgentWorkflow } from "../components/AgentWorkflow/AgentWorkflow";
 import { MatchResults } from "../components/MatchResults/MatchResults";
 import { CVAnalysisResults } from "../components/CVAnalysisResults/CVAnalysisResults";
@@ -18,7 +19,7 @@ import { useMatchRun } from "../hooks/useMatchRun";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { usePreferences } from "../providers/preferences/usePreferences";
 import { useRegions } from "../api/hooks";
-import { DocumentIcon, SearchPlusIcon } from "../components/Icons/Icons";
+import { CheckIcon, DocumentIcon, SearchPlusIcon } from "../components/Icons/Icons";
 import styles from "./CoachPage.module.css";
 
 type ActiveFeature = "review" | "match" | null;
@@ -50,21 +51,30 @@ export function CoachPage() {
       <div className={styles.page}>
         {/* Page title */}
         <div className={styles.pageTitle}>
-          <h1 className={styles.title}>{t("coach.nav")}</h1>
+          <div className={styles.titleRow}>
+            <h1 className={styles.title}>{t("coach.nav")}</h1>
+            <AiBadge className={styles.titleBadge} />
+          </div>
           <p className={styles.lead}>{t("coach.tagline")}</p>
         </div>
 
         {/* Not signed in */}
         {!user && (
           <div className={styles.hero}>
-            <p className={styles.heroEyebrow}>{t("coach.getStarted")}</p>
-            <h2 className={styles.heroTitle}>{t("coach.heroTitle")}</h2>
-            <p className={styles.heroDesc}>{t("coach.heroDesc")}</p>
+            <p className={styles.heroEyebrow}><AiBadge /> {t("coach.getStarted")}</p>
+            <h2 className={styles.heroTitle}>{t("ai.landing.title")}</h2>
+            <ul className={styles.heroPoints}>
+              {(["p1", "p2", "p3"] as const).map((k) => (
+                <li key={k}><CheckIcon size={16} strokeWidth={2.6} />{t(`ai.landing.${k}`)}</li>
+              ))}
+            </ul>
+            <p className={styles.heroMeta}>{t("ai.landing.time")} · {t("ai.landing.privacy")}</p>
             <button className={styles.primaryBtn} onClick={() => signInWithGoogle()}>
               {t("coach.signIn.button")}
             </button>
           </div>
         )}
+        {!user && <HowItWorks />}
 
         {/* Signed in */}
         {user && (
@@ -117,7 +127,7 @@ export function CoachPage() {
                   <div className={styles.featureIcon}>
                     <DocumentIcon size={28} strokeWidth={1.7} />
                   </div>
-                  <h3 className={styles.featureTitle}>{t("coach.featureReviewTitle")}</h3>
+                  <h3 className={styles.featureTitle}>{t("coach.featureReviewTitle")} <AiBadge /></h3>
                   <p className={styles.featureDesc}>{t("coach.featureReviewDesc")}</p>
                   <span className={styles.featureCta}>{t("coach.featureReviewCta")}</span>
                 </button>
@@ -126,7 +136,7 @@ export function CoachPage() {
                   <div className={styles.featureIcon}>
                     <SearchPlusIcon size={28} strokeWidth={1.7} />
                   </div>
-                  <h3 className={styles.featureTitle}>{t("coach.featureMatchTitle")}</h3>
+                  <h3 className={styles.featureTitle}>{t("coach.featureMatchTitle")} <AiBadge /></h3>
                   <p className={styles.featureDesc}>{t("coach.featureMatchDesc")}</p>
                   <span className={styles.featureCta}>{t("coach.featureMatchCta")}</span>
                 </button>
@@ -140,7 +150,7 @@ export function CoachPage() {
                   <div className={styles.featureIcon}>
                     <DocumentIcon size={28} strokeWidth={1.7} />
                   </div>
-                  <h3 className={styles.featureTitle}>{t("coach.featureReviewTitle")}</h3>
+                  <h3 className={styles.featureTitle}>{t("coach.featureReviewTitle")} <AiBadge /></h3>
                   <p className={styles.featureDesc}>{t("coach.featureReviewDesc")}</p>
                   <span className={styles.featureCtaDisabled}>{t("coach.uploadUnlock")}</span>
                 </div>
@@ -148,11 +158,22 @@ export function CoachPage() {
                   <div className={styles.featureIcon}>
                     <SearchPlusIcon size={28} strokeWidth={1.7} />
                   </div>
-                  <h3 className={styles.featureTitle}>{t("coach.featureMatchTitle")}</h3>
+                  <h3 className={styles.featureTitle}>{t("coach.featureMatchTitle")} <AiBadge /></h3>
                   <p className={styles.featureDesc}>{t("coach.featureMatchDesc")}</p>
                   <span className={styles.featureCtaDisabled}>{t("coach.uploadUnlock")}</span>
                 </div>
               </div>
+            )}
+
+            {!isReady && !active && <HowItWorks />}
+
+            {/* What to expect: always visible when no feature is running */}
+            {!active && (
+              <p className={styles.trustRow}>
+                <span>{t("ai.landing.time")}</span>
+                <span aria-hidden="true">·</span>
+                <span>{t("ai.landing.privacy")}</span>
+              </p>
             )}
 
             {/* Active feature content */}
@@ -190,6 +211,42 @@ export function CoachPage() {
         onSelectCv={selectCv}
       />
     </div>
+  );
+}
+
+/** Three steps and a sample result, so people know what they get before they commit. */
+function HowItWorks() {
+  const { t } = useTranslation();
+  return (
+    <section className={styles.how} aria-labelledby="how-title" data-testid="coach-how">
+      <h2 id="how-title" className={styles.howTitle}>{t("ai.how.howTitle")}</h2>
+      <ol className={styles.steps}>
+        {(["step1", "step2", "step3"] as const).map((k, i) => (
+          <li key={k} className={styles.step}>
+            <span className={styles.stepNum} aria-hidden="true">{i + 1}</span>
+            <strong>{t(`ai.how.${k}Title`)}</strong>
+            <span className={styles.stepDesc}>{t(`ai.how.${k}Desc`)}</span>
+          </li>
+        ))}
+      </ol>
+
+      <div className={styles.example} aria-label={t("ai.how.exTitle")}>
+        <div className={styles.exampleHead}>
+          <span className={styles.exampleTag}>{t("ai.how.exTag")}</span>
+          <span className={styles.exampleTitle}>{t("ai.how.exTitle")}</span>
+        </div>
+        <div className={styles.exScore}>
+          <span className={styles.exScoreValue}>{t("ai.how.exScore")}</span>
+          <span className={styles.exScoreLabel}>{t("ai.how.exScoreLabel")}</span>
+        </div>
+        <p className={styles.exVerdict}>{t("ai.how.exVerdict")}</p>
+        <p className={styles.exFlag}>{t("ai.how.exFlag")}</p>
+        <div className={styles.exRewrite}>
+          <p className={styles.exBefore}><span>{t("ai.how.exBefore")}</span>{t("ai.how.exBeforeText")}</p>
+          <p className={styles.exAfter}><span>{t("ai.how.exAfter")}</span>{t("ai.how.exAfterText")}</p>
+        </div>
+      </div>
+    </section>
   );
 }
 

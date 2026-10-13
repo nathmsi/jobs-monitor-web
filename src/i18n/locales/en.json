@@ -67,7 +67,8 @@
   },
   "auth": {
     "signInGoogle": "Sign in with Google",
-    "signOut": "Sign out"
+    "signOut": "Sign out",
+    "signInShort": "Sign in"
   },
   "mine": {
     "all": "All",
@@ -501,5 +502,93 @@
     "24h": "Last 24 hours",
     "7d": "Last 7 days",
     "30d": "Last 30 days"
+  },
+  "ai": {
+    "badge": "AI",
+    "sectionTitle": "Your AI career coach",
+    "promoCvTitle": "Get your CV analyzed",
+    "promoCvDesc": "The AI reads your CV and tells you what to improve. About 1 minute, and your CV stays private.",
+    "promoCvCta": "Analyze my CV",
+    "promoMatchTitle": "Find the 20 jobs made for you",
+    "promoMatchDesc": "The AI compares your CV with every offer and explains why each one fits you.",
+    "promoMatchCta": "Find my jobs",
+    "nudge": {
+      "results": {
+        "title": "Too many offers?",
+        "desc": "Let the AI pick the 20 best ones for you.",
+        "cta": "Try the AI coach"
+      },
+      "saved": {
+        "title": "Ready to apply?",
+        "desc": "The AI can polish your CV so it fits your offers.",
+        "cta": "Improve my CV"
+      },
+      "emptySaved": {
+        "title": "No favorites yet?",
+        "desc": "Let the AI suggest the offers that fit you.",
+        "cta": "See my AI picks"
+      },
+      "forMe": {
+        "title": "Turn on “For you” in 1 minute",
+        "desc": "Add your CV or set your preferences: the AI ranks the offers for you.",
+        "cta": "Get started"
+      }
+    },
+    "landing": {
+      "title": "Your career coach, powered by AI",
+      "p1": "A recruiter's verdict and a score for your CV",
+      "p2": "Your weak spots, with before / after rewrites",
+      "p3": "The 20 jobs that fit you, explained",
+      "time": "About 1 minute",
+      "privacy": "Your CV stays private"
+    },
+    "how": {
+      "howTitle": "How it works",
+      "step1Title": "Add your CV",
+      "step1Desc": "A PDF is enough.",
+      "step2Title": "The AI reads it",
+      "step2Desc": "It judges it like a recruiter would.",
+      "step3Title": "You fix it",
+      "step3Desc": "You see what to change, with examples.",
+      "exTag": "Example",
+      "exTitle": "A preview of what you get",
+      "exScore": "72 / 100",
+      "exScoreLabel": "Overall score",
+      "exVerdict": "“Solid profile, but measurable results are missing. Rework it before sending.”",
+      "exFlag": "Weak spot: no measure of impact",
+      "exBefore": "Before",
+      "exBeforeText": "Built features for the website.",
+      "exAfter": "After",
+      "exAfterText": "Shipped 12 React features, cutting load time by 40%."
+    }
+  },
+  "info": {
+    "label": "More info",
+    "forMe": "For me: the offers that match your CV and your preferences.",
+    "mine": "My offers: the ones you saved or applied to.",
+    "match": "The skills from your CV that appear in this offer.",
+    "expired": "This offer is probably closed. We keep it greyed out for reference.",
+    "sources": "Every company and agency we follow. Tap to see them.",
+    "applied": "Saved: offers you set aside. Applied: the ones you marked “I applied”.",
+    "numbers": "Every active offer. The Offers page shows fewer: it follows your region and filters.",
+    "resultCount": "This number follows your region and filters, which is why it differs from the home total.",
+    "more": "More roles to narrow your search."
+  },
+  "tour": {
+    "aria": "Quick tour",
+    "step": "Step {{n}} of {{total}}",
+    "skip": "Skip",
+    "next": "Next",
+    "done": "Let's go",
+    "tryCoach": "Try the AI coach",
+    "s1Title": "Search",
+    "s1Desc": "Type a job or a tech. No account needed.",
+    "s2Title": "Save",
+    "s2Desc": "Tap an offer's bookmark to keep it for later.",
+    "s3Title": "Improve your CV",
+    "s3Desc": "The AI coach reviews your CV and finds the offers made for you."
+  },
+  "jobs": {
+    "quickSearch": "Search offers"
   }
 }

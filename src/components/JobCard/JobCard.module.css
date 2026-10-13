@@ -236,3 +236,47 @@
   letter-spacing: -.01em;
 }
 .viewLink:hover { text-decoration: underline; }
+
+/* Motion: new cards slide in; saving pops the bookmark. */
+@media (prefers-reduced-motion: no-preference) {
+  .card {
+    animation: rise 0.4s var(--ease-out) backwards;
+  }
+  .saveBtnOn svg {
+    animation: pop 0.35s var(--ease-spring);
+  }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes pop {
+  0%   { transform: scale(0.7); }
+  60%  { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+/* Phones: tighter cards (more offers per screen) with a 44px bookmark target. */
+@media (max-width: 640px) {
+  .card {
+    gap: 0.35rem;
+    padding: 0.8rem 0.95rem 0.7rem;
+  }
+
+  .summary {
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+  }
+
+  .saveBtn {
+    width: 2.75rem;
+    height: 2.75rem;
+    margin: -0.375rem -0.4rem -0.375rem 0;
+  }
+
+  :dir(rtl) .saveBtn {
+    margin: -0.375rem 0 -0.375rem -0.4rem;
+  }
+}

@@ -6,7 +6,7 @@ test.describe('Coach · signed out', () => {
     const coach = new CoachPage(page);
     await coach.goto();
 
-    await expect(page.getByRole('heading', { level: 2, name: 'Unlock your career potential' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 2, name: 'Your career coach, powered by AI' })).toBeVisible();
     await expect(coach.signInButton).toBeVisible();
     await expect(page.getByRole('heading', { level: 3 })).toHaveCount(0);
   });

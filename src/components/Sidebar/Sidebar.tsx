@@ -8,6 +8,7 @@ import { useJobFlags } from "../../providers/jobFlags/useJobFlags";
 import { useSavedJobs } from "../../providers/savedJobs/useSavedJobs";
 import type { Filters, Posted } from "../../types";
 import type { Suggestion } from "../../api/client";
+import { InfoTip } from "../InfoTip/InfoTip";
 import { SearchBox } from "../SearchBox/SearchBox";
 import styles from "./Sidebar.module.css";
 
@@ -149,6 +150,7 @@ export function Sidebar({ filters, onChange }: Props) {
                 : t("filters.showMore", { count: ROLES.length - ROLES_VISIBLE })}
             </button>
           )}
+          {ROLES.length > ROLES_VISIBLE && !showAllRoles && <InfoTip text={t("info.more")} />}
         </div>
       </div>
 

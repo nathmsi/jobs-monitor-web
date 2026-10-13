@@ -33,13 +33,34 @@
 
 /* Hero (not signed in) */
 .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 5rem 2rem;
-  max-width: 560px;
+  padding: 3.5rem 2rem;
+  max-width: 640px;
   margin: 0 auto;
+  background: var(--bg-elevated);
+  border: 1px solid color-mix(in srgb, var(--ai-from) 18%, var(--border));
+  border-radius: var(--radius-lg);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  z-index: -1;
+  background: var(--ai-aurora);
+  animation: auroraDrift 12s ease-in-out infinite alternate;
+}
+@keyframes auroraDrift {
+  from { transform: translate3d(-4%, -3%, 0) rotate(0deg) scale(1); }
+  to   { transform: translate3d(4%, 3%, 0) rotate(8deg) scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero::before { animation: none; }
 }
 .heroEyebrow {
   margin: 0 0 0.75rem;
@@ -56,6 +77,39 @@
   letter-spacing: -0.03em;
   color: var(--text);
 }
+.heroEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ai-text);
+}
+.heroPoints {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  text-align: start;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+.heroPoints li {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+.heroPoints svg {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: var(--ai-text);
+}
+.heroMeta {
+  margin: 0 0 1.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
 .heroDesc {
   margin: 0 0 2rem;
   color: var(--text-muted);
@@ -66,7 +120,7 @@
 /* Primary button */
 .primaryBtn {
   border: none;
-  background: var(--accent);
+  background: var(--ai-gradient);
   color: #fff;
   font-size: 0.95rem;
   font-weight: 700;
@@ -192,7 +246,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  text-align: left;
+  text-align: start;
   gap: 0.75rem;
   padding: 2rem;
   background: var(--bg-elevated);
@@ -214,9 +268,37 @@
   pointer-events: none;
 }
 .featureIcon {
-  font-size: 1.5rem;
-  color: var(--accent);
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  color: #fff;
+  background: var(--ai-gradient);
+  border-radius: var(--radius);
   line-height: 1;
+}
+.featureTitle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.titleBadge {
+  vertical-align: middle;
+  font-size: 0.72rem;
+}
+.trustRow {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }
 .featureTitle {
   margin: 0;
@@ -234,7 +316,7 @@
 .featureCta {
   font-size: 0.88rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--ai-text);
   margin-top: 0.5rem;
 }
 .featureCtaDisabled {
@@ -1074,4 +1156,174 @@
   .matchKindChips {
     flex-wrap: wrap;
   }
+}
+
+/* ── How it works + sample result ── */
+.how {
+  max-width: 640px;
+  margin: 2.5rem auto 0;
+}
+.howTitle {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.9rem 0.6rem;
+  text-align: center;
+  font-size: 0.88rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.stepNum {
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--ai-gradient);
+  border-radius: 999px;
+}
+.stepDesc {
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+.example {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.1rem;
+  background: var(--bg-elevated);
+  border: 1.5px dashed var(--ai-from);
+  border-radius: var(--radius-lg);
+}
+.exampleHead {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.exampleTag {
+  padding: 0.1rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ai-text);
+  background: var(--ai-soft);
+  border-radius: 999px;
+}
+.exampleTitle {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.exScore {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.exScoreValue {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--ai-text);
+}
+.exScoreLabel,
+.exVerdict {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.exVerdict {
+  margin: 0;
+  font-style: italic;
+  line-height: 1.5;
+}
+.exFlag {
+  margin: 0;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--danger);
+  background: var(--danger-soft);
+  border-radius: var(--radius-sm);
+}
+.exRewrite {
+  display: grid;
+  gap: 0.5rem;
+}
+.exBefore,
+.exAfter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin: 0;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  border-radius: var(--radius-sm);
+}
+.exBefore span,
+.exAfter span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.exBefore {
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--text) 5%, transparent);
+}
+.exAfter {
+  color: var(--new);
+  background: var(--new-soft);
+}
+@media (max-width: 640px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .step {
+    flex-direction: row;
+    text-align: start;
+    gap: 0.6rem;
+  }
+}
+
+/* Motion: the benefits and steps appear one after another. */
+@media (prefers-reduced-motion: no-preference) {
+  .heroPoints li,
+  .step {
+    animation: rise 0.5s var(--ease-out) backwards;
+  }
+  .heroPoints li:nth-child(2),
+  .step:nth-child(2) { animation-delay: 0.1s; }
+  .heroPoints li:nth-child(3),
+  .step:nth-child(3) { animation-delay: 0.2s; }
+  .example {
+    animation: rise 0.6s var(--ease-out) 0.3s backwards;
+  }
+}
+.primaryBtn {
+  transition: transform 0.15s var(--ease-out), box-shadow 0.2s var(--ease-out);
+}
+.primaryBtn:hover {
+  transform: translateY(-1px);
+}
+.primaryBtn:active {
+  transform: scale(0.97);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to   { opacity: 1; transform: none; }
 }

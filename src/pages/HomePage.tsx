@@ -4,6 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 
 import type { Suggestion } from "../api/client";
 import { useLatestJobs, usePopularSearches, useSources, useStats } from "../api/hooks";
+import { AiPromo } from "../components/AiPromo/AiPromo";
+import { FirstVisitTour } from "../components/FirstVisitTour/FirstVisitTour";
+import { InfoTip } from "../components/InfoTip/InfoTip";
 import { Header } from "../components/Header/Header";
 import { JobCard } from "../components/JobCard/JobCard";
 import { UpdatedAgo } from "../components/UpdatedAgo/UpdatedAgo";
@@ -35,16 +38,45 @@ export function HomePage() {
           <PopularSearches />
         </section>
 
+        <AiStrip />
         <StatsStrip />
         <LatestOffers />
         <ForYou />
       </main>
+
+      <FirstVisitTour />
 
       <footer className={styles.footer}>
         {t("footer")}
         <UpdatedAgo className={styles.updated} />
       </footer>
     </div>
+  );
+}
+
+/** Two big doors to the AI coach, right under the search. */
+function AiStrip() {
+  const { t } = useTranslation();
+  return (
+    <section className={styles.aiStrip} aria-labelledby="ai-strip-title">
+      <h2 id="ai-strip-title" className={styles.aiStripTitle}>{t("ai.sectionTitle")}</h2>
+      <div className={styles.aiCards}>
+        <AiPromo
+          to="/coach"
+          title={t("ai.promoCvTitle")}
+          description={t("ai.promoCvDesc")}
+          cta={t("ai.promoCvCta")}
+          testId="ai-promo-review"
+        />
+        <AiPromo
+          to="/coach"
+          title={t("ai.promoMatchTitle")}
+          description={t("ai.promoMatchDesc")}
+          cta={t("ai.promoMatchCta")}
+          testId="ai-promo-match"
+        />
+      </div>
+    </section>
   );
 }
 
@@ -134,7 +166,10 @@ function StatsStrip() {
     <dl className={styles.stats} aria-label={t("home.statsLabel")} aria-busy={isPending}>
       {items.map((item) => (
         <div key={item.key} className={styles.stat}>
-          <dt className={styles.statLabel}>{item.label}</dt>
+          <dt className={styles.statLabel}>
+            {item.label}
+            {item.key === "offers" && <InfoTip text={t("info.numbers")} />}
+          </dt>
           <dd className={styles.statValue}>
             {item.value === undefined ? <span className={styles.statSkeleton} aria-hidden="true" /> : format(item.value)}
           </dd>

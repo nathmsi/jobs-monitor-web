@@ -53,7 +53,7 @@ describe("CoachPage (integration)", () => {
       signedOut();
       const { user } = renderWithProviders(<CoachPage />, { route: "/coach" });
 
-      expect(screen.getByRole("heading", { name: "Unlock your career potential" })).toBeInTheDocument();
+      expect(screen.getByRole("heading", { name: "Your career coach, powered by AI" })).toBeInTheDocument();
       expect(screen.queryByText("Analyze my CV")).not.toBeInTheDocument();
 
       // The header has one too: the call to action is the last one on the page.

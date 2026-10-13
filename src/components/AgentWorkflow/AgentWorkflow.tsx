@@ -1,104 +1,90 @@
-import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import styles from "./AgentWorkflow.module.css";
 
-export interface ToolStep {
-  tool: string;
-  icon: string;
-  label: string;
-  status: "pending" | "running" | "done" | "cached";
-  duration?: number;
+import type { MatchStep } from "../../hooks/useMatchRun";
+import { AlertCircleIcon, CheckIcon, SparkleIcon } from "../Icons/Icons";
+import styles from "./AgentWorkflow.module.css";
+import { currentPhase, describeStep, PHASES } from "./agentPhases";
+
+function seconds(ms: number): string {
+  return (ms / 1000).toFixed(1);
 }
 
-export function AgentWorkflow({
-  currentTool,
-  steps = [],
-  message,
-}: {
-  currentTool?: string;
-  steps?: ToolStep[];
-  message?: string;
-}) {
+/**
+ * Live progress of a match: the four stages, and every search the agent runs.
+ * One status message is announced to screen readers (not every step), per the
+ * "single atomic status" rule; the list below is plain content.
+ */
+export function AgentWorkflow({ steps }: { steps: readonly MatchStep[] }) {
   const { t } = useTranslation();
-  const [showPulse, setShowPulse] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => setShowPulse((p) => !p), 600);
-    return () => clearInterval(interval);
-  }, []);
+  const phase = currentPhase(steps);
+  const phaseIndex = PHASES.indexOf(phase);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <div className={styles.agentBadge}>
-          <span className={styles.agentIcon}>🤖</span>
-          <span className={styles.agentText}>{t("agent.title")}</span>
-        </div>
+    <section className={styles.container} aria-busy="true" aria-labelledby="agentTitle">
+      <header className={styles.header}>
+        <span className={styles.badge}>
+          <SparkleIcon size={18} />
+          <h3 id="agentTitle" className={styles.badgeText}>{t("agent.title")}</h3>
+        </span>
         <p className={styles.subtitle}>{t("agent.subtitle")}</p>
-      </div>
+      </header>
 
-      <div className={styles.workflow}>
-        <div className={`${styles.phase} ${currentTool?.startsWith("search") ? styles.active : ""}`}>
-          <div className={styles.phaseIcon}>🔍</div>
-          <div className={styles.phaseLabel}>
-            <div className={styles.phaseName}>{t("agent.search")}</div>
-            <div className={styles.phaseDesc}>{t("agent.searchDesc")}</div>
-          </div>
-          {currentTool?.startsWith("search") && <div className={`${styles.pulse} ${showPulse ? styles.pulseActive : ""}`} />}
-        </div>
+      <p className={styles.srOnly} role="status" aria-atomic="true">
+        {t("match.progress.status", {
+          n: phaseIndex + 1,
+          total: PHASES.length,
+          phase: t(`match.progress.phase.${phase}`),
+        })}
+      </p>
 
-        <div className={styles.arrow}>→</div>
+      <ol className={styles.phases} aria-label={t("match.progress.aria")}>
+        {PHASES.map((p, i) => {
+          const state = i < phaseIndex ? "done" : i === phaseIndex ? "active" : "todo";
+          return (
+            <li
+              key={p}
+              className={`${styles.phase} ${styles[state]}`}
+              aria-current={state === "active" ? "step" : undefined}
+            >
+              <span className={styles.phaseMark} aria-hidden="true">
+                {state === "done" ? <CheckIcon size={16} strokeWidth={2.5} /> : state === "active" ? <span className={styles.spinner} /> : i + 1}
+              </span>
+              <span className={styles.phaseText}>
+                <span className={styles.phaseName}>{t(`match.progress.phase.${p}`)}</span>
+                <span className={styles.phaseDesc}>{t(`match.progress.desc.${p}`)}</span>
+              </span>
+            </li>
+          );
+        })}
+      </ol>
 
-        <div className={`${styles.phase} ${currentTool?.startsWith("read") ? styles.active : ""}`}>
-          <div className={styles.phaseIcon}>📖</div>
-          <div className={styles.phaseLabel}>
-            <div className={styles.phaseName}>{t("agent.read")}</div>
-            <div className={styles.phaseDesc}>{t("agent.readDesc")}</div>
-          </div>
-          {currentTool?.startsWith("read") && <div className={`${styles.pulse} ${showPulse ? styles.pulseActive : ""}`} />}
-        </div>
+      {steps.length > 0 ? (
+        <ul className={styles.steps} aria-label={t("match.progress.stepsAria")}>
+          {steps.map((s) => {
+            const { key, values } = describeStep(s);
+            return (
+              <li key={s.id} className={`${styles.step} ${styles[`step_${s.status}`]}`}>
+                <span className={styles.stepIcon} aria-hidden="true">
+                  {s.status === "done" ? (
+                    <CheckIcon size={16} strokeWidth={2.5} />
+                  ) : s.status === "failed" ? (
+                    <AlertCircleIcon size={16} />
+                  ) : (
+                    <span className={styles.spinnerSm} />
+                  )}
+                </span>
+                <span className={styles.stepLabel}>{t(`match.step.${key}`, values)}</span>
+                {s.duration !== undefined ? (
+                  <span className={styles.stepTime}>{t("match.progress.seconds", { s: seconds(s.duration) })}</span>
+                ) : null}
+                {s.status === "failed" ? <span className={styles.stepFailed}>{t("match.progress.failed")}</span> : null}
+              </li>
+            );
+          })}
+        </ul>
+      ) : null}
 
-        <div className={styles.arrow}>→</div>
-
-        <div className={`${styles.phase} ${currentTool === "final" ? styles.active : ""}`}>
-          <div className={styles.phaseIcon}>🏆</div>
-          <div className={styles.phaseLabel}>
-            <div className={styles.phaseName}>{t("agent.rank")}</div>
-            <div className={styles.phaseDesc}>{t("agent.rankDesc")}</div>
-          </div>
-          {currentTool === "final" && <div className={`${styles.pulse} ${showPulse ? styles.pulseActive : ""}`} />}
-        </div>
-      </div>
-
-      {message && (
-        <div className={styles.activityBox}>
-          <div className={styles.activitySpinner} />
-          <div className={styles.activityText}>{message}</div>
-        </div>
-      )}
-
-      {steps && steps.length > 0 && (
-        <div className={styles.toolsGrid}>
-          {steps.map((step) => (
-            <div key={step.tool} className={`${styles.toolCard} ${styles[step.status]}`}>
-              <div className={styles.toolEmoji}>
-                {{ search_offers: "🔍", read_offer: "📖", market_stats: "📊", search_and_read_top: "⚡" }[step.tool] ?? "⚙️"}
-              </div>
-              <div className={styles.toolName}>{step.label}</div>
-              {step.status === "done" && step.duration && (
-                <div className={styles.toolDuration}>{step.duration}ms</div>
-              )}
-              {step.status === "cached" && <div className={styles.toolCached}>⚡ {t("agent.cached")}</div>}
-              <div className={styles.toolStatus}>
-                {step.status === "pending" && "⏳"}
-                {step.status === "running" && "⚡"}
-                {step.status === "done" && "✓"}
-                {step.status === "cached" && "⚡"}
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
+      <p className={styles.hint}>{t("match.progress.wait")}</p>
+    </section>
   );
 }

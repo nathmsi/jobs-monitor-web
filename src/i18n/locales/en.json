@@ -94,7 +94,64 @@
   },
   "match": {
     "skills_one": "{{count}} skill match",
-    "skills_other": "{{count}} skills match"
+    "skills_other": "{{count}} skills match",
+    "results": {
+      "title": "Your best matches",
+      "subtitle_one": "{{count}} offer ranked for your profile",
+      "subtitle_other": "{{count}} offers ranked for your profile",
+      "improveCv": "Improve my CV",
+      "statBest": "Best match",
+      "statAverage": "Average",
+      "statStrong": "Strong matches",
+      "filterAria": "Filter by match level",
+      "filterAll": "All",
+      "best": "Best match",
+      "rank": "Match #{{n}}",
+      "scoreAria": "{{score}} percent match",
+      "why": "Why it fits",
+      "check": "What to check",
+      "open": "Open offer",
+      "newTab": "(opens in a new tab)",
+      "emptyTitle": "No strong match found",
+      "emptyBody": "The search went through the live offers but nothing fits your profile well enough.",
+      "emptyHint": "Try a wider area or both company types, or improve your CV and search again."
+    },
+    "band": {
+      "strong": "Strong match",
+      "good": "Good fit",
+      "stretch": "Stretch"
+    },
+    "progress": {
+      "aria": "Match progress",
+      "stepsAria": "What the agent is doing",
+      "status": "Step {{n}} of {{total}}: {{phase}}",
+      "phase": {
+        "profile": "Reading your CV",
+        "search": "Searching offers",
+        "compare": "Comparing offers",
+        "rank": "Ranking"
+      },
+      "desc": {
+        "profile": "Skills, level and target roles",
+        "search": "Several angles at once",
+        "compare": "Checking real requirements",
+        "rank": "Writing your top 20"
+      },
+      "wait": "This usually takes 15 to 30 seconds.",
+      "seconds": "{{s}} s",
+      "failed": "failed"
+    },
+    "step": {
+      "search": "Searching {{what}}",
+      "searchAny": "Searching offers",
+      "searchRead": "Searching and reading the best offers for {{what}}",
+      "searchReadAny": "Searching and reading the best offers",
+      "scoring": "Scoring every live offer against your {{count}} skills",
+      "read": "Reading an offer in detail",
+      "ranking": "Ranking the {{count}} best candidates",
+      "stats": "Checking demand for {{what}}",
+      "other": "Running {{name}}"
+    }
   },
   "profile": {
     "open": "My profile",
@@ -347,13 +404,6 @@
   "agent": {
     "title": "AI Matching Agent",
     "subtitle": "Intelligently searching for your perfect role",
-    "search": "Search",
-    "searchDesc": "Finding candidates",
-    "read": "Read",
-    "readDesc": "Deep dive details",
-    "rank": "Rank",
-    "rankDesc": "Best matches",
-    "cached": "Cached",
     "launchBtn": "Find my best offers",
     "modifySearch": "Modify search"
   },

@@ -3,6 +3,8 @@ import { API, type MatchedOffer } from "./client";
 export interface ToolEvent {
   type: "tool_call" | "tool_result" | "final" | "error";
   name?: string;
+  /** Pairs a tool_call with its tool_result (parallel calls share a name). */
+  callId?: string;
   input?: unknown;
   ok?: boolean;
   duration?: number;
@@ -82,8 +84,8 @@ export async function consumeMatchStream(
   cvText: string,
   filters: { region?: string; kind?: string; remote?: boolean },
   callbacks: {
-    onToolCall?: (name: string, input: unknown) => void;
-    onToolResult?: (name: string, duration: number, ok: boolean) => void;
+    onToolCall?: (name: string, input: unknown, callId?: string) => void;
+    onToolResult?: (name: string, duration: number, ok: boolean, callId?: string) => void;
     onToolCached?: (name: string) => void;
     onRetry?: (name: string, count: number) => void;
     onFinal?: () => void;
@@ -94,9 +96,9 @@ export async function consumeMatchStream(
 
   for await (const event of streamMatch(cvText, filters, signal)) {
     if (event.type === "tool_call") {
-      callbacks.onToolCall?.(event.name || "", event.input);
+      callbacks.onToolCall?.(event.name || "", event.input, event.callId);
     } else if (event.type === "tool_result") {
-      callbacks.onToolResult?.(event.name || "", event.duration || 0, event.ok ?? false);
+      callbacks.onToolResult?.(event.name || "", event.duration || 0, event.ok ?? false, event.callId);
       if (event.cached) {
         callbacks.onToolCached?.(event.name || "");
       }

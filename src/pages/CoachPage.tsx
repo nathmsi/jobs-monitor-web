@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 
-import { analyzeCvAi, type MatchedOffer } from "../api/client";
-import { consumeMatchStream } from "../api/stream";
+import { analyzeCvAi } from "../api/client";
 import { AgentWorkflow } from "../components/AgentWorkflow/AgentWorkflow";
 import { MatchResults } from "../components/MatchResults/MatchResults";
 import { CVAnalysisResults } from "../components/CVAnalysisResults/CVAnalysisResults";
@@ -14,6 +13,7 @@ import { useCvs } from "../hooks/useCvs";
 import { errorMessage } from "../utils/errorMessage";
 import { regionLabel } from "../utils/regionLabel";
 import { useCvUpload } from "../hooks/useCvUpload";
+import { useMatchRun } from "../hooks/useMatchRun";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { usePreferences } from "../providers/preferences/usePreferences";
 import { useRegions } from "../api/hooks";
@@ -265,44 +265,13 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
     kind: (defaultFilters.kind ?? "all") as "all" | "company" | "agency",
   });
 
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [results, setResults] = useState<MatchedOffer[] | null>(null);
-  const [currentTool, setCurrentTool] = useState<string | undefined>();
-  const [hasRun, setHasRun] = useState(false);
-  const abortRef = useRef<AbortController | null>(null);
+  const { busy, error, results, steps, hasRun, run: start } = useMatchRun(cv);
 
-  useEffect(() => () => abortRef.current?.abort(), []);
-
-  const run = async () => {
-    abortRef.current?.abort();
-    const ctrl = new AbortController();
-    abortRef.current = ctrl;
-    setBusy(true);
-    setError(null);
-    setResults(null);
-    setCurrentTool(undefined);
-    setHasRun(true);
-    const activeFilters = {
+  const run = () =>
+    start({
       region: localFilters.region !== "all" ? localFilters.region : undefined,
       kind: localFilters.kind !== "all" ? localFilters.kind : undefined,
-    };
-    try {
-      const results = await consumeMatchStream(cv.trim(), activeFilters, {
-        onToolCall: (name) => setCurrentTool(name),
-        onToolResult: () => {},
-        onFinal: () => setCurrentTool("final"),
-      }, ctrl.signal);
-      if (!ctrl.signal.aborted) setResults(results);
-    } catch (e) {
-      if (!ctrl.signal.aborted) setError(errorMessage(e));
-    } finally {
-      if (!ctrl.signal.aborted) {
-        setBusy(false);
-        setCurrentTool(undefined);
-      }
-    }
-  };
+    });
 
   return (
     <div className={styles.featureContent}>
@@ -355,7 +324,7 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
         )}
       </div>
 
-      {busy && <AgentWorkflow currentTool={currentTool} />}
+      {busy && <AgentWorkflow steps={steps} />}
 
       {error && (
         <div className={styles.errorState}>
@@ -364,7 +333,7 @@ function MatchFeature({ cv, filters: defaultFilters = {}, onAdapt, onBack }: {
         </div>
       )}
 
-      {results && !busy && <MatchResults offers={results} onAdapt={onAdapt} />}
+      {hasRun && !busy && !error ? <MatchResults offers={results} onAdapt={onAdapt} /> : null}
     </div>
   );
 }

@@ -7,6 +7,7 @@ import { type SavedItem, type SavedStatus } from "../../providers/savedJobs/Save
 import { useToast } from "../../providers/toast/useToast";
 import { AiPromo } from "../AiPromo/AiPromo";
 import { CheckIcon, CloseIcon } from "../Icons/Icons";
+import { InfoTip } from "../InfoTip/InfoTip";
 import styles from "./MyJobs.module.css";
 
 type Tab = "all" | "saved" | "applied";
@@ -57,6 +58,7 @@ export function MyJobs() {
             </button>
           );
         })}
+        <InfoTip text={t("info.applied")} />
       </div>
 
       {shown.length === 0 ? (

@@ -368,3 +368,31 @@
   from { opacity: 0; transform: translate3d(0, 14px, 0); }
   to   { opacity: 1; transform: none; }
 }
+
+/* Phones: the popular searches scroll sideways in one row instead of three. */
+@media (max-width: 640px) {
+  .popular {
+    width: calc(100% + 1.7rem);
+    margin-inline: -0.85rem;
+  }
+
+  .popularList {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-inline: 0.85rem;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: 0.85rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .popularList::-webkit-scrollbar {
+    display: none;
+  }
+
+  .popularList > li {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+}

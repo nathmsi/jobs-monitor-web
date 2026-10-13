@@ -6,6 +6,7 @@ import { roleLabel } from "../../constants/roles";
 import type { Filters } from "../../types";
 import { regionLabel } from "../../utils/regionLabel";
 import { CloseIcon } from "../Icons/Icons";
+import { InfoTip } from "../InfoTip/InfoTip";
 import styles from "./ActiveFilters.module.css";
 
 interface Props {
@@ -68,6 +69,7 @@ export const ActiveFilters = memo(function ActiveFilters({ filters, total, onCha
           {t("results.count", { count: total })}
         </p>
       )}
+      {total !== undefined && <InfoTip text={t("info.resultCount")} />}
       {chips.length > 0 && (
         <ul className={styles.chips} aria-label={t("filters.active")}>
           {chips.map((chip) => (

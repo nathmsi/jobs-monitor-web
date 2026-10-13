@@ -67,7 +67,8 @@
   },
   "auth": {
     "signInGoogle": "Sign in with Google",
-    "signOut": "Sign out"
+    "signOut": "Sign out",
+    "signInShort": "Sign in"
   },
   "mine": {
     "all": "All",
@@ -560,5 +561,34 @@
       "exAfter": "After",
       "exAfterText": "Shipped 12 React features, cutting load time by 40%."
     }
+  },
+  "info": {
+    "label": "More info",
+    "forMe": "For me: the offers that match your CV and your preferences.",
+    "mine": "My offers: the ones you saved or applied to.",
+    "match": "The skills from your CV that appear in this offer.",
+    "expired": "This offer is probably closed. We keep it greyed out for reference.",
+    "sources": "Every company and agency we follow. Tap to see them.",
+    "applied": "Saved: offers you set aside. Applied: the ones you marked “I applied”.",
+    "numbers": "Every active offer. The Offers page shows fewer: it follows your region and filters.",
+    "resultCount": "This number follows your region and filters, which is why it differs from the home total.",
+    "more": "More roles to narrow your search."
+  },
+  "tour": {
+    "aria": "Quick tour",
+    "step": "Step {{n}} of {{total}}",
+    "skip": "Skip",
+    "next": "Next",
+    "done": "Let's go",
+    "tryCoach": "Try the AI coach",
+    "s1Title": "Search",
+    "s1Desc": "Type a job or a tech. No account needed.",
+    "s2Title": "Save",
+    "s2Desc": "Tap an offer's bookmark to keep it for later.",
+    "s3Title": "Improve your CV",
+    "s3Desc": "The AI coach reviews your CV and finds the offers made for you."
+  },
+  "jobs": {
+    "quickSearch": "Search offers"
   }
 }

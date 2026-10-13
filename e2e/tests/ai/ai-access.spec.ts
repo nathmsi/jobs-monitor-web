@@ -85,3 +85,98 @@ test.describe('CV Coach · understand it before signing in', () => {
     await expect(how).toContainText('72 / 100');
   });
 });
+
+test.describe('Help bubbles', () => {
+  test.use({ dataset: { jobs: SEARCH_JOBS }, viewport: { width: 1280, height: 800 } });
+
+  test('a "?" opens a short explanation and closes with Escape or a tap elsewhere', async ({ page }) => {
+    const jobs = new JobsPage(page);
+    await jobs.open();
+
+    const tip = page.getByRole('button', { name: 'More info' }).first();
+    await tip.click();
+    await expect(tip).toHaveAttribute('aria-expanded', 'true');
+    await expect(page.getByRole('note')).toBeVisible();
+
+    await page.keyboard.press('Escape');
+    await expect(page.getByRole('note')).toHaveCount(0);
+
+    await tip.click();
+    await page.getByRole('heading', { level: 1 }).or(page.locator('body')).click({ position: { x: 5, y: 400 } });
+    await expect(page.getByRole('note')).toHaveCount(0);
+  });
+
+  test('works from the keyboard', async ({ page }) => {
+    const jobs = new JobsPage(page);
+    await jobs.open();
+
+    const tip = page.getByRole('button', { name: 'More info' }).first();
+    await tip.focus();
+    await page.keyboard.press('Enter');
+    await expect(page.getByRole('note')).toBeVisible();
+  });
+
+  test('explains "For me" and "My offers" next to the tabs', async ({ page }) => {
+    const jobs = new JobsPage(page);
+    await jobs.open();
+
+    await page.getByRole('button', { name: 'More info' }).nth(0).click();
+    await expect(page.getByRole('note')).toContainText('the ones you saved or applied to');
+  });
+});
+
+test.describe('First visit tour', () => {
+  test.use({ dataset: { jobs: SEARCH_JOBS } });
+
+  test('shows three steps, can be skipped, and never comes back', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+
+    const tour = page.getByTestId('first-visit-tour');
+    await expect(tour).toBeVisible();
+    await expect(tour).toContainText('Step 1 of 3');
+    await tour.getByRole('button', { name: 'Next' }).click();
+    await expect(tour).toContainText('Step 2 of 3');
+
+    await tour.getByRole('button', { name: 'Skip' }).click();
+    await expect(tour).toHaveCount(0);
+
+    await page.reload();
+    await home.heading.waitFor();
+    await expect(page.getByTestId('first-visit-tour')).toHaveCount(0);
+  });
+
+  test('nothing is blocked while it is open: the search still works', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await expect(page.getByTestId('first-visit-tour')).toBeVisible();
+
+    await home.searchInput.fill('react');
+    await home.searchButton.click();
+    await expect(page).toHaveURL(/\/jobs\?q=react/);
+  });
+});
+
+test.describe('Phone search', () => {
+  test.use({ dataset: { jobs: SEARCH_JOBS }, viewport: { width: 390, height: 844 } });
+
+  test('a search field sits under the header and filters the offers', async ({ page }) => {
+    const jobs = new JobsPage(page);
+    await jobs.open();
+
+    const box = page.getByRole('searchbox', { name: 'Search offers' });
+    await expect(box).toBeVisible();
+    await box.fill('swift');
+    await expect(page).toHaveURL(/q=swift/);
+  });
+
+  test('the popular searches scroll sideways in a single row', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+
+    const list = home.popular().getByRole('list');
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    expect(overflow).toBeLessThanOrEqual(0);
+    await expect(list).toHaveCSS('flex-wrap', 'nowrap');
+  });
+});

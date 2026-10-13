@@ -67,7 +67,8 @@
   },
   "auth": {
     "signInGoogle": "Se connecter avec Google",
-    "signOut": "Se déconnecter"
+    "signOut": "Se déconnecter",
+    "signInShort": "Connexion"
   },
   "mine": {
     "all": "Tout",
@@ -561,5 +562,34 @@
       "exAfter": "Après",
       "exAfterText": "Livré 12 fonctionnalités React, réduisant le temps de chargement de 40 %."
     }
+  },
+  "info": {
+    "label": "Plus d'infos",
+    "forMe": "Pour moi : les offres qui correspondent à ton CV et à tes préférences.",
+    "mine": "Mes offres : celles que tu as sauvegardées ou où tu as postulé.",
+    "match": "Les compétences de ton CV qui apparaissent dans cette offre.",
+    "expired": "Cette offre n'est sans doute plus ouverte. On la garde grisée pour référence.",
+    "sources": "Toutes les entreprises et agences que nous suivons. Touche pour les voir.",
+    "applied": "Sauvegardées : offres mises de côté. Candidatures : celles où tu as indiqué « J'ai postulé ».",
+    "numbers": "Toutes les offres actives. La page Offres en montre moins : elle suit ta région et tes filtres.",
+    "resultCount": "Ce nombre suit ta région et tes filtres, c'est pourquoi il diffère du total de l'accueil.",
+    "more": "Plus de métiers pour affiner ta recherche."
+  },
+  "tour": {
+    "aria": "Visite rapide",
+    "step": "Étape {{n}} sur {{total}}",
+    "skip": "Passer",
+    "next": "Suivant",
+    "done": "C'est parti",
+    "tryCoach": "Essayer le coach IA",
+    "s1Title": "Cherche",
+    "s1Desc": "Tape un métier ou une techno. Pas de compte nécessaire.",
+    "s2Title": "Enregistre",
+    "s2Desc": "Touche le signet d'une offre pour la garder de côté.",
+    "s3Title": "Améliore ton CV",
+    "s3Desc": "Le coach IA analyse ton CV et trouve les offres faites pour toi."
+  },
+  "jobs": {
+    "quickSearch": "Chercher une offre"
   }
 }

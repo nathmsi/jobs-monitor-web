@@ -1,4 +1,4 @@
-import { useMemo, useState, type KeyboardEvent } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
@@ -6,6 +6,7 @@ import { useJobsInfinite, useRegionJobs, useSources } from "../api/hooks";
 import { AiPromo } from "../components/AiPromo/AiPromo";
 import { ActiveFilters } from "../components/ActiveFilters/ActiveFilters";
 import { UpdatedAgo } from "../components/UpdatedAgo/UpdatedAgo";
+import { InfoTip } from "../components/InfoTip/InfoTip";
 import { ForMe } from "../components/ForMe/ForMe";
 import { Header } from "../components/Header/Header";
 import { JobCard } from "../components/JobCard/JobCard";
@@ -35,6 +36,41 @@ function readViewMode(): ViewMode {
   } catch {
     return "list";
   }
+}
+
+/** Phone-only search field, stuck under the header so it is always one tap away. */
+function QuickSearch({ query, onSearch }: { query: string; onSearch: (q: string) => void }) {
+  const { t } = useTranslation();
+  const [draft, setDraft] = useState(query);
+  const [synced, setSynced] = useState(query);
+  if (query !== synced) {
+    setSynced(query);
+    setDraft(query);
+  }
+
+  // Only what is typed *here* is sent (debounced): never a stale value from a re-render.
+  const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  useEffect(() => () => clearTimeout(timer.current), []);
+  const onType = (value: string) => {
+    setDraft(value);
+    clearTimeout(timer.current);
+    timer.current = setTimeout(() => onSearch(value.trim()), 250);
+  };
+
+  return (
+    <div className={styles.quickSearch}>
+      <SearchIcon size={16} />
+      <input
+        type="search"
+        className={styles.quickSearchInput}
+        value={draft}
+        onChange={(e) => onType(e.target.value)}
+        placeholder={t("jobs.quickSearch")}
+        aria-label={t("jobs.quickSearch")}
+        enterKeyHint="search"
+      />
+    </div>
+  );
 }
 
 export function JobsPage() {
@@ -75,6 +111,11 @@ export function JobsPage() {
   // Full region set (limit=0) only when the "For me" tab needs to rank locally.
   const allJobsQuery = useRegionJobs(filters.region, tab === "forme");
   const allJobs = allJobsQuery.data;
+
+  const onQuickSearch = useCallback(
+    (q: string) => setFilters((f) => (f.q === q ? f : { ...f, q })),
+    [setFilters],
+  );
 
   const sourceList = useMemo(() => sources ?? [], [sources]);
   const sourceByKey = useMemo(
@@ -156,6 +197,7 @@ export function JobsPage() {
         >
           {t("tabs.mine")} <span className={styles.tabCount}>{savedItems.length}</span>
         </button>
+        <InfoTip className={styles.tabSecondary} text={t("info.mine")} />
         <button
           role="tab"
           id="tab-forme"
@@ -168,6 +210,7 @@ export function JobsPage() {
           {t("tabs.forme")}
           {formeCount != null && <span className={styles.tabCount}>{formeCount}</span>}
         </button>
+        <InfoTip className={styles.tabSecondary} text={t("info.forMe")} />
       </div>
 
       {filtersOpen && (
@@ -193,6 +236,7 @@ export function JobsPage() {
         </div>
 
         <div className={styles.content}>
+          {browsing && <QuickSearch query={filters.q} onSearch={onQuickSearch} />}
           <div className={styles.contentBar}>
             <button
               className={styles.filtersToggle}
@@ -220,9 +264,12 @@ export function JobsPage() {
               </label>
             )}
             {browsing && (
-              <button className={styles.allBtn} onClick={() => setShowAll(true)}>
-                {t("allCompanies.open", { count: sourceList.length })}
-              </button>
+              <span className={styles.allWrap}>
+                <button className={styles.allBtn} onClick={() => setShowAll(true)}>
+                  {t("allCompanies.open", { count: sourceList.length })}
+                </button>
+                <InfoTip text={t("info.sources")} />
+              </span>
             )}
 
             {/* View mode toggle */}

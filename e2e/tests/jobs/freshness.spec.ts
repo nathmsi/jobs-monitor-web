@@ -132,3 +132,22 @@ test.describe('Jobs · freshness', () => {
     await expect(page.getByText(/^Updated/)).toHaveCount(0);
   });
 });
+
+test.describe('Jobs · the "New" badge', () => {
+  test.use({
+    dataset: {
+      jobs: [
+        makeJob({ external_id: 'n1', title: 'Brand New Offer', added_at: hoursAgo(5), is_new: true }),
+        makeJob({ external_id: 'n2', title: 'Flagged But Old Offer', added_at: daysAgo(4), is_new: true }),
+      ],
+    },
+  });
+
+  test('is kept for offers under 48 hours, so it still means something', async ({ page }) => {
+    const jobs = new JobsPage(page);
+    await jobs.open();
+
+    await expect(jobs.card('Brand New Offer').getByTestId('badge-new')).toBeVisible();
+    await expect(jobs.card('Flagged But Old Offer').getByTestId('badge-new')).toHaveCount(0);
+  });
+});

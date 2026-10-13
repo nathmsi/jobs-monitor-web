@@ -133,14 +133,20 @@ describe("JobCard", () => {
     expect(flags.markOpened).toHaveBeenCalledWith("melio-1");
   });
 
+  it("keeps the new badge for offers under 48 hours only", () => {
+    const old = new Date(Date.now() - 72 * 3600_000).toISOString();
+    renderCard(makeJob({ external_id: "9", title: "Old", is_new: true, added_at: old }));
+    expect(screen.queryByTestId("badge-new")).not.toBeInTheDocument();
+  });
+
   it("flags new, hot and expired offers (new is hidden once seen)", () => {
-    const { unmount } = renderCard(makeJob({ external_id: "3", title: "T", is_new: true, is_hot: true }));
+    const { unmount } = renderCard(makeJob({ external_id: "3", title: "T", is_new: true, is_hot: true, added_at: new Date().toISOString() }));
     expect(screen.getByTestId("badge-new")).toBeInTheDocument();
     expect(screen.getByTestId("badge-hot")).toBeInTheDocument();
     unmount();
 
     flags.opened.add("melio-3");
-    renderCard(makeJob({ external_id: "3", title: "T", is_new: true }));
+    renderCard(makeJob({ external_id: "3", title: "T", is_new: true, added_at: new Date().toISOString() }));
     expect(screen.queryByTestId("badge-new")).not.toBeInTheDocument();
     expect(screen.getByTitle("Seen")).toBeInTheDocument();
   });

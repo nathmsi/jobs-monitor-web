@@ -8,12 +8,14 @@ import { useToast } from "../../providers/toast/useToast";
 import type { Job, SourceInfo } from "../../types";
 import { parseAiSummary } from "../../utils/aiSummary";
 import { matchScore } from "../../utils/cvAnalysis";
+import { isFresh } from "../../utils/isFresh";
 import { jobId } from "../../utils/jobId";
 import { jobText } from "../../utils/jobText";
 import { formatAgo } from "../../utils/relativeTime";
 import { Avatar } from "../Avatar/Avatar";
 import { Badge } from "../Badge/Badge";
 import { AlertCircleIcon, BookmarkIcon, CheckIcon } from "../Icons/Icons";
+import { InfoTip } from "../InfoTip/InfoTip";
 import styles from "./JobCard.module.css";
 
 interface Props {
@@ -44,11 +46,13 @@ export const JobCard = memo(function JobCard({ job, source }: Props) {
 
   const ai = useMemo(() => parseAiSummary(job.ai_summary), [job.ai_summary]);
   const match = useMemo(() => matchScore(jobText(job), profile), [job, profile]);
+  // "New" only means something if it is rare: under 48 hours, not the server flag alone.
+  const fresh = Boolean(job.is_new) && isFresh(job.added_at);
   const summary = ai?.headline || job.excerpt || job.description || "";
 
   const cardClass = [
     styles.card,
-    job.is_new ? styles.isNew : "",
+    fresh ? styles.isNew : "",
     opened ? styles.opened : "",
     applied ? styles.applied : "",
     job.is_expired ? styles.expired : "",
@@ -83,7 +87,8 @@ export const JobCard = memo(function JobCard({ job, source }: Props) {
               {t("job.expired")}
             </Badge>
           )}
-          {!job.is_expired && job.is_new && !opened && <Badge variant="new">{t("job.new")}</Badge>}
+          {job.is_expired && <InfoTip text={t("info.expired")} />}
+          {!job.is_expired && fresh && !opened && <Badge variant="new">{t("job.new")}</Badge>}
           {job.is_hot && <Badge variant="hot">{t("job.hot")}</Badge>}
           {applied && (
             <Badge variant="applied">
@@ -131,6 +136,7 @@ export const JobCard = memo(function JobCard({ job, source }: Props) {
           {match.count > 0 && (
             <li className={styles.match} title={match.matched.join(", ")}>
               ★ {t("match.skills", { count: match.count })}
+              <InfoTip text={t("info.match")} />
             </li>
           )}
         </ul>

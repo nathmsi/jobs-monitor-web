@@ -33,13 +33,34 @@
 
 /* Hero (not signed in) */
 .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 5rem 2rem;
-  max-width: 560px;
+  padding: 3.5rem 2rem;
+  max-width: 640px;
   margin: 0 auto;
+  background: var(--ai-aurora), var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--ai-sparkles);
+  opacity: 0.9;
+  animation: sparkleDrift 18s linear infinite;
+}
+@keyframes sparkleDrift {
+  to { background-position: 220px 220px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero::before { animation: none; }
 }
 .heroEyebrow {
   margin: 0 0 0.75rem;

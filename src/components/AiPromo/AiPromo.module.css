@@ -8,6 +8,7 @@
   color: var(--text);
   text-decoration: none;
   background:
+    radial-gradient(70% 90% at 100% 0%, color-mix(in srgb, var(--ai-from) 14%, transparent), transparent 70%) padding-box,
     linear-gradient(var(--bg-elevated), var(--bg-elevated)) padding-box,
     var(--ai-gradient) border-box;
   border: 1.5px solid transparent;

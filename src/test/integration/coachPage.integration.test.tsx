@@ -73,6 +73,53 @@ describe("CoachPage (integration)", () => {
     });
   });
 
+  describe("signed in with CVs that have no readable text (scanned PDFs)", () => {
+    // What was found in production: the PDF had no text layer, so the saved rows are empty.
+    const EMPTY_CVS = [
+      { id: "e2", user_id: "u1", name: "CV Eytan Taieb", text: "", created_at: "2026-10-13T10:08:31Z" },
+      { id: "e1", user_id: "u1", name: "CV Eytan Taieb", text: "", created_at: "2026-10-13T10:06:56Z" },
+    ];
+
+    it("says the saved CV is unreadable instead of pretending nothing was uploaded", async () => {
+      signedIn();
+      fakeSupabase.seed("cvs", EMPTY_CVS);
+      renderWithProviders(<CoachPage />, { route: "/coach" });
+
+      const notice = await screen.findByRole("alert");
+      expect(notice).toHaveTextContent("“CV Eytan Taieb” has no readable text");
+      expect(screen.queryByText("No CV uploaded yet")).not.toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Upload my CV (PDF)" })).toBeInTheDocument();
+      expect(screen.getAllByText("Upload CV to unlock")).toHaveLength(2); // nothing can run on empty text
+    });
+
+    it("flags the unreadable CVs in the picker", async () => {
+      signedIn();
+      fakeSupabase.seed("cvs", EMPTY_CVS);
+      const { user } = renderWithProviders(<CoachPage />, { route: "/coach" });
+
+      await user.click(await screen.findByRole("button", { name: "Upload my CV (PDF)" }));
+      const options = within(screen.getByLabelText("Or select existing CV")).getAllByRole("option");
+      expect(options.map((o) => o.textContent)).toEqual([
+        "Choose a CV…",
+        "CV Eytan Taieb (no readable text)",
+        "CV Eytan Taieb (no readable text)",
+      ]);
+    });
+
+    it("picks the newest CV that has text, even when a newer upload came out empty", async () => {
+      signedIn();
+      fakeSupabase.seed("cvs", [
+        { id: "scan", user_id: "u1", name: "Scan", text: "", created_at: "2026-10-13T10:08:31Z" },
+        { id: "good", user_id: "u1", name: "Good CV", text: CV_TEXT, created_at: "2026-10-12T09:00:00Z" },
+      ]);
+      renderWithProviders(<CoachPage />, { route: "/coach" });
+
+      expect(await screen.findByText("Good CV")).toBeInTheDocument();
+      expect(screen.getByText("Ready")).toBeInTheDocument();
+      expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+    });
+  });
+
   describe("signed in with a CV", () => {
     beforeEach(() => {
       signedIn();

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { isReadableCv } from "../utils/cvText";
+import { extractCvText } from "../api/client";
 import type { Cv } from "./useCvs";
 
 /** PDF → text → saved CV, with busy/error state for the upload modal. */
@@ -14,7 +16,14 @@ export function useCvUpload(addCv: (name: string, text: string) => Promise<Cv | 
     setError(null);
     try {
       const { extractPdfText } = await import("../utils/pdf");
-      const text = await extractPdfText(file);
+      let text = await extractPdfText(file);
+      // No text from the browser: a scan, or fonts pdf.js cannot map. Let the server read the PDF.
+      if (!isReadableCv(text)) text = await readWithServer(file);
+      // Still nothing: saving it would leave a CV nobody can use.
+      if (!isReadableCv(text)) {
+        setError(t("coach.pdfEmpty"));
+        return false;
+      }
       const name = file.name.replace(/\.pdf$/i, "").slice(0, 60) || t("coach.defaultCvName");
       const cv = await addCv(name, text);
       if (!cv) throw new Error("save failed");
@@ -28,4 +37,13 @@ export function useCvUpload(addCv: (name: string, text: string) => Promise<Cv | 
   };
 
   return { busy, error, upload };
+}
+
+/** The fallback must never break the upload: a failure just means "still no text". */
+async function readWithServer(file: File): Promise<string> {
+  try {
+    return await extractCvText(file);
+  } catch {
+    return "";
+  }
 }

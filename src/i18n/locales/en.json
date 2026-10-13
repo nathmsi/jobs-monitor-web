@@ -340,7 +340,9 @@
       "issue": "Issue",
       "evidence": "Evidence",
       "readiness": "Readiness"
-    }
+    },
+    "pdfEmpty": "We couldn't read any text in this PDF, even with our reader. Export your CV again as a PDF (for example “Download as PDF” from Word or Google Docs) and upload it.",
+    "cvUnreadable": "“{{name}}” has no readable text. Upload it again, or export a text-based PDF."
   },
   "forme": {
     "noProfile": "Analyze your CV to see the offers that match you.",
@@ -418,7 +420,8 @@
     "or": "or",
     "browse": "Browse files",
     "formats": "Supported formats: PDF only · Max 10MB",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "noText": "no readable text"
   },
   "common": {
     "loading": "Loading…"

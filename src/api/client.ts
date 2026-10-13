@@ -195,6 +195,25 @@ export async function analyzeCvAi(
   return resp.json() as Promise<CvAnalysis>;
 }
 
+/**
+ * Text of a PDF the browser could not read itself (a scan, or fonts without a text
+ * mapping). The file goes as the raw body; the server reads it with the AI.
+ */
+export async function extractCvText(file: File, signal?: AbortSignal): Promise<string> {
+  const resp = await fetch(`${API}/api/cv/extract`, {
+    method: "POST",
+    headers: { "Content-Type": "application/pdf" },
+    body: file,
+    signal,
+  });
+  if (!resp.ok) {
+    const detail = await resp.json().catch(() => null);
+    throw new Error(detail?.message || `HTTP ${resp.status}`);
+  }
+  const data = (await resp.json()) as { text?: unknown };
+  return typeof data.text === "string" ? data.text : "";
+}
+
 /** Every job for a region (limit=0) — used by the client-side "For me" ranking
  *  and the profile page, which need the full set. Rejects on failure so
  *  react-query surfaces the error instead of caching an empty result. */

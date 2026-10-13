@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { isReadableCv } from "../../utils/cvText";
 import styles from "./CVUploadModal.module.css";
 
 export function CVUploadModal({
@@ -17,7 +18,8 @@ export function CVUploadModal({
   onUpload: (file: File) => Promise<void>;
   busy?: boolean;
   error?: string | null;
-  existingCvs?: Array<{ id: string; name: string }>;
+  /** `text`, when given, lets the list flag a CV that has no readable text. */
+  existingCvs?: Array<{ id: string; name: string; text?: string }>;
   selectedCvId?: string;
   onSelectCv?: (id: string) => void;
 }) {
@@ -58,7 +60,7 @@ export function CVUploadModal({
                 <option value="">{t("cvModal.choose")}</option>
                 {existingCvs.map((cv) => (
                   <option key={cv.id} value={cv.id}>
-                    {cv.name}
+                    {cv.text !== undefined && !isReadableCv(cv.text) ? `${cv.name} (${t("cvModal.noText")})` : cv.name}
                   </option>
                 ))}
               </select>

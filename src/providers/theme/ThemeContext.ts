@@ -7,11 +7,6 @@ export type Theme = "system" | "light" | "dark";
 
 export const THEME_STORAGE_KEY = "theme";
 export const THEMES: Theme[] = ["system", "light", "dark"];
-export const THEME_ICONS: Record<Theme, string> = {
-  system: "🖥️",
-  light: "☀️",
-  dark: "🌙",
-};
 
 export interface ThemeValue {
   theme: Theme;

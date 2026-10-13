@@ -123,7 +123,8 @@ export function Header() {
                   data-testid="sign-in-btn"
                   onClick={() => signInWithGoogle()}
                 >
-                  {t("auth.signInGoogle")}
+                  <span className={styles.signInFull}>{t("auth.signInGoogle")}</span>
+                  <span className={styles.signInShort}>{t("auth.signInShort")}</span>
                 </button>
               ) : (
                 <div className={styles.userMenu}>

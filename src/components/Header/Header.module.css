@@ -383,3 +383,18 @@
     padding: 0.35rem 0.75rem;
   }
 }
+
+/* Phones: a short sign-in label so the header stays on one line. */
+.signInShort {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .signInFull {
+    display: none;
+  }
+
+  .signInShort {
+    display: inline;
+  }
+}

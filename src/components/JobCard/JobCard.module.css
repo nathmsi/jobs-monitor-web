@@ -257,3 +257,26 @@
   60%  { transform: scale(1.25); }
   100% { transform: scale(1); }
 }
+
+/* Phones: tighter cards (more offers per screen) with a 44px bookmark target. */
+@media (max-width: 640px) {
+  .card {
+    gap: 0.35rem;
+    padding: 0.8rem 0.95rem 0.7rem;
+  }
+
+  .summary {
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+  }
+
+  .saveBtn {
+    width: 2.75rem;
+    height: 2.75rem;
+    margin: -0.375rem -0.4rem -0.375rem 0;
+  }
+
+  :dir(rtl) .saveBtn {
+    margin: -0.375rem 0 -0.375rem -0.4rem;
+  }
+}

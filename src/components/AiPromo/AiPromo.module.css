@@ -144,7 +144,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .promo {
-    animation: rise 0.5s var(--ease-out) both;
+    animation: rise 0.5s var(--ease-out) backwards;
   }
   .promo:nth-child(2) {
     animation-delay: 0.08s;

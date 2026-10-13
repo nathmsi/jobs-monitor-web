@@ -240,7 +240,7 @@
 /* Motion: new cards slide in; saving pops the bookmark. */
 @media (prefers-reduced-motion: no-preference) {
   .card {
-    animation: rise 0.4s var(--ease-out) both;
+    animation: rise 0.4s var(--ease-out) backwards;
   }
   .saveBtnOn svg {
     animation: pop 0.35s var(--ease-spring);

@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 import { useJobsInfinite, useRegionJobs, useSources } from "../api/hooks";
+import { AiPromo } from "../components/AiPromo/AiPromo";
 import { ActiveFilters } from "../components/ActiveFilters/ActiveFilters";
 import { UpdatedAgo } from "../components/UpdatedAgo/UpdatedAgo";
 import { ForMe } from "../components/ForMe/ForMe";
@@ -336,6 +337,17 @@ export function JobsPage() {
                 </div>
               )}
             </main>
+            {!jobsQuery.isLoading && jobs.length > 0 && (
+              <div className={styles.aiNudge}>
+                <AiPromo
+                  variant="banner"
+                  title={t("ai.nudge.results.title")}
+                  description={t("ai.nudge.results.desc")}
+                  cta={t("ai.nudge.results.cta")}
+                  testId="ai-nudge-results"
+                />
+              </div>
+            )}
             </>
           )}
           </div>

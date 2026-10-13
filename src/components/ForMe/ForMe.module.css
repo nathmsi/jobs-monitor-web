@@ -147,3 +147,10 @@
   font: inherit;
   cursor: pointer;
 }
+
+.activate {
+  width: 100%;
+  max-width: 28rem;
+  margin-bottom: 0.5rem;
+  text-align: start;
+}

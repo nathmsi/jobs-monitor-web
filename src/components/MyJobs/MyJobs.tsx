@@ -5,6 +5,7 @@ import { useAuth } from "../../providers/auth/useAuth";
 import { useSavedJobs } from "../../providers/savedJobs/useSavedJobs";
 import { type SavedItem, type SavedStatus } from "../../providers/savedJobs/SavedJobsContext";
 import { useToast } from "../../providers/toast/useToast";
+import { AiPromo } from "../AiPromo/AiPromo";
 import { CheckIcon, CloseIcon } from "../Icons/Icons";
 import styles from "./MyJobs.module.css";
 
@@ -122,6 +123,16 @@ export function MyJobs() {
           ))}
         </ul>
       )}
+
+      <div className={styles.aiNudge}>
+        <AiPromo
+          variant="banner"
+          title={t(items.length === 0 ? "ai.nudge.emptySaved.title" : "ai.nudge.saved.title")}
+          description={t(items.length === 0 ? "ai.nudge.emptySaved.desc" : "ai.nudge.saved.desc")}
+          cta={t(items.length === 0 ? "ai.nudge.emptySaved.cta" : "ai.nudge.saved.cta")}
+          testId="ai-nudge-saved"
+        />
+      </div>
     </div>
   );
 }

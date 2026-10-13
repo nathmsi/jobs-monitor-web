@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { rankScore } from "../../utils/cvAnalysis";
 import { jobText } from "../../utils/jobText";
 import { useProfile } from "../../providers/profile/useProfile";
+import { AiPromo } from "../AiPromo/AiPromo";
 import { JobCard } from "../JobCard/JobCard";
 import type { Job, SourceInfo } from "../../types";
 import styles from "./ForMe.module.css";
@@ -72,6 +73,14 @@ export function ForMe({ jobs, sources, loading = false, error = null, onRetry, o
   if (!profile || !Array.isArray(profile.skills) || profile.skills.length === 0) {
     return (
       <div className={styles.empty}>
+        <div className={styles.activate}>
+          <AiPromo
+            title={t("ai.nudge.forMe.title")}
+            description={t("ai.nudge.forMe.desc")}
+            cta={t("ai.nudge.forMe.cta")}
+            testId="ai-activate-forme"
+          />
+        </div>
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         <p>{t("forme.noProfile")}</p>
         <button className={styles.ctaPrimary} onClick={onEditProfile}>

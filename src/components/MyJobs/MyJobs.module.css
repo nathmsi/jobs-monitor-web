@@ -185,3 +185,7 @@
   border-color: var(--danger);
   color: var(--danger);
 }
+
+.aiNudge {
+  margin-top: 1.25rem;
+}

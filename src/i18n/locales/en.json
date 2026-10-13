@@ -241,7 +241,49 @@
     "analysisComplete": "CV Analysis complete",
     "matchTitle": "Job Matches",
     "matchedJobs": "Matched {{count}} jobs for you",
-    "uploadUnlock": "Upload CV to unlock"
+    "uploadUnlock": "Upload CV to unlock",
+    "analysis": {
+      "score": "Overall score",
+      "years": "Years of experience",
+      "languages": "Languages",
+      "domains": "Domains",
+      "fallback": "Basic analysis — the AI coach was unavailable, so this review is generic. Try again for the full expert review.",
+      "verdictTitle": "The recruiter's verdict",
+      "scan": "What a recruiter remembers after 6 seconds",
+      "decision": {
+        "yes": "Would invite you to interview",
+        "maybe": "Maybe — depends on a few fixes",
+        "no": "Would pass today"
+      },
+      "scoresTitle": "Score breakdown",
+      "scores": {
+        "impact": "Impact",
+        "clarity": "Clarity",
+        "ats": "ATS keywords",
+        "technical_depth": "Technical depth"
+      },
+      "worksTitle": "What works",
+      "hurtsTitle": "What hurts your chances",
+      "impact": {
+        "high": "High impact",
+        "medium": "Medium impact",
+        "low": "Low impact"
+      },
+      "severity": {
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      },
+      "whyItHurts": "Why it hurts",
+      "fix": "Fix",
+      "before": "Before",
+      "after": "After",
+      "how": "How",
+      "example": "Example",
+      "issue": "Issue",
+      "evidence": "Evidence",
+      "readiness": "Readiness"
+    }
   },
   "forme": {
     "noProfile": "Analyze your CV to see the offers that match you.",

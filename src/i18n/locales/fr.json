@@ -502,5 +502,45 @@
     "24h": "Dernières 24 heures",
     "7d": "7 derniers jours",
     "30d": "30 derniers jours"
+  },
+  "ai": {
+    "badge": "IA",
+    "sectionTitle": "Ton coach carrière IA",
+    "promoCvTitle": "Fais analyser ton CV",
+    "promoCvDesc": "L'IA lit ton CV et te dit quoi améliorer. Environ 1 minute, et ton CV reste privé.",
+    "promoCvCta": "Analyser mon CV",
+    "promoMatchTitle": "Trouve les 20 offres faites pour toi",
+    "promoMatchDesc": "L'IA compare ton CV à toutes les offres et t'explique pourquoi chacune te correspond.",
+    "promoMatchCta": "Trouver mes offres",
+    "nudge": {
+      "results": {
+        "title": "Trop d'offres ?",
+        "desc": "Laisse l'IA choisir les 20 meilleures pour toi.",
+        "cta": "Essayer le coach IA"
+      },
+      "saved": {
+        "title": "Prêt à postuler ?",
+        "desc": "L'IA peut améliorer ton CV pour qu'il colle à tes offres.",
+        "cta": "Améliorer mon CV"
+      },
+      "emptySaved": {
+        "title": "Pas encore de favoris ?",
+        "desc": "Laisse l'IA te proposer les offres qui te correspondent.",
+        "cta": "Voir mes offres IA"
+      },
+      "forMe": {
+        "title": "Active « Pour moi » en 1 minute",
+        "desc": "Ajoute ton CV ou règle tes préférences : l'IA te classe les offres.",
+        "cta": "Commencer"
+      }
+    },
+    "landing": {
+      "title": "Ton coach carrière, propulsé par l'IA",
+      "p1": "Un verdict de recruteur et une note sur ton CV",
+      "p2": "Tes points faibles, avec des réécritures avant / après",
+      "p3": "Les 20 offres qui te correspondent, expliquées",
+      "time": "Environ 1 minute",
+      "privacy": "Ton CV reste privé"
+    }
   }
 }

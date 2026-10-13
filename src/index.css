@@ -21,6 +21,11 @@
   --hot-soft: #FEE8DD;
   --danger: #B42318;
   --danger-soft: #FDE4E1;
+  --ai-from: #6D4AFF;
+  --ai-to: #2F5FE8;
+  --ai-gradient: linear-gradient(135deg, var(--ai-from), var(--ai-to));
+  --ai-soft: #F0EBFF;
+  --ai-text: #5B3CE0;
   --level-intern: #94A3B8;
   --level-junior: #60A5FA;
   --level-mid: #A78BFA;
@@ -69,6 +74,8 @@ h1, h2, h3, h4, h5, h6 {
     --hot-soft: #2A1608;
     --danger: #FF6B5E;
     --danger-soft: #3A1A17;
+    --ai-soft: #1A1340;
+    --ai-text: #B6A4FF;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
     --shadow: 0 10px 36px rgba(0, 0, 0, 0.65);
     --shadow-hover: 0 12px 36px rgba(77, 135, 255, 0.20), 0 4px 14px rgba(0, 0, 0, 0.45);
@@ -93,6 +100,8 @@ h1, h2, h3, h4, h5, h6 {
   --hot-soft: #2A1608;
   --danger: #FF6B5E;
   --danger-soft: #3A1A17;
+  --ai-soft: #1A1340;
+  --ai-text: #B6A4FF;
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
   --shadow: 0 10px 36px rgba(0, 0, 0, 0.65);
   --shadow-hover: 0 12px 36px rgba(77, 135, 255, 0.20), 0 4px 14px rgba(0, 0, 0, 0.45);

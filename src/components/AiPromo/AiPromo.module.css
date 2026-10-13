@@ -1,0 +1,124 @@
+.promo {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.7rem 0.85rem;
+  align-items: start;
+  padding: 1rem 1.05rem;
+  color: var(--text);
+  text-decoration: none;
+  background:
+    linear-gradient(var(--bg-elevated), var(--bg-elevated)) padding-box,
+    var(--ai-gradient) border-box;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.promo:hover,
+.promo:focus-visible {
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #fff;
+  background: var(--ai-gradient);
+  border-radius: var(--radius);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.desc {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.cta {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  padding: 0 1rem;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--ai-gradient);
+  border-radius: var(--radius);
+}
+
+.arrow {
+  display: inline-block;
+}
+
+:dir(rtl) .arrow {
+  transform: scaleX(-1);
+}
+
+/* Slim version: icon, text, button on one row when there is room. */
+.banner {
+  padding: 0.8rem 0.95rem;
+}
+
+.banner .icon {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+
+.banner .title {
+  font-size: 0.95rem;
+}
+
+.banner .desc {
+  font-size: 0.84rem;
+}
+
+@media (min-width: 640px) {
+  .banner {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+
+  .banner .cta {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo {
+    transition: none;
+  }
+
+  .promo:hover,
+  .promo:focus-visible {
+    transform: none;
+  }
+}

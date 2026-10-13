@@ -501,5 +501,45 @@
     "24h": "Last 24 hours",
     "7d": "Last 7 days",
     "30d": "Last 30 days"
+  },
+  "ai": {
+    "badge": "AI",
+    "sectionTitle": "Your AI career coach",
+    "promoCvTitle": "Get your CV analyzed",
+    "promoCvDesc": "The AI reads your CV and tells you what to improve. About 1 minute, and your CV stays private.",
+    "promoCvCta": "Analyze my CV",
+    "promoMatchTitle": "Find the 20 jobs made for you",
+    "promoMatchDesc": "The AI compares your CV with every offer and explains why each one fits you.",
+    "promoMatchCta": "Find my jobs",
+    "nudge": {
+      "results": {
+        "title": "Too many offers?",
+        "desc": "Let the AI pick the 20 best ones for you.",
+        "cta": "Try the AI coach"
+      },
+      "saved": {
+        "title": "Ready to apply?",
+        "desc": "The AI can polish your CV so it fits your offers.",
+        "cta": "Improve my CV"
+      },
+      "emptySaved": {
+        "title": "No favorites yet?",
+        "desc": "Let the AI suggest the offers that fit you.",
+        "cta": "See my AI picks"
+      },
+      "forMe": {
+        "title": "Turn on “For you” in 1 minute",
+        "desc": "Add your CV or set your preferences: the AI ranks the offers for you.",
+        "cta": "Get started"
+      }
+    },
+    "landing": {
+      "title": "Your career coach, powered by AI",
+      "p1": "A recruiter's verdict and a score for your CV",
+      "p2": "Your weak spots, with before / after rewrites",
+      "p3": "The 20 jobs that fit you, explained",
+      "time": "About 1 minute",
+      "privacy": "Your CV stays private"
+    }
   }
 }

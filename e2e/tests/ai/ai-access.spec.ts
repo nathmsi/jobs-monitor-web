@@ -73,3 +73,15 @@ test.describe('AI coach · easy to find', () => {
     });
   });
 });
+
+test.describe('CV Coach · understand it before signing in', () => {
+  test('shows the three steps and a sample result', async ({ page }) => {
+    await page.goto('/coach');
+
+    const how = page.getByTestId('coach-how');
+    await expect(how.getByRole('heading', { name: 'How it works' })).toBeVisible();
+    await expect(how.getByRole('listitem')).toHaveCount(3);
+    await expect(how.getByText('Example', { exact: true })).toBeVisible();
+    await expect(how).toContainText('72 / 100');
+  });
+});

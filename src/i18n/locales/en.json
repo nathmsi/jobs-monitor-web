@@ -540,6 +540,25 @@
       "p3": "The 20 jobs that fit you, explained",
       "time": "About 1 minute",
       "privacy": "Your CV stays private"
+    },
+    "how": {
+      "howTitle": "How it works",
+      "step1Title": "Add your CV",
+      "step1Desc": "A PDF is enough.",
+      "step2Title": "The AI reads it",
+      "step2Desc": "It judges it like a recruiter would.",
+      "step3Title": "You fix it",
+      "step3Desc": "You see what to change, with examples.",
+      "exTag": "Example",
+      "exTitle": "A preview of what you get",
+      "exScore": "72 / 100",
+      "exScoreLabel": "Overall score",
+      "exVerdict": "“Solid profile, but measurable results are missing. Rework it before sending.”",
+      "exFlag": "Weak spot: no measure of impact",
+      "exBefore": "Before",
+      "exBeforeText": "Built features for the website.",
+      "exAfter": "After",
+      "exAfterText": "Shipped 12 React features, cutting load time by 40%."
     }
   }
 }

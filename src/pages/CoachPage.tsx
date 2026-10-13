@@ -74,6 +74,7 @@ export function CoachPage() {
             </button>
           </div>
         )}
+        {!user && <HowItWorks />}
 
         {/* Signed in */}
         {user && (
@@ -164,6 +165,8 @@ export function CoachPage() {
               </div>
             )}
 
+            {!isReady && !active && <HowItWorks />}
+
             {/* What to expect: always visible when no feature is running */}
             {!active && (
               <p className={styles.trustRow}>
@@ -208,6 +211,42 @@ export function CoachPage() {
         onSelectCv={selectCv}
       />
     </div>
+  );
+}
+
+/** Three steps and a sample result, so people know what they get before they commit. */
+function HowItWorks() {
+  const { t } = useTranslation();
+  return (
+    <section className={styles.how} aria-labelledby="how-title" data-testid="coach-how">
+      <h2 id="how-title" className={styles.howTitle}>{t("ai.how.howTitle")}</h2>
+      <ol className={styles.steps}>
+        {(["step1", "step2", "step3"] as const).map((k, i) => (
+          <li key={k} className={styles.step}>
+            <span className={styles.stepNum} aria-hidden="true">{i + 1}</span>
+            <strong>{t(`ai.how.${k}Title`)}</strong>
+            <span className={styles.stepDesc}>{t(`ai.how.${k}Desc`)}</span>
+          </li>
+        ))}
+      </ol>
+
+      <div className={styles.example} aria-label={t("ai.how.exTitle")}>
+        <div className={styles.exampleHead}>
+          <span className={styles.exampleTag}>{t("ai.how.exTag")}</span>
+          <span className={styles.exampleTitle}>{t("ai.how.exTitle")}</span>
+        </div>
+        <div className={styles.exScore}>
+          <span className={styles.exScoreValue}>{t("ai.how.exScore")}</span>
+          <span className={styles.exScoreLabel}>{t("ai.how.exScoreLabel")}</span>
+        </div>
+        <p className={styles.exVerdict}>{t("ai.how.exVerdict")}</p>
+        <p className={styles.exFlag}>{t("ai.how.exFlag")}</p>
+        <div className={styles.exRewrite}>
+          <p className={styles.exBefore}><span>{t("ai.how.exBefore")}</span>{t("ai.how.exBeforeText")}</p>
+          <p className={styles.exAfter}><span>{t("ai.how.exAfter")}</span>{t("ai.how.exAfterText")}</p>
+        </div>
+      </div>
+    </section>
   );
 }
 

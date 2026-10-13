@@ -541,6 +541,25 @@
       "p3": "Les 20 offres qui te correspondent, expliquées",
       "time": "Environ 1 minute",
       "privacy": "Ton CV reste privé"
+    },
+    "how": {
+      "howTitle": "Comment ça marche",
+      "step1Title": "Ajoute ton CV",
+      "step1Desc": "Un PDF suffit.",
+      "step2Title": "L'IA le lit",
+      "step2Desc": "Elle le juge comme un recruteur.",
+      "step3Title": "Tu corriges",
+      "step3Desc": "Tu vois quoi changer, avec des exemples.",
+      "exTag": "Exemple",
+      "exTitle": "Un aperçu de ce que tu obtiens",
+      "exScore": "72 / 100",
+      "exScoreLabel": "Note globale",
+      "exVerdict": "« Profil solide, mais les résultats chiffrés manquent. À retravailler avant d'envoyer. »",
+      "exFlag": "Point faible : aucune mesure de l'impact",
+      "exBefore": "Avant",
+      "exBeforeText": "Développé des fonctionnalités pour le site.",
+      "exAfter": "Après",
+      "exAfterText": "Livré 12 fonctionnalités React, réduisant le temps de chargement de 40 %."
     }
   }
 }

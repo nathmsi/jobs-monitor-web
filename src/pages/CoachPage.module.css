@@ -1136,3 +1136,144 @@
     flex-wrap: wrap;
   }
 }
+
+/* ── How it works + sample result ── */
+.how {
+  max-width: 640px;
+  margin: 2.5rem auto 0;
+}
+.howTitle {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.9rem 0.6rem;
+  text-align: center;
+  font-size: 0.88rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.stepNum {
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--ai-gradient);
+  border-radius: 999px;
+}
+.stepDesc {
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+.example {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.1rem;
+  background: var(--bg-elevated);
+  border: 1.5px dashed var(--ai-from);
+  border-radius: var(--radius-lg);
+}
+.exampleHead {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.exampleTag {
+  padding: 0.1rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ai-text);
+  background: var(--ai-soft);
+  border-radius: 999px;
+}
+.exampleTitle {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.exScore {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.exScoreValue {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--ai-text);
+}
+.exScoreLabel,
+.exVerdict {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.exVerdict {
+  margin: 0;
+  font-style: italic;
+  line-height: 1.5;
+}
+.exFlag {
+  margin: 0;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--danger);
+  background: var(--danger-soft);
+  border-radius: var(--radius-sm);
+}
+.exRewrite {
+  display: grid;
+  gap: 0.5rem;
+}
+.exBefore,
+.exAfter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin: 0;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  border-radius: var(--radius-sm);
+}
+.exBefore span,
+.exAfter span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.exBefore {
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--text) 5%, transparent);
+}
+.exAfter {
+  color: var(--new);
+  background: var(--new-soft);
+}
+@media (max-width: 640px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .step {
+    flex-direction: row;
+    text-align: start;
+    gap: 0.6rem;
+  }
+}

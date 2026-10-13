@@ -56,6 +56,39 @@
   letter-spacing: -0.03em;
   color: var(--text);
 }
+.heroEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ai-text);
+}
+.heroPoints {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  text-align: start;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+.heroPoints li {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+.heroPoints svg {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: var(--ai-text);
+}
+.heroMeta {
+  margin: 0 0 1.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
 .heroDesc {
   margin: 0 0 2rem;
   color: var(--text-muted);
@@ -66,7 +99,7 @@
 /* Primary button */
 .primaryBtn {
   border: none;
-  background: var(--accent);
+  background: var(--ai-gradient);
   color: #fff;
   font-size: 0.95rem;
   font-weight: 700;
@@ -192,7 +225,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  text-align: left;
+  text-align: start;
   gap: 0.75rem;
   padding: 2rem;
   background: var(--bg-elevated);
@@ -214,9 +247,37 @@
   pointer-events: none;
 }
 .featureIcon {
-  font-size: 1.5rem;
-  color: var(--accent);
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  color: #fff;
+  background: var(--ai-gradient);
+  border-radius: var(--radius);
   line-height: 1;
+}
+.featureTitle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.titleBadge {
+  vertical-align: middle;
+  font-size: 0.72rem;
+}
+.trustRow {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }
 .featureTitle {
   margin: 0;
@@ -234,7 +295,7 @@
 .featureCta {
   font-size: 0.88rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--ai-text);
   margin-top: 0.5rem;
 }
 .featureCtaDisabled {

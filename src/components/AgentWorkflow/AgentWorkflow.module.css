@@ -1,266 +1,225 @@
 .container {
-  padding: 2rem 0;
+  padding: 1.5rem 0 2rem;
+  /* The panel keeps its footprint while steps appear: no layout jump. */
+  min-height: 22rem;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.75rem;
 }
 
-.agentBadge {
+.badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 70%, #000));
-  color: #fff;
-  padding: 0.8rem 1.5rem;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
   border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.badgeText {
+  margin: 0;
+  font-size: 0.95rem;
   font-weight: 700;
-  font-size: 1.05rem;
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--accent) 25%, transparent);
-  margin-bottom: 0.8rem;
-}
-
-.agentIcon {
-  font-size: 1.5rem;
-  animation: bounce 1s ease-in-out infinite;
-}
-
-.agentText {
-  letter-spacing: 0.5px;
+  letter-spacing: 0.2px;
 }
 
 .subtitle {
+  margin: 0.7rem 0 0;
   color: var(--text-muted);
   font-size: 0.95rem;
-  margin: 0;
 }
 
-/* Workflow Diagram */
-.workflow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  margin: 2rem 0 3rem;
-  flex-wrap: wrap;
-  row-gap: 1rem;
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Stages */
+.phases {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
 }
 
 .phase {
-  position: relative;
   display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 1rem 1.5rem;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.85rem;
+  border-radius: var(--radius);
   background: var(--card);
-  border: 2px solid var(--border);
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  min-width: 180px;
+  border: 1px solid var(--border);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
 }
 
 .phase.active {
   border-color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 10%, var(--card));
-  box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 20%, transparent);
+  background: var(--accent-soft);
 }
 
-.phaseIcon {
-  font-size: 1.8rem;
+.phase.done {
+  border-color: color-mix(in srgb, var(--new) 45%, var(--border));
+}
+
+.phaseMark {
   flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: var(--bg);
+  color: var(--text-muted);
+  border: 1px solid var(--border-strong);
 }
 
-.phaseLabel {
-  flex: 1;
+.active .phaseMark {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.done .phaseMark {
+  background: var(--new-soft);
+  border-color: var(--new);
+  color: var(--new);
+}
+
+.phaseText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
 }
 
 .phaseName {
+  font-size: 0.9rem;
   font-weight: 700;
-  font-size: 0.95rem;
   color: var(--text);
 }
 
 .phaseDesc {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
   color: var(--text-muted);
-  margin-top: 0.2rem;
 }
 
-.pulse {
-  position: absolute;
-  top: 50%;
-  right: -8px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--accent);
-  transform: translateY(-50%);
-  opacity: 0;
+/* The agent's own searches */
+.steps {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0.5rem 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
 }
 
-.pulseActive {
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-.arrow {
-  font-size: 1.5rem;
-  color: var(--text-muted);
-  margin: 0 0.5rem;
-  min-width: 30px;
-  text-align: center;
-}
-
-/* Activity Box */
-.activityBox {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-strong);
-  border-radius: 12px;
-  padding: 1.5rem;
+.step {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  margin: 2rem 0;
+  gap: 0.65rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text);
+  animation: stepIn 0.25s ease;
 }
 
-.activitySpinner {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 2.5px solid color-mix(in srgb, var(--accent) 25%, transparent);
-  border-top-color: var(--accent);
-  animation: spin 0.8s linear infinite;
+.step + .step {
+  border-top: 1px solid var(--border);
+}
+
+.stepIcon {
   flex-shrink: 0;
+  display: inline-flex;
+  width: 1.25rem;
+  justify-content: center;
 }
 
-.activityText {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text);
-  animation: fadeIn 0.4s ease;
+.step_done .stepIcon { color: var(--new); }
+.step_failed .stepIcon { color: var(--danger); }
+.step_running .stepLabel { color: var(--text); font-weight: 600; }
+.step_done .stepLabel { color: var(--text-muted); }
+
+.stepLabel {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
-/* Tools Grid */
-.toolsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+.stepTime {
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
 }
 
-.toolCard {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.toolCard.running {
-  border-color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 12%, var(--card));
-  box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 15%, transparent);
-}
-
-.toolCard.done {
-  border-color: var(--new, #16a34a);
-  background: color-mix(in srgb, var(--new, #16a34a) 8%, var(--card));
-}
-
-.toolCard.cached {
-  border-color: var(--new, #16a34a);
-  background: color-mix(in srgb, var(--new, #16a34a) 12%, var(--card));
-}
-
-.toolEmoji {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.toolName {
-  font-size: 0.85rem;
+.stepFailed {
+  flex-shrink: 0;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--text);
-  margin-bottom: 0.5rem;
+  color: var(--danger);
 }
 
-.toolDuration {
-  font-size: 0.75rem;
-  color: var(--accent);
-  font-weight: 600;
-}
-
-.toolCached {
-  font-size: 0.75rem;
-  color: var(--new, #16a34a);
-  font-weight: 600;
-}
-
-.toolStatus {
-  position: absolute;
-  top: 6px;
-  right: 8px;
+.hint {
+  margin: 0;
+  text-align: center;
   font-size: 0.85rem;
+  color: var(--text-muted);
 }
 
-/* Animations */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
+/* Spinners */
+.spinner,
+.spinnerSm {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, currentColor 30%, transparent);
+  border-top-color: currentColor;
+  animation: spin 0.8s linear infinite;
 }
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 0;
-    transform: translateY(-50%) scale(0.8);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-50%) scale(1.2);
-  }
-}
+.spinner { width: 0.95rem; height: 0.95rem; }
+.spinnerSm { width: 0.9rem; height: 0.9rem; color: var(--accent); }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+@keyframes stepIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
 }
 
-/* Responsive */
 @media (max-width: 720px) {
-  .workflow {
-    flex-direction: column;
-    gap: 1rem;
+  .phases {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
+  .container { min-height: 0; }
+}
 
-  .arrow {
-    transform: rotate(90deg);
-    margin: 0;
+/* Motion is decoration here: with reduced motion, stop it but keep the state visible. */
+@media (prefers-reduced-motion: reduce) {
+  .spinner,
+  .spinnerSm {
+    animation: none;
+    border-top-color: color-mix(in srgb, currentColor 30%, transparent);
+    border-inline-end-color: currentColor;
   }
-
-  .phase {
-    min-width: 160px;
-  }
-
-  .toolsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .step { animation: none; }
+  .phase { transition: none; }
 }

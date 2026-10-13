@@ -89,8 +89,8 @@ describe("consumeMatchStream", () => {
       "fetch",
       vi.fn().mockResolvedValue(
         streamingResponse([
-          line({ type: "tool_call", name: "search", input: { q: 1 } }),
-          line({ type: "tool_result", name: "search", duration: 12, ok: true, cached: true, retryCount: 2 }),
+          line({ type: "tool_call", name: "search", callId: "t0:a", input: { q: 1 } }),
+          line({ type: "tool_result", name: "search", callId: "t0:a", duration: 12, ok: true, cached: true, retryCount: 2 }),
           line({ type: "final", results: { results: [offer] } }),
         ]),
       ),
@@ -106,8 +106,8 @@ describe("consumeMatchStream", () => {
     const results = await consumeMatchStream("cv", {}, cb);
 
     expect(results).toEqual([offer]);
-    expect(cb.onToolCall).toHaveBeenCalledWith("search", { q: 1 });
-    expect(cb.onToolResult).toHaveBeenCalledWith("search", 12, true);
+    expect(cb.onToolCall).toHaveBeenCalledWith("search", { q: 1 }, "t0:a");
+    expect(cb.onToolResult).toHaveBeenCalledWith("search", 12, true, "t0:a");
     expect(cb.onToolCached).toHaveBeenCalledWith("search");
     expect(cb.onRetry).toHaveBeenCalledWith("search", 2);
     expect(cb.onFinal).toHaveBeenCalledTimes(1);

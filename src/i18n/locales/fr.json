@@ -94,7 +94,65 @@
   },
   "match": {
     "skills_one": "{{count}} compétence correspondante",
-    "skills_other": "{{count}} compétences correspondantes"
+    "skills_other": "{{count}} compétences correspondantes",
+    "results": {
+      "title": "Vos meilleures offres",
+      "subtitle_one": "{{count}} offre classée pour votre profil",
+      "subtitle_many": "{{count}} offres classées pour votre profil",
+      "subtitle_other": "{{count}} offres classées pour votre profil",
+      "improveCv": "Améliorer mon CV",
+      "statBest": "Meilleur match",
+      "statAverage": "Moyenne",
+      "statStrong": "Matchs forts",
+      "filterAria": "Filtrer par niveau de match",
+      "filterAll": "Toutes",
+      "best": "Meilleur match",
+      "rank": "Match n° {{n}}",
+      "scoreAria": "{{score}} pour cent de correspondance",
+      "why": "Pourquoi ça colle",
+      "check": "À vérifier",
+      "open": "Ouvrir l'offre",
+      "newTab": "(s'ouvre dans un nouvel onglet)",
+      "emptyTitle": "Aucun match solide trouvé",
+      "emptyBody": "La recherche a parcouru les offres en ligne, mais rien ne correspond assez à votre profil.",
+      "emptyHint": "Essayez une zone plus large ou les deux types d'entreprise, ou améliorez votre CV et relancez."
+    },
+    "band": {
+      "strong": "Match fort",
+      "good": "Bon match",
+      "stretch": "Un cran au-dessus"
+    },
+    "progress": {
+      "aria": "Progression du match",
+      "stepsAria": "Ce que fait l'agent",
+      "status": "Étape {{n}} sur {{total}} : {{phase}}",
+      "phase": {
+        "profile": "Lecture du CV",
+        "search": "Recherche d'offres",
+        "compare": "Comparaison",
+        "rank": "Classement"
+      },
+      "desc": {
+        "profile": "Compétences, niveau et postes visés",
+        "search": "Plusieurs angles à la fois",
+        "compare": "Vérification des vrais prérequis",
+        "rank": "Rédaction de votre top 20"
+      },
+      "wait": "Cela prend en général 15 à 30 secondes.",
+      "seconds": "{{s}} s",
+      "failed": "échec"
+    },
+    "step": {
+      "search": "Recherche : {{what}}",
+      "searchAny": "Recherche d'offres",
+      "searchRead": "Recherche et lecture des meilleures offres pour {{what}}",
+      "searchReadAny": "Recherche et lecture des meilleures offres",
+      "scoring": "Score de chaque offre en ligne sur vos {{count}} compétences",
+      "read": "Lecture détaillée d'une offre",
+      "ranking": "Classement des {{count}} meilleurs candidats",
+      "stats": "Demande pour {{what}}",
+      "other": "Exécution de {{name}}"
+    }
   },
   "profile": {
     "open": "Mon profil",
@@ -247,11 +305,11 @@
       "years": "Années d'expérience",
       "languages": "Langues",
       "domains": "Domaines",
-      "fallback": "Analyse de base — le coach IA était indisponible, cette analyse est donc générique. Réessaie pour obtenir l'analyse complète d'un expert.",
+      "fallback": "Analyse de base — le coach IA était indisponible, cette analyse est donc générique. Réessayez pour obtenir l'analyse complète d'un expert.",
       "verdictTitle": "Le verdict du recruteur",
       "scan": "Ce qu'un recruteur retient en 6 secondes",
       "decision": {
-        "yes": "T'inviterait en entretien",
+        "yes": "Vous inviterait en entretien",
         "maybe": "Peut-être — selon quelques corrections",
         "no": "Passerait son tour aujourd'hui"
       },
@@ -263,7 +321,7 @@
         "technical_depth": "Profondeur technique"
       },
       "worksTitle": "Ce qui fonctionne",
-      "hurtsTitle": "Ce qui te dessert",
+      "hurtsTitle": "Ce qui dessert votre candidature",
       "impact": {
         "high": "Fort impact",
         "medium": "Impact moyen",
@@ -347,13 +405,6 @@
   "agent": {
     "title": "Agent de matching IA",
     "subtitle": "Recherche intelligente de votre poste idéal",
-    "search": "Recherche",
-    "searchDesc": "Candidats trouvés",
-    "read": "Lecture",
-    "readDesc": "Analyse détaillée",
-    "rank": "Classement",
-    "rankDesc": "Meilleures offres",
-    "cached": "En cache",
     "launchBtn": "Trouver mes meilleures offres",
     "modifySearch": "Modifier la recherche"
   },

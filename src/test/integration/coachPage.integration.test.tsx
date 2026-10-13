@@ -1,4 +1,4 @@
-import { screen, waitFor, within } from "@testing-library/react";
+import { act, screen, waitFor, within } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import * as client from "../../api/client";
@@ -172,6 +172,51 @@ describe("CoachPage (integration)", () => {
         expect.any(Object),
         expect.any(AbortSignal),
       );
+    });
+
+    it("shows what the agent is searching while it works, then the ranked offers and what to check", async () => {
+      let finish: (offers: client.MatchedOffer[] | null) => void = () => {};
+      vi.spyOn(stream, "consumeMatchStream").mockImplementation((_cv, _filters, callbacks) => {
+        callbacks.onToolCall?.("search_offers", { role: "Staff Frontend", skills: ["React"] }, "t0:1");
+        return new Promise((resolve) => {
+          finish = resolve;
+        });
+      });
+      const { user } = renderWithProviders(<CoachPage />, { route: "/coach" });
+      await screen.findByText("My CV");
+
+      await user.click(screen.getByRole("button", { name: /Find matching jobs/ }));
+      await user.click(screen.getByRole("button", { name: "Find my best offers" }));
+
+      // Live progress: the step the agent is on, and the search it just started.
+      expect(await screen.findByText("Searching Staff Frontend · React")).toBeInTheDocument();
+      expect(within(screen.getByRole("region", { name: "AI Matching Agent" })).getByRole("status")).toHaveTextContent(
+        "Step 2 of 4: Searching offers",
+      );
+      expect(screen.queryByRole("heading", { name: "Your best matches" })).not.toBeInTheDocument();
+
+      await act(async () =>
+        finish([
+          { id: "o1", title: "Staff Frontend", company: "Melio", url: "https://x/1", score: 91, reasons: ["Uses React"], weak_points: ["No GraphQL"] },
+        ]),
+      );
+
+      expect(await screen.findByRole("heading", { name: "Your best matches" })).toBeInTheDocument();
+      expect(screen.getByText("Uses React")).toBeInTheDocument();
+      expect(screen.getByText("No GraphQL")).toBeInTheDocument(); // the API's weak points are shown
+      expect(screen.queryByText("Searching Staff Frontend · React")).not.toBeInTheDocument(); // progress is gone
+    });
+
+    it("says so when nothing matches, and lets you search again", async () => {
+      vi.spyOn(stream, "consumeMatchStream").mockResolvedValue([]);
+      const { user } = renderWithProviders(<CoachPage />, { route: "/coach" });
+      await screen.findByText("My CV");
+
+      await user.click(screen.getByRole("button", { name: /Find matching jobs/ }));
+      await user.click(screen.getByRole("button", { name: "Find my best offers" }));
+
+      expect(await screen.findByRole("heading", { name: "No strong match found" })).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Search again" })).toBeInTheDocument();
     });
 
     it("shows a stream error", async () => {

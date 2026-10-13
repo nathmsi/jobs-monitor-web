@@ -65,3 +65,34 @@
   font-weight: 600;
   white-space: nowrap;
 }
+
+/* The AI coach: a coloured tile that rises above the bar. */
+.ai {
+  color: var(--ai-text);
+}
+
+.ai .icon {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-top: -1.1rem;
+  color: #fff;
+  background: var(--ai-gradient);
+  border: 3px solid var(--bg-elevated);
+  border-radius: 999px;
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--ai-from) 40%, transparent);
+}
+
+.ai.active {
+  color: var(--ai-text);
+}
+
+.aiTag {
+  position: absolute;
+  top: -0.55rem;
+  inset-inline-start: 62%;
+  padding: 0 0.3rem;
+  font-size: 0.58rem;
+  border: 2px solid var(--bg-elevated);
+}

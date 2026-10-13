@@ -17,6 +17,9 @@ const renderAt = (route: string) =>
 
 const current = () => screen.queryAllByRole("link").filter((l) => l.getAttribute("aria-current") === "page");
 
+/** The visible label, without the decorative "AI" tag on the coach entry. */
+const labelOf = (a: Element) => (a.textContent ?? "").replace(/^AI/, "");
+
 describe("BottomNav", () => {
   beforeEach(() => {
     saved.items = [];
@@ -26,10 +29,10 @@ describe("BottomNav", () => {
     renderAt("/");
 
     const nav = screen.getByRole("navigation", { name: "Quick navigation" });
-    expect(Array.from(nav.querySelectorAll("a")).map((a) => [a.textContent, a.getAttribute("href")])).toEqual([
+    expect(Array.from(nav.querySelectorAll("a")).map((a) => [labelOf(a), a.getAttribute("href")])).toEqual([
       ["Home", "/"],
       ["Offers", "/jobs"],
-      ["For you", "/jobs?tab=forme"],
+      ["CV Analysis", "/coach"],
       ["Saved", "/jobs?tab=mine"],
       ["My Profile", "/profile"],
     ]);
@@ -40,16 +43,16 @@ describe("BottomNav", () => {
     ["/jobs", "Offers"],
     ["/jobs?q=react&role=mobile", "Offers"],
     ["/jobs?tab=agency", "Offers"],
-    ["/jobs?tab=forme", "For you"],
+    ["/coach", "CV Analysis"],
     ["/jobs?tab=mine", "Saved"],
     ["/profile", "My Profile"],
   ])("%s highlights %s", (route, label) => {
     renderAt(route);
-    expect(current().map((l) => l.textContent)).toEqual([label]);
+    expect(current().map(labelOf)).toEqual([label]);
   });
 
   it("highlights nothing on pages that are not in the bar", () => {
-    renderAt("/coach");
+    renderAt("/somewhere-else");
     expect(current()).toEqual([]);
   });
 

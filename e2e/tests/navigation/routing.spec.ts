@@ -50,16 +50,13 @@ test.describe('Navigation', () => {
   test.describe('on a phone', () => {
     test.use({ viewport: { width: 390, height: 844 } });
 
-    test('the hamburger menu opens the mobile navigation', async ({ page }) => {
+    test('there is no burger menu: the bottom bar reaches the AI coach', async ({ page }) => {
       const jobs = new JobsPage(page);
       await jobs.open();
 
-      await jobs.header.mobileMenuButton.click();
-      const mobileNav = page.getByRole('navigation', { name: 'Mobile navigation' });
-      await mobileNav.getByRole('link', { name: 'My Profile' }).click();
-
-      await expect(page).toHaveURL(/\/profile$/);
-      await expect(mobileNav).toHaveCount(0);
+      await expect(jobs.header.mobileMenuButton).toHaveCount(0);
+      await jobs.bottomNav.link(/CV Analysis/).click();
+      await expect(page).toHaveURL(/\/coach$/);
     });
 
     test('filters open in a sheet that can be closed', async ({ page }) => {

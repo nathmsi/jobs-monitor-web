@@ -18,7 +18,7 @@ test.describe('Navigation · on a phone', () => {
     await jobs.open();
 
     await expect(jobs.bottomNav.root).toBeVisible();
-    for (const name of ['Home', 'Offers', 'For you', /^Saved/, 'Profile']) {
+    for (const name of ['Home', 'Offers', /CV Analysis/, /^Saved/, 'Profile']) {
       await expect(jobs.bottomNav.link(name)).toBeVisible();
     }
     await expect(jobs.bottomNav.root.getByRole('link')).toHaveCount(5);
@@ -30,7 +30,7 @@ test.describe('Navigation · on a phone', () => {
 
     const nav = (await jobs.bottomNav.root.boundingBox())!;
     expect(Math.round(nav.y + nav.height)).toBe(844);
-    for (const name of ['Home', 'Offers', 'For you', 'Profile']) {
+    for (const name of ['Home', 'Offers', /CV Analysis/, 'Profile']) {
       const box = (await jobs.bottomNav.link(name).boundingBox())!;
       expect(box.height).toBeGreaterThanOrEqual(44);
       expect(box.width).toBeGreaterThanOrEqual(44);
@@ -55,18 +55,18 @@ test.describe('Navigation · on a phone', () => {
 
     await expect(await current('/')).toHaveText('Home');
     await expect(await current('/jobs')).toHaveText('Offers');
-    await expect(await current('/jobs?tab=forme')).toHaveText('For you');
+    await expect(await current('/coach')).toHaveText(/CV Analysis/);
     await expect(await current('/jobs?tab=mine')).toHaveText(/^Saved/);
     await expect(await current('/profile')).toHaveText('My Profile');
   });
 
-  test('"For you" and "Saved" open the matching tab of the offers', async ({ page }) => {
+  test('the AI coach and "Saved" are one tap away', async ({ page }) => {
     const jobs = new JobsPage(page);
     await jobs.open();
 
-    await jobs.bottomNav.link('For you').click();
-    await expect(page).toHaveURL(/tab=forme/);
-    await expect(page.getByRole('tabpanel')).toBeVisible();
+    await jobs.bottomNav.link(/CV Analysis/).click();
+    await expect(page).toHaveURL(/\/coach$/);
+    await expect(page.getByRole('heading', { level: 1, name: 'CV Coach' })).toBeVisible();
 
     await jobs.bottomNav.link(/^Saved/).click();
     await expect(page).toHaveURL(/tab=mine/);
@@ -164,8 +164,8 @@ test.describe('Navigation · on a phone', () => {
     const profile = new ProfilePage(page);
     await profile.goto();
 
-    await profile.bottomNav.link('For you').click();
+    await profile.bottomNav.link(/CV Analysis/).click();
 
-    await expect(page).toHaveURL(/tab=forme/);
+    await expect(page).toHaveURL(/\/coach$/);
   });
 });

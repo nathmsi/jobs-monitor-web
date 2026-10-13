@@ -22,7 +22,7 @@ describe("App routing and shell (integration)", () => {
 
     // Pages are lazy-loaded chunks: allow more than the default 1s.
     const lazy = { timeout: 5000 };
-    await user.click(within(nav()).getByRole("link", { name: "CV Analysis" }));
+    await user.click(within(nav()).getByRole("link", { name: /CV Analysis/ }));
     expect(await screen.findByRole("heading", { level: 1, name: "CV Coach" }, lazy)).toBeInTheDocument();
     expect(screen.getByTestId("location")).toHaveTextContent("/coach");
 
@@ -81,15 +81,14 @@ describe("Phone navigation (integration)", () => {
     await i18n.changeLanguage("en");
   });
 
-  it("the bottom bar is part of every page and opens 'For you' and 'Saved'", async () => {
+  it("the bottom bar is part of every page and opens the AI coach and 'Saved'", async () => {
     const { user } = renderWithProviders(<App />, { route: "/" });
     const bar = () => screen.getByRole("navigation", { name: "Quick navigation" });
 
-    await user.click(within(bar()).getByRole("link", { name: "For you" }));
-    expect(await screen.findByRole("tablist", {}, { timeout: 5000 })).toBeInTheDocument();
-    expect(screen.getByTestId("location")).toHaveTextContent("/jobs?tab=forme");
-    expect(screen.getByRole("tab", { name: /For me/ })).toHaveAttribute("aria-selected", "true");
-    expect(within(bar()).getByRole("link", { name: "For you" })).toHaveAttribute("aria-current", "page");
+    await user.click(within(bar()).getByRole("link", { name: /CV Analysis/ }));
+    expect(await screen.findByRole("heading", { level: 1, name: "CV Coach" }, { timeout: 5000 })).toBeInTheDocument();
+    expect(screen.getByTestId("location")).toHaveTextContent("/coach");
+    expect(within(bar()).getByRole("link", { name: /CV Analysis/ })).toHaveAttribute("aria-current", "page");
 
     await user.click(within(bar()).getByRole("link", { name: "Saved" }));
     expect(await screen.findByText("Nothing here yet. Save offers with ★.")).toBeInTheDocument();

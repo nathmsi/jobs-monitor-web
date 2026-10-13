@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useAuth } from "../../providers/auth/useAuth";
 import { useTheme } from "../../providers/theme/useTheme";
 import { SUPPORTED_LANGUAGES } from "../../i18n";
+import { AiBadge } from "../AiBadge/AiBadge";
 import styles from "./Header.module.css";
 
 function getAvatarUrl(meta: Record<string, unknown> | undefined): string | null {
@@ -18,7 +19,6 @@ export function Header() {
   const { enabled, ready, user, signInWithGoogle, signOut } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [avatarError, setAvatarError] = useState(false);
 
   const currentLang = i18n.resolvedLanguage ?? i18n.language;
@@ -27,8 +27,10 @@ export function Header() {
 
   const navClass = ({ isActive }: { isActive: boolean }) =>
     `${styles.navLink} ${isActive ? styles.navLinkActive : ""}`;
+  const aiNavClass = ({ isActive }: { isActive: boolean }) =>
+    `${navClass({ isActive })} ${styles.navLinkAi}`;
 
-  const closeAll = () => { setMobileNavOpen(false); setLangOpen(false); setMenuOpen(false); };
+  const closeAll = () => { setLangOpen(false); setMenuOpen(false); };
 
   return (
     <>
@@ -54,7 +56,7 @@ export function Header() {
         <nav className={styles.nav} aria-label={t("header.mainNav")}>
           <NavLink to="/" end className={navClass}>{t("nav.home")}</NavLink>
           <NavLink to="/jobs" className={navClass}>{t("nav.offers")}</NavLink>
-          <NavLink to="/coach" className={navClass}>{t("nav.cvAnalysis")}</NavLink>
+          <NavLink to="/coach" className={aiNavClass}>{t("nav.cvAnalysis")}<AiBadge decorative /></NavLink>
           <NavLink to="/profile" className={navClass}>{t("nav.profile")}</NavLink>
         </nav>
 
@@ -171,40 +173,8 @@ export function Header() {
               )}
             </>
           )}
-
-          {/* Hamburger — mobile only */}
-          <button
-            type="button"
-            className={styles.hamburger}
-            onClick={() => setMobileNavOpen((v) => !v)}
-            aria-label={t("header.menu")}
-            aria-expanded={mobileNavOpen}
-          >
-            {mobileNavOpen ? (
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <line x1="3" y1="3" x2="15" y2="15"/><line x1="15" y1="3" x2="3" y2="15"/>
-              </svg>
-            ) : (
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <line x1="2" y1="5" x2="16" y2="5"/><line x1="2" y1="9" x2="16" y2="9"/><line x1="2" y1="13" x2="16" y2="13"/>
-              </svg>
-            )}
-          </button>
         </div>
       </header>
-
-      {/* Mobile nav drawer — fixed panel below the sticky header */}
-      {mobileNavOpen && (
-        <>
-          <div className={styles.mobileBackdrop} onClick={() => setMobileNavOpen(false)} />
-          <nav className={styles.mobileNav} aria-label={t("header.mobileNav")}>
-            <NavLink to="/" end className={navClass} onClick={() => setMobileNavOpen(false)}>{t("nav.home")}</NavLink>
-            <NavLink to="/jobs" className={navClass} onClick={() => setMobileNavOpen(false)}>{t("nav.offers")}</NavLink>
-            <NavLink to="/coach" className={navClass} onClick={() => setMobileNavOpen(false)}>{t("nav.cvAnalysis")}</NavLink>
-            <NavLink to="/profile" className={navClass} onClick={() => setMobileNavOpen(false)}>{t("nav.profile")}</NavLink>
-          </nav>
-        </>
-      )}
     </>
   );
 }

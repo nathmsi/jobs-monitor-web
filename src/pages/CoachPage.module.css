@@ -53,7 +53,7 @@
   inset: 0;
   z-index: -1;
   background: var(--ai-sparkles);
-  opacity: 0.9;
+  opacity: 0.55;
   animation: sparkleDrift 18s linear infinite;
 }
 @keyframes sparkleDrift {

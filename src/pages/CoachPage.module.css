@@ -1298,3 +1298,32 @@
     gap: 0.6rem;
   }
 }
+
+/* Motion: the benefits and steps appear one after another. */
+@media (prefers-reduced-motion: no-preference) {
+  .heroPoints li,
+  .step {
+    animation: rise 0.5s var(--ease-out) both;
+  }
+  .heroPoints li:nth-child(2),
+  .step:nth-child(2) { animation-delay: 0.1s; }
+  .heroPoints li:nth-child(3),
+  .step:nth-child(3) { animation-delay: 0.2s; }
+  .example {
+    animation: rise 0.6s var(--ease-out) 0.3s both;
+  }
+}
+.primaryBtn {
+  transition: transform 0.15s var(--ease-out), box-shadow 0.2s var(--ease-out);
+}
+.primaryBtn:hover {
+  transform: translateY(-1px);
+}
+.primaryBtn:active {
+  transform: scale(0.97);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to   { opacity: 1; transform: none; }
+}

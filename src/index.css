@@ -168,3 +168,21 @@ a {
     radial-gradient(55% 65% at 88% 88%, color-mix(in srgb, #2f8cff 22%, transparent), transparent 72%),
     radial-gradient(35% 45% at 70% 15%, color-mix(in srgb, #a78bfa 18%, transparent), transparent 72%);
 }
+
+/* ── Motion: short, purposeful, off when the system asks for less ── */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

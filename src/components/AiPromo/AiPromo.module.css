@@ -123,3 +123,35 @@
     transform: none;
   }
 }
+
+.arrow {
+  transition: translate 0.2s var(--ease-out);
+}
+
+.promo:hover .arrow,
+.promo:focus-visible .arrow {
+  translate: 4px 0;
+}
+
+:dir(rtl) .promo:hover .arrow,
+:dir(rtl) .promo:focus-visible .arrow {
+  translate: -4px 0;
+}
+
+.promo:active {
+  transform: scale(0.985);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .promo {
+    animation: rise 0.5s var(--ease-out) both;
+  }
+  .promo:nth-child(2) {
+    animation-delay: 0.08s;
+  }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to   { opacity: 1; transform: none; }
+}

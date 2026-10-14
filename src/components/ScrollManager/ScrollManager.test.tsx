@@ -1,19 +1,19 @@
 import { act, render } from "@testing-library/react";
 import { useEffect } from "react";
-import { MemoryRouter, useNavigate, type NavigateFunction } from "react-router-dom";
+import { MemoryRouter, useNavigate, type To } from "react-router-dom";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { ScrollManager } from "./ScrollManager";
 
-const nav: { go?: NavigateFunction } = {};
+const nav: { go?: (to: To | number) => void } = {};
 function Probe() {
   const navigate = useNavigate();
   useEffect(() => {
-    nav.go = navigate;
+    nav.go = (to) => void (typeof to === "number" ? navigate(to) : navigate(to));
   }, [navigate]);
   return null;
 }
-const go: NavigateFunction = (to: never) => nav.go?.(to);
+const go = (to: To | number) => nav.go?.(to);
 
 function setup() {
   return render(

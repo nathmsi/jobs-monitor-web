@@ -34,7 +34,7 @@ test.describe('Public pages · an offer', () => {
   test('a card leads to the offer page, which shows what it is and how to apply', async ({ page }) => {
     const jobs = new JobsPage(page);
     await jobs.open();
-    await jobs.card('Senior React Engineer').getByRole('link', { name: 'Details' }).click();
+    await jobs.card('Senior React Engineer').getByRole('link', { name: 'Senior React Engineer' }).click();
 
     const offer = new PublicPage(page);
     await expect(page).toHaveURL(/\/jobs\/melio\/p1\/senior-react-engineer$/);
@@ -107,6 +107,40 @@ test.describe('Public pages · an offer', () => {
     const side = page.getByRole('complementary');
     await side.getByRole('button', { name: 'Save' }).click();
     await expect(side.getByRole('button', { name: 'Saved' })).toHaveAttribute('aria-pressed', 'true');
+  });
+
+  test('"I applied" works without saving first, and shows on the page', async ({ page }) => {
+    const offer = new PublicPage(page);
+    await offer.goto('/jobs/melio/p2');
+    await offer.heading.waitFor();
+
+    const toggle = page.getByRole('button', { name: 'I applied' });
+    await toggle.click();
+    await expect(page.getByRole('button', { name: 'Applied' })).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.getByTestId('badge-applied')).toBeVisible();
+
+    await page.getByRole('button', { name: 'Applied' }).click();
+    await expect(page.getByTestId('badge-applied')).toHaveCount(0);
+  });
+
+  test('after going to the company site, asks whether you applied', async ({ page, context }) => {
+    await context.route('https://example.com/**', (route) =>
+      route.fulfill({ status: 200, contentType: 'text/html', body: '<title>offer</title>' }),
+    );
+    const offer = new PublicPage(page);
+    await offer.goto('/jobs/melio/p2');
+    await offer.heading.waitFor();
+    await expect(page.getByTestId('did-you-apply')).toHaveCount(0);
+
+    const popup = page.waitForEvent('popup');
+    await offer.applyLink.click();
+    await (await popup).close();
+
+    const ask = page.getByTestId('did-you-apply');
+    await expect(ask).toContainText('Did you apply?');
+    await ask.getByRole('button', { name: 'Yes, I applied' }).click();
+    await expect(ask).toHaveCount(0);
+    await expect(page.getByTestId('badge-applied')).toBeVisible();
   });
 
   test('an expired offer says so and stays out of search results', async ({ page }) => {

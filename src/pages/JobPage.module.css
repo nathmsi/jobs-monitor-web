@@ -462,3 +462,79 @@
   from { opacity: 0; transform: translate3d(0, 12px, 0); }
   to   { opacity: 1; transform: none; }
 }
+
+/* ── "I applied": a toggle in the hero, and a one-time question after leaving for the company's site ── */
+.appliedBtn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  padding: 0 1.1rem;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+  background: color-mix(in srgb, var(--bg-elevated) 85%, transparent);
+  border: 1.5px dashed var(--border-strong);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.appliedBtn:hover {
+  border-color: var(--new);
+  color: var(--new);
+}
+
+.appliedBtnOn {
+  color: var(--new);
+  background: var(--new-soft);
+  border: 1.5px solid var(--new);
+}
+
+.ask {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  margin: 0 0 1.25rem;
+  padding: 0.85rem 1rem;
+  background: var(--new-soft);
+  border: 1px solid color-mix(in srgb, var(--new) 40%, transparent);
+  border-radius: var(--radius);
+}
+
+.askActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.askYes,
+.askNo {
+  min-height: 2.75rem;
+  padding: 0 1rem;
+  font: inherit;
+  font-weight: 700;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.askYes {
+  color: #fff;
+  background: var(--new);
+  border: 0;
+}
+
+.askNo {
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ask {
+    animation: rise 0.35s var(--ease-out) backwards;
+  }
+}

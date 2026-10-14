@@ -51,7 +51,7 @@
   "job": {
     "new": "New",
     "hot": "Hot",
-    "view": "View offer →",
+    "view": "Company site →",
     "seen": "Seen",
     "applied": "Applied",
     "markApplied": "I applied",
@@ -96,7 +96,11 @@
       "onsite": "On-site",
       "kindCompany": "Company",
       "kindAgency": "Staffing agency",
-      "applyShort": "Apply"
+      "applyShort": "Apply",
+      "didYouApply": "Did you apply?",
+      "yesApplied": "Yes, I applied",
+      "notYet": "Not yet",
+      "appliedOn": "You marked this offer as applied."
     }
   },
   "auth": {

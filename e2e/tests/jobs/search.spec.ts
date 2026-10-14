@@ -142,7 +142,7 @@ test.describe('Jobs · card', () => {
 
     const card = jobs.card(IOS_JOB.title);
     await expect(card.getByRole('button')).toHaveCount(1);
-    await expect(card.getByRole('link', { name: /view offer/i })).toBeVisible();
+    await expect(card.getByRole('link', { name: /company site/i })).toBeVisible();
     await expect(card).toContainText('Own the iOS app');
     await expect(card).toContainText('Combine');
     await expect(card).not.toContainText('XCTest');

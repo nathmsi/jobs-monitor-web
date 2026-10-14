@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 
 import { BottomNav } from "./components/BottomNav/BottomNav";
+import { ScrollManager } from "./components/ScrollManager/ScrollManager";
 import { ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
 import { PageFallback } from "./components/PageFallback/PageFallback";
 import { HomePage } from "./pages/HomePage";
@@ -37,6 +38,7 @@ function HomeRoute() {
 function App() {
   return (
     <ErrorBoundary>
+      <ScrollManager />
       <Suspense fallback={<PageFallback />}>
         <Routes>
           <Route path="/" element={<HomeRoute />} />

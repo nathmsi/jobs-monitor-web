@@ -51,7 +51,7 @@
   "job": {
     "new": "Nouveau",
     "hot": "Populaire",
-    "view": "Voir l'offre →",
+    "view": "Site de l'entreprise →",
     "seen": "Vu",
     "applied": "Candidaté",
     "markApplied": "J'ai postulé",
@@ -96,7 +96,11 @@
       "onsite": "Sur site",
       "kindCompany": "Entreprise",
       "kindAgency": "Agence de recrutement",
-      "applyShort": "Postuler"
+      "applyShort": "Postuler",
+      "didYouApply": "Tu as postulé ?",
+      "yesApplied": "Oui, j'ai postulé",
+      "notYet": "Pas encore",
+      "appliedOn": "Tu as marqué cette offre comme postulée."
     }
   },
   "auth": {

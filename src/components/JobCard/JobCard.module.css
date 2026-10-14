@@ -32,8 +32,6 @@
 }
 .isNew { border-color: color-mix(in srgb, var(--new) 40%, var(--border)); }
 
-.opened { opacity: 0.55; }
-.opened:hover { opacity: 1; transition: opacity .2s; }
 
 .applied { border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); }
 
@@ -95,6 +93,23 @@
   text-decoration: none;
 }
 .title a:hover { color: var(--accent); }
+
+/* The whole card opens the offer page: the title link stretches over it, and
+   the real buttons and links sit above it. */
+.title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.title a:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.card:has(.title a:focus-visible) {
+  box-shadow: var(--ring);
+}
 
 /* ── Summary: one short paragraph, never more than two lines ── */
 .summary {
@@ -231,7 +246,7 @@
   font-weight: 700;
   color: var(--accent);
   text-decoration: none;
-  margin-inline-start: 0.9rem;
+  margin-inline-start: auto;
   white-space: nowrap;
   letter-spacing: -.01em;
 }
@@ -281,15 +296,10 @@
   }
 }
 
-.detailsLink {
-  margin-inline-start: auto;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-decoration: none;
-}
-
-.detailsLink:hover {
-  color: var(--accent);
-  text-decoration: underline;
+/* Real controls stay above the stretched title link. */
+.saveBtn,
+.appliedBtn,
+.viewLink {
+  position: relative;
+  z-index: 1;
 }

@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
 
@@ -8,7 +8,7 @@ import { Avatar } from "../components/Avatar/Avatar";
 import { Badge } from "../components/Badge/Badge";
 import { EmptyState } from "../components/EmptyState/EmptyState";
 import { Header } from "../components/Header/Header";
-import { AlertCircleIcon, BookmarkIcon, ExternalLinkIcon } from "../components/Icons/Icons";
+import { AlertCircleIcon, BookmarkIcon, CheckIcon, ExternalLinkIcon } from "../components/Icons/Icons";
 import { JobCard } from "../components/JobCard/JobCard";
 import { usePageMeta } from "../hooks/usePageMeta";
 import { useJobFlags } from "../providers/jobFlags/useJobFlags";
@@ -55,12 +55,24 @@ export function JobPage() {
   });
 
   const notFound = query.isError && /HTTP 404/.test(String(query.error));
-  const saved = job ? statusOf(job.source, job.external_id) !== undefined : false;
+  const status = job ? statusOf(job.source, job.external_id) : undefined;
+  const saved = status !== undefined;
+  const applied = status === "applied";
+  // After the visitor goes to the company's site, ask once whether they applied.
+  const [asked, setAsked] = useState(false);
   const companyName = company?.label ?? job?.source ?? source;
   const mode = ai?.remote === "Remote" ? t("job.page.remote") : ai?.remote === "Hybrid" ? t("job.page.hybrid") : ai?.remote ? t("job.page.onsite") : "";
   const place = job?.location.split(",")[0] ?? "";
   const posted = job ? formatAgo(job.added_at, i18n.language, t("time.justNow")) : "";
   const checked = job?.last_updated ? new Intl.DateTimeFormat(i18n.language, { dateStyle: "medium" }).format(new Date(job.last_updated)) : "";
+
+  /** "I applied" works with or without a bookmark: it saves the offer as applied. */
+  const setApplied = async (next: boolean) => {
+    if (!job) return;
+    if (!(await setStatus(job, next ? "applied" : saved ? "saved" : null, company?.label))) showToast(t("job.saveError"));
+    else if (next) showToast(t("job.appliedToast"));
+    setAsked(false);
+  };
 
   const toggleSave = async () => {
     if (!job) return;
@@ -74,7 +86,10 @@ export function JobPage() {
       href={job.url}
       target="_blank"
       rel="noreferrer"
-      onClick={() => markOpened(jobId(job.source, job.external_id))}
+      onClick={() => {
+        markOpened(jobId(job.source, job.external_id));
+        setAsked(true);
+      }}
     >
       {label}
       <ExternalLinkIcon size={16} />
@@ -145,6 +160,9 @@ export function JobPage() {
                     <Badge variant="expired"><AlertCircleIcon size={9} strokeWidth={2.5} />{t("job.expired")}</Badge>
                   )}
                   {job.is_hot && <Badge variant="hot">{t("job.hot")}</Badge>}
+                  {applied && (
+                    <Badge variant="applied"><CheckIcon size={10} strokeWidth={2.8} />{t("job.applied")}</Badge>
+                  )}
                 </div>
               </div>
 
@@ -156,11 +174,35 @@ export function JobPage() {
                 {mode && <li className={styles.chip}>{mode}</li>}
                 {posted && <li className={styles.chip}><time dateTime={job.added_at ?? undefined}>{posted}</time></li>}
               </ul>
+
+              <button
+                type="button"
+                className={`${styles.appliedBtn} ${applied ? styles.appliedBtnOn : ""}`}
+                aria-pressed={applied}
+                onClick={() => setApplied(!applied)}
+              >
+                <CheckIcon size={16} strokeWidth={2.6} />
+                {applied ? t("job.applied") : t("job.markApplied")}
+              </button>
             </header>
 
             <div className={styles.grid}>
               <article className={styles.content}>
                 {job.is_expired && <p className={styles.notice} role="status">{t("job.page.expired")}</p>}
+
+                {asked && !applied && (
+                  <div className={styles.ask} role="group" aria-label={t("job.page.didYouApply")} data-testid="did-you-apply">
+                    <strong>{t("job.page.didYouApply")}</strong>
+                    <div className={styles.askActions}>
+                      <button type="button" className={styles.askYes} onClick={() => setApplied(true)}>
+                        {t("job.page.yesApplied")}
+                      </button>
+                      <button type="button" className={styles.askNo} onClick={() => setAsked(false)}>
+                        {t("job.page.notYet")}
+                      </button>
+                    </div>
+                  </div>
+                )}
 
                 {ai && ai.highlights.length > 0 && (
                   <section className={styles.highlights} aria-labelledby="job-key-points">

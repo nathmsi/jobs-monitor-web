@@ -52,7 +52,7 @@
   "job": {
     "new": "חדש",
     "hot": "חם",
-    "view": "צפייה במשרה →",
+    "view": "לאתר החברה ←",
     "seen": "נצפה",
     "applied": "הוגש",
     "markApplied": "הגשתי מועמדות",
@@ -97,7 +97,11 @@
       "onsite": "במשרד",
       "kindCompany": "חברה",
       "kindAgency": "סוכנות השמה",
-      "applyShort": "להגשת מועמדות"
+      "applyShort": "להגשת מועמדות",
+      "didYouApply": "הגשתם מועמדות?",
+      "yesApplied": "כן, הגשתי",
+      "notYet": "עדיין לא",
+      "appliedOn": "סימנתם את המשרה הזו כמשרה שהגשתם אליה."
     }
   },
   "auth": {

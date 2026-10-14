@@ -3,6 +3,8 @@ import { keepPreviousData, useInfiniteQuery, useQuery } from "@tanstack/react-qu
 import { useDebouncedValue } from "../hooks/useDebouncedValue";
 
 import {
+  getCompany,
+  getJob,
   getJobsPage,
   getPopular,
   getRegionJobs,
@@ -10,6 +12,7 @@ import {
   getSources,
   getStats,
   getSuggestions,
+  getTopic,
   type JobQuery,
 } from "./client";
 
@@ -113,5 +116,36 @@ export function usePopularSearches(limit = 8, enabled = true) {
     enabled,
     staleTime: 10 * 60_000,
     refetchOnWindowFocus: false,
+  });
+}
+
+/** One offer for its own page. A missing offer (404) is not retried. */
+export function useJob(source: string, externalId: string) {
+  return useQuery({
+    queryKey: ["job", source, externalId],
+    queryFn: () => getJob(source, externalId),
+    staleTime: 5 * 60_000,
+    retry: (count, error) => !/HTTP 404/.test(String(error)) && count < 1,
+  });
+}
+
+/** A company / agency and its live offers. */
+export function useCompany(key: string, enabled = true) {
+  return useQuery({
+    queryKey: ["company", key],
+    queryFn: () => getCompany(key),
+    enabled,
+    staleTime: 5 * 60_000,
+    retry: (count, error) => !/HTTP 404/.test(String(error)) && count < 1,
+  });
+}
+
+/** Live offers for one technology / role in one region. */
+export function useTopic(tech: string, region: string) {
+  return useQuery({
+    queryKey: ["topic", tech, region],
+    queryFn: () => getTopic(tech, region),
+    staleTime: 5 * 60_000,
+    retry: (count, error) => !/HTTP 404/.test(String(error)) && count < 1,
   });
 }

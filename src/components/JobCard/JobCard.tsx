@@ -1,5 +1,6 @@
 import { memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 import { useJobFlags } from "../../providers/jobFlags/useJobFlags";
 import { useProfile } from "../../providers/profile/useProfile";
@@ -12,6 +13,7 @@ import { isFresh } from "../../utils/isFresh";
 import { jobId } from "../../utils/jobId";
 import { jobText } from "../../utils/jobText";
 import { formatAgo } from "../../utils/relativeTime";
+import { jobPath } from "../../utils/slug";
 import { Avatar } from "../Avatar/Avatar";
 import { Badge } from "../Badge/Badge";
 import { AlertCircleIcon, BookmarkIcon, CheckIcon } from "../Icons/Icons";
@@ -155,6 +157,9 @@ export const JobCard = memo(function JobCard({ job, source }: Props) {
             {applied ? t("job.applied") : t("job.markApplied")}
           </button>
         )}
+        <Link className={styles.detailsLink} to={jobPath(job)}>
+          {t("job.page.details")}
+        </Link>
         {job.url && (
           <a
             className={styles.viewLink}

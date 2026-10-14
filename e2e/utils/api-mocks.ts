@@ -142,6 +142,39 @@ export async function mockApi(page: Page, initialJobs: MockJob[] = MOCK_JOBS): P
     );
   });
 
+  // One offer, a company and a technology page (registered after the list route: the last one wins).
+  await page.route('**/api/jobs/*/*', (route) => {
+    const [, source, id] = new URL(route.request().url()).pathname.match(/\/api\/jobs\/([^/]+)\/([^/]+)$/) ?? [];
+    const job = jobs.find((j) => j.source === source && j.external_id === decodeURIComponent(id ?? ''));
+    return job ? route.fulfill(json(job)) : route.fulfill(json({ message: 'Offer not found' }, 404));
+  });
+  await page.route('**/api/seo/company/*', (route) => {
+    const key = decodeURIComponent(new URL(route.request().url()).pathname.split('/').pop() ?? '');
+    const source = SOURCE_BY_KEY.get(key);
+    if (!source) return route.fulfill(json({ message: 'Company not found' }, 404));
+    const own = jobs.filter((j) => j.source === key && !j.is_expired);
+    const stack = new Map<string, number>();
+    for (const j of own) {
+      try {
+        for (const s of (JSON.parse(j.ai_summary ?? '{}').stack ?? []) as string[]) stack.set(s, (stack.get(s) ?? 0) + 1);
+      } catch { /* no summary */ }
+    }
+    const top_skills = [...stack.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8).map(([skill, count]) => ({ skill, count }));
+    return route.fulfill(json({ source, total: own.length, jobs: own, top_skills }));
+  });
+  await page.route('**/api/seo/topic**', (route) => {
+    const url = new URL(route.request().url());
+    const slug = url.searchParams.get('tech') ?? '';
+    const regionKey = url.searchParams.get('region') ?? 'all';
+    const tech = VOCAB.filter((e) => e.type === 'role' || e.type === 'skill')
+      .map((e) => ({ slug: e.label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''), label: e.label, value: e.value, type: e.type }))
+      .find((t) => t.slug === slug);
+    const region = MOCK_REGIONS.find((r) => r.key === regionKey);
+    if (!tech || !region) return route.fulfill(json({ message: 'Page not found' }, 404));
+    const own = jobs.filter((j) => !j.is_expired && `${j.title} ${j.excerpt} ${j.description}`.toLowerCase().includes(tech.value.toLowerCase()));
+    return route.fulfill(json({ tech, region, total: own.length, jobs: own }));
+  });
+
   await page.route('**/api/search/suggest**', (route) => {
     const url = new URL(route.request().url());
     suggestRequests.push(url);

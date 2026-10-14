@@ -396,3 +396,45 @@
     scroll-snap-align: start;
   }
 }
+
+/* ── Browse by technology ── */
+.browse {
+  margin-top: 2.5rem;
+}
+
+.browseTitle {
+  margin: 0 0 0.7rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.browseList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.browseLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.browseLink:hover,
+.browseLink:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+}

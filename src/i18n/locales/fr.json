@@ -63,7 +63,41 @@
     "appliedToast": "Candidature enregistrée ✓",
     "expired": "Expirée",
     "remote": "Télétravail",
-    "hybrid": "Hybride"
+    "hybrid": "Hybride",
+    "page": {
+      "back": "Retour aux offres",
+      "apply": "Postuler sur le site",
+      "notFoundTitle": "Cette offre est introuvable",
+      "notFoundText": "Elle a peut-être été retirée. Voyez plutôt les dernières offres.",
+      "browse": "Voir les offres",
+      "expired": "Cette offre est probablement fermée. On la garde ici pour référence.",
+      "noDescription": "La description complète est sur le site de l'entreprise.",
+      "more": "Plus d'offres chez {{company}}",
+      "details": "Détails",
+      "postedBy": "Publiée par",
+      "skills": "Compétences",
+      "keyPoints": "Points clés",
+      "factsTitle": "En un coup d'œil",
+      "factCompany": "Entreprise",
+      "factType": "Type",
+      "factLocation": "Lieu",
+      "factLevel": "Niveau",
+      "factMode": "Mode de travail",
+      "factPosted": "Publiée",
+      "factChecked": "Dernière vérification",
+      "shortened": "Cette description est raccourcie. Le texte complet est sur le site de l'entreprise.",
+      "readFull": "Lire la description complète",
+      "moreTitle": "Plus chez {{company}}",
+      "seeAll": "Voir les {{count}} offres",
+      "skillsTitle": "Compétences citées",
+      "saveShort": "Sauvegarder",
+      "remote": "Télétravail",
+      "hybrid": "Hybride",
+      "onsite": "Sur site",
+      "kindCompany": "Entreprise",
+      "kindAgency": "Agence de recrutement",
+      "applyShort": "Postuler"
+    }
   },
   "auth": {
     "signInGoogle": "Se connecter avec Google",
@@ -456,7 +490,8 @@
     "cvCta": "Ajouter mon CV →",
     "prefsTitle": "Réglez vos préférences",
     "prefsDesc": "Choisissez vos rôles et votre région une fois : nous pré-filtrons les offres pour vous.",
-    "prefsCta": "Ouvrir mon profil →"
+    "prefsCta": "Ouvrir mon profil →",
+    "browseTitle": "Parcourir par technologie"
   },
   "search": {
     "groups": {
@@ -591,5 +626,27 @@
   },
   "jobs": {
     "quickSearch": "Chercher une offre"
+  },
+  "company": {
+    "kindCompany": "Entreprise",
+    "kindAgency": "Agence de recrutement",
+    "openOffers_one": "{{count}} offre ouverte",
+    "openOffers_other": "{{count}} offres ouvertes",
+    "skills": "Compétences les plus demandées",
+    "site": "Site de l'entreprise",
+    "none": "Aucune offre ouverte pour l'instant.",
+    "noneCta": "Voir toutes les offres",
+    "notFound": "Cette entreprise est introuvable",
+    "title": "Offres {{company}}"
+  },
+  "topic": {
+    "title": "Offres {{tech}} : {{region}}",
+    "titleAll": "Offres {{tech}} en Israël",
+    "count_one": "{{count}} offre ouverte",
+    "count_other": "{{count}} offres ouvertes",
+    "otherRegions": "Autres régions",
+    "none": "Aucune offre pour l'instant.",
+    "noneCta": "Voir toutes les offres",
+    "notFound": "Cette page est introuvable"
   }
 }

@@ -59,3 +59,24 @@ export interface Filters {
   category?: string; // active company category key (undefined = all)
   posted?: Posted; // only offers added within this window
 }
+
+export interface PublicTech {
+  slug: string;
+  label: string;
+  value: string;
+  type: "role" | "skill";
+}
+
+export interface CompanyPageData {
+  source: SourceInfo;
+  total: number;
+  jobs: Job[];
+  top_skills: { skill: string; count: number }[];
+}
+
+export interface TopicPageData {
+  tech: PublicTech;
+  region: RegionInfo;
+  total: number;
+  jobs: Job[];
+}

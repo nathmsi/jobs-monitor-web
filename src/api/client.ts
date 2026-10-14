@@ -1,5 +1,5 @@
 import { jobText } from "../utils/jobText";
-import type { Job, RegionJobs, RegionInfo, SourceInfo } from "../types";
+import type { CompanyPageData, Job, RegionJobs, RegionInfo, SourceInfo, TopicPageData } from "../types";
 
 // The frontend talks to the jobs-monitor-api backend, which reads the offers
 // from Supabase and returns only what we ask for (region + optional keyword).
@@ -63,6 +63,22 @@ function jobsQuery(query: JobQuery): string {
 /** One page of offers matching the filters (server-side filter + pagination). */
 export function getJobsPage(query: JobQuery): Promise<JobsPage> {
   return getJson<JobsPage>(`/api/jobs?${jobsQuery(query)}`);
+}
+
+/** One offer, for its own page. Throws `HTTP 404` when it does not exist. */
+export function getJob(source: string, externalId: string): Promise<Job> {
+  return getJson<Job>(`/api/jobs/${encodeURIComponent(source)}/${encodeURIComponent(externalId)}`);
+}
+
+/** A company or agency with its live offers. */
+export function getCompany(key: string): Promise<CompanyPageData> {
+  return getJson<CompanyPageData>(`/api/seo/company/${encodeURIComponent(key)}`);
+}
+
+/** Live offers for one technology or role, in one region. */
+export function getTopic(tech: string, region: string): Promise<TopicPageData> {
+  const params = new URLSearchParams({ tech, region });
+  return getJson<TopicPageData>(`/api/seo/topic?${params}`);
 }
 
 export type SuggestionType = "role" | "skill" | "title" | "company" | "location";

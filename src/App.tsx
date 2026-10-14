@@ -5,11 +5,21 @@ import { BottomNav } from "./components/BottomNav/BottomNav";
 import { ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
 import { PageFallback } from "./components/PageFallback/PageFallback";
 import { HomePage } from "./pages/HomePage";
-import { loadCoachPage, loadJobsPage, loadProfilePage } from "./pages/lazyPages";
+import {
+  loadCoachPage,
+  loadCompanyPage,
+  loadJobPage,
+  loadJobsPage,
+  loadProfilePage,
+  loadTopicPage,
+} from "./pages/lazyPages";
 
 const JobsPage = lazy(loadJobsPage);
 const CoachPage = lazy(loadCoachPage);
 const ProfilePage = lazy(loadProfilePage);
+const JobPage = lazy(loadJobPage);
+const CompanyPage = lazy(loadCompanyPage);
+const TopicPage = lazy(loadTopicPage);
 
 /** Query parameters the offers browser used to read on `/` (old shared links). */
 const LEGACY_JOBS_PARAMS = ["q", "role", "region", "category", "tab", "sort"];
@@ -33,6 +43,9 @@ function App() {
           <Route path="/jobs" element={<JobsPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/coach" element={<CoachPage />} />
+          <Route path="/jobs/:source/:externalId/:slug?" element={<JobPage />} />
+          <Route path="/companies/:key" element={<CompanyPage />} />
+          <Route path="/tech/:tech/:region?" element={<TopicPage />} />
         </Routes>
       </Suspense>
       <BottomNav />

@@ -1,5 +1,6 @@
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { MemoryRouter } from "react-router-dom";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import "../../i18n";
@@ -42,7 +43,12 @@ beforeEach(() => {
   profile.value = null;
 });
 
-const renderCard = (job = JOB) => render(<JobCard job={job} source={SOURCE} />);
+const renderCard = (job = JOB) =>
+  render(
+    <MemoryRouter>
+      <JobCard job={job} source={SOURCE} />
+    </MemoryRouter>,
+  );
 
 describe("JobCard", () => {
   it("shows the company, title, summary and first part of the location", () => {
@@ -64,6 +70,11 @@ describe("JobCard", () => {
     expect(screen.queryByText("Equity")).not.toBeInTheDocument();
     expect(screen.getByText("Senior")).toBeInTheDocument();
     expect(screen.getByText("Hybrid")).toBeInTheDocument();
+  });
+
+  it("links to the offer's own page", () => {
+    renderCard();
+    expect(screen.getByRole("link", { name: "Details" })).toHaveAttribute("href", "/jobs/melio/1/frontend-engineer");
   });
 
   it("has only two actions on an unsaved offer: open it and bookmark it", () => {
@@ -165,9 +176,9 @@ describe("JobCard", () => {
     expect(screen.getByText(/1 skill match/)).toBeInTheDocument();
   });
 
-  it("has no link or tags section when there is nothing to show", () => {
+  it("has no outside link or tags section when there is nothing to show (only its own page)", () => {
     renderCard(makeJob({ external_id: "6", title: "Bare", url: null, location: "" }));
-    expect(screen.queryByRole("link")).not.toBeInTheDocument();
+    expect(screen.getAllByRole("link").map((l) => l.textContent)).toEqual(["Details"]);
     expect(screen.queryByRole("list")).not.toBeInTheDocument();
   });
 

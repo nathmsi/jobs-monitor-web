@@ -13,6 +13,7 @@ import { UpdatedAgo } from "../components/UpdatedAgo/UpdatedAgo";
 import { SearchBox } from "../components/SearchBox/SearchBox";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { useProfile } from "../providers/profile/useProfile";
+import { slugify } from "../utils/slug";
 import { loadJobsPage } from "./lazyPages";
 import styles from "./HomePage.module.css";
 
@@ -20,6 +21,9 @@ import styles from "./HomePage.module.css";
 const POPULAR_COUNT = 8;
 
 const LATEST_COUNT = 6;
+
+/** How many technology links the "browse" section shows. */
+const BROWSE_COUNT = 12;
 
 export function HomePage() {
   const { t } = useTranslation();
@@ -42,6 +46,7 @@ export function HomePage() {
         <StatsStrip />
         <LatestOffers />
         <ForYou />
+        <BrowseByTech />
       </main>
 
       <FirstVisitTour />
@@ -77,6 +82,28 @@ function AiStrip() {
         />
       </div>
     </section>
+  );
+}
+
+/** Plain links to the technology pages: easy to find for visitors and for search engines. */
+function BrowseByTech() {
+  const { t } = useTranslation();
+  const popular = usePopularSearches(BROWSE_COUNT);
+  const items = (popular.data ?? []).filter((s) => (s.type === "role" || s.type === "skill") && slugify(s.label));
+
+  if (items.length === 0) return null;
+
+  return (
+    <nav className={styles.browse} aria-labelledby="browse-title">
+      <h2 id="browse-title" className={styles.browseTitle}>{t("home.browseTitle")}</h2>
+      <ul className={styles.browseList}>
+        {items.map((s) => (
+          <li key={`${s.type}:${s.value}`}>
+            <Link to={`/tech/${slugify(s.label)}`} className={styles.browseLink}>{s.label}</Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }
 

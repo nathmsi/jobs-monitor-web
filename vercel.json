@@ -1,4 +1,33 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [{ "source": "/((?!data/).*)", "destination": "/index.html" }]
+  "rewrites": [
+    {
+      "source": "/sitemap.xml",
+      "destination": "/api/seo?type=sitemap"
+    },
+    {
+      "source": "/jobs/:source/:id/:slug",
+      "destination": "/api/seo?type=job&source=:source&id=:id"
+    },
+    {
+      "source": "/jobs/:source/:id",
+      "destination": "/api/seo?type=job&source=:source&id=:id"
+    },
+    {
+      "source": "/companies/:key",
+      "destination": "/api/seo?type=company&key=:key"
+    },
+    {
+      "source": "/tech/:tech/:region",
+      "destination": "/api/seo?type=topic&tech=:tech&region=:region"
+    },
+    {
+      "source": "/tech/:tech",
+      "destination": "/api/seo?type=topic&tech=:tech"
+    },
+    {
+      "source": "/((?!data/|api/).*)",
+      "destination": "/index.html"
+    }
+  ]
 }

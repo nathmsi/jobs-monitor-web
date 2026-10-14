@@ -52,7 +52,7 @@
   "job": {
     "new": "חדש",
     "hot": "חם",
-    "view": "צפייה במשרה →",
+    "view": "לאתר החברה ←",
     "seen": "נצפה",
     "applied": "הוגש",
     "markApplied": "הגשתי מועמדות",
@@ -64,7 +64,45 @@
     "appliedToast": "הוגש ✓",
     "expired": "פג תוקף",
     "remote": "מרחוק",
-    "hybrid": "היברידי"
+    "hybrid": "היברידי",
+    "page": {
+      "back": "חזרה למשרות",
+      "apply": "להגשת מועמדות באתר החברה",
+      "notFoundTitle": "לא מצאנו את המשרה הזו",
+      "notFoundText": "ייתכן שהיא הוסרה. אפשר לראות את המשרות האחרונות.",
+      "browse": "לצפייה במשרות",
+      "expired": "כנראה שהמשרה כבר סגורה. אנחנו משאירים אותה כאן לעיון.",
+      "noDescription": "התיאור המלא נמצא באתר החברה.",
+      "more": "עוד משרות ב-{{company}}",
+      "details": "פרטים",
+      "postedBy": "פורסמה על ידי",
+      "skills": "כישורים",
+      "keyPoints": "נקודות עיקריות",
+      "factsTitle": "במבט מהיר",
+      "factCompany": "חברה",
+      "factType": "סוג",
+      "factLocation": "מיקום",
+      "factLevel": "רמה",
+      "factMode": "אופן עבודה",
+      "factPosted": "פורסמה",
+      "factChecked": "נבדקה לאחרונה",
+      "shortened": "התיאור מקוצר. הטקסט המלא נמצא באתר החברה.",
+      "readFull": "לקריאת התיאור המלא",
+      "moreTitle": "עוד מ-{{company}}",
+      "seeAll": "לכל {{count}} המשרות",
+      "skillsTitle": "כישורים שמוזכרים",
+      "saveShort": "שמירה",
+      "remote": "מרחוק",
+      "hybrid": "היברידי",
+      "onsite": "במשרד",
+      "kindCompany": "חברה",
+      "kindAgency": "סוכנות השמה",
+      "applyShort": "להגשת מועמדות",
+      "didYouApply": "הגשתם מועמדות?",
+      "yesApplied": "כן, הגשתי",
+      "notYet": "עדיין לא",
+      "appliedOn": "סימנתם את המשרה הזו כמשרה שהגשתם אליה."
+    }
   },
   "auth": {
     "signInGoogle": "התחברות עם Google",
@@ -459,7 +497,8 @@
     "cvCta": "להוספת קורות החיים ←",
     "prefsTitle": "הגדירו העדפות",
     "prefsDesc": "בחרו תפקידים ואזור פעם אחת — נסנן עבורכם את המשרות מראש.",
-    "prefsCta": "לפרופיל שלי ←"
+    "prefsCta": "לפרופיל שלי ←",
+    "browseTitle": "עיון לפי טכנולוגיה"
   },
   "search": {
     "groups": {
@@ -596,5 +635,27 @@
   },
   "jobs": {
     "quickSearch": "חיפוש משרות"
+  },
+  "company": {
+    "kindCompany": "חברה",
+    "kindAgency": "סוכנות השמה",
+    "openOffers_one": "משרה פתוחה אחת",
+    "openOffers_other": "{{count}} משרות פתוחות",
+    "skills": "הכישורים המבוקשים ביותר",
+    "site": "אתר החברה",
+    "none": "אין כרגע משרות פתוחות.",
+    "noneCta": "לכל המשרות",
+    "notFound": "לא מצאנו את החברה הזו",
+    "title": "משרות ב-{{company}}"
+  },
+  "topic": {
+    "title": "משרות {{tech}}: {{region}}",
+    "titleAll": "משרות {{tech}} בישראל",
+    "count_one": "משרה פתוחה אחת",
+    "count_other": "{{count}} משרות פתוחות",
+    "otherRegions": "אזורים נוספים",
+    "none": "אין כרגע משרות.",
+    "noneCta": "לכל המשרות",
+    "notFound": "לא מצאנו את העמוד הזה"
   }
 }

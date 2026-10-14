@@ -81,7 +81,7 @@ export class JobsPage extends BasePage {
   }
 
   viewLink(card: Locator): Locator {
-    return card.getByRole('link', { name: /view offer/i });
+    return card.getByRole('link', { name: /company site/i });
   }
 
   /** The suggestion popup under the search box. */

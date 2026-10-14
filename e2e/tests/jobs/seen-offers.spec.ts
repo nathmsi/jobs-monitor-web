@@ -21,6 +21,18 @@ test.describe('Jobs · seen offers', () => {
     await expect(card.getByTitle('Seen')).toBeVisible();
   });
 
+  test('opening an offer\'s page marks it as seen, without greying the card out', async ({ page }) => {
+    const jobs = new JobsPage(page);
+    await jobs.open();
+    await jobs.card('Backend Developer').getByRole('link', { name: 'Backend Developer' }).click();
+    await expect(page).toHaveURL(/\/jobs\/monday\/e2\//);
+
+    await page.goBack();
+    const card = jobs.card('Backend Developer');
+    await expect(card.getByTitle('Seen')).toBeVisible();
+    await expect(card).toHaveCSS('opacity', '1');
+  });
+
   test('"hide offers I\'ve seen" removes opened offers from the list', async ({ page }) => {
     const jobs = new JobsPage(page);
     await jobs.open();

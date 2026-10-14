@@ -51,7 +51,7 @@
   "job": {
     "new": "New",
     "hot": "Hot",
-    "view": "View offer →",
+    "view": "Company site →",
     "seen": "Seen",
     "applied": "Applied",
     "markApplied": "I applied",
@@ -63,7 +63,45 @@
     "appliedToast": "Marked as applied ✓",
     "expired": "Expired",
     "remote": "Remote",
-    "hybrid": "Hybrid"
+    "hybrid": "Hybrid",
+    "page": {
+      "back": "Back to offers",
+      "apply": "Apply on the company site",
+      "notFoundTitle": "We could not find this offer",
+      "notFoundText": "It may have been removed. Browse the latest offers instead.",
+      "browse": "Browse offers",
+      "expired": "This offer is probably closed. We keep it here for reference.",
+      "noDescription": "The full description is on the company's site.",
+      "more": "More offers from {{company}}",
+      "details": "Details",
+      "postedBy": "Posted by",
+      "skills": "Skills",
+      "keyPoints": "Key points",
+      "factsTitle": "At a glance",
+      "factCompany": "Company",
+      "factType": "Type",
+      "factLocation": "Location",
+      "factLevel": "Level",
+      "factMode": "Work mode",
+      "factPosted": "Posted",
+      "factChecked": "Last checked",
+      "shortened": "This description is shortened. The full text is on the company's site.",
+      "readFull": "Read the full description",
+      "moreTitle": "More from {{company}}",
+      "seeAll": "See all {{count}} offers",
+      "skillsTitle": "Skills mentioned",
+      "saveShort": "Save",
+      "remote": "Remote",
+      "hybrid": "Hybrid",
+      "onsite": "On-site",
+      "kindCompany": "Company",
+      "kindAgency": "Staffing agency",
+      "applyShort": "Apply",
+      "didYouApply": "Did you apply?",
+      "yesApplied": "Yes, I applied",
+      "notYet": "Not yet",
+      "appliedOn": "You marked this offer as applied."
+    }
   },
   "auth": {
     "signInGoogle": "Sign in with Google",
@@ -455,7 +493,8 @@
     "cvCta": "Add my CV →",
     "prefsTitle": "Set your preferences",
     "prefsDesc": "Pick your roles and region once — we pre-filter the offers for you.",
-    "prefsCta": "Open my profile →"
+    "prefsCta": "Open my profile →",
+    "browseTitle": "Browse by technology"
   },
   "search": {
     "groups": {
@@ -590,5 +629,27 @@
   },
   "jobs": {
     "quickSearch": "Search offers"
+  },
+  "company": {
+    "kindCompany": "Company",
+    "kindAgency": "Staffing agency",
+    "openOffers_one": "{{count}} open offer",
+    "openOffers_other": "{{count}} open offers",
+    "skills": "Most requested skills",
+    "site": "Company website",
+    "none": "No open offers right now.",
+    "noneCta": "Browse all offers",
+    "notFound": "We could not find this company",
+    "title": "{{company}} jobs"
+  },
+  "topic": {
+    "title": "{{tech}} jobs in {{region}}",
+    "titleAll": "{{tech}} jobs in Israel",
+    "count_one": "{{count}} open offer",
+    "count_other": "{{count}} open offers",
+    "otherRegions": "Other regions",
+    "none": "No offers right now.",
+    "noneCta": "Browse all offers",
+    "notFound": "We could not find this page"
   }
 }

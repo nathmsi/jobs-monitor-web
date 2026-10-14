@@ -1,5 +1,6 @@
 import { memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 import { useJobFlags } from "../../providers/jobFlags/useJobFlags";
 import { useProfile } from "../../providers/profile/useProfile";
@@ -12,6 +13,8 @@ import { isFresh } from "../../utils/isFresh";
 import { jobId } from "../../utils/jobId";
 import { jobText } from "../../utils/jobText";
 import { formatAgo } from "../../utils/relativeTime";
+import { loadJobPage } from "../../pages/lazyPages";
+import { jobPath } from "../../utils/slug";
 import { Avatar } from "../Avatar/Avatar";
 import { Badge } from "../Badge/Badge";
 import { AlertCircleIcon, BookmarkIcon, CheckIcon } from "../Icons/Icons";
@@ -28,8 +31,9 @@ const MAX_STACK = 3;
 
 /**
  * An offer, kept deliberately light: company, title, one line of summary, a
- * few tags, and two actions: open it, or bookmark it (and, once bookmarked,
- * mark it as applied).
+ * few tags, and two actions: open it (its own page; the whole card is the
+ * target), or bookmark it (and, once bookmarked, mark it as applied). The
+ * company's site is a secondary link.
  */
 export const JobCard = memo(function JobCard({ job, source }: Props) {
   const { t, i18n } = useTranslation();
@@ -53,7 +57,6 @@ export const JobCard = memo(function JobCard({ job, source }: Props) {
   const cardClass = [
     styles.card,
     fresh ? styles.isNew : "",
-    opened ? styles.opened : "",
     applied ? styles.applied : "",
     job.is_expired ? styles.expired : "",
   ].filter(Boolean).join(" ");
@@ -110,11 +113,14 @@ export const JobCard = memo(function JobCard({ job, source }: Props) {
       </div>
 
       <h3 className={styles.title} dir="auto">
-        {job.url ? (
-          <a href={job.url} target="_blank" rel="noreferrer" onClick={() => markOpened(id)}>
-            {job.title}
-          </a>
-        ) : job.title}
+        <Link
+          to={jobPath(job)}
+          onClick={() => markOpened(id)}
+          onPointerEnter={loadJobPage}
+          onFocus={loadJobPage}
+        >
+          {job.title}
+        </Link>
       </h3>
 
       {summary && <p className={styles.summary} dir="auto">{summary}</p>}

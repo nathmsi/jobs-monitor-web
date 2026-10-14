@@ -1,0 +1,33 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--text);
+}
+
+.text {
+  margin: 0;
+  max-width: 34rem;
+  line-height: 1.5;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 1.2rem;
+  font-weight: 700;
+  color: var(--on-accent);
+  text-decoration: none;
+  background: var(--accent);
+  border-radius: var(--radius);
+}

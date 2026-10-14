@@ -1,5 +1,6 @@
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { MemoryRouter } from "react-router-dom";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import "../../i18n";
@@ -42,13 +43,18 @@ beforeEach(() => {
   profile.value = null;
 });
 
-const renderCard = (job = JOB) => render(<JobCard job={job} source={SOURCE} />);
+const renderCard = (job = JOB) =>
+  render(
+    <MemoryRouter>
+      <JobCard job={job} source={SOURCE} />
+    </MemoryRouter>,
+  );
 
 describe("JobCard", () => {
   it("shows the company, title, summary and first part of the location", () => {
     renderCard();
     expect(screen.getByText("Melio")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Frontend Engineer" })).toHaveAttribute("href", "https://example.com/job/1");
+    expect(screen.getByRole("link", { name: "Frontend Engineer" })).toHaveAttribute("href", "/jobs/melio/1/frontend-engineer");
     expect(screen.getByText("Build things")).toBeInTheDocument();
     expect(screen.getByText("Tel Aviv")).toBeInTheDocument();
   });
@@ -66,12 +72,35 @@ describe("JobCard", () => {
     expect(screen.getByText("Hybrid")).toBeInTheDocument();
   });
 
+  it("the title opens the offer's own page, not the company's site", () => {
+    renderCard();
+    expect(screen.getByRole("link", { name: "Frontend Engineer" })).toHaveAttribute("href", "/jobs/melio/1/frontend-engineer");
+    expect(screen.getByRole("link", { name: /company site/i })).toHaveAttribute("href", "https://example.com/job/1");
+  });
+
+  it("opening the offer page marks it as seen", async () => {
+    const user = userEvent.setup();
+    renderCard();
+    const link = screen.getByRole("link", { name: "Frontend Engineer" });
+    link.addEventListener("click", (e) => e.preventDefault());
+
+    await user.click(link);
+
+    expect(flags.markOpened).toHaveBeenCalledWith("melio-1");
+  });
+
+  it("does not grey out a seen offer", () => {
+    flags.opened.add("melio-1");
+    const { container } = renderCard();
+    expect(container.querySelector("article")?.className).not.toMatch(/opened/);
+  });
+
   it("has only two actions on an unsaved offer: open it and bookmark it", () => {
     renderCard();
     const buttons = screen.getAllByRole("button");
     expect(buttons).toHaveLength(1);
     expect(buttons[0]).toHaveAccessibleName("Save");
-    expect(screen.getByRole("link", { name: /view offer/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /company site/i })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "I applied" })).not.toBeInTheDocument();
   });
 
@@ -122,10 +151,10 @@ describe("JobCard", () => {
     expect(saved.setStatus).toHaveBeenLastCalledWith(JOB, "saved", "Melio");
   });
 
-  it("opening the offer marks it as seen", async () => {
+  it("opening the company's site marks it as seen", async () => {
     const user = userEvent.setup();
     renderCard();
-    const link = screen.getByRole("link", { name: /view offer/i });
+    const link = screen.getByRole("link", { name: /company site/i });
     link.addEventListener("click", (e) => e.preventDefault());
 
     await user.click(link);
@@ -165,9 +194,9 @@ describe("JobCard", () => {
     expect(screen.getByText(/1 skill match/)).toBeInTheDocument();
   });
 
-  it("has no link or tags section when there is nothing to show", () => {
+  it("has no outside link or tags section when there is nothing to show (only the title)", () => {
     renderCard(makeJob({ external_id: "6", title: "Bare", url: null, location: "" }));
-    expect(screen.queryByRole("link")).not.toBeInTheDocument();
+    expect(screen.getAllByRole("link").map((l) => l.textContent)).toEqual(["Bare"]);
     expect(screen.queryByRole("list")).not.toBeInTheDocument();
   });
 

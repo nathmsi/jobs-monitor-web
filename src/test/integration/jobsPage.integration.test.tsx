@@ -103,7 +103,7 @@ describe("JobsPage (integration)", () => {
   it("hides offers you have already opened when asked to", async () => {
     const { user } = await renderJobs();
     // Opening = clicking the offer link (jsdom does not navigate).
-    const link = within(cards()[1]).getByRole("link", { name: /view offer/i });
+    const link = within(cards()[1]).getByRole("link", { name: /company site/i });
     link.addEventListener("click", (e) => e.preventDefault());
     await user.click(link);
 

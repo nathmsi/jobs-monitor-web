@@ -23,7 +23,7 @@ export default defineConfig({
     url: 'http://localhost:5173',
     reuseExistingServer: !process.env.CI,
     // Hermetic: never reach a real Supabase project, whatever .env says.
-    env: { VITE_SUPABASE_URL: '', VITE_SUPABASE_ANON_KEY: '', VITE_API_URL: 'http://localhost:8080' },
+    env: { VITE_SUPABASE_URL: '', VITE_SUPABASE_ANON_KEY: '', VITE_API_URL: 'http://localhost:8080', API_URL: 'http://127.0.0.1:1', SITE_URL: 'http://localhost:5173' },
     timeout: 30_000,
   },
 });

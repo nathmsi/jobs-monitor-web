@@ -5,3 +5,6 @@
 export const loadJobsPage = () => import("./JobsPage").then((m) => ({ default: m.JobsPage }));
 export const loadCoachPage = () => import("./CoachPage").then((m) => ({ default: m.CoachPage }));
 export const loadProfilePage = () => import("./ProfilePage").then((m) => ({ default: m.ProfilePage }));
+export const loadJobPage = () => import("./JobPage").then((m) => ({ default: m.JobPage }));
+export const loadCompanyPage = () => import("./CompanyPage").then((m) => ({ default: m.CompanyPage }));
+export const loadTopicPage = () => import("./TopicPage").then((m) => ({ default: m.TopicPage }));

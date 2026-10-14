@@ -32,14 +32,13 @@ test.describe('Jobs · browsing', () => {
     await expect(jobs.card('Expired Role').getByTestId('badge-expired')).toBeVisible();
   });
 
-  test('links each title to the offer page', async ({ page }) => {
+  test('links each title to its own offer page and keeps the company site as a second link', async ({ page }) => {
     const jobs = new JobsPage(page);
     await jobs.open();
 
-    await expect(jobs.card('Backend Developer').getByRole('link', { name: 'Backend Developer' })).toHaveAttribute(
-      'href',
-      'https://example.com/job/e2',
-    );
+    const card = jobs.card('Backend Developer');
+    await expect(card.getByRole('link', { name: 'Backend Developer' })).toHaveAttribute('href', /\/jobs\/monday\/e2\/backend-developer$/);
+    await expect(jobs.viewLink(card)).toHaveAttribute('href', 'https://example.com/job/e2');
   });
 
   test('sets the document title and a main navigation', async ({ page }) => {

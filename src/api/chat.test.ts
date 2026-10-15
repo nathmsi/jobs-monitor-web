@@ -37,6 +37,21 @@ describe("streamChat", () => {
     expect(init.signal).toBe(ctrl.signal);
   });
 
+  it("sends the profile and CVs only when the user shared them", async () => {
+    const fetchMock = vi.fn().mockResolvedValue(streamingResponse([]));
+    vi.stubGlobal("fetch", fetchMock);
+    const profile = { skills: ["Node.js"], roles: [], languages: [], locations: [], titles: [], seniority: null, years: null };
+    const cvs = [{ id: "cv1", name: "CV.pdf", text: "Senior engineer" }];
+
+    await collect(streamChat([{ role: "user", content: "hi" }], "en", undefined, { profile, cvs }));
+    expect(JSON.parse(fetchMock.mock.calls[0][1].body)).toMatchObject({ profile, cvs });
+
+    await collect(streamChat([{ role: "user", content: "hi" }], "en", undefined, { profile: null, cvs: [] }));
+    const body = JSON.parse(fetchMock.mock.calls[1][1].body);
+    expect(body).not.toHaveProperty("profile");
+    expect(body).not.toHaveProperty("cvs");
+  });
+
   it("yields the events in order", async () => {
     const final: ChatEvent = { type: "final", reply: { text: "ok", offers: [], links: [], suggestions: [] } };
     vi.stubGlobal(

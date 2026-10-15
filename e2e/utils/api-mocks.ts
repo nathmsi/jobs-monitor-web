@@ -36,6 +36,10 @@ export interface ApiMock {
 export interface ChatRequest {
   messages: { role: 'user' | 'assistant'; content: string }[];
   locale: string;
+  /** Present only when the user chose to share their CV profile. */
+  profile?: { skills: string[]; roles: string[]; seniority: string | null };
+  /** Present only when the user chose to share their CVs. */
+  cvs?: { id: string; name: string; text: string }[];
 }
 
 export interface ChatAnswer {

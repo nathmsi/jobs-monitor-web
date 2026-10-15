@@ -129,3 +129,15 @@
 :dir(rtl) .arrow {
   transform: scaleX(-1);
 }
+
+/* In the enlarged window the cards sit side by side and the bubbles can be wider. */
+@container (min-width: 40rem) {
+  .offers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bubble {
+    max-width: 78%;
+  }
+}

@@ -51,4 +51,34 @@ describe("ChatComposer", () => {
     expect(send).toBeDisabled();
     expect(onSend).not.toHaveBeenCalled();
   });
+
+  describe("the paperclip", () => {
+    it("is only there when a CV can be added", () => {
+      setup();
+      expect(screen.queryByRole("button", { name: "Add my CV (PDF)" })).not.toBeInTheDocument();
+    });
+
+    it("hands the chosen file over, and can pick the same file again", async () => {
+      const onAttach = vi.fn();
+      render(<ChatComposer onSend={vi.fn()} busy={false} onAttach={onAttach} />);
+      const file = new File(["%PDF"], "cv.pdf", { type: "application/pdf" });
+
+      const input = screen.getByTestId("chat-cv-input") as HTMLInputElement;
+      await userEvent.setup().upload(input, file);
+
+      expect(onAttach).toHaveBeenCalledWith(file);
+      expect(input.value).toBe("");
+    });
+
+    it("only offers PDFs, and says what happens to the file", () => {
+      render(<ChatComposer onSend={vi.fn()} busy={false} onAttach={vi.fn()} />);
+      expect(screen.getByTestId("chat-cv-input")).toHaveAttribute("accept", expect.stringContaining("pdf"));
+      expect(screen.getByRole("button", { name: "Add my CV (PDF)" })).toHaveAttribute("title", expect.stringContaining("never the file"));
+    });
+
+    it("is disabled while a CV is being read", () => {
+      render(<ChatComposer onSend={vi.fn()} busy={false} onAttach={vi.fn()} attaching />);
+      expect(screen.getByRole("button", { name: "Add my CV (PDF)" })).toBeDisabled();
+    });
+  });
 });

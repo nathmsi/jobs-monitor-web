@@ -5,14 +5,16 @@
   z-index: 60;
   display: flex;
   flex-direction: column;
-  width: min(26rem, calc(100vw - 2rem));
-  height: min(38rem, calc(100dvh - 8rem));
+  width: min(28rem, calc(100vw - 2rem));
+  /* Never taller than the room between the sticky header (about 4.5rem) and the launcher. */
+  height: min(45rem, calc(100dvh - 11rem));
   overflow: hidden;
   background: var(--bg);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   animation: rise 0.18s ease-out;
+  container-type: inline-size;
 }
 
 @keyframes rise {
@@ -25,6 +27,14 @@
 @media (prefers-reduced-motion: reduce) {
   .panel {
     animation: none;
+  }
+}
+
+/* Enlarged, on a desktop: room for two columns of offers and longer answers. */
+@media (min-width: 641px) {
+  .large {
+    width: min(48rem, calc(100vw - 2.5rem));
+    height: min(54rem, calc(100dvh - 11rem));
   }
 }
 
@@ -224,4 +234,11 @@
   font-size: 0.72rem;
   color: var(--text-muted);
   text-align: center;
+}
+
+/* A phone always has the whole screen: nothing to enlarge. (After .iconBtn, which sets the display.) */
+@media (max-width: 640px) {
+  .sizeBtn {
+    display: none;
+  }
 }

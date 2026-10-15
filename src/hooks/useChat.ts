@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useReducer, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
-import { streamChat, toChatOffer } from "../api/chat";
+import { streamChat, toChatOffer, type ChatShared } from "../api/chat";
 import { toApiMessages, type ChatItem } from "../utils/chatMessages";
 import { chatReducer, initialChatState } from "../utils/chatReducer";
 import { loadChat, saveChat } from "../utils/chatStorage";
@@ -13,12 +13,17 @@ const nextId = (): string => `${Date.now().toString(36)}-${(counter++).toString(
  * The chat's logic, with no UI: the conversation, the request to the assistant (streamed),
  * the progress step, retry and reset. The conversation lives in this tab's sessionStorage.
  */
-export function useChat() {
+export function useChat(shared: ChatShared | null = null) {
   const { i18n } = useTranslation();
   const locale = i18n.resolvedLanguage ?? i18n.language;
 
   const [state, dispatch] = useReducer(chatReducer, undefined, () => initialChatState(loadChat()));
   const abortRef = useRef<AbortController | null>(null);
+  // The latest choice is sent with every question, without making `ask` change when it does.
+  const sharedRef = useRef(shared);
+  useEffect(() => {
+    sharedRef.current = shared;
+  }, [shared]);
 
   useEffect(() => saveChat(state.items), [state.items]);
   useEffect(() => () => abortRef.current?.abort(), []);
@@ -31,7 +36,7 @@ export function useChat() {
 
       let answered = false;
       try {
-        for await (const event of streamChat(toApiMessages(items), locale, controller.signal)) {
+        for await (const event of streamChat(toApiMessages(items), locale, controller.signal, sharedRef.current)) {
           if (event.type === "tool_call") dispatch({ type: "step", name: event.name });
           else if (event.type === "final") {
             answered = true;

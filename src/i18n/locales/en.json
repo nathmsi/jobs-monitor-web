@@ -666,7 +666,8 @@
       "backend": "Backend jobs in Tel Aviv",
       "jerusalem": "Jobs in Jerusalem",
       "howto": "How do I use this site?",
-      "advice": "How do I prepare for a tech interview?"
+      "advice": "How do I prepare for a tech interview?",
+      "forMe": "Find offers that fit my CV"
     },
     "inputLabel": "Your message",
     "placeholder": "Describe the job you want…",
@@ -684,6 +685,21 @@
     "retry": "Try again",
     "disclaimer": "AI can make mistakes. Check the offer before you apply.",
     "launcherHint": "Ask the job assistant",
-    "links": "Open in the site"
+    "links": "Open in the site",
+    "expand": "Enlarge the chat",
+    "collapse": "Reduce the chat",
+    "attach": "Add my CV (PDF)",
+    "attachHint": "Add your CV (PDF). It is read on your device: only your skills and roles are kept, never the file.",
+    "attaching": "Reading your CV…",
+    "cvAdded": "CV added: {{name}}. The assistant can use it now.",
+    "cvNotPdf": "Please choose a PDF file.",
+    "cvTooBig": "This file is too big (8 MB at most).",
+    "useCv": "Use my CV",
+    "shareOn": "The assistant can read your profile and CV to answer you. They are sent with your questions and never stored.",
+    "shareOff": "Off: the assistant does not see your CV or profile.",
+    "shareSkills_one": "{{count}} skill",
+    "shareSkills_other": "{{count}} skills",
+    "shareCvs_one": "{{count}} CV",
+    "shareCvs_other": "{{count}} CVs"
   }
 }

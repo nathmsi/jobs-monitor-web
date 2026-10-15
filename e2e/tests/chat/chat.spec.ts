@@ -3,6 +3,8 @@ import { BACKEND_JOB, FRONTEND_JOB } from '../../fixtures/data';
 import { HomePage } from '../../pages/HomePage';
 import { JobsPage } from '../../pages/JobsPage';
 import { PublicPage } from '../../pages/PublicPages';
+import { buildPdf } from '../../utils/pdf';
+import { seedStorage, STORAGE_KEYS } from '../../utils/storage';
 
 test.describe('Chat · the job assistant', () => {
   test('is one tap away on every page and opens with an intro and starter questions', async ({ page }) => {
@@ -171,6 +173,105 @@ test.describe('Chat · the job assistant', () => {
   });
 });
 
+const PROFILE = {
+  skills: ['React', 'TypeScript', 'Node.js'], roles: ['frontend'], languages: ['English'], seniority: 'Senior', years: 6,
+  locations: ['Tel Aviv'], titles: ['Frontend Engineer'], education: [], certifications: [],
+};
+
+const CV_LINES = [
+  'Jane Doe - Senior Frontend Developer, Tel Aviv',
+  'Six years of experience building web applications with React, TypeScript and Redux.',
+  'Mobile apps in Swift for iOS. Comfortable with Node.js and PostgreSQL.',
+];
+
+test.describe('Chat · bigger window (desktop)', () => {
+  test('can be enlarged, and stays that way next time', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+    const small = (await home.chat.window.boundingBox())!;
+
+    await home.chat.sizeButton.click();
+    await expect.poll(async () => (await home.chat.window.boundingBox())?.width).toBeGreaterThan(small.width + 150);
+    await expect(home.chat.sizeButton).toHaveAccessibleName('Reduce the chat');
+
+    await page.reload();
+    await home.chat.open();
+    await expect.poll(async () => (await home.chat.window.boundingBox())?.width).toBeGreaterThan(small.width + 150);
+
+    await home.chat.sizeButton.click();
+    await expect.poll(async () => (await home.chat.window.boundingBox())?.width).toBeLessThan(small.width + 10);
+  });
+
+  test('offers sit side by side once enlarged', async ({ page, api }) => {
+    api.queueChat({ text: 'Two matches.', offers: [FRONTEND_JOB, BACKEND_JOB] });
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+    await home.chat.sizeButton.click();
+
+    await home.chat.ask('anything');
+    await expect(home.chat.offers).toHaveCount(2);
+    const [a, b] = await Promise.all([home.chat.offers.nth(0).boundingBox(), home.chat.offers.nth(1).boundingBox()]);
+    expect(a && b && Math.abs(a.y - b.y) < 4 && b.x > a.x).toBe(true);
+  });
+});
+
+test.describe('Chat · using my CV', () => {
+  test('the assistant sees nothing until the user switches it on, then gets the profile', async ({ page, api }) => {
+    await seedStorage(page, { [STORAGE_KEYS.profile]: PROFILE });
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+
+    await expect(home.chat.shareSwitch).toHaveAttribute('aria-checked', 'false');
+    await home.chat.ask('hello');
+    await expect(home.chat.message(/found/)).toBeVisible();
+    expect(api.chatRequests[0].profile).toBeUndefined();
+
+    await home.chat.shareSwitch.click();
+    await home.chat.newChatButton.click();
+    await home.chat.choice('Find offers that fit my CV').click();
+    await expect.poll(() => api.chatRequests.length).toBe(2);
+    expect(api.chatRequests[1].profile).toMatchObject({ skills: ['React', 'TypeScript', 'Node.js'], roles: ['frontend'], seniority: 'Senior' });
+    expect(api.chatRequests[1].profile).not.toHaveProperty('education');
+  });
+
+  test('a PDF added with the paperclip is read in the browser and shared as text, never as a file', async ({ page, api }) => {
+    const requests: string[] = [];
+    page.on('request', (r) => requests.push(`${r.method()} ${r.url()} ${r.headers()['content-type'] ?? ''}`));
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+
+    await home.chat.cvInput.setInputFiles({ name: 'Jane_CV.pdf', mimeType: 'application/pdf', buffer: buildPdf(CV_LINES) });
+
+    await expect(home.chat.window.getByText(/CV added: Jane_CV.pdf/)).toBeVisible();
+    await expect(home.chat.shareSwitch).toHaveAttribute('aria-checked', 'true');
+    await home.chat.ask('what is missing in my CV?');
+    await expect.poll(() => api.chatRequests.length).toBe(1);
+
+    const sent = api.chatRequests[0];
+    expect(sent.cvs).toHaveLength(1);
+    expect(sent.cvs?.[0]).toMatchObject({ id: 'attached', name: 'Jane_CV.pdf' });
+    expect(sent.cvs?.[0].text).toContain('React, TypeScript and Redux');
+    expect(sent.profile?.skills).toEqual(expect.arrayContaining(['React', 'TypeScript']));
+    // Nothing but JSON goes out: the PDF itself is never uploaded.
+    expect(requests.some((r) => /multipart|application\/pdf/.test(r))).toBe(false);
+  });
+
+  test('a file that is not a PDF is refused with a message', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+
+    await home.chat.cvInput.setInputFiles({ name: 'notes.txt', mimeType: 'text/plain', buffer: Buffer.from('hello') });
+
+    await expect(home.chat.error).toContainText('choose a PDF');
+    await expect(home.chat.shareSwitch).toHaveCount(0);
+  });
+});
+
 test.describe('Chat · on a phone', () => {
   test.use({ viewport: { width: 390, height: 844 } });
 
@@ -183,6 +284,8 @@ test.describe('Chat · on a phone', () => {
     expect(launcher && nav && launcher.y + launcher.height <= nav.y).toBe(true);
 
     await home.chat.open();
+    // A phone has the whole screen: there is nothing to enlarge.
+    await expect(home.chat.sizeButton).toBeHidden();
     // Its title and close button are not hidden behind the sticky header.
     await expect(home.chat.closeButton).toBeInViewport({ ratio: 1 });
     const top = await home.chat.window.evaluate((el) => document.elementFromPoint(el.getBoundingClientRect().left + 20, 20)?.closest('[role="dialog"]') !== null);

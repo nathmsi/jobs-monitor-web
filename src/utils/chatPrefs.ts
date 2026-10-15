@@ -1,15 +1,15 @@
+import { parseFrame, type Frame } from "./chatFrame";
+
 const KEY = "jobs-monitor.chat.prefs";
 
-export type ChatSize = "compact" | "large";
-
 export interface ChatPrefs {
-  /** Window size on a desktop. */
-  size: ChatSize;
+  /** Where the user put the window and how big they made it (desktop). Null: the default place. */
+  frame: Frame | null;
   /** The user lets the assistant use their CV and profile. Off until they say so. */
   share: boolean;
 }
 
-export const DEFAULT_PREFS: ChatPrefs = { size: "compact", share: false };
+export const DEFAULT_PREFS: ChatPrefs = { frame: null, share: false };
 
 /** The chat's remembered choices (this browser). Never throws. */
 export function loadChatPrefs(): ChatPrefs {
@@ -18,7 +18,7 @@ export function loadChatPrefs(): ChatPrefs {
     const parsed: unknown = raw ? JSON.parse(raw) : null;
     if (typeof parsed !== "object" || parsed === null) return DEFAULT_PREFS;
     const p = parsed as Record<string, unknown>;
-    return { size: p.size === "large" ? "large" : "compact", share: p.share === true };
+    return { frame: parseFrame(p.frame), share: p.share === true };
   } catch {
     return DEFAULT_PREFS;
   }

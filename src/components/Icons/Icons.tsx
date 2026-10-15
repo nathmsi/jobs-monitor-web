@@ -236,3 +236,16 @@ export function PaperclipIcon(props: IconProps) {
     </Icon>
   );
 }
+
+export function GripIcon(props: IconProps) {
+  return (
+    <Icon {...props} strokeWidth={0} fill="currentColor">
+      <circle cx="9" cy="6" r="1.6" />
+      <circle cx="15" cy="6" r="1.6" />
+      <circle cx="9" cy="12" r="1.6" />
+      <circle cx="15" cy="12" r="1.6" />
+      <circle cx="9" cy="18" r="1.6" />
+      <circle cx="15" cy="18" r="1.6" />
+    </Icon>
+  );
+}

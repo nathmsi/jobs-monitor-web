@@ -8,19 +8,25 @@ afterEach(() => {
 });
 
 describe("chatPrefs", () => {
-  it("starts compact, and not sharing the CV", () => {
-    expect(loadChatPrefs()).toEqual({ size: "compact", share: false });
+  it("starts at the default place, and not sharing the CV", () => {
+    expect(loadChatPrefs()).toEqual({ frame: null, share: false });
   });
 
   it("remembers the choices", () => {
-    saveChatPrefs({ size: "large", share: true });
-    expect(loadChatPrefs()).toEqual({ size: "large", share: true });
+    const frame = { left: 300, top: 120, width: 700, height: 600 };
+    saveChatPrefs({ frame, share: true });
+    expect(loadChatPrefs()).toEqual({ frame, share: true });
+  });
+
+  it("drops a window position that is not four numbers, but keeps the other choice", () => {
+    localStorage.setItem("jobs-monitor.chat.prefs", JSON.stringify({ frame: { left: 1, top: 2, width: "wide", height: 4 }, share: true }));
+    expect(loadChatPrefs()).toEqual({ frame: null, share: true });
   });
 
   it("ignores a corrupted or unexpected value", () => {
     localStorage.setItem("jobs-monitor.chat.prefs", "{nope");
     expect(loadChatPrefs()).toEqual(DEFAULT_PREFS);
-    localStorage.setItem("jobs-monitor.chat.prefs", JSON.stringify({ size: "huge", share: "yes" }));
+    localStorage.setItem("jobs-monitor.chat.prefs", JSON.stringify({ frame: { left: "x" }, share: "yes" }));
     expect(loadChatPrefs()).toEqual(DEFAULT_PREFS);
     localStorage.setItem("jobs-monitor.chat.prefs", "42");
     expect(loadChatPrefs()).toEqual(DEFAULT_PREFS);
@@ -34,6 +40,6 @@ describe("chatPrefs", () => {
       throw new Error("blocked");
     });
     expect(loadChatPrefs()).toEqual(DEFAULT_PREFS);
-    expect(() => saveChatPrefs({ size: "large", share: true })).not.toThrow();
+    expect(() => saveChatPrefs({ frame: null, share: true })).not.toThrow();
   });
 });

@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 
+import { ChatWidget } from "./components/Chat/ChatWidget";
 import { BottomNav } from "./components/BottomNav/BottomNav";
 import { ScrollManager } from "./components/ScrollManager/ScrollManager";
 import { ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
@@ -51,6 +52,7 @@ function App() {
         </Routes>
       </Suspense>
       <BottomNav />
+      <ChatWidget />
     </ErrorBoundary>
   );
 }

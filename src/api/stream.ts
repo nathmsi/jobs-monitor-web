@@ -1,3 +1,4 @@
+import { readNdjson } from "../utils/ndjson";
 import { API, type MatchedOffer } from "./client";
 
 export interface ToolEvent {
@@ -36,46 +37,8 @@ export async function* streamMatch(
     throw new Error(detail?.message || `HTTP ${resp.status}`);
   }
 
-  const reader = resp.body?.getReader();
-  if (!reader) throw new Error("No response body");
-
-  const decoder = new TextDecoder();
-  let buffer = "";
-
-  try {
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-
-      buffer += decoder.decode(value, { stream: true });
-      const lines = buffer.split("\n");
-      buffer = lines.pop() || "";
-
-      for (const line of lines) {
-        if (line.trim()) {
-          try {
-            const json = JSON.parse(line);
-            yield json as ToolEvent;
-          } catch {
-            // Ignore parse errors on malformed lines
-          }
-        }
-      }
-    }
-
-    // Process remaining buffer
-    buffer += decoder.decode();
-    if (buffer.trim()) {
-      try {
-        const json = JSON.parse(buffer);
-        yield json as ToolEvent;
-      } catch {
-        // Ignore
-      }
-    }
-  } finally {
-    reader.releaseLock();
-  }
+  if (!resp.body) throw new Error("No response body");
+  yield* readNdjson<ToolEvent>(resp.body);
 }
 
 /** Consume event stream, call callbacks, and return match results from the final event.

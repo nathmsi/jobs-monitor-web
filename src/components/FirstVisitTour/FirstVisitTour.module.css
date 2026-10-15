@@ -2,7 +2,8 @@
   position: fixed;
   z-index: 60;
   inset-inline: 0.85rem;
-  bottom: calc(4.6rem + env(safe-area-inset-bottom));
+  /* Above the chat launcher (3.5rem bar + 0.6rem + 3rem button). */
+  bottom: calc(7.8rem + env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
@@ -18,7 +19,7 @@
 @media (min-width: 641px) {
   .tour {
     inset-inline: auto 1.5rem;
-    bottom: 1.5rem;
+    bottom: 6rem; /* above the chat launcher */
     width: 22rem;
     margin-inline: 0;
   }

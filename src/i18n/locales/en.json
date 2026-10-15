@@ -651,5 +651,39 @@
     "none": "No offers right now.",
     "noneCta": "Browse all offers",
     "notFound": "We could not find this page"
+  },
+  "chat": {
+    "launcher": "Ask AI",
+    "title": "Job assistant",
+    "close": "Close the chat",
+    "newChat": "New chat",
+    "log": "Conversation",
+    "you": "You",
+    "assistant": "Assistant",
+    "intro": "Ask me anything. I can find offers (by role, place or company), show you how to use the site, or answer a question about your career.",
+    "startersLabel": "Try asking",
+    "starters": {
+      "backend": "Backend jobs in Tel Aviv",
+      "jerusalem": "Jobs in Jerusalem",
+      "howto": "How do I use this site?",
+      "advice": "How do I prepare for a tech interview?"
+    },
+    "inputLabel": "Your message",
+    "placeholder": "Describe the job you want…",
+    "send": "Send",
+    "thinking": "Thinking…",
+    "step": {
+      "search_offers": "Searching offers…",
+      "read_offer": "Reading an offer…",
+      "market_stats": "Checking the market…",
+      "browse_offers": "Browsing offers…",
+      "site_guide": "Checking the guide…"
+    },
+    "offers": "Matching offers",
+    "error": "Something went wrong. Please try again.",
+    "retry": "Try again",
+    "disclaimer": "AI can make mistakes. Check the offer before you apply.",
+    "launcherHint": "Ask the job assistant",
+    "links": "Open in the site"
   }
 }

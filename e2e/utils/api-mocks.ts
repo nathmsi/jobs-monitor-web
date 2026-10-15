@@ -24,6 +24,28 @@ export interface ApiMock {
   setPopular(popular: MockSuggestion[]): void;
   /** Make the search-suggestion endpoints answer 503. */
   failSuggestions(): void;
+  /** Every conversation sent to `/api/chat/stream`, oldest first. */
+  chatRequests: ChatRequest[];
+  /**
+   * What the assistant answers to the next questions, one entry per question (`'error'` = the API is down).
+   * Once the queue is empty it searches the dataset for the words of the last message.
+   */
+  queueChat(...answers: (ChatAnswer | 'error')[]): void;
+}
+
+export interface ChatRequest {
+  messages: { role: 'user' | 'assistant'; content: string }[];
+  locale: string;
+}
+
+export interface ChatAnswer {
+  text: string;
+  offers?: MockJob[];
+  suggestions?: string[];
+  /** Buttons that open a page of the site. */
+  links?: { path: string; label: string }[];
+  /** Tools the assistant runs before answering (shown as progress). */
+  steps?: string[];
 }
 
 type Failure = 'none' | 'all' | 'full-set';
@@ -100,6 +122,25 @@ function suggest(q: string, limit: number): MockSuggestion[] {
 
 const strip = ({ type, label, value, count }: MockSuggestion) => ({ type, label, value, count });
 
+/** Without a script, the assistant looks for the words of the last message in the dataset. */
+function defaultChatAnswer(jobs: MockJob[], request: ChatRequest): ChatAnswer {
+  const words = (request.messages.at(-1)?.content ?? '').toLowerCase().split(/\W+/).filter((w) => w.length > 2);
+  const offers = jobs
+    .filter((j) => !j.is_expired && words.some((w) => `${j.title} ${j.excerpt} ${j.description}`.toLowerCase().includes(w)))
+    .slice(0, 5);
+  return {
+    text: offers.length ? `I found ${offers.length} matching offers.` : 'I found nothing for that.',
+    offers,
+    steps: ['search_offers'],
+  };
+}
+
+const ndjson = (events: unknown[]) => ({
+  status: 200,
+  contentType: 'application/x-ndjson',
+  body: events.map((e) => JSON.stringify(e)).join('\n') + '\n',
+});
+
 const json = (body: unknown, status = 200) => ({
   status,
   contentType: 'application/json',
@@ -115,6 +156,8 @@ export async function mockApi(page: Page, initialJobs: MockJob[] = MOCK_JOBS): P
     .slice(0, 8);
   const jobsRequests: URL[] = [];
   const suggestRequests: URL[] = [];
+  const chatRequests: ChatRequest[] = [];
+  const chatQueue: (ChatAnswer | 'error')[] = [];
 
   await page.route('**/api/jobs**', (route) => {
     const url = new URL(route.request().url());
@@ -188,6 +231,20 @@ export async function mockApi(page: Page, initialJobs: MockJob[] = MOCK_JOBS): P
     return route.fulfill(json({ popular: popular.slice(0, limit).map(strip) }));
   });
 
+  await page.route('**/api/chat/stream', (route) => {
+    const request = JSON.parse(route.request().postData() ?? '{}') as ChatRequest;
+    chatRequests.push(request);
+    const answer = chatQueue.shift() ?? defaultChatAnswer(jobs, request);
+    if (answer === 'error') return route.fulfill(json({ message: 'The assistant is down' }, 503));
+
+    const steps = (answer.steps ?? []).flatMap((name, i) => [
+      { type: 'tool_call', callId: `c${i}`, name },
+      { type: 'tool_result', callId: `c${i}`, name, ok: true },
+    ]);
+    const reply = { text: answer.text, offers: answer.offers ?? [], links: answer.links ?? [], suggestions: answer.suggestions ?? [] };
+    return route.fulfill(ndjson([...steps, { type: 'final', reply }]));
+  });
+
   await page.route('**/api/stats', (route) =>
     route.fulfill(json({ total: 856, new_this_week: 42, companies: 120, updated_at: new Date(Date.now() - 12 * 60_000).toISOString() })),
   );
@@ -212,6 +269,10 @@ export async function mockApi(page: Page, initialJobs: MockJob[] = MOCK_JOBS): P
     },
     failSuggestions: () => {
       suggestionsDown = true;
+    },
+    chatRequests,
+    queueChat: (...answers) => {
+      chatQueue.push(...answers);
     },
   };
 }

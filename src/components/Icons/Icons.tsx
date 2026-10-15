@@ -171,3 +171,38 @@ export function ChevronDownIcon(props: IconProps) {
     </Icon>
   );
 }
+
+export function ChatIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.5-4.6A8 8 0 1 1 21 12z" />
+    </Icon>
+  );
+}
+
+export function SendIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M22 2 11 13" />
+      <path d="M22 2 15 22l-4-9-9-4 20-7z" />
+    </Icon>
+  );
+}
+
+export function PlusIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12 5v14" />
+      <path d="M5 12h14" />
+    </Icon>
+  );
+}
+
+export function ArrowIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M5 12h14" />
+      <path d="m13 6 6 6-6 6" />
+    </Icon>
+  );
+}

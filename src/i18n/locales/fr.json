@@ -652,5 +652,39 @@
     "none": "Aucune offre pour l'instant.",
     "noneCta": "Voir toutes les offres",
     "notFound": "Cette page est introuvable"
+  },
+  "chat": {
+    "launcher": "Demander à l'IA",
+    "title": "Assistant emploi",
+    "close": "Fermer le chat",
+    "newChat": "Nouvelle conversation",
+    "log": "Conversation",
+    "you": "Vous",
+    "assistant": "Assistant",
+    "intro": "Posez-moi n'importe quelle question. Je peux trouver des offres (par poste, lieu ou entreprise), vous montrer comment utiliser le site, ou répondre à une question sur votre carrière.",
+    "startersLabel": "Essayez de demander",
+    "starters": {
+      "backend": "Postes backend à Tel Aviv",
+      "jerusalem": "Offres à Jérusalem",
+      "howto": "Comment utiliser ce site ?",
+      "advice": "Comment préparer un entretien technique ?"
+    },
+    "inputLabel": "Votre message",
+    "placeholder": "Décrivez le poste que vous voulez…",
+    "send": "Envoyer",
+    "thinking": "Réflexion…",
+    "step": {
+      "search_offers": "Recherche d'offres…",
+      "read_offer": "Lecture d'une offre…",
+      "market_stats": "Analyse du marché…",
+      "browse_offers": "Parcours des offres…",
+      "site_guide": "Consultation du guide…"
+    },
+    "offers": "Offres correspondantes",
+    "error": "Une erreur est survenue. Veuillez réessayer.",
+    "retry": "Réessayer",
+    "disclaimer": "L'IA peut se tromper. Vérifiez l'offre avant de postuler.",
+    "launcherHint": "Demander à l'assistant emploi",
+    "links": "Ouvrir dans le site"
   }
 }

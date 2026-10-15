@@ -55,6 +55,21 @@ describe("useChat", () => {
     expect(offer).not.toHaveProperty("description");
   });
 
+  it("sends what the user shares with each question, and what they share now (not at the first render)", async () => {
+    const spy = events(reply("ok"));
+    const profile = { skills: ["Node.js"], roles: ["backend"], languages: [], locations: [], titles: [], seniority: null, years: null };
+    const { result, rerender } = renderHook(({ shared }) => useChat(shared), { initialProps: { shared: null as chatApi.ChatShared | null } });
+
+    act(() => result.current.send("one"));
+    await waitFor(() => expect(result.current.status).toBe("idle"));
+    expect(spy.mock.calls[0][3]).toBeNull();
+
+    rerender({ shared: { profile } });
+    act(() => result.current.send("two"));
+    await waitFor(() => expect(result.current.items).toHaveLength(4));
+    expect(spy.mock.calls[1][3]).toEqual({ profile });
+  });
+
   it("keeps the buttons that open pages of the site", async () => {
     events(reply("Open it here.", { links: [{ path: "/jobs?region=jerusalem", label: "Jerusalem offers" }] }));
     const { result } = renderHook(() => useChat());

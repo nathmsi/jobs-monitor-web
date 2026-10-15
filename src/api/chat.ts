@@ -2,6 +2,30 @@ import type { Job } from "../types";
 import { readNdjson } from "../utils/ndjson";
 import { API } from "./client";
 
+/** The CV profile the user chose to share (the CV itself is a separate, optional list). */
+export interface ChatApiProfile {
+  skills: string[];
+  roles: string[];
+  languages: string[];
+  locations: string[];
+  titles: string[];
+  seniority: string | null;
+  years: number | null;
+}
+
+/** A CV the user chose to share: the assistant reads its text only when asked about their CV. */
+export interface ChatApiCv {
+  id: string;
+  name: string;
+  text: string;
+}
+
+/** What the user lets the assistant see, sent with each question. */
+export interface ChatShared {
+  profile?: ChatApiProfile | null;
+  cvs?: ChatApiCv[];
+}
+
 export type ChatRole = "user" | "assistant";
 
 /** What the API receives: the whole conversation, ending with the user's new message. */
@@ -55,11 +79,17 @@ export async function* streamChat(
   messages: ChatApiMessage[],
   locale: string,
   signal?: AbortSignal,
+  shared?: ChatShared | null,
 ): AsyncGenerator<ChatEvent> {
   const resp = await fetch(`${API}/api/chat/stream`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ messages, locale }),
+    body: JSON.stringify({
+      messages,
+      locale,
+      ...(shared?.profile ? { profile: shared.profile } : {}),
+      ...(shared?.cvs?.length ? { cvs: shared.cvs } : {}),
+    }),
     signal,
   });
 

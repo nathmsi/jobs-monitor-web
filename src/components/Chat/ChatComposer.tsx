@@ -2,20 +2,24 @@ import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from 
 import { useTranslation } from "react-i18next";
 
 import { MAX_MESSAGE_CHARS } from "../../utils/chatMessages";
-import { SendIcon } from "../Icons/Icons";
+import { PaperclipIcon, SendIcon } from "../Icons/Icons";
 import styles from "./ChatComposer.module.css";
 
 interface Props {
   onSend: (text: string) => void;
   /** True while the assistant answers: typing stays possible, sending does not. */
   busy: boolean;
+  /** Adds a CV (PDF). Without it, there is no paperclip. */
+  onAttach?: (file: File) => void;
+  attaching?: boolean;
 }
 
 /** The message box. Enter sends, Shift+Enter adds a line. Takes the focus when it appears. */
-export function ChatComposer({ onSend, busy }: Props) {
+export function ChatComposer({ onSend, busy, onAttach, attaching = false }: Props) {
   const { t } = useTranslation();
   const [text, setText] = useState("");
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const fileRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => inputRef.current?.focus(), []);
 
@@ -34,6 +38,32 @@ export function ChatComposer({ onSend, busy }: Props) {
 
   return (
     <form className={styles.form} onSubmit={submit}>
+      {onAttach && (
+        <>
+          <button
+            type="button"
+            className={styles.attach}
+            onClick={() => fileRef.current?.click()}
+            disabled={attaching}
+            aria-label={t("chat.attach")}
+            title={t("chat.attachHint")}
+          >
+            <PaperclipIcon size={18} />
+          </button>
+          <input
+            ref={fileRef}
+            type="file"
+            accept="application/pdf,.pdf"
+            hidden
+            data-testid="chat-cv-input"
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              e.target.value = "";
+              if (file) onAttach(file);
+            }}
+          />
+        </>
+      )}
       <textarea
         ref={inputRef}
         className={styles.input}

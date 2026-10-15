@@ -2,6 +2,8 @@ import { Suspense, lazy, useCallback, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useChat } from "../../hooks/useChat";
+import { useChatPrefs } from "../../hooks/useChatPrefs";
+import { useChatShare } from "../../hooks/useChatShare";
 import { ChatIcon, CloseIcon, SparkleIcon } from "../Icons/Icons";
 import styles from "./ChatWidget.module.css";
 
@@ -17,7 +19,9 @@ const SMALL_SCREEN = "(max-width: 640px)";
  */
 export function ChatWidget() {
   const { t } = useTranslation();
-  const chat = useChat();
+  const { prefs, update } = useChatPrefs();
+  const share = useChatShare(prefs.share, (share) => update({ share }));
+  const chat = useChat(share.payload);
   const [open, setOpen] = useState(false);
   const launcherRef = useRef<HTMLButtonElement>(null);
 
@@ -37,7 +41,14 @@ export function ChatWidget() {
     <>
       {open && (
         <Suspense fallback={null}>
-          <ChatPanel chat={chat} onClose={close} onOpenOffer={onOpenOffer} />
+          <ChatPanel
+            chat={chat}
+            share={share}
+            size={prefs.size}
+            onToggleSize={() => update({ size: prefs.size === "large" ? "compact" : "large" })}
+            onClose={close}
+            onOpenOffer={onOpenOffer}
+          />
         </Suspense>
       )}
       <button

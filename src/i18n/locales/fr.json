@@ -667,7 +667,8 @@
       "backend": "Postes backend à Tel Aviv",
       "jerusalem": "Offres à Jérusalem",
       "howto": "Comment utiliser ce site ?",
-      "advice": "Comment préparer un entretien technique ?"
+      "advice": "Comment préparer un entretien technique ?",
+      "forMe": "Trouve des offres qui correspondent à mon CV"
     },
     "inputLabel": "Votre message",
     "placeholder": "Décrivez le poste que vous voulez…",
@@ -685,6 +686,21 @@
     "retry": "Réessayer",
     "disclaimer": "L'IA peut se tromper. Vérifiez l'offre avant de postuler.",
     "launcherHint": "Demander à l'assistant emploi",
-    "links": "Ouvrir dans le site"
+    "links": "Ouvrir dans le site",
+    "expand": "Agrandir le chat",
+    "collapse": "Réduire le chat",
+    "attach": "Ajouter mon CV (PDF)",
+    "attachHint": "Ajoutez votre CV (PDF). Il est lu sur votre appareil : seuls vos compétences et rôles sont gardés, jamais le fichier.",
+    "attaching": "Lecture de votre CV…",
+    "cvAdded": "CV ajouté : {{name}}. L'assistant peut maintenant l'utiliser.",
+    "cvNotPdf": "Veuillez choisir un fichier PDF.",
+    "cvTooBig": "Ce fichier est trop gros (8 Mo maximum).",
+    "useCv": "Utiliser mon CV",
+    "shareOn": "L'assistant peut lire votre profil et votre CV pour vous répondre. Ils sont envoyés avec vos questions et jamais conservés.",
+    "shareOff": "Désactivé : l'assistant ne voit ni votre CV ni votre profil.",
+    "shareSkills_one": "{{count}} compétence",
+    "shareSkills_other": "{{count}} compétences",
+    "shareCvs_one": "{{count}} CV",
+    "shareCvs_other": "{{count}} CV"
   }
 }

@@ -12,12 +12,17 @@ interface Props {
   /** Adds a CV (PDF). Without it, there is no paperclip. */
   onAttach?: (file: File) => void;
   attaching?: boolean;
+  /** The text being typed, when the parent keeps it (so closing the window does not lose it). */
+  value?: string;
+  onChange?: (text: string) => void;
 }
 
 /** The message box. Enter sends, Shift+Enter adds a line. Takes the focus when it appears. */
-export function ChatComposer({ onSend, busy, onAttach, attaching = false }: Props) {
+export function ChatComposer({ onSend, busy, onAttach, attaching = false, value, onChange }: Props) {
   const { t } = useTranslation();
-  const [text, setText] = useState("");
+  const [own, setOwn] = useState("");
+  const text = value ?? own;
+  const setText = (next: string) => (onChange ? onChange(next) : setOwn(next));
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 

@@ -706,6 +706,7 @@
     "shareSkills_one": "כישור אחד",
     "shareSkills_other": "{{count}} כישורים",
     "shareCvs_one": "קו\"ח אחד",
-    "shareCvs_other": "{{count}} קו\"ח"
+    "shareCvs_other": "{{count}} קו\"ח",
+    "moveHint": "גרירה להזזה · Alt+חיצים להזזה, Alt+Shift+חיצים לשינוי גודל · לחיצה כפולה לאיפוס"
   }
 }

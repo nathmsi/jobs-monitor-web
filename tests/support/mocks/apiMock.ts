@@ -67,5 +67,18 @@ export function mockBackend({ jobs = [], sources = SOURCES, suggestions = SUGGES
     .spyOn(client, "getPopular")
     .mockImplementation(async (limit = 8) => [...suggestions].filter((s) => s.type !== "company" && s.type !== "location" && s.type !== "title").slice(0, limit));
 
-  return { getJobsPage, getRegionJobs, getSources, getRegions, getStats, getSuggestions, getPopular };
+  // One offer, and one company with its open offers (the public pages). Unknown: the API's 404.
+  const getJob = vi.spyOn(client, "getJob").mockImplementation(async (source, externalId) => {
+    const job = jobs.find((j) => j.source === source && j.external_id === externalId);
+    if (!job) throw new Error("HTTP 404 — Not Found");
+    return job;
+  });
+  const getCompany = vi.spyOn(client, "getCompany").mockImplementation(async (key) => {
+    const source = sources.find((s) => s.key === key);
+    if (!source) throw new Error("HTTP 404 — Not Found");
+    const own = jobs.filter((j) => j.source === key && !j.is_expired);
+    return { source, total: own.length, jobs: own, top_skills: [] };
+  });
+
+  return { getJobsPage, getRegionJobs, getSources, getRegions, getStats, getSuggestions, getPopular, getJob, getCompany };
 }

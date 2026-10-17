@@ -1,75 +1,232 @@
-import { describe, expect, it } from "vitest";
+import { render, screen, within } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { MemoryRouter } from "react-router-dom";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { parseAiSummary, type AiInfo } from "../../utils/aiSummary";
+import "../../i18n";
+import { makeJob, makeSource } from "../../test/factories";
+import { JobCard } from "./JobCard";
 
-const validSummary: AiInfo = {
-  headline: "Senior React Developer · Acme",
-  stack: ["React", "TypeScript", "Node.js"],
+const flags = vi.hoisted(() => ({ opened: new Set<string>(), markOpened: vi.fn() }));
+const saved = vi.hoisted(() => ({
+  status: undefined as "saved" | "applied" | undefined,
+  setStatus: vi.fn(async () => true),
+}));
+const toast = vi.hoisted(() => ({ showToast: vi.fn() }));
+const profile = vi.hoisted(() => ({ value: null as unknown }));
+
+vi.mock("../../providers/jobFlags/useJobFlags", () => ({
+  useJobFlags: () => ({ isOpened: (id: string) => flags.opened.has(id), markOpened: flags.markOpened }),
+}));
+vi.mock("../../providers/savedJobs/useSavedJobs", () => ({
+  useSavedJobs: () => ({ statusOf: () => saved.status, setStatus: saved.setStatus }),
+}));
+vi.mock("../../providers/toast/useToast", () => ({ useToast: () => toast }));
+vi.mock("../../providers/profile/useProfile", () => ({ useProfile: () => ({ profile: profile.value }) }));
+
+const SOURCE = makeSource({ key: "melio", label: "Melio" });
+const JOB = makeJob({ external_id: "1", title: "Frontend Engineer", excerpt: "Build things", location: "Tel Aviv, Israel" });
+const AI = JSON.stringify({
+  headline: "Platform work",
+  stack: ["Go", "Kubernetes", "Postgres", "Redis", "Kafka"],
   level: "Senior",
   remote: "Hybrid",
-  highlights: ["Startup", "Remote-friendly"],
-};
+  highlights: ["Equity", "Gym"],
+});
 
-describe("parseAiSummary (JobCard)", () => {
-  it("returns null for undefined input", () => {
-    expect(parseAiSummary(undefined)).toBeNull();
+beforeEach(() => {
+  flags.opened.clear();
+  flags.markOpened.mockReset();
+  saved.status = undefined;
+  saved.setStatus.mockReset().mockResolvedValue(true);
+  toast.showToast.mockReset();
+  profile.value = null;
+});
+
+const renderCard = (job = JOB) =>
+  render(
+    <MemoryRouter>
+      <JobCard job={job} source={SOURCE} />
+    </MemoryRouter>,
+  );
+
+describe("JobCard", () => {
+  it("shows the company, title, summary and first part of the location", () => {
+    renderCard();
+    expect(screen.getByText("Melio")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Frontend Engineer" })).toHaveAttribute("href", "/jobs/melio/1/frontend-engineer");
+    expect(screen.getByText("Build things")).toBeInTheDocument();
+    expect(screen.getByText("Tel Aviv")).toBeInTheDocument();
   });
 
-  it("returns null for empty string", () => {
-    expect(parseAiSummary("")).toBeNull();
+  it("keeps the card light: AI headline instead of the excerpt, 3 technologies, no highlights", () => {
+    renderCard(makeJob({ external_id: "2", title: "Platform Engineer", excerpt: "Long excerpt", ai_summary: AI }));
+
+    expect(screen.getByText("Platform work")).toBeInTheDocument();
+    expect(screen.queryByText("Long excerpt")).not.toBeInTheDocument();
+    expect(screen.getByText("Go")).toBeInTheDocument();
+    expect(screen.getByText("Postgres")).toBeInTheDocument();
+    expect(screen.queryByText("Redis")).not.toBeInTheDocument();
+    expect(screen.queryByText("Equity")).not.toBeInTheDocument();
+    expect(screen.getByText("Senior")).toBeInTheDocument();
+    expect(screen.getByText("Hybrid")).toBeInTheDocument();
   });
 
-  it("returns null for invalid JSON", () => {
-    expect(parseAiSummary("{not valid json}")).toBeNull();
+  it("the title opens the offer's own page, not the company's site", () => {
+    renderCard();
+    expect(screen.getByRole("link", { name: "Frontend Engineer" })).toHaveAttribute("href", "/jobs/melio/1/frontend-engineer");
+    expect(screen.getByRole("link", { name: /company site/i })).toHaveAttribute("href", "https://example.com/job/1");
   });
 
-  it("returns null when headline is missing", () => {
-    expect(parseAiSummary(JSON.stringify({ stack: ["React"] }))).toBeNull();
+  it("opening the offer page marks it as seen", async () => {
+    const user = userEvent.setup();
+    renderCard();
+    const link = screen.getByRole("link", { name: "Frontend Engineer" });
+    link.addEventListener("click", (e) => e.preventDefault());
+
+    await user.click(link);
+
+    expect(flags.markOpened).toHaveBeenCalledWith("melio-1");
   });
 
-  it("returns null when stack is missing", () => {
-    expect(parseAiSummary(JSON.stringify({ headline: "Dev" }))).toBeNull();
+  it("does not grey out a seen offer", () => {
+    flags.opened.add("melio-1");
+    const { container } = renderCard();
+    expect(container.querySelector("article")?.className).not.toMatch(/opened/);
   });
 
-  it("parses a valid AI summary", () => {
-    const result = parseAiSummary(JSON.stringify(validSummary));
-    expect(result).not.toBeNull();
-    expect(result?.headline).toBe("Senior React Developer · Acme");
-    expect(result?.stack).toEqual(["React", "TypeScript", "Node.js"]);
-    expect(result?.level).toBe("Senior");
-    expect(result?.remote).toBe("Hybrid");
-    expect(result?.highlights).toContain("Startup");
+  it("has only two actions on an unsaved offer: open it and bookmark it", () => {
+    renderCard();
+    const buttons = screen.getAllByRole("button");
+    expect(buttons).toHaveLength(1);
+    expect(buttons[0]).toHaveAccessibleName("Save");
+    expect(screen.getByRole("link", { name: /company site/i })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "I applied" })).not.toBeInTheDocument();
   });
 
-  it("normalises missing optional fields instead of leaving them undefined", () => {
-    const result = parseAiSummary(JSON.stringify({ headline: "Dev", stack: ["Go"] }));
-    expect(result).toEqual({ headline: "Dev", stack: ["Go"], level: "", remote: "", highlights: [] });
+  it("saving toasts and calls setStatus", async () => {
+    const user = userEvent.setup();
+    renderCard();
+
+    await user.click(screen.getByRole("button", { name: "Save" }));
+
+    expect(saved.setStatus).toHaveBeenCalledWith(JOB, "saved", "Melio");
+    expect(toast.showToast).toHaveBeenCalledWith("Offer saved ★");
   });
 
-  it("drops non-string entries and non-array highlights", () => {
-    const result = parseAiSummary(
-      JSON.stringify({ headline: "Dev", stack: ["Go", 3, null], highlights: "oops" }),
-    );
-    expect(result?.stack).toEqual(["Go"]);
-    expect(result?.highlights).toEqual([]);
+  it("shows the error toast and no success toast when saving fails", async () => {
+    const user = userEvent.setup();
+    saved.setStatus.mockResolvedValue(false);
+    renderCard();
+
+    await user.click(screen.getByRole("button", { name: "Save" }));
+
+    expect(toast.showToast).toHaveBeenCalledTimes(1);
+    expect(toast.showToast).toHaveBeenCalledWith("Could not save your change. Please try again.");
   });
 
-  it("returns null for JSON that is not an object", () => {
-    expect(parseAiSummary("null")).toBeNull();
-    expect(parseAiSummary("42")).toBeNull();
+  it("a saved offer can be unsaved and offers 'I applied'", async () => {
+    const user = userEvent.setup();
+    saved.status = "saved";
+    renderCard();
+
+    const bookmark = screen.getByRole("button", { name: "Saved" });
+    expect(bookmark).toHaveAttribute("aria-pressed", "true");
+
+    await user.click(screen.getByRole("button", { name: "I applied" }));
+    expect(saved.setStatus).toHaveBeenLastCalledWith(JOB, "applied", "Melio");
+    expect(toast.showToast).toHaveBeenCalledWith("Marked as applied ✓");
+
+    await user.click(bookmark);
+    expect(saved.setStatus).toHaveBeenLastCalledWith(JOB, null, "Melio");
   });
 
-  it("parses with empty highlights array", () => {
-    const summary = { ...validSummary, highlights: [] };
-    const result = parseAiSummary(JSON.stringify(summary));
-    expect(result?.highlights).toEqual([]);
+  it("an applied offer shows the badge and can go back to saved", async () => {
+    const user = userEvent.setup();
+    saved.status = "applied";
+    renderCard();
+
+    expect(screen.getByTestId("badge-applied")).toBeInTheDocument();
+    await user.click(within(screen.getByRole("contentinfo")).getByRole("button", { name: "Applied" }));
+    expect(saved.setStatus).toHaveBeenLastCalledWith(JOB, "saved", "Melio");
   });
 
-  it("parses with empty stack array — returns object ([] is truthy)", () => {
-    const summary = { ...validSummary, stack: [] };
-    const result = parseAiSummary(JSON.stringify(summary));
-    // empty array is truthy, so the check passes and the object is returned
-    expect(result).not.toBeNull();
-    expect(result?.stack).toEqual([]);
+  it("opening the company's site marks it as seen", async () => {
+    const user = userEvent.setup();
+    renderCard();
+    const link = screen.getByRole("link", { name: /company site/i });
+    link.addEventListener("click", (e) => e.preventDefault());
+
+    await user.click(link);
+
+    expect(flags.markOpened).toHaveBeenCalledWith("melio-1");
+  });
+
+  it("keeps the new badge for offers under 48 hours only", () => {
+    const old = new Date(Date.now() - 72 * 3600_000).toISOString();
+    renderCard(makeJob({ external_id: "9", title: "Old", is_new: true, added_at: old }));
+    expect(screen.queryByTestId("badge-new")).not.toBeInTheDocument();
+  });
+
+  it("flags new, hot and expired offers (new is hidden once seen)", () => {
+    const { unmount } = renderCard(makeJob({ external_id: "3", title: "T", is_new: true, is_hot: true, added_at: new Date().toISOString() }));
+    expect(screen.getByTestId("badge-new")).toBeInTheDocument();
+    expect(screen.getByTestId("badge-hot")).toBeInTheDocument();
+    unmount();
+
+    flags.opened.add("melio-3");
+    renderCard(makeJob({ external_id: "3", title: "T", is_new: true, added_at: new Date().toISOString() }));
+    expect(screen.queryByTestId("badge-new")).not.toBeInTheDocument();
+    expect(screen.getByTitle("Seen")).toBeInTheDocument();
+  });
+
+  it("marks expired offers", () => {
+    renderCard(makeJob({ external_id: "4", title: "Old", is_expired: true }));
+    expect(screen.getByTestId("badge-expired")).toBeInTheDocument();
+  });
+
+  it("shows how many of your skills match", () => {
+    profile.value = {
+      skills: ["React"], roles: [], languages: [], seniority: null, years: null,
+      locations: [], titles: [], education: [], certifications: [],
+    };
+    renderCard(makeJob({ external_id: "5", title: "React Developer" }));
+    expect(screen.getByText(/1 skill match/)).toBeInTheDocument();
+  });
+
+  it("has no outside link or tags section when there is nothing to show (only the title)", () => {
+    renderCard(makeJob({ external_id: "6", title: "Bare", url: null, location: "" }));
+    expect(screen.getAllByRole("link").map((l) => l.textContent)).toEqual(["Bare"]);
+    expect(screen.queryByRole("list")).not.toBeInTheDocument();
+  });
+
+  describe("age", () => {
+    const hoursAgo = (h: number) => new Date(Date.now() - h * 3600_000).toISOString();
+
+    it("says how long the offer has been online, next to the place", () => {
+      renderCard(makeJob({ external_id: "7", title: "Aged", added_at: hoursAgo(72) }));
+
+      expect(screen.getByText("Tel Aviv", { exact: false })).toHaveTextContent("Tel Aviv · 3 days ago");
+      expect(screen.getByText("3 days ago").tagName).toBe("TIME");
+    });
+
+    it("uses 'just now' for a very recent offer", () => {
+      renderCard(makeJob({ external_id: "8", title: "New", added_at: hoursAgo(0.005) }));
+      expect(screen.getByText("just now")).toBeInTheDocument();
+    });
+
+    it("shows only the age when the offer has no location", () => {
+      renderCard(makeJob({ external_id: "9", title: "Remote", location: "", added_at: hoursAgo(5) }));
+      expect(screen.getByText("5 hours ago")).toBeInTheDocument();
+    });
+
+    it("shows no age when the date is unknown or invalid", () => {
+      const { unmount } = renderCard(makeJob({ external_id: "10", title: "A", added_at: null }));
+      expect(document.querySelector("time")).toBeNull();
+      unmount();
+
+      renderCard(makeJob({ external_id: "11", title: "B", added_at: "nope" }));
+      expect(document.querySelector("time")).toBeNull();
+    });
   });
 });

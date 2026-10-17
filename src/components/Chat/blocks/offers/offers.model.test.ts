@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { makeJob } from "../../../../test/factories";
+import { makeJob } from "../../../../../tests/support/factories";
 import { offersModel, toChatOffer } from "./offers.model";
 
 describe("toChatOffer", () => {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { makeJob } from "../../../test/factories";
+import { makeJob } from "../../../../tests/support/factories";
 import { BLOCK_MODELS, isStoredBlock, isTransientBlock, parseBlocks, summarizeBlocks } from "./models";
 import { BLOCK_VIEWS } from "./views";
 

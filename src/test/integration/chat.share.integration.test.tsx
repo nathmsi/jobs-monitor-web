@@ -5,10 +5,10 @@ import * as chatApi from "../../api/chat";
 import { ChatWidget } from "../../components/Chat/ChatWidget";
 import i18n from "../../i18n";
 import { PROFILE_LOCAL_KEY } from "../../providers/profile/profileStorage";
-import { mockBackend } from "../apiMock";
-import { CV_PROFILE } from "../factories";
-import { reply, requestOf } from "../chatReplies";
-import { renderWithProviders } from "../renderWithProviders";
+import { mockBackend } from "../../../tests/support/mocks/apiMock";
+import { CV_PROFILE } from "../../../tests/support/factories";
+import { reply, requestOf } from "../../../tests/support/mocks/chatReplies";
+import { renderWithProviders } from "../../../tests/support/render/renderWithProviders";
 
 const pdf = vi.hoisted(() => ({ extractPdfText: vi.fn() }));
 vi.mock("../../utils/pdf", () => pdf);

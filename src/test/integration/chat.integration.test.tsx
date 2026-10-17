@@ -5,10 +5,10 @@ import * as chatApi from "../../api/chat";
 import type { ChatEvent } from "../../api/chat";
 import { ChatWidget } from "../../components/Chat/ChatWidget";
 import i18n from "../../i18n";
-import { mockBackend } from "../apiMock";
-import { makeJob } from "../factories";
-import { apiReply, offersBlock, quickReplies, reply, requestOf } from "../chatReplies";
-import { renderWithProviders } from "../renderWithProviders";
+import { mockBackend } from "../../../tests/support/mocks/apiMock";
+import { makeJob } from "../../../tests/support/factories";
+import { apiReply, offersBlock, quickReplies, reply, requestOf } from "../../../tests/support/mocks/chatReplies";
+import { renderWithProviders } from "../../../tests/support/render/renderWithProviders";
 
 const OFFER = makeJob({
   source: "melio",

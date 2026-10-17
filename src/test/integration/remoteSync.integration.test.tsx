@@ -10,15 +10,15 @@ import { ProfileProvider } from "../../providers/profile/ProfileProvider";
 import { useProfile } from "../../providers/profile/useProfile";
 import { SavedJobsProvider } from "../../providers/savedJobs/SavedJobsProvider";
 import { useSavedJobs } from "../../providers/savedJobs/useSavedJobs";
-import { CV_PROFILE } from "../factories";
-import { fakeSupabase } from "../fakeSupabase";
+import { CV_PROFILE } from "../../../tests/support/factories";
+import { fakeSupabase } from "../../../tests/support/mocks/fakeSupabase";
 
 const auth = vi.hoisted(() => ({ user: null as { id: string } | null }));
 vi.mock("../../providers/auth/useAuth", () => ({
   useAuth: () => ({ user: auth.user, enabled: true, ready: true }),
 }));
 vi.mock("../../services/supabase", async () => {
-  const { fakeSupabase } = await import("../fakeSupabase");
+  const { fakeSupabase } = await import("../../../tests/support/mocks/fakeSupabase");
   return { supabase: fakeSupabase, supabaseEnabled: true };
 });
 

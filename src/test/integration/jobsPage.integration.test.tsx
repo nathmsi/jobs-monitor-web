@@ -2,9 +2,9 @@ import { screen, waitFor, within } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { JobsPage } from "../../pages/JobsPage";
-import { mockBackend } from "../apiMock";
-import { CV_PROFILE, makeJob } from "../factories";
-import { renderWithProviders } from "../renderWithProviders";
+import { mockBackend } from "../../../tests/support/mocks/apiMock";
+import { CV_PROFILE, makeJob } from "../../../tests/support/factories";
+import { renderWithProviders } from "../../../tests/support/render/renderWithProviders";
 
 const FRONTEND = makeJob({ external_id: "1", title: "Frontend Engineer", excerpt: "React and TypeScript", is_hot: true });
 const BACKEND = makeJob({ external_id: "2", title: "Backend Developer", excerpt: "Node.js" });

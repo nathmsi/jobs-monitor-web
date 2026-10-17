@@ -1,9 +1,9 @@
 import { vi } from "vitest";
 
-import * as client from "../api/client";
-import { ROLES } from "../constants/roles";
-import type { Job, SourceInfo } from "../types";
-import { REGIONS, SOURCES } from "./factories";
+import * as client from "../../../src/api/client";
+import { ROLES } from "../../../src/constants/roles";
+import type { Job, SourceInfo } from "../../../src/types";
+import { REGIONS, SOURCES } from "../factories";
 
 const escape = (t: string) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const word = (t: string) => new RegExp(`(^|[^a-z0-9])${escape(t)}($|[^a-z0-9])`, "i");

@@ -3,9 +3,9 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import App from "../../App";
 import i18n from "../../i18n";
-import { mockBackend } from "../apiMock";
-import { makeJob } from "../factories";
-import { renderWithProviders } from "../renderWithProviders";
+import { mockBackend } from "../../../tests/support/mocks/apiMock";
+import { makeJob } from "../../../tests/support/factories";
+import { renderWithProviders } from "../../../tests/support/render/renderWithProviders";
 
 describe("App routing and shell (integration)", () => {
   beforeEach(async () => {

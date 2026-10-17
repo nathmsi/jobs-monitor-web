@@ -4,14 +4,14 @@ import userEvent from "@testing-library/user-event";
 import type { ReactElement, ReactNode } from "react";
 import { MemoryRouter } from "react-router-dom";
 
-import "../i18n";
-import { AuthProvider } from "../providers/auth/AuthProvider";
-import { JobFlagsProvider } from "../providers/jobFlags/JobFlagsProvider";
-import { PreferencesProvider } from "../providers/preferences/PreferencesProvider";
-import { ProfileProvider } from "../providers/profile/ProfileProvider";
-import { SavedJobsProvider } from "../providers/savedJobs/SavedJobsProvider";
-import { ThemeProvider } from "../providers/theme/ThemeProvider";
-import { ToastProvider } from "../providers/toast/ToastProvider";
+import "../../../src/i18n";
+import { AuthProvider } from "../../../src/providers/auth/AuthProvider";
+import { JobFlagsProvider } from "../../../src/providers/jobFlags/JobFlagsProvider";
+import { PreferencesProvider } from "../../../src/providers/preferences/PreferencesProvider";
+import { ProfileProvider } from "../../../src/providers/profile/ProfileProvider";
+import { SavedJobsProvider } from "../../../src/providers/savedJobs/SavedJobsProvider";
+import { ThemeProvider } from "../../../src/providers/theme/ThemeProvider";
+import { ToastProvider } from "../../../src/providers/toast/ToastProvider";
 import { LocationProbe } from "./LocationProbe";
 
 interface Options extends Omit<RenderOptions, "wrapper"> {

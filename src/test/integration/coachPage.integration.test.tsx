@@ -4,16 +4,16 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import * as client from "../../api/client";
 import * as stream from "../../api/stream";
 import { CoachPage } from "../../pages/CoachPage";
-import { mockBackend } from "../apiMock";
-import { fakeSupabase } from "../fakeSupabase";
-import { renderWithProviders } from "../renderWithProviders";
+import { mockBackend } from "../../../tests/support/mocks/apiMock";
+import { fakeSupabase } from "../../../tests/support/mocks/fakeSupabase";
+import { renderWithProviders } from "../../../tests/support/render/renderWithProviders";
 
 const auth = vi.hoisted(() => ({
   value: null as unknown,
 }));
 vi.mock("../../providers/auth/useAuth", () => ({ useAuth: () => auth.value }));
 vi.mock("../../services/supabase", async () => {
-  const { fakeSupabase } = await import("../fakeSupabase");
+  const { fakeSupabase } = await import("../../../tests/support/mocks/fakeSupabase");
   return { supabase: fakeSupabase, supabaseEnabled: true };
 });
 

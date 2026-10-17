@@ -1,7 +1,7 @@
-import { normalizeReply, type ChatEvent, type ChatReply } from "../api/chat";
-import type { ChatBlock, ChatOffer } from "../components/Chat/blocks/types";
-import { toChatOffer } from "../components/Chat/blocks/offers/offers.model";
-import type { Job } from "../types";
+import { normalizeReply, type ChatEvent, type ChatReply } from "../../../src/api/chat";
+import type { ChatBlock, ChatOffer } from "../../../src/components/Chat/blocks/types";
+import { toChatOffer } from "../../../src/components/Chat/blocks/offers/offers.model";
+import type { Job } from "../../../src/types";
 
 /** A `final` event: the assistant's text, then blocks. Build the blocks with the helpers below. */
 export const reply = (text: string, ...blocks: ChatBlock[]): ChatEvent => ({ type: "final", reply: { text, blocks } satisfies ChatReply });
@@ -28,4 +28,4 @@ export const quickReplies = (...labels: string[]): ChatBlock => ({
 });
 
 /** What a test asked the API for on its n-th call (the request object of `streamChat`). */
-export const requestOf = (spy: { mock: { calls: unknown[][] } }, n = 0) => spy.mock.calls[n][0] as import("../api/chat").ChatStreamRequest;
+export const requestOf = (spy: { mock: { calls: unknown[][] } }, n = 0) => spy.mock.calls[n][0] as import("../../../src/api/chat").ChatStreamRequest;

@@ -3,9 +3,9 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { HomePage } from "../../pages/HomePage";
 import { JobsPage } from "../../pages/JobsPage";
-import { mockBackend, SUGGESTIONS } from "../apiMock";
-import { makeJob } from "../factories";
-import { renderWithProviders } from "../renderWithProviders";
+import { mockBackend, SUGGESTIONS } from "../../../tests/support/mocks/apiMock";
+import { makeJob } from "../../../tests/support/factories";
+import { renderWithProviders } from "../../../tests/support/render/renderWithProviders";
 
 const JOBS = [
   makeJob({ external_id: "1", title: "Senior iOS Developer" }),

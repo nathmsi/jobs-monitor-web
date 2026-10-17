@@ -1,4 +1,4 @@
-import type { RegionInfo, SourceInfo, Job } from "../types";
+import type { RegionInfo, SourceInfo, Job } from "../../src/types";
 
 export function makeJob(overrides: Partial<Job> & Pick<Job, "external_id" | "title">): Job {
   return {

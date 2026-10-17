@@ -3,9 +3,9 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import i18n from "../../i18n";
 import { ProfilePage } from "../../pages/ProfilePage";
-import { mockBackend } from "../apiMock";
-import { CV_PROFILE, makeJob } from "../factories";
-import { renderWithProviders } from "../renderWithProviders";
+import { mockBackend } from "../../../tests/support/mocks/apiMock";
+import { CV_PROFILE, makeJob } from "../../../tests/support/factories";
+import { renderWithProviders } from "../../../tests/support/render/renderWithProviders";
 
 const REACT_JOB = makeJob({ external_id: "r1", title: "Product Engineer", description: "React and TypeScript daily" });
 const OTHER_JOB = makeJob({ external_id: "o1", title: "Accountant", description: "Excel" });

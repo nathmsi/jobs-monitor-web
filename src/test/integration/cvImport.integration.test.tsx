@@ -3,9 +3,9 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import i18n from "../../i18n";
 import { ProfilePage } from "../../pages/ProfilePage";
-import { mockBackend } from "../apiMock";
-import { makeJob } from "../factories";
-import { renderWithProviders } from "../renderWithProviders";
+import { mockBackend } from "../../../tests/support/mocks/apiMock";
+import { makeJob } from "../../../tests/support/factories";
+import { renderWithProviders } from "../../../tests/support/render/renderWithProviders";
 
 const pdf = vi.hoisted(() => ({ extractPdfText: vi.fn() }));
 vi.mock("../../utils/pdf", () => pdf);

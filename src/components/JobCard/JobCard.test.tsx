@@ -4,7 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import "../../i18n";
-import { makeJob, makeSource } from "../../test/factories";
+import { makeJob, makeSource } from "../../../tests/support/factories";
 import { JobCard } from "./JobCard";
 
 const flags = vi.hoisted(() => ({ opened: new Set<string>(), markOpened: vi.fn() }));

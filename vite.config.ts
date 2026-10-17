@@ -23,7 +23,7 @@ export default defineConfig({
   },
   test: {
     environment: 'jsdom',
-    setupFiles: ['./src/test/setup.ts'],
+    setupFiles: ['./tests/support/setup.ts'],
     // Never talk to a real Supabase project from tests, whatever .env says.
     env: { VITE_SUPABASE_URL: '', VITE_SUPABASE_ANON_KEY: '' },
     exclude: ['**/node_modules/**', 'e2e/**'],

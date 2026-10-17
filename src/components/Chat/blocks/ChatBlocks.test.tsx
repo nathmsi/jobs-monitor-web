@@ -2,10 +2,10 @@ import { fireEvent, screen, within } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import i18n from "../../../i18n";
-import { mockBackend } from "../../../test/apiMock";
-import { makeJob } from "../../../test/factories";
-import { offersBlock, linksBlock, quickReplies } from "../../../test/chatReplies";
-import { renderChatPart } from "../../../test/renderChatBlock";
+import { mockBackend } from "../../../../tests/support/mocks/apiMock";
+import { makeJob } from "../../../../tests/support/factories";
+import { offersBlock, linksBlock, quickReplies } from "../../../../tests/support/mocks/chatReplies";
+import { renderChatPart } from "../../../../tests/support/render/renderChatPart";
 import { ChatBlocks } from "./ChatBlocks";
 import type { ChatBlock } from "./types";
 

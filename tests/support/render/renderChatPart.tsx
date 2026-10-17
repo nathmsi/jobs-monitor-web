@@ -1,8 +1,8 @@
 import { vi } from "vitest";
 import type { ReactElement } from "react";
 
-import type { ChatAction } from "../components/Chat/actions/types";
-import { ChatContext, type ChatContextValue } from "../providers/chat/ChatContext";
+import type { ChatAction } from "../../../src/components/Chat/actions/types";
+import { ChatContext, type ChatContextValue } from "../../../src/providers/chat/ChatContext";
 import { renderWithProviders } from "./renderWithProviders";
 
 /**

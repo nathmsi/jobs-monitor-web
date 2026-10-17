@@ -71,7 +71,7 @@ src/
 ├── services/supabase.ts        # Supabase client (null when not configured)
 ├── utils/                      # pure helpers: cvAnalysis, jobText, aiSummary, …
 ├── constants/ · i18n/ · types.ts · index.css
-└── test/                       # test helpers + integration tests (see src/test/README.md)
+tests/                          # integration tests + shared test helpers (see tests/README.md)
 e2e/                            # Playwright: fixtures, page objects, specs per page (see e2e/README.md)
 ```
 

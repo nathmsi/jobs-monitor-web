@@ -122,9 +122,9 @@ resets. A click outside closes the window (`useChatWindow`); anything of the cha
 | level | what |
 |---|---|
 | unit, next to the code | models, actions, `chatPage`, `chatStarters`, `chatFrame`, reducer, storage, `normalizeReply` |
-| component | `blocks/blocks.component.test.tsx` (each view, with a spy `act`), `ChatComposer`, `ChatProvider` |
+| component | `blocks/ChatBlocks.test.tsx` (each view, with a spy `act`), `ChatComposer`, `ChatProvider` |
 | hooks | `useChat`, `useChatWindow`, `useChatPrefs` |
-| integration | `src/test/integration/chat*.test.tsx` (the whole widget, mocked API) |
+| integration | `tests/integration/chat/` (conversation, sharing the CV, the window; mocked API) |
 | e2e | `e2e/tests/chat/` (real browser: drag, resize, outside click, page awareness, CV) |
 
-Helpers: `src/test/chatReplies.ts` (build a reply), `src/test/renderChatBlock.tsx` (a block with a spy `act`).
+Helpers: `tests/support/mocks/chatReplies.ts` (build a reply), `tests/support/render/renderChatPart.tsx` (a block with a spy `act`), `tests/support/render/openChat.ts`.

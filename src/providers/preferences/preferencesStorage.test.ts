@@ -61,3 +61,15 @@ describe("mergePrefs — guard against null/undefined arrays", () => {
     expect(result.roles).toEqual([]);
   });
 });
+
+describe("mergePrefs (real implementation)", () => {
+  it("coerces null/invalid lists to empty arrays", () => {
+    const m = mergePrefs({
+      roles: null as unknown as string[],
+      categories: "x" as unknown as string[],
+    });
+    expect(m.roles).toEqual([]);
+    expect(m.categories).toEqual([]);
+    expect(m.region).toBe("all");
+  });
+});

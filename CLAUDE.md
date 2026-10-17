@@ -30,7 +30,7 @@
 - Jobs-page state (filters/tab/sort) lives in the URL via `useJobsUrlState`.
 
 ## Tests
-- Three levels, see `src/test/README.md` and `e2e/README.md`: unit (colocated, `pnpm test:unit`), integration (`src/test/integration`, `pnpm test:integration`), e2e (`e2e/tests/<page>/`, `pnpm test:e2e`).
+- Four levels, see `tests/README.md` and `e2e/README.md`: unit `Foo.test.ts` and component `Foo.test.tsx` next to the code (`pnpm test:unit`, `pnpm test:component`), integration in `tests/integration/<feature>/` (`pnpm test:integration`), e2e in `e2e/tests/<feature>/` (`pnpm test:e2e`). The level is told by the place and the extension, never by a suffix; helpers live in `tests/support/`.
 - E2E specs import `test`/`expect` from `e2e/fixtures` (never from `@playwright/test`), drive pages through Page Objects, and assert on behaviour.
 
 ## Tests e2e (Playwright)

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { analyzeCv, matchScore, rankScore, roleMatches } from "./cvAnalysis";
+import { analyzeCv, matchScore, normalizeProfile, rankScore, roleMatches } from "./cvAnalysis";
 import type { CvProfile } from "./cvAnalysis";
 
 const CV = `
@@ -112,5 +112,25 @@ describe("roleMatches — malformed profile", () => {
 
   it("returns false for null profile", () => {
     expect(roleMatches("Frontend", null)).toBe(false);
+  });
+});
+
+describe("normalizeProfile", () => {
+  it("rejects data without skills/roles arrays", () => {
+    expect(normalizeProfile(null)).toBeNull();
+    expect(normalizeProfile({ roles: [] })).toBeNull();
+    expect(normalizeProfile({ skills: "React", roles: [] })).toBeNull();
+  });
+  it("fills every list so consumers never see undefined", () => {
+    const p = normalizeProfile({ skills: ["React"], roles: ["frontend"] });
+    expect(p).toMatchObject({
+      skills: ["React"], roles: ["frontend"], languages: [], locations: [],
+      titles: [], education: [], certifications: [], seniority: null, years: null,
+    });
+  });
+  it("drops non-string entries", () => {
+    const p = normalizeProfile({ skills: ["React", 1, null], roles: [], titles: "x" });
+    expect(p?.skills).toEqual(["React"]);
+    expect(p?.titles).toEqual([]);
   });
 });

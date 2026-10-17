@@ -1,5 +1,7 @@
 /** Deterministic API payloads shared by every spec. */
 
+import { JOB_DEFAULTS } from '../../tests/support/factories';
+
 export interface MockJob {
   source: string;
   external_id: string;
@@ -42,16 +44,11 @@ export function daysAgo(days: number): string {
 
 export function makeJob(overrides: Partial<MockJob> & Pick<MockJob, 'external_id' | 'title'>): MockJob {
   return {
-    source: 'melio',
-    location: 'Tel Aviv',
-    excerpt: '',
-    description: '',
+    ...JOB_DEFAULTS,
     url: `https://example.com/job/${overrides.external_id}`,
-    is_hot: false,
-    is_expired: false,
+    // What the browser tests add: an offer with a date, so freshness and sorting have something to read.
     last_updated: TODAY,
     added_at: daysAgo(3),
-    is_new: false,
     ai_summary: null,
     ...overrides,
   };

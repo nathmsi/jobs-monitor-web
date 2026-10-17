@@ -1,22 +1,9 @@
 import { vi } from "vitest";
 
 import * as client from "../../../src/api/client";
-import { ROLES } from "../../../src/constants/roles";
 import type { Job, SourceInfo } from "../../../src/types";
+import { matchesAnyRole } from "../fakeApi/matchesRole";
 import { REGIONS, SOURCES } from "../factories";
-
-const escape = (t: string) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-const word = (t: string) => new RegExp(`(^|[^a-z0-9])${escape(t)}($|[^a-z0-9])`, "i");
-
-/** Same rule as the API: strong terms in title/description, ambiguous ones in the title only. */
-function matchesAnyRole(job: Job, roles: string): boolean {
-  return roles.split(",").some((key) => {
-    const role = ROLES.find((r) => r.key === key);
-    if (!role) return false;
-    const text = `${job.title} ${job.excerpt} ${job.description ?? ""}`;
-    return role.strong.some((t) => word(t).test(text)) || role.title.some((t) => word(t).test(job.title));
-  });
-}
 
 /** A small vocabulary: what the API would suggest for these offers. */
 export const SUGGESTIONS: client.Suggestion[] = [

@@ -1,11 +1,11 @@
 import { screen, waitFor, within } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import App from "../../App";
-import i18n from "../../i18n";
-import { mockBackend } from "../../../tests/support/mocks/apiMock";
-import { makeJob } from "../../../tests/support/factories";
-import { renderWithProviders } from "../../../tests/support/render/renderWithProviders";
+import App from "../../../src/App";
+import i18n from "../../../src/i18n";
+import { mockBackend } from "../../support/mocks/apiMock";
+import { makeJob } from "../../support/factories";
+import { renderWithProviders } from "../../support/render/renderWithProviders";
 
 describe("App routing and shell (integration)", () => {
   beforeEach(async () => {

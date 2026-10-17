@@ -2,9 +2,9 @@ import { afterEach, describe, expect, it, vi, type Mock } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 import React from "react";
 
-import { ProfilePage } from "./ProfilePage";
-import type { JobPreferences } from "../providers/preferences/PreferencesContext";
-import type { CvProfile } from "../utils/cvAnalysis";
+import { ProfilePage } from "../../../src/pages/ProfilePage";
+import type { JobPreferences } from "../../../src/providers/preferences/PreferencesContext";
+import type { CvProfile } from "../../../src/utils/cvAnalysis";
 
 // ── Stable mocks ─────────────────────────────────────────────────────────────
 
@@ -22,16 +22,16 @@ vi.mock("react-router-dom", () => ({
   ),
 }));
 
-vi.mock("../api/hooks", () => ({
+vi.mock("../../../src/api/hooks", () => ({
   useRegionJobs: () => ({ data: null }),
   useRegions: () => ({ data: [] }),
   useSources: () => ({ data: [] }),
 }));
 
-vi.mock("../providers/auth/useAuth");
-vi.mock("../providers/profile/useProfile");
-vi.mock("../providers/preferences/usePreferences");
-vi.mock("../hooks/useCvs", () => ({
+vi.mock("../../../src/providers/auth/useAuth");
+vi.mock("../../../src/providers/profile/useProfile");
+vi.mock("../../../src/providers/preferences/usePreferences");
+vi.mock("../../../src/hooks/useCvs", () => ({
   useCvs: () => ({
     cvs: [],
     selectedCv: null,
@@ -40,25 +40,25 @@ vi.mock("../hooks/useCvs", () => ({
     addCv: vi.fn(),
   }),
 }));
-vi.mock("../providers/toast/useToast", () => ({ useToast: () => ({ showToast: vi.fn() }) }));
-vi.mock("../providers/jobFlags/useJobFlags", () => ({
+vi.mock("../../../src/providers/toast/useToast", () => ({ useToast: () => ({ showToast: vi.fn() }) }));
+vi.mock("../../../src/providers/jobFlags/useJobFlags", () => ({
   useJobFlags: () => ({ isOpened: () => false, markOpened: vi.fn() }),
 }));
-vi.mock("../providers/savedJobs/useSavedJobs", () => ({
+vi.mock("../../../src/providers/savedJobs/useSavedJobs", () => ({
   useSavedJobs: () => ({ statusOf: () => undefined, setStatus: vi.fn() }),
 }));
 
 // Stub heavy sub-components so they don't pull in their own hooks
-vi.mock("../components/Header/Header", () => ({
+vi.mock("../../../src/components/Header/Header", () => ({
   Header: () => <div data-testid="header" />,
 }));
-vi.mock("../components/ProfileEditor/ProfileEditor", () => ({
+vi.mock("../../../src/components/ProfileEditor/ProfileEditor", () => ({
   ProfileEditor: () => <div data-testid="profile-editor" />,
 }));
-vi.mock("../components/ThemeSetting/ThemeSetting", () => ({
+vi.mock("../../../src/components/ThemeSetting/ThemeSetting", () => ({
   ThemeSetting: () => null,
 }));
-vi.mock("../components/CVUploadModal/CVUploadModal", () => ({
+vi.mock("../../../src/components/CVUploadModal/CVUploadModal", () => ({
   CVUploadModal: () => null,
 }));
 
@@ -88,9 +88,9 @@ async function setup(opts: {
   prefs?: Partial<JobPreferences>;
   profile?: CvProfile | null;
 }) {
-  const { useAuth } = await import("../providers/auth/useAuth");
-  const { useProfile } = await import("../providers/profile/useProfile");
-  const { usePreferences } = await import("../providers/preferences/usePreferences");
+  const { useAuth } = await import("../../../src/providers/auth/useAuth");
+  const { useProfile } = await import("../../../src/providers/profile/useProfile");
+  const { usePreferences } = await import("../../../src/providers/preferences/usePreferences");
 
   (useAuth as Mock).mockReturnValue(
     opts.loggedIn

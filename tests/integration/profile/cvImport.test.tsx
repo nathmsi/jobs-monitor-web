@@ -1,14 +1,14 @@
 import { screen, waitFor, within } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import i18n from "../../i18n";
-import { ProfilePage } from "../../pages/ProfilePage";
-import { mockBackend } from "../../../tests/support/mocks/apiMock";
-import { makeJob } from "../../../tests/support/factories";
-import { renderWithProviders } from "../../../tests/support/render/renderWithProviders";
+import i18n from "../../../src/i18n";
+import { ProfilePage } from "../../../src/pages/ProfilePage";
+import { mockBackend } from "../../support/mocks/apiMock";
+import { makeJob } from "../../support/factories";
+import { renderWithProviders } from "../../support/render/renderWithProviders";
 
 const pdf = vi.hoisted(() => ({ extractPdfText: vi.fn() }));
-vi.mock("../../utils/pdf", () => pdf);
+vi.mock("../../../src/utils/pdf", () => pdf);
 
 const CV =
   "Jane Doe, senior frontend developer. Six years building web apps with React, TypeScript and Redux. " +

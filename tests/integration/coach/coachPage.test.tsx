@@ -1,19 +1,19 @@
 import { act, screen, waitFor, within } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import * as client from "../../api/client";
-import * as stream from "../../api/stream";
-import { CoachPage } from "../../pages/CoachPage";
-import { mockBackend } from "../../../tests/support/mocks/apiMock";
-import { fakeSupabase } from "../../../tests/support/mocks/fakeSupabase";
-import { renderWithProviders } from "../../../tests/support/render/renderWithProviders";
+import * as client from "../../../src/api/client";
+import * as stream from "../../../src/api/stream";
+import { CoachPage } from "../../../src/pages/CoachPage";
+import { mockBackend } from "../../support/mocks/apiMock";
+import { fakeSupabase } from "../../support/mocks/fakeSupabase";
+import { renderWithProviders } from "../../support/render/renderWithProviders";
 
 const auth = vi.hoisted(() => ({
   value: null as unknown,
 }));
-vi.mock("../../providers/auth/useAuth", () => ({ useAuth: () => auth.value }));
-vi.mock("../../services/supabase", async () => {
-  const { fakeSupabase } = await import("../../../tests/support/mocks/fakeSupabase");
+vi.mock("../../../src/providers/auth/useAuth", () => ({ useAuth: () => auth.value }));
+vi.mock("../../../src/services/supabase", async () => {
+  const { fakeSupabase } = await import("../../support/mocks/fakeSupabase");
   return { supabase: fakeSupabase, supabaseEnabled: true };
 });
 

@@ -3,22 +3,22 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createElement, type ReactNode } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { useCvs } from "../../hooks/useCvs";
-import { PreferencesProvider } from "../../providers/preferences/PreferencesProvider";
-import { usePreferences } from "../../providers/preferences/usePreferences";
-import { ProfileProvider } from "../../providers/profile/ProfileProvider";
-import { useProfile } from "../../providers/profile/useProfile";
-import { SavedJobsProvider } from "../../providers/savedJobs/SavedJobsProvider";
-import { useSavedJobs } from "../../providers/savedJobs/useSavedJobs";
-import { CV_PROFILE } from "../../../tests/support/factories";
-import { fakeSupabase } from "../../../tests/support/mocks/fakeSupabase";
+import { useCvs } from "../../../src/hooks/useCvs";
+import { PreferencesProvider } from "../../../src/providers/preferences/PreferencesProvider";
+import { usePreferences } from "../../../src/providers/preferences/usePreferences";
+import { ProfileProvider } from "../../../src/providers/profile/ProfileProvider";
+import { useProfile } from "../../../src/providers/profile/useProfile";
+import { SavedJobsProvider } from "../../../src/providers/savedJobs/SavedJobsProvider";
+import { useSavedJobs } from "../../../src/providers/savedJobs/useSavedJobs";
+import { CV_PROFILE } from "../../support/factories";
+import { fakeSupabase } from "../../support/mocks/fakeSupabase";
 
 const auth = vi.hoisted(() => ({ user: null as { id: string } | null }));
-vi.mock("../../providers/auth/useAuth", () => ({
+vi.mock("../../../src/providers/auth/useAuth", () => ({
   useAuth: () => ({ user: auth.user, enabled: true, ready: true }),
 }));
-vi.mock("../../services/supabase", async () => {
-  const { fakeSupabase } = await import("../../../tests/support/mocks/fakeSupabase");
+vi.mock("../../../src/services/supabase", async () => {
+  const { fakeSupabase } = await import("../../support/mocks/fakeSupabase");
   return { supabase: fakeSupabase, supabaseEnabled: true };
 });
 

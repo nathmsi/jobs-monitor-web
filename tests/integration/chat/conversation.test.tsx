@@ -1,14 +1,15 @@
 import { screen, waitFor, within } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import * as chatApi from "../../api/chat";
-import type { ChatEvent } from "../../api/chat";
-import { ChatWidget } from "../../components/Chat/ChatWidget";
-import i18n from "../../i18n";
-import { mockBackend } from "../../../tests/support/mocks/apiMock";
-import { makeJob } from "../../../tests/support/factories";
-import { apiReply, offersBlock, quickReplies, reply, requestOf } from "../../../tests/support/mocks/chatReplies";
-import { renderWithProviders } from "../../../tests/support/render/renderWithProviders";
+import * as chatApi from "../../../src/api/chat";
+import type { ChatEvent } from "../../../src/api/chat";
+import { ChatWidget } from "../../../src/components/Chat/ChatWidget";
+import i18n from "../../../src/i18n";
+import { mockBackend } from "../../support/mocks/apiMock";
+import { makeJob } from "../../support/factories";
+import { apiReply, offersBlock, quickReplies, reply, requestOf } from "../../support/mocks/chatReplies";
+import { openChat } from "../../support/render/openChat";
+import { renderWithProviders } from "../../support/render/renderWithProviders";
 
 const OFFER = makeJob({
   source: "melio",
@@ -24,11 +25,6 @@ function assistant(...scripts: ChatEvent[][]) {
   return vi.spyOn(chatApi, "streamChat").mockImplementation(async function* () {
     for (const e of queue.shift() ?? []) yield e;
   });
-}
-
-async function openChat(ui: ReturnType<typeof renderWithProviders>) {
-  await ui.user.click(screen.getByRole("button", { name: "Ask AI" }));
-  return screen.findByRole("dialog", { name: "Job assistant" });
 }
 
 describe("Chat assistant (integration)", () => {

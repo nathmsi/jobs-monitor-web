@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
 import { useTranslation } from "react-i18next";
 
-import { MAX_MESSAGE_CHARS } from "../../utils/chatMessages";
-import { PaperclipIcon, SendIcon } from "../Icons/Icons";
+import { MAX_MESSAGE_CHARS } from "../../../utils/chatMessages";
+import { PaperclipIcon, SendIcon } from "../../Icons/Icons";
 import styles from "./ChatComposer.module.css";
 
 interface Props {

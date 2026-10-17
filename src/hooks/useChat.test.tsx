@@ -4,7 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import * as chatApi from "../api/chat";
 import type { ChatEvent } from "../api/chat";
 import "../i18n";
-import { makeJob } from "../test/factories";
+import { quickReplies, reply, requestOf } from "../test/chatReplies";
 import { useChat } from "./useChat";
 
 function events(...list: ChatEvent[]) {
@@ -12,11 +12,6 @@ function events(...list: ChatEvent[]) {
     for (const e of list) yield e;
   });
 }
-
-const reply = (text: string, extra: Partial<Extract<ChatEvent, { type: "final" }>["reply"]> = {}): ChatEvent => ({
-  type: "final",
-  reply: { text, offers: [], links: [], suggestions: [], ...extra },
-});
 
 beforeEach(() => sessionStorage.clear());
 afterEach(() => vi.restoreAllMocks());
@@ -28,31 +23,28 @@ describe("useChat", () => {
   });
 
   it("sends the question with the language and shows the reply", async () => {
-    const spy = events(reply("Which role?", { suggestions: ["Backend"] }));
+    const spy = events(reply("Which role?", quickReplies("Backend")));
     const { result } = renderHook(() => useChat());
 
     act(() => result.current.send("  I need a job  "));
     expect(result.current.status).toBe("thinking");
 
     await waitFor(() => expect(result.current.status).toBe("idle"));
-    expect(spy.mock.calls[0][0]).toEqual([{ role: "user", content: "I need a job" }]);
-    expect(spy.mock.calls[0][1]).toBe("en");
+    expect(requestOf(spy).messages).toEqual([{ role: "user", content: "I need a job" }]);
+    expect(requestOf(spy).locale).toBe("en");
     expect(result.current.items.map((i) => [i.role, i.content])).toEqual([
       ["user", "I need a job"],
       ["assistant", "Which role?"],
     ]);
-    expect(result.current.items[1].suggestions).toEqual(["Backend"]);
+    expect(result.current.items[1].blocks).toEqual([quickReplies("Backend")]);
   });
 
-  it("keeps only the card fields of the offers", async () => {
-    events(reply("Here", { offers: [makeJob({ external_id: "1", title: "Dev", description: "long text" })] }));
+  it("a user message has no blocks, an answer keeps the blocks it came with", async () => {
+    events(reply("Here", quickReplies("More")));
     const { result } = renderHook(() => useChat());
     act(() => result.current.send("jobs"));
     await waitFor(() => expect(result.current.status).toBe("idle"));
-
-    const offer = result.current.items[1].offers?.[0];
-    expect(offer).toMatchObject({ external_id: "1", title: "Dev" });
-    expect(offer).not.toHaveProperty("description");
+    expect(result.current.items.map((i) => i.blocks.length)).toEqual([0, 1]);
   });
 
   it("sends what the user shares with each question, and what they share now (not at the first render)", async () => {
@@ -62,20 +54,28 @@ describe("useChat", () => {
 
     act(() => result.current.send("one"));
     await waitFor(() => expect(result.current.status).toBe("idle"));
-    expect(spy.mock.calls[0][3]).toBeNull();
+    expect(requestOf(spy).shared).toBeNull();
 
     rerender({ shared: { profile } });
     act(() => result.current.send("two"));
     await waitFor(() => expect(result.current.items).toHaveLength(4));
-    expect(spy.mock.calls[1][3]).toEqual({ profile });
+    expect(requestOf(spy, 1).shared).toEqual({ profile });
   });
 
-  it("keeps the buttons that open pages of the site", async () => {
-    events(reply("Open it here.", { links: [{ path: "/jobs?region=jerusalem", label: "Jerusalem offers" }] }));
-    const { result } = renderHook(() => useChat());
-    act(() => result.current.send("jobs in jerusalem"));
+  it("tells the API which page the user is on, the page of the moment and not the one at the first render", async () => {
+    const spy = events(reply("ok"));
+    const { result, rerender } = renderHook(({ page }) => useChat(null, page), {
+      initialProps: { page: { kind: "home" } as import("../utils/chatPage").ChatPage },
+    });
+
+    act(() => result.current.send("one"));
     await waitFor(() => expect(result.current.status).toBe("idle"));
-    expect(result.current.items[1].links).toEqual([{ path: "/jobs?region=jerusalem", label: "Jerusalem offers" }]);
+    expect(requestOf(spy).page).toEqual({ kind: "home" });
+
+    rerender({ page: { kind: "offer", source: "melio", externalId: "42" } });
+    act(() => result.current.send("two"));
+    await waitFor(() => expect(result.current.items).toHaveLength(4));
+    expect(requestOf(spy, 1).page).toEqual({ kind: "offer", source: "melio", externalId: "42" });
   });
 
   it("sends the earlier messages with the next question", async () => {
@@ -90,7 +90,7 @@ describe("useChat", () => {
     act(() => result.current.send("backend"));
     await waitFor(() => expect(result.current.items).toHaveLength(4));
 
-    expect(spy.mock.calls[1][0]).toEqual([
+    expect(requestOf(spy, 1).messages).toEqual([
       { role: "user", content: "hi" },
       { role: "assistant", content: "Which role?" },
       { role: "user", content: "backend" },
@@ -140,7 +140,7 @@ describe("useChat", () => {
     act(() => result.current.retry());
     await waitFor(() => expect(result.current.status).toBe("idle"));
     expect(result.current.items.map((i) => i.content)).toEqual(["jobs", "back"]);
-    expect(spy.mock.calls[1][0]).toEqual([{ role: "user", content: "jobs" }]);
+    expect(requestOf(spy, 1).messages).toEqual([{ role: "user", content: "jobs" }]);
   });
 
   it("fails on an error event and on a stream that ends with no answer", async () => {
@@ -168,13 +168,13 @@ describe("useChat", () => {
 
     act(() => again.result.current.reset());
     expect(again.result.current.items).toEqual([]);
-    expect(sessionStorage.getItem("jobs-monitor.chat")).toBeNull();
+    expect(sessionStorage.getItem("jobs-monitor.chat.v2")).toBeNull();
   });
 
   it("does not answer after a reset", async () => {
     let release: () => void = () => {};
     const gate = new Promise<void>((r) => (release = r));
-    vi.spyOn(chatApi, "streamChat").mockImplementation(async function* (_m, _l, signal) {
+    vi.spyOn(chatApi, "streamChat").mockImplementation(async function* ({ signal }) {
       await gate;
       if (signal?.aborted) throw new DOMException("aborted", "AbortError");
       yield reply("late");

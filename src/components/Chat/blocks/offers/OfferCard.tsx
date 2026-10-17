@@ -1,29 +1,22 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 
-import { useSources } from "../../api/hooks";
-import type { ChatOffer } from "../../api/chat";
-import { loadJobPage } from "../../pages/lazyPages";
-import { useJobFlags } from "../../providers/jobFlags/useJobFlags";
-import { parseAiSummary } from "../../utils/aiSummary";
-import { jobId } from "../../utils/jobId";
-import { jobPath } from "../../utils/slug";
-import { Avatar } from "../Avatar/Avatar";
-import { Badge } from "../Badge/Badge";
-import styles from "./ChatOfferCard.module.css";
+import { useSources } from "../../../../api/hooks";
+import { parseAiSummary } from "../../../../utils/aiSummary";
+import { Avatar } from "../../../Avatar/Avatar";
+import { Badge } from "../../../Badge/Badge";
+import { ChatActionButton } from "../shared/ChatActionButton";
+import type { ChatOffer } from "../types";
+import styles from "./OfferCard.module.css";
 
 interface Props {
   offer: ChatOffer;
-  /** Called when the offer is opened (the widget closes itself on small screens). */
-  onOpen?: () => void;
 }
 
 /** An offer in the chat: company, title, place and one line. The whole card opens the offer page. */
-export const ChatOfferCard = memo(function ChatOfferCard({ offer, onOpen }: Props) {
+export const OfferCard = memo(function OfferCard({ offer }: Props) {
   const { t } = useTranslation();
   const { data: sources } = useSources();
-  const { markOpened } = useJobFlags();
 
   const source = sources?.find((s) => s.key === offer.source);
   const ai = parseAiSummary(offer.ai_summary);
@@ -39,18 +32,12 @@ export const ChatOfferCard = memo(function ChatOfferCard({ offer, onOpen }: Prop
       </div>
 
       <h3 className={styles.title} dir="auto">
-        <Link
-          to={jobPath(offer)}
+        <ChatActionButton
           className={styles.link}
-          onClick={() => {
-            markOpened(jobId(offer.source, offer.external_id));
-            onOpen?.();
-          }}
-          onPointerEnter={loadJobPage}
-          onFocus={loadJobPage}
+          action={{ type: "open-offer", source: offer.source, externalId: offer.external_id, title: offer.title }}
         >
           {offer.title}
-        </Link>
+        </ChatActionButton>
       </h3>
 
       {summary && (

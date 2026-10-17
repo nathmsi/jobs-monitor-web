@@ -668,7 +668,14 @@
       "jerusalem": "Offres à Jérusalem",
       "howto": "Comment utiliser ce site ?",
       "advice": "Comment préparer un entretien technique ?",
-      "forMe": "Trouve des offres qui correspondent à mon CV"
+      "forMe": "Trouve des offres qui correspondent à mon CV",
+      "aboutOffer": "Parle-moi de cette offre",
+      "similarOffers": "Trouve des offres similaires",
+      "howApply": "Comment postuler à cette offre ?",
+      "fitsMe": "Cette offre correspond-elle à mon CV ?",
+      "aboutCompany": "Que propose cette entreprise ?",
+      "whoHires": "Quelles entreprises recrutent pour cette technologie ?",
+      "cvTips": "Comment améliorer mon CV ?"
     },
     "inputLabel": "Votre message",
     "placeholder": "Décrivez le poste que vous voulez…",

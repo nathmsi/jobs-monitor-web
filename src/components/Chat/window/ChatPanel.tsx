@@ -1,25 +1,23 @@
 import { useEffect, useId, useRef, type KeyboardEvent } from "react";
 import { useTranslation } from "react-i18next";
 
-import type { ChatController } from "../../hooks/useChat";
-import { useChatFrame } from "../../hooks/useChatFrame";
-import type { ChatShareController } from "../../hooks/useChatShare";
-import { HANDLES, type Frame } from "../../utils/chatFrame";
-import { CloseIcon, CollapseIcon, ExpandIcon, GripIcon, PlusIcon } from "../Icons/Icons";
-import { ChatComposer } from "./ChatComposer";
-import { ChatMessage } from "./ChatMessage";
-import { ChatShareBar } from "./ChatShareBar";
+import type { ChatController } from "../../../hooks/useChat";
+import { useChatFrame } from "../../../hooks/useChatFrame";
+import type { ChatShareController } from "../../../hooks/useChatShare";
+import { HANDLES, type Frame } from "../../../utils/chatFrame";
+import { CloseIcon, CollapseIcon, ExpandIcon, GripIcon, PlusIcon } from "../../Icons/Icons";
+import { useChatContext } from "../../../providers/chat/useChatContext";
+import { startersFor } from "../../../utils/chatStarters";
+import { ChatComposer } from "../composer/ChatComposer";
+import { ChatShareBar } from "../composer/ChatShareBar";
+import { ChatMessage } from "../conversation/ChatMessage";
 import styles from "./ChatPanel.module.css";
 
-const STARTERS = ["backend", "jerusalem", "howto", "advice"] as const;
-/** With the CV shared, the first question to ask is the obvious one. */
-const CV_STARTER = "forMe";
 const KNOWN_STEPS = new Set(["search_offers", "browse_offers", "read_offer", "market_stats", "site_guide"]);
 
 interface Props {
   chat: ChatController;
   onClose: () => void;
-  onOpenOffer: () => void;
   share: ChatShareController;
   /** Where the user put the window, and how big (desktop); null = the default place. */
   frame: Frame | null;
@@ -30,7 +28,7 @@ interface Props {
 }
 
 /** The conversation window. All the logic lives in `useChat`; this only draws it. */
-export function ChatPanel({ chat, onClose, onOpenOffer, share, frame, onFrameChange, draft, onDraftChange }: Props) {
+export function ChatPanel({ chat, onClose, share, frame, onFrameChange, draft, onDraftChange }: Props) {
   const { t } = useTranslation();
   const titleId = useId();
   const logRef = useRef<HTMLDivElement>(null);
@@ -50,7 +48,9 @@ export function ChatPanel({ chat, onClose, onOpenOffer, share, frame, onFrameCha
   };
 
   const lastAssistant = items.findLast((i) => i.role === "assistant");
-  const starters = share.payload ? [CV_STARTER, ...STARTERS.slice(0, 3)] : STARTERS;
+  // What to suggest depends on the page the user is on and on whether the CV is shared.
+  const { page, config } = useChatContext();
+  const starters = startersFor(page, config.sharing);
   const stepLabel = t(step && KNOWN_STEPS.has(step) ? `chat.step.${step}` : "chat.thinking");
 
   return (
@@ -112,13 +112,7 @@ export function ChatPanel({ chat, onClose, onOpenOffer, share, frame, onFrameCha
           </div>
         ) : (
           items.map((item) => (
-            <ChatMessage
-              key={item.id}
-              item={item}
-              showSuggestions={item === lastAssistant && status === "idle"}
-              onPick={send}
-              onOpenOffer={onOpenOffer}
-            />
+            <ChatMessage key={item.id} item={item} active={item === lastAssistant && status === "idle"} />
           ))
         )}
 

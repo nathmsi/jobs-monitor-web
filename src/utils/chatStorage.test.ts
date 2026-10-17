@@ -3,7 +3,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import type { ChatItem } from "./chatMessages";
 import { loadChat, saveChat } from "./chatStorage";
 
-const item = (n: number): ChatItem => ({ id: `i${n}`, role: n % 2 ? "assistant" : "user", content: `m${n}` });
+const item = (n: number): ChatItem => ({ id: `i${n}`, role: n % 2 ? "assistant" : "user", content: `m${n}`, blocks: [] });
 
 afterEach(() => {
   sessionStorage.clear();
@@ -23,7 +23,7 @@ describe("chatStorage", () => {
   it("forgets an empty conversation", () => {
     saveChat([item(0)]);
     saveChat([]);
-    expect(sessionStorage.getItem("jobs-monitor.chat")).toBeNull();
+    expect(sessionStorage.getItem("jobs-monitor.chat.v2")).toBeNull();
   });
 
   it("keeps only the 40 latest items", () => {
@@ -34,9 +34,9 @@ describe("chatStorage", () => {
   });
 
   it("ignores corrupted or malformed data", () => {
-    sessionStorage.setItem("jobs-monitor.chat", "{not json");
+    sessionStorage.setItem("jobs-monitor.chat.v2", "{not json");
     expect(loadChat()).toEqual([]);
-    sessionStorage.setItem("jobs-monitor.chat", JSON.stringify([item(0), { id: 1 }, "x", { id: "z", role: "system", content: "x" }]));
+    sessionStorage.setItem("jobs-monitor.chat.v2", JSON.stringify([item(0), { id: 1 }, "x", { id: "z", role: "system", content: "x" }]));
     expect(loadChat()).toEqual([item(0)]);
   });
 

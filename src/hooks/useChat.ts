@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useReducer, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
-import { streamChat, toChatOffer, type ChatShared } from "../api/chat";
+import { streamChat, type ChatShared } from "../api/chat";
 import { toApiMessages, type ChatItem } from "../utils/chatMessages";
+import type { ChatPage } from "../utils/chatPage";
 import { chatReducer, initialChatState } from "../utils/chatReducer";
 import { loadChat, saveChat } from "../utils/chatStorage";
 
@@ -13,17 +14,17 @@ const nextId = (): string => `${Date.now().toString(36)}-${(counter++).toString(
  * The chat's logic, with no UI: the conversation, the request to the assistant (streamed),
  * the progress step, retry and reset. The conversation lives in this tab's sessionStorage.
  */
-export function useChat(shared: ChatShared | null = null) {
+export function useChat(shared: ChatShared | null = null, page: ChatPage = { kind: "other" }) {
   const { i18n } = useTranslation();
   const locale = i18n.resolvedLanguage ?? i18n.language;
 
   const [state, dispatch] = useReducer(chatReducer, undefined, () => initialChatState(loadChat()));
   const abortRef = useRef<AbortController | null>(null);
-  // The latest choice is sent with every question, without making `ask` change when it does.
-  const sharedRef = useRef(shared);
+  // The latest choices are sent with every question, without making `ask` change when they do.
+  const latest = useRef({ shared, page });
   useEffect(() => {
-    sharedRef.current = shared;
-  }, [shared]);
+    latest.current = { shared, page };
+  }, [shared, page]);
 
   useEffect(() => saveChat(state.items), [state.items]);
   useEffect(() => () => abortRef.current?.abort(), []);
@@ -36,15 +37,12 @@ export function useChat(shared: ChatShared | null = null) {
 
       let answered = false;
       try {
-        for await (const event of streamChat(toApiMessages(items), locale, controller.signal, sharedRef.current)) {
+        const { shared: sharing, page: where } = latest.current;
+        for await (const event of streamChat({ messages: toApiMessages(items), locale, signal: controller.signal, shared: sharing, page: where })) {
           if (event.type === "tool_call") dispatch({ type: "step", name: event.name });
           else if (event.type === "final") {
             answered = true;
-            const { text, offers, links, suggestions } = event.reply;
-            dispatch({
-              type: "replied",
-              item: { id: nextId(), role: "assistant", content: text, offers: offers.map(toChatOffer), links: links ?? [], suggestions },
-            });
+            dispatch({ type: "replied", item: { id: nextId(), role: "assistant", content: event.reply.text, blocks: event.reply.blocks } });
           } else if (event.type === "error") break;
         }
       } catch {
@@ -59,7 +57,7 @@ export function useChat(shared: ChatShared | null = null) {
     (text: string) => {
       const content = text.trim();
       if (!content || state.status === "thinking") return;
-      const item: ChatItem = { id: nextId(), role: "user", content };
+      const item: ChatItem = { id: nextId(), role: "user", content, blocks: [] };
       dispatch({ type: "sent", item });
       void ask([...state.items, item]);
     },

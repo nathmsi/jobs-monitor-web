@@ -393,6 +393,49 @@ test.describe('Chat · click outside', () => {
   });
 });
 
+test.describe('Chat · it knows where I am', () => {
+  test('on an offer page it asks about that offer, and tells the assistant which one', async ({ page, api }) => {
+    const offer = new PublicPage(page);
+    await offer.goto('/jobs/monday/e2/backend-developer');
+    await offer.heading.waitFor();
+    await offer.chat.open();
+
+    await expect(offer.chat.choice('Tell me about this offer')).toBeVisible();
+    await expect(offer.chat.choice('How do I apply to this offer?')).toBeVisible();
+    await offer.chat.choice('Tell me about this offer').click();
+
+    await expect.poll(() => api.chatRequests.length).toBe(1);
+    expect(api.chatRequests[0].page).toEqual({ kind: 'offer', source: 'monday', externalId: 'e2' });
+  });
+
+  test('the page of the moment is sent, not the one where the chat was opened', async ({ page, api }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+    await home.chat.ask('hello');
+    await expect.poll(() => api.chatRequests.length).toBe(1);
+    expect(api.chatRequests[0].page).toEqual({ kind: 'home' });
+
+    // Navigate inside the app (the chat stays), then ask again.
+    await page.evaluate(() => {
+      window.history.pushState({}, '', '/companies/monday');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    });
+    await home.chat.ask('and this company?');
+    await expect.poll(() => api.chatRequests.length).toBe(2);
+    expect(api.chatRequests[1].page).toEqual({ kind: 'company', key: 'monday' });
+  });
+
+  test('on a page about nothing in particular it offers the general questions', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+    await expect(home.chat.choice('Backend jobs in Tel Aviv')).toBeVisible();
+    await expect(home.chat.choice('How do I use this site?')).toBeVisible();
+    await expect(home.chat.choice('Tell me about this offer')).toHaveCount(0);
+  });
+});
+
 test.describe('Chat · using my CV', () => {
   test('the assistant sees nothing until the user switches it on, then gets the profile', async ({ page, api }) => {
     await seedStorage(page, { [STORAGE_KEYS.profile]: PROFILE });

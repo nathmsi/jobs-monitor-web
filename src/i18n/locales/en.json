@@ -667,7 +667,14 @@
       "jerusalem": "Jobs in Jerusalem",
       "howto": "How do I use this site?",
       "advice": "How do I prepare for a tech interview?",
-      "forMe": "Find offers that fit my CV"
+      "forMe": "Find offers that fit my CV",
+      "aboutOffer": "Tell me about this offer",
+      "similarOffers": "Find similar offers",
+      "howApply": "How do I apply to this offer?",
+      "fitsMe": "Does this offer fit my CV?",
+      "aboutCompany": "What does this company offer?",
+      "whoHires": "Which companies hire for this technology?",
+      "cvTips": "How can I improve my CV?"
     },
     "inputLabel": "Your message",
     "placeholder": "Describe the job you want…",

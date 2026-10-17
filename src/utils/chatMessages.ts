@@ -1,16 +1,14 @@
-import type { ChatApiMessage, ChatLink, ChatOffer } from "../api/chat";
+import type { ChatApiMessage } from "../api/chat";
+import { summarizeBlocks } from "../components/Chat/blocks/models";
+import type { ChatBlock } from "../components/Chat/blocks/types";
 
 /** One bubble of the conversation, as shown. */
 export interface ChatItem {
   id: string;
   role: "user" | "assistant";
   content: string;
-  /** Assistant only: offers shown as cards under the text. */
-  offers?: ChatOffer[];
-  /** Assistant only: buttons that open a page of the site. */
-  links?: ChatLink[];
-  /** Assistant only: quick replies. */
-  suggestions?: string[];
+  /** Assistant only: what is drawn under the text (offers, buttons…). Empty for the user and for a plain answer. */
+  blocks: ChatBlock[];
 }
 
 /** What the API accepts (see the backend's ChatRequestDto). */
@@ -19,14 +17,14 @@ export const MAX_MESSAGE_CHARS = 2000;
 
 /**
  * The conversation as the API wants it: the most recent messages, starting with the user,
- * with no empty message. A reply that was only cards is sent as a short note, never as
- * the offers' own text (that is data from the web, not something the assistant said).
+ * with no empty message. A reply that was only blocks is sent as the short note each kind gives
+ * of itself ("[Showed 3 offers]"), never as the offers' own text (data from the web).
  */
 export function toApiMessages(items: readonly ChatItem[]): ChatApiMessage[] {
   const messages = items
     .map((item): ChatApiMessage => ({
       role: item.role,
-      content: (item.content.trim() || (item.offers?.length ? `[Showed ${item.offers.length} offers]` : "")).slice(0, MAX_MESSAGE_CHARS),
+      content: (item.content.trim() || summarizeBlocks(item.blocks)).slice(0, MAX_MESSAGE_CHARS),
     }))
     .filter((m) => m.content);
 

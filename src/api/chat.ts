@@ -1,4 +1,6 @@
-import type { Job } from "../types";
+import { parseBlocks } from "../components/Chat/blocks/models";
+import type { ChatBlock } from "../components/Chat/blocks/types";
+import type { ChatPage } from "../utils/chatPage";
 import { readNdjson } from "../utils/ndjson";
 import { API } from "./client";
 
@@ -34,59 +36,59 @@ export interface ChatApiMessage {
   content: string;
 }
 
-/** An offer in the chat: the fields a card needs (the offer page loads the rest). */
-export type ChatOffer = Pick<
-  Job,
-  "source" | "external_id" | "title" | "location" | "excerpt" | "ai_summary" | "is_hot" | "is_expired" | "added_at"
->;
-
-/** A button that opens a page of the site: an internal address, built by the API. */
-export interface ChatLink {
-  path: string;
-  label: string;
-}
-
+/** What the assistant answers: text, then blocks drawn under it (see components/Chat/blocks). */
 export interface ChatReply {
   text: string;
-  offers: ChatOffer[];
-  links: ChatLink[];
-  suggestions: string[];
+  blocks: ChatBlock[];
 }
 
 export type ChatEvent =
   | { type: "tool_call"; callId: string; name: string }
   | { type: "tool_result"; callId: string; name: string; ok: boolean }
-  | { type: "final"; reply: Omit<ChatReply, "offers"> & { offers: Job[] } }
+  | { type: "final"; reply: ChatReply }
   | { type: "error"; message: string };
 
-/** The cards need little of an offer; keeping only that keeps the stored conversation small. */
-export function toChatOffer(job: Job): ChatOffer {
+type RawEvent = Exclude<ChatEvent, { type: "final" }> | { type: "final"; reply: unknown };
+
+const isRecord = (v: unknown): v is Record<string, unknown> => typeof v === "object" && v !== null && !Array.isArray(v);
+
+/** The API before `blocks`: three fixed fields. Kept so this client works with either side deployed first. */
+function legacyBlocks(raw: Record<string, unknown>): unknown[] {
+  return [
+    { type: "offers", offers: raw.offers },
+    { type: "links", links: raw.links },
+    { type: "suggestions", replies: raw.suggestions },
+  ];
+}
+
+/** The reply of the API as the app uses it: a block this version does not know, or that is broken, is dropped. */
+export function normalizeReply(raw: unknown): ChatReply {
+  if (!isRecord(raw)) return { text: "", blocks: [] };
   return {
-    source: job.source,
-    external_id: job.external_id,
-    title: job.title,
-    location: job.location,
-    excerpt: job.excerpt,
-    ai_summary: job.ai_summary,
-    is_hot: job.is_hot,
-    is_expired: job.is_expired,
-    added_at: job.added_at,
+    text: typeof raw.text === "string" ? raw.text : "",
+    blocks: parseBlocks(Array.isArray(raw.blocks) ? raw.blocks : legacyBlocks(raw)),
   };
 }
 
+export interface ChatStreamRequest {
+  messages: ChatApiMessage[];
+  locale: string;
+  signal?: AbortSignal;
+  /** What the user lets the assistant see of their CV. */
+  shared?: ChatShared | null;
+  /** Where the user is on the site. */
+  page?: ChatPage;
+}
+
 /** Streams the assistant's progress: search steps, then one `final` event with the reply. */
-export async function* streamChat(
-  messages: ChatApiMessage[],
-  locale: string,
-  signal?: AbortSignal,
-  shared?: ChatShared | null,
-): AsyncGenerator<ChatEvent> {
+export async function* streamChat({ messages, locale, signal, shared, page }: ChatStreamRequest): AsyncGenerator<ChatEvent> {
   const resp = await fetch(`${API}/api/chat/stream`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       messages,
       locale,
+      ...(page ? { page } : {}),
       ...(shared?.profile ? { profile: shared.profile } : {}),
       ...(shared?.cvs?.length ? { cvs: shared.cvs } : {}),
     }),
@@ -98,5 +100,8 @@ export async function* streamChat(
     throw new Error(detail?.message || `HTTP ${resp.status}`);
   }
   if (!resp.body) throw new Error("No response body");
-  yield* readNdjson<ChatEvent>(resp.body);
+
+  for await (const event of readNdjson<RawEvent>(resp.body)) {
+    yield event.type === "final" ? { type: "final", reply: normalizeReply(event.reply) } : event;
+  }
 }

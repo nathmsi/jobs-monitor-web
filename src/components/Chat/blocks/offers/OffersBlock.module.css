@@ -1,0 +1,17 @@
+.offers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* In the enlarged window the cards sit side by side. */
+@container (min-width: 40rem) {
+  .offers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

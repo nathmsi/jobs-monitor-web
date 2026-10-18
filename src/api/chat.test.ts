@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import { makeJob } from "../test/factories";
+import { makeJob } from "../../tests/support/factories";
 import { normalizeReply, streamChat, type ChatEvent } from "./chat";
 
 function streamingResponse(chunks: string[], init: { ok?: boolean; status?: number; json?: unknown } = {}) {

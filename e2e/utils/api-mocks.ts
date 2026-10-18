@@ -1,6 +1,6 @@
 import type { Page } from '@playwright/test';
 
-import { ROLES } from '../../src/constants/roles';
+import { matchesAnyRole } from '../../tests/support/fakeApi/matchesRole';
 import { MOCK_JOBS, MOCK_REGIONS, MOCK_SOURCES, VOCAB, type MockJob, type MockSuggestion } from '../fixtures/data';
 
 /**
@@ -61,16 +61,6 @@ const SOURCE_BY_KEY = new Map(MOCK_SOURCES.map((s) => [s.key, s]));
 const escapeRe = (t: string) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const asWord = (t: string) => new RegExp(`(^|[^a-z0-9])${escapeRe(t)}($|[^a-z0-9])`, 'i');
 
-/** Same rule as the API: strong terms in title/description, ambiguous ones in the title only. */
-function matchesRoles(job: MockJob, roles: string): boolean {
-  return roles.split(',').some((key) => {
-    const role = ROLES.find((r) => r.key === key);
-    if (!role) return false;
-    const text = `${job.title} ${job.excerpt} ${job.description}`;
-    return role.strong.some((t) => asWord(t).test(text)) || role.title.some((t) => asWord(t).test(job.title));
-  });
-}
-
 const POSTED_WINDOWS: Record<string, number> = {
   '24h': 24 * 3600_000,
   '7d': 7 * 24 * 3600_000,
@@ -88,7 +78,7 @@ function matches(job: MockJob, url: URL): boolean {
     if (!q.split(/\s+/).every(found)) return false;
   }
   const role = url.searchParams.get('role');
-  if (role && !matchesRoles(job, role)) return false;
+  if (role && !matchesAnyRole(job, role)) return false;
   const window = POSTED_WINDOWS[url.searchParams.get('posted') ?? ''];
   if (window && (!job.added_at || Date.parse(job.added_at) < Date.now() - window)) return false;
   const kind = url.searchParams.get('kind');

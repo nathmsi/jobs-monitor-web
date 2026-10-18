@@ -44,6 +44,9 @@ jobs:
       - name: Unit tests
         run: pnpm test:unit
 
+      - name: Component tests
+        run: pnpm test:component
+
       - name: Integration tests
         run: pnpm test:integration
 

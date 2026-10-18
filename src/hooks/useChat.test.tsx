@@ -4,7 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import * as chatApi from "../api/chat";
 import type { ChatEvent } from "../api/chat";
 import "../i18n";
-import { quickReplies, reply, requestOf } from "../test/chatReplies";
+import { quickReplies, reply, requestOf } from "../../tests/support/mocks/chatReplies";
 import { useChat } from "./useChat";
 
 function events(...list: ChatEvent[]) {

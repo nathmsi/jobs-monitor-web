@@ -416,14 +416,13 @@ test.describe('Chat · it knows where I am', () => {
     await expect.poll(() => api.chatRequests.length).toBe(1);
     expect(api.chatRequests[0].page).toEqual({ kind: 'home' });
 
-    // Navigate inside the app (the chat stays), then ask again.
-    await page.evaluate(() => {
-      window.history.pushState({}, '', '/companies/monday');
-      window.dispatchEvent(new PopStateEvent('popstate'));
-    });
-    await home.chat.ask('and this company?');
+    // Go to another page inside the app (the click is outside the chat: it closes), reopen it, ask again.
+    await home.header.link('Offers').click();
+    await expect(page).toHaveURL(/\/jobs/);
+    await home.chat.open();
+    await home.chat.ask('and here?');
     await expect.poll(() => api.chatRequests.length).toBe(2);
-    expect(api.chatRequests[1].page).toEqual({ kind: 'company', key: 'monday' });
+    expect(api.chatRequests[1].page).toEqual({ kind: 'offers' });
   });
 
   test('on a page about nothing in particular it offers the general questions', async ({ page }) => {

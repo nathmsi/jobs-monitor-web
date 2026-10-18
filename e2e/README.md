@@ -74,6 +74,6 @@ e2e/
 ## What is *not* covered here
 
 Signed-in flows (Supabase auth, CV library, AI review/matching) need a session,
-so they are covered by the **integration tests** in `src/test/integration/`,
+so they are covered by the **integration tests** in `tests/integration/`,
 which run the real providers against an in-memory Supabase fake. See
-`../src/test/README.md`.
+`../tests/README.md`.

@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { ChatAction } from "../../components/Chat/actions/types";
 import i18n from "../../i18n";
-import { renderWithProviders } from "../../test/renderWithProviders";
+import { renderWithProviders } from "../../../tests/support/render/renderWithProviders";
 import { ChatProvider } from "./ChatProvider";
 import { useChatContext } from "./useChatContext";
 

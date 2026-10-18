@@ -701,6 +701,7 @@
     "shareSkills_one": "{{count}} compétence",
     "shareSkills_other": "{{count}} compétences",
     "shareCvs_one": "{{count}} CV",
-    "shareCvs_other": "{{count}} CV"
+    "shareCvs_other": "{{count}} CV",
+    "moveHint": "Glisser pour déplacer · Alt+flèches déplacent, Alt+Maj+flèches redimensionnent · double-clic pour réinitialiser"
   }
 }

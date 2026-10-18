@@ -16,6 +16,7 @@ export class ChatComponent {
   readonly shareSwitch: Locator;
   readonly sizeButton: Locator;
   readonly cvInput: Locator;
+  readonly header: Locator;
 
   constructor(private readonly page: Page) {
     this.launcher = page.getByRole('button', { name: 'Ask AI' });
@@ -29,6 +30,7 @@ export class ChatComponent {
     this.retryButton = this.window.getByRole('button', { name: 'Try again' });
     this.shareSwitch = this.window.getByRole('switch', { name: /Use my CV/ });
     this.sizeButton = this.window.getByRole('button', { name: /^(Enlarge|Reduce) the chat$/ });
+    this.header = this.window.getByRole('heading', { name: 'Job assistant' });
     this.cvInput = this.window.getByTestId('chat-cv-input');
     this.links = this.window.getByRole('list', { name: 'Open in the site' }).getByRole('link');
     this.offers = this.window.getByRole('list', { name: 'Matching offers' }).getByRole('article');
@@ -37,6 +39,8 @@ export class ChatComponent {
   async open(): Promise<void> {
     await this.launcher.click();
     await this.input.waitFor();
+    // Measure once the entrance animation is over, not while the window is still sliding in.
+    await this.window.evaluate((el) => Promise.all(el.getAnimations().map((a) => a.finished)));
   }
 
   async ask(text: string): Promise<void> {
@@ -55,5 +59,29 @@ export class ChatComponent {
 
   offerLink(title: string | RegExp): Locator {
     return this.window.getByRole('link', { name: title });
+  }
+
+  /** A resize handle: n, s, e, w, nw, ne, sw, se. */
+  handle(side: string): Locator {
+    return this.page.getByTestId(`chat-resize-${side}`);
+  }
+
+  /** The window's rectangle (the page's own, so it is what the user sees). */
+  async box(): Promise<{ x: number; y: number; width: number; height: number }> {
+    const box = await this.window.boundingBox();
+    if (!box) throw new Error('the chat window is not on screen');
+    return box;
+  }
+
+  /** Press on the middle of `target`, move by (dx, dy) with the mouse, release. */
+  async dragBy(target: Locator, dx: number, dy: number): Promise<void> {
+    const box = await target.boundingBox();
+    if (!box) throw new Error('nothing to drag');
+    const x = box.x + box.width / 2;
+    const y = box.y + box.height / 2;
+    await this.page.mouse.move(x, y);
+    await this.page.mouse.down();
+    await this.page.mouse.move(x + dx, y + dy, { steps: 8 });
+    await this.page.mouse.up();
   }
 }

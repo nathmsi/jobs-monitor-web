@@ -2,9 +2,10 @@ import { useEffect, useId, useRef, type KeyboardEvent } from "react";
 import { useTranslation } from "react-i18next";
 
 import type { ChatController } from "../../hooks/useChat";
+import { useChatFrame } from "../../hooks/useChatFrame";
 import type { ChatShareController } from "../../hooks/useChatShare";
-import type { ChatSize } from "../../utils/chatPrefs";
-import { CloseIcon, CollapseIcon, ExpandIcon, PlusIcon } from "../Icons/Icons";
+import { HANDLES, type Frame } from "../../utils/chatFrame";
+import { CloseIcon, CollapseIcon, ExpandIcon, GripIcon, PlusIcon } from "../Icons/Icons";
 import { ChatComposer } from "./ChatComposer";
 import { ChatMessage } from "./ChatMessage";
 import { ChatShareBar } from "./ChatShareBar";
@@ -20,17 +21,22 @@ interface Props {
   onClose: () => void;
   onOpenOffer: () => void;
   share: ChatShareController;
-  /** Window size on a desktop (a phone always has the whole screen). */
-  size: ChatSize;
-  onToggleSize: () => void;
+  /** Where the user put the window, and how big (desktop); null = the default place. */
+  frame: Frame | null;
+  onFrameChange: (frame: Frame | null) => void;
+  /** What was typed and not sent: kept by the widget, so closing the window never loses it. */
+  draft: string;
+  onDraftChange: (text: string) => void;
 }
 
 /** The conversation window. All the logic lives in `useChat`; this only draws it. */
-export function ChatPanel({ chat, onClose, onOpenOffer, share, size, onToggleSize }: Props) {
+export function ChatPanel({ chat, onClose, onOpenOffer, share, frame, onFrameChange, draft, onDraftChange }: Props) {
   const { t } = useTranslation();
   const titleId = useId();
   const logRef = useRef<HTMLDivElement>(null);
   const { items, status, step, send, retry, reset } = chat;
+  const { panelRef, dragging, large, startMove, startResize, reset: resetFrame, toggle: toggleSize, onKeyDown: onFrameKey } =
+    useChatFrame({ frame, onCommit: onFrameChange });
 
   // Keep the latest message in view.
   useEffect(() => {
@@ -39,17 +45,33 @@ export function ChatPanel({ chat, onClose, onOpenOffer, share, size, onToggleSiz
   }, [items.length, status]);
 
   const onKeyDown = (e: KeyboardEvent) => {
+    if (onFrameKey(e)) return;
     if (e.key === "Escape") onClose();
   };
 
   const lastAssistant = items.findLast((i) => i.role === "assistant");
   const starters = share.payload ? [CV_STARTER, ...STARTERS.slice(0, 3)] : STARTERS;
-  const large = size === "large";
   const stepLabel = t(step && KNOWN_STEPS.has(step) ? `chat.step.${step}` : "chat.thinking");
 
   return (
-    <section className={`${styles.panel} ${large ? styles.large : ""}`} role="dialog" aria-modal="false" aria-labelledby={titleId} onKeyDown={onKeyDown}>
-      <header className={styles.header}>
+    <section
+      ref={panelRef}
+      data-chat-root=""
+      className={`${styles.panel} ${dragging ? styles.dragging : ""}`}
+      role="dialog"
+      aria-modal="false"
+      aria-labelledby={titleId}
+      aria-keyshortcuts="Alt+ArrowLeft Alt+ArrowRight Alt+ArrowUp Alt+ArrowDown"
+      onKeyDown={onKeyDown}
+    >
+      <div className={styles.handles} aria-hidden="true">
+        {HANDLES.map((handle) => (
+          <span key={handle} data-testid={`chat-resize-${handle}`} className={`${styles.handle} ${styles[`handle_${handle}`]}`} onPointerDown={startResize(handle)} />
+        ))}
+      </div>
+
+      <header className={styles.header} onPointerDown={startMove} onDoubleClick={(e) => !(e.target as HTMLElement).closest("button") && resetFrame()} title={t("chat.moveHint")}>
+        <GripIcon size={14} className={styles.grip} />
         <h2 id={titleId} className={styles.title}>
           {t("chat.title")}
         </h2>
@@ -60,7 +82,7 @@ export function ChatPanel({ chat, onClose, onOpenOffer, share, size, onToggleSiz
           <button
             type="button"
             className={`${styles.iconBtn} ${styles.sizeBtn}`}
-            onClick={onToggleSize}
+            onClick={toggleSize}
             aria-pressed={large}
             title={large ? t("chat.collapse") : t("chat.expand")}
             aria-label={large ? t("chat.collapse") : t("chat.expand")}
@@ -118,7 +140,14 @@ export function ChatPanel({ chat, onClose, onOpenOffer, share, size, onToggleSiz
       </div>
 
       <ChatShareBar share={share} />
-      <ChatComposer onSend={send} busy={status === "thinking"} onAttach={share.attach} attaching={share.attaching} />
+      <ChatComposer
+        onSend={send}
+        busy={status === "thinking"}
+        onAttach={share.attach}
+        attaching={share.attaching}
+        value={draft}
+        onChange={onDraftChange}
+      />
       <p className={styles.disclaimer}>{t("chat.disclaimer")}</p>
     </section>
   );

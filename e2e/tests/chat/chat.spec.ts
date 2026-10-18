@@ -217,6 +217,182 @@ test.describe('Chat · bigger window (desktop)', () => {
   });
 });
 
+const approx = (value: number, expected: number, tolerance = 3) => Math.abs(value - expected) <= tolerance;
+
+test.describe('Chat · move and resize (desktop)', () => {
+  test('the window is dragged by its header and stays where it was put, also after a reload', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+    const before = await home.chat.box();
+
+    await home.chat.dragBy(home.chat.header, -300, 20);
+
+    const moved = await home.chat.box();
+    expect(approx(moved.x, before.x - 300)).toBe(true);
+    expect(approx(moved.y, before.y + 20)).toBe(true);
+    expect(approx(moved.width, before.width, 1) && approx(moved.height, before.height, 1)).toBe(true);
+
+    await page.reload();
+    await home.chat.open();
+    const again = await home.chat.box();
+    expect(approx(again.x, moved.x) && approx(again.y, moved.y)).toBe(true);
+  });
+
+  test('it cannot be dragged off screen or under the sticky header', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+
+    await home.chat.dragBy(home.chat.header, -3000, -3000);
+    const topLeft = await home.chat.box();
+    expect(topLeft.x).toBeGreaterThanOrEqual(7);
+    expect(topLeft.y).toBeGreaterThanOrEqual(71);
+    await expect(home.chat.closeButton).toBeInViewport({ ratio: 1 });
+
+    await home.chat.dragBy(home.chat.header, 4000, 4000);
+    const bottomRight = await home.chat.box();
+    const viewport = page.viewportSize()!;
+    expect(bottomRight.x + bottomRight.width).toBeLessThanOrEqual(viewport.width - 7);
+    expect(bottomRight.y + bottomRight.height).toBeLessThanOrEqual(viewport.height - 7);
+  });
+
+  test('a handle resizes it from that edge or corner, the opposite one stays put', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+    const before = await home.chat.box();
+
+    await home.chat.dragBy(home.chat.handle('w'), -150, 0);
+    const wider = await home.chat.box();
+    expect(approx(wider.width, before.width + 150)).toBe(true);
+    expect(approx(wider.x + wider.width, before.x + before.width)).toBe(true);
+
+    // A corner moves two edges: the south-west one holds the left and bottom edges.
+    await home.chat.dragBy(home.chat.handle('sw'), -40, 60);
+    const bigger = await home.chat.box();
+    expect(approx(bigger.width, wider.width + 40) && approx(bigger.height, wider.height + 60)).toBe(true);
+    expect(approx(bigger.x + bigger.width, wider.x + wider.width)).toBe(true);
+    expect(approx(bigger.y, wider.y)).toBe(true);
+  });
+
+  test('it cannot be made smaller than a usable chat', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+
+    await home.chat.dragBy(home.chat.handle('w'), 2000, 0);
+    await home.chat.dragBy(home.chat.handle('s'), 0, -2000);
+
+    const small = await home.chat.box();
+    expect(small.width).toBeGreaterThanOrEqual(339);
+    expect(small.height).toBeGreaterThanOrEqual(419);
+    await expect(home.chat.input).toBeVisible();
+    await expect(home.chat.sendButton).toBeInViewport();
+  });
+
+  test('without a mouse: Alt+arrows move it, Alt+Shift+arrows resize it', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+    const before = await home.chat.box();
+
+    await home.chat.input.focus();
+    for (let i = 0; i < 3; i++) await page.keyboard.press('Alt+ArrowLeft');
+    await expect.poll(async () => (await home.chat.box()).x).toBeLessThan(before.x - 40);
+    const moved = await home.chat.box();
+    expect(approx(moved.x, before.x - 48, 2)).toBe(true);
+
+    for (let i = 0; i < 2; i++) await page.keyboard.press('Alt+Shift+ArrowRight');
+    await expect.poll(async () => (await home.chat.box()).width).toBeGreaterThan(moved.width + 20);
+    // The text box did not take the arrows as cursor moves, and the chat did not close.
+    await expect(home.chat.window).toBeVisible();
+  });
+
+  test('double-clicking the header puts it back where it opens', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+    const start = await home.chat.box();
+    await home.chat.dragBy(home.chat.header, -250, -80);
+    await home.chat.dragBy(home.chat.handle('w'), -100, 0);
+
+    await home.chat.header.dblclick();
+
+    await expect.poll(async () => (await home.chat.box()).x).toBeCloseTo(start.x, -1);
+    const back = await home.chat.box();
+    expect(approx(back.y, start.y) && approx(back.width, start.width)).toBe(true);
+  });
+
+  test('a position saved on a bigger screen is brought back inside this one', async ({ page }) => {
+    await seedStorage(page, { 'jobs-monitor.chat.prefs': { frame: { left: 5000, top: -300, width: 900, height: 5000 }, share: false } });
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+
+    const box = await home.chat.box();
+    const viewport = page.viewportSize()!;
+    expect(box.x).toBeGreaterThanOrEqual(7);
+    expect(box.y).toBeGreaterThanOrEqual(71);
+    expect(box.x + box.width).toBeLessThanOrEqual(viewport.width);
+    expect(box.y + box.height).toBeLessThanOrEqual(viewport.height);
+  });
+
+  test('moving it does not move the page behind, nor select its text', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+
+    await home.chat.dragBy(home.chat.header, -200, 40);
+
+    expect(await page.evaluate(() => window.getSelection()?.toString() ?? '')).toBe('');
+    expect(await page.evaluate(() => window.scrollY)).toBe(0);
+  });
+});
+
+test.describe('Chat · click outside', () => {
+  test('a click on the page closes it, keeping the conversation and the unsent text', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+    await home.chat.ask('backend developer');
+    await expect(home.chat.offers).toHaveCount(1);
+    await home.chat.input.fill('half a sentence');
+
+    await home.heading.click();
+
+    await expect(home.chat.window).toHaveCount(0);
+    await home.chat.open();
+    await expect(home.chat.offers).toHaveCount(1);
+    await expect(home.chat.input).toHaveValue('half a sentence');
+  });
+
+  test('a click inside the window, or a drag that ends outside it, does not close it', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+
+    await home.chat.header.click();
+    await home.chat.input.click();
+    await expect(home.chat.window).toBeVisible();
+
+    // The pointer is released over the page: that ends the drag, it is not a click outside.
+    await home.chat.dragBy(home.chat.handle('w'), -300, 0);
+    await expect(home.chat.window).toBeVisible();
+  });
+
+  test('the launcher still opens and closes it, once per click', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+
+    await page.getByRole('button', { name: 'Close the chat', expanded: true }).last().click();
+    await expect(home.chat.window).toHaveCount(0);
+    await home.chat.launcher.click();
+    await expect(home.chat.window).toBeVisible();
+  });
+});
+
 test.describe('Chat · using my CV', () => {
   test('the assistant sees nothing until the user switches it on, then gets the profile', async ({ page, api }) => {
     await seedStorage(page, { [STORAGE_KEYS.profile]: PROFILE });
@@ -286,6 +462,7 @@ test.describe('Chat · on a phone', () => {
     await home.chat.open();
     // A phone has the whole screen: there is nothing to enlarge.
     await expect(home.chat.sizeButton).toBeHidden();
+    await expect(home.chat.handle('w')).toBeHidden();
     // Its title and close button are not hidden behind the sticky header.
     await expect(home.chat.closeButton).toBeInViewport({ ratio: 1 });
     const top = await home.chat.window.evaluate((el) => document.elementFromPoint(el.getBoundingClientRect().left + 20, 20)?.closest('[role="dialog"]') !== null);

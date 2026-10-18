@@ -1,9 +1,10 @@
-import { Suspense, lazy, useCallback, useRef, useState } from "react";
+import { Suspense, lazy, useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useChat } from "../../hooks/useChat";
 import { useChatPrefs } from "../../hooks/useChatPrefs";
 import { useChatShare } from "../../hooks/useChatShare";
+import type { Frame } from "../../utils/chatFrame";
 import { ChatIcon, CloseIcon, SparkleIcon } from "../Icons/Icons";
 import styles from "./ChatWidget.module.css";
 
@@ -23,6 +24,7 @@ export function ChatWidget() {
   const share = useChatShare(prefs.share, (share) => update({ share }));
   const chat = useChat(share.payload);
   const [open, setOpen] = useState(false);
+  const [draft, setDraft] = useState("");
   const launcherRef = useRef<HTMLButtonElement>(null);
 
   const close = useCallback(() => {
@@ -35,6 +37,21 @@ export function ChatWidget() {
     if (window.matchMedia(SMALL_SCREEN).matches) setOpen(false);
   }, []);
 
+  // A click anywhere outside the window and its launcher closes it. The conversation and what
+  // was typed are kept here, so closing never loses anything. The window is not modal: it can
+  // sit next to the page, and a click on the page is a click on the page.
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (e: PointerEvent) => {
+      const target = e.target;
+      if (target instanceof Element && target.isConnected && !target.closest("[data-chat-root]")) setOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [open]);
+
+  const commitFrame = useCallback((frame: Frame | null) => update({ frame }), [update]);
+
   const label = open ? t("chat.close") : t("chat.launcher");
 
   return (
@@ -44,8 +61,10 @@ export function ChatWidget() {
           <ChatPanel
             chat={chat}
             share={share}
-            size={prefs.size}
-            onToggleSize={() => update({ size: prefs.size === "large" ? "compact" : "large" })}
+            frame={prefs.frame}
+            onFrameChange={commitFrame}
+            draft={draft}
+            onDraftChange={setDraft}
             onClose={close}
             onOpenOffer={onOpenOffer}
           />
@@ -53,6 +72,7 @@ export function ChatWidget() {
       )}
       <button
         ref={launcherRef}
+        data-chat-root=""
         type="button"
         className={`${styles.launcher} ${open ? styles.open : ""}`}
         onClick={() => setOpen((o) => !o)}

@@ -3,8 +3,8 @@ import { describe, expect, it } from "vitest";
 import type { ChatItem } from "./chatMessages";
 import { chatReducer, initialChatState } from "./chatReducer";
 
-const user: ChatItem = { id: "u1", role: "user", content: "hi" };
-const bot: ChatItem = { id: "a1", role: "assistant", content: "hello" };
+const user: ChatItem = { id: "u1", role: "user", content: "hi", blocks: [] };
+const bot: ChatItem = { id: "a1", role: "assistant", content: "hello", blocks: [] };
 
 describe("chatReducer", () => {
   it("starts idle and empty, or with the restored conversation", () => {

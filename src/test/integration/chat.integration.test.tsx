@@ -7,6 +7,7 @@ import { ChatWidget } from "../../components/Chat/ChatWidget";
 import i18n from "../../i18n";
 import { mockBackend } from "../apiMock";
 import { makeJob } from "../factories";
+import { apiReply, offersBlock, quickReplies, reply, requestOf } from "../chatReplies";
 import { renderWithProviders } from "../renderWithProviders";
 
 const OFFER = makeJob({
@@ -15,11 +16,6 @@ const OFFER = makeJob({
   title: "Senior Backend Engineer",
   location: "Tel Aviv, Israel",
   excerpt: "Build payment services with Node.js",
-});
-
-const reply = (text: string, extra: Partial<Extract<ChatEvent, { type: "final" }>["reply"]> = {}): ChatEvent => ({
-  type: "final",
-  reply: { text, offers: [], links: [], suggestions: [], ...extra },
 });
 
 /** The assistant answers with the given events, one script per question. */
@@ -57,7 +53,7 @@ describe("Chat assistant (integration)", () => {
   it("answers a question with text and clickable offers", async () => {
     const spy = assistant([
       { type: "tool_call", callId: "a", name: "search_offers" },
-      reply("Here is a good match.", { offers: [OFFER] }),
+      reply("Here is a good match.", offersBlock(OFFER)),
     ]);
     const ui = renderWithProviders(<ChatWidget />);
     const dialog = await openChat(ui);
@@ -65,7 +61,7 @@ describe("Chat assistant (integration)", () => {
     await ui.user.type(within(dialog).getByRole("textbox", { name: "Your message" }), "node jobs in tel aviv{Enter}");
 
     expect(await within(dialog).findByText(/Here is a good match/)).toBeInTheDocument();
-    expect(spy.mock.calls[0][0]).toEqual([{ role: "user", content: "node jobs in tel aviv" }]);
+    expect(requestOf(spy).messages).toEqual([{ role: "user", content: "node jobs in tel aviv" }]);
 
     const offers = within(dialog).getByRole("list", { name: "Matching offers" });
     const link = within(offers).getByRole("link", { name: "Senior Backend Engineer" });
@@ -75,7 +71,7 @@ describe("Chat assistant (integration)", () => {
   });
 
   it("opening an offer goes to the normal offer page", async () => {
-    assistant([reply("Try this one.", { offers: [OFFER] })]);
+    assistant([reply("Try this one.", offersBlock(OFFER))]);
     const ui = renderWithProviders(<ChatWidget />);
     const dialog = await openChat(ui);
     await ui.user.click(within(dialog).getByRole("button", { name: "Jobs in Jerusalem" }));
@@ -86,7 +82,8 @@ describe("Chat assistant (integration)", () => {
 
   it("shows buttons that open pages of the site, and following one opens that page", async () => {
     assistant([
-      reply("Here are the steps.", {
+      apiReply("Here are the steps.", {
+        type: "links",
         links: [
           { path: "/jobs?region=jerusalem", label: "Jerusalem offers" },
           { path: "https://evil.example", label: "Win a prize" },
@@ -113,12 +110,12 @@ describe("Chat assistant (integration)", () => {
 
     await ui.user.click(within(dialog).getByRole("button", { name: "Backend jobs in Tel Aviv" }));
     await within(dialog).findByText("ok");
-    expect(spy.mock.calls[0][0]).toEqual([{ role: "user", content: "Backend jobs in Tel Aviv" }]);
+    expect(requestOf(spy).messages).toEqual([{ role: "user", content: "Backend jobs in Tel Aviv" }]);
   });
 
   it("asks a question with quick replies, and a tap sends the answer with the history", async () => {
     const spy = assistant(
-      [reply("Which role?", { suggestions: ["Backend", "Frontend"] })],
+      [reply("Which role?", quickReplies("Backend", "Frontend"))],
       [reply("Searching backend.")],
     );
     const ui = renderWithProviders(<ChatWidget />);
@@ -128,7 +125,7 @@ describe("Chat assistant (integration)", () => {
     await ui.user.click(await within(dialog).findByRole("button", { name: "Backend" }));
 
     await within(dialog).findByText("Searching backend.");
-    expect(spy.mock.calls[1][0]).toEqual([
+    expect(requestOf(spy, 1).messages).toEqual([
       { role: "user", content: "I need a job" },
       { role: "assistant", content: "Which role?" },
       { role: "user", content: "Backend" },
@@ -242,7 +239,7 @@ describe("Chat assistant (integration)", () => {
     await ui.user.type(within(dialog).getByRole("textbox", { name: "Votre message" }), "salut{Enter}");
 
     await waitFor(() => expect(spy).toHaveBeenCalled());
-    expect(spy.mock.calls[0][1]).toBe("fr");
+    expect(requestOf(spy).locale).toBe("fr");
     await i18n.changeLanguage("he");
     await waitFor(() => expect(screen.getByRole("dialog", { name: "עוזר משרות" })).toBeInTheDocument());
   });

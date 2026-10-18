@@ -1,7 +1,7 @@
 import { useId } from "react";
 import { useTranslation } from "react-i18next";
 
-import type { ChatShareController } from "../../hooks/useChatShare";
+import type { ChatShareController } from "../../../hooks/useChatShare";
 import styles from "./ChatShareBar.module.css";
 
 interface Props {

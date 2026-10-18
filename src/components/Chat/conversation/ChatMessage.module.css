@@ -1,0 +1,57 @@
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 100%;
+}
+
+.mine {
+  align-items: flex-end;
+}
+
+.theirs {
+  align-items: flex-start;
+}
+
+.bubble {
+  margin: 0;
+  max-width: 88%;
+  padding: 0.55rem 0.8rem;
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.mine .bubble {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-end-end-radius: 4px;
+}
+
+.theirs .bubble {
+  background: var(--bg-elevated);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-end-start-radius: 4px;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+
+/* In the enlarged window the bubbles can be wider. */
+@container (min-width: 40rem) {
+  .bubble {
+    max-width: 78%;
+  }
+}

@@ -2,12 +2,12 @@ import { fireEvent, screen, waitFor, within } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import * as chatApi from "../../api/chat";
-import type { ChatEvent } from "../../api/chat";
 import { ChatWidget } from "../../components/Chat/ChatWidget";
 import i18n from "../../i18n";
 import { PROFILE_LOCAL_KEY } from "../../providers/profile/profileStorage";
 import { mockBackend } from "../apiMock";
 import { CV_PROFILE } from "../factories";
+import { reply, requestOf } from "../chatReplies";
 import { renderWithProviders } from "../renderWithProviders";
 
 const pdf = vi.hoisted(() => ({ extractPdfText: vi.fn() }));
@@ -15,7 +15,6 @@ vi.mock("../../utils/pdf", () => pdf);
 
 const CV_TEXT = "Jane Doe, Senior Backend Developer. Six years of Node.js, TypeScript and PostgreSQL. Docker and AWS.";
 
-const reply = (text: string): ChatEvent => ({ type: "final", reply: { text, offers: [], links: [], suggestions: [] } });
 const asks = () => vi.spyOn(chatApi, "streamChat").mockImplementation(async function* () {
   yield reply("ok");
 });
@@ -59,7 +58,7 @@ describe("Chat · sharing the CV and profile (integration)", () => {
 
     await ui.user.type(within(dialog).getByRole("textbox", { name: "Your message" }), "hello{Enter}");
     await within(dialog).findByText("ok");
-    expect(spy.mock.calls[0][3]).toBeNull();
+    expect(requestOf(spy).shared).toBeNull();
   });
 
   it("switching on sends the profile with the next question, and the first starter becomes 'for my CV'", async () => {
@@ -75,7 +74,7 @@ describe("Chat · sharing the CV and profile (integration)", () => {
     await ui.user.click(within(dialog).getByRole("button", { name: "Find offers that fit my CV" }));
     await within(dialog).findByText("ok");
 
-    const shared = spy.mock.calls[0][3];
+    const shared = requestOf(spy).shared;
     expect(shared?.profile?.skills).toEqual(CV_PROFILE.skills);
     expect(shared?.profile).not.toHaveProperty("education");
   });
@@ -106,7 +105,7 @@ describe("Chat · sharing the CV and profile (integration)", () => {
 
     await ui.user.type(within(dialog).getByRole("textbox", { name: "Your message" }), "review my CV{Enter}");
     await within(dialog).findByText("ok");
-    const shared = spy.mock.calls[0][3];
+    const shared = requestOf(spy).shared;
     expect(shared?.cvs).toEqual([{ id: "attached", name: "Jane_CV.pdf", text: CV_TEXT }]);
     expect(shared?.profile?.skills).toEqual(expect.arrayContaining(["TypeScript"]));
   });

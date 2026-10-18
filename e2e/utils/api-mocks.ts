@@ -36,6 +36,8 @@ export interface ApiMock {
 export interface ChatRequest {
   messages: { role: 'user' | 'assistant'; content: string }[];
   locale: string;
+  /** Where the user was: the kind of page, and its ids when it has some. */
+  page?: { kind: string; source?: string; externalId?: string; key?: string; tech?: string; region?: string };
   /** Present only when the user chose to share their CV profile. */
   profile?: { skills: string[]; roles: string[]; seniority: string | null };
   /** Present only when the user chose to share their CVs. */
@@ -245,7 +247,13 @@ export async function mockApi(page: Page, initialJobs: MockJob[] = MOCK_JOBS): P
       { type: 'tool_call', callId: `c${i}`, name },
       { type: 'tool_result', callId: `c${i}`, name, ok: true },
     ]);
-    const reply = { text: answer.text, offers: answer.offers ?? [], links: answer.links ?? [], suggestions: answer.suggestions ?? [] };
+    // The API's shape: text, then blocks in the order they are drawn (offers, links, quick replies).
+    const blocks = [
+      answer.offers?.length ? { type: 'offers', offers: answer.offers } : null,
+      answer.links?.length ? { type: 'links', links: answer.links } : null,
+      answer.suggestions?.length ? { type: 'suggestions', replies: answer.suggestions } : null,
+    ].filter(Boolean);
+    const reply = { text: answer.text, blocks };
     return route.fulfill(ndjson([...steps, { type: 'final', reply }]));
   });
 

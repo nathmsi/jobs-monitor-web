@@ -107,3 +107,33 @@ export function parseFrame(value: unknown): Frame | null {
   if (!numbers.every((n) => typeof n === "number" && Number.isFinite(n))) return null;
   return { left: left as number, top: top as number, width: width as number, height: height as number };
 }
+
+/* ── Docked: a full-height panel at the end side (right in LTR, left in RTL) that pushes the page ── */
+
+export const DOCK_MIN_WIDTH = 340;
+export const DOCK_MAX_WIDTH = 720;
+export const DOCK_DEFAULT_WIDTH = 420;
+/** The page keeps at least this share of the screen: a chat that eats half of it is a different tool. */
+export const DOCK_MAX_SHARE = 0.5;
+/** Docking needs room: below this width the window stays floating. */
+export const DOCK_MIN_VIEWPORT = 900;
+
+/**
+ * The floating window that appears when the user pulls the docked panel off by its header: compact, with
+ * its header under the pointer, so the pointer keeps holding it.
+ */
+export function detachedFrame(pointer: { x: number; y: number }, viewport: Viewport): Frame {
+  const size = defaultFrame(viewport, "compact");
+  return clampFrame({ width: size.width, height: size.height, left: pointer.x - size.width / 2, top: pointer.y - 24 }, viewport);
+}
+
+/** The width of the docked panel, kept between a usable chat and half the screen. */
+export function clampDockWidth(width: number, viewportWidth: number): number {
+  const max = Math.min(DOCK_MAX_WIDTH, Math.floor(viewportWidth * DOCK_MAX_SHARE));
+  return Math.round(Math.min(Math.max(width, DOCK_MIN_WIDTH), Math.max(DOCK_MIN_WIDTH, max)));
+}
+
+/** The width that puts the panel's inner edge under the pointer: measured from the end side of the screen. */
+export function dockWidthFromPointer(pointerX: number, viewportWidth: number, rtl: boolean): number {
+  return clampDockWidth(rtl ? pointerX : viewportWidth - pointerX, viewportWidth);
+}

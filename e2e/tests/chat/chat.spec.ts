@@ -6,6 +6,12 @@ import { PublicPage } from '../../pages/PublicPages';
 import { buildPdf } from '../../utils/pdf';
 import { seedStorage, STORAGE_KEYS } from '../../utils/storage';
 
+// The chat opens docked to the side by default (see dock.spec.ts). The specs of this file are about the
+// floating window and the conversation, so they start floating.
+test.beforeEach(async ({ page }) => {
+  await seedStorage(page, { [CHAT_PREFS]: { dock: false } });
+});
+
 test.describe('Chat · the job assistant', () => {
   test('is one tap away on every page and opens with an intro and starter questions', async ({ page }) => {
     const home = new HomePage(page);
@@ -173,6 +179,8 @@ test.describe('Chat · the job assistant', () => {
   });
 });
 
+const CHAT_PREFS = 'jobs-monitor.chat.prefs';
+
 const PROFILE = {
   skills: ['React', 'TypeScript', 'Node.js'], roles: ['frontend'], languages: ['English'], seniority: 'Senior', years: 6,
   locations: ['Tel Aviv'], titles: ['Frontend Engineer'], education: [], certifications: [],
@@ -325,7 +333,7 @@ test.describe('Chat · move and resize (desktop)', () => {
   });
 
   test('a position saved on a bigger screen is brought back inside this one', async ({ page }) => {
-    await seedStorage(page, { 'jobs-monitor.chat.prefs': { frame: { left: 5000, top: -300, width: 900, height: 5000 }, share: false } });
+    await seedStorage(page, { 'jobs-monitor.chat.prefs': { frame: { left: 5000, top: -300, width: 900, height: 5000 }, share: false, dock: false } });
     const home = new HomePage(page);
     await home.goto();
     await home.chat.open();

@@ -15,14 +15,19 @@ export const STORAGE_KEYS = {
  * unless they are already strings. Call before `page.goto`.
  */
 export async function seedStorage(page: Page, entries: Record<string, unknown>): Promise<void> {
-  await page.addInitScript((data) => {
-    // Seed once per test: reloads must keep what the app wrote since then.
-    if (sessionStorage.getItem('__seeded__')) return;
-    sessionStorage.setItem('__seeded__', '1');
-    for (const [key, value] of Object.entries(data)) {
-      localStorage.setItem(key, typeof value === 'string' ? value : JSON.stringify(value));
-    }
-  }, entries);
+  // One flag per call: several calls in a test each apply once (a later one overwrites a key of an earlier one).
+  const id = Math.random().toString(36).slice(2);
+  await page.addInitScript(
+    ({ data, flag }) => {
+      // Seed once per call: reloads must keep what the app wrote since then.
+      if (sessionStorage.getItem(flag)) return;
+      sessionStorage.setItem(flag, '1');
+      for (const [key, value] of Object.entries(data)) {
+        localStorage.setItem(key, typeof value === 'string' ? value : JSON.stringify(value));
+      }
+    },
+    { data: entries, flag: `__seeded__${id}` },
+  );
 }
 
 export async function readStorage<T = unknown>(page: Page, key: string): Promise<T | null> {

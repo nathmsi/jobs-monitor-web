@@ -1,6 +1,7 @@
 import { Suspense, lazy, useCallback, useState } from "react";
 
 import { useChat } from "../../hooks/useChat";
+import { useChatDock } from "../../hooks/useChatDock";
 import { useChatPage } from "../../hooks/useChatPage";
 import { useChatPrefs } from "../../hooks/useChatPrefs";
 import { useChatShare } from "../../hooks/useChatShare";
@@ -22,8 +23,10 @@ const ChatPanel = lazy(loadChatPanel);
  * The conversation and the unsent text live here, so closing the window never loses anything.
  */
 export function ChatWidget() {
-  const { open, toggle, close, stepAside, launcherRef } = useChatWindow();
   const { prefs, update } = useChatPrefs();
+  const dock = useChatDock(prefs.dock, prefs.dockWidth, update);
+  // Docked, the chat sits next to the page to be used with it: a click on the page must not close it.
+  const { open, toggle, close, stepAside, launcherRef } = useChatWindow({ closeOnOutsideClick: !dock.docked });
   const share = useChatShare(prefs.share, (on) => update({ share: on }));
   const page = useChatPage();
   const chat = useChat(share.payload, page);
@@ -40,6 +43,7 @@ export function ChatWidget() {
             share={share}
             frame={prefs.frame}
             onFrameChange={commitFrame}
+            dock={dock}
             draft={draft}
             onDraftChange={setDraft}
             onClose={close}

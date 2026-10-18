@@ -122,6 +122,13 @@
   }
 }
 
+/* Docked, the panel takes the end edge of the screen: the launcher moves next to it, not under it. */
+@media (min-width: 641px) {
+  :global(html[data-chat-dock]) .launcher {
+    inset-inline-end: calc(var(--chat-dock-width, 420px) + 1.25rem);
+  }
+}
+
 /*
  * Phones: the bottom bar already carries an AI button, so this one shrinks to a small round
  * icon (the label stays for screen readers) instead of a second wide pill over the content.

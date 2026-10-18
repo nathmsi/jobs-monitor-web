@@ -709,6 +709,9 @@
     "shareCvs_one": "{{count}} CV",
     "shareCvs_other": "{{count}} CVs",
     "moveHint": "Drag to move · Alt+arrows move, Alt+Shift+arrows resize · double-click to reset",
-    "introShort": "Ask me anything: offers, how the site works, career advice."
+    "introShort": "Ask me anything: offers, how the site works, career advice.",
+    "dock": "Dock to the side",
+    "undock": "Float the chat",
+    "detachHint": "Pull this bar to detach the chat and move it"
   }
 }

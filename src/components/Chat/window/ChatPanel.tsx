@@ -2,11 +2,13 @@ import { useEffect, useId, useRef, type KeyboardEvent } from "react";
 import { useTranslation } from "react-i18next";
 
 import type { ChatController } from "../../../hooks/useChat";
+import type { ChatDock } from "../../../hooks/useChatDock";
+import { useChatDockLayout } from "../../../hooks/useChatDockLayout";
 import { useChatFrame } from "../../../hooks/useChatFrame";
 import { useChatKeyboard } from "../../../hooks/useChatKeyboard";
 import type { ChatShareController } from "../../../hooks/useChatShare";
-import { HANDLES, type Frame } from "../../../utils/chatFrame";
-import { CloseIcon, CollapseIcon, ExpandIcon, GripIcon, PlusIcon } from "../../Icons/Icons";
+import { detachedFrame, HANDLES, type Frame } from "../../../utils/chatFrame";
+import { CloseIcon, CollapseIcon, DockIcon, ExpandIcon, GripIcon, PlusIcon, UndockIcon } from "../../Icons/Icons";
 import { useChatContext } from "../../../providers/chat/useChatContext";
 import { startersFor } from "../../../utils/chatStarters";
 import { ChatComposer } from "../composer/ChatComposer";
@@ -23,19 +25,23 @@ interface Props {
   /** Where the user put the window, and how big (desktop); null = the default place. */
   frame: Frame | null;
   onFrameChange: (frame: Frame | null) => void;
+  /** Docked to the side of the screen instead of floating (desktop, when there is room). */
+  dock: ChatDock;
   /** What was typed and not sent: kept by the widget, so closing the window never loses it. */
   draft: string;
   onDraftChange: (text: string) => void;
 }
 
 /** The conversation window. All the logic lives in `useChat`; this only draws it. */
-export function ChatPanel({ chat, onClose, share, frame, onFrameChange, draft, onDraftChange }: Props) {
+export function ChatPanel({ chat, onClose, share, frame, onFrameChange, dock, draft, onDraftChange }: Props) {
   const { t } = useTranslation();
   const titleId = useId();
   const logRef = useRef<HTMLDivElement>(null);
   const { items, status, step, send, retry, reset } = chat;
-  const { panelRef, dragging, large, startMove, startResize, reset: resetFrame, toggle: toggleSize, onKeyDown: onFrameKey } =
-    useChatFrame({ frame, onCommit: onFrameChange });
+  const { panelRef, dragging, large, startMove, continueDragFrom, startResize, reset: resetFrame, toggle: toggleSize, onKeyDown: onFrameKey } =
+    useChatFrame({ frame, onCommit: onFrameChange, enabled: !dock.docked });
+  const { docked, canDock, width: dockWidth, setDocked, setWidth } = dock;
+  const { startResize: startDockResize, startDetach, onKeyDown: onDockKey } = useChatDockLayout({ docked, width: dockWidth, onWidth: setWidth });
 
   // Keep the latest message in view.
   useEffect(() => {
@@ -44,7 +50,7 @@ export function ChatPanel({ chat, onClose, share, frame, onFrameChange, draft, o
   }, [items.length, status]);
 
   const onKeyDown = (e: KeyboardEvent) => {
-    if (onFrameKey(e)) return;
+    if (onFrameKey(e) || onDockKey(e)) return;
     if (e.key === "Escape") onClose();
   };
 
@@ -60,6 +66,7 @@ export function ChatPanel({ chat, onClose, share, frame, onFrameChange, draft, o
     <section
       ref={panelRef}
       data-chat-root=""
+      data-docked={docked ? "" : undefined}
       className={`${styles.panel} ${dragging ? styles.dragging : ""}`}
       role="dialog"
       aria-modal="false"
@@ -67,13 +74,32 @@ export function ChatPanel({ chat, onClose, share, frame, onFrameChange, draft, o
       aria-keyshortcuts="Alt+ArrowLeft Alt+ArrowRight Alt+ArrowUp Alt+ArrowDown"
       onKeyDown={onKeyDown}
     >
-      <div className={styles.handles} aria-hidden="true">
-        {HANDLES.map((handle) => (
-          <span key={handle} data-testid={`chat-resize-${handle}`} className={`${styles.handle} ${styles[`handle_${handle}`]}`} onPointerDown={startResize(handle)} />
-        ))}
-      </div>
+      {docked ? (
+        // Docked: one handle, on the edge toward the page. (Alt+Left / Alt+Right do the same from the keyboard.)
+        <span data-testid="chat-dock-resize" className={styles.dockHandle} aria-hidden="true" onPointerDown={startDockResize} />
+      ) : (
+        <div className={styles.handles} aria-hidden="true">
+          {HANDLES.map((handle) => (
+            <span key={handle} data-testid={`chat-resize-${handle}`} className={`${styles.handle} ${styles[`handle_${handle}`]}`} onPointerDown={startResize(handle)} />
+          ))}
+        </div>
+      )}
 
-      <header className={styles.header} onPointerDown={startMove} onDoubleClick={(e) => !(e.target as HTMLElement).closest("button") && resetFrame()} title={t("chat.moveHint")}>
+      <header
+        className={styles.header}
+        onPointerDown={
+          docked
+            ? (e) =>
+                // Pulling the header off the side detaches the panel and keeps dragging it.
+                startDetach(e, (pointer) => {
+                  setDocked(false);
+                  continueDragFrom(detachedFrame(pointer, { width: window.innerWidth, height: window.innerHeight }), pointer);
+                })
+            : startMove
+        }
+        onDoubleClick={(e) => !docked && !(e.target as HTMLElement).closest("button") && resetFrame()}
+        title={docked ? t("chat.detachHint") : t("chat.moveHint")}
+      >
         <GripIcon size={14} className={styles.grip} />
         <h2 id={titleId} className={styles.title}>
           {t("chat.title")}
@@ -82,16 +108,30 @@ export function ChatPanel({ chat, onClose, share, frame, onFrameChange, draft, o
           <button type="button" className={styles.iconBtn} onClick={reset} disabled={items.length === 0} title={t("chat.newChat")} aria-label={t("chat.newChat")}>
             <PlusIcon size={18} />
           </button>
-          <button
-            type="button"
-            className={`${styles.iconBtn} ${styles.sizeBtn}`}
-            onClick={toggleSize}
-            aria-pressed={large}
-            title={large ? t("chat.collapse") : t("chat.expand")}
-            aria-label={large ? t("chat.collapse") : t("chat.expand")}
-          >
-            {large ? <CollapseIcon size={18} /> : <ExpandIcon size={18} />}
-          </button>
+          {!docked && (
+            <button
+              type="button"
+              className={`${styles.iconBtn} ${styles.sizeBtn}`}
+              onClick={toggleSize}
+              aria-pressed={large}
+              title={large ? t("chat.collapse") : t("chat.expand")}
+              aria-label={large ? t("chat.collapse") : t("chat.expand")}
+            >
+              {large ? <CollapseIcon size={18} /> : <ExpandIcon size={18} />}
+            </button>
+          )}
+          {canDock && (
+            <button
+              type="button"
+              className={`${styles.iconBtn} ${styles.sizeBtn}`}
+              onClick={() => setDocked(!docked)}
+              aria-pressed={docked}
+              title={docked ? t("chat.undock") : t("chat.dock")}
+              aria-label={docked ? t("chat.undock") : t("chat.dock")}
+            >
+              {docked ? <UndockIcon size={18} /> : <DockIcon size={18} />}
+            </button>
+          )}
           <button type="button" className={styles.iconBtn} onClick={onClose} title={t("chat.close")} aria-label={t("chat.close")}>
             <CloseIcon size={18} />
           </button>

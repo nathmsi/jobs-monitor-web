@@ -24,8 +24,8 @@ function stubRect(frame: Frame) {
   });
 }
 
-function Harness({ frame, onCommit }: { frame: Frame | null; onCommit: (f: Frame | null) => void }) {
-  const { panelRef, startMove, startResize, reset, toggle, onKeyDown, dragging, large, framed } = useChatFrame({ frame, onCommit });
+function Harness({ frame, onCommit, enabled = true }: { frame: Frame | null; onCommit: (f: Frame | null) => void; enabled?: boolean }) {
+  const { panelRef, startMove, startResize, continueDragFrom, reset, toggle, onKeyDown, dragging, large, framed } = useChatFrame({ frame, onCommit, enabled });
   return (
     <section ref={panelRef} data-testid="panel" tabIndex={0} onKeyDown={(e) => onKeyDown(e)} data-dragging={dragging} data-large={large} data-framed-prop={framed}>
       <header data-testid="header" onPointerDown={startMove}>
@@ -35,6 +35,7 @@ function Harness({ frame, onCommit }: { frame: Frame | null; onCommit: (f: Frame
       <span data-testid="handle-nw" onPointerDown={startResize("nw")} />
       <button type="button" onClick={toggle}>toggle</button>
       <button type="button" onClick={reset}>reset</button>
+      <button type="button" onClick={() => continueDragFrom({ left: 300, top: 150, width: 416, height: 560 }, { x: 500, y: 220 })}>detach</button>
     </section>
   );
 }
@@ -268,5 +269,50 @@ describe("useChatFrame · enlarge and reset", () => {
     render(<Harness frame={FRAME} onCommit={onCommit} />);
     fireEvent.click(screen.getByRole("button", { name: "reset" }));
     expect(onCommit).toHaveBeenLastCalledWith(null);
+  });
+});
+
+describe("useChatFrame · carrying on a drag that started elsewhere (pulled off the dock)", () => {
+  it("drags the window it is given from where the pointer is, and remembers where it is dropped", () => {
+    const onCommit = vi.fn();
+    render(<Harness frame={null} onCommit={onCommit} />);
+    const panel = screen.getByTestId("panel");
+
+    fireEvent.click(screen.getByRole("button", { name: "detach" }));
+    pointer("pointermove", window, 450, 260); // 50 left, 40 down of where the pointer was
+    expect(panel.style.getPropertyValue("--chat-left")).toBe("250px");
+    expect(panel.style.getPropertyValue("--chat-top")).toBe("190px");
+    pointer("pointerup", window, 450, 260);
+
+    expect(onCommit).toHaveBeenCalledWith({ left: 250, top: 190, width: 416, height: 560 });
+  });
+
+  it("works while the frame is off (docked): it is the way out of the dock", () => {
+    const onCommit = vi.fn();
+    render(<Harness frame={null} onCommit={onCommit} enabled={false} />);
+    fireEvent.click(screen.getByRole("button", { name: "detach" }));
+    pointer("pointermove", window, 400, 220);
+    pointer("pointerup", window, 400, 220);
+    expect(onCommit).toHaveBeenCalledWith(expect.objectContaining({ left: 200, top: 150 }));
+  });
+});
+
+describe("useChatFrame · docked", () => {
+  it("paints nothing and does not drag while it is off", () => {
+    const onCommit = vi.fn();
+    render(<Harness frame={FRAME} onCommit={onCommit} enabled={false} />);
+    expect(screen.getByTestId("panel").dataset.framed).toBeUndefined();
+
+    pointer("pointerdown", screen.getByTestId("header"), 500, 160);
+    pointer("pointermove", window, 200, 220);
+    pointer("pointerup", window, 200, 220);
+    fireEvent.keyDown(screen.getByTestId("panel"), { key: "ArrowLeft", altKey: true });
+    expect(onCommit).not.toHaveBeenCalled();
+  });
+
+  it("paints the stored frame again once it is back on", () => {
+    const { rerender } = render(<Harness frame={FRAME} onCommit={vi.fn()} enabled={false} />);
+    rerender(<Harness frame={FRAME} onCommit={vi.fn()} enabled />);
+    expect(screen.getByTestId("panel").dataset.framed).toBe("true");
   });
 });

@@ -118,6 +118,17 @@ body {
   padding: 0;
 }
 
+/* The chat, docked to the end side: the page makes room for it instead of sitting under it. */
+html[data-chat-dock] body {
+  padding-inline-end: var(--chat-dock-width, 0px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    transition: padding-inline-end 0.18s ease-out;
+  }
+}
+
 body {
   min-height: 100vh;
   background:

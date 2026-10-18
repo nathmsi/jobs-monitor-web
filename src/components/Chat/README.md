@@ -112,10 +112,24 @@ files (`chat.starters.<key>`), a line in `chatStarters.test.ts`.
 
 ## The window (desktop)
 
-`utils/chatFrame.ts` is pure geometry (clamp, move, resize by a handle, enlarge) and `hooks/useChatFrame.ts`
-runs the gestures, writing `--chat-*` CSS variables straight to the element (no React render per pixel).
-Not drag-only: Alt+arrows move, Alt+Shift+arrows resize, the enlarge button, double-click on the header
-resets. A click outside closes the window (`useChatWindow`); anything of the chat carries `data-chat-root`.
+**Docked by default**: a full-height panel at the end side of the screen (right in LTR, left in RTL) that
+*pushes the page* instead of covering it. While docked, `useChatDockLayout` writes `data-chat-dock` and
+`--chat-dock-width` on `<html>`; `index.css` turns that into `padding-inline-end` on the body, and the launcher
+moves next to the panel. A click on the page does not close it: it is there to be used with the page.
+
+- **Width:** drag the edge toward the page (limits: 340px, half the screen, 720px), or Alt+Left / Alt+Right.
+- **Take it off the side:** pull the header (a drag of 8px or more) and it detaches and follows the pointer,
+  or press the float button. The floating window is then draggable and resizable as below, and remembered.
+- **Dock again:** the dock button. The choice, the width and the floating position are remembered
+  (`useChatPrefs`); a user who floated it before the dock existed keeps it floating.
+- **Not enough room** (a desktop narrower than 900px): it floats whatever was chosen, and docks again when the
+  screen is wide enough (`useChatDock` + `useMediaQuery`). A phone has its own full-screen sheet.
+
+**Floating:** `utils/chatFrame.ts` is pure geometry (clamp, move, resize by a handle, enlarge, detach, dock width)
+and `hooks/useChatFrame.ts` runs the gestures, writing `--chat-*` CSS variables straight to the element (no React
+render per pixel). Not drag-only: Alt+arrows move, Alt+Shift+arrows resize, the enlarge button, double-click on
+the header resets. A click outside closes a floating window (`useChatWindow`); anything of the chat carries
+`data-chat-root`.
 
 ## Tests
 

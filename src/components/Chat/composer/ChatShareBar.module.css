@@ -92,3 +92,37 @@
 .error {
   color: var(--danger);
 }
+
+/* A phone: one line for the switch; the "off" sentence is only for screen readers, the "on" one is a single line. */
+@media (max-width: 640px) {
+  .bar {
+    gap: 0;
+    padding: 0.3rem 0.75rem 0;
+  }
+
+  .switch {
+    min-height: 2.25rem;
+  }
+
+  .hintOff {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .hintOn {
+    overflow: hidden;
+    padding-bottom: 0.3rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* The keyboard is up: nothing but the switch. */
+  :global([data-keyboard="open"]) .hintOn {
+    display: none;
+  }
+}

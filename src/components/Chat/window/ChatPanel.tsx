@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import type { ChatController } from "../../../hooks/useChat";
 import { useChatFrame } from "../../../hooks/useChatFrame";
+import { useChatKeyboard } from "../../../hooks/useChatKeyboard";
 import type { ChatShareController } from "../../../hooks/useChatShare";
 import { HANDLES, type Frame } from "../../../utils/chatFrame";
 import { CloseIcon, CollapseIcon, ExpandIcon, GripIcon, PlusIcon } from "../../Icons/Icons";
@@ -48,6 +49,8 @@ export function ChatPanel({ chat, onClose, share, frame, onFrameChange, draft, o
   };
 
   const lastAssistant = items.findLast((i) => i.role === "assistant");
+  useChatKeyboard(panelRef);
+
   // What to suggest depends on the page the user is on and on whether the CV is shared.
   const { page, config } = useChatContext();
   const starters = startersFor(page, config.sharing);
@@ -98,7 +101,10 @@ export function ChatPanel({ chat, onClose, share, frame, onFrameChange, draft, o
       <div className={styles.log} ref={logRef} role="log" aria-label={t("chat.log")}>
         {items.length === 0 ? (
           <div className={styles.intro}>
-            <p className={styles.introText}>{t("chat.intro")}</p>
+            <p className={styles.introText}>
+              <span className={styles.introLong}>{t("chat.intro")}</span>
+              <span className={styles.introShort}>{t("chat.introShort")}</span>
+            </p>
             <p className={styles.startersLabel}>{t("chat.startersLabel")}</p>
             <ul className={styles.starters}>
               {starters.map((key) => (

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import "../../../i18n";
 import { ChatComposer } from "./ChatComposer";
@@ -12,8 +12,23 @@ function setup(busy = false) {
 }
 
 describe("ChatComposer", () => {
-  it("takes the focus when it appears", () => {
+  afterEach(() => vi.unstubAllGlobals());
+
+  it("takes the focus when it appears, with a mouse and a keyboard", () => {
     expect(setup().input).toHaveFocus();
+  });
+
+  it("does not take the focus on a touch screen: the keyboard would pop up at once and hide the window", () => {
+    vi.stubGlobal("matchMedia", (query: string) => ({ matches: query.includes("pointer: coarse"), media: query }));
+    const { input } = setup();
+    expect(input).not.toHaveFocus();
+  });
+
+  it("on a touch screen, tapping the box still focuses it", async () => {
+    vi.stubGlobal("matchMedia", (query: string) => ({ matches: query.includes("pointer: coarse"), media: query }));
+    const { input, user } = setup();
+    await user.click(input);
+    expect(input).toHaveFocus();
   });
 
   it("cannot send an empty message", async () => {

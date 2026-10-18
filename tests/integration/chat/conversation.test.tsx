@@ -40,8 +40,9 @@ describe("Chat assistant (integration)", () => {
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
 
     const dialog = await openChat(ui);
-    expect(within(dialog).getByText(/Ask me anything/)).toBeInTheDocument();
-    expect(within(dialog).getByText(/Ask me anything/)).toBeInTheDocument();
+    // Two versions of the introduction are in the page: the long one (desktop) and the short one (phone).
+    expect(within(dialog).getByText(/Ask me anything\. I can find offers/)).toBeInTheDocument();
+    expect(within(dialog).getByText("Ask me anything: offers, how the site works, career advice.")).toBeInTheDocument();
     expect(within(dialog).getAllByRole("button", { name: /Backend jobs in Tel Aviv|Jobs in Jerusalem|How do I use this site|prepare for a tech interview/ })).toHaveLength(4);
     expect(screen.getByRole("button", { name: "Close the chat", expanded: true })).toBeInTheDocument();
   });
@@ -209,7 +210,7 @@ describe("Chat assistant (integration)", () => {
     await ui.user.click(within(dialog).getByRole("button", { name: "New chat" }));
 
     expect(within(dialog).queryByText("first answer")).not.toBeInTheDocument();
-    expect(within(dialog).getByText(/Ask me anything/)).toBeInTheDocument();
+    expect(within(dialog).getByText(/Ask me anything\. I can find offers/)).toBeInTheDocument();
     expect(within(dialog).getByRole("button", { name: "New chat" })).toBeDisabled();
   });
 

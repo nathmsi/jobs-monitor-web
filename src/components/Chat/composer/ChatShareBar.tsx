@@ -60,7 +60,7 @@ export function ChatShareBar({ share }: Props) {
         </div>
       )}
       {available && (
-        <p id={hintId} className={styles.hint}>
+        <p id={hintId} className={`${styles.hint} ${enabled ? styles.hintOn : styles.hintOff}`}>
           {enabled ? t("chat.shareOn") : t("chat.shareOff")}
         </p>
       )}

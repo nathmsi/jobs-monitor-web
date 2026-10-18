@@ -709,6 +709,7 @@
     "shareSkills_other": "{{count}} compétences",
     "shareCvs_one": "{{count}} CV",
     "shareCvs_other": "{{count}} CV",
-    "moveHint": "Glisser pour déplacer · Alt+flèches déplacent, Alt+Maj+flèches redimensionnent · double-clic pour réinitialiser"
+    "moveHint": "Glisser pour déplacer · Alt+flèches déplacent, Alt+Maj+flèches redimensionnent · double-clic pour réinitialiser",
+    "introShort": "Posez-moi une question : offres, fonctionnement du site, conseils de carrière."
   }
 }

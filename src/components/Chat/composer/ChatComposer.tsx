@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from 
 import { useTranslation } from "react-i18next";
 
 import { MAX_MESSAGE_CHARS } from "../../../utils/chatMessages";
+import { isTouchDevice } from "../../../utils/touchDevice";
 import { PaperclipIcon, SendIcon } from "../../Icons/Icons";
 import styles from "./ChatComposer.module.css";
 
@@ -17,7 +18,10 @@ interface Props {
   onChange?: (text: string) => void;
 }
 
-/** The message box. Enter sends, Shift+Enter adds a line. Takes the focus when it appears. */
+/**
+ * The message box. Enter sends, Shift+Enter adds a line. With a mouse and keyboard it takes the focus when it
+ * appears; on a touch screen it does not (the keyboard would pop up at once and hide the window).
+ */
 export function ChatComposer({ onSend, busy, onAttach, attaching = false, value, onChange }: Props) {
   const { t } = useTranslation();
   const [own, setOwn] = useState("");
@@ -26,7 +30,9 @@ export function ChatComposer({ onSend, busy, onAttach, attaching = false, value,
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => inputRef.current?.focus(), []);
+  useEffect(() => {
+    if (!isTouchDevice()) inputRef.current?.focus();
+  }, []);
 
   const canSend = text.trim().length > 0 && !busy;
 

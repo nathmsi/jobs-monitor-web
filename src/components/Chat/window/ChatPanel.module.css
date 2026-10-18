@@ -116,6 +116,10 @@
   color: var(--text);
 }
 
+.introShort {
+  display: none;
+}
+
 .startersLabel {
   margin: 0.4rem 0 0;
   font-size: 0.78rem;
@@ -325,5 +329,60 @@
 @media (max-width: 640px) {
   .header {
     padding-top: calc(0.75rem + env(safe-area-inset-top));
+  }
+}
+
+/*
+ * A phone is a small, crowded screen with a keyboard that covers half of it: say less, keep the
+ * message box in sight. The window follows the visible height (--chat-vh, set by useChatKeyboard).
+ */
+@media (max-width: 640px) {
+  .panel {
+    inset: var(--chat-top, 0px) 0 auto 0;
+    height: var(--chat-vh, 100dvh);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .introLong {
+    display: none;
+  }
+
+  .introShort {
+    display: inline;
+  }
+
+  .log {
+    gap: 0.7rem;
+    padding: 0.8rem 0.75rem;
+  }
+
+  .startersLabel {
+    margin-top: 0.1rem;
+  }
+
+  /* Three questions are enough here. */
+  .starters li:nth-child(n + 4) {
+    display: none;
+  }
+
+  .starter {
+    min-height: 2.6rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  .disclaimer {
+    padding: 0 0.75rem 0.4rem;
+    font-size: 0.7rem;
+  }
+
+  /* The keyboard is up: only the conversation and the message box. */
+  .panel[data-keyboard="open"] {
+    padding-bottom: 0;
+  }
+
+  .panel[data-keyboard="open"] .disclaimer,
+  .panel[data-keyboard="open"] .startersLabel,
+  .panel[data-keyboard="open"] .starters {
+    display: none;
   }
 }

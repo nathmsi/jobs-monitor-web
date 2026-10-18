@@ -520,6 +520,35 @@ test.describe('Chat · on a phone', () => {
   });
 });
 
+test.describe('Chat · on a touch phone', () => {
+  test.use({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
+
+  test('opening it does not raise the keyboard: the window is readable first, the box is tapped when wanted', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+
+    await expect(home.chat.input).not.toBeFocused();
+    await expect(home.chat.window).toContainText('Ask me anything');
+
+    await home.chat.input.tap();
+    await expect(home.chat.input).toBeFocused();
+  });
+
+  test('says less: three questions, no long introduction, and the message box in sight', async ({ page }) => {
+    const home = new HomePage(page);
+    await home.goto();
+    await home.chat.open();
+
+    const questions = home.chat.window.locator('li').filter({ has: page.getByRole('button', { name: /Backend jobs|Jobs in Jerusalem|How do I use|prepare for/ }) });
+    await expect(questions.locator(':visible')).toHaveCount(3);
+    await expect(home.chat.window.getByText('Ask me anything: offers, how the site works, career advice.')).toBeVisible();
+    await expect(home.chat.window.getByText(/I can find offers \(by role/)).toBeHidden();
+    await expect(home.chat.input).toBeInViewport({ ratio: 1 });
+    await expect(home.chat.sendButton).toBeInViewport({ ratio: 1 });
+  });
+});
+
 test.describe('Chat · in Hebrew', () => {
   test('is translated and laid out right-to-left', async ({ page }) => {
     const home = new HomePage(page);

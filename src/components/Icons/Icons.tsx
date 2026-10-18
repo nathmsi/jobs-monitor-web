@@ -249,3 +249,23 @@ export function GripIcon(props: IconProps) {
     </Icon>
   );
 }
+
+/** A window with a panel at its end side. */
+export function DockIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <rect x="3" y="4" width="18" height="16" rx="2" />
+      <path d="M15 4v16" />
+    </Icon>
+  );
+}
+
+/** A floating window over a page. */
+export function UndockIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <rect x="3" y="4" width="18" height="16" rx="2" />
+      <rect x="11" y="10" width="7" height="7" rx="1" />
+    </Icon>
+  );
+}

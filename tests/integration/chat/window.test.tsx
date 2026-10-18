@@ -1,5 +1,5 @@
-import { screen, within } from "@testing-library/react";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { fireEvent, screen, waitFor, within } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import * as chatApi from "../../../src/api/chat";
 import { ChatWidget } from "../../../src/components/Chat/ChatWidget";
@@ -127,5 +127,143 @@ describe("Chat · closing by clicking outside", () => {
     await ui.user.click(screen.getByRole("button", { name: "The page" }));
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Ask AI", expanded: false })).toBeInTheDocument();
+  });
+});
+
+/** A desktop wide enough to dock the chat (the setup's matchMedia says "no" to everything). */
+function wideScreen(wide = true) {
+  vi.stubGlobal("matchMedia", (query: string) => ({
+    matches: wide && query.includes("min-width: 900px"),
+    media: query,
+    addEventListener() {},
+    removeEventListener() {},
+  }));
+}
+
+describe("Chat · docked to the side (integration)", () => {
+  beforeEach(async () => {
+    vi.restoreAllMocks();
+    sessionStorage.clear();
+    mockBackend({ jobs: [] });
+    await i18n.changeLanguage("en");
+  });
+
+  afterEach(() => vi.unstubAllGlobals());
+
+  const storedPrefs = () => JSON.parse(localStorage.getItem("jobs-monitor.chat.prefs") ?? "{}");
+
+  it("opens docked to the side by default, where there is room, and the page makes room for it", async () => {
+    wideScreen();
+    const ui = renderWithProviders(<ChatWidget />);
+    const dialog = await openChat(ui);
+
+    expect(dialog).toHaveAttribute("data-docked");
+    expect(document.documentElement).toHaveAttribute("data-chat-dock");
+    expect(document.documentElement.style.getPropertyValue("--chat-dock-width")).toBe("420px");
+    expect(within(dialog).getByRole("button", { name: "Float the chat", pressed: true })).toBeInTheDocument();
+    expect(within(dialog).queryByRole("button", { name: "Enlarge the chat" })).not.toBeInTheDocument();
+    expect(screen.getByTestId("chat-dock-resize")).toBeInTheDocument();
+    expect(screen.queryByTestId("chat-resize-w")).not.toBeInTheDocument(); // the 8 handles of the floating window are gone
+  });
+
+  it("on a screen too narrow for it, it floats, with no dock button", async () => {
+    wideScreen(false);
+    const ui = renderWithProviders(<ChatWidget />);
+    const dialog = await openChat(ui);
+
+    expect(dialog).not.toHaveAttribute("data-docked");
+    expect(within(dialog).queryByRole("button", { name: /Dock to the side|Float the chat/ })).not.toBeInTheDocument();
+    expect(within(dialog).getByRole("button", { name: "Enlarge the chat" })).toBeInTheDocument();
+  });
+
+  it("the user can float it with the button, and dock it again", async () => {
+    wideScreen();
+    const ui = renderWithProviders(<ChatWidget />);
+    const dialog = await openChat(ui);
+
+    await ui.user.click(within(dialog).getByRole("button", { name: "Float the chat" }));
+    expect(dialog).not.toHaveAttribute("data-docked");
+    expect(document.documentElement).not.toHaveAttribute("data-chat-dock"); // the page has its room back
+    expect(within(dialog).getByRole("button", { name: "Enlarge the chat" })).toBeInTheDocument();
+    expect(storedPrefs().dock).toBe(false);
+
+    await ui.user.click(within(dialog).getByRole("button", { name: "Dock to the side" }));
+    expect(dialog).toHaveAttribute("data-docked");
+    expect(storedPrefs().dock).toBe(true);
+  });
+
+  it("pulling the header off the side detaches it and keeps it in the user's hand", async () => {
+    wideScreen();
+    const ui = renderWithProviders(<ChatWidget />);
+    const dialog = await openChat(ui);
+    const header = within(dialog).getByRole("heading", { name: "Job assistant" });
+
+    fireEvent(header, new MouseEvent("pointerdown", { bubbles: true, clientX: 1100, clientY: 40, button: 0 }));
+    fireEvent(window, new MouseEvent("pointermove", { bubbles: true, clientX: 1000, clientY: 90 }));
+
+    await waitFor(() => expect(dialog).not.toHaveAttribute("data-docked"));
+    expect(document.documentElement).not.toHaveAttribute("data-chat-dock");
+    fireEvent(window, new MouseEvent("pointerup", { bubbles: true, clientX: 1000, clientY: 90 }));
+    expect(storedPrefs().dock).toBe(false);
+  });
+
+  it("a click on the header that does not move keeps it docked", async () => {
+    wideScreen();
+    const ui = renderWithProviders(<ChatWidget />);
+    const dialog = await openChat(ui);
+    await ui.user.click(within(dialog).getByRole("heading", { name: "Job assistant" }));
+    expect(dialog).toHaveAttribute("data-docked");
+  });
+
+  it("closing the chat gives the page its room back", async () => {
+    wideScreen();
+    const ui = renderWithProviders(<ChatWidget />);
+    const dialog = await openChat(ui);
+    await ui.user.click(within(dialog).getByRole("button", { name: "Close the chat" }));
+    expect(document.documentElement).not.toHaveAttribute("data-chat-dock");
+  });
+
+  it("docked, a click on the page does not close it; floating, it does", async () => {
+    wideScreen();
+    const ui = renderWithProviders(
+      <>
+        <ChatWidget />
+        <button type="button">The page</button>
+      </>,
+    );
+    const dialog = await openChat(ui);
+
+    await ui.user.click(screen.getByRole("button", { name: "The page" }));
+    expect(screen.getByRole("dialog")).toBeInTheDocument();
+
+    await ui.user.click(within(dialog).getByRole("button", { name: "Float the chat" }));
+    await ui.user.click(screen.getByRole("button", { name: "The page" }));
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  });
+
+  it("a user who floated it finds it floating next time", async () => {
+    wideScreen();
+    const first = renderWithProviders(<ChatWidget />);
+    await first.user.click(within(await openChat(first)).getByRole("button", { name: "Float the chat" }));
+    first.unmount();
+
+    const second = renderWithProviders(<ChatWidget />);
+    expect(await openChat(second)).not.toHaveAttribute("data-docked");
+  });
+
+  it("the dock chosen on a wide screen floats on a narrow one, and comes back when it is wide again", async () => {
+    wideScreen();
+    const wide = renderWithProviders(<ChatWidget />);
+    expect(await openChat(wide)).toHaveAttribute("data-docked");
+    wide.unmount();
+
+    wideScreen(false);
+    const narrow = renderWithProviders(<ChatWidget />);
+    expect(await openChat(narrow)).not.toHaveAttribute("data-docked");
+    narrow.unmount();
+
+    wideScreen(true);
+    const wideAgain = renderWithProviders(<ChatWidget />);
+    expect(await openChat(wideAgain)).toHaveAttribute("data-docked");
   });
 });

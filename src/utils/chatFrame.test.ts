@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  clampFrame, defaultFrame, EDGE_GAP, isLargeFrame, MIN_HEIGHT, MIN_WIDTH, moveFrame, parseFrame, resizeFrame, toggleSize, TOP_SAFE,
+  clampDockWidth, clampFrame, defaultFrame, detachedFrame, DOCK_MAX_WIDTH, DOCK_MIN_WIDTH, dockWidthFromPointer, EDGE_GAP, isLargeFrame, MIN_HEIGHT, MIN_WIDTH, moveFrame, parseFrame, resizeFrame, toggleSize, TOP_SAFE,
   type Frame, type Viewport,
 } from "./chatFrame";
 
@@ -141,4 +141,58 @@ describe("parseFrame", () => {
       expect(parseFrame(value)).toBeNull();
     },
   );
+});
+
+describe("clampDockWidth", () => {
+  it("leaves a width that fits as it is", () => {
+    expect(clampDockWidth(450, 1440)).toBe(450);
+  });
+
+  it("is never narrower than a usable chat, nor wider than the cap", () => {
+    expect(clampDockWidth(50, 1440)).toBe(DOCK_MIN_WIDTH);
+    expect(clampDockWidth(5000, 3000)).toBe(DOCK_MAX_WIDTH);
+  });
+
+  it("never takes more than half of the screen", () => {
+    expect(clampDockWidth(700, 1000)).toBe(500);
+  });
+
+  it("on a screen so small that half is under the minimum, keeps the minimum", () => {
+    expect(clampDockWidth(500, 600)).toBe(DOCK_MIN_WIDTH);
+  });
+
+  it("is a whole number of pixels", () => {
+    expect(Number.isInteger(clampDockWidth(433.7, 1440))).toBe(true);
+  });
+});
+
+describe("dockWidthFromPointer", () => {
+  it("measures from the end side: at the right in LTR, at the left in RTL", () => {
+    expect(dockWidthFromPointer(1000, 1440, false)).toBe(440);
+    expect(dockWidthFromPointer(440, 1440, true)).toBe(440);
+  });
+
+  it("stops at the limits whatever the pointer does", () => {
+    expect(dockWidthFromPointer(1430, 1440, false)).toBe(DOCK_MIN_WIDTH);
+    expect(dockWidthFromPointer(0, 1440, false)).toBe(720);
+    expect(dockWidthFromPointer(-500, 1440, false)).toBe(720);
+  });
+});
+
+describe("detachedFrame", () => {
+  it("is a compact window with its header under the pointer, so the pointer keeps holding it", () => {
+    const f = detachedFrame({ x: 900, y: 100 }, VP);
+    expect(f.width).toBe(defaultFrame(VP, "compact").width);
+    expect(f.left + f.width / 2).toBe(900);
+    expect(f.top).toBe(76);
+  });
+
+  it("stays on screen and below the header when the pointer is near an edge", () => {
+    const corner = detachedFrame({ x: 5, y: 5 }, VP);
+    expect(corner.left).toBeGreaterThanOrEqual(EDGE_GAP);
+    expect(corner.top).toBeGreaterThanOrEqual(TOP_SAFE);
+    const far = detachedFrame({ x: VP.width, y: VP.height }, VP);
+    expect(far.left + far.width).toBeLessThanOrEqual(VP.width - EDGE_GAP);
+    expect(far.top + far.height).toBeLessThanOrEqual(VP.height - EDGE_GAP);
+  });
 });

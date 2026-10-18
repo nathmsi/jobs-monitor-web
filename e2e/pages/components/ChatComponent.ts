@@ -17,6 +17,9 @@ export class ChatComponent {
   readonly sizeButton: Locator;
   readonly cvInput: Locator;
   readonly header: Locator;
+  readonly dockButton: Locator;
+  readonly undockButton: Locator;
+  readonly dockHandle: Locator;
 
   constructor(private readonly page: Page) {
     this.launcher = page.getByRole('button', { name: 'Ask AI' });
@@ -30,6 +33,9 @@ export class ChatComponent {
     this.retryButton = this.window.getByRole('button', { name: 'Try again' });
     this.shareSwitch = this.window.getByRole('switch', { name: /Use my CV/ });
     this.sizeButton = this.window.getByRole('button', { name: /^(Enlarge|Reduce) the chat$/ });
+    this.dockButton = this.window.getByRole('button', { name: 'Dock to the side' });
+    this.undockButton = this.window.getByRole('button', { name: 'Float the chat' });
+    this.dockHandle = this.page.getByTestId('chat-dock-resize');
     this.header = this.window.getByRole('heading', { name: 'Job assistant' });
     this.cvInput = this.window.getByTestId('chat-cv-input');
     this.links = this.window.getByRole('list', { name: 'Open in the site' }).getByRole('link');

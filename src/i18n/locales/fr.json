@@ -710,6 +710,9 @@
     "shareCvs_one": "{{count}} CV",
     "shareCvs_other": "{{count}} CV",
     "moveHint": "Glisser pour déplacer · Alt+flèches déplacent, Alt+Maj+flèches redimensionnent · double-clic pour réinitialiser",
-    "introShort": "Posez-moi une question : offres, fonctionnement du site, conseils de carrière."
+    "introShort": "Posez-moi une question : offres, fonctionnement du site, conseils de carrière.",
+    "dock": "Ancrer sur le côté",
+    "undock": "Détacher le chat",
+    "detachHint": "Tirez cette barre pour détacher le chat et le déplacer"
   }
 }

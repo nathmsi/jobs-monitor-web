@@ -386,3 +386,54 @@
     display: none;
   }
 }
+
+/* ── Docked: a full-height panel at the end side, next to the page (which is pushed by --chat-dock-width, see index.css) ── */
+@media (min-width: 641px) {
+  .panel[data-docked] {
+    inset: 0;
+    inset-inline-start: auto;
+    width: var(--chat-dock-width, 420px);
+    height: 100dvh;
+    border: 0;
+    border-inline-start: 1px solid var(--border-strong);
+    border-radius: 0;
+    box-shadow: -10px 0 30px rgba(16, 36, 80, 0.1);
+  }
+
+  :dir(rtl) .panel[data-docked] {
+    box-shadow: 10px 0 30px rgba(16, 36, 80, 0.1);
+  }
+
+  /* The edge toward the page: drag it to change the width. */
+  .dockHandle {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    z-index: 3;
+    width: 9px;
+    cursor: ew-resize;
+    touch-action: none;
+  }
+
+  .dockHandle::after {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    width: 2px;
+    background: transparent;
+    transition: background 0.15s;
+  }
+
+  .dockHandle:hover::after,
+  .dragging .dockHandle::after {
+    background: var(--accent);
+  }
+}
+
+/* A phone has no dock. */
+@media (max-width: 640px) {
+  .dockHandle {
+    display: none;
+  }
+}

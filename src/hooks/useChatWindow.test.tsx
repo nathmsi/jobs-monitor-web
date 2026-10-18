@@ -9,8 +9,8 @@ afterEach(() => {
 });
 
 /** A page with the chat's launcher and window (marked `data-chat-root`), and something else. */
-function Page() {
-  const { open, toggle, close, stepAside, launcherRef } = useChatWindow();
+function Page({ closeOnOutsideClick = true }: { closeOnOutsideClick?: boolean }) {
+  const { open, toggle, close, stepAside, launcherRef } = useChatWindow({ closeOnOutsideClick });
   return (
     <div>
       <button ref={launcherRef} data-chat-root="" onClick={toggle}>
@@ -71,6 +71,24 @@ describe("useChatWindow", () => {
 
     expect(screen.queryByText("inside")).not.toBeInTheDocument();
     expect(screen.getByText("launcher")).toHaveFocus();
+  });
+
+  it("docked, a press on the page does not close it: it is there to be used next to the page", () => {
+    render(<Page closeOnOutsideClick={false} />);
+    fireEvent.click(screen.getByText("launcher"));
+
+    fireEvent.pointerDown(screen.getByText("the page"));
+
+    expect(screen.getByText("inside")).toBeInTheDocument();
+  });
+
+  it("goes back to closing on an outside press when it is undocked", () => {
+    const { rerender } = render(<Page closeOnOutsideClick={false} />);
+    fireEvent.click(screen.getByText("launcher"));
+    rerender(<Page closeOnOutsideClick />);
+
+    fireEvent.pointerDown(screen.getByText("the page"));
+    expect(screen.queryByText("inside")).not.toBeInTheDocument();
   });
 
   it("does not listen to the page while it is closed", () => {

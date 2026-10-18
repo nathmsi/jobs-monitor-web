@@ -38,6 +38,8 @@ interface Options {
   /** Where the user left the window, or null for the default place. */
   frame: Frame | null;
   onCommit: (frame: Frame | null) => void;
+  /** False while the window is docked: it is where the dock puts it, not where it was dragged. */
+  enabled?: boolean;
 }
 
 /**
@@ -45,7 +47,7 @@ interface Options {
  * keyboard (Alt+arrows move, Alt+Shift+arrows resize). The window stays on screen, below the
  * sticky header. Double-click the header, or the "reset" of the keyboard, puts it back.
  */
-export function useChatFrame({ frame, onCommit }: Options) {
+export function useChatFrame({ frame, onCommit, enabled = true }: Options) {
   const panelRef = useRef<HTMLElement>(null);
   const [dragging, setDragging] = useState(false);
   const gesture = useRef<(() => void) | null>(null);
@@ -54,38 +56,32 @@ export function useChatFrame({ frame, onCommit }: Options) {
   useLayoutEffect(() => {
     const el = panelRef.current;
     if (!el) return;
-    if (!frame || !isDesktop()) return paint(el, null);
+    if (!enabled || !frame || !isDesktop()) return paint(el, null);
     const fitted = clampFrame(frame, viewport());
     paint(el, fitted);
     if (!sameFrame(fitted, frame)) onCommit(fitted);
-  }, [frame, onCommit]);
+  }, [frame, onCommit, enabled]);
 
   // The browser window was resized: keep the chat on screen.
   useEffect(() => {
     const onResize = () => {
       const el = panelRef.current;
-      if (!el || !frame || !isDesktop()) return;
+      if (!el || !enabled || !frame || !isDesktop()) return;
       const fitted = clampFrame(frame, viewport());
       paint(el, fitted);
       if (!sameFrame(fitted, frame)) onCommit(fitted);
     };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  }, [frame, onCommit]);
+  }, [frame, onCommit, enabled]);
 
   useEffect(() => () => gesture.current?.(), []);
 
-  /** One pointer gesture: `next` turns the distance travelled into the new frame, live. */
-  const begin = useCallback(
-    (e: ReactPointerEvent, next: (start: Frame, dx: number, dy: number, vp: Viewport) => Frame) => {
-      const el = panelRef.current;
-      if (!el || e.button !== 0 || !isDesktop()) return;
-      e.preventDefault();
-
+  /** A pointer gesture on `el`: `next` turns the distance travelled from `from` into the new frame, live. */
+  const run = useCallback(
+    (el: HTMLElement, start: Frame, from: { x: number; y: number }, next: (start: Frame, dx: number, dy: number, vp: Viewport) => Frame) => {
       gesture.current?.();
-      const start = rectOf(el);
       const vp = viewport();
-      const from = { x: e.clientX, y: e.clientY };
       let latest = start;
       setDragging(true);
 
@@ -108,6 +104,29 @@ export function useChatFrame({ frame, onCommit }: Options) {
       gesture.current = end;
     },
     [onCommit],
+  );
+
+  /** A gesture started by a press on the window. */
+  const begin = useCallback(
+    (e: ReactPointerEvent, next: (start: Frame, dx: number, dy: number, vp: Viewport) => Frame) => {
+      const el = panelRef.current;
+      if (!el || !enabled || e.button !== 0 || !isDesktop()) return;
+      e.preventDefault();
+      run(el, rectOf(el), { x: e.clientX, y: e.clientY }, next);
+    },
+    [enabled, run],
+  );
+
+  /**
+   * The user pulled the docked panel off by its header: carry on as a drag of the floating window that
+   * is about to appear, from `start`, with the pointer that is still down at `pointer`.
+   */
+  const continueDragFrom = useCallback(
+    (start: Frame, pointer: { x: number; y: number }) => {
+      const el = panelRef.current;
+      if (el) run(el, start, pointer, (from, dx, dy, vp) => moveFrame(from, dx, dy, vp));
+    },
+    [run],
   );
 
   const startMove = useCallback(
@@ -138,7 +157,7 @@ export function useChatFrame({ frame, onCommit }: Options) {
   const onKeyDown = useCallback(
     (e: KeyboardEvent): boolean => {
       const el = panelRef.current;
-      if (!el || !e.altKey || !isDesktop()) return false;
+      if (!el || !enabled || !e.altKey || !isDesktop()) return false;
       const step = { ArrowLeft: [-KEY_STEP, 0], ArrowRight: [KEY_STEP, 0], ArrowUp: [0, -KEY_STEP], ArrowDown: [0, KEY_STEP] }[e.key];
       if (!step) return false;
       e.preventDefault();
@@ -147,7 +166,7 @@ export function useChatFrame({ frame, onCommit }: Options) {
       onCommit(e.shiftKey ? resizeFrame(current, "se", step[0], step[1], vp) : moveFrame(current, step[0], step[1], vp));
       return true;
     },
-    [onCommit],
+    [onCommit, enabled],
   );
 
   return {
@@ -156,6 +175,7 @@ export function useChatFrame({ frame, onCommit }: Options) {
     dragging,
     large: frame ? isLargeFrame(frame) : false,
     startMove,
+    continueDragFrom,
     startResize,
     reset,
     toggle,
